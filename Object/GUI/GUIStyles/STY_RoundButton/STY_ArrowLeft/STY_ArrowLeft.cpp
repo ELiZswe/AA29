@@ -1,0 +1,18 @@
+// All the original content belonged to the US Army
+
+
+#include "AA29/Object/GUI/GUIStyles/STY_RoundButton/STY_ArrowLeft/STY_ArrowLeft.h"
+
+USTY_ArrowLeft::USTY_ArrowLeft()
+{
+	KeyName = "ArrowLeft";
+	//Images[0] = Texture'InterfaceContent.Menu.ArrowBlueLeft'
+	//Images[1] = Texture'InterfaceContent.Menu.ArrowBlueLeft'
+	//Images[2] = Texture'InterfaceContent.Menu.ArrowBlueLeft'
+	//Images[3] = Texture'InterfaceContent.Menu.ArrowBlueLeft'
+	//ImgStyle(0) = 2
+	//ImgStyle(1) = 2
+	//ImgStyle(2) = 2
+	//ImgStyle(3) = 2
+	//ImgStyle(4) = 2
+}

@@ -1,0 +1,43 @@
+// All the original content belonged to the US Army
+
+#pragma once
+
+#include "CoreMinimal.h"
+#include "AA29/Object/GUI/GUIComponent/GUIListBase/GUIVertList/GUIMultiColumnList/GUIMultiColumnList.h"
+#include "AAGame_ListBase.generated.h"
+
+class AAGP_PlayerStart;
+
+UCLASS()
+class AA29_API UAAGame_ListBase : public UGUIMultiColumnList
+{
+	GENERATED_BODY()
+public:
+	UAAGame_ListBase();
+
+	UPROPERTY()						UMaterialInstance* Invalid;									//var Material Invalid;
+	UPROPERTY()						TArray<FString> GroupDescriptions;							//var array<String> GroupDescriptions;
+	UPROPERTY()						TArray<UMaterialInstance*> Group;							//var array<Material> Group;
+	UPROPERTY()						TArray<FString> GuerrillaDescriptions;						//var array<String> GuerrillaDescriptions;
+	UPROPERTY()						TArray<UMaterialInstance*> Guerrilla;						//var array<Material> Guerrilla;
+	UPROPERTY()						TArray<FString> SpecialForcesDescriptions;					//var array<String> SpecialForcesDescriptions;
+	UPROPERTY()						TArray<UMaterialInstance*> SpecialForces;					//var array<Material> SpecialForces;
+	UPROPERTY()						TArray<FString> SubClassDescriptions;						//var array<String> SubClassDescriptions;
+	UPROPERTY()						TArray<UMaterialInstance*> SubClass;						//var array<Material> SubClass;
+	UPROPERTY()						TArray<FString> ClassDescriptions;							//var array<String> ClassDescriptions;
+	UPROPERTY()						TArray<UMaterialInstance*> Class;							//var array<Material> Class;
+	UPROPERTY()						TArray<FString> RankDescriptions;							//var array<String> RankDescriptions;
+	UPROPERTY()						TArray<UMaterialInstance*> rank;							//var array<Material> rank;
+
+	bool IsEnabled();
+	void MaybeGray(UMaterialInstance* M);
+	void GetGray(UMaterialInstance* M);
+	void GetNativeWeapon(AAGP_PlayerStart* PS);
+	void GetGroupIcon(AAA2_PlayerState* PRI);
+	void GetSubClassIcon(AAA2_PlayerState* PRI);
+	void GetRankIcon(AAGP_PlayerStart* PS);
+	void GetSFIcon(AAGP_PlayerStart* PS);
+	void GetClassIcon(AAGP_PlayerStart* PS);
+	FString GetPlayerName(AAA2_PlayerState* PRI);
+	int32 GetPlayerState(AAA2_PlayerState* PRI);
+}; 
