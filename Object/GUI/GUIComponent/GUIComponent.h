@@ -92,8 +92,6 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Menu")						UGUIComponent* MenuOwner;							//var(Menu) editconst GUIComponent MenuOwner;
 	UPROPERTY(EditAnywhere, Category = "Menu")						UGUIPage* PageOwner;								//var(Menu) editconst GUIPage PageOwner;
 
-
-
 	void OnArrival(UGUIComponent* Sender, EAnimationType Type);
 	void OnEndAnimation(UGUIComponent* Sender, EAnimationType Type);
 	bool OnPreDraw(UCanvas* Canvas);

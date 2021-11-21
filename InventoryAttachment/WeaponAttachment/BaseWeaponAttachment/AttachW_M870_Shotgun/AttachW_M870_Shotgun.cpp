@@ -2,8 +2,8 @@
 
 
 #include "AttachW_M870_Shotgun.h"
-#include "AA29/AA2_Emitter/BaseShellEmitter\Shell_762mm_Emitter\Shell_762mm_Emitter.h"
-#include "AA29/AA2_Emitter/BaseMuzzleFlashEmitter/M24MuzzleFlash/M24MuzzleFlash.h"
+#include "AA29/Object/Actor/Emitter/BaseShellEmitter\Shell_762mm_Emitter\Shell_762mm_Emitter.h"
+#include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/M24MuzzleFlash/M24MuzzleFlash.h"
 
 
 AAttachW_M870_Shotgun::AAttachW_M870_Shotgun()

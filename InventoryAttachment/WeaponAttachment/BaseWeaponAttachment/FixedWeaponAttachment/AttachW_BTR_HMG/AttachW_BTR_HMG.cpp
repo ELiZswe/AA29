@@ -3,7 +3,7 @@
 
 #include "AttachW_BTR_HMG.h"
 #include "AA29/Inventory/Weapon/AGP_Weapon/FixedWeapon/Weapon_BTR_HMG/Weapon_BTR_HMG.h"
-#include "AA29/AA2_Emitter/BaseMuzzleFlashEmitter/AK47MuzzleFlash/AK47MuzzleFlash.h"
+#include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/AK47MuzzleFlash/AK47MuzzleFlash.h"
 
 
 AAttachW_BTR_HMG::AAttachW_BTR_HMG()

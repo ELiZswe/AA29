@@ -22,9 +22,6 @@ class AA29_API UAADeploy_DCDS : public UAABackgroundSubPanel
 public:
 	UAADeploy_DCDS();
 
-
-
-
 	UPROPERTY(EditAnywhere)			UAAGUILabel* l_DownloadStatsFileName;			//var() automated AAGUILabel l_DownloadStatsFileName;
 	UPROPERTY(EditAnywhere)			UAAGUILabel* l_DownloadStatsFileSize;			//var() automated AAGUILabel l_DownloadStatsFileSize;
 	UPROPERTY(EditAnywhere)			UAAGUILabel* l_DownloadStatsProgress;			//var() automated AAGUILabel l_DownloadStatsProgress;

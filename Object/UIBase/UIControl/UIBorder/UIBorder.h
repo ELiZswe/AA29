@@ -18,16 +18,14 @@ public:
 
 	//const kBorderSize = 1;
 
-
-	UPROPERTY()										bool _bDrawBack;						//var bool _bDrawBack;
-	UPROPERTY()										FPosition _BorderBottom;				//var UIBase.Position _BorderBottom;
-	UPROPERTY()										FPosition _BorderTop;					//var UIBase.Position _BorderTop;
-	UPROPERTY()										FPosition _BorderRight;					//var UIBase.Position _BorderRight;
-	UPROPERTY()										FPosition _BorderLeft;					//var UIBase.Position _BorderLeft;
-	UPROPERTY()										FPosition _iTexDim;						//var UIBase.Position _iTexDim;
-	UPROPERTY()										UMaterialInstance* _Texture2;			//var Texture _Texture2;
-	UPROPERTY()										UMaterialInstance* _Texture;			//var Texture _Texture;
-
+	UPROPERTY()								bool _bDrawBack;						//var bool _bDrawBack;
+	UPROPERTY()								FPosition _BorderBottom;				//var UIBase.Position _BorderBottom;
+	UPROPERTY()								FPosition _BorderTop;					//var UIBase.Position _BorderTop;
+	UPROPERTY()								FPosition _BorderRight;					//var UIBase.Position _BorderRight;
+	UPROPERTY()								FPosition _BorderLeft;					//var UIBase.Position _BorderLeft;
+	UPROPERTY()								FPosition _iTexDim;						//var UIBase.Position _iTexDim;
+	UPROPERTY()								UMaterialInstance* _Texture2;			//var Texture _Texture2;
+	UPROPERTY()								UMaterialInstance* _Texture;			//var Texture _Texture;
 
 	void Destroyed();
 	void ProcessParams();

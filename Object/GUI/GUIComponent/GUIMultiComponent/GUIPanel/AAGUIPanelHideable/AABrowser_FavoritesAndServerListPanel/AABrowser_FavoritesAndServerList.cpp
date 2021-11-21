@@ -1,12 +1,25 @@
 // All the original content belonged to the US Army
 
-
 #include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/AAGUIPanelHideable/AABrowser_FavoritesAndServerListPanel/AABrowser_FavoritesAndServerList.h"
+#include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/AABrowser_ServersPlayersRulesPanel/AABrowser_ServersPlayersRulesPan.h"
+#include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/AABrowser_FavoritesPanel/AABrowser_FavoritesPanel.h"
 
 UAABrowser_FavoritesAndServerList::UAABrowser_FavoritesAndServerList()
 {
-	//leftside = AABrowser_FavoritesPanel'AGP_Interface.AABrowser_FavoritesAndServerListPanel.FilterBox';
-	//rightside = AABrowser_ServersPlayersRulesPanel'AGP_Interface.AABrowser_FavoritesAndServerListPanel.ServersPlayersRulesPanel';
+	UAABrowser_ServersPlayersRulesPan* ServersPlayersRulesPanel = NewObject<UAABrowser_ServersPlayersRulesPan>(UAABrowser_ServersPlayersRulesPan::StaticClass());
+	//ServersPlayersRulesPanel->OnUpdateServerList = AABrowser_FavoritesAndServerListPanel.InternalOnUpdateServerList;
+	ServersPlayersRulesPanel->WinLeft = 0.33;
+	ServersPlayersRulesPanel->WinWidth = 0.666667;
+	ServersPlayersRulesPanel->WinHeight = 1;
+	//ServersPlayersRulesPanel->OnSaveINI=ServersPlayersRulesPanel.InternalOnSaveINI;
+	UAABrowser_FavoritesPanel* FilterBox = NewObject<UAABrowser_FavoritesPanel>(UAABrowser_FavoritesPanel::StaticClass());
+	//FilterBox->OnUpdateServerList = AABrowser_FavoritesAndServerListPanel.InternalOnUpdateServerList;
+	//FilterBox->OnFavoriteServerSelectionChanged = AABrowser_FavoritesAndServerListPanel.InternalOnFavoriteServerSelectionChanged;
+	//FilterBox->OnBuddySelectionChanged = AABrowser_FavoritesAndServerListPanel.InternalOnBuddySelectionChanged;
+	FilterBox->WinWidth = 0.333333;
+	FilterBox->WinHeight = 1;
+	leftside = FilterBox;
+	rightside = ServersPlayersRulesPanel;
 }
 
 void UAABrowser_FavoritesAndServerList::OnUpdateServerList()

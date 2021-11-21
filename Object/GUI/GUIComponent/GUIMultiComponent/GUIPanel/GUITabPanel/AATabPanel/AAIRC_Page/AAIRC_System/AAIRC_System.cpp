@@ -1,21 +1,20 @@
 // All the original content belonged to the US Army
 
-
 #include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/GUITabPanel/AATabPanel/AAIRC_Page/AAIRC_System/AAIRC_System.h"
+#include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/GUISplitter/GUISplitter.h"
 
 UAAIRC_System::UAAIRC_System()
 {
-	/*
-	Begin Object Class=GUISplitter Name=SplitterA
-		SplitPosition=0.8
-		bFixedSplitter=True
-		DefaultPanels="XInterface.GUIScrollTextBox"
-		DefaultPanels="AGP_Interface.AAIRC_Panel"
-		OnCreateComponent=AAIRC_System.InternalOnCreateComponent
-		WinHeight=0.91
-		TabOrder=1
-	End Object
-	*/
+	UGUISplitter* SplitterA = NewObject<UGUISplitter>(UGUISplitter::StaticClass());
+	SplitterA->SplitPosition = 0.8;
+	SplitterA->bFixedSplitter = true;
+	SplitterA->DefaultPanels = "XInterface.GUIScrollTextBox";
+	SplitterA->DefaultPanels = "AGP_Interface.AAIRC_Panel";
+	//SplitterA->OnCreateComponent=AAIRC_System.InternalOnCreateComponent;
+	SplitterA->WinHeight = 0.91;
+	SplitterA->TabOrder = 1;
+
+
 	//LinkClassName = "AGP_Interface.AAIRCLink";
 	CurChannel = -2;
 	PrevChannel = -1;
@@ -34,7 +33,7 @@ UAAIRC_System::UAAIRC_System()
 	ChangeNickCaption = "CHANGE NICK";
 	InvalidModeText = "Invalid parameters for MODE - Syntax: /MODE [#]target [[+|-]modes [Extra Params]]";
 	InvalidKickText = "Invalid parameters for %Cmd% - Syntax: /%Cmd% #ChannelName Nick :[Reason]";
-	//sp_Main = GUISplitter'AGP_Interface.AAIRC_System.SplitterA';
+	sp_Main = SplitterA;
 	MainSplitterPosition = 0.5;
 
 }

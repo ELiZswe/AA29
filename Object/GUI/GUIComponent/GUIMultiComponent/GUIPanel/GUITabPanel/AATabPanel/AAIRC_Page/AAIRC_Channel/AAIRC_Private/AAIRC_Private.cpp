@@ -1,27 +1,23 @@
 // All the original content belonged to the US Army
 
-
 #include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/GUITabPanel/AATabPanel/AAIRC_Page/AAIRC_Channel/AAIRC_Private/AAIRC_Private.h"
+#include "AA29/Object/GUI/GUIComponent/GUIButton/GUIButton.h"
 
 UAAIRC_Private::UAAIRC_Private()
 {
-	/*
-	Begin Object Class=GUIButton Name=IRCLeave
-		Caption="CLOSE PM"
-		StyleName="SquareMenuButton"
-		WinTop=0.83
-		WinLeft=0.59
-		WinWidth=0.16
-		WinHeight=0.036
-		RenderWeight=2
-		TabOrder=2
-		bBoundToParent=True
-		OnClick=AAIRC_Private.InternalOnClick
-		OnKeyEvent=IRCLeave.InternalOnKeyEvent
-	End Object
-	*/
-	//b_Leave = GUIButton'AGP_Interface.AAIRC_Private.IRCLeave';
-
+	UGUIButton* IRCLeave = NewObject<UGUIButton>(UGUIButton::StaticClass());
+	IRCLeave->Caption = "CLOSE PM";
+	IRCLeave->StyleName = "SquareMenuButton";
+	IRCLeave->WinTop = 0.83;
+	IRCLeave->WinLeft = 0.59;
+	IRCLeave->WinWidth = 0.16;
+	IRCLeave->WinHeight = 0.036;
+	IRCLeave->RenderWeight = 2;
+	IRCLeave->TabOrder = 2;
+	IRCLeave->bBoundToParent = true;
+	//IRCLeave->OnClick=AAIRC_Private.InternalOnClick;
+	//IRCLeave->OnKeyEvent=IRCLeave.InternalOnKeyEvent;
+	b_Leave = IRCLeave;
 }
 
 void UAAIRC_Private::InitComponent(UGUIController* MyController, UGUIComponent* MyOwner)

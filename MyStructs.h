@@ -6,6 +6,230 @@
 #include "UObject/ObjectMacros.h"
 
 UENUM(BlueprintType)
+enum class EBeamEndPointType : uint8
+{
+	/* 0 */ PTEP_Velocity															UMETA(DisplayName = "PTEP_Velocity"),
+	/* 1 */ PTEP_Distance															UMETA(DisplayName = "PTEP_Distance"),
+	/* 2 */ PTEP_Offset																UMETA(DisplayName = "PTEP_Offset"),
+	/* 3 */ PTEP_Actor																UMETA(DisplayName = "PTEP_Actor"),
+	/* 4 */ PTEP_TraceOffset														UMETA(DisplayName = "PTEP_TraceOffset"),
+	/* 5 */ PTEP_OffsetAsAbsolute													UMETA(DisplayName = "PTEP_OffsetAsAbsolute"),
+	/* 6 */ PTEP_DynamicDistance													UMETA(DisplayName = "PTEP_DynamicDistance"),
+	/* 7 */ PTEP_RopeSegment														UMETA(DisplayName = "PTEP_RopeSegment")
+};
+
+UENUM(BlueprintType)
+enum class EBeamRopeType : uint8
+{
+	/* 0 */ BRT_NOTROPE																UMETA(DisplayName = "BRT_NOTROPE"),
+	/* 1 */ BRT_THINROPE															UMETA(DisplayName = "BRT_THINROPE"),
+	/* 2 */ BRT_FASTROPE															UMETA(DisplayName = "BRT_FASTROPE")
+};
+
+UENUM(BlueprintType)
+enum class EAbsoluteRotationSource : uint8
+{
+	/* 0 */ PARS_None																UMETA(DisplayName = "PARS_None"),
+	/* 1 */ PARS_ActorOnly															UMETA(DisplayName = "PARS_ActorOnly"),
+	/* 2 */ PARS_ActorPlusOffset													UMETA(DisplayName = "PARS_ActorPlusOffset")
+};
+
+
+UENUM(BlueprintType)
+enum class EParticleDirectionUsage : uint8
+{
+	/* 0 */ PTDU_None																UMETA(DisplayName = "PTDU_None"),
+	/* 1 */ PTDU_Up																	UMETA(DisplayName = "PTDU_Up"),
+	/* 2 */ PTDU_Right																UMETA(DisplayName = "PTDU_Right"),
+	/* 3 */ PTDU_Forward															UMETA(DisplayName = "PTDU_Forward"),
+	/* 4 */ PTDU_Normal																UMETA(DisplayName = "PTDU_Normal"),
+	/* 5 */ PTDU_UpAndNormal														UMETA(DisplayName = "PTDU_UpAndNormal"),
+	/* 6 */ PTDU_RightAndNormal														UMETA(DisplayName = "PTDU_RightAndNormal"),
+	/* 7 */ PTDU_Scale																UMETA(DisplayName = "PTDU_Scale")
+};
+
+UENUM(BlueprintType)
+enum class ETrailLocation : uint8
+{
+	/* 0 */ PTTL_AttachedToParticle													UMETA(DisplayName = "PTTL_AttachedToParticle"),
+	/* 1 */ PTTL_FollowEmitter														UMETA(DisplayName = "PTTL_FollowEmitter")
+};
+UENUM(BlueprintType)
+enum class ETrailShadeType : uint8
+{
+	/* 0 */ PTTST_None																UMETA(DisplayName = "PTTST_None"),
+	/* 1 */ PTTST_RandomStatic														UMETA(DisplayName = "PTTST_RandomStatic"),
+	/* 2 */ PTTST_RandomDynamic														UMETA(DisplayName = "PTTST_RandomDynamic"),
+	/* 3 */ PTTST_Linear															UMETA(DisplayName = "PTTST_Linear"),
+	/* 4 */ PTTST_PointLife															UMETA(DisplayName = "PTTST_PointLife")
+};
+
+
+UENUM(BlueprintType)
+enum class EParticleCollisionSound : uint8
+{
+	/* 0 */ PTSC_None															UMETA(DisplayName = "PTSC_None"),
+	/* 1 */ PTSC_LinearGlobal													UMETA(DisplayName = "PTSC_LinearGlobal"),
+	/* 2 */ PTSC_LinearLocal													UMETA(DisplayName = "PTSC_LinearLocal"),
+	/* 3 */ PTSC_Random															UMETA(DisplayName = "PTSC_Random")
+};
+
+UENUM(BlueprintType)
+enum class EParticleDrawStyle : uint8
+{
+	/* 0 */ PTDS_Regular														UMETA(DisplayName = "PTDS_Regular"),
+	/* 1 */ PTDS_AlphaBlend														UMETA(DisplayName = "PTDS_AlphaBlend"),
+	/* 2 */ PTDS_Modulated														UMETA(DisplayName = "PTDS_Modulated"),
+	/* 3 */ PTDS_Translucent													UMETA(DisplayName = "PTDS_Translucent"),
+	/* 4 */ PTDS_AlphaModulate_MightNotFogCorrectly								UMETA(DisplayName = "PTDS_AlphaModulate_MightNotFogCorrectly"),
+	/* 5 */ PTDS_Darken															UMETA(DisplayName = "PTDS_Darken"),
+	/* 6 */ PTDS_Brighten														UMETA(DisplayName = "PTDS_Brighten"),
+};
+
+UENUM(BlueprintType)
+enum class EParticleCoordinateSystem : uint8
+{
+	/* 0 */ PTCS_Independent													UMETA(DisplayName = "PTCS_Independent"),
+	/* 1 */ PTCS_Relative														UMETA(DisplayName = "PTCS_Relative"),
+	/* 2 */ PTCS_Absolute														UMETA(DisplayName = "PTCS_Absolute")
+};
+
+UENUM(BlueprintType)
+enum class EParticleRotationSource : uint8
+{
+	/* 0 */ PTRS_None														UMETA(DisplayName = "PTRS_None"),
+	/* 1 */ PTRS_Actor														UMETA(DisplayName = "PTRS_Actor"),
+	/* 2 */ PTRS_Offset														UMETA(DisplayName = "PTRS_Offset"),
+	/* 3 */ PTRS_Normal														UMETA(DisplayName = "PTRS_Normal")
+};
+
+UENUM(BlueprintType)
+enum class EParticleVelocityDirection : uint8
+{
+	/* 0 */ PTVD_None															UMETA(DisplayName = "PTVD_None"),
+	/* 1 */ PTVD_StartPositionAndOwner											UMETA(DisplayName = "PTVD_StartPositionAndOwner"),
+	/* 2 */ PTVD_OwnerAndStartPosition											UMETA(DisplayName = "PTVD_OwnerAndStartPosition"),
+	/* 3 */ PTVD_AddRadial														UMETA(DisplayName = "PTVD_AddRadial")
+};
+
+
+UENUM(BlueprintType)
+enum class EParticleStartLocationShape : uint8
+{
+	/* 0 */ PTLS_Box														UMETA(DisplayName = "PTLS_Box"),
+	/* 1 */ PTLS_Sphere														UMETA(DisplayName = "PTLS_Sphere"),
+	/* 2 */ PTLS_Polar														UMETA(DisplayName = "PTLS_Polar"),
+	/* 3 */ PTLS_All														UMETA(DisplayName = "PTLS_All")
+};
+
+UENUM(BlueprintType)
+enum class EParticleEffectAxis : uint8
+{
+	/* 0 */ PTEA_NegativeX															UMETA(DisplayName = "PTEA_NegativeX"),
+	/* 1 */ PTEA_PositiveZ															UMETA(DisplayName = "PTEA_PositiveZ")
+};
+UENUM(BlueprintType)
+enum class EParticleMeshSpawning : uint8
+{
+	/* 0 */ PTMS_None															UMETA(DisplayName = "PTMS_None"),
+	/* 1 */ PTMS_Linear															UMETA(DisplayName = "PTMS_Linear"),
+	/* 2 */ PTMS_Random															UMETA(DisplayName = "PTMS_Random")
+};
+
+UENUM(BlueprintType)
+enum class ESkelLocationUpdate : uint8
+{
+	/* 0 */ PTSU_None															UMETA(DisplayName = "PTSU_None"),
+	/* 1 */ PTSU_SpawnOffset													UMETA(DisplayName = "PTSU_SpawnOffset"),
+	/* 2 */ PTSU_Location														UMETA(DisplayName = "PTSU_Location")
+};
+
+UENUM(BlueprintType)
+enum class EAA2BlendMode : uint8
+{
+	/* 0 */ BM_MODULATE															UMETA(DisplayName = "BM_MODULATE"),
+	/* 1 */ BM_MODULATE2X														UMETA(DisplayName = "BM_MODULATE2X"),
+	/* 2 */ BM_MODULATE4X														UMETA(DisplayName = "BM_MODULATE4X"),
+	/* 3 */ BM_ADD																UMETA(DisplayName = "BM_ADD"),
+	/* 4 */ BM_ADDSIGNED														UMETA(DisplayName = "BM_ADDSIGNED"),
+	/* 5 */ BM_ADDSIGNED2X														UMETA(DisplayName = "BM_ADDSIGNED2X"),
+	/* 6 */ BM_SUBTRACT															UMETA(DisplayName = "BM_SUBTRACT"),
+	/* 7 */ BM_ADDSMOOTH														UMETA(DisplayName = "BM_ADDSMOOTH"),
+	/* 8 */ BM_BLENDDIFFUSEALPHA												UMETA(DisplayName = "BM_BLENDDIFFUSEALPHA"),
+	/* 9 */ BM_BLENDTEXTUREALPHA												UMETA(DisplayName = "BM_BLENDTEXTUREALPHA"),
+	/* 10 */ BM_BLENDFACTORALPHA												UMETA(DisplayName = "BM_BLENDFACTORALPHA"),
+	/* 11 */ BM_BLENDTEXTUREALPHAPM												UMETA(DisplayName = "BM_BLENDTEXTUREALPHAPM"),
+	/* 12 */ BM_BLENDCURRENTALPHA												UMETA(DisplayName = "BM_BLENDCURRENTALPHA"),
+	/* 13 */ BM_PREMODULATE														UMETA(DisplayName = "BM_PREMODULATE"),
+	/* 14 */ BM_MODULATEALPHA_ADDCOLOR											UMETA(DisplayName = "BM_MODULATEALPHA_ADDCOLOR"),
+	/* 15 */ BM_MODULATEINVALPHA_ADDCOLOR										UMETA(DisplayName = "BM_MODULATEINVALPHA_ADDCOLOR"),
+	/* 16 */ BM_MODULATEINVCOLOR_ADDALPHA										UMETA(DisplayName = "BM_MODULATEINVCOLOR_ADDALPHA"),
+	/* 17 */ BM_HACK															UMETA(DisplayName = "BM_HACK")
+};
+
+UENUM(BlueprintType)
+enum class ESetting : uint8
+{
+	/* 0 */ SETTING_None														UMETA(DisplayName = "SETTING_None"),
+	/* 1 */ SETTING_Urban														UMETA(DisplayName = "SETTING_Urban"),
+	/* 2 */ SETTING_Industrial													UMETA(DisplayName = "SETTING_Industrial"),
+	/* 3 */ SETTING_Rural														UMETA(DisplayName = "SETTING_Rural"),
+	/* 4 */ SETTING_Arctic														UMETA(DisplayName = "SETTING_Arctic"),
+	/* 5 */ SETTING_Desert														UMETA(DisplayName = "SETTING_Desert"),
+	/* 6 */ SETTING_Village														UMETA(DisplayName = "SETTING_Village"),
+	/* 7 */ SETTING_Campground													UMETA(DisplayName = "SETTING_Campground")
+};
+
+UENUM(BlueprintType)
+enum class EFormat : uint8
+{
+	/* 0 */ FORMAT_HTM														UMETA(DisplayName = "FORMAT_HTM"),
+	/* 1 */ FORMAT_WIKI														UMETA(DisplayName = "FORMAT_WIKI"),
+	/* 2 */ FORMAT_TXT														UMETA(DisplayName = "FORMAT_TXT")
+};
+
+UENUM(BlueprintType)
+enum class ETimeSetting : uint8
+{
+	/* 0 */ TIME_None														UMETA(DisplayName = "TIME_None"),
+	/* 1 */ TIME_Dawn														UMETA(DisplayName = "TIME_Dawn"),
+	/* 2 */ TIME_Day														UMETA(DisplayName = "TIME_Day"),
+	/* 3 */ TIME_Dusk														UMETA(DisplayName = "TIME_Dusk"),
+	/* 4 */ TIME_Night														UMETA(DisplayName = "TIME_Night")
+};
+
+UENUM(BlueprintType)
+enum class EWeatherSetting : uint8
+{
+	/* 0 */ WEATHER_None														UMETA(DisplayName = "WEATHER_None"),
+	/* 1 */ WEATHER_Snowing														UMETA(DisplayName = "WEATHER_Snowing"),
+	/* 2 */ WEATHER_Stormy														UMETA(DisplayName = "WEATHER_Stormy"),
+	/* 3 */ WEATHER_Overcast													UMETA(DisplayName = "WEATHER_Overcast"),
+	/* 4 */ WEATHER_Raining														UMETA(DisplayName = "WEATHER_Raining"),
+	/* 5 */ WEATHER_Sunny														UMETA(DisplayName = "WEATHER_Sunny")
+};
+
+UENUM(BlueprintType)
+enum class ESCIRequestState : uint8
+{
+	/* 0 */ SCIREQ_Nothing														UMETA(DisplayName = "SCIREQ_Nothing"),
+	/* 1 */ SCIREQ_Opening														UMETA(DisplayName = "SCIREQ_Opening"),
+	/* 2 */ SCIREQ_RequestingCount												UMETA(DisplayName = "SCIREQ_RequestingCount"),
+	/* 3 */ SCIREQ_RequestingOneServer											UMETA(DisplayName = "SCIREQ_RequestingOneServer"),
+	/* 4 */ SCIREQ_RequestingList												UMETA(DisplayName = "SCIREQ_RequestingList"),
+	/* 5 */ SCIREQ_Closing														UMETA(DisplayName = "SCIREQ_Closing")
+};
+
+//EOrientation
+UENUM(BlueprintType)
+enum class EAA2Orientation : uint8
+{
+	/* 0 */ ORIENT_Vertical														UMETA(DisplayName = "ORIENT_Vertical"),
+	/* 1 */ ORIENT_Horizontal													UMETA(DisplayName = "ORIENT_Horizontal")
+};
+
+
+UENUM(BlueprintType)
 enum class EViewMutatorMode : uint8
 {
 	/* 0 */ VMM_AnyMutators														UMETA(DisplayName = "VMM_AnyMutators"),
@@ -1275,7 +1499,7 @@ enum class EPageAlign : uint8
 };
 
 UENUM(BlueprintType)
-enum class EDrawDirection : uint8
+enum class EeDrawDirection : uint8
 {
 	/* 0 */ DRD_LeftToRight												UMETA(DisplayName = "DRD_LeftToRight"),
 	/* 1 */ DRD_RightToLeft												UMETA(DisplayName = "DRD_RightToLeft"),
@@ -1903,18 +2127,6 @@ enum class EDebugTag : uint8
 	/* 40*/	DEBUG_Input							UMETA(DisplayName = "DEBUG_Input"),
 	/* 41*/	DEBUG_Last							UMETA(DisplayName = "DEBUG_Last")
 };
-
-
-
-
-
-
-
-
-
-
-
-
 
 UENUM(BlueprintType)
 enum class EGameSpyCompareMode : uint8

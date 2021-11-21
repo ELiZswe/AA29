@@ -1,18 +1,86 @@
 // All the original content belonged to the US Army
 
-
 #include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/AATreeAndExclusiveListPanel/AATreeAndExclusiveListPanel.h"
+#include "AA29/Object/GUI/GUIComponent/GUIListBase/GUIVertList/GUIMultiOptionList/AAGUIExclusiveMultiOptionList/AAGUIExclusiveMultiOptionList.h"
+#include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIListBoxBase/GUITreeListBox/GUITreeListBox.h"
+#include "AA29/Object/GUI/GUIComponent/GUIButton/GUIGFXButton/GUIGFXButton.h"
 
 UAATreeAndExclusiveListPanel::UAATreeAndExclusiveListPanel()
 {
-	//TreeBox = GUITreeListBox'AGP_Interface.AATreeAndExclusiveListPanel.tree';
-	//ExclusiveList = AAGUIExclusiveMultiOptionList'AGP_Interface.AATreeAndExclusiveListPanel.Exclusive';
-	//TreeHeader = GUIButton'AGP_Interface.AATreeAndExclusiveListPanel.TreeHeaderButton';
-	//ExclusiveListHeader = GUIButton'AGP_Interface.AATreeAndExclusiveListPanel.ExclusiveListHeaderButton';
-	//ScrollUp = GUIGFXButton'AGP_Interface.AATreeAndExclusiveListPanel.ScrollUpButton';
-	//ScrollDown = GUIGFXButton'AGP_Interface.AATreeAndExclusiveListPanel.ScrollDownButton';
-}
+	UAAGUIExclusiveMultiOptionList* Exclusive = NewObject<UAAGUIExclusiveMultiOptionList>(UAAGUIExclusiveMultiOptionList::StaticClass());
+	//Exclusive->OnItemSelection = AATreeAndExclusiveListPanel.InternalOnItemSelection;
+	//Exclusive->OnItemDeselection = AATreeAndExclusiveListPanel.InternalOnItemDeselection;
+	//Exclusive->OnCreateComponent=AATreeAndExclusiveListPanel.InternalOnCreateExclusiveListComponent;
+	//Exclusive->OnAdjustTop = Exclusive.InternalOnAdjustTop;
+	Exclusive->StyleName = "TreeAndExclusiveList";
+	Exclusive->WinTop = 0.105;
+	Exclusive->WinLeft = 0.5;
+	Exclusive->WinWidth = 0.5;
+	Exclusive->WinHeight = 0.86;
+	Exclusive->bBoundToParent = true;
+	Exclusive->bScaleToParent = true;
+	//Exclusive->OnClick=Exclusive.InternalOnClick;
+	//Exclusive->OnRightClick=Exclusive.InternalOnRightClick;
+	//Exclusive->OnMousePressed=Exclusive.InternalOnMousePressed;
+	//Exclusive->OnMouseRelease=Exclusive.InternalOnMouseRelease;
+	//Exclusive->OnKeyEvent=Exclusive.InternalOnKeyEvent;
+	//Exclusive->OnBeginDrag=Exclusive.InternalOnBeginDrag;
+	//Exclusive->OnEndDrag=Exclusive.InternalOnEndDrag;
+	//Exclusive->OnDragDrop=Exclusive.InternalOnDragDrop;
+	//Exclusive->OnDragEnter=Exclusive.InternalOnDragEnter;
+	//Exclusive->OnDragLeave=Exclusive.InternalOnDragLeave;
+	//Exclusive->OnDragOver=Exclusive.InternalOnDragOver;
+	UGUIButton* TreeHeaderButton = NewObject<UGUIButton>(UGUIButton::StaticClass());
+	TreeHeaderButton->StyleName = "AAGUITreeListCategory";
+	TreeHeaderButton->WinWidth = 0.5;
+	TreeHeaderButton->WinHeight = 0.07;
+	TreeHeaderButton->bBoundToParent = true;
+	//TreeHeaderButton->OnKeyEvent=TreeHeaderButton.InternalOnKeyEvent;
+	UGUIButton* ExclusiveListHeaderButton = NewObject<UGUIButton>(UGUIButton::StaticClass());
+	ExclusiveListHeaderButton->StyleName = "AAGUITreeListCategory";
+	ExclusiveListHeaderButton->WinLeft = 0.5;
+	ExclusiveListHeaderButton->WinWidth = 0.5;
+	ExclusiveListHeaderButton->WinHeight = 0.07;
+	ExclusiveListHeaderButton->bBoundToParent = true;
+	//ExclusiveListHeaderButton->OnKeyEvent=ExclusiveListHeaderButton.InternalOnKeyEvent;
+	UGUITreeListBox* tree = NewObject<UGUITreeListBox>(UGUITreeListBox::StaticClass());
+	tree->DefaultListClass = "AGP_Interface.AAGuiTreeList";
+	//tree->OnCreateComponent=tree.InternalOnCreateComponent;
+	tree->StyleName = "TreeAndExclusiveList";
+	tree->WinTop = 0.07;
+	tree->WinWidth = 0.5;
+	tree->WinHeight = 0.93;
+	tree->bBoundToParent = true;
+	tree->bScaleToParent = true;
+	//tree->OnChange=AATreeAndExclusiveListPanel.InternalOnChange;
+	UGUIGFXButton* ScrollUpButton = NewObject<UGUIGFXButton>(UGUIGFXButton::StaticClass());
+	ScrollUpButton->Graphic = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AAO_UI/MBS/t_ui_mbs_scroll_u_Mat.t_ui_mbs_scroll_u_Mat'"), NULL, LOAD_None, NULL);
+	ScrollUpButton->Position = EIconPosition::ICP_Scaled;
+	ScrollUpButton->WinTop = 0.07;
+	ScrollUpButton->WinLeft = 0.5;
+	ScrollUpButton->WinWidth = 0.5;
+	ScrollUpButton->WinHeight = 0.035;
+	ScrollUpButton->bRepeatClick = true;
+	//ScrollUpButton->OnClick=AATreeAndExclusiveListPanel.InternalOnScrollUp;
+	//ScrollUpButton->OnKeyEvent=ScrollUpButton.InternalOnKeyEvent;
+	UGUIGFXButton* ScrollDownButton = NewObject<UGUIGFXButton>(UGUIGFXButton::StaticClass());
+	ScrollDownButton->Graphic = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AAO_UI/MBS/t_ui_mbs_scroll_dow_Mat.t_ui_mbs_scroll_dow_Mat'"), NULL, LOAD_None, NULL);
+	ScrollDownButton->Position = EIconPosition::ICP_Scaled;
+	ScrollDownButton->WinTop = 0.965;
+	ScrollDownButton->WinLeft = 0.5;
+	ScrollDownButton->WinWidth = 0.5;
+	ScrollDownButton->WinHeight = 0.035;
+	ScrollDownButton->bRepeatClick = true;
+	//ScrollDownButton->OnClick=AATreeAndExclusiveListPanel.InternalOnScrollDown;
+	//ScrollDownButton->OnKeyEvent=ScrollDownButton.InternalOnKeyEvent;
 
+	TreeBox = tree;
+	ExclusiveList = Exclusive;
+	TreeHeader = TreeHeaderButton;
+	ExclusiveListHeader = ExclusiveListHeaderButton;
+	ScrollUp = ScrollUpButton;
+	ScrollDown = ScrollDownButton;
+}
 
 int32 UAATreeAndExclusiveListPanel::NumItemsInTree()
 {

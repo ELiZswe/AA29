@@ -16,4 +16,5 @@ class AA29_API UUT2Congratulations : public UUT2K3GUIPage
 public:
 	UUT2Congratulations();
 
+	void SetupPage(FString PageCaption, FString PageMessage, FString ContinueCaption, UMaterialInstance* CongratsPic);
 };

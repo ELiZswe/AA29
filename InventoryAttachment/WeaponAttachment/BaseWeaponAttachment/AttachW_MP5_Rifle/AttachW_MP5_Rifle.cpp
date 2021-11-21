@@ -2,9 +2,9 @@
 
 
 #include "AttachW_MP5_Rifle.h"
-#include "AA29/AA2_Emitter/BaseShellEmitter/Shell_9x39_Emitter/Shell_9x39_Emitter.h"
-#include "AA29/AA2_Emitter/BaseShellEmitter/Shell_9mm_BS1_Emitter/Shell_9mm_BS1_Emitter.h"
-#include "AA29/AA2_Emitter/BaseMuzzleFlashEmitter/AK74suMuzzleFlash/AK74suMuzzleFlash.h"
+#include "AA29/Object/Actor/Emitter/BaseShellEmitter/Shell_9x39_Emitter/Shell_9x39_Emitter.h"
+#include "AA29/Object/Actor/Emitter/BaseShellEmitter/Shell_9mm_BS1_Emitter/Shell_9mm_BS1_Emitter.h"
+#include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/AK74suMuzzleFlash/AK74suMuzzleFlash.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/AttachW_M4A1_Rifle_Mod/AttachW_M4A1_Rifle_Mod.h"
 
 AAttachW_MP5_Rifle::AAttachW_MP5_Rifle()

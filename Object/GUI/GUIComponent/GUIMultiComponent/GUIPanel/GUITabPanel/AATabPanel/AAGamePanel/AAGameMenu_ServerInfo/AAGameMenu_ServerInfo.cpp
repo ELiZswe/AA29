@@ -1,149 +1,114 @@
 // All the original content belonged to the US Army
 
-
 #include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/GUITabPanel/AATabPanel/AAGamePanel/AAGameMenu_ServerInfo/AAGameMenu_ServerInfo.h"
+#include "AA29/Object/GUI/GUIComponent/GUILabel/GUILabel.h"
+#include "AA29/Object/GUI/GUIComponent/GUIButton/GUIButton.h"
+#include "AA29/Object/GUI/GUIComponent/GUIImage/GUIImage.h"
 
 UAAGameMenu_ServerInfo::UAAGameMenu_ServerInfo()
 {
-	/*
-	Begin Object Class=GUIButton Name=HiddenButton
-		WinTop=0.03
-		WinLeft=0.96
-		WinWidth=0
-		WinHeight=0
-		OnClick=AAGameMenu_ServerInfo.InternalOnClick
-		OnKeyEvent=HiddenButton.InternalOnKeyEvent
-	End Object
-	*/
-	/*
-	Begin Object Class=GUIImage Name=MyBackground
-		Image=Texture'T_AA2_UI.Menu.backgroundfill'
-		ImageStyle=ISTY_Stretched
-		ImageRenderStyle=1
-		WinTop=0.01
-		WinLeft=0.01
-		WinWidth=0.98
-		WinHeight=0.89
-		RenderWeight=0
-		bBoundToParent=True
-		bScaleToParent=True
-	End Object
-	*/
-	/*
-	Begin Object Class=GUIImage Name=BG1
-		Image=Texture'T_AA2_UI.Menu.field_translucent'
-		ImageStyle=ISTY_Stretched
-		ImageRenderStyle=1
-		WinTop=0.02
-		WinLeft=0.02
-		WinWidth=0.96
-		WinHeight=0.87
-	End Object
-	*/
-	/*
-	Begin Object Class=GUILabel Name=ServerNameLabel
-		TextAlign=1
-		TextColor=(R=52,G=180,B=217,A=255)
-		TextFont="AAFontMedium"
-		WinTop=0.04
-		WinLeft=0.1
-		WinWidth=0.8
-	End Object
-	*/
-	/*
-	Begin Object Class=GUILabel Name=AdminNameLabel
-		TextAlign=1
-		TextColor=(R=255,G=255,B=255,A=255)
-		TextFont="AAFontMedium"
-		WinTop=0.07
-		WinLeft=0.1
-		WinWidth=0.8
-	End Object
-	*/
-	/*
-	Begin Object Class=GUILabel Name=ServerMOTD1Label
-		TextAlign=1
-		TextColor=(R=255,G=255,B=255,A=255)
-		TextFont="AAFontMedium"
-		WinTop=0.11
-		WinLeft=0.1
-		WinWidth=0.8
-	End Object
-	*/
-	/*
-	Begin Object Class=GUILabel Name=ServerMOTD2Label
-		TextAlign=1
-		TextColor=(R=255,G=255,B=255,A=255)
-		TextFont="AAFontMedium"
-		WinTop=0.14
-		WinLeft=0.1
-		WinWidth=0.8
-	End Object
-	*/
-	/*
-	Begin Object Class=GUILabel Name=ServerMOTD3Label
-		TextAlign=1
-		TextColor=(R=255,G=255,B=255,A=255)
-		TextFont="AAFontMedium"
-		WinTop=0.17
-		WinLeft=0.1
-		WinWidth=0.8
-	End Object
-	*/
-	/*
-	Begin Object Class=GUILabel Name=ServerMOTD4Label
-		TextAlign=1
-		TextColor=(R=255,G=255,B=255,A=255)
-		TextFont="AAFontMedium"
-		WinTop=0.2
-		WinLeft=0.1
-		WinWidth=0.8
-	End Object
-	*/
-	/*
-	Begin Object Class=GUILabel Name=GameLabel
-		TextAlign=1
-		TextColor=(R=255,G=255,B=255,A=255)
-		TextFont="AAFontMedium"
-		WinTop=0.24
-		WinLeft=0.1
-		WinWidth=0.8
-	End Object
-	*/
-	/*
-	Begin Object Class=GUILabel Name=Team1Label
-		TextAlign=1
-		TextColor=(R=50,G=30,B=150,A=255)
-		TextFont="AAFontMedium"
-		WinTop=0.27
-		WinLeft=0.1
-		WinWidth=0.8
-	End Object
-	*/
-	/*
-	Begin Object Class=GUILabel Name=Team2Label
-		TextAlign=1
-		TextColor=(R=159,G=82,B=82,A=255)
-		TextFont="AAFontMedium"
-		WinTop=0.3
-		WinLeft=0.1
-		WinWidth=0.8
-	End Object
-	*/
-	//i_Background = GUIImage'AGP_Interface.AAGameMenu_ServerInfo.MyBackground';
-	//i_Info = GUIImage'AGP_Interface.AAGameMenu_ServerInfo.BG1';
-	//l_ServerName = GUILabel'AGP_Interface.AAGameMenu_ServerInfo.ServerNameLabel';
-	//l_AdminName = GUILabel'AGP_Interface.AAGameMenu_ServerInfo.AdminNameLabel';
-	//l_MOTDLine1 = GUILabel'AGP_Interface.AAGameMenu_ServerInfo.ServerMOTD1Label';
-	//l_MOTDLine2 = GUILabel'AGP_Interface.AAGameMenu_ServerInfo.ServerMOTD2Label';
-	//l_MOTDLine3 = GUILabel'AGP_Interface.AAGameMenu_ServerInfo.ServerMOTD3Label';
-	//l_MOTDLine4 = GUILabel'AGP_Interface.AAGameMenu_ServerInfo.ServerMOTD4Label';
-	//l_Game = GUILabel'AGP_Interface.AAGameMenu_ServerInfo.GameLabel';
-	//l_Teams(0) = GUILabel'AGP_Interface.AAGameMenu_ServerInfo.Team1Label';
-	//l_Teams(1) = GUILabel'AGP_Interface.AAGameMenu_ServerInfo.Team2Label';
-	//b_Hidden = GUIButton'AGP_Interface.AAGameMenu_ServerInfo.HiddenButton';
-	//OnPreDraw = AAGameMenu_ServerInfo.InternalOnPreDraw;
+	UGUIButton* HiddenButton = NewObject<UGUIButton>(UGUIButton::StaticClass());
+	HiddenButton->WinTop = 0.03;
+	HiddenButton->WinLeft = 0.96;
+	HiddenButton->WinWidth = 0;
+	HiddenButton->WinHeight = 0;
+	//HiddenButton->OnClick=AAGameMenu_ServerInfo.InternalOnClick;
+	//HiddenButton->OnKeyEvent=HiddenButton.InternalOnKeyEvent;
+	UGUIImage* MyBackground = NewObject<UGUIImage>(UGUIImage::StaticClass());
+	MyBackground->Image = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/backgroundfil_Mat.backgroundfil_Mat'"), NULL, LOAD_None, NULL);
+	MyBackground->ImageStyle = EImgStyle::ISTY_Stretched;
+	MyBackground->ImageRenderStyle = EMenuRenderStyle::MSTY_Normal;
+	MyBackground->WinTop = 0.01;
+	MyBackground->WinLeft = 0.01;
+	MyBackground->WinWidth = 0.98;
+	MyBackground->WinHeight = 0.89;
+	MyBackground->RenderWeight = 0;
+	MyBackground->bBoundToParent = true;
+	MyBackground->bScaleToParent = true;
+	UGUIImage* BG1 = NewObject<UGUIImage>(UGUIImage::StaticClass());
+	BG1->Image = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/field_translucen_Mat.field_translucen_Mat'"), NULL, LOAD_None, NULL);
+	BG1->ImageStyle = EImgStyle::ISTY_Stretched;
+	BG1->ImageRenderStyle = EMenuRenderStyle::MSTY_Normal;
+	BG1->WinTop = 0.02;
+	BG1->WinLeft = 0.02;
+	BG1->WinWidth = 0.96;
+	BG1->WinHeight = 0.87;
+	UGUILabel* ServerNameLabel = NewObject<UGUILabel>(UGUILabel::StaticClass());
+	ServerNameLabel->TextAlign = ETextAlign::TXTA_Center;
+	ServerNameLabel->TextColor = FColor(52, 180, 217, 255);
+	ServerNameLabel->TextFont = "AAFontMedium";
+	ServerNameLabel->WinTop = 0.04;
+	ServerNameLabel->WinLeft = 0.1;
+	ServerNameLabel->WinWidth = 0.8;
+	UGUILabel* AdminNameLabel = NewObject<UGUILabel>(UGUILabel::StaticClass());
+	AdminNameLabel->TextAlign = ETextAlign::TXTA_Center;
+	AdminNameLabel->TextColor = FColor(255, 255, 255, 255);
+	AdminNameLabel->TextFont = "AAFontMedium";
+	AdminNameLabel->WinTop = 0.07;
+	AdminNameLabel->WinLeft = 0.1;
+	AdminNameLabel->WinWidth = 0.8;
+	UGUILabel* ServerMOTD1Label = NewObject<UGUILabel>(UGUILabel::StaticClass());
+	ServerMOTD1Label->TextAlign = ETextAlign::TXTA_Center;
+	ServerMOTD1Label->TextColor = FColor(255, 255, 255, 255);
+	ServerMOTD1Label->TextFont = "AAFontMedium";
+	ServerMOTD1Label->WinTop = 0.11;
+	ServerMOTD1Label->WinLeft = 0.1;
+	ServerMOTD1Label->WinWidth = 0.8;
+	UGUILabel* ServerMOTD2Label = NewObject<UGUILabel>(UGUILabel::StaticClass());
+	ServerMOTD2Label->TextAlign = ETextAlign::TXTA_Center;
+	ServerMOTD2Label->TextColor = FColor(255, 255, 255, 255);
+	ServerMOTD2Label->TextFont = "AAFontMedium";
+	ServerMOTD2Label->WinTop = 0.14;
+	ServerMOTD2Label->WinLeft = 0.1;
+	ServerMOTD2Label->WinWidth = 0.8;
+	UGUILabel* ServerMOTD3Label = NewObject<UGUILabel>(UGUILabel::StaticClass());
+	ServerMOTD3Label->TextAlign = ETextAlign::TXTA_Center;
+	ServerMOTD3Label->TextColor = FColor(255, 255, 255, 255);
+	ServerMOTD3Label->TextFont = "AAFontMedium";
+	ServerMOTD3Label->WinTop = 0.17;
+	ServerMOTD3Label->WinLeft = 0.1;
+	ServerMOTD3Label->WinWidth = 0.8;
+	UGUILabel* ServerMOTD4Label = NewObject<UGUILabel>(UGUILabel::StaticClass());
+	ServerMOTD4Label->TextAlign = ETextAlign::TXTA_Center;
+	ServerMOTD4Label->TextColor = FColor(255, 255, 255, 255);
+	ServerMOTD4Label->TextFont = "AAFontMedium";
+	ServerMOTD4Label->WinTop = 0.2;
+	ServerMOTD4Label->WinLeft = 0.1;
+	ServerMOTD4Label->WinWidth = 0.8;
+	UGUILabel* GameLabel = NewObject<UGUILabel>(UGUILabel::StaticClass());
+	GameLabel->TextAlign = ETextAlign::TXTA_Center;
+	GameLabel->TextColor = FColor(255, 255, 255, 255);
+	GameLabel->TextFont = "AAFontMedium";
+	GameLabel->WinTop = 0.24;
+	GameLabel->WinLeft = 0.1;
+	GameLabel->WinWidth = 0.8;
+	UGUILabel* Team1Label = NewObject<UGUILabel>(UGUILabel::StaticClass());
+	Team1Label->TextAlign = ETextAlign::TXTA_Center;
+	Team1Label->TextColor = FColor(50, 30, 150, 255);
+	Team1Label->TextFont = "AAFontMedium";
+	Team1Label->WinTop = 0.27;
+	Team1Label->WinLeft = 0.1;
+	Team1Label->WinWidth = 0.8;
+	UGUILabel* Team2Label = NewObject<UGUILabel>(UGUILabel::StaticClass());
+	Team2Label->TextAlign = ETextAlign::TXTA_Center;
+	Team2Label->TextColor = FColor(159, 82, 82, 255);
+	Team2Label->TextFont = "AAFontMedium";
+	Team2Label->WinTop = 0.3;
+	Team2Label->WinLeft = 0.1;
+	Team2Label->WinWidth = 0.8;
+	i_Background = MyBackground;
+	i_Info = BG1;
+	l_ServerName = ServerNameLabel;
+	l_AdminName = AdminNameLabel;
+	l_MOTDLine1 = ServerMOTD1Label;
+	l_MOTDLine2 = ServerMOTD2Label;
+	l_MOTDLine3 = ServerMOTD3Label;
+	l_MOTDLine4 = ServerMOTD4Label;
+	l_Game = GameLabel;
+	l_Teams = { Team1Label,Team2Label };
+	b_Hidden = HiddenButton;
 
+	//OnPreDraw = AAGameMenu_ServerInfo.InternalOnPreDraw;
 }
 
 void UAAGameMenu_ServerInfo::InitComponent(UGUIController* MyController, UGUIComponent* MyOwner)

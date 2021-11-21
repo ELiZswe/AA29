@@ -8,7 +8,7 @@
 #include "AA29/BaseAmmoRound/AmmoRound_545x39_Bullet.h"
 #include "AA29/Pickup/AGP_WeaponPickup/PickupW_AK74su_Rifle/PickupW_AK74su_Rifle.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamage545mm.h"
-#include "AA29/AA2_Emitter/BaseMuzzleFlashEmitter/SuppressorMuzzleFlash_1P/SuppressorMuzzleFlash_1P.h"
+#include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/SuppressorMuzzleFlash_1P/SuppressorMuzzleFlash_1P.h"
 
 AWeapon_AK74su_Rifle::AWeapon_AK74su_Rifle()
 {

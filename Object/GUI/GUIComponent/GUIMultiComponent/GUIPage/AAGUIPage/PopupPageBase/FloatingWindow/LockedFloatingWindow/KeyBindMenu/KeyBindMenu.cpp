@@ -7,6 +7,8 @@
 
 UKeyBindMenu::UKeyBindMenu()
 {
+	AllKeys.SetNum(256);
+
 	UGUIImage* BindBk = NewObject<UGUIImage>(UGUIImage::StaticClass());
 	BindBk->Image = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/backgroundfil_Mat.backgroundfil_Mat'"), NULL, LOAD_None, NULL);
 	BindBk->ImageStyle = EImgStyle::ISTY_Stretched;

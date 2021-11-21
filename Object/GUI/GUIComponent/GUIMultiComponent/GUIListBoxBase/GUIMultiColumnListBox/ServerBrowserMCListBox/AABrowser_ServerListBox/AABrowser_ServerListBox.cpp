@@ -295,7 +295,7 @@ bool UAABrowser_ServerListBox::InternalOnOpen(UGUIContextMenu* Sender)
 {
 	/*
 	local IpDrv.ServerBrowserBase sbBase;
-	local ServerBrowserBase.GameSpyServerItem ServerItem;
+	local FGameSpyServerItem ServerItem;
 	local int ContextIndex;
 	local int ChoiceIndex;
 	Sender.ContextItems.remove(0, Sender.ContextItems.Length);
@@ -357,7 +357,7 @@ void UAABrowser_ServerListBox::InternalOnClick(UGUIContextMenu* Sender, int32 In
 	/*
 	local int idx;
 	local IpDrv.ServerBrowserBase sbBase;
-	local ServerBrowserBase.GameSpyServerItem ServerItem;
+	local FGameSpyServerItem ServerItem;
 	local AABrowser_ServersList L;
 	local Favorites.FavoriteServer FavoriteServer;
 	local FString IPAddress;

@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/WeaponAttachment.h"
-#include "AA29/AA2_Emitter/BaseMuzzleFlashEmitter/BaseMuzzleFlashEmitter.h"
+#include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/BaseMuzzleFlashEmitter.h"
 #include "AA29/AA29.h"
 #include "BaseWeaponAttachment.generated.h"
 

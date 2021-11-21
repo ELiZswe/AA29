@@ -5,5 +5,6 @@
 
 UUT2K4GUIPage::UUT2K4GUIPage()
 {
-
+	WinTop = 0.375;
+	WinHeight = 0.5;
 }

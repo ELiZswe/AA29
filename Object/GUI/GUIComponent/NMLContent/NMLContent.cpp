@@ -6,7 +6,7 @@
 UNMLContent::UNMLContent()
 {
 	DynamicContentPath = "DynamicContent\\NML";
-	//NMLStatusIconTexture = Texture'T_AAO_UI.GUI.t_ui_gui_new_nml';
+	NMLStatusIconTexture = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AAO_UI/GUI/t_ui_gui_new_nml_Mat.t_ui_gui_new_nml_Mat'"), NULL, LOAD_None, NULL);
 }
 
 void UNMLContent::dTargetForLinks(UGUIComponent* Sender)

@@ -7,3 +7,17 @@ UGUIVertScrollZone::UGUIVertScrollZone()
 {
 
 }
+
+bool UGUIVertScrollZone::InternalOnClick(UGUIComponent* Sender)
+{
+	/*
+	float Perc = 0;
+	if (!IsInBounds())
+	{
+		return false;
+	}
+	Perc = ((Controller.MouseY - ActualTop()) / ActualHeight());
+	OnScrollZoneClick(Perc);
+	*/
+	return true;
+}

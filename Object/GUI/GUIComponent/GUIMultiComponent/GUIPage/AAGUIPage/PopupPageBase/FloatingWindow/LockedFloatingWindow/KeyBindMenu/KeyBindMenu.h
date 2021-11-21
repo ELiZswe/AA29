@@ -22,7 +22,7 @@ class AA29_API UKeyBindMenu : public ULockedFloatingWindow
 public:
 	UKeyBindMenu();
 
-	UPROPERTY(EditAnywhere)			FInputKeyInfo						AllKeys;				//var() editconst noexport InputKeyInfo AllKeys[255];
+	UPROPERTY(EditAnywhere)			TArray<FInputKeyInfo>				AllKeys;				//var() editconst noexport InputKeyInfo AllKeys[255];
 	UPROPERTY(EditAnywhere)			TArray<FKeyBindMenyKeyBinding>		Bindings;				//var() TArray<KeyBinding> Bindings;       //ELIZ:   Name Conflict with another class
 	UPROPERTY(EditAnywhere)			bool								bPendingRawInput;		//var() bool bPendingRawInput;
 	UPROPERTY(EditAnywhere)			int32								NewIndex;				//var() editconst noexport int32 NewIndex;
@@ -30,18 +30,18 @@ public:
 	UPROPERTY(EditAnywhere)			UGUIStyles*							SelStyle;				//var() editconst noexport XInterface.GUIStyles SelStyle;
 	UPROPERTY(EditAnywhere)			UGUIStyles*							SectionStyle;			//var() editconst noexport XInterface.GUIStyles SectionStyle;
 	UPROPERTY(EditAnywhere)			FString								SectionStyleName;		//var() FString SectionStyleName;
-	UPROPERTY(EditAnywhere)			UGUIMultiColumnListBox* lb_Binds;				//var() automated XInterface.GUIMultiColumnListBox lb_Binds;
-	UPROPERTY(EditAnywhere)			UGUIMultiColumnList*	li_Binds;				//var() automated XInterface.GUIMultiColumnList li_Binds;
-	UPROPERTY(EditAnywhere)			UGUIImage*				i_Bk;					//var() automated XInterface.GUIImage i_Bk;
-	UPROPERTY(EditAnywhere)			UGUILabel*				l_Hint;					//var() automated XInterface.GUILabel l_Hint;
-	UPROPERTY(EditAnywhere)			TArray<FString>			Headings;				//var() localized FString Headings[4];
-	UPROPERTY(EditAnywhere)			float					SectionLabelMargin;		//var() float SectionLabelMargin;
-	UPROPERTY(EditAnywhere)			FString					PageCaption;			//var() localized FString PageCaption;
-	UPROPERTY(EditAnywhere)			FString					SpeechLabel;			//var() localized FString SpeechLabel;
-	UPROPERTY(EditAnywhere)			FString					CloseCaption;			//var() localized FString CloseCaption;
-	UPROPERTY(EditAnywhere)			FString					ResetCaption;			//var() localized FString ResetCaption;
-	UPROPERTY(EditAnywhere)			FString					ClearCaption;			//var() localized FString ClearCaption;
-	UPROPERTY(EditAnywhere)			FString					ActionText;				//var() localized FString ActionText;
+	UPROPERTY(EditAnywhere)			UGUIMultiColumnListBox*				lb_Binds;				//var() automated XInterface.GUIMultiColumnListBox lb_Binds;
+	UPROPERTY(EditAnywhere)			UGUIMultiColumnList*				li_Binds;				//var() automated XInterface.GUIMultiColumnList li_Binds;
+	UPROPERTY(EditAnywhere)			UGUIImage*							i_Bk;					//var() automated XInterface.GUIImage i_Bk;
+	UPROPERTY(EditAnywhere)			UGUILabel*							l_Hint;					//var() automated XInterface.GUILabel l_Hint;
+	UPROPERTY(EditAnywhere)			TArray<FString>						Headings;				//var() localized FString Headings[4];
+	UPROPERTY(EditAnywhere)			float								SectionLabelMargin;		//var() float SectionLabelMargin;
+	UPROPERTY(EditAnywhere)			FString								PageCaption;			//var() localized FString PageCaption;
+	UPROPERTY(EditAnywhere)			FString								SpeechLabel;			//var() localized FString SpeechLabel;
+	UPROPERTY(EditAnywhere)			FString								CloseCaption;			//var() localized FString CloseCaption;
+	UPROPERTY(EditAnywhere)			FString								ResetCaption;			//var() localized FString ResetCaption;
+	UPROPERTY(EditAnywhere)			FString								ClearCaption;			//var() localized FString ClearCaption;
+	UPROPERTY(EditAnywhere)			FString								ActionText;				//var() localized FString ActionText;
 
 	void InitComponent(UGUIController* MyController, UGUIComponent* MyOwner);
 	void InitializeBindingsArray();

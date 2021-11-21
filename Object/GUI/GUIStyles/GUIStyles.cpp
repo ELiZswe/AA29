@@ -5,6 +5,19 @@
 
 UGUIStyles::UGUIStyles()
 {
+	AlternateKeyName.SetNum(2);
+	FontNames.SetNum(15);
+	Fonts.SetNum(15);
+	FontColors.SetNum(5);
+	FontBKColors.SetNum(5);
+	ImgColors.SetNum(5);
+	RStyles.SetNum(5);
+	Images.SetNum(5);
+	ImgStyle.SetNum(5);
+	ImgWidths.SetNum(5);
+	ImgHeights.SetNum(5);
+	BorderOffsets.SetNum(4);
+
 	FontNames = { "UT2SmallFont", "UT2SmallFont", "UT2SmallFont", "UT2SmallFont", "UT2SmallFont", "UT2MenuFont", "UT2MenuFont", "UT2MenuFont", "UT2MenuFont", "UT2MenuFont", "UT2LargeFont", "UT2LargeFont", "UT2LargeFont", "UT2LargeFont", "UT2LargeFont" };
 	FontColors = { FColor(64, 0, 0, 255), FColor(64, 0, 0, 255), FColor(80, 32, 32, 255), FColor(80, 32, 32, 255),  FColor(128, 0, 0, 255) };
 	FontBKColors = { FColor(0, 0, 0, 255), FColor(0, 0, 0, 255), FColor(0, 0, 0, 255), FColor(0, 0, 0, 255), FColor(0, 0, 0, 255) };

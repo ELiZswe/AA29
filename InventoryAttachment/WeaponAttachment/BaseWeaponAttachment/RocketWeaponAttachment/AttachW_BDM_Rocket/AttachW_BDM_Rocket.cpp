@@ -3,7 +3,7 @@
 
 #include "AttachW_BDM_Rocket.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/RocketWeaponAttachment/AttachW_RPG7_Rocket/AttachW_PG7VR_Rocket/AttachW_PG7VR_Rocket.h"
-#include "AA29/AA2_Emitter/BaseMuzzleFlashEmitter/BDMMuzzleFlash/BDMMuzzleFlash.h"
+#include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/BDMMuzzleFlash/BDMMuzzleFlash.h"
 
 AAttachW_BDM_Rocket::AAttachW_BDM_Rocket()
 {

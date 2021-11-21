@@ -6,9 +6,11 @@
 USTY_AACheckBox::USTY_AACheckBox()
 {
 	KeyName = "CheckBox";
-		//Images[0] = Texture'T_AA2_UI.Menu.box_check'
-		//Images[1] = Texture'T_AA2_UI.Menu.box_check_rollover'
-		//Images[2] = Texture'T_AA2_UI.Menu.box_check'
-		//Images[3] = Texture'T_AA2_UI.Menu.box_check'
-		//Images[4] = Texture'T_AA2_UI.Menu.box_check_nonavailable'
+	Images = {
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/box_check_Mat.box_check_Mat'"), NULL, LOAD_None, NULL),
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/box_check_rollover_Mat.box_check_rollover_Mat'"), NULL, LOAD_None, NULL),
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/box_check_Mat.box_check_Mat'"), NULL, LOAD_None, NULL),
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/box_check_Mat.box_check_Mat'"), NULL, LOAD_None, NULL),
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/box_check_nonavailable_Mat.box_check_nonavailable_Mat'"), NULL, LOAD_None, NULL)
+	};
 }

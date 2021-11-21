@@ -7,7 +7,7 @@
 #include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_556mm_200_Belt/Ammo_556mm_200_Belt.h"
 #include "AA29/BaseScope/ScopeW_M249_SAW.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamage556mm_SAW.h"
-#include "AA29/AA2_Emitter/BaseMuzzleFlashEmitter/M16A2MuzzleFlash_1P/M16A2MuzzleFlash_1P.h"
+#include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/M16A2MuzzleFlash_1P/M16A2MuzzleFlash_1P.h"
 
 AWeapon_M249_SAW::AWeapon_M249_SAW()
 	{

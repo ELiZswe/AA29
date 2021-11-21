@@ -1,21 +1,19 @@
 // All the original content belonged to the US Army
 
-
 #include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/GUITabPanel/AATabPanel/AAMainSubPanel/AABackgroundSubPanel/AADeploy_Overview/AADeploy_Overview.h"
+#include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIContentBox/GUIContentBox.h"
 
 UAADeploy_Overview::UAADeploy_Overview()
 {
-	/*
 	UGUIContentBox* MyPanel = NewObject<UGUIContentBox>(UGUIContentBox::StaticClass());
-	MyPanel->ItemSpacing=0.02;
-	MyPanel->bScaleItemsToWidth=true;
-	MyPanel->WinTop=0.06625;
-	MyPanel->WinHeight=0.8825;
-	MyPanel->RenderWeight=0.6;
-	MyPanel->bBoundToParent=true;
-	MyPanel->bScaleToParent=true;
-	*/
-	//guicbPanel = GUIContentBox'AGP_Interface.AADeploy_Overview.MyPanel';
+	MyPanel->ItemSpacing = 0.02;
+	MyPanel->bScaleItemsToWidth = true;
+	MyPanel->WinTop = 0.06625;
+	MyPanel->WinHeight = 0.8825;
+	MyPanel->RenderWeight = 0.6;
+	MyPanel->bBoundToParent = true;
+	MyPanel->bScaleToParent = true;
+	guicbPanel = MyPanel;
 	DefaultPage = "/x_deployment_overview.nml";
 	PanelCaption = "America's Army Deployment Overview";
 }

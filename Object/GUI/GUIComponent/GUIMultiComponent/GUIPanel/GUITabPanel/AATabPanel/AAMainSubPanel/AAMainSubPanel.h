@@ -6,11 +6,8 @@
 #include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/GUITabPanel/AATabPanel/AATabPanel.h"
 #include "AAMainSubPanel.generated.h"
 
-class UGUIImage;
+class UAAGUITabControl;
 
-/**
- * 
- */
 UCLASS()
 class AA29_API UAAMainSubPanel : public UAATabPanel
 {
@@ -18,10 +15,10 @@ class AA29_API UAAMainSubPanel : public UAATabPanel
 public:
 	UAAMainSubPanel();
 
-	UPROPERTY(EditAnywhere)			UGUIImage*		c_Tab;						//var() automated AAGUITabControl c_Tab;
-	UPROPERTY()						TArray<FString>	PanelClasses;				//var TArray<FString> PanelClasses;
-	UPROPERTY()						TArray<FString>	PanelCaptions;				//var localized TArray<FString> PanelCaptions;
-	UPROPERTY()						TArray<FString>	PanelHints;					//var localized TArray<FString> PanelHints;
+	UPROPERTY(EditAnywhere)			UAAGUITabControl*		c_Tab;						//var() automated AAGUITabControl c_Tab;
+	UPROPERTY()						TArray<FString>			PanelClasses;				//var TArray<FString> PanelClasses;
+	UPROPERTY()						TArray<FString>			PanelCaptions;				//var localized TArray<FString> PanelCaptions;
+	UPROPERTY()						TArray<FString>			PanelHints;					//var localized TArray<FString> PanelHints;
 
 	void InitComponent(UGUIController* MyController, UGUIComponent* MyOwner);
 };

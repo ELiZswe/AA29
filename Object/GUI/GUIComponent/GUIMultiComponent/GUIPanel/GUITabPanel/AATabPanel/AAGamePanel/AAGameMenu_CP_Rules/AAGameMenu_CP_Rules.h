@@ -60,6 +60,7 @@ public:
 	UPROPERTY(EditAnywhere)					UmoComboBox*				mcbTimeLimit;							//var() XInterface.moComboBox mcbTimeLimit;
 	UPROPERTY(EditAnywhere)					UmoComboBox*				mcbRoundsPerMatch;						//var() XInterface.moComboBox mcbRoundsPerMatch;
 	UPROPERTY(EditAnywhere)					UmoCheckBox*				sInsmchkbEnableCheatstructions;			//var() XInterface.moCheckBox mchkbEnableCheats;
+	UPROPERTY(EditAnywhere)					UmoCheckBox*				mchkbEnableCheats;						//var() automated XInterface.moCheckBox mchkbEnableCheats;
 
 	void InitComponent(UGUIController* MyController, UGUIComponent* MyOwner);
 	void InitializeDataFields();

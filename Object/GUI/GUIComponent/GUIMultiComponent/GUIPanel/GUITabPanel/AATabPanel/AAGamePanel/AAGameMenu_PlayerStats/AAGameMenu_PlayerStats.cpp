@@ -1,21 +1,94 @@
 // All the original content belonged to the US Army
 
-
 #include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/GUITabPanel/AATabPanel/AAGamePanel/AAGameMenu_PlayerStats/AAGameMenu_PlayerStats.h"
+#include "AA29/Object/GUI/GUIComponent/GUILabel/GUILabel.h"
+#include "AA29/Object/GUI/GUIComponent/GUIButton/GUIButton.h"
+#include "AA29/Object/GUI/GUIComponent/GUIImage/GUIImage.h"
 
 UAAGameMenu_PlayerStats::UAAGameMenu_PlayerStats()
 {
-	//i_Background = GUIImage'AGP_Interface.AAGameMenu_PlayerStats.MyBackground';
-	//i_Info = GUIImage'AGP_Interface.AAGameMenu_PlayerStats.BG1';
-	//l_Title = GUILabel'AGP_Interface.AAGameMenu_PlayerStats.TitleLabel';
-	//l_ShotsFired = GUILabel'AGP_Interface.AAGameMenu_PlayerStats.ShotsFiredLabel';
-	//l_ShotsHit = GUILabel'AGP_Interface.AAGameMenu_PlayerStats.ShotsHitLabel';
-	//l_GrenadesThrown = GUILabel'AGP_Interface.AAGameMenu_PlayerStats.GrenadesThrownLabel';
-	//l_TimeInfo = GUILabel'AGP_Interface.AAGameMenu_PlayerStats.TimePlayedInfoLabel';
-	//l_RoundsInfo = GUILabel'AGP_Interface.AAGameMenu_PlayerStats.RoundInfoLabel';
-	//l_ObjectiveInfo = GUILabel'AGP_Interface.AAGameMenu_PlayerStats.ObjectiveInfoLabel';
-	//b_Hidden = GUIButton'AGP_Interface.AAGameMenu_PlayerStats.HiddenButton';
-	//__OnPreDraw__Delegate = "AAGameMenu_PlayerStats.InternalOnPreDraw";
+	UGUIButton* HiddenButton = NewObject<UGUIButton>(UGUIButton::StaticClass());
+	HiddenButton->WinTop = 0.03;
+	HiddenButton->WinLeft = 0.96;
+	HiddenButton->WinWidth = 0;
+	HiddenButton->WinHeight = 0;
+	//HiddenButton->OnClick=AAGameMenu_PlayerStats.InternalOnClick;
+	//HiddenButton->OnKeyEvent=HiddenButton.InternalOnKeyEvent;
+	UGUIImage* MyBackground = NewObject<UGUIImage>(UGUIImage::StaticClass());
+	MyBackground->Image = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/backgroundfil_Mat.backgroundfil_Mat'"), NULL, LOAD_None, NULL);
+	MyBackground->ImageStyle = EImgStyle::ISTY_Stretched;
+	MyBackground->ImageRenderStyle = EMenuRenderStyle::MSTY_Normal;
+	MyBackground->WinTop = 0.01;
+	MyBackground->WinLeft = 0.01;
+	MyBackground->WinWidth = 0.98;
+	MyBackground->WinHeight = 0.89;
+	MyBackground->RenderWeight = 0;
+	MyBackground->bBoundToParent = true;
+	MyBackground->bScaleToParent = true;
+	UGUIImage* BG1 = NewObject<UGUIImage>(UGUIImage::StaticClass());
+	BG1->Image = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/field_translucen_Mat.field_translucen_Mat'"), NULL, LOAD_None, NULL);
+	BG1->ImageStyle = EImgStyle::ISTY_Stretched;
+	BG1->ImageRenderStyle = EMenuRenderStyle::MSTY_Normal;
+	BG1->WinTop = 0.02;
+	BG1->WinLeft = 0.02;
+	BG1->WinWidth = 0.96;
+	BG1->WinHeight = 0.87;
+	UGUILabel* TitleLabel = NewObject<UGUILabel>(UGUILabel::StaticClass());
+	TitleLabel->Caption = "Current Match Player Statistics";
+	TitleLabel->TextAlign = ETextAlign::TXTA_Center;
+	TitleLabel->TextColor = FColor(52, 180, 217, 255);
+	TitleLabel->TextFont = "AAFontMedium";
+	TitleLabel->WinTop = 0.1;
+	TitleLabel->WinLeft = 0.1;
+	TitleLabel->WinWidth = 0.8;
+	UGUILabel* ShotsFiredLabel = NewObject<UGUILabel>(UGUILabel::StaticClass());
+	ShotsFiredLabel->TextColor = FColor(255, 255, 255, 255);
+	ShotsFiredLabel->TextFont = "AAFontMedium";
+	ShotsFiredLabel->WinTop = 0.15;
+	ShotsFiredLabel->WinLeft = 0.1;
+	ShotsFiredLabel->WinWidth = 0.8;
+	UGUILabel* ShotsHitLabel = NewObject<UGUILabel>(UGUILabel::StaticClass());
+	ShotsHitLabel->TextColor = FColor(255, 255, 255, 255);
+	ShotsHitLabel->TextFont = "AAFontMedium";
+	ShotsHitLabel->WinTop = 0.2;
+	ShotsHitLabel->WinLeft = 0.1;
+	ShotsHitLabel->WinWidth = 0.8;
+	UGUILabel* GrenadesThrownLabel = NewObject<UGUILabel>(UGUILabel::StaticClass());
+	GrenadesThrownLabel->TextColor = FColor(255, 255, 255, 255);
+	GrenadesThrownLabel->TextFont = "AAFontMedium";
+	GrenadesThrownLabel->WinTop = 0.25;
+	GrenadesThrownLabel->WinLeft = 0.1;
+	GrenadesThrownLabel->WinWidth = 0.8;
+	UGUILabel* TimePlayedInfoLabel = NewObject<UGUILabel>(UGUILabel::StaticClass());
+	TimePlayedInfoLabel->TextColor = FColor(255, 255, 255, 255);
+	TimePlayedInfoLabel->TextFont = "AAFontMedium";
+	TimePlayedInfoLabel->WinTop = 0.3;
+	TimePlayedInfoLabel->WinLeft = 0.1;
+	TimePlayedInfoLabel->WinWidth = 0.8;
+	UGUILabel* RoundInfoLabel = NewObject<UGUILabel>(UGUILabel::StaticClass());
+	RoundInfoLabel->TextColor = FColor(255, 255, 255, 255);
+	RoundInfoLabel->TextFont = "AAFontMedium";
+	RoundInfoLabel->WinTop = 0.35;
+	RoundInfoLabel->WinLeft = 0.1;
+	RoundInfoLabel->WinWidth = 0.8;
+	UGUILabel* ObjectiveInfoLabel = NewObject<UGUILabel>(UGUILabel::StaticClass());
+	ObjectiveInfoLabel->TextColor = FColor(255, 255, 255, 255);
+	ObjectiveInfoLabel->TextFont = "AAFontMedium";
+	ObjectiveInfoLabel->WinTop = 0.4;
+	ObjectiveInfoLabel->WinLeft = 0.1;
+	ObjectiveInfoLabel->WinWidth = 0.8;
+	i_Background = MyBackground;
+	i_Info = BG1;
+	l_Title = TitleLabel;
+	l_ShotsFired = ShotsFiredLabel;
+	l_ShotsHit = ShotsHitLabel;
+	l_GrenadesThrown = GrenadesThrownLabel;
+	l_TimeInfo = TimePlayedInfoLabel;
+	l_RoundsInfo = RoundInfoLabel;
+	l_ObjectiveInfo = ObjectiveInfoLabel;
+	b_Hidden = HiddenButton;
+
+	//OnPreDraw = AAGameMenu_PlayerStats.InternalOnPreDraw;
 }
 
 void UAAGameMenu_PlayerStats::InitComponent(UGUIController* MyController, UGUIComponent* MyOwner)

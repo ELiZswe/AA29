@@ -9,7 +9,7 @@
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/RocketWeaponAttachment/AttachW_RPG7_Rocket/AttachW_RPG7_Rocket.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamageLargeArms.h"
 #include "AA29/DamageType/AGP_DamageType/ExplosionDamage/BackBlastDamage/BackBlastDamage.h"
-#include "AA29/AA2_Emitter/BaseMuzzleFlashEmitter/RPG7MuzzleFlash_1P/RPG7MuzzleFlash_1P.h"
+#include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/RPG7MuzzleFlash_1P/RPG7MuzzleFlash_1P.h"
 AWeapon_RPG7_Rocket::AWeapon_RPG7_Rocket()
 {
 	_RecoilDirInfo.MeanDirection		= FVector(0, 0, 0);

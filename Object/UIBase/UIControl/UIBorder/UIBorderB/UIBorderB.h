@@ -15,4 +15,6 @@ class AA29_API UUIBorderB : public UUIBorder
 	GENERATED_BODY()
 public:
 	UUIBorderB();
+
+	void ScaleControl(UCanvas* Canvas);
 };

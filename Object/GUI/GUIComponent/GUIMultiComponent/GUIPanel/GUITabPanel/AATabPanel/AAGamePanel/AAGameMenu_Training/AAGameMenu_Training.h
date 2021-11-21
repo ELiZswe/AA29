@@ -8,6 +8,7 @@
 
 class UGUIScrollTextBox;
 class UGUIImage;
+class UGUILabel;
 
 UCLASS()
 class AA29_API UAAGameMenu_Training : public UAAGamePanel
@@ -16,11 +17,9 @@ class AA29_API UAAGameMenu_Training : public UAAGamePanel
 public:
 	UAAGameMenu_Training();
 
-
-
 	UPROPERTY(EditAnywhere)			UGUIImage* i_Background;				//var() automated XInterface.GUIImage i_Background;
-	UPROPERTY(EditAnywhere)			UGUIImage* l_Tour;						//var() automated XInterface.GUILabel l_Tour;
-	UPROPERTY(EditAnywhere)			UGUIImage* l_Mission;					//var() automated XInterface.GUILabel l_Mission;
+	UPROPERTY(EditAnywhere)			UGUILabel* l_Tour;						//var() automated XInterface.GUILabel l_Tour;
+	UPROPERTY(EditAnywhere)			UGUILabel* l_Mission;					//var() automated XInterface.GUILabel l_Mission;
 	UPROPERTY(EditAnywhere)			UGUIImage* i_MapBG;						//var() automated XInterface.GUIImage i_MapBG;
 	UPROPERTY(EditAnywhere)			UGUIImage* i_TourBG;					//var() automated XInterface.GUIImage i_TourBG;
 	UPROPERTY(EditAnywhere)			UGUIImage* i_DescriptionBG;				//var() automated XInterface.GUIImage i_DescriptionBG;
@@ -30,7 +29,6 @@ public:
 	UPROPERTY()						int32 TourID;							//var int32 TourID;
 	UPROPERTY()						int32 MissionID;						//var int32 MissionID;
 	UPROPERTY()						FString BriefingDir;					//var FString BriefingDir;
-
 
 	void InitComponent(UGUIController* MyController, UGUIComponent* MyOwner);
 	void UpdateMissionStatus();

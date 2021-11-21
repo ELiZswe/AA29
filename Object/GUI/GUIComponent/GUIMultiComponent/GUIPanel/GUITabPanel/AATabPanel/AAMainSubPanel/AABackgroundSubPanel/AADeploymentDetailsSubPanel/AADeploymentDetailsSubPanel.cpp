@@ -1,81 +1,80 @@
 // All the original content belonged to the US Army
 
-
 #include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/GUITabPanel/AATabPanel/AAMainSubPanel/AABackgroundSubPanel/AADeploymentDetailsSubPanel/AADeploymentDetailsSubPanel.h"
+#include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIMenuOption/moComboBox/moComboBox.h"
+#include "AA29/Object/GUI/GUIComponent/GUIButton/GUIButton.h"
+#include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIContentBox/GUIContentBox.h"
 
 UAADeploymentDetailsSubPanel::UAADeploymentDetailsSubPanel()
 {
-	/*
 	UmoComboBox* MyTourCombo = NewObject<UmoComboBox>(UmoComboBox::StaticClass());
-	MyTourCombo->bReadOnly=true;
-	MyTourCombo->CaptionWidth=0;
-	MyTourCombo->OnCreateComponent=MyTourCombo.InternalOnCreateComponent;
-	MyTourCombo->IniOption="@Internal";
-	MyTourCombo->Hint="Review Missions";
-	MyTourCombo->WinTop=0.06625;
-	MyTourCombo->WinLeft=0.3;
-	MyTourCombo->WinWidth=0.4;
-	MyTourCombo->bStandardized=false;
-	MyTourCombo->OnChange=AADeploymentDetailsSubPanel.InternalOnChange;
-	MyTourCombo->OnLoadINI=AADeploymentDetailsSubPanel.InternalOnLoadINI;
+	MyTourCombo->bReadOnly = true;
+	MyTourCombo->CaptionWidth = 0;
+	//MyTourCombo->OnCreateComponent=MyTourCombo.InternalOnCreateComponent;
+	MyTourCombo->IniOption = "@Internal";
+	MyTourCombo->Hint = "Review Missions";
+	MyTourCombo->WinTop = 0.06625;
+	MyTourCombo->WinLeft = 0.3;
+	MyTourCombo->WinWidth = 0.4;
+	MyTourCombo->bStandardized = false;
+	//MyTourCombo->OnChange=AADeploymentDetailsSubPanel.InternalOnChange;
+	//MyTourCombo->OnLoadINI=AADeploymentDetailsSubPanel.InternalOnLoadINI;
 	UGUIButton* ExploreButton = NewObject<UGUIButton>(UGUIButton::StaticClass());
-	ExploreButton->Caption="EXPLORE MAP";
-	ExploreButton->FontScale=0;
-	ExploreButton->Hint="Explore the map in single-player mode.";
-	ExploreButton->WinTop=0.965;
-	ExploreButton->WinLeft=0.59;
-	ExploreButton->WinWidth=0.16;
-	ExploreButton->WinHeight=0.036;
-	ExploreButton->RenderWeight=0.8;
-	ExploreButton->bBoundToParent=true;
-	ExploreButton->bScaleToParent=true;
-	ExploreButton->OnClick=AADeploymentDetailsSubPanel.ButtonClick;
-	ExploreButton->OnKeyEvent=ExploreButton.InternalOnKeyEvent;
+	ExploreButton->Caption = "EXPLORE MAP";
+	ExploreButton->FontScale = EFontScale::FNS_Small;
+	ExploreButton->Hint = "Explore the map in single-player mode.";
+	ExploreButton->WinTop = 0.965;
+	ExploreButton->WinLeft = 0.59;
+	ExploreButton->WinWidth = 0.16;
+	ExploreButton->WinHeight = 0.036;
+	ExploreButton->RenderWeight = 0.8;
+	ExploreButton->bBoundToParent = true;
+	ExploreButton->bScaleToParent = true;
+	//ExploreButton->OnClick=AADeploymentDetailsSubPanel.ButtonClick;
+	//ExploreButton->OnKeyEvent=ExploreButton.InternalOnKeyEvent;
 	UGUIButton* DeployButton = NewObject<UGUIButton>(UGUIButton::StaticClass());
-	DeployButton->Caption="DEPLOY";
-	DeployButton->FontScale=0;
-	DeployButton->Hint="Load this mission!";
-	DeployButton->WinTop=0.965;
-	DeployButton->WinLeft=0.42;
-	DeployButton->WinWidth=0.16;
-	DeployButton->WinHeight=0.036;
-	DeployButton->RenderWeight=0.8;
-	DeployButton->bBoundToParent=true;
-	DeployButton->bScaleToParent=true;
-	DeployButton->OnClick=AADeploymentDetailsSubPanel.ButtonClick;
-	DeployButton->OnKeyEvent=DeployButton.InternalOnKeyEvent;
+	DeployButton->Caption = "DEPLOY";
+	DeployButton->FontScale = EFontScale::FNS_Small;
+	DeployButton->Hint = "Load this mission!";
+	DeployButton->WinTop = 0.965;
+	DeployButton->WinLeft = 0.42;
+	DeployButton->WinWidth = 0.16;
+	DeployButton->WinHeight = 0.036;
+	DeployButton->RenderWeight = 0.8;
+	DeployButton->bBoundToParent = true;
+	DeployButton->bScaleToParent = true;
+	//DeployButton->OnClick=AADeploymentDetailsSubPanel.ButtonClick;
+	//DeployButton->OnKeyEvent=DeployButton.InternalOnKeyEvent;
 	UGUIButton* BackButton = NewObject<UGUIButton>(UGUIButton::StaticClass());
-	BackButton->Caption="BACK";
-	BackButton->FontScale=0;
-	BackButton->Hint="Back to the mission overview page";
-	BackButton->WinTop=0.965;
-	BackButton->WinLeft=0.25;
-	BackButton->WinWidth=0.16;
-	BackButton->WinHeight=0.036;
-	BackButton->RenderWeight=0.8;
-	BackButton->bBoundToParent=true;
-	BackButton->bScaleToParent=true;
-	BackButton->OnClick=AADeploymentDetailsSubPanel.ButtonClick;
-	BackButton->OnKeyEvent=BackButton.InternalOnKeyEvent;
+	BackButton->Caption = "BACK";
+	BackButton->FontScale = EFontScale::FNS_Small;
+	BackButton->Hint = "Back to the mission overview page";
+	BackButton->WinTop = 0.965;
+	BackButton->WinLeft = 0.25;
+	BackButton->WinWidth = 0.16;
+	BackButton->WinHeight = 0.036;
+	BackButton->RenderWeight = 0.8;
+	BackButton->bBoundToParent = true;
+	BackButton->bScaleToParent = true;
+	//BackButton->OnClick=AADeploymentDetailsSubPanel.ButtonClick;
+	//BackButton->OnKeyEvent=BackButton.InternalOnKeyEvent;
 	UGUIContentBox* MyPanel = NewObject<UGUIContentBox>(UGUIContentBox::StaticClass());
-	MyPanel->ItemSpacing=0.02;
-	MyPanel->bScaleItemsToWidth=true;
-	MyPanel->WinTop=0.105;
-	MyPanel->WinHeight=0.84375;
-	MyPanel->RenderWeight=0.6;
-	MyPanel->bBoundToParent=true;
-	MyPanel->bScaleToParent=true;
-	*/
-	//guicbPanel = GUIContentBox'AGP_Interface.AADeploymentDetailsSubPanel.MyPanel';
+	MyPanel->ItemSpacing = 0.02;
+	MyPanel->bScaleItemsToWidth = true;
+	MyPanel->WinTop = 0.105;
+	MyPanel->WinHeight = 0.84375;
+	MyPanel->RenderWeight = 0.6;
+	MyPanel->bBoundToParent = true;
+	MyPanel->bScaleToParent = true;
+	guicbPanel = MyPanel;
 	DefaultPage = "/x_deployment_inf_mission.nml";
 	CurrentPage = "/x_deployment_inf_mission.nml";
-	//co_Tour = moComboBox'AGP_Interface.AADeploymentDetailsSubPanel.MyTourCombo';
-	//bDeploy = GUIButton'AGP_Interface.AADeploymentDetailsSubPanel.DeployButton';
-	//bExploreMap = GUIButton'AGP_Interface.AADeploymentDetailsSubPanel.ExploreButton';
-	//bBack = GUIButton'AGP_Interface.AADeploymentDetailsSubPanel.BackButton';
+	co_Tour = MyTourCombo;
+	bDeploy = DeployButton;
+	bExploreMap = ExploreButton;
+	bBack = BackButton;
 	ToursFile = "Tours.ini";
 	//OnShow = AADeploymentDetailsSubPanel.InternalOnShow;
-
 }
 
 void UAADeploymentDetailsSubPanel::InternalOnShow()

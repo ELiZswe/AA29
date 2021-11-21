@@ -1,16 +1,85 @@
 // All the original content belonged to the US Army
 
-
 #include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/AABrowser_PlayerServerSearchPanel/AABrowser_PlayerServerSearchPane.h"
+#include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIComboBox/GUIComboBox.h"
+#include "AA29/Object/GUI/GUIComponent/GUIButton/GUIButton.h"
+#include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIMenuOption/moCheckBox/moCheckBox.h"
+#include "AA29/Object/GUI/GUIComponent/GUIImage/GUIImage.h"
+#include "AA29/Object/GUI/GUIComponent/GUILabel/GUILabel.h"
 
 UAABrowser_PlayerServerSearchPane::UAABrowser_PlayerServerSearchPane()
 {
-	//BackgroundBorder = GUIImage'AGP_Interface.AABrowser_PlayerServerSearchPanel.PanelBackground';
-	//SearchBy = GUILabel'AGP_Interface.AABrowser_PlayerServerSearchPanel.SearchByLabel';
-	//PlayerSearchType = moCheckBox'AGP_Interface.AABrowser_PlayerServerSearchPanel.PlayerSearchTypeOption';
-	//ServerSearchType = moCheckBox'AGP_Interface.AABrowser_PlayerServerSearchPanel.ServerSearchTypeOption';
-	//SearchText = GUIComboBox'AGP_Interface.AABrowser_PlayerServerSearchPanel.SearchTextComboBox';
-	//Search = GUIButton'AGP_Interface.AABrowser_PlayerServerSearchPanel.SearchButton';
+	UGUIButton* SearchButton = NewObject<UGUIButton>(UGUIButton::StaticClass());
+	SearchButton->Caption = "Search";
+	SearchButton->FontScale = EFontScale::FNS_Small;
+	SearchButton->WinTop = 0.218968;
+	SearchButton->WinLeft = 0.837044;
+	SearchButton->WinWidth = 0.153078;
+	SearchButton->WinHeight = 0.625229;
+	SearchButton->bBoundToParent = true;
+	//SearchButton->OnClick=AABrowser_PlayerServerSearchPanel.InternalOnClick;
+	//SearchButton->OnKeyEvent=SearchButton.InternalOnKeyEvent;
+	UGUIComboBox* SearchTextComboBox = NewObject<UGUIComboBox>(UGUIComboBox::StaticClass());
+	SearchTextComboBox->bIgnoreChangeWhenTyping = true;
+	SearchTextComboBox->Hint = "Search history is kept for the last 10 queries.";
+	SearchTextComboBox->WinTop = 0.277536;
+	SearchTextComboBox->WinLeft = 0.519757;
+	SearchTextComboBox->WinWidth = 0.3;
+	SearchTextComboBox->WinHeight = 0.485681;
+	SearchTextComboBox->bBoundToParent = true;
+	//SearchTextComboBox->OnChange=AABrowser_PlayerServerSearchPanel.InternalOnChange;
+	//SearchTextComboBox->OnKeyEvent=SearchTextComboBox.InternalOnKeyEvent;
+	UmoCheckBox* ServerSearchTypeOption = NewObject<UmoCheckBox>(UmoCheckBox::StaticClass());
+	ServerSearchTypeOption->bAutoSizeCaption = false;
+	ServerSearchTypeOption->ComponentJustification = EeTextAlign::TXTA_Left;
+	ServerSearchTypeOption->CaptionWidth = 0.6;
+	ServerSearchTypeOption->Caption = "Server";
+	ServerSearchTypeOption->LabelStyleName = "SmallText";
+	//ServerSearchTypeOption->OnCreateComponent=ServerSearchTypeOption.InternalOnCreateComponent;
+	ServerSearchTypeOption->WinTop = 0.195422;
+	ServerSearchTypeOption->WinLeft = 0.349695;
+	ServerSearchTypeOption->WinWidth = 0.175;
+	ServerSearchTypeOption->WinHeight = 0.687776;
+	ServerSearchTypeOption->bBoundToParent = true;
+	ServerSearchTypeOption->bStandardized = false;
+	//ServerSearchTypeOption->OnChange=AABrowser_PlayerServerSearchPanel.InternalOnChange;
+	UmoCheckBox* PlayerSearchTypeOption = NewObject<UmoCheckBox>(UmoCheckBox::StaticClass());
+	PlayerSearchTypeOption->bAutoSizeCaption = false;
+	PlayerSearchTypeOption->ComponentJustification = EeTextAlign::TXTA_Left;
+	PlayerSearchTypeOption->CaptionWidth = 0.55;
+	PlayerSearchTypeOption->Caption = "Player";
+	PlayerSearchTypeOption->LabelStyleName = "SmallText";
+	//PlayerSearchTypeOption->OnCreateComponent=PlayerSearchTypeOption.InternalOnCreateComponent;
+	PlayerSearchTypeOption->WinTop = 0.195422;
+	PlayerSearchTypeOption->WinLeft = 0.189513;
+	PlayerSearchTypeOption->WinWidth = 0.175;
+	PlayerSearchTypeOption->WinHeight = 0.687776;
+	PlayerSearchTypeOption->bBoundToParent = true;
+	PlayerSearchTypeOption->bStandardized = false;
+	//PlayerSearchTypeOption->OnChange=AABrowser_PlayerServerSearchPanel.InternalOnChange;
+	UGUIImage* PanelBackground = NewObject<UGUIImage>(UGUIImage::StaticClass());
+	PanelBackground->Image = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/backgroundfil_Mat.backgroundfil_Mat'"), NULL, LOAD_None, NULL);
+	PanelBackground->ImageStyle = EImgStyle::ISTY_Stretched;
+	PanelBackground->ImageRenderStyle = EMenuRenderStyle::MSTY_Normal;
+	PanelBackground->WinHeight = 1;
+	PanelBackground->RenderWeight = 0;
+	PanelBackground->bBoundToParent = true;
+	PanelBackground->bScaleToParent = true;
+	UGUILabel* SearchByLabel = NewObject<UGUILabel>(UGUILabel::StaticClass());
+	SearchByLabel->Caption = "Search By:";
+	SearchByLabel->TextColor = FColor(255, 255, 255, 255);
+	SearchByLabel->StyleName = "SmallText";
+	SearchByLabel->WinTop = 0.279449;
+	SearchByLabel->WinLeft = 0.014817;
+	SearchByLabel->WinWidth = 0.174696;
+	SearchByLabel->WinHeight = 0.485681;
+	SearchByLabel->bBoundToParent = true;
+	BackgroundBorder = PanelBackground;
+	SearchBy = SearchByLabel;
+	PlayerSearchType = PlayerSearchTypeOption;
+	ServerSearchType = ServerSearchTypeOption;
+	SearchText = SearchTextComboBox;
+	Search = SearchButton;
 }
 
 void UAABrowser_PlayerServerSearchPane::OnSearch(FFilterItem filter)

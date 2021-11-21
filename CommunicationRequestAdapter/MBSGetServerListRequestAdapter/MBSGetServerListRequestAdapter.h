@@ -16,7 +16,7 @@ class AA29_API AMBSGetServerListRequestAdapter : public ACommunicationRequestAda
 public:
 	AMBSGetServerListRequestAdapter();
 
-	UPROPERTY()						TArray<FGameSpyServerItem> serverList;			//var array<ServerBrowserBase.GameSpyServerItem> serverList;
+	UPROPERTY()						TArray<FGameSpyServerItem> serverList;			//var array<FGameSpyServerItem> serverList;
 	UPROPERTY()						TArray<FKeyValuePair> FilterList;				//var array<GameInfo.KeyValuePair> FilterList;
 	UPROPERTY(Globalconfig)			FString version;								//var globalconfig string version;
 

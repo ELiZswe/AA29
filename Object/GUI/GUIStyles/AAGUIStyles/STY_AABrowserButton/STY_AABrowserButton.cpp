@@ -6,10 +6,5 @@
 USTY_AABrowserButton::USTY_AABrowserButton()
 {
 	KeyName = "BrowserButton";
-
-		//ImgStyle(0) = 2
-		//ImgStyle(1) = 2
-		//ImgStyle(2) = 2
-		//ImgStyle(3) = 2
-		//ImgStyle(4) = 2
+	ImgStyle = { EImgStyle::ISTY_Scaled, EImgStyle::ISTY_Scaled, EImgStyle::ISTY_Scaled, EImgStyle::ISTY_Scaled, EImgStyle::ISTY_Scaled };
 }

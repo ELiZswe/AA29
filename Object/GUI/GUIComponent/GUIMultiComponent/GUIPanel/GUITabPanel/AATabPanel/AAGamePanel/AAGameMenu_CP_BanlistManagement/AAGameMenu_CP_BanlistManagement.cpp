@@ -1,28 +1,154 @@
 // All the original content belonged to the US Army
 
-
 #include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/GUITabPanel/AATabPanel/AAGamePanel/AAGameMenu_CP_BanlistManagement/AAGameMenu_CP_BanlistManagement.h"
+#include "AA29/Object/GUI/GUIComponent/GUILabel/GUILabel.h"
+#include "AA29/Object/GUI/GUIComponent/GUIButton/GUIButton.h"
+#include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIMenuOption/moComboBox/moComboBox.h"
+#include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIListBoxBase/GUIListBox/GUIListBox.h"
 
 UAAGameMenu_CP_BanlistManagement::UAAGameMenu_CP_BanlistManagement()
 {
-	//guilInstructions = GUILabel'AGP_Interface.AAGameMenu_CP_BanlistManagement.InstructionsLabel';
-	//guilPlayerListTitle = GUILabel'AGP_Interface.AAGameMenu_CP_BanlistManagement.PlayersListTitle';
-	//guilbPlayersList = GUIListBox'AGP_Interface.AAGameMenu_CP_BanlistManagement.PlayersListBox';
-	//guilBanListTitle = GUILabel'AGP_Interface.AAGameMenu_CP_BanlistManagement.BanListTitle';
-	//guilbBanList = GUIListBox'AGP_Interface.AAGameMenu_CP_BanlistManagement.BanListBox';
-	//mcbBanLength = moComboBox'AGP_Interface.AAGameMenu_CP_BanlistManagement.BanLengthDropDown';
-	//mcbBanType = moComboBox'AGP_Interface.AAGameMenu_CP_BanlistManagement.BanTypeDropDown';
-	//guibUnbanPlayer = GUIButton'AGP_Interface.AAGameMenu_CP_BanlistManagement.UnBanButton';
-	//guibBan = GUIButton'AGP_Interface.AAGameMenu_CP_BanlistManagement.BanButton';
-	//guilPlayerDetailsTitle = GUILabel'AGP_Interface.AAGameMenu_CP_BanlistManagement.BanDetailsTitle';
-	//guilPlayerDetailsName = GUILabel'AGP_Interface.AAGameMenu_CP_BanlistManagement.PlayerDetailsName';
+	UGUIButton* BanButton = NewObject<UGUIButton>(UGUIButton::StaticClass());
+	BanButton->Caption = "Add Ban";
+	BanButton->MenuState = EMenuState::MSAT_Disabled;
+	BanButton->StyleName = "SquareMenuButton";
+	BanButton->Hint = "Click here to add the ban using the options you have selected.";
+	BanButton->WinTop = 0.32;
+	BanButton->WinLeft = 0.89;
+	BanButton->WinWidth = 0.1;
+	BanButton->WinHeight = 0.053476;
+	//BanButton->OnClick=AAGameMenu_CP_BanlistManagement.ButtonClick;
+	//BanButton->OnKeyEvent=BanButton.InternalOnKeyEvent;
+	UmoComboBox* BanTypeDropDown = NewObject<UmoComboBox>(UmoComboBox::StaticClass());
+	BanTypeDropDown->bReadOnly = true;
+	BanTypeDropDown->CaptionWidth = 0.22;
+	BanTypeDropDown->Caption = "Ban Type:";
+	//BanTypeDropDown->OnCreateComponent=BanTypeDropDown.InternalOnCreateComponent;
+	BanTypeDropDown->MenuState = EMenuState::MSAT_Disabled;
+	BanTypeDropDown->IniOption = "@Internal";
+	BanTypeDropDown->StyleName = "STY_AAComboListBox";
+	BanTypeDropDown->Hint = "Select the type of ban.  Banning by name on a PB Enabled server will use a PBGUID ban.";
+	BanTypeDropDown->WinTop = 0.38;
+	BanTypeDropDown->WinLeft = 0.5;
+	BanTypeDropDown->WinWidth = 0.38;
+	BanTypeDropDown->WinHeight = 0.05;
+	BanTypeDropDown->TabOrder = 2;
+	BanTypeDropDown->bStandardized = false;
+	//BanTypeDropDown->OnChange=AAGameMenu_CP_BanlistManagement.InternalOnChange;
+	UmoComboBox* BanLengthDropDown = NewObject<UmoComboBox>(UmoComboBox::StaticClass());
+	BanLengthDropDown->bReadOnly = true;
+	BanLengthDropDown->CaptionWidth = 0.22;
+	BanLengthDropDown->Caption = "Ban Length:";
+	//BanLengthDropDown->OnCreateComponent=BanLengthDropDown.InternalOnCreateComponent;
+	BanLengthDropDown->MenuState = EMenuState::MSAT_Disabled;
+	BanLengthDropDown->IniOption = "@Internal";
+	BanLengthDropDown->StyleName = "STY_AAComboListBox";
+	BanLengthDropDown->Hint = "Select the length of time for banning.";
+	BanLengthDropDown->WinTop = 0.32;
+	BanLengthDropDown->WinLeft = 0.5;
+	BanLengthDropDown->WinWidth = 0.38;
+	BanLengthDropDown->WinHeight = 0.05;
+	BanLengthDropDown->TabOrder = 2;
+	BanLengthDropDown->bStandardized = false;
+	//BanLengthDropDown->OnChange=AAGameMenu_CP_BanlistManagement.InternalOnChange;
+	UGUIButton* UnBanButton = NewObject<UGUIButton>(UGUIButton::StaticClass());
+	UnBanButton->Caption = "Remove Ban";
+	UnBanButton->MenuState = EMenuState::MSAT_Disabled;
+	UnBanButton->StyleName = "SquareMenuButton";
+	UnBanButton->Hint = "Click here to remove the selected ban entry.";
+	UnBanButton->WinTop = 0.86;
+	UnBanButton->WinLeft = 0.17;
+	UnBanButton->WinWidth = 0.15;
+	UnBanButton->WinHeight = 0.053476;
+	//UnBanButton->OnClick=AAGameMenu_CP_BanlistManagement.ButtonClick;
+	//UnBanButton->OnKeyEvent=UnBanButton.InternalOnKeyEvent;
+	UGUIListBox* BanListBox = NewObject<UGUIListBox>(UGUIListBox::StaticClass());
+	BanListBox->bVisibleWhenEmpty = true;
+	//BanListBox->OnCreateComponent=BanListBox.InternalOnCreateComponent;
+	BanListBox->StyleName = "ServerBrowserGrid";
+	BanListBox->WinTop = 0.6;
+	BanListBox->WinLeft = 0.05;
+	BanListBox->WinWidth = 0.65;
+	BanListBox->WinHeight = 0.25;
+	BanListBox->bAcceptsInput = false;
+	BanListBox->bNeverFocus = true;
+	//BanListBox->OnClick=AAGameMenu_CP_BanlistManagement.OnPlayerListClick;
+	UGUIListBox* PlayersListBox = NewObject<UGUIListBox>(UGUIListBox::StaticClass());
+	PlayersListBox->bVisibleWhenEmpty = true;
+	PlayersListBox->bSorted = true;
+	//PlayersListBox->OnCreateComponent=PlayersListBox.InternalOnCreateComponent;
+	PlayersListBox->StyleName = "ServerBrowserGrid";
+	PlayersListBox->Hint = "Left click on a player to manage bans for that player.";
+	PlayersListBox->WinTop = 0.2;
+	PlayersListBox->WinLeft = 0.05;
+	PlayersListBox->WinWidth = 0.4;
+	PlayersListBox->WinHeight = 0.3;
+	PlayersListBox->bAcceptsInput = false;
+	PlayersListBox->bNeverFocus = true;
+	//PlayersListBox->OnClick=AAGameMenu_CP_BanlistManagement.OnPlayerListClick;
+	//PlayersListBox->OnChange=AAGameMenu_CP_BanlistManagement.InternalOnChange;
+	UGUILabel* InstructionsLabel = NewObject<UGUILabel>(UGUILabel::StaticClass());
+	InstructionsLabel->TextColor = FColor(255, 255, 255, 255);
+	InstructionsLabel->bMultiLine = true;
+	InstructionsLabel->StyleName = "TextLabel";
+	InstructionsLabel->WinTop = 0.07;
+	InstructionsLabel->WinLeft = 0.05;
+	InstructionsLabel->WinWidth = 0.9;
+	InstructionsLabel->WinHeight = 0.1;
+	UGUILabel* PlayersListTitle = NewObject<UGUILabel>(UGUILabel::StaticClass());
+	PlayersListTitle->Caption = "Active Players";
+	PlayersListTitle->TextAlign = ETextAlign::TXTA_Center;
+	PlayersListTitle->TextColor = FColor(255, 255, 255, 255);
+	PlayersListTitle->StyleName = "TextLabel";
+	PlayersListTitle->WinTop = 0.15;
+	PlayersListTitle->WinLeft = 0.05;
+	PlayersListTitle->WinWidth = 0.4;
+	PlayersListTitle->WinHeight = 0.05;
+	UGUILabel* BanListTitle = NewObject<UGUILabel>(UGUILabel::StaticClass());
+	BanListTitle->Caption = "Current Bans";
+	BanListTitle->TextAlign = ETextAlign::TXTA_Center;
+	BanListTitle->TextColor = FColor(255, 255, 255, 255);
+	BanListTitle->StyleName = "TextLabel";
+	BanListTitle->WinTop = 0.55;
+	BanListTitle->WinLeft = 0.05;
+	BanListTitle->WinWidth = 0.4;
+	BanListTitle->WinHeight = 0.05;
+	UGUILabel* BanDetailsTitle = NewObject<UGUILabel>(UGUILabel::StaticClass());
+	BanDetailsTitle->Caption = "Ban Options";
+	BanDetailsTitle->TextAlign = ETextAlign::TXTA_Center;
+	BanDetailsTitle->TextColor = FColor(255, 255, 255, 255);
+	BanDetailsTitle->StyleName = "TextLabel";
+	BanDetailsTitle->WinTop = 0.2;
+	BanDetailsTitle->WinLeft = 0.5;
+	BanDetailsTitle->WinWidth = 0.5;
+	BanDetailsTitle->WinHeight = 0.05;
+	UGUILabel* PlayerDetailsName = NewObject<UGUILabel>(UGUILabel::StaticClass());
+	PlayerDetailsName->Caption = "Name: ";
+	PlayerDetailsName->TextColor = FColor(255, 255, 255, 255);
+	PlayerDetailsName->MenuState = EMenuState::MSAT_Disabled;
+	PlayerDetailsName->StyleName = "TextLabel";
+	PlayerDetailsName->WinTop = 0.26;
+	PlayerDetailsName->WinLeft = 0.5;
+	PlayerDetailsName->WinWidth = 0.5;
+	PlayerDetailsName->WinHeight = 0.05;
+	guilInstructions = InstructionsLabel;
+	guilPlayerListTitle = PlayersListTitle;
+	guilbPlayersList = PlayersListBox;
+	guilBanListTitle = BanListTitle;
+	guilbBanList = BanListBox;
+	mcbBanLength = BanLengthDropDown;
+	mcbBanType = BanTypeDropDown;
+	guibUnbanPlayer = UnBanButton;
+	guibBan = BanButton;
+	guilPlayerDetailsTitle = BanDetailsTitle;
+	guilPlayerDetailsName = PlayerDetailsName;
+
 	sInstructions = "Use this to manage your list of banned players.";
 	sPlayerListBoxTitle = "Players";
 	sBanDetailsTitle = "Ban Options";
 	WinHeight = 1;
 	bTabStop = true;
 }
-
 
 void UAAGameMenu_CP_BanlistManagement::InitComponent(UGUIController* MyController, UGUIComponent* MyOwner)
 {

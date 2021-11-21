@@ -3,8 +3,8 @@
 
 #include "AttachW_M82_Sniper.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/AttachW_SVD_Sniper/AttachW_SVD_Sniper.h"
-#include "AA29/AA2_Emitter/BaseShellEmitter/Shell_127mm_Emitter/Shell_127mm_Emitter.h"
-#include "AA29/AA2_Emitter/BaseMuzzleFlashEmitter/M82MuzzleFlash/M82MuzzleFlash.h"
+#include "AA29/Object/Actor/Emitter/BaseShellEmitter/Shell_127mm_Emitter/Shell_127mm_Emitter.h"
+#include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/M82MuzzleFlash/M82MuzzleFlash.h"
 
 AAttachW_M82_Sniper::AAttachW_M82_Sniper()
 {

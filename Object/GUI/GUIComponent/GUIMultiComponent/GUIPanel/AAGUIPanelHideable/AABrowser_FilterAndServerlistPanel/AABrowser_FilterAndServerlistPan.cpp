@@ -1,12 +1,23 @@
 // All the original content belonged to the US Army
 
-
 #include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/AAGUIPanelHideable/AABrowser_FilterAndServerlistPanel/AABrowser_FilterAndServerlistPan.h"
+#include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/AABrowser_ServersPlayersRulesPanel/AABrowser_ServersPlayersRulesPan.h"
+#include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/AATreeAndExclusiveListPanel/AABrowser_FilterPanel/AABrowser_FilterPanel.h"
 
 UAABrowser_FilterAndServerlistPan::UAABrowser_FilterAndServerlistPan()
 {
-	//leftside = AABrowser_FilterPanel'AGP_Interface.AABrowser_FilterAndServerlistPanel.FilterBox';
-	//rightside = AABrowser_ServersPlayersRulesPanel'AGP_Interface.AABrowser_FilterAndServerlistPanel.ServersPlayersRulesPanel';
+	UAABrowser_ServersPlayersRulesPan* ServersPlayersRulesPanel = NewObject<UAABrowser_ServersPlayersRulesPan>(UAABrowser_ServersPlayersRulesPan::StaticClass());
+	//ServersPlayersRulesPanel->OnUpdateServerList = AABrowser_FilterAndServerlistPanel.InternalOnUpdateServerList;
+	ServersPlayersRulesPanel->WinLeft = 0.33;
+	ServersPlayersRulesPanel->WinWidth = 0.666667;
+	ServersPlayersRulesPanel->WinHeight = 1;
+	//ServersPlayersRulesPanel->OnSaveINI=ServersPlayersRulesPanel.InternalOnSaveINI;
+	UAABrowser_FilterPanel* FilterBox = NewObject<UAABrowser_FilterPanel>(UAABrowser_FilterPanel::StaticClass());
+	//FilterBox->OnFiltersChanged = AABrowser_FilterAndServerlistPanel.InternalOnFiltersChanged;
+	FilterBox->WinWidth = 0.333333;
+	FilterBox->WinHeight = 1;
+	leftside = FilterBox;
+	rightside = ServersPlayersRulesPanel;
 }
 
 void UAABrowser_FilterAndServerlistPan::OnUpdateServerList()

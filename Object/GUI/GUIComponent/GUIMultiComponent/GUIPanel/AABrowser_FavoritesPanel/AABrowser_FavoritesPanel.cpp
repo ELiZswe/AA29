@@ -1,16 +1,44 @@
 // All the original content belonged to the US Army
 
-
 #include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/AABrowser_FavoritesPanel/AABrowser_FavoritesPanel.h"
+#include "AA29/Object/GUI/GUIComponent/GUIButton/GUIButton.h"
+#include "AA29/Object/Favorites/Favorites.h"
+#include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIListBoxBase/GUIMultiColumnListBox/ServerBrowserMCListBox/ServerBrowserMCListBox.h"
+#include "AA29/Object/GUI/GUIComponent/GUIContextMenu/GUIContextMenu.h"
 
 UAABrowser_FavoritesPanel::UAABrowser_FavoritesPanel()
 {
-	//ServersButton = GUIButton'AGP_Interface.AABrowser_FavoritesPanel.ServersButtonObject';
-	//BuddiesButton = GUIButton'AGP_Interface.AABrowser_FavoritesPanel.BuddiesButtonObject';
-	//FavoritesListBox = ServerBrowserMCListBox'AGP_Interface.AABrowser_FavoritesPanel.ListBox';
+
+	UGUIButton* ServersButtonObject = NewObject<UGUIButton>(UGUIButton::StaticClass());
+	ServersButtonObject->Caption = "Favorite Servers";
+	ServersButtonObject->WinWidth = 0.5;
+	ServersButtonObject->WinHeight = 0.07;
+	ServersButtonObject->bBoundToParent = true;
+	//ServersButtonObject->OnClick=AABrowser_FavoritesPanel.InternalOnClick;
+	//ServersButtonObject->OnKeyEvent=ServersButtonObject.InternalOnKeyEvent;
+	UGUIButton* BuddiesButtonObject = NewObject<UGUIButton>(UGUIButton::StaticClass());
+	BuddiesButtonObject->Caption = "Battle Buddies";
+	BuddiesButtonObject->WinLeft = 0.5;
+	BuddiesButtonObject->WinWidth = 0.5;
+	BuddiesButtonObject->WinHeight = 0.07;
+	BuddiesButtonObject->bBoundToParent = true;
+	//BuddiesButtonObject->OnClick=AABrowser_FavoritesPanel.InternalOnClick;
+	//BuddiesButtonObject->OnKeyEvent=BuddiesButtonObject.InternalOnKeyEvent;
+	UFavorites* FavoritesObject = NewObject<UFavorites>(UFavorites::StaticClass());
+	UServerBrowserMCListBox* ListBox = NewObject<UServerBrowserMCListBox>(UServerBrowserMCListBox::StaticClass());
+	//ListBox->OnCreateComponent=AABrowser_FavoritesPanel.InternalOnCreateComponent;
+	ListBox->WinTop = 0.07;
+	ListBox->WinHeight = 0.93;
+	UGUIContextMenu* FavoritesListMenu = NewObject<UGUIContextMenu>(UGUIContextMenu::StaticClass());
+	//FavoritesListMenu->OnOpen=AABrowser_FavoritesPanel.InternalOnOpenContextMenu;
+	//FavoritesListMenu->OnSelect=AABrowser_FavoritesPanel.InternalOnClickContextMenu;
+	FavoritesListMenu->StyleName = "ServerListContextMenu";
+	ServersButton = ServersButtonObject;
+	BuddiesButton = BuddiesButtonObject;
+	FavoritesListBox = ListBox;
 	ListHeadings = { "Favorite Servers", "Battle Buddies" };
-	//FavoritesContextMenu = GUIContextMenu'AGP_Interface.AABrowser_FavoritesPanel.FavoritesListMenu';
-	//Favorites = Favorites'AGP_Interface.AABrowser_FavoritesPanel.FavoritesObject';
+	FavoritesContextMenu = FavoritesListMenu;
+	Favorites = FavoritesObject;
 }
 
 

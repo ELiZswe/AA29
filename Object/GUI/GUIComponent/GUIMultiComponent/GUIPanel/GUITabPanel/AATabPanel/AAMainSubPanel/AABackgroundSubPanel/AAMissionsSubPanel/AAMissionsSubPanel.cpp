@@ -61,7 +61,7 @@ UAAMissionsSubPanel::UAAMissionsSubPanel()
 	//MyDeployButton->OnClick=AAMissionsSubPanel.ButtonClick;
 	//MyDeployButton->OnKeyEvent=MyDeployButton.InternalOnKeyEvent;
 	UGUIImage* MyMapPanel = NewObject<UGUIImage>(UGUIImage::StaticClass());
-	//MyMapPanel->Image=Texture'T_AA2_UI.Menu.field_translucent';
+	MyMapPanel->Image = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/field_translucen_Mat.field_translucen_Mat'"), NULL, LOAD_None, NULL);
 	MyMapPanel->ImageStyle = EImgStyle::ISTY_Stretched;
 	MyMapPanel->ImageRenderStyle = EMenuRenderStyle::MSTY_Normal;
 	MyMapPanel->WinTop=0.13;
@@ -70,7 +70,7 @@ UAAMissionsSubPanel::UAAMissionsSubPanel()
 	MyMapPanel->WinHeight=0.38;
 	MyMapPanel->RenderWeight=0.2;
 	UGUIImage* MyTourPanel = NewObject<UGUIImage>(UGUIImage::StaticClass());
-	//MyTourPanel->Image=Texture'T_AA2_UI.Menu.field_translucent';
+	MyTourPanel->Image = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/field_translucen_Mat.field_translucen_Mat'"), NULL, LOAD_None, NULL);
 	MyTourPanel->ImageStyle = EImgStyle::ISTY_Stretched;
 	MyTourPanel->ImageRenderStyle = EMenuRenderStyle::MSTY_Normal;
 	MyTourPanel->WinTop=0.13;
@@ -119,7 +119,7 @@ UAAMissionsSubPanel::UAAMissionsSubPanel()
 	MyStatusLabel->WinWidth=0.5;
 	MyStatusLabel->WinHeight=0.04;
 	UGUIImage* MyDescPanel = NewObject<UGUIImage>(UGUIImage::StaticClass());
-	//MyDescPanel->Image=Texture'T_AA2_UI.Menu.field_translucent';
+	MyDescPanel->Image = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/field_translucen_Mat.field_translucen_Mat'"), NULL, LOAD_None, NULL);
 	MyDescPanel->ImageStyle = EImgStyle::ISTY_Stretched;
 	MyDescPanel->ImageRenderStyle = EMenuRenderStyle::MSTY_Normal;
 	MyDescPanel->WinTop=0.52;

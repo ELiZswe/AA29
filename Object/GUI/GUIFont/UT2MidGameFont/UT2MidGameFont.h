@@ -18,7 +18,6 @@ public:
 
 	UPROPERTY()					TArray<int32> FontScreenWidth;										//var int FontScreenWidth;
 
-
 	void GetMidGameFont(int32 XRes);
 	//AFont* GetFont(int32 XRes)
 };

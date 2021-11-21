@@ -4,7 +4,7 @@
 #include "Weapon_BTR_HMG.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/FixedWeaponAttachment/AttachW_BTR_HMG/AttachW_BTR_HMG.h"
 #include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_127mm_200_Mag/Ammo_127mm_200_Mag.h"
-#include "AA29/AA2_Emitter/BaseMuzzleFlashEmitter/AK47MuzzleFlash_1P/AK47MuzzleFlash_1P.h"
+#include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/AK47MuzzleFlash_1P/AK47MuzzleFlash_1P.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamageLargeArms.h"
 AWeapon_BTR_HMG::AWeapon_BTR_HMG()
 {

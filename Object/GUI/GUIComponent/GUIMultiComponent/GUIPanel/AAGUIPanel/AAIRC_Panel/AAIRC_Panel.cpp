@@ -1,16 +1,93 @@
 // All the original content belonged to the US Army
 
-
 #include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/AAGUIPanel/AAIRC_Panel/AAIRC_Panel.h"
+#include "AA29/Object/GUI/GUIComponent/GUIButton/GUIButton.h"
+#include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIMenuOption/moComboBox/moComboBox.h"
 
 UAAIRC_Panel::UAAIRC_Panel()
 {
-	//co_Server = moComboBox'AGP_Interface.AAIRC_Panel.MyServerCombo';
-	//co_Channel = moComboBox'AGP_Interface.AAIRC_Panel.MyChannelCombo';
-	//b_Connect = GUIButton'AGP_Interface.AAIRC_Panel.MyConnectButton';
-	//b_RemServer = GUIButton'AGP_Interface.AAIRC_Panel.MyRemoveServerButton';
-	//b_JoinChannel = GUIButton'AGP_Interface.AAIRC_Panel.MyJoinChannelButton';
-	//b_RemChannel = GUIButton'AGP_Interface.AAIRC_Panel.MyRemoveChannelButton';
+	UGUIButton* MyRemoveChannelButton = NewObject<UGUIButton>(UGUIButton::StaticClass());
+	MyRemoveChannelButton->Caption = "REMOVE";
+	MyRemoveChannelButton->WinTop = 0.5;
+	MyRemoveChannelButton->WinLeft = 0.73;
+	MyRemoveChannelButton->WinWidth = 0.2;
+	MyRemoveChannelButton->WinHeight = 0.26738;
+	MyRemoveChannelButton->RenderWeight = 3;
+	MyRemoveChannelButton->TabOrder = 5;
+	MyRemoveChannelButton->bBoundToParent = true;
+	MyRemoveChannelButton->bScaleToParent = true;
+	//MyRemoveChannelButton->OnClick=AAIRC_Panel.InternalOnClick;
+	//MyRemoveChannelButton->OnKeyEvent=MyRemoveChannelButton.InternalOnKeyEvent;
+	UGUIButton* MyRemoveServerButton = NewObject<UGUIButton>(UGUIButton::StaticClass());
+	MyRemoveServerButton->Caption = "REMOVE";
+	MyRemoveServerButton->WinTop = 0.1;
+	MyRemoveServerButton->WinLeft = 0.73;
+	MyRemoveServerButton->WinWidth = 0.2;
+	MyRemoveServerButton->WinHeight = 0.26738;
+	MyRemoveServerButton->RenderWeight = 3;
+	MyRemoveServerButton->TabOrder = 4;
+	MyRemoveServerButton->bBoundToParent = true;
+	MyRemoveServerButton->bScaleToParent = true;
+	//MyRemoveServerButton->OnClick=AAIRC_Panel.InternalOnClick;
+	//MyRemoveServerButton->OnKeyEvent=MyRemoveServerButton.InternalOnKeyEvent;
+	UGUIButton* MyJoinChannelButton = NewObject<UGUIButton>(UGUIButton::StaticClass());
+	MyJoinChannelButton->Caption = "JOIN";
+	MyJoinChannelButton->WinTop = 0.5;
+	MyJoinChannelButton->WinLeft = 0.52;
+	MyJoinChannelButton->WinWidth = 0.2;
+	MyJoinChannelButton->WinHeight = 0.26738;
+	MyJoinChannelButton->RenderWeight = 3;
+	MyJoinChannelButton->TabOrder = 3;
+	MyJoinChannelButton->bBoundToParent = true;
+	MyJoinChannelButton->bScaleToParent = true;
+	//MyJoinChannelButton->OnClick=AAIRC_Panel.InternalOnClick;
+	//MyJoinChannelButton->OnKeyEvent=MyJoinChannelButton.InternalOnKeyEvent;
+	UGUIButton* MyConnectButton = NewObject<UGUIButton>(UGUIButton::StaticClass());
+	MyConnectButton->Caption = "CONNECT";
+	MyConnectButton->WinTop = 0.1;
+	MyConnectButton->WinLeft = 0.52;
+	MyConnectButton->WinWidth = 0.2;
+	MyConnectButton->WinHeight = 0.26738;
+	MyConnectButton->RenderWeight = 3;
+	MyConnectButton->TabOrder = 2;
+	MyConnectButton->bBoundToParent = true;
+	MyConnectButton->bScaleToParent = true;
+	//MyConnectButton->OnClick=AAIRC_Panel.InternalOnClick;
+	//MyConnectButton->OnKeyEvent=MyConnectButton.InternalOnKeyEvent;
+	UmoComboBox* MyChannelCombo = NewObject<UmoComboBox>(UmoComboBox::StaticClass());
+	MyChannelCombo->CaptionWidth = 0.25;
+	MyChannelCombo->Caption = "Channel";
+	//MyChannelCombo->OnCreateComponent=MyChannelCombo.InternalOnCreateComponent;
+	MyChannelCombo->WinTop = 0.5;
+	MyChannelCombo->WinLeft = 0.02;
+	MyChannelCombo->WinWidth = 0.45;
+	MyChannelCombo->WinHeight = 0.26738;
+	MyChannelCombo->RenderWeight = 3;
+	MyChannelCombo->TabOrder = 1;
+	MyChannelCombo->bBoundToParent = true;
+	MyChannelCombo->bScaleToParent = true;
+	MyChannelCombo->bStandardized = false;
+	UmoComboBox* MyServerCombo = NewObject<UmoComboBox>(UmoComboBox::StaticClass());
+	MyServerCombo->CaptionWidth = 0.25;
+	MyServerCombo->Caption = "Server";
+	//MyServerCombo->OnCreateComponent=MyServerCombo.InternalOnCreateComponent;
+	MyServerCombo->WinTop = 0.102967;
+	MyServerCombo->WinLeft = 0.02;
+	MyServerCombo->WinWidth = 0.45;
+	MyServerCombo->WinHeight = 0.26738;
+	MyServerCombo->RenderWeight = 3;
+	MyServerCombo->TabOrder = 0;
+	MyServerCombo->bBoundToParent = true;
+	MyServerCombo->bScaleToParent = true;
+	MyServerCombo->bStandardized = false;
+	//MyServerCombo->OnChange=AAIRC_Panel.InternalOnChange;
+	co_Server = MyServerCombo;
+	co_Channel = MyChannelCombo;
+	b_Connect = MyConnectButton;
+	b_RemServer = MyRemoveServerButton;
+	b_JoinChannel = MyJoinChannelButton;
+	b_RemChannel = MyRemoveChannelButton;
+
 	ServerHistory = { "irc.americasarmy.com" };
 	ChannelHistory = { "#aa-support", "#americasarmy", "#aa-newplayers" };
 	ConnectText = "CONNECT";

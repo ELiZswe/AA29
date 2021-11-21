@@ -21,14 +21,13 @@ class AA29_API UAAGameMenu_CP_Tournament : public UAAGamePanel
 public:
 	UAAGameMenu_CP_Tournament();
 
-
 	UPROPERTY()								UAAGameMenu_CommandPost*	aagpCommandPost;								//var AAGameMenu_CommandPost aagpCommandPost;
 	UPROPERTY()								FString						sInstructions;									//var localized string sInstructions;
 	UPROPERTY()								int32						iSwitchTimer;									//var int iSwitchTimer;
 	UPROPERTY()								UGUILabel*					gulInstructions;								//var() XInterface.GUILabel gulInstructions;
 	UPROPERTY()								bool						bTournamentTieScore;							//var bool bTournamentTieScore;
 	UPROPERTY()								bool						bTournamentTieSuddenDeath;						//var bool bTournamentTieSuddenDeath;
-	UPROPERTY(EditAnywhere)					UmoCheckBox*				mcbTournamentTieBreakingRules;					//var() XInterface.moComboBox mcbTournamentTieBreakingRules;
+	UPROPERTY(EditAnywhere)					UmoComboBox*				mcbTournamentTieBreakingRules;					//var() XInterface.moComboBox mcbTournamentTieBreakingRules;
 	UPROPERTY(EditAnywhere)					UmoCheckBox*				mchkbTournamentEnableRandomTeamAssignments;		//var() XInterface.moCheckBox mchkbTournamentEnableRandomTeamAssignments;
 	UPROPERTY(EditAnywhere)					UmoCheckBox*				mchkbTournamentTeamPasswordsRequired;			//var() XInterface.moCheckBox mchkbTournamentTeamPasswordsRequired;
 	UPROPERTY(EditAnywhere)					UmoCheckBox*				mchkbTournamentTeamCaptainsAllowed;				//var() XInterface.moCheckBox mchkbTournamentTeamCaptainsAllowed;

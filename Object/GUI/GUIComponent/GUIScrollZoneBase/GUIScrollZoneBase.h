@@ -16,4 +16,6 @@ class AA29_API UGUIScrollZoneBase : public UGUIComponent
 public:
 	UGUIScrollZoneBase();
 
+	void OnScrollZoneClick(float Delta);
+	bool InternalOnClick(UGUIComponent* Sender);
 };

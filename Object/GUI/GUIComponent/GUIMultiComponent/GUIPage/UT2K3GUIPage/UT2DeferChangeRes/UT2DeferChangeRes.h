@@ -15,4 +15,6 @@ class AA29_API UUT2DeferChangeRes : public UUT2K3GUIPage
 	GENERATED_BODY()
 public:
 	UUT2DeferChangeRes();
+	
+	bool InternalOnClick(UGUIComponent* Sender);
 };

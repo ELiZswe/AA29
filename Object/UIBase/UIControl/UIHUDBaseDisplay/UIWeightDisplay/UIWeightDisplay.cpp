@@ -8,8 +8,7 @@ UUIWeightDisplay::UUIWeightDisplay()
 
 }
 
-
-void Draw(UCanvas* Canvas)
+void UUIWeightDisplay::Draw(UCanvas* Canvas)
 {
 	/*
 	if (cFrame.cActor != None)

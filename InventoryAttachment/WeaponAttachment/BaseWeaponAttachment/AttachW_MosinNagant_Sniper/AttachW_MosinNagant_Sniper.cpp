@@ -3,8 +3,8 @@
 
 #include "AttachW_MosinNagant_Sniper.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/AttachW_M24_Sniper/AttachW_M24_Sniper.h"
-#include "AA29/AA2_Emitter/BaseShellEmitter/Shell_762x54mm_Emitter/Shell_762x54mm_Emitter.h"
-#include "AA29/AA2_Emitter/BaseMuzzleFlashEmitter/M24MuzzleFlash/M24MuzzleFlash.h"
+#include "AA29/Object/Actor/Emitter/BaseShellEmitter/Shell_762x54mm_Emitter/Shell_762x54mm_Emitter.h"
+#include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/M24MuzzleFlash/M24MuzzleFlash.h"
 
 AAttachW_MosinNagant_Sniper::AAttachW_MosinNagant_Sniper()
 {

@@ -27,6 +27,216 @@ class UaDamageType;
 class AVehiclePosition;
 class ABodyPanel;
 class UGUIComponent;
+class AMBSPingServerRequestAdapter;
+
+USTRUCT(BlueprintType)
+struct FRange
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Range")								float Min;								//var float Min;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Range")								float Max;								//var float Max;
+};
+
+USTRUCT(BlueprintType)
+struct FParticleAnchor
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleAnchor")						FName Tag;							//var FName Tag;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleAnchor")						float Position;						//var float Position;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleAnchor")						AActor* Actor;						//var Actor Actor;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleAnchor")						int32 Index;						//var int32 Index;
+};
+
+USTRUCT(BlueprintType)
+struct FAttachedPawnInfo
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AttachedPawnInfo")						float Index;						//var float Index;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AttachedPawnInfo")						float nextUpateTime;				//var float nextUpateTime;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AttachedPawnInfo")						float updateTime;					//var float updateTime;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AttachedPawnInfo")						float percent;						//var float percent;
+};
+
+USTRUCT(BlueprintType)
+struct FRangeVector
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "RangeVector")						FRange X;							//var Range X;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "RangeVector")						FRange Y;							//var Range Y;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "RangeVector")						FRange Z;							//var Range Z;
+};
+
+USTRUCT(BlueprintType)
+struct FParticleBeamData
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleBeamData")					FVector Location;					//var Vector Location;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleBeamData")					float t;							//var float t;
+};
+
+USTRUCT(BlueprintType)
+struct FParticleBeamEndPoint
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleBeamEndPoint")				FName ActorTag;						//var FName ActorTag;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleBeamEndPoint")				FRangeVector offset;				//var RangeVector offset;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleBeamEndPoint")				float Weight;						//var float Weight;
+};
+
+USTRUCT(BlueprintType)
+struct FParticleBeamScale
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleBeamScale")					FVector FrequencyScale;				//var Vector FrequencyScale;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleBeamScale")					FVector RelativeLength;				//var float RelativeLength;
+};
+
+USTRUCT(BlueprintType)
+struct FParticleSparkData
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleSparkData")					FVector TimeBeforeVisible;					//var float TimeBeforeVisible;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleSparkData")					FVector TimeBetweenSegments;				//var float TimeBetweenSegments;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleSparkData")					FVector StartLocation;						//var Vector StartLocation;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleSparkData")					FVector StartVelocity;						//var Vector StartVelocity;
+};
+
+USTRUCT(BlueprintType)
+struct FParticleTrailData
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Range")								FVector Location;							//var Vector Location;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Range")								FColor Color;								//var Color Color;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Range")								float Size;									//var float Size;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Range")								int32 DoubleDummy1;							//var int32 DoubleDummy1;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Range")								int32 DoubleDummy2;							//var int32 DoubleDummy2;
+};
+
+USTRUCT(BlueprintType)
+struct FParticleTrailInfo
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Range")								int32 TrailIndex;							//var int32 TrailIndex;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Range")								int32 NumPoints;							//var int32 NumPoints;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Range")								FVector LastLocation;						//var Vector LastLocation;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Range")								FVector LastEmitterLocation;				//var Vector LastEmitterLocation;
+};
+
+USTRUCT(BlueprintType)
+struct FParticleTimeScale
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleTimeScale")					float RelativeTime;							//var float RelativeTime;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleTimeScale")					float RelativeSize;							//var float RelativeSize;
+};
+
+USTRUCT(BlueprintType)
+struct FParticleRevolutionScale
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleRevolutionScale")			float RelativeTime;							//var float RelativeTime;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleRevolutionScale")			FVector RelativeRevolution;					//var Vector RelativeRevolution;
+};
+
+USTRUCT(BlueprintType)
+struct FParticleColorScale
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleColorScale")					float RelativeTime;						//var float RelativeTime;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleColorScale")					FColor Color;							//var Color Color;
+};
+
+USTRUCT(BlueprintType)
+struct FParticleVelocityScale
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleVelocityScale")					float RelativeTime;							//var float RelativeTime;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleVelocityScale")					FVector RelativeVelocity;						//var Vector RelativeVelocity;
+};
+
+USTRUCT(BlueprintType)
+struct FParticle
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector Location;						//var Vector Location;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector OldLocation;					//var Vector OldLocation;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector Velocity;						//var Vector Velocity;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector StartSize;						//var Vector StartSize;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector SpinsPerSecond;					//var Vector SpinsPerSecond;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector StartSpin;						//var Vector StartSpin;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector RevolutionCenter;				//var Vector RevolutionCenter;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector RevolutionsPerSecond;			//var Vector RevolutionsPerSecond;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector RevolutionsMultiplier;			//var Vector RevolutionsMultiplier;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector Size;							//var Vector Size;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector StartLocation;					//var Vector StartLocation;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector ColorMultiplier;				//var Vector ColorMultiplier;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector VelocityMultiplier;				//var Vector VelocityMultiplier;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector OldMeshLocation;				//var Vector OldMeshLocation;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FColor Color;							//var Color Color;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					float Time;								//var float Time;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					float MaxLifetime;						//var float MaxLifetime;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					float Mass;								//var float Mass;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					int32 HitCount;							//var int32 HitCount;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					int32 Flags;							//var int32 Flags;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					int32 Subdivision;						//var int32 Subdivision;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					int32 BoneIndex;						//var int32 BoneIndex;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					uint8 NumFramesRendered;				//var uint8 NumFramesRendered;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					float FadeTime;							//var float FadeTime;
+};
+
+USTRUCT(BlueprintType)
+struct FParticleSound
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleSound")					USoundBase* Sound;						//var Sound Sound;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleSound")					FRange Radius;							//var Range Radius;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleSound")					FRange Pitch;							//var Range Pitch;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleSound")					int32 Weight;							//var int32 Weight;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleSound")					FRange Volume;							//var Range Volume;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleSound")					FRange Probability;						//var Range Probability;
+};
+
+USTRUCT(BlueprintType)
+struct FGameSpyPlayerInfo
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GameSpyPlayerInfo")					int32 Honor;							//var int Honor;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GameSpyPlayerInfo")					FString Name;							//var string Name;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GameSpyPlayerInfo")					int32 Score_Total;						//var int Score_Total;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GameSpyPlayerInfo")					int32 Enemy;							//var int Enemy;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GameSpyPlayerInfo")					int32 KIA;								//var int KIA;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GameSpyPlayerInfo")					int32 ROE;								//var int ROE;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GameSpyPlayerInfo")					int32 Ping;								//var int Ping;
+};
+
+USTRUCT(BlueprintType)
+struct FOutstandingPing
+{
+	GENERATED_BODY()
+	UPROPERTY(BlueprintReadWrite, Category = "OutstandingPing")				int32							IP;					//var int32 IP;
+	UPROPERTY(BlueprintReadWrite, Category = "OutstandingPing")				int32							Port;				//var int32 Port;
+	UPROPERTY(BlueprintReadWrite, Category = "OutstandingPing")				float							TimeOfLastPing;		//var float TimeOfLastPing;
+	UPROPERTY(BlueprintReadWrite, Category = "OutstandingPing")				AMBSPingServerRequestAdapter*	Request;			//var MBSPingServerRequestAdapter Request;
+};
+
+USTRUCT(BlueprintType)
+struct FPlayerList
+{
+	GENERATED_BODY()
+	UPROPERTY(BlueprintReadWrite, Category = "PlayerList")					TArray<FGameSpyPlayerInfo>		players;			//var TArray<ServerBrowserBase.GameSpyPlayerInfo> players;
+};
+
+
+USTRUCT(BlueprintType)
+struct FPlayListStruct
+{
+	GENERATED_BODY()
+	UPROPERTY(BlueprintReadWrite, Category = "PlayListStruct")				bool				bRepeat;			//var config bool bRepeat;
+	UPROPERTY(BlueprintReadWrite, Category = "PlayListStruct")				bool				bShuffle;			//var config bool bShuffle;
+	UPROPERTY(BlueprintReadWrite, Category = "PlayListStruct")				FString				Current;			//var config FString Current;
+	UPROPERTY(BlueprintReadWrite, Category = "PlayListStruct")				TArray<FString>		Songs;				//var config TArray<FString> Songs;
+};
+
 
 USTRUCT(BlueprintType)
 struct FStoredPassword
@@ -825,15 +1035,6 @@ struct FDamageStateStruct
 };
 
 USTRUCT(BlueprintType)
-struct FRange
-{
-	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Range")											float Min;											//var float Min;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Range")											float Max;											//var float Max;
-};
-
-
-USTRUCT(BlueprintType)
 struct FDecorationType
 {
 	GENERATED_BODY()
@@ -1299,16 +1500,6 @@ struct FTestPage
 };
 
 
-
-
-USTRUCT(BlueprintType)
-struct FRangeVector
-{
-	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FRangeVector")								FRange X;											//var Range X;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FRangeVector")								FRange Y;											//var Range Y;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FRangeVector")								FRange Z;											//var Range Z;
-};
 
 
 USTRUCT(BlueprintType)
@@ -2027,20 +2218,6 @@ struct FGameSpyServerItem
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GameSpyServerItem")					FString OperatingSystem;					//var string OperatingSystem;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GameSpyServerItem")					int32 AveragePlayerPing;					//var int AveragePlayerPing;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GameSpyServerItem")					int32 MissionTimeRemaining;					//var int MissionTimeRemaining;
-};
-
-USTRUCT(BlueprintType)
-struct FGameSpyPlayerInfo
-{
-	GENERATED_BODY()
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GameSpyPlayerInfo")					int32 Honor;							//var int Honor;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GameSpyPlayerInfo")					FString Name;							//var string Name;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GameSpyPlayerInfo")					int32 Score_Total;						//var int Score_Total;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GameSpyPlayerInfo")					int32 Enemy;							//var int Enemy;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GameSpyPlayerInfo")					int32 KIA;								//var int KIA;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GameSpyPlayerInfo")					int32 ROE;								//var int ROE;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GameSpyPlayerInfo")					int32 Ping;								//var int Ping;
 };
 
 USTRUCT(BlueprintType)

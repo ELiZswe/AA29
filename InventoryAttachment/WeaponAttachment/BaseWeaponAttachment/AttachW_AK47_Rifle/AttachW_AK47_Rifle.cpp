@@ -3,8 +3,8 @@
 
 #include "AttachW_AK47_Rifle.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/AttachW_M16A2_Rifle/AttachW_M16A2_Rifle.h"
-#include "AA29/AA2_Emitter/BaseShellEmitter/Shell_762mm_Emitter/Shell_762mm_Emitter.h"
-#include "AA29/AA2_Emitter/BaseMuzzleFlashEmitter/AK47MuzzleFlash/AK47MuzzleFlash.h"
+#include "AA29/Object/Actor/Emitter/BaseShellEmitter/Shell_762mm_Emitter/Shell_762mm_Emitter.h"
+#include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/AK47MuzzleFlash/AK47MuzzleFlash.h"
 
 AAttachW_AK47_Rifle::AAttachW_AK47_Rifle()
 {

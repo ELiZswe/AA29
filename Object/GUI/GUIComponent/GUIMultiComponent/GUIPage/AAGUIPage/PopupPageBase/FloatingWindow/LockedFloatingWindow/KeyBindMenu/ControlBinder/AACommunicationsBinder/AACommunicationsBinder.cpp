@@ -1,0 +1,77 @@
+// All the original content belonged to the US Army
+
+
+#include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPage/AAGUIPage/PopupPageBase/FloatingWindow/LockedFloatingWindow/KeyBindMenu/ControlBinder/AACommunicationsBinder/AACommunicationsBinder.h"
+
+UAACommunicationsBinder::UAACommunicationsBinder()
+{
+	BindingLabel = { "Microphone","Activate Microphone","Text Chat","Say (Voice Command)","Team Say (Voice Command)","General Chat","Team Chat","Commo Modes","Cycle Commo Modes","Radio Commo Mode","Squad Leader Commo Mode","Shout Commo Mode","Whisper Commo Mode","Hand Signal Commo Mode","Global Commo Mode (Text Chat Only)","Commo Messages","Move Out","Stop","Cover Me","Enemy Spotted","Take Cover","Enemy Down","Area Secure","Roger","Negative","Up","Down","Left","Right","North","South","East","West","Hooah","Sniper","Frag'em","Smoke'em","Flash'em","Grenade","Ready","I'm Hit","Get The Door","Check Your Flanks","Stop So I Can Treat You","Medic","Squad Leader Commo Messages","Squad, Form Up","Squad, Spread Out","Fall back!  Fall back!","Squad, Open Fire","Cease Fire, Cease Fire","Squad, Hold This Position","Squad, Report In","Squad, Silence, Silence","Squad, Operate As A Unit","There's no I in team","That may be your way, but that's not the Army way...","What are you doing, soldier!?","Hit The Dirt","Stay Down!","Grandma was slow, but she was old...","That don't make no sense at all...","Good job, soldier!","Great job, team!","Squad, Check Your Objectives" };
+	
+	Bindings = {
+				FKeyBindMenyKeyBinding({false, "Activate Microphone", "VoiceTalk"}),
+				FKeyBindMenyKeyBinding({true, "Text Chat", ""}),
+				FKeyBindMenyKeyBinding({false, "Say (Voice Command}),", "Say"}),
+				FKeyBindMenyKeyBinding({false, "Team Say (Voice Command}),", "TeamSay"}),
+				FKeyBindMenyKeyBinding({false, "General Chat", "Talk"}),
+				FKeyBindMenyKeyBinding({false, "Team Chat", "TeamTalk"}),
+				FKeyBindMenyKeyBinding({true, "Commo Modes", ""}),
+				FKeyBindMenyKeyBinding({false, "Cycle Commo Modes", "CommoCycle"}),
+				FKeyBindMenyKeyBinding({false, "Radio Commo Mode", "CommoRadio"}),
+				FKeyBindMenyKeyBinding({false, "Squad Leader Commo Mode", "CommoSquad"}),
+				FKeyBindMenyKeyBinding({false, "Shout Commo Mode", "CommoShout"}),
+				FKeyBindMenyKeyBinding({false, "Whisper Commo Mode", "CommoWhisper"}),
+				FKeyBindMenyKeyBinding({false, "Hand Signal Commo Mode", "CommoHand"}),
+				FKeyBindMenyKeyBinding({false, "Global Commo Mode (Text Chat Only}),", "CommoGlobal"}),
+				FKeyBindMenyKeyBinding({true, "Commo Messages", ""}),
+				FKeyBindMenyKeyBinding({false, "Move Out", "VRCommoMoveOut"}),
+				FKeyBindMenyKeyBinding({false, "Stop", "VRCommoStop"}),
+				FKeyBindMenyKeyBinding({false, "Cover Me", "VRCommoCoverMe"}),
+				FKeyBindMenyKeyBinding({false, "Commo Enemy Spotted", "VRCommoEnemySpotted"}),
+				FKeyBindMenyKeyBinding({false, "Take Cover", "VRCommoTakeCover"}),
+				FKeyBindMenyKeyBinding({false, "Enemy Down", "VRCommoEnemyDown"}),
+				FKeyBindMenyKeyBinding({false, "Area Secure", "VRCommoAreaSecure"}),
+				FKeyBindMenyKeyBinding({false, "Roger", "VRCommoRoger"}),
+				FKeyBindMenyKeyBinding({false, "Negative", "VRCommoNegative"}),
+				FKeyBindMenyKeyBinding({false, "Up", "VRCommoUp"}),
+				FKeyBindMenyKeyBinding({false, "Down", "VRCommoDown"}),
+				FKeyBindMenyKeyBinding({false, "Left", "VRCommoLeft"}),
+				FKeyBindMenyKeyBinding({false, "Right", "VRCommoRight"}),
+				FKeyBindMenyKeyBinding({false, "North", "VRCommoNorth"}),
+				FKeyBindMenyKeyBinding({false, "South", "VRCommoSouth"}),
+				FKeyBindMenyKeyBinding({false, "East", "VRCommoEast"}),
+				FKeyBindMenyKeyBinding({false, "West", "VRCommoWest"}),
+				FKeyBindMenyKeyBinding({false, "Hooah", "VRCommoHooah"}),
+				FKeyBindMenyKeyBinding({false, "Sniper", "VRCommoSniper"}),
+				FKeyBindMenyKeyBinding({false, "Frag'em", "VRCommoFragEm"}),
+				FKeyBindMenyKeyBinding({false, "Smoke'em", "VRCommoSmokeEm"}),
+				FKeyBindMenyKeyBinding({false, "Flash'em", "VRCommoFlashEm"}),
+				FKeyBindMenyKeyBinding({false, "Grenade", "VRCommoGrenade"}),
+				FKeyBindMenyKeyBinding({false, "Ready", "VRCommoReady"}),
+				FKeyBindMenyKeyBinding({false, "I'm Hit", "VRCommoImHit"}),
+				FKeyBindMenyKeyBinding({false, "Get The Door", "VRCommoGetDoor"}),
+				FKeyBindMenyKeyBinding({false, "Check Your Flanks", "VRCommoCheckFlank"}),
+				FKeyBindMenyKeyBinding({false, "Stop So I Can Treat You", "VRCommoHoldStill"}),
+				FKeyBindMenyKeyBinding({false, "Medic", "VRCommoMedic"}),
+				FKeyBindMenyKeyBinding({true, "Squad Leader Commo Messages", ""}),
+				FKeyBindMenyKeyBinding({false, "Squad, Form Up", "VRSquadFormUp"}),
+				FKeyBindMenyKeyBinding({false, "Squad, Spread Out", "VRSquadSpreadOut"}),
+				FKeyBindMenyKeyBinding({false, "Fall back!  Fall back!", "VRSquadFallBack"}),
+				FKeyBindMenyKeyBinding({false, "Squad, Open Fire", "VRSquadOpenFire"}),
+				FKeyBindMenyKeyBinding({false, "Cease Fire, Cease Fire", "VRSquadCeaseFire"}),
+				FKeyBindMenyKeyBinding({false, "Squad, Hold This Position", "VRSquadHoldPosition"}),
+				FKeyBindMenyKeyBinding({false, "Squad, Report In", "VRSquadReportIn"}),
+				FKeyBindMenyKeyBinding({false, "Squad, Silence, Silence", "VRSquadSilence"}),
+				FKeyBindMenyKeyBinding({false, "Squad, Operate As A Unit", "VRSquadOperateUnit"}),
+				FKeyBindMenyKeyBinding({false, "There's no I in team", "VRSquadNoITeam"}),
+				FKeyBindMenyKeyBinding({false, "That may be your way, but that's not the Army way...", "VRSquadArmyWay"}),
+				FKeyBindMenyKeyBinding({false, "What are you doing, soldier!?", "VRSquadWhatDoing"}),
+				FKeyBindMenyKeyBinding({false, "Hit The Dirt", "VRSquadHitDirt"}),
+				FKeyBindMenyKeyBinding({false, "Stay Down!", "VRSquadStayDown"}),
+				FKeyBindMenyKeyBinding({false, "Grandma was slow, but she was old...", "VRSquadGrandma"}),
+				FKeyBindMenyKeyBinding({false, "hat don't make no sense at all...", "VRSquadNoSense"}),
+				FKeyBindMenyKeyBinding({false, "Good job, soldier!", "VRSquadGoodJob"}),
+				FKeyBindMenyKeyBinding({false, "Great job, team!", "VRSquadGreatJob"}),
+				FKeyBindMenyKeyBinding({false, "Squad, Check Your Objectives", "VRSquadObjectives"})
+	};
+
+}

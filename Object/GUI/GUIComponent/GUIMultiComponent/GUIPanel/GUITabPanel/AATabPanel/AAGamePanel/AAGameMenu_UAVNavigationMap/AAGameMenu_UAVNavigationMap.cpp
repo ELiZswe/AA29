@@ -1,142 +1,133 @@
 // All the original content belonged to the US Army
 
-
 #include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/GUITabPanel/AATabPanel/AAGamePanel/AAGameMenu_UAVNavigationMap/AAGameMenu_UAVNavigationMap.h"
+#include "AA29/Object/GUI/GUIComponent/GUILabel/GUILabel.h"
+#include "AA29/Object/GUI/GUIComponent/GUIImage/GUIImageButton/GUIImageButton.h"
+#include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIMenuOption/moEditBox/moEditBox.h"
+#include "AA29/Object/GUI/GUIComponent/GUIButton/GUIButton.h"
 
 UAAGameMenu_UAVNavigationMap::UAAGameMenu_UAVNavigationMap()
 {
-	/*
-	Begin Object Class=GUIImageButton Name=MapImage
-		Image=Texture'T_AA2_Maps.Overhead.NoImage'
-		ImageRenderStyle=1
-		WinTop=0.05
-		WinLeft=0.05
-		WinWidth=0.68
-		WinHeight=0.68
-		OnClick=AAGameMenu_UAVNavigationMap.OnMapClick
-		OnKeyEvent=MapImage.InternalOnKeyEvent
-	End Object
-	Begin Object Class=moEditBox Name=WaypointAltitudeEntryField
-		CaptionWidth=0.3
-		Caption="Waypoint Altitude:"
-		OnCreateComponent=WaypointAltitudeEntryField.InternalOnCreateComponent
-		IniOption="@Internal"
-		Hint="Enter the desired altitude for this waypoint."
-		WinTop=0.79
-		WinLeft=0.05
-		WinWidth=0.25
-		WinHeight=0.05
-		TabOrder=2
-		bStandardized=False
-		OnChange=AAGameMenu_UAVNavigationMap.InternalOnChange
-	End Object
-	Begin Object Class=moEditBox Name=WaypointSpeedEntryField
-		CaptionWidth=0.3
-		Caption="Waypoint Speed:"
-		OnCreateComponent=WaypointSpeedEntryField.InternalOnCreateComponent
-		IniOption="@Internal"
-		Hint="Enter the desired speed for this waypoint"
-		WinTop=0.79
-		WinLeft=0.3
-		WinWidth=0.25
-		WinHeight=0.05
-		TabOrder=2
-		bStandardized=False
-		OnChange=AAGameMenu_UAVNavigationMap.InternalOnChange
-	End Object
-	Begin Object Class=GUIButton Name=DeleteWaypointButton
-		Caption="Delete Waypoint"
-		MenuState=4
-		StyleName="SquareMenuButton"
-		Hint="Click here to delete the current waypoint."
-		WinTop=0.79
-		WinLeft=0.62
-		WinWidth=0.13
-		WinHeight=0.05
-		TabOrder=14
-		OnClick=AAGameMenu_UAVNavigationMap.ButtonClick
-		OnKeyEvent=DeleteWaypointButton.InternalOnKeyEvent
-	End Object
-	Begin Object Class=GUIButton Name=ClearWaypointsButton
-		Caption="Clear Waypoints"
-		MenuState=4
-		StyleName="SquareMenuButton"
-		Hint="Click here to clear all of the waypoints."
-		WinTop=0.79
-		WinLeft=0.8
-		WinWidth=0.17
-		WinHeight=0.05
-		TabOrder=14
-		OnClick=AAGameMenu_UAVNavigationMap.ButtonClick
-		OnKeyEvent=ClearWaypointsButton.InternalOnKeyEvent
-	End Object
-	Begin Object Class=GUIButton Name=SaveFlightPlanButton
-		Caption="Save Flight Plan"
-		MenuState=4
-		StyleName="SquareMenuButton"
-		Hint="Click here to save the flight plan."
-		WinTop=0.85
-		WinLeft=0.05
-		WinWidth=0.15
-		WinHeight=0.05
-		TabOrder=14
-		OnClick=AAGameMenu_UAVNavigationMap.ButtonClick
-		OnKeyEvent=SaveFlightPlanButton.InternalOnKeyEvent
-	End Object
-	Begin Object Class=GUIButton Name=DiscardChangesButton
-		Caption="Discard Changes"
-		StyleName="SquareMenuButton"
-		Hint="Click here to discard any changes to the flight plan."
-		WinTop=0.85
-		WinLeft=0.25
-		WinWidth=0.15
-		WinHeight=0.05
-		TabOrder=14
-		OnClick=AAGameMenu_UAVNavigationMap.ButtonClick
-		OnKeyEvent=DiscardChangesButton.InternalOnKeyEvent
-	End Object
-	Begin Object Class=GUIImage Name=MyBackground
-		Image=Texture'T_AA2_UI.Menu.backgroundfill'
-		ImageStyle=ISTY_Stretched
-		ImageRenderStyle=1
-		WinTop=0.01
-		WinLeft=0.01
-		WinWidth=0.98
-		WinHeight=0.89
-		RenderWeight=0
-		bBoundToParent=True
-		bScaleToParent=True
-	End Object
-	Begin Object Class=GUILabel Name=TitleLabel
-		Caption="UAV Flight Planner"
-		TextAlign=1
-		TextColor=(R=255,G=255,B=255,A=255)
-		StyleName="TextLabel"
-		WinTop=0.07
-		WinLeft=0.25
-		WinWidth=0.5
-		WinHeight=0.05
-	End Object
-	Begin Object Class=GUILabel Name=DebugLabel
-		TextColor=(R=255,G=255,B=255,A=255)
-		StyleName="TextLabel"
-		WinTop=0.25
-		WinLeft=0.75
-		WinWidth=0.9
-		WinHeight=0.05
-	End Object
-	*/
-	//texWaypointMarker = Texture'T_AA2_UI.Menu.box_check_plus';
-	//i_Background = GUIImage'AGP_Interface.AAGameMenu_UAVNavigationMap.MyBackground';
-	//i_Map = GUIImageButton'AGP_Interface.AAGameMenu_UAVNavigationMap.MapImage';
-	//guilTitle = GUILabel'AGP_Interface.AAGameMenu_UAVNavigationMap.TitleLabel';
-	//guilDebug = GUILabel'AGP_Interface.AAGameMenu_UAVNavigationMap.DebugLabel';
-	//mebWaypointAltitude = moEditBox'AGP_Interface.AAGameMenu_UAVNavigationMap.WaypointAltitudeEntryField';
-	//mebWaypointSpeed = moEditBox'AGP_Interface.AAGameMenu_UAVNavigationMap.WaypointSpeedEntryField';
-	//guibSaveFlightPlan = GUIButton'AGP_Interface.AAGameMenu_UAVNavigationMap.SaveFlightPlanButton';
-	//guibDeleteWaypoint = GUIButton'AGP_Interface.AAGameMenu_UAVNavigationMap.DeleteWaypointButton';
-	//guibClearAllWaypoints = GUIButton'AGP_Interface.AAGameMenu_UAVNavigationMap.ClearWaypointsButton';
-	//guibDiscardChanges = GUIButton'AGP_Interface.AAGameMenu_UAVNavigationMap.DiscardChangesButton';
+	UGUIImageButton* MapImage = NewObject<UGUIImageButton>(UGUIImageButton::StaticClass());
+	MapImage->Image = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_Maps/Overhead/NoImag_Mat.NoImag_Mat'"), NULL, LOAD_None, NULL);
+	MapImage->ImageRenderStyle = EMenuRenderStyle::MSTY_Normal;
+	MapImage->WinTop = 0.05;
+	MapImage->WinLeft = 0.05;
+	MapImage->WinWidth = 0.68;
+	MapImage->WinHeight = 0.68;
+	//MapImage->OnClick=AAGameMenu_UAVNavigationMap.OnMapClick;
+	//MapImage->OnKeyEvent=MapImage.InternalOnKeyEvent;
+	UmoEditBox* WaypointAltitudeEntryField = NewObject<UmoEditBox>(UmoEditBox::StaticClass());
+	WaypointAltitudeEntryField->CaptionWidth = 0.3;
+	WaypointAltitudeEntryField->Caption = "Waypoint Altitude:";
+	//WaypointAltitudeEntryField->OnCreateComponent=WaypointAltitudeEntryField.InternalOnCreateComponent;
+	WaypointAltitudeEntryField->IniOption = "@Internal";
+	WaypointAltitudeEntryField->Hint = "Enter the desired altitude for this waypoint.";
+	WaypointAltitudeEntryField->WinTop = 0.79;
+	WaypointAltitudeEntryField->WinLeft = 0.05;
+	WaypointAltitudeEntryField->WinWidth = 0.25;
+	WaypointAltitudeEntryField->WinHeight = 0.05;
+	WaypointAltitudeEntryField->TabOrder = 2;
+	WaypointAltitudeEntryField->bStandardized = false;
+	//WaypointAltitudeEntryField->OnChange=AAGameMenu_UAVNavigationMap.InternalOnChange;
+	UmoEditBox* WaypointSpeedEntryField = NewObject<UmoEditBox>(UmoEditBox::StaticClass());
+	WaypointSpeedEntryField->CaptionWidth = 0.3;
+	WaypointSpeedEntryField->Caption = "Waypoint Speed:";
+	//WaypointSpeedEntryField->OnCreateComponent=WaypointSpeedEntryField.InternalOnCreateComponent;
+	WaypointSpeedEntryField->IniOption = "@Internal";
+	WaypointSpeedEntryField->Hint = "Enter the desired speed for this waypoint";
+	WaypointSpeedEntryField->WinTop = 0.79;
+	WaypointSpeedEntryField->WinLeft = 0.3;
+	WaypointSpeedEntryField->WinWidth = 0.25;
+	WaypointSpeedEntryField->WinHeight = 0.05;
+	WaypointSpeedEntryField->TabOrder = 2;
+	WaypointSpeedEntryField->bStandardized = false;
+	//WaypointSpeedEntryField->OnChange=AAGameMenu_UAVNavigationMap.InternalOnChange;
+	UGUIButton* DeleteWaypointButton = NewObject<UGUIButton>(UGUIButton::StaticClass());
+	DeleteWaypointButton->Caption = "Delete Waypoint";
+	DeleteWaypointButton->MenuState = EMenuState::MSAT_Disabled;
+	DeleteWaypointButton->StyleName = "SquareMenuButton";
+	DeleteWaypointButton->Hint = "Click here to delete the current waypoint.";
+	DeleteWaypointButton->WinTop = 0.79;
+	DeleteWaypointButton->WinLeft = 0.62;
+	DeleteWaypointButton->WinWidth = 0.13;
+	DeleteWaypointButton->WinHeight = 0.05;
+	DeleteWaypointButton->TabOrder = 14;
+	//DeleteWaypointButton->OnClick=AAGameMenu_UAVNavigationMap.ButtonClick;
+	//DeleteWaypointButton->OnKeyEvent=DeleteWaypointButton.InternalOnKeyEvent;
+	UGUIButton* ClearWaypointsButton = NewObject<UGUIButton>(UGUIButton::StaticClass());
+	ClearWaypointsButton->Caption = "Clear Waypoints";
+	ClearWaypointsButton->MenuState = EMenuState::MSAT_Disabled;
+	ClearWaypointsButton->StyleName = "SquareMenuButton";
+	ClearWaypointsButton->Hint = "Click here to clear all of the waypoints.";
+	ClearWaypointsButton->WinTop = 0.79;
+	ClearWaypointsButton->WinLeft = 0.8;
+	ClearWaypointsButton->WinWidth = 0.17;
+	ClearWaypointsButton->WinHeight = 0.05;
+	ClearWaypointsButton->TabOrder = 14;
+	//ClearWaypointsButton->OnClick=AAGameMenu_UAVNavigationMap.ButtonClick;
+	//ClearWaypointsButton->OnKeyEvent=ClearWaypointsButton.InternalOnKeyEvent;
+	UGUIButton* SaveFlightPlanButton = NewObject<UGUIButton>(UGUIButton::StaticClass());
+	SaveFlightPlanButton->Caption = "Save Flight Plan";
+	SaveFlightPlanButton->MenuState = EMenuState::MSAT_Disabled;
+	SaveFlightPlanButton->StyleName = "SquareMenuButton";
+	SaveFlightPlanButton->Hint = "Click here to save the flight plan.";
+	SaveFlightPlanButton->WinTop = 0.85;
+	SaveFlightPlanButton->WinLeft = 0.05;
+	SaveFlightPlanButton->WinWidth = 0.15;
+	SaveFlightPlanButton->WinHeight = 0.05;
+	SaveFlightPlanButton->TabOrder = 14;
+	//SaveFlightPlanButton->OnClick=AAGameMenu_UAVNavigationMap.ButtonClick;
+	//SaveFlightPlanButton->OnKeyEvent=SaveFlightPlanButton.InternalOnKeyEvent;
+	UGUIButton* DiscardChangesButton = NewObject<UGUIButton>(UGUIButton::StaticClass());
+	DiscardChangesButton->Caption = "Discard Changes";
+	DiscardChangesButton->StyleName = "SquareMenuButton";
+	DiscardChangesButton->Hint = "Click here to discard any changes to the flight plan.";
+	DiscardChangesButton->WinTop = 0.85;
+	DiscardChangesButton->WinLeft = 0.25;
+	DiscardChangesButton->WinWidth = 0.15;
+	DiscardChangesButton->WinHeight = 0.05;
+	DiscardChangesButton->TabOrder = 14;
+	//DiscardChangesButton->OnClick=AAGameMenu_UAVNavigationMap.ButtonClick;
+	//DiscardChangesButton->OnKeyEvent=DiscardChangesButton.InternalOnKeyEvent;
+	UGUIImage* MyBackground = NewObject<UGUIImage>(UGUIImage::StaticClass());
+	MyBackground->Image = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/backgroundfil_Mat.backgroundfil_Mat'"), NULL, LOAD_None, NULL);
+	MyBackground->ImageStyle = EImgStyle::ISTY_Stretched;
+	MyBackground->ImageRenderStyle = EMenuRenderStyle::MSTY_Normal;
+	MyBackground->WinTop = 0.01;
+	MyBackground->WinLeft = 0.01;
+	MyBackground->WinWidth = 0.98;
+	MyBackground->WinHeight = 0.89;
+	MyBackground->RenderWeight = 0;
+	MyBackground->bBoundToParent = true;
+	MyBackground->bScaleToParent = true;
+	UGUILabel* TitleLabel = NewObject<UGUILabel>(UGUILabel::StaticClass());
+	TitleLabel->Caption = "UAV Flight Planner";
+	TitleLabel->TextAlign = ETextAlign::TXTA_Center;
+	TitleLabel->TextColor = FColor(255, 255, 255, 255);
+	TitleLabel->StyleName = "TextLabel";
+	TitleLabel->WinTop = 0.07;
+	TitleLabel->WinLeft = 0.25;
+	TitleLabel->WinWidth = 0.5;
+	TitleLabel->WinHeight = 0.05;
+	UGUILabel* DebugLabel = NewObject<UGUILabel>(UGUILabel::StaticClass());
+	DebugLabel->TextColor = FColor(255, 255, 255, 255);
+	DebugLabel->StyleName = "TextLabel";
+	DebugLabel->WinTop = 0.25;
+	DebugLabel->WinLeft = 0.75;
+	DebugLabel->WinWidth = 0.9;
+	DebugLabel->WinHeight = 0.05;
+	texWaypointMarker = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/box_check_plus_Mat.box_check_plus_Mat'"), NULL, LOAD_None, NULL);
+	i_Background = MyBackground;
+	i_Map = MapImage;
+	guilTitle = TitleLabel;
+	guilDebug = DebugLabel;
+	mebWaypointAltitude = WaypointAltitudeEntryField;
+	mebWaypointSpeed = WaypointSpeedEntryField;
+	guibSaveFlightPlan = SaveFlightPlanButton;
+	guibDeleteWaypoint = DeleteWaypointButton;
+	guibClearAllWaypoints = ClearWaypointsButton;
+	guibDiscardChanges = DiscardChangesButton;
 
 }
 

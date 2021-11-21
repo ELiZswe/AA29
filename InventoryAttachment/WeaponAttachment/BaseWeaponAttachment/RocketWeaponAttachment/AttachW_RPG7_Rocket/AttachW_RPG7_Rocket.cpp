@@ -4,7 +4,7 @@
 #include "AttachW_RPG7_Rocket.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/RocketWeaponAttachment/AttachW_AT4_Rocket/AttachW_AT4_Rocket.h"
 #include "AA29/InventoryAttachment/ItemAttachment/Attch_RPGBackpack/Attch_RPGBackpack.h"
-#include "AA29/AA2_Emitter/BaseMuzzleFlashEmitter/RPG7MuzzleFlash/RPG7MuzzleFlash.h"
+#include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/RPG7MuzzleFlash/RPG7MuzzleFlash.h"
 #include "AA29/Base3pAmmoRound/AmmoRound_3P_RPG7_Rocket.h"
 
 AAttachW_RPG7_Rocket::AAttachW_RPG7_Rocket()

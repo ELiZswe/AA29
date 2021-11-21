@@ -3,8 +3,8 @@
 
 #include "AttachW_Vintorez_Sniper.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/AttachW_SPR_Sniper/AttachW_SPR_Sniper.h"
-#include "AA29/AA2_Emitter/BaseShellEmitter/Shell_9x39_Emitter/Shell_9x39_Emitter.h"
-#include "AA29/AA2_Emitter/BaseMuzzleFlashEmitter/VSSSuppressorMuzzleFlash/VSSSuppressorMuzzleFlash.h"
+#include "AA29/Object/Actor/Emitter/BaseShellEmitter/Shell_9x39_Emitter/Shell_9x39_Emitter.h"
+#include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/VSSSuppressorMuzzleFlash/VSSSuppressorMuzzleFlash.h"
 
 AAttachW_Vintorez_Sniper::AAttachW_Vintorez_Sniper()
 {

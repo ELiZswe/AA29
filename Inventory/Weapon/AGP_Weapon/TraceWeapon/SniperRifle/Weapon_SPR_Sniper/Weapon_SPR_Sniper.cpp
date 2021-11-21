@@ -7,8 +7,8 @@
 #include "AA29/Pickup/AGP_WeaponPickup/PickupW_SPR_Sniper/PickupW_SPR_Sniper.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/AttachW_SPR_Sniper/AttachW_SPR_Sniper.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamage556mm_SPR.h"
-#include "AA29/AA2_Emitter/BaseMuzzleFlashEmitter/M16A2MuzzleFlash_1P/M16A2MuzzleFlash_1P.h"
-#include "AA29/AA2_Emitter/BaseMuzzleFlashEmitter/SuppressorMuzzleFlash_1P/SuppressorMuzzleFlash_1P.h"
+#include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/M16A2MuzzleFlash_1P/M16A2MuzzleFlash_1P.h"
+#include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/SuppressorMuzzleFlash_1P/SuppressorMuzzleFlash_1P.h"
 
 AWeapon_SPR_Sniper::AWeapon_SPR_Sniper()
 {

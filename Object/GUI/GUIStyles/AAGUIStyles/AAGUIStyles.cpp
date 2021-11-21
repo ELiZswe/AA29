@@ -20,13 +20,12 @@ UAAGUIStyles::UAAGUIStyles()
 	FontNames[12] = "AAFontLarge";
 	FontNames[13] = "AAFontLarge";
 	FontNames[14] = "AAFontLarge";
-	//FontColors = (R = 229, G = 248, B = 251, A = 255)
-	//FontColors = (R = 156, G = 201, B = 168, A = 255)
-	//FontColors = (R = 156, G = 201, B = 168, A = 255)
-	//FontColors = (R = 52, G = 180, B = 217, A = 255)
-	//FontColors = (R = 90, G = 90, B = 90, A = 255)
-	//BorderOffsets(0) = 0
-	//BorderOffsets(1) = 0
-	//BorderOffsets(2) = 0
-	//BorderOffsets(3) = 0
+	FontColors = {
+		FColor(229, 248, 251, 255),
+		FColor(156, 201, 168, 255),
+		FColor(156, 201, 168, 255),
+		FColor(52, 180, 217, 255),
+		FColor(90, 90, 90, 255)
+	};
+	BorderOffsets = { 0,0,0,0 };
 }

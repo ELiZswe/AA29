@@ -12,7 +12,6 @@
 
 UBrowser_Prefs::UBrowser_Prefs()
 {
-
 	UGUIButton* MyBackButton = NewObject<UGUIButton>(UGUIButton::StaticClass());
 	MyBackButton->Caption="BACK";
 	MyBackButton->StyleName="SquareMenuButton";

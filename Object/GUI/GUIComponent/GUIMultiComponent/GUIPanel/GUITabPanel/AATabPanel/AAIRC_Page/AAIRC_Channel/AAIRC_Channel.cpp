@@ -1,62 +1,53 @@
 // All the original content belonged to the US Army
 
-
 #include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/GUITabPanel/AATabPanel/AAIRC_Page/AAIRC_Channel/AAIRC_Channel.h"
+#include "AA29/Object/GUI/GUIComponent/GUIContextMenu/GUIContextMenu.h"
+#include "AA29/Object/GUI/GUIComponent/GUIButton/GUIButton.h"
+#include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/GUISplitter/GUISplitter.h"
 
 UAAIRC_Channel::UAAIRC_Channel()
 {
-	/*
-	Begin Object Class=GUIButton Name=IRCLeave
-		Caption="LEAVE"
-		StyleName="SquareMenuButton"
-		WinTop=0.83
-		WinLeft=0.59
-		WinWidth=0.16
-		WinHeight=0.036
-		RenderWeight=2
-		TabOrder=2
-		bBoundToParent=True
-		OnClick=AAIRC_Channel.InternalOnClick
-		OnKeyEvent=IRCLeave.InternalOnKeyEvent
-	End Object
-	*/
-	/*
-	Begin Object Class=GUIButton Name=IRCDisconnect
-		Caption="DISCONNECT"
-		StyleName="SquareMenuButton"
-		WinTop=0.83
-		WinLeft=0.8
-		WinWidth=0.16
-		WinHeight=0.036
-		RenderWeight=2
-		TabOrder=1
-		bBoundToParent=True
-		OnClick=AAIRC_Channel.InternalOnClick
-		OnKeyEvent=IRCDisconnect.InternalOnKeyEvent
-	End Object
-	*/
-	/*
-	Begin Object Class=GUISplitter Name=SplitterA
-		SplitOrientation=1
-		SplitPosition=0.75
-		DefaultPanels="XInterface.GUIScrollTextBox"
-		DefaultPanels="XInterface.GUIListBox"
-		OnReleaseSplitter=AAIRC_Channel.InternalOnReleaseSplitter
-		OnCreateComponent=AAIRC_Channel.InternalOnCreateComponent
-		IniOption="@Internal"
-		WinHeight=0.81
-		OnLoadINI=AAIRC_Channel.InternalOnLoadINI
-	End Object
-	*/
-	/*
-	Begin Object Class=GUIContextMenu Name=RCMenu
-		OnOpen=AAIRC_Channel.ContextMenuOpen
-		OnSelect=AAIRC_Channel.ContextMenuClick
-	End Object
-	*/
+	UGUIButton* IRCLeave = NewObject<UGUIButton>(UGUIButton::StaticClass());
+	IRCLeave->Caption = "LEAVE";
+	IRCLeave->StyleName = "SquareMenuButton";
+	IRCLeave->WinTop = 0.83;
+	IRCLeave->WinLeft = 0.59;
+	IRCLeave->WinWidth = 0.16;
+	IRCLeave->WinHeight = 0.036;
+	IRCLeave->RenderWeight = 2;
+	IRCLeave->TabOrder = 2;
+	IRCLeave->bBoundToParent = true;
+	//IRCLeave->OnClick=AAIRC_Channel.InternalOnClick;
+	//IRCLeave->OnKeyEvent=IRCLeave.InternalOnKeyEvent;
+	UGUIButton* IRCDisconnect = NewObject<UGUIButton>(UGUIButton::StaticClass());
+	IRCDisconnect->Caption = "DISCONNECT";
+	IRCDisconnect->StyleName = "SquareMenuButton";
+	IRCDisconnect->WinTop = 0.83;
+	IRCDisconnect->WinLeft = 0.8;
+	IRCDisconnect->WinWidth = 0.16;
+	IRCDisconnect->WinHeight = 0.036;
+	IRCDisconnect->RenderWeight = 2;
+	IRCDisconnect->TabOrder = 1;
+	IRCDisconnect->bBoundToParent = true;
+	//IRCDisconnect->OnClick=AAIRC_Channel.InternalOnClick;
+	//IRCDisconnect->OnKeyEvent=IRCDisconnect.InternalOnKeyEvent;
+	UGUISplitter* SplitterA = NewObject<UGUISplitter>(UGUISplitter::StaticClass());
+	SplitterA->SplitOrientation = EGUISplitterType::SPLIT_Horizontal;
+	SplitterA->SplitPosition = 0.75;
+	SplitterA->DefaultPanels = "XInterface.GUIScrollTextBox";
+	SplitterA->DefaultPanels = "XInterface.GUIListBox";
+	//SplitterA->OnReleaseSplitter = AAIRC_Channel.InternalOnReleaseSplitter;
+	//SplitterA->OnCreateComponent=AAIRC_Channel.InternalOnCreateComponent;
+	SplitterA->IniOption = "@Internal";
+	SplitterA->WinHeight = 0.81;
+	//SplitterA->OnLoadINI=AAIRC_Channel.InternalOnLoadINI;
+	UGUIContextMenu* RCMenu = NewObject<UGUIContextMenu>(UGUIContextMenu::StaticClass());
+	//RCMenu->OnOpen=AAIRC_Channel.ContextMenuOpen;
+	//RCMenu->OnSelect=AAIRC_Channel.ContextMenuClick;
+	b_Disconnect = IRCDisconnect;
+	b_Leave = IRCLeave;
 
-	//b_Disconnect = GUIButton'AGP_Interface.AAIRC_Channel.IRCDisconnect';
-	//b_Leave = GUIButton'AGP_Interface.AAIRC_Channel.IRCLeave';
+
 	OpUserText = "Make Op";
 	HelpUserText = "Make Helper";
 	VoiceUserText = "Make Voice";
@@ -67,10 +58,9 @@ UAAIRC_Channel::UAAIRC_Channel()
 	DehelpUserText = "Remove Helper";
 	DevoiceUserText = "Remove Voice";
 	KickUserText = "Kick User";
-	//sp_Main = GUISplitter'AGP_Interface.AAIRC_Channel.SplitterA';
+	sp_Main = SplitterA;
 	MainSplitterPosition = 0.75;
-	//ContextMenu = GUIContextMenu'AGP_Interface.AAIRC_Channel.RCMenu';
-
+	ContextMenu = RCMenu;
 }
 
 void UAAIRC_Channel::ProcessInput(FString Text)

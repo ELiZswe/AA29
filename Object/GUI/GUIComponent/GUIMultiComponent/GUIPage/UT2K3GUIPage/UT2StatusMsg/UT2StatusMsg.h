@@ -16,4 +16,15 @@ class AA29_API UUT2StatusMsg : public UUT2K3GUIPage
 public:
 	UUT2StatusMsg();
 
+	UPROPERTY()					bool				bIgnoreEsc;			//var bool bIgnoreEsc;
+	UPROPERTY()					float				ButtonWidth;		//var float ButtonWidth;
+	UPROPERTY()					float				ButtonHeight;		//var float ButtonHeight;
+	UPROPERTY()					float				ButtonHGap;			//var float ButtonHGap;
+	UPROPERTY()					float				ButtonVGap;			//var float ButtonVGap;
+	UPROPERTY()					float				BarHeight;			//var float BarHeight;
+	UPROPERTY()					float				BarVPos;			//var float BarVPos;
+
+	void InitComponent(UGUIController* MyController, UGUIComponent* MyOwner);
+	bool InternalOnClick(UGUIComponent* Sender);
+	void HandleParameters(FString Param1, FString Param2);
 };

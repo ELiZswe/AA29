@@ -8,7 +8,6 @@ UGUIVertTabControl::UGUIVertTabControl()
 	TabWidth = 0.2;
 	bDrawTabAbove = false;
 	RenderWeight = 0.4;
-
 }
 
 UGUITabPanel* UGUIVertTabControl::AddTab(FString InCaption, FString PanelClass, UGUITabPanel* ExistingPanel, FString InHint, bool bForceActive)

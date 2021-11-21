@@ -6,20 +6,19 @@
 USTY_AAButtonSelected::USTY_AAButtonSelected()
 {
 	KeyName = "ButtonSelected";
-
-		//FontColors = (R = 155, G = 252, B = 185, A = 255)
-		//FontColors = (R = 155, G = 252, B = 185, A = 255)
-		//FontColors = (R = 155, G = 252, B = 185, A = 255)
-		//FontColors = (R = 155, G = 252, B = 185, A = 255)
-		//FontColors = (R = 155, G = 252, B = 185, A = 255)
-		//Images[0] = Texture'T_AAO_UI.GUI.t_ui_gui_button_standard'
-		//Images[1] = Texture'T_AAO_UI.GUI.t_ui_gui_button_highlighted'
-		//Images[2] = Texture'T_AAO_UI.GUI.t_ui_gui_button_standard'
-		//Images[3] = Texture'T_AAO_UI.GUI.t_ui_gui_button_highlighted'
-		//Images[4] = Texture'T_AAO_UI.GUI.t_ui_gui_button_standard'
-		//BorderOffsets(0) = 9
-		//BorderOffsets(1) = 9
-		//BorderOffsets(2) = 9
-		//BorderOffsets(3) = 9
-
+	FontColors = {
+		FColor(155, 252, 185, 255),
+		FColor(155, 252, 185, 255),
+		FColor(155, 252, 185, 255),
+		FColor(155, 252, 185, 255),
+		FColor(155, 252, 185, 255)
+	};
+	Images = {
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AAO_UI/GUI/t_ui_gui_button_standard_Mat.t_ui_gui_button_standard_Mat'"), NULL, LOAD_None, NULL),
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AAO_UI/GUI/t_ui_gui_button_highlighted_Mat.t_ui_gui_button_highlighted_Mat'"), NULL, LOAD_None, NULL),
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AAO_UI/GUI/t_ui_gui_button_standard_Mat.t_ui_gui_button_standard_Mat'"), NULL, LOAD_None, NULL),
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AAO_UI/GUI/t_ui_gui_button_highlighted_Mat.t_ui_gui_button_highlighted_Mat'"), NULL, LOAD_None, NULL),
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AAO_UI/GUI/t_ui_gui_button_standard_Mat.t_ui_gui_button_standard_Mat'"), NULL, LOAD_None, NULL)
+	};
+	BorderOffsets = { 9,9,9,9 };
 }

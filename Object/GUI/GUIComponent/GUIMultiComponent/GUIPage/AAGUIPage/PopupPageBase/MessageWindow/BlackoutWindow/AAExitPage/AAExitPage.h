@@ -6,8 +6,8 @@
 #include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPage/AAGUIPage/PopupPageBase/MessageWindow/BlackoutWindow/BlackoutWindow.h"
 #include "AAExitPage.generated.h"
 
-class GUIButton;
-class GUILabel;
+class UGUIButton;
+class UGUILabel;
 
 UCLASS()
 class AA29_API UAAExitPage : public UBlackoutWindow
@@ -15,7 +15,6 @@ class AA29_API UAAExitPage : public UBlackoutWindow
 	GENERATED_BODY()
 public:
 	UAAExitPage();
-
 
 	UPROPERTY(EditAnywhere)				UGUIButton*		ExitButton;				//var() automated XInterface.GUIButton ExitButton;
 	UPROPERTY(EditAnywhere)				UGUIButton*		CancelButton;			//var() automated XInterface.GUIButton CancelButton;

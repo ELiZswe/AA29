@@ -15,4 +15,9 @@ class AA29_API UGUIStateButton : public UGUIButton
 	GENERATED_BODY()
 public:
 	UGUIStateButton();
+
+	UPROPERTY(EditAnywhere)			FString		SelectedStyleName;		//var() FString SelectedStyleName;
+	UPROPERTY()						FString		ExtraData;				//var FString ExtraData;
+
+	void SetSelected(bool bSelected);
 };

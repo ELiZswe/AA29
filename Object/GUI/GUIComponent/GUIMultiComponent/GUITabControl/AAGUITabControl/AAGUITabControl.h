@@ -15,7 +15,6 @@ class AA29_API UAAGUITabControl : public UGUITabControl
 public:
 	UAAGUITabControl();
 
-
 	UPROPERTY(EditAnywhere)									FString		ButtonStyleName;					//var() FString ButtonStyleName;
 	UPROPERTY(EditAnywhere)									float		TabHSpacing;						//var() float TabHSpacing;
 	UPROPERTY(EditAnywhere)									float		TabVSpacing;						//var() float TabVSpacing;

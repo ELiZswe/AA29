@@ -3,8 +3,6 @@
 
 #include "AA29/Object/GUI/GUIComponent/AAGUIProgressBar/AAGUIProgressBar.h"
 
-
-
 UAAGUIProgressBar::UAAGUIProgressBar()
 {
 	BarColor = FColor(255, 255, 255, 255);

@@ -1,49 +1,46 @@
 // All the original content belonged to the US Army
 
-
 #include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/GUITabPanel/AATabPanel/AAMainSubPanel/AABackgroundSubPanel/AABrowser_Page/AABrowser_MOTD/AABrowser_MOTD.h"
+#include "AA29/Object/GUI/GUIComponent/GUIButton/GUIButton.h"
+#include "AA29/Object/GUI/GUIComponent/GUILabel/GUILabel.h"
+#include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIListBoxBase/GUIScrollTextBox/GUIScrollTextBox.h"
 
 UAABrowser_MOTD::UAABrowser_MOTD()
 {
-	/*
-	Begin Object Class=GUIScrollTextBox Name=MyMOTDText
-		bNoTeletype=True
-		CharDelay=0.05
-		EOLDelay=0.1
-		bVisibleWhenEmpty=True
-		OnCreateComponent=MyMOTDText.InternalOnCreateComponent
-		StyleName="ListBox"
-		WinTop=0.002679
-		WinHeight=0.833203
-		RenderWeight=0.6
-		TabOrder=1
-		bNeverFocus=True
-	End Object
-	Begin Object Class=GUIButton Name=QuickPlay
-		Caption="QUICK PLAY"
-		bAutoSize=True
-		Hint="Open a dialog that can help you easily find the best online server based on your criteria"
-		WinTop=0.866146
-		WinLeft=0.42518
-		WinWidth=0.161994
-		WinHeight=0.079063
-		TabOrder=2
-		OnClick=AABrowser_MOTD.InternalOnClick
-		OnKeyEvent=QuickPlay.InternalOnKeyEvent
-	End Object
-	Begin Object Class=GUILabel Name=VersionNum
-		TextAlign=2
-		StyleName="TextLabel"
-		WinTop=-0.043415
-		WinLeft=0.7935
-		WinWidth=0.202128
-		WinHeight=0.04
-		RenderWeight=20.700001
-	End Object
-	*/
-	//lb_MOTD = GUIScrollTextBox'AGP_Interface.AABrowser_MOTD.MyMOTDText';
-	//l_Version = GUILabel'AGP_Interface.AABrowser_MOTD.VersionNum';
-	//b_QuickConnect = GUIButton'AGP_Interface.AABrowser_MOTD.QuickPlay';
+	UGUIScrollTextBox* MyMOTDText = NewObject<UGUIScrollTextBox>(UGUIScrollTextBox::StaticClass());
+	MyMOTDText->bNoTeletype = true;
+	MyMOTDText->CharDelay = 0.05;
+	MyMOTDText->EOLDelay = 0.1;
+	MyMOTDText->bVisibleWhenEmpty = true;
+	//MyMOTDText->OnCreateComponent=MyMOTDText.InternalOnCreateComponent;
+	MyMOTDText->StyleName = "ListBox";
+	MyMOTDText->WinTop = 0.002679;
+	MyMOTDText->WinHeight = 0.833203;
+	MyMOTDText->RenderWeight = 0.6;
+	MyMOTDText->TabOrder = 1;
+	MyMOTDText->bNeverFocus = true;
+	UGUIButton* QuickPlay = NewObject<UGUIButton>(UGUIButton::StaticClass());
+	QuickPlay->Caption = "QUICK PLAY";
+	QuickPlay->bAutoSize = true;
+	QuickPlay->Hint = "Open a dialog that can help you easily find the best online server based on your criteria";
+	QuickPlay->WinTop = 0.866146;
+	QuickPlay->WinLeft = 0.42518;
+	QuickPlay->WinWidth = 0.161994;
+	QuickPlay->WinHeight = 0.079063;
+	QuickPlay->TabOrder = 2;
+	//QuickPlay->OnClick=AABrowser_MOTD.InternalOnClick;
+	//QuickPlay->OnKeyEvent=QuickPlay.InternalOnKeyEvent;
+	UGUILabel* VersionNum = NewObject<UGUILabel>(UGUILabel::StaticClass());
+	VersionNum->TextAlign = ETextAlign::TXTA_Right;
+	VersionNum->StyleName = "TextLabel";
+	VersionNum->WinTop = -0.043415;
+	VersionNum->WinLeft = 0.7935;
+	VersionNum->WinWidth = 0.202128;
+	VersionNum->WinHeight = 0.04;
+	VersionNum->RenderWeight = 20.700001;
+	lb_MOTD = MyMOTDText;
+	l_Version = VersionNum;
+	b_QuickConnect = QuickPlay;
 	ReReadyPause = 3;
 	RetryMax = 10;
 	UpgradeCaption = "UPGRADE";

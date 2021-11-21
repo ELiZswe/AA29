@@ -4,7 +4,7 @@
 #include "Weapon_M9_Pistol.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/PistolWeaponAttachment/AttachW_M9_Pistol/AttachW_M9_Pistol.h"
 #include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_9x19mm_15_Mag/Ammo_9x19mm_15_Mag.h"
-#include "AA29/AA2_Emitter/BaseMuzzleFlashEmitter/M9MuzzleFlash_1P/M9MuzzleFlash_1P.h"
+#include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/M9MuzzleFlash_1P/M9MuzzleFlash_1P.h"
 #include "AA29/BaseScope/ScopeW_M9_Pistol.h"
 #include "AA29/BaseAmmoRound/AmmoRound_9mm_Bullet.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamage9x19mm.h"

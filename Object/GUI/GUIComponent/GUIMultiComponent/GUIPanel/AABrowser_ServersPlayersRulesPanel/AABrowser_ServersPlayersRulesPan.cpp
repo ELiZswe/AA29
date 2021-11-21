@@ -1,11 +1,22 @@
 // All the original content belonged to the US Army
 
-
 #include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/AABrowser_ServersPlayersRulesPanel/AABrowser_ServersPlayersRulesPan.h"
+#include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/GUISplitter/GUISplitter.h"
 
 UAABrowser_ServersPlayersRulesPan::UAABrowser_ServersPlayersRulesPan()
 {
-	//ServerList_RulesPlayersSplitter = GUISplitter'AGP_Interface.AABrowser_ServersPlayersRulesPanel.HorzSplitter';
+	UGUISplitter* HorzSplitter = NewObject<UGUISplitter>(UGUISplitter::StaticClass());
+	HorzSplitter->DefaultPanels = "AGP_Interface.AABrowser_ServerListBox";
+	HorzSplitter->DefaultPanels = "XInterface.GUISplitter";
+	HorzSplitter->MaxPercentage = 0.9;
+	//HorzSplitter->OnReleaseSplitter = AABrowser_ServersPlayersRulesPanel.InternalOnReleaseSplitter;
+	//HorzSplitter->OnCreateComponent=AABrowser_ServersPlayersRulesPanel.InternalOnCreateComponent;
+	HorzSplitter->IniOption = "@Internal";
+	HorzSplitter->WinHeight = 1;
+	HorzSplitter->RenderWeight = 1;
+	//HorzSplitter->OnLoadINI=AABrowser_ServersPlayersRulesPanel.InternalOnLoadINI;
+	ServerList_RulesPlayersSplitter = HorzSplitter;
+
 	ServerList_RulesPlayersSplitterPosition = 0.467488;
 	Rules_PlayersSplitterPosition = 0.485071;
 	RulesColumnSizesNormal = { 0.369002, 0.630998 };
@@ -106,7 +117,7 @@ void UAABrowser_ServersPlayersRulesPan::RefreshServerRulesAndPlayersList(int32 S
 {
 	/*
 	local IpDrv.ServerBrowserBase sbBase;
-	local ServerBrowserBase.GameSpyServerItem ServerItem;
+	local FGameSpyServerItem ServerItem;
 	if (ServerIndex < 0)
 	{
 		Return;
@@ -361,7 +372,7 @@ void UAABrowser_ServersPlayersRulesPan::SelectServerByIP(FString IPAddress, int3
 	/*
 	local int32 NewIndex;
 	local IpDrv.ServerBrowserBase sbBase;
-	local ServerBrowserBase.GameSpyServerItem ServerItem;
+	local FGameSpyServerItem ServerItem;
 	local FString IP;
 	sbBase = AGP_HUD(HumanController(PlayerOwner()).myHUD).GetCurrentServerBrowser(bIsLAN);
 	if (sbBase != None)

@@ -1,112 +1,102 @@
 // All the original content belonged to the US Army
 
-
 #include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/GUITabPanel/AATabPanel/AAGamePanel/AAGameMenu_Training/AAGameMenu_Training.h"
+#include "AA29/Object/GUI/GUIComponent/GUIImage/GUIImage.h"
+#include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIListBoxBase/GUIScrollTextBox/GUIScrollTextBox.h"
+#include "AA29/Object/GUI/GUIComponent/GUILabel/GUILabel.h"
 
 UAAGameMenu_Training::UAAGameMenu_Training()
 {
-	/*
-	Begin Object Class=GUIScrollTextBox Name=TrainingDescription
-		bNoTeletype=True
-		bVisibleWhenEmpty=True
-		OnCreateComponent=TrainingDescription.InternalOnCreateComponent
-		StyleName="MediumText"
-		WinTop=0.48
-		WinLeft=0.03
-		WinWidth=0.94
-		WinHeight=0.4
-		bBoundToParent=True
-		bScaleToParent=True
-	End Object
-	Begin Object Class=GUIImage Name=MyBackground
-		Image=Texture'T_AA2_UI.Menu.backgroundfill'
-		ImageStyle=ISTY_Stretched
-		ImageRenderStyle=1
-		WinTop=0.01
-		WinLeft=0.01
-		WinWidth=0.98
-		WinHeight=0.89
-		RenderWeight=0
-		bBoundToParent=True
-		bScaleToParent=True
-	End Object
-	Begin Object Class=GUILabel Name=TourLabel
-		TextAlign=1
-		TextColor=(R=255,G=255,B=255,A=255)
-		StyleName="TextLabel"
-		WinTop=0.36
-		WinLeft=0.5
-		WinWidth=0.5
-		WinHeight=0.04
-	End Object
-	Begin Object Class=GUILabel Name=MissionLabel
-		TextAlign=1
-		TextColor=(R=255,G=255,B=255,A=255)
-		StyleName="TextLabel"
-		WinTop=0.02
-		WinLeft=0.02
-		WinWidth=0.98
-	End Object
-	Begin Object Class=GUIImage Name=MapBG
-		Image=Texture'T_AA2_UI.Menu.field_translucent'
-		ImageStyle=ISTY_Stretched
-		ImageRenderStyle=1
-		WinTop=0.08
-		WinLeft=0.02
-		WinWidth=0.47
-		WinHeight=0.38
-		RenderWeight=0.2
-	End Object
-	Begin Object Class=GUIImage Name=TourBG
-		Image=Texture'T_AA2_UI.Menu.field_translucent'
-		ImageStyle=ISTY_Stretched
-		ImageRenderStyle=1
-		WinTop=0.08
-		WinLeft=0.51
-		WinWidth=0.47
-		WinHeight=0.38
-		RenderWeight=0.2
-	End Object
-	Begin Object Class=GUIImage Name=DescriptionBG
-		Image=Texture'T_AA2_UI.Menu.field_translucent'
-		ImageStyle=ISTY_Stretched
-		ImageRenderStyle=1
-		WinTop=0.47
-		WinLeft=0.02
-		WinWidth=0.96
-		WinHeight=0.42
-		RenderWeight=0.2
-	End Object
-	Begin Object Class=GUIImage Name=MapPic
-		ImageStyle=ISTY_Scaled
-		ImageRenderStyle=1
-		WinTop=0.09
-		WinLeft=0.03
-		WinWidth=0.45
-		WinHeight=0.36
-		RenderWeight=0.9
-	End Object
-	Begin Object Class=GUIImage Name=tourIcon
-		ImageStyle=ISTY_Justified
-		ImageRenderStyle=1
-		WinTop=0.09
-		WinLeft=0.645
-		WinWidth=0.21
-		WinHeight=0.28
-		RenderWeight=0.9
-	End Object
-	*/
-	//i_Background = GUIImage'AGP_Interface.AAGameMenu_Training.MyBackground';
-	//l_Tour = GUILabel'AGP_Interface.AAGameMenu_Training.TourLabel';
-	//l_Mission = GUILabel'AGP_Interface.AAGameMenu_Training.MissionLabel';
-	//i_MapBG = GUIImage'AGP_Interface.AAGameMenu_Training.MapBG';
-	//i_TourBG = GUIImage'AGP_Interface.AAGameMenu_Training.TourBG';
-	//i_DescriptionBG = GUIImage'AGP_Interface.AAGameMenu_Training.DescriptionBG';
-	//i_Map = GUIImage'AGP_Interface.AAGameMenu_Training.MapPic';
-	//i_Tour = GUIImage'AGP_Interface.AAGameMenu_Training.tourIcon';
-	//lb_Description = GUIScrollTextBox'AGP_Interface.AAGameMenu_Training.TrainingDescription';
+	UGUIScrollTextBox* TrainingDescription = NewObject<UGUIScrollTextBox>(UGUIScrollTextBox::StaticClass());
+	TrainingDescription->bNoTeletype = true;
+	TrainingDescription->bVisibleWhenEmpty = true;
+	//TrainingDescription->OnCreateComponent=TrainingDescription.InternalOnCreateComponent;
+	TrainingDescription->StyleName = "MediumText";
+	TrainingDescription->WinTop = 0.48;
+	TrainingDescription->WinLeft = 0.03;
+	TrainingDescription->WinWidth = 0.94;
+	TrainingDescription->WinHeight = 0.4;
+	TrainingDescription->bBoundToParent = true;
+	TrainingDescription->bScaleToParent = true;
+	UGUIImage* MyBackground = NewObject<UGUIImage>(UGUIImage::StaticClass());
+	MyBackground->Image = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/backgroundfil_Mat.backgroundfil_Mat'"), NULL, LOAD_None, NULL);
+	MyBackground->ImageStyle = EImgStyle::ISTY_Stretched;
+	MyBackground->ImageRenderStyle = EMenuRenderStyle::MSTY_Normal;
+	MyBackground->WinTop = 0.01;
+	MyBackground->WinLeft = 0.01;
+	MyBackground->WinWidth = 0.98;
+	MyBackground->WinHeight = 0.89;
+	MyBackground->RenderWeight = 0;
+	MyBackground->bBoundToParent = true;
+	MyBackground->bScaleToParent = true;
+	UGUILabel* TourLabel = NewObject<UGUILabel>(UGUILabel::StaticClass());
+	TourLabel->TextAlign = ETextAlign::TXTA_Center;
+	TourLabel->TextColor = FColor(255, 255, 255, 255);
+	TourLabel->StyleName = "TextLabel";
+	TourLabel->WinTop = 0.36;
+	TourLabel->WinLeft = 0.5;
+	TourLabel->WinWidth = 0.5;
+	TourLabel->WinHeight = 0.04;
+	UGUILabel* MissionLabel = NewObject<UGUILabel>(UGUILabel::StaticClass());
+	MissionLabel->TextAlign = ETextAlign::TXTA_Center;
+	MissionLabel->TextColor = FColor(255, 255, 255, 255);
+	MissionLabel->StyleName = "TextLabel";
+	MissionLabel->WinTop = 0.02;
+	MissionLabel->WinLeft = 0.02;
+	MissionLabel->WinWidth = 0.98;
+	UGUIImage* MapBG = NewObject<UGUIImage>(UGUIImage::StaticClass());
+	MapBG->Image = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/field_translucen_Mat.field_translucen_Mat'"), NULL, LOAD_None, NULL);
+	MapBG->ImageStyle = EImgStyle::ISTY_Stretched;
+	MapBG->ImageRenderStyle = EMenuRenderStyle::MSTY_Normal;
+	MapBG->WinTop = 0.08;
+	MapBG->WinLeft = 0.02;
+	MapBG->WinWidth = 0.47;
+	MapBG->WinHeight = 0.38;
+	MapBG->RenderWeight = 0.2;
+	UGUIImage* TourBG = NewObject<UGUIImage>(UGUIImage::StaticClass());
+	TourBG->Image = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/field_translucen_Mat.field_translucen_Mat'"), NULL, LOAD_None, NULL);
+	TourBG->ImageStyle = EImgStyle::ISTY_Stretched;
+	TourBG->ImageRenderStyle = EMenuRenderStyle::MSTY_Normal;
+	TourBG->WinTop = 0.08;
+	TourBG->WinLeft = 0.51;
+	TourBG->WinWidth = 0.47;
+	TourBG->WinHeight = 0.38;
+	TourBG->RenderWeight = 0.2;
+	UGUIImage* DescriptionBG = NewObject<UGUIImage>(UGUIImage::StaticClass());
+	DescriptionBG->Image = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/field_translucen_Mat.field_translucen_Mat'"), NULL, LOAD_None, NULL);
+	DescriptionBG->ImageStyle = EImgStyle::ISTY_Stretched;
+	DescriptionBG->ImageRenderStyle = EMenuRenderStyle::MSTY_Normal;
+	DescriptionBG->WinTop = 0.47;
+	DescriptionBG->WinLeft = 0.02;
+	DescriptionBG->WinWidth = 0.96;
+	DescriptionBG->WinHeight = 0.42;
+	DescriptionBG->RenderWeight = 0.2;
+	UGUIImage* MapPic = NewObject<UGUIImage>(UGUIImage::StaticClass());
+	MapPic->ImageStyle = EImgStyle::ISTY_Scaled;
+	MapPic->ImageRenderStyle = EMenuRenderStyle::MSTY_Normal;
+	MapPic->WinTop = 0.09;
+	MapPic->WinLeft = 0.03;
+	MapPic->WinWidth = 0.45;
+	MapPic->WinHeight = 0.36;
+	MapPic->RenderWeight = 0.9;
+	UGUIImage* tourIcon = NewObject<UGUIImage>(UGUIImage::StaticClass());
+	tourIcon->ImageStyle = EImgStyle::ISTY_Justified;
+	tourIcon->ImageRenderStyle = EMenuRenderStyle::MSTY_Normal;
+	tourIcon->WinTop = 0.09;
+	tourIcon->WinLeft = 0.645;
+	tourIcon->WinWidth = 0.21;
+	tourIcon->WinHeight = 0.28;
+	tourIcon->RenderWeight = 0.9;
+	i_Background = MyBackground;
+	l_Tour = TourLabel;
+	l_Mission = MissionLabel;
+	i_MapBG = MapBG;
+	i_TourBG = TourBG;
+	i_DescriptionBG = DescriptionBG;
+	i_Map = MapPic;
+	i_Tour = tourIcon;
+	lb_Description = TrainingDescription;
 }
-
 
 void UAAGameMenu_Training::InitComponent(UGUIController* MyController, UGUIComponent* MyOwner)
 {

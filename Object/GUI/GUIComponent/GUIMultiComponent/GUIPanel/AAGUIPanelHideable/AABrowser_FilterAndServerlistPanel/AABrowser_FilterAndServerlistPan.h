@@ -16,7 +16,6 @@ class AA29_API UAABrowser_FilterAndServerlistPan : public UAAGUIPanelHideable
 public:
 	UAABrowser_FilterAndServerlistPan();
 
-
 	void OnUpdateServerList();
 	void OnFiltersChanged();
 	void InitComponent(UGUIController* MyController, UGUIComponent* MyOwner);

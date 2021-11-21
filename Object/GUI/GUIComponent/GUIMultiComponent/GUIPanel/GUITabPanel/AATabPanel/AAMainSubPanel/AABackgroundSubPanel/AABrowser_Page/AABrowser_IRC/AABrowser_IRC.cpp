@@ -1,30 +1,26 @@
 // All the original content belonged to the US Army
 
-
 #include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/GUITabPanel/AATabPanel/AAMainSubPanel/AABackgroundSubPanel/AABrowser_Page/AABrowser_IRC/AABrowser_IRC.h"
+#include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUITabControl/GUITabControl.h"
 
 UAABrowser_IRC::UAABrowser_IRC()
 {
-	/*
-	Begin Object Class=GUITabControl Name=ChannelTabControl
-		bDockPanels=True
-		TabHeight=0.04
-		WinTop=0.07
-		WinLeft=0.01
-		WinWidth=0.98
-		WinHeight=0.92
-		bAcceptsInput=True
-		OnActivate=ChannelTabControl.InternalOnActivate
-	End Object
-	*/
-	//c_Channel = GUITabControl'AGP_Interface.AABrowser_IRC.ChannelTabControl';
+	UGUITabControl* ChannelTabControl = NewObject<UGUITabControl>(UGUITabControl::StaticClass());
+	ChannelTabControl->bDockPanels = true;
+	ChannelTabControl->TabHeight = 0.04;
+	ChannelTabControl->WinTop = 0.07;
+	ChannelTabControl->WinLeft = 0.01;
+	ChannelTabControl->WinWidth = 0.98;
+	ChannelTabControl->WinHeight = 0.92;
+	ChannelTabControl->bAcceptsInput = true;
+	//ChannelTabControl->OnActivate=ChannelTabControl.InternalOnActivate;
+	c_Channel = ChannelTabControl;
 	SystemPageClass = "AGP_Interface.AAIRC_System";
 	PublicChannelClass = "AGP_Interface.AAIRC_Channel";
 	PrivateChannelClass = "AGP_Interface.AAIRC_Private";
 	SystemLabel = "System";
 	PanelCaption = "America's Army Internet Chat Client";
 }
-
 
 void UAABrowser_IRC::InitComponent(UGUIController* MyController, UGUIComponent* MyOwner)
 {

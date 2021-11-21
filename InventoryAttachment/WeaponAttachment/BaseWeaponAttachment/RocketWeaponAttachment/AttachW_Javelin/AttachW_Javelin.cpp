@@ -2,8 +2,8 @@
 
 
 #include "AttachW_Javelin.h"
-#include "AA29/AA2_Emitter/BaseShellEmitter/Javelin_Tube_Emitter/Javelin_Tube_Emitter.h"
-#include "AA29/AA2_Emitter/BaseMuzzleFlashEmitter/JavelinMuzzleFlash/JavelinMuzzleFlash.h"
+#include "AA29/Object/Actor/Emitter/BaseShellEmitter/Javelin_Tube_Emitter/Javelin_Tube_Emitter.h"
+#include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/JavelinMuzzleFlash/JavelinMuzzleFlash.h"
 
 
 AAttachW_Javelin::AAttachW_Javelin()

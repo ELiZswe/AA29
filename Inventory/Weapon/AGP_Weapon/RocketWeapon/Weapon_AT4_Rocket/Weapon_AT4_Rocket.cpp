@@ -5,7 +5,7 @@
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/RocketWeaponAttachment/AttachW_AT4_Rocket/AttachW_AT4_Rocket.h"
 #include "AA29/Pickup/AGP_WeaponPickup/RocketWeaponPickup/PickupW_AT4_Rocket/PickupW_AT4_Rocket.h"
 #include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_AT4_Rocket/Ammo_AT4_Rocket.h"
-#include "AA29/AA2_Emitter/BaseMuzzleFlashEmitter/AT4MuzzleFlash_1P/AT4MuzzleFlash_1P.h"
+#include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/AT4MuzzleFlash_1P/AT4MuzzleFlash_1P.h"
 #include "AA29/BaseScope/ScopeW_AT4_Rocket.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamageLargeArms.h"
 #include "AA29/DamageType/AGP_DamageType/ExplosionDamage/BackBlastDamage/BackBlastDamage.h"

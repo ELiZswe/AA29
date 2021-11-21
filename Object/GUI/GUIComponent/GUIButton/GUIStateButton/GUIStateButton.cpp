@@ -5,5 +5,20 @@
 
 UGUIStateButton::UGUIStateButton()
 {
+	SelectedStyleName = "ATLButtonSelected";
+	bNeverFocus = true;
+}
 
+void UGUIStateButton::SetSelected(bool bSelected)
+{
+	/*
+	if (bSelected)
+	{
+		Style = Controller.GetStyle(SelectedStyleName, FontScale);
+	}
+	else
+	{
+		Style = Controller.GetStyle(StyleName, FontScale);
+	}
+	*/
 }

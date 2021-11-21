@@ -16,7 +16,6 @@ class AA29_API UHttpLinkItem : public UObject
 public:
 	UHttpLinkItem();
 
-
 	UPROPERTY()									TArray<uint8> BinaryFromServer;			//var array<byte> BinaryFromServer;
 	UPROPERTY()									FString TextFromServer;					//var string TextFromServer;
 	UPROPERTY()									bool bIsBinary;							//var bool bIsBinary;
@@ -27,5 +26,4 @@ public:
 	void OnReceivedBinary(FString ReceivedFileName, TArray<uint8> ReceivedFile);
 	void OnReceivedText(FString ReceivedFileName, FString ReceivedFile);
 	void OnReceivedCachedFile(FString ReceivedFileName);
-
 };

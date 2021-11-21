@@ -6,7 +6,7 @@
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/AttachW_M16A2_Rifle/AttachW_M16A2_Rifle.h"
 #include "AA29/Pickup/AGP_WeaponPickup/PickupW_M16A2_Rifle/PickupW_M16A2_Rifle.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamage556mm.h"
-#include "AA29/AA2_Emitter/BaseMuzzleFlashEmitter/M16A2MuzzleFlash_1P/M16A2MuzzleFlash_1P.h"
+#include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/M16A2MuzzleFlash_1P/M16A2MuzzleFlash_1P.h"
 
 AWeapon_M16A2_Rifle::AWeapon_M16A2_Rifle()
 {

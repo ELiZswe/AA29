@@ -15,4 +15,6 @@ class AA29_API UUIWeightDisplay : public UUIHUDBaseDisplay
 	GENERATED_BODY()
 public:
 	UUIWeightDisplay();
+
+	void Draw(UCanvas* Canvas);
 };

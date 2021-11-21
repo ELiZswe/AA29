@@ -16,4 +16,10 @@ class AA29_API UUT2SP_DraftEventPage : public UUT2SP_LadderEventPage
 public:
 	UUT2SP_DraftEventPage();
 
+	UPROPERTY()			FString				MessageDraft;				//var localized FString MessageDraft;
+	UPROPERTY()			FString				MessageDraftTitle;			//var localized FString MessageDraftTitle;
+
+	void InitComponent(UGUIController* pMyController, UGUIComponent* MyOwner);
+	bool InternalOnClick(UGUIComponent* Sender);
+	void SetTutorialName(FString tutname);
 };

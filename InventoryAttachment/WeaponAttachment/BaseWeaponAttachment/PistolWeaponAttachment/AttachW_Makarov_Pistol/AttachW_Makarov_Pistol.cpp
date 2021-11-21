@@ -3,8 +3,8 @@
 
 #include "AttachW_Makarov_Pistol.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/PistolWeaponAttachment/AttachW_M9_Pistol/AttachW_M9_Pistol.h"
-#include "AA29/AA2_Emitter/BaseShellEmitter/Shell_9mm_Emitter/Shell_9mm_Emitter.h"
-#include "AA29/AA2_Emitter/BaseMuzzleFlashEmitter/M9MuzzleFlash/M9MuzzleFlash.h"
+#include "AA29/Object/Actor/Emitter/BaseShellEmitter/Shell_9mm_Emitter/Shell_9mm_Emitter.h"
+#include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/M9MuzzleFlash/M9MuzzleFlash.h"
 
 AAttachW_Makarov_Pistol::AAttachW_Makarov_Pistol()
 {

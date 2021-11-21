@@ -8,7 +8,7 @@
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/RocketWeaponAttachment/AttachW_BDM_Rocket/AttachW_BDM_Rocket.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamageLargeArms.h"
 #include "AA29/DamageType/AGP_DamageType/ExplosionDamage/BackBlastDamage/BackBlastDamage.h"
-#include "AA29/AA2_Emitter/BaseMuzzleFlashEmitter/BDMMuzzleFlash_1P/BDMMuzzleFlash_1P.h"
+#include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/BDMMuzzleFlash_1P/BDMMuzzleFlash_1P.h"
 
 AWeapon_BDM_Rocket::AWeapon_BDM_Rocket()
 {

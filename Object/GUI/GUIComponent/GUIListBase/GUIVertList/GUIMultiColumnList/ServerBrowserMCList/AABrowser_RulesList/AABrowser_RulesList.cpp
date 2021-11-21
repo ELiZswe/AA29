@@ -68,7 +68,7 @@ void UAABrowser_RulesList::MyOnDrawItem(UCanvas* Canvas, int32 i, float X, float
 	local float CellWidth;
 	local XInterface.GUIStyles DrawStyle;
 	local IpDrv.ServerBrowserBase sbBase;
-	local ServerBrowserBase.GameSpyServerItem ServerItem;
+	local FGameSpyServerItem ServerItem;
 	local int ItemIndex;
 	local string sRule;
 	local string sValue;

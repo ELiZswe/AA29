@@ -5,18 +5,15 @@
 
 UAAMainSubPanel::UAAMainSubPanel()
 {
-	
 	UAAGUITabControl* MyTabC = NewObject<UAAGUITabControl>(UAAGUITabControl::StaticClass());
-	/*
 	MyTabC->TabIndent = 0.0225;
-	MyTabC->bDockPanels=true;
-	MyTabC->TabHeight=0.05;
-	MyTabC->WinHeight=1;
-	MyTabC->bBoundToParent=true;
-	MyTabC->bScaleToParent=true;
-	MyTabC->OnActivate=MyTabC.InternalOnActivate;
-	*/
-	//c_Tab = MyTabC;
+	MyTabC->bDockPanels = true;
+	MyTabC->TabHeight = 0.05;
+	MyTabC->WinHeight = 1;
+	MyTabC->bBoundToParent = true;
+	MyTabC->bScaleToParent = true;
+	//MyTabC->OnActivate=MyTabC.InternalOnActivate;
+	c_Tab = MyTabC;
 
 	WinHeight = 1;
 	bBoundToParent = true;

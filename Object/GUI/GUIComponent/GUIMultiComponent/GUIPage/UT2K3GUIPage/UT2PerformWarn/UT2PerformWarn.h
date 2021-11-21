@@ -13,5 +13,8 @@ UCLASS()
 class AA29_API UUT2PerformWarn : public UUT2K3GUIPage
 {
 	GENERATED_BODY()
-	
+public:
+	UUT2PerformWarn();
+
+	bool InternalOnClick(UGUIComponent* Sender);
 };

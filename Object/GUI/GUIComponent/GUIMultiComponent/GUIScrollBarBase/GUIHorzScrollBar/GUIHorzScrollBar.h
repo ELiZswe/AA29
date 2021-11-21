@@ -13,5 +13,10 @@ UCLASS()
 class AA29_API UGUIHorzScrollBar : public UGUIScrollBarBase
 {
 	GENERATED_BODY()
-	
+public:
+	UGUIHorzScrollBar();
+
+	void GripPressed(UGUIComponent* Sender, bool IsRepeat);
+	bool GripPreDraw(UGUIComponent* Sender);
+	void ZoneClick(float Delta);
 };

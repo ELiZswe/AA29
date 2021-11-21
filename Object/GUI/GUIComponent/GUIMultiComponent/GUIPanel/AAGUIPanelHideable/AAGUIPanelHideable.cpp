@@ -1,12 +1,39 @@
 // All the original content belonged to the US Army
 
-
 #include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/AAGUIPanelHideable/AAGUIPanelHideable.h"
+#include "AA29/Object/GUI/GUIComponent/GUIButton/GUIButton.h"
 
 UAAGUIPanelHideable::UAAGUIPanelHideable()
 {
-	//b_Hide = GUIButton'AGP_Interface.AAGUIPanelHideable.HideButton';
-	//b_Show = GUIButton'AGP_Interface.AAGUIPanelHideable.ShowButton';
+	UGUIButton* ShowButton = NewObject<UGUIButton>(UGUIButton::StaticClass());
+	ShowButton->Caption = "Show";
+	ShowButton->bWrapCaption = true;
+	ShowButton->StyleName = "SquareMenuButton";
+	ShowButton->Hint = "Show.";
+	ShowButton->WinWidth = 0.029441;
+	ShowButton->WinHeight = 1;
+	ShowButton->RenderWeight = 2;
+	ShowButton->TabOrder = 1;
+	ShowButton->bBoundToParent = true;
+	ShowButton->bScaleToParent = true;
+	ShowButton->bVisible = false;
+	//ShowButton->OnClick=AAGUIPanelHideable.InternalOnClick;
+	//ShowButton->OnKeyEvent=ShowButton.InternalOnKeyEvent;
+	UGUIButton* HideButton = NewObject<UGUIButton>(UGUIButton::StaticClass());
+	HideButton->Caption = "Hide";
+	HideButton->bWrapCaption = true;
+	HideButton->StyleName = "SquareMenuButton";
+	HideButton->Hint = "Hide.";
+	HideButton->WinWidth = 0.029441;
+	HideButton->WinHeight = 1;
+	HideButton->RenderWeight = 2;
+	HideButton->TabOrder = 1;
+	HideButton->bBoundToParent = true;
+	HideButton->bScaleToParent = true;
+	//HideButton->OnClick=AAGUIPanelHideable.InternalOnClick;
+	//HideButton->OnKeyEvent=HideButton.InternalOnKeyEvent;
+	b_Hide = HideButton;
+	b_Show = ShowButton;
 }
 
 void UAAGUIPanelHideable::OnHide()

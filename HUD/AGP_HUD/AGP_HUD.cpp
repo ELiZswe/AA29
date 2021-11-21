@@ -55,8 +55,6 @@ AAGP_HUD::AAGP_HUD(const FObjectInitializer& ObjectInitializer) :Super(ObjectIni
 	//DetermineVersionLabel(false, false, false, false, false, false, false, false, false, false, false);
 }
 
-
-
 void AAGP_HUD::DrawHUD()
 {
 	FString myLocation;
@@ -1642,7 +1640,7 @@ void AAGP_HUD::ServerBrowserRefreshList()
 void AAGP_HUD::ConnectToGameSpyServer(int32 Index, FString sPassword, bool bSpectatorOnly)
 {
 	/*
-	local ServerBrowserBase.GameSpyServerItem Item;
+	local FGameSpyServerItem Item;
 	local string sAddress;
 	local string sVersion;
 	local IpDrv.ServerBrowserBase sbBase;
@@ -1716,7 +1714,7 @@ void AAGP_HUD::ConnectToGameSpyServer(int32 Index, FString sPassword, bool bSpec
 void AAGP_HUD::ConnectToServer(int32 Index, FString sPassword, bool bSpectatorOnly)
 {
 	/*
-	local ServerBrowserBase.GameSpyServerItem Item;
+	local FGameSpyServerItem Item;
 	local string sAddress;
 	local string sVersion;
 	local IpDrv.ServerBrowserBase sbBase;

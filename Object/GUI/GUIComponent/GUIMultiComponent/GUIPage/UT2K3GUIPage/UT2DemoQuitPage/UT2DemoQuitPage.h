@@ -16,4 +16,11 @@ class AA29_API UUT2DemoQuitPage : public UUT2K3GUIPage
 public:
 	UUT2DemoQuitPage();
 
+	UPROPERTY()				int32		TimeLeft;			//var int32 TimeLeft;
+	UPROPERTY()				bool		bClickedBuy;		//var bool bClickedBuy;
+
+	void InitComponent(UGUIController* MyController, UGUIComponent* MyOwner);
+	void Timer();
+	bool OnBuyClicked(UGUIComponent* Sender);
+	bool OnQuitClicked(UGUIComponent* Sender);
 };

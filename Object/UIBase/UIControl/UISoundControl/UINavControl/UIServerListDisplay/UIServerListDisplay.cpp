@@ -136,7 +136,7 @@ void UUIServerListDisplay::Draw(UCanvas* Canvas)
 	local int oldClipY;
 	local int old_style;
 	local Object.Color OldColor;
-	local ServerBrowserBase.GameSpyServerItem Item;
+	local FGameSpyServerItem Item;
 	local IpDrv.ServerBrowserBase sbBase;
 	local int i;
 	local int iPos;
@@ -389,7 +389,7 @@ void UUIServerListDisplay::SetSelectedServer(int32 selected)
 {
 	/*
 	local IpDrv.ServerBrowserBase sbBase;
-	local ServerBrowserBase.GameSpyServerItem Item;
+	local FGameSpyServerItem Item;
 	sbBase = cFrame.GetCurrentServerBrowser();
 	if (sbBase == None)
 	{

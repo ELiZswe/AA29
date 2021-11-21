@@ -1,55 +1,38 @@
 // All the original content belonged to the US Army
 
-
 #include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/GUITabPanel/AATabPanel/AAMainSubPanel/AABackgroundSubPanel/AABrowser_Page/AABrowser_ServerListPageBase/AABrowser_ServerListPageBuddy.h"
+#include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/GUISplitter/GUISplitter.h"
+#include "AA29/Object/GUI/GUIComponent/GUIContextMenu/GUIContextMenu.h"
 
 UAABrowser_ServerListPageBuddy::UAABrowser_ServerListPageBuddy()
 {
-	/*
-	Begin Object Class=GUISplitter Name=HorzSplitter
-		SplitOrientation=1
-		DefaultPanels="AGP_Interface.AABrowser_BuddyListBox"
-		DefaultPanels="XInterface.GUISplitter"
-		OnReleaseSplitter=AABrowser_ServerListPageBuddy.InternalReleaseSplitter
-		OnCreateComponent=AABrowser_ServerListPageBuddy.InternalOnCreateComponent
-		IniOption="@Internal"
-		WinHeight=1
-		RenderWeight=1
-		bBoundToParent=True
-		bScaleToParent=True
-		OnLoadINI=AABrowser_ServerListPageBuddy.InternalOnLoadINI
-	End Object
-	Begin Object Class=GUIContextMenu Name=RCMenu
-		ContextItems(0)="Add Buddy"
-		ContextItems(1)="Remove Buddy"
-		OnSelect=AABrowser_ServerListPageBuddy.ContextSelect
-	End Object
-	*/
+	UGUISplitter* HorzSplitter = NewObject<UGUISplitter>(UGUISplitter::StaticClass());
+	HorzSplitter->SplitOrientation = EGUISplitterType::SPLIT_Horizontal;
+	HorzSplitter->DefaultPanels = "AGP_Interface.AABrowser_BuddyListBox";
+	HorzSplitter->DefaultPanels = "XInterface.GUISplitter";
+	//HorzSplitter->OnReleaseSplitter = AABrowser_ServerListPageBuddy.InternalReleaseSplitter;
+	//HorzSplitter->OnCreateComponent=AABrowser_ServerListPageBuddy.InternalOnCreateComponent;
+	HorzSplitter->IniOption = "@Internal";
+	HorzSplitter->WinHeight = 1;
+	HorzSplitter->RenderWeight = 1;
+	HorzSplitter->bBoundToParent = true;
+	HorzSplitter->bScaleToParent = true;
+	//HorzSplitter->OnLoadINI=AABrowser_ServerListPageBuddy.InternalOnLoadINI;
+	UGUIContextMenu* RCMenu = NewObject<UGUIContextMenu>(UGUIContextMenu::StaticClass());
+	RCMenu->ContextItems = { "Add Buddy","Remove Buddy" };
+	//RCMenu->OnSelect=AABrowser_ServerListPageBuddy.ContextSelect;
 	BuddySplitterPosition = 0.597582;
-	//BuddyListBoxClass = "AGP_Interface.AABrowser_BuddyListBox";
+	BuddyListBoxClass = "AGP_Interface.AABrowser_BuddyListBox";
 	AddBuddyCaption = "ADD BUDDY";
 	AddBuddyLabel = "Add Buddy";
 	RemoveBuddyCaption = "REMOVE BUDDY";
 	BuddyNameCaption = "Buddy Name: ";
-	//sp_Main = GUISplitter'AGP_Interface.AABrowser_ServerListPageBuddy.HorzSplitter';
+	sp_Main = HorzSplitter;
 	MainSplitterPosition = 0.184326;
 	DetailSplitterPosition = 0.319135;
-
-	/*
-		HeaderColumnSizes2512(0) = (ColumnSizes(0) = 0.096562
-			ColumnSizes(1) = 0.493471
-			ColumnSizes(2) = 0.206944
-			ColumnSizes(3) = 0.102535
-			ColumnSizes(4) = 0.15)
-		HeaderColumnSizes2512(1) = (ColumnSizes(0) = 0.498144
-			ColumnSizes(1) = 0.5)
-		HeaderColumnSizes2512(2) = (ColumnSizes(0) = 0.473428
-			ColumnSizes(1) = 0.185665
-			ColumnSizes(2) = 0.226824
-			ColumnSizes(3) = 0.22)
-	*/
+	HeaderColumnSizes2512 = {{ { 0.096562,0.493471,0.206944,0.102535,0.15 } },{ { 0.498144,0.5 } }, { { 0.473428,0.185665,0.226824,0.22 } }};
 	PanelCaption = "Buddy Browser";
-	//ContextMenu = GUIContextMenu'AGP_Interface.AABrowser_ServerListPageBuddy.RCMenu';
+	ContextMenu = RCMenu;
 }
 
 void UAABrowser_ServerListPageBuddy::InitComponent(UGUIController* MyController, UGUIComponent* MyOwner)

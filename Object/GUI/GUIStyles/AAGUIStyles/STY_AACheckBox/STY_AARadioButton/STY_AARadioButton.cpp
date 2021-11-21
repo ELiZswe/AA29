@@ -6,15 +6,12 @@
 USTY_AARadioButton::USTY_AARadioButton()
 {
 	KeyName = "RadioButton";
-
-	//Images[0] = Texture'T_AA2_UI.Menu.button_radio'
-	//Images[1] = Texture'T_AA2_UI.Menu.button_radio_rollover'
-	//Images[2] = Texture'T_AA2_UI.Menu.button_radio'
-	//Images[3] = Texture'T_AA2_UI.Menu.button_radio'
-	//Images[4] = Texture'T_AA2_UI.Menu.button_radio'
-	//ImgStyle(0) = 2
-	//ImgStyle(1) = 2
-	//ImgStyle(2) = 2
-	//ImgStyle(3) = 2
-	//ImgStyle(4) = 2
+	Images = {
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/button_radio_Mat.button_radio_Mat'"), NULL, LOAD_None, NULL),
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/button_radio_rollover_Mat.button_radio_rollover_Mat'"), NULL, LOAD_None, NULL),
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/button_radio_Mat.button_radio_Mat'"), NULL, LOAD_None, NULL),
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/button_radio_Mat.button_radio_Mat'"), NULL, LOAD_None, NULL),
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/button_radio_Mat.button_radio_Mat'"), NULL, LOAD_None, NULL)
+	};
+	ImgStyle = { EImgStyle::ISTY_Scaled,EImgStyle::ISTY_Scaled,EImgStyle::ISTY_Scaled,EImgStyle::ISTY_Scaled,EImgStyle::ISTY_Scaled };
 }

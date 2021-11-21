@@ -28,7 +28,7 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Style")											TArray<FColor> FontColors;						//var(Style) Object.Color FontColors;
 	UPROPERTY(EditAnywhere, Category = "Style")											TArray<UGUIFont*> Fonts;						//var(Style) GUIFont Fonts;
 	UPROPERTY(EditAnywhere, Category = "Style")											TArray<FString> FontNames;						//var(Style) string FontNames;
-	UPROPERTY(EditAnywhere, Category = "Style")											FString AlternateKeyName;						//var(Style) const string AlternateKeyName;
+	UPROPERTY(EditAnywhere, Category = "Style")											TArray<FString> AlternateKeyName;				//var(Style) const string AlternateKeyName;
 	UPROPERTY(EditAnywhere, Category = "Style")											FString KeyName;								//var(Style) const string KeyName;
 
 	void OnDraw(UCanvas* Canvas, EMenuState MenuState, float Left, float Top, float Width, float Height);

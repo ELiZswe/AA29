@@ -16,4 +16,8 @@ class AA29_API UUT2StatsPrompt : public UUT2K3GUIPage
 public:
 	UUT2StatsPrompt();
 
+	void OnStatsConfigured();
+	void InitComponent(UGUIController* MyController, UGUIComponent* MyOwner);
+	bool InternalOnClick(UGUIComponent* Sender);
+	void ReOpen();
 };

@@ -2,7 +2,7 @@
 
 
 #include "AA29/AAGameplay/EEBlackHawk/EEBlackHawk.h"
-#include "AA29/AA2_Emitter/aux_light_signal/aux_light_signal.h"
+#include "AA29/Object/Actor/Emitter/aux_light_signal/aux_light_signal.h"
 #include "AA29/AAGameplay/BHCrew/BHCrew.h"
 #include "AA29/Object/Actor/Light/VolumeLight/BHLandingLight/BHLandingLight.h"
 #include "AA29/AAGameplay/BHM134A/BHM134A.h"

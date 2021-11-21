@@ -19,7 +19,7 @@ public:
 	AMBSGetServerInfoRequestAdapter();
 
 	UPROPERTY()						TArray<FGameSpyPlayerInfo> PlayerList;						//var array<ServerBrowserBase.GameSpyPlayerInfo> PlayerList;
-	UPROPERTY()						FGameSpyServerItem ServerItem;						//var ServerBrowserBase.GameSpyServerItem ServerItem;
+	UPROPERTY()						FGameSpyServerItem ServerItem;						//var FGameSpyServerItem ServerItem;
 
 
 	void CommunicationFailureCallback();

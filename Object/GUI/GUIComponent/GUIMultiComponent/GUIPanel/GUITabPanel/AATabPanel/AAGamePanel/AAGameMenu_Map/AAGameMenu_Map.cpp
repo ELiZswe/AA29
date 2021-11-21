@@ -3,80 +3,73 @@
 #include "AAGameMenu_Map.h"
 #include "AA29/Object/GUI/GUIComponent/GUIImage/GUIImage.h"
 #include "AA29/Object/GUI/GUIComponent/GUIImage/GUIImageButton/GUIImageButton.h"
-
+#include "AA29/Object/GUI/GUIComponent/GUILabel/GUILabel.h"
+#include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIListBoxBase/GUIScrollTextBox/GUIScrollTextBox.h"
 
 UAAGameMenu_Map::UAAGameMenu_Map()
 {
-	/*
-	Begin Object Class=GUIImageButton Name=MapImage
-		Image=Texture'T_AA2_Maps.Overhead.NoImage'
-		ImageStyle=ISTY_Scaled
-		ImageRenderStyle=1
-		WinTop=0.06
-		WinLeft=0.06
-		WinWidth=0.7
-		WinHeight=0.7
-		OnClick=AAGameMenu_Map.ObjectivesClick
-		OnKeyEvent=MapImage.InternalOnKeyEvent
-	End Object
-	Begin Object Class=GUIScrollTextBox Name=ObjectivesList
-		CharDelay=0.0025
-		EOLDelay=0.5
-		TextAlign=2
-		OnCreateComponent=ObjectivesList.InternalOnCreateComponent
-		StyleName="SmallText"
-		WinTop=0.1
-		WinLeft=0.82
-		WinWidth=0.15
-		WinHeight=0.7
-		TabOrder=1
-		bBoundToParent=True
-	End Object
-	Begin Object Class=GUIImage Name=MyBackground
-		Image=Texture'T_AA2_UI.Menu.backgroundfill'
-		ImageStyle=ISTY_Stretched
-		ImageRenderStyle=1
-		WinTop=0.01
-		WinLeft=0.01
-		WinWidth=0.98
-		WinHeight=0.89
-		RenderWeight=0
-		bBoundToParent=True
-		bScaleToParent=True
-	End Object
-	Begin Object Class=GUIImage Name=BG1
-		Image=Texture'T_AA2_UI.Menu.field_translucent'
-		ImageStyle=ISTY_Stretched
-		ImageRenderStyle=1
-		WinTop=0.02
-		WinLeft=0.02
-		WinWidth=0.96
-		WinHeight=0.87
-	End Object
-	Begin Object Class=GUILabel Name=ObjectivesLabel
-		Caption="Objectives"
-		TextAlign=2
-		TextColor=(R=52,G=180,B=217,A=255)
-		TextFont="AAFontMedium"
-		WinTop=0.04
-		WinLeft=0.82
-		WinWidth=0.15
-	End Object
-	Begin Object Class=GUILabel Name=AuthorNameLabel
-		Caption="Map created by US Army"
-		TextColor=(R=128,G=128,B=128,A=255)
-		TextFont="AAFontMedium"
-		WinTop=0.84
-		WinLeft=0.03
-		WinWidth=0.4
-	End Object
-*/
-	//i_Background = GUIImage'AGP_Interface.AAGameMenu_Map.MyBackground';
-	//i_Objectives = GUIImage'AGP_Interface.AAGameMenu_Map.BG1';
-	//i_Map = GUIImageButton'AGP_Interface.AAGameMenu_Map.MapImage';
-	//l_Objectives = GUILabel'AGP_Interface.AAGameMenu_Map.ObjectivesLabel';
-	//l_AuthorName = GUILabel'AGP_Interface.AAGameMenu_Map.AuthorNameLabel';
-	//sb_ObjectivesList = GUIScrollTextBox'AGP_Interface.AAGameMenu_Map.ObjectivesList';
+	UGUIImageButton* MapImage = NewObject<UGUIImageButton>(UGUIImageButton::StaticClass());
+	MapImage->Image = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_Maps/Overhead/NoImag_Mat.NoImag_Mat'"), NULL, LOAD_None, NULL);
+	MapImage->ImageStyle = EImgStyle::ISTY_Scaled;
+	MapImage->ImageRenderStyle = EMenuRenderStyle::MSTY_Normal;
+	MapImage->WinTop = 0.06;
+	MapImage->WinLeft = 0.06;
+	MapImage->WinWidth = 0.7;
+	MapImage->WinHeight = 0.7;
+	//MapImage->OnClick=AAGameMenu_Map.ObjectivesClick;
+	//MapImage->OnKeyEvent=MapImage.InternalOnKeyEvent;
+	UGUIScrollTextBox* ObjectivesList = NewObject<UGUIScrollTextBox>(UGUIScrollTextBox::StaticClass());
+	ObjectivesList->CharDelay = 0.0025;
+	ObjectivesList->EOLDelay = 0.5;
+	ObjectivesList->TextAlign = EeTextAlign::TXTA_Right;
+	//ObjectivesList->OnCreateComponent=ObjectivesList.InternalOnCreateComponent;
+	ObjectivesList->StyleName = "SmallText";
+	ObjectivesList->WinTop = 0.1;
+	ObjectivesList->WinLeft = 0.82;
+	ObjectivesList->WinWidth = 0.15;
+	ObjectivesList->WinHeight = 0.7;
+	ObjectivesList->TabOrder = 1;
+	ObjectivesList->bBoundToParent = true;
+	UGUIImage* MyBackground = NewObject<UGUIImage>(UGUIImage::StaticClass());
+	MyBackground->Image = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/backgroundfil_Mat.backgroundfil_Mat'"), NULL, LOAD_None, NULL);
+	MyBackground->ImageStyle = EImgStyle::ISTY_Stretched;
+	MyBackground->ImageRenderStyle = EMenuRenderStyle::MSTY_Normal;
+	MyBackground->WinTop = 0.01;
+	MyBackground->WinLeft = 0.01;
+	MyBackground->WinWidth = 0.98;
+	MyBackground->WinHeight = 0.89;
+	MyBackground->RenderWeight = 0;
+	MyBackground->bBoundToParent = true;
+	MyBackground->bScaleToParent = true;
+	UGUIImage* BG1 = NewObject<UGUIImage>(UGUIImage::StaticClass());
+	BG1->Image = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/field_translucen_Mat.field_translucen_Mat'"), NULL, LOAD_None, NULL);
+	BG1->ImageStyle = EImgStyle::ISTY_Stretched;
+	BG1->ImageRenderStyle = EMenuRenderStyle::MSTY_Normal;
+	BG1->WinTop = 0.02;
+	BG1->WinLeft = 0.02;
+	BG1->WinWidth = 0.96;
+	BG1->WinHeight = 0.87;
+	UGUILabel* ObjectivesLabel = NewObject<UGUILabel>(UGUILabel::StaticClass());
+	ObjectivesLabel->Caption = "Objectives";
+	ObjectivesLabel->TextAlign = ETextAlign::TXTA_Right;
+	ObjectivesLabel->TextColor = FColor(52, 180, 217, 255);
+	ObjectivesLabel->TextFont = "AAFontMedium";
+	ObjectivesLabel->WinTop = 0.04;
+	ObjectivesLabel->WinLeft = 0.82;
+	ObjectivesLabel->WinWidth = 0.15;
+	UGUILabel* AuthorNameLabel = NewObject<UGUILabel>(UGUILabel::StaticClass());
+	AuthorNameLabel->Caption = "Map created by US Army";
+	AuthorNameLabel->TextColor = FColor(128, 128, 128, 255);
+	AuthorNameLabel->TextFont = "AAFontMedium";
+	AuthorNameLabel->WinTop = 0.84;
+	AuthorNameLabel->WinLeft = 0.03;
+	AuthorNameLabel->WinWidth = 0.4;
+	i_Background = MyBackground;
+	i_Objectives = BG1;
+	i_Map = MapImage;
+	l_Objectives = ObjectivesLabel;
+	l_AuthorName = AuthorNameLabel;
+	sb_ObjectivesList = ObjectivesList;
 }
 
 void UAAGameMenu_Map::InitComponent(UGUIController* MyController, UGUIComponent* MyOwner)

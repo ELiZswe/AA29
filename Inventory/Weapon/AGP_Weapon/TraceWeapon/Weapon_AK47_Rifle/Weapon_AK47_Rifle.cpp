@@ -7,7 +7,7 @@
 #include "AA29/Pickup/AGP_WeaponPickup/PickupW_AK47_Rifle/PickupW_AK47_Rifle.h"
 #include "AA29/BaseScope/ScopeW_AK47_Rifle.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamage762mm.h"
-#include "AA29/AA2_Emitter/BaseMuzzleFlashEmitter/AK47MuzzleFlash_1P/AK47MuzzleFlash_1P.h"
+#include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/AK47MuzzleFlash_1P/AK47MuzzleFlash_1P.h"
 
 AWeapon_AK47_Rifle::AWeapon_AK47_Rifle()
 {

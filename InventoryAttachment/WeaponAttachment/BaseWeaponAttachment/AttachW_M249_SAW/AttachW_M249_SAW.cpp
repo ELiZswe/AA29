@@ -3,8 +3,8 @@
 
 #include "AttachW_M249_SAW.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/AttachW_RPK_SAW/AttachW_RPK_SAW.h"
-#include "AA29/AA2_Emitter/BaseShellEmitter/Shell_556mm_Emitter/Shell_556mm_Emitter.h"
-#include "AA29/AA2_Emitter/BaseMuzzleFlashEmitter/M249MuzzleFlash/M249MuzzleFlash.h"
+#include "AA29/Object/Actor/Emitter/BaseShellEmitter/Shell_556mm_Emitter/Shell_556mm_Emitter.h"
+#include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/M249MuzzleFlash/M249MuzzleFlash.h"
 
 AAttachW_M249_SAW::AAttachW_M249_SAW()
 {

@@ -3,7 +3,7 @@
 
 #include "AttachW_M2_HMG.h"
 #include "AA29/Inventory/Weapon/AGP_Weapon/FixedWeapon/Weapon_M2_HMG/Weapon_M2_HMG.h"
-#include "AA29/AA2_Emitter/BaseMuzzleFlashEmitter/AK47MuzzleFlash/AK47MuzzleFlash.h"
+#include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/AK47MuzzleFlash/AK47MuzzleFlash.h"
 
 
 AAttachW_M2_HMG::AAttachW_M2_HMG()

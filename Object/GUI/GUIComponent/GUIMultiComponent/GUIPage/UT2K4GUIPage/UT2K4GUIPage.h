@@ -16,4 +16,9 @@ class AA29_API UUT2K4GUIPage : public UGUIPage
 public:
 	UUT2K4GUIPage();
 
+	UPROPERTY(EditAnywhere)						USoundBase* PopInSound;						//var Sound PopInSound;
+	UPROPERTY(EditAnywhere)						USoundBase* SlideInSound;					//var Sound SlideInSound;
+	UPROPERTY(EditAnywhere)						USoundBase* FadeInSound;					//var Sound FadeInSound;
+	UPROPERTY(EditAnywhere)						USoundBase* BeepSound;						//var Sound BeepSound;
+
 };

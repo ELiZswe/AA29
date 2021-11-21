@@ -87,7 +87,7 @@ UAAPersonnelJacket_Profile::UAAPersonnelJacket_Profile()
 	//AutoLoadCheckBox->OnChange=AAPersonnelJacket_Profile.InternalOnChange;
 	//AutoLoadCheckBox->OnLoadINI=AAPersonnelJacket_Profile.InternalOnLoadINI;
 	UGUIImage* detailBK1 = NewObject<UGUIImage>(UGUIImage::StaticClass());
-	//detailBK1->Image=Texture'T_AA2_UI.Menu.field_translucent';
+	detailBK1->Image = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/field_translucen_Mat.field_translucen_Mat'"), NULL, LOAD_None, NULL);
 	detailBK1->ImageStyle = EImgStyle::ISTY_Stretched;
 	detailBK1->ImageRenderStyle = EMenuRenderStyle::MSTY_Normal;
 	detailBK1->WinTop=0.07;
@@ -96,7 +96,7 @@ UAAPersonnelJacket_Profile::UAAPersonnelJacket_Profile()
 	detailBK1->WinHeight=0.15;
 	detailBK1->RenderWeight=0.01;
 	UGUIImage* detailBK2 = NewObject<UGUIImage>(UGUIImage::StaticClass());
-	//detailBK2->Image=Texture'T_AA2_UI.Menu.field_translucent';
+	detailBK2->Image = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/field_translucen_Mat.field_translucen_Mat'"), NULL, LOAD_None, NULL);
 	detailBK2->ImageStyle = EImgStyle::ISTY_Stretched;
 	detailBK2->ImageRenderStyle = EMenuRenderStyle::MSTY_Normal;
 	detailBK2->WinTop=0.23;
@@ -105,7 +105,7 @@ UAAPersonnelJacket_Profile::UAAPersonnelJacket_Profile()
 	detailBK2->WinHeight=0.33;
 	detailBK2->RenderWeight=0.01;
 	UGUIImage* detailBK3 = NewObject<UGUIImage>(UGUIImage::StaticClass());
-	//detailBK3->Image=Texture'T_AA2_UI.Menu.field_translucent';
+	detailBK3->Image = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/field_translucen_Mat.field_translucen_Mat'"), NULL, LOAD_None, NULL);
 	detailBK3->ImageStyle = EImgStyle::ISTY_Stretched;
 	detailBK3->ImageRenderStyle = EMenuRenderStyle::MSTY_Normal;
 	detailBK3->WinTop=0.57;

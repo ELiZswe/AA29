@@ -1,11 +1,25 @@
 // All the original content belonged to the US Army
 
-
 #include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/GUITabPanel/AATabPanel/AAGamePanel/AAGameMenu_CP_PunkBuster/AAGameMenu_CP_PunkBuster.h"
+#include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIMenuOption/moCheckBox/moCheckBox.h"
 
 UAAGameMenu_CP_PunkBuster::UAAGameMenu_CP_PunkBuster()
 {
-	//mchkbPBEnabled = moCheckBox'AGP_Interface.AAGameMenu_CP_PunkBuster.PBEnabledCheckbox';
+	UmoCheckBox* PBEnabledCheckbox = NewObject<UmoCheckBox>(UmoCheckBox::StaticClass());
+	PBEnabledCheckbox->CaptionWidth = 0.9;
+	PBEnabledCheckbox->Caption = "Enable PunkBuster";
+	//PBEnabledCheckbox->OnCreateComponent=PBEnabledCheckbox.InternalOnCreateComponent;
+	PBEnabledCheckbox->IniOption = "@Internal";
+	PBEnabledCheckbox->Hint = "Check this box to enable PunkBuster.";
+	PBEnabledCheckbox->WinTop = 0.2;
+	PBEnabledCheckbox->WinLeft = 0.05;
+	PBEnabledCheckbox->WinWidth = 0.4;
+	PBEnabledCheckbox->WinHeight = 0.06;
+	PBEnabledCheckbox->TabOrder = 1;
+	PBEnabledCheckbox->bStandardized = false;
+	//PBEnabledCheckbox->OnChange=AAGameMenu_CP_PunkBuster.InternalOnChange;
+	mchkbPBEnabled = PBEnabledCheckbox;
+	
 	sInstructions = "Use this to customize your PunkBuster settings.";
 	WinHeight = 1;
 }

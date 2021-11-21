@@ -21,8 +21,6 @@ class AA29_API UAATreeAndExclusiveListPanel : public UGUIPanel
 public:
 	UAATreeAndExclusiveListPanel();
 
-
-
 	UPROPERTY()							bool							bOverrideMenuComponent;		//var bool bOverrideMenuComponent;
 	UPROPERTY(EditAnywhere)				UGUIGFXButton*					ScrollDown;					//var() XInterface.GUIGFXButton ScrollDown;
 	UPROPERTY(EditAnywhere)				UGUIGFXButton*					ScrollUp;					//var() XInterface.GUIGFXButton ScrollUp;

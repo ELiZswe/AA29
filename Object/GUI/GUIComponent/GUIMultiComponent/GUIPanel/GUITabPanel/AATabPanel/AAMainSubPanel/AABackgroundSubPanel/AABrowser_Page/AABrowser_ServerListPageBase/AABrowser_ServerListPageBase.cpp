@@ -1,167 +1,148 @@
 // All the original content belonged to the US Army
 
 #include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/GUITabPanel/AATabPanel/AAMainSubPanel/AABackgroundSubPanel/AABrowser_Page/AABrowser_ServerListPageBase/AABrowser_ServerListPageBase.h"
+#include "AA29/Object/GUI/GUIComponent/GUIButton/GUIButton.h"
+#include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIMenuOption/moComboBox/moComboBox.h"
+#include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIMenuOption/moCheckBox/moCheckBox.h"
+#include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIMenuOption/moEditBox/moEditBox.h"
+#include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/GUISplitter/GUISplitter.h"
+#include "AA29/Object/GUI/GUIComponent/GUILabel/GUILabel.h"
 
 UAABrowser_ServerListPageBase::UAABrowser_ServerListPageBase()
 {
-	/*
-	Begin Object Class=GUIButton Name=BrowserFilter
-		Caption="FILTERS"
-		StyleName="SquareMenuButton"
-		Hint="Filters allow more control over which servers will appear in the server browser lists."
-		WinTop=0.93
-		WinLeft=0.33
-		WinWidth=0.15
-		WinHeight=0.053476
-		RenderWeight=2
-		TabOrder=4
-		bBoundToParent=True
-		OnClick=AABrowser_ServerListPageBase.InternalOnClick
-		OnKeyEvent=BrowserFilter.InternalOnKeyEvent
-	End Object
-	Begin Object Class=GUIButton Name=BrowserRefresh
-		Caption="REFRESH"
-		StyleName="SquareMenuButton"
-		Hint="Refresh server browser lists."
-		WinTop=0.852793
-		WinLeft=0.01
-		WinWidth=0.15
-		WinHeight=0.053476
-		RenderWeight=2
-		TabOrder=0
-		bBoundToParent=True
-		OnClick=AABrowser_ServerListPageBase.InternalOnClick
-		OnKeyEvent=BrowserRefresh.InternalOnKeyEvent
-	End Object
-	Begin Object Class=GUIButton Name=BrowserSpec
-		Caption="SPECTATE"
-		StyleName="SquareMenuButton"
-		Hint="Spectate the selected server."
-		WinTop=0.852793
-		WinLeft=0.17
-		WinWidth=0.15
-		WinHeight=0.053476
-		RenderWeight=2
-		TabOrder=1
-		bBoundToParent=True
-		OnClick=AABrowser_ServerListPageBase.InternalOnClick
-		OnKeyEvent=BrowserSpec.InternalOnKeyEvent
-	End Object
-	Begin Object Class=GUIButton Name=BrowserJoin
-		Caption="JOIN"
-		StyleName="SquareMenuButton"
-		Hint="Join the selected server."
-		WinTop=0.852793
-		WinLeft=0.33
-		WinWidth=0.15
-		WinHeight=0.053476
-		RenderWeight=2
-		TabOrder=2
-		bBoundToParent=True
-		OnClick=AABrowser_ServerListPageBase.InternalOnClick
-		OnKeyEvent=BrowserJoin.InternalOnKeyEvent
-	End Object
-	Begin Object Class=moComboBox Name=BrowserSwitcher
-		bReadOnly=True
-		ComponentJustification=0
-		CaptionWidth=0.27
-		Caption="Browser:"
-		OnCreateComponent=BrowserSwitcher.InternalOnCreateComponent
-		FontScale=0
-		Hint="Change the system which locates servers on the Internet."
-		WinTop=0.916216
-		WinLeft=0.006753
-		WinWidth=0.312987
-		WinHeight=0.032432
-		TabOrder=3
-		bBoundToParent=True
-		OnChange=AABrowser_ServerListPageBase.InternalOnChange
-	End Object
-	Begin Object Class=moCheckBox Name=PunkBusterCheckBox
-		CaptionWidth=0.9
-		Caption="Enable PunkBuster"
-		OnCreateComponent=PunkBusterCheckBox.InternalOnCreateComponent
-		FontScale=0
-		Hint="Check this box to enable PunkBuster."
-		WinTop=0.944414
-		WinLeft=0.031104
-		WinWidth=0.3
-		WinHeight=0.053476
-		TabOrder=4
-		bBoundToParent=True
-		bScaleToParent=True
-		bStandardized=False
-	End Object
-	Begin Object Class=moEditBox Name=PasswordBox
-		CaptionWidth=0.25
-		Caption="Password"
-		OnCreateComponent=PasswordBox.InternalOnCreateComponent
-		Hint="Enter a Password that you would like to use when joining a server."
-		WinTop=0.93
-		WinLeft=0.52
-		WinWidth=0.45
-		WinHeight=0.053476
-		TabOrder=5
-		bBoundToParent=True
-		bScaleToParent=True
-		bStandardized=False
-	End Object
-	Begin Object Class=GUISplitter Name=HorzSplitter
-		DefaultPanels="AGP_Interface.AABrowser_ServerListBox"
-		DefaultPanels="XInterface.GUISplitter"
-		MaxPercentage=0.9
-		OnReleaseSplitter=AABrowser_ServerListPageBase.InternalReleaseSplitter
-		OnCreateComponent=AABrowser_ServerListPageBase.InternalOnCreateComponent
-		IniOption="@Internal"
-		WinTop=0.01
-		WinLeft=0.01
-		WinWidth=0.98
-		WinHeight=0.84
-		RenderWeight=1
-		OnLoadINI=AABrowser_ServerListPageBase.InternalOnLoadINI
-	End Object
-	Begin Object Class=GUILabel Name=BrowserStatus
-		Caption="Ready"
-		TextAlign=2
-		FontScale=0
-		StyleName="TextLabel"
-		WinTop=0.86
-		WinLeft=0.52
-		WinWidth=0.45
-		WinHeight=0.053476
-		bBoundToParent=True
-		bScaleToParent=True
-		OnPreDraw=AABrowser_ServerListPageBase.PreDrawStatus
-	End Object
-	*/
-	//sp_Main = GUISplitter'AGP_Interface.AABrowser_ServerListPageBase.HorzSplitter';
-	//l_StatusBar = GUILabel'AGP_Interface.AABrowser_ServerListPageBase.BrowserStatus';
-	//b_Join = GUIButton'AGP_Interface.AABrowser_ServerListPageBase.BrowserJoin';
-	//b_Spectate = GUIButton'AGP_Interface.AABrowser_ServerListPageBase.BrowserSpec';
-	//b_Refresh = GUIButton'AGP_Interface.AABrowser_ServerListPageBase.BrowserRefresh';
-	//b_Filter = GUIButton'AGP_Interface.AABrowser_ServerListPageBase.BrowserFilter';
-	//co_BrowserSwitcher = moComboBox'AGP_Interface.AABrowser_ServerListPageBase.BrowserSwitcher';
-	//ch_PunkBuster = moCheckBox'AGP_Interface.AABrowser_ServerListPageBase.PunkBusterCheckBox';
-	//ed_Password = moEditBox'AGP_Interface.AABrowser_ServerListPageBase.PasswordBox';
-	//RulesListBoxClass = "AGP_Interface.AABrowser_RulesListBox";
-	//PlayersListBoxClass = "AGP_Interface.AABrowser_PlayersListBox";
-	//MainSplitterPosition = 0.665672;
-	//DetailSplitterPosition = 0.460938;
-
-	/*
-	HeaderColumnSizes2512(0) = (
-		ColumnSizes(0) = 0.08
-		ColumnSizes(1) = 0.08
-		ColumnSizes(2) = 0.37
-		ColumnSizes(3) = 0.25
-		ColumnSizes(4) = 0.11
-		ColumnSizes(5) = 0.11)
-	HeaderColumnSizes2512(1) = (ColumnSizes(0) = 0.4
-		ColumnSizes(1) = 0.6)
-	HeaderColumnSizes2512(2) = (ColumnSizes(0) = 0.56
-		ColumnSizes(1) = 0.22
-		ColumnSizes(2) = 0.22)
-	*/
+	UGUIButton* BrowserFilter = NewObject<UGUIButton>(UGUIButton::StaticClass());
+	BrowserFilter->Caption = "FILTERS";
+	BrowserFilter->StyleName = "SquareMenuButton";
+	BrowserFilter->Hint = "Filters allow more control over which servers will appear in the server browser lists.";
+	BrowserFilter->WinTop = 0.93;
+	BrowserFilter->WinLeft = 0.33;
+	BrowserFilter->WinWidth = 0.15;
+	BrowserFilter->WinHeight = 0.053476;
+	BrowserFilter->RenderWeight = 2;
+	BrowserFilter->TabOrder = 4;
+	BrowserFilter->bBoundToParent = true;
+	//BrowserFilter->OnClick=AABrowser_ServerListPageBase.InternalOnClick;
+	//BrowserFilter->OnKeyEvent=BrowserFilter.InternalOnKeyEvent;
+	UGUIButton* BrowserRefresh = NewObject<UGUIButton>(UGUIButton::StaticClass());
+	BrowserRefresh->Caption = "REFRESH";
+	BrowserRefresh->StyleName = "SquareMenuButton";
+	BrowserRefresh->Hint = "Refresh server browser lists.";
+	BrowserRefresh->WinTop = 0.852793;
+	BrowserRefresh->WinLeft = 0.01;
+	BrowserRefresh->WinWidth = 0.15;
+	BrowserRefresh->WinHeight = 0.053476;
+	BrowserRefresh->RenderWeight = 2;
+	BrowserRefresh->TabOrder = 0;
+	BrowserRefresh->bBoundToParent = true;
+	//BrowserRefresh->OnClick=AABrowser_ServerListPageBase.InternalOnClick;
+	//BrowserRefresh->OnKeyEvent=BrowserRefresh.InternalOnKeyEvent;
+	UGUIButton* BrowserSpec = NewObject<UGUIButton>(UGUIButton::StaticClass());
+	BrowserSpec->Caption = "SPECTATE";
+	BrowserSpec->StyleName = "SquareMenuButton";
+	BrowserSpec->Hint = "Spectate the selected server.";
+	BrowserSpec->WinTop = 0.852793;
+	BrowserSpec->WinLeft = 0.17;
+	BrowserSpec->WinWidth = 0.15;
+	BrowserSpec->WinHeight = 0.053476;
+	BrowserSpec->RenderWeight = 2;
+	BrowserSpec->TabOrder = 1;
+	BrowserSpec->bBoundToParent = true;
+	//BrowserSpec->OnClick=AABrowser_ServerListPageBase.InternalOnClick;
+	//BrowserSpec->OnKeyEvent=BrowserSpec.InternalOnKeyEvent;
+	UGUIButton* BrowserJoin = NewObject<UGUIButton>(UGUIButton::StaticClass());
+	BrowserJoin->Caption = "JOIN";
+	BrowserJoin->StyleName = "SquareMenuButton";
+	BrowserJoin->Hint = "Join the selected server.";
+	BrowserJoin->WinTop = 0.852793;
+	BrowserJoin->WinLeft = 0.33;
+	BrowserJoin->WinWidth = 0.15;
+	BrowserJoin->WinHeight = 0.053476;
+	BrowserJoin->RenderWeight = 2;
+	BrowserJoin->TabOrder = 2;
+	BrowserJoin->bBoundToParent = true;
+	//BrowserJoin->OnClick=AABrowser_ServerListPageBase.InternalOnClick;
+	//BrowserJoin->OnKeyEvent=BrowserJoin.InternalOnKeyEvent;
+	UmoComboBox* BrowserSwitcher = NewObject<UmoComboBox>(UmoComboBox::StaticClass());
+	BrowserSwitcher->bReadOnly = true;
+	BrowserSwitcher->ComponentJustification = EeTextAlign::TXTA_Left;
+	BrowserSwitcher->CaptionWidth = 0.27;
+	BrowserSwitcher->Caption = "Browser:";
+	//BrowserSwitcher->OnCreateComponent=BrowserSwitcher.InternalOnCreateComponent;
+	BrowserSwitcher->FontScale = EFontScale::FNS_Small;
+	BrowserSwitcher->Hint = "Change the system which locates servers on the Internet.";
+	BrowserSwitcher->WinTop = 0.916216;
+	BrowserSwitcher->WinLeft = 0.006753;
+	BrowserSwitcher->WinWidth = 0.312987;
+	BrowserSwitcher->WinHeight = 0.032432;
+	BrowserSwitcher->TabOrder = 3;
+	BrowserSwitcher->bBoundToParent = true;
+	//BrowserSwitcher->OnChange=AABrowser_ServerListPageBase.InternalOnChange;
+	UmoCheckBox* PunkBusterCheckBox = NewObject<UmoCheckBox>(UmoCheckBox::StaticClass());
+	PunkBusterCheckBox->CaptionWidth = 0.9;
+	PunkBusterCheckBox->Caption = "Enable PunkBuster";
+	//PunkBusterCheckBox->OnCreateComponent=PunkBusterCheckBox.InternalOnCreateComponent;
+	PunkBusterCheckBox->FontScale = EFontScale::FNS_Small;
+	PunkBusterCheckBox->Hint = "Check this box to enable PunkBuster.";
+	PunkBusterCheckBox->WinTop = 0.944414;
+	PunkBusterCheckBox->WinLeft = 0.031104;
+	PunkBusterCheckBox->WinWidth = 0.3;
+	PunkBusterCheckBox->WinHeight = 0.053476;
+	PunkBusterCheckBox->TabOrder = 4;
+	PunkBusterCheckBox->bBoundToParent = true;
+	PunkBusterCheckBox->bScaleToParent = true;
+	PunkBusterCheckBox->bStandardized = false;
+	UmoEditBox* PasswordBox = NewObject<UmoEditBox>(UmoEditBox::StaticClass());
+	PasswordBox->CaptionWidth = 0.25;
+	PasswordBox->Caption = "Password";
+	//PasswordBox->OnCreateComponent=PasswordBox.InternalOnCreateComponent;
+	PasswordBox->Hint = "Enter a Password that you would like to use when joining a server.";
+	PasswordBox->WinTop = 0.93;
+	PasswordBox->WinLeft = 0.52;
+	PasswordBox->WinWidth = 0.45;
+	PasswordBox->WinHeight = 0.053476;
+	PasswordBox->TabOrder = 5;
+	PasswordBox->bBoundToParent = true;
+	PasswordBox->bScaleToParent = true;
+	PasswordBox->bStandardized = false;
+	UGUISplitter* HorzSplitter = NewObject<UGUISplitter>(UGUISplitter::StaticClass());
+	HorzSplitter->DefaultPanels = "AGP_Interface.AABrowser_ServerListBox";
+	HorzSplitter->DefaultPanels = "XInterface.GUISplitter";
+	HorzSplitter->MaxPercentage = 0.9;
+	//HorzSplitter->OnReleaseSplitter = AABrowser_ServerListPageBase.InternalReleaseSplitter;
+	//HorzSplitter->OnCreateComponent=AABrowser_ServerListPageBase.InternalOnCreateComponent;
+	HorzSplitter->IniOption = "@Internal";
+	HorzSplitter->WinTop = 0.01;
+	HorzSplitter->WinLeft = 0.01;
+	HorzSplitter->WinWidth = 0.98;
+	HorzSplitter->WinHeight = 0.84;
+	HorzSplitter->RenderWeight = 1;
+	//HorzSplitter->OnLoadINI=AABrowser_ServerListPageBase.InternalOnLoadINI;
+	UGUILabel* BrowserStatus = NewObject<UGUILabel>(UGUILabel::StaticClass());
+	BrowserStatus->Caption = "Ready";
+	BrowserStatus->TextAlign = ETextAlign::TXTA_Right;
+	BrowserStatus->FontScale = EFontScale::FNS_Small;
+	BrowserStatus->StyleName = "TextLabel";
+	BrowserStatus->WinTop = 0.86;
+	BrowserStatus->WinLeft = 0.52;
+	BrowserStatus->WinWidth = 0.45;
+	BrowserStatus->WinHeight = 0.053476;
+	BrowserStatus->bBoundToParent = true;
+	BrowserStatus->bScaleToParent = true;
+	//BrowserStatus->OnPreDraw=AABrowser_ServerListPageBase.PreDrawStatus;
+	sp_Main = HorzSplitter;
+	l_StatusBar = BrowserStatus;
+	b_Join = BrowserJoin;
+	b_Spectate = BrowserSpec;
+	b_Refresh = BrowserRefresh;
+	b_Filter = BrowserFilter;
+	co_BrowserSwitcher = BrowserSwitcher;
+	ch_PunkBuster = PunkBusterCheckBox;
+	ed_Password = PasswordBox;
+	RulesListBoxClass = "AGP_Interface.AABrowser_RulesListBox";
+	PlayersListBoxClass = "AGP_Interface.AABrowser_PlayersListBox";
+	MainSplitterPosition = 0.665672;
+	DetailSplitterPosition = 0.460938;
+	HeaderColumnSizes2512 = { { { 0.08,0.08,0.37,0.25,0.11,0.11 } },	{ { 0.4,0.6 } },	{ { 0.56,0.22,0.22 } } };
 	bAllowUpdates = true;
 	PingingText = "Pinging Servers ( %NumRec% / %TotalNum% )";
 	PingCompleteText = "Pinging Complete! %NumServers% Servers, %NumPlayers% Players";
@@ -373,7 +354,7 @@ void UAABrowser_ServerListPageBase::ServerListChanged(UGUIComponent* Sender)
 	/*
 	local int32 i;
 	local IpDrv.ServerBrowserBase sbBase;
-	local ServerBrowserBase.GameSpyServerItem ServerItem;
+	local FGameSpyServerItem ServerItem;
 	Log("AABrowser_ServerListPageBase::ServerListChanged" @ string(Sender));
 	if ((!bAllowUpdates) || (Controller.ContextMenu != None))
 	{

@@ -1,27 +1,25 @@
 // All the original content belonged to the US Army
 
-
 #include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/GUITabPanel/AATabPanel/AAIRC_Page/AAIRC_Page.h"
+#include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIMenuOption/moEditBox/moEditBox.h"
 
 UAAIRC_Page::UAAIRC_Page()
 {
-	/*
-	Begin Object Class=moEditBox Name=entrybox
-		CaptionWidth=0
-		OnCreateComponent=entrybox.InternalOnCreateComponent
-		StyleName="IRCEntry"
-		WinTop=0.885
-		WinLeft=0
-		WinWidth=1
-		WinHeight=0.053476
-		TabOrder=0
-		bBoundToParent=True
-		bScaleToParent=True
-		bStandardized=False
-		OnKeyEvent=AAIRC_Page.InternalOnKeyEvent
-	End Object
-	*/
-	//ed_TextEntry = moEditBox'AGP_Interface.AAIRC_Page.entrybox';
+	UmoEditBox* entrybox = NewObject<UmoEditBox>(UmoEditBox::StaticClass());
+	entrybox->CaptionWidth = 0;
+	//entrybox->OnCreateComponent=entrybox.InternalOnCreateComponent;
+	entrybox->StyleName = "IRCEntry";
+	entrybox->WinTop = 0.885;
+	entrybox->WinLeft = 0;
+	entrybox->WinWidth = 1;
+	entrybox->WinHeight = 0.053476;
+	entrybox->TabOrder = 0;
+	entrybox->bBoundToParent = true;
+	entrybox->bScaleToParent = true;
+	entrybox->bStandardized = false;
+	//entrybox->OnKeyEvent=AAIRC_Page.InternalOnKeyEvent;
+	ed_TextEntry = entrybox;
+
 	HasLeftText = "%Name% has left %Chan%.";
 	HasJoinedText = "%Name% has joined %Chan%.";
 	WasKickedByText = "%Kicked% was kicked by %Kicker% ( %Reason% ).";

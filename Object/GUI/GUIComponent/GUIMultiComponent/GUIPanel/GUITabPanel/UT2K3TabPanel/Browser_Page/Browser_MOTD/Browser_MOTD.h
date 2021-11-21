@@ -28,8 +28,6 @@ public:
 	UPROPERTY()								float					ReReadyPause;			//var float ReReadyPause;
 	UPROPERTY()								FString					VersionString;			//var localized FString VersionString;
 
-
-
 	void Timer();
 	void InitComponent(UGUIController* MyController, UGUIComponent* MyOwner);
 	void MyReceivedMOTDData(EMOTDResponse Command, FString Data);

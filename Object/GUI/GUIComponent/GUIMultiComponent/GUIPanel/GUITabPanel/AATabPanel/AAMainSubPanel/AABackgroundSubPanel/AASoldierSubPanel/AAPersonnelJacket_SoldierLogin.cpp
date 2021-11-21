@@ -104,7 +104,7 @@ UAAPersonnelJacket_SoldierLogin::UAAPersonnelJacket_SoldierLogin()
 	//GetNewsButton->OnClick=AAPersonnelJacket_SoldierLogin.ButtonClick;
 	//GetNewsButton->OnKeyEvent=GetNewsButton.InternalOnKeyEvent;
 	UGUIImage* FieldBackground = NewObject<UGUIImage>(UGUIImage::StaticClass());
-	//FieldBackground->Image=Texture'T_AA2_UI.Menu.field_translucent';
+	FieldBackground->Image = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/field_translucen_Mat.field_translucen_Mat'"), NULL, LOAD_None, NULL);
 	FieldBackground->ImageStyle = EImgStyle::ISTY_Stretched;
 	FieldBackground->ImageRenderStyle = EMenuRenderStyle::MSTY_Normal;
 	FieldBackground->WinTop=0.07;

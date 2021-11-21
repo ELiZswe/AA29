@@ -1,33 +1,30 @@
 // All the original content belonged to the US Army
 
-
 #include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/GUITabPanel/AATabPanel/AAMainPanel/AAMainPanel.h"
+#include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUITabControl/AAGUITabControl/AAGUITabControl.h"
 
 UAAMainPanel::UAAMainPanel()
 {
-	/*
-	Begin Object Class=AAGUITabControl Name=PageTabs
-		ButtonStyleName="TabButton"
-		UniformTabWidth=0.12
-		bDockPanels=True
-		TabHeight=0.035
-		WinHeight=1
-		RenderWeight=0.49
-		TabOrder=1
-		bBoundToParent=True
-		bScaleToParent=True
-		bAcceptsInput=True
-		OnActivate=PageTabs.InternalOnActivate
-		OnChange=AAMainPanel.InternalOnChange
-	End Object
-	*/
-	//c_Tabs = AAGUITabControl'AGP_Interface.AAMainPanel.PageTabs';
+	UAAGUITabControl* PageTabs = NewObject<UAAGUITabControl>(UAAGUITabControl::StaticClass());
+	PageTabs->ButtonStyleName = "TabButton";
+	PageTabs->UniformTabWidth = 0.12;
+	PageTabs->bDockPanels = true;
+	PageTabs->TabHeight = 0.035;
+	PageTabs->WinHeight = 1;
+	PageTabs->RenderWeight = 0.49;
+	PageTabs->TabOrder = 1;
+	PageTabs->bBoundToParent = true;
+	PageTabs->bScaleToParent = true;
+	PageTabs->bAcceptsInput = true;
+	//PageTabs->OnActivate=PageTabs.InternalOnActivate;
+	//PageTabs->OnChange=AAMainPanel.InternalOnChange;
+	c_Tabs = PageTabs;
+
 	WinTop = 0.01;
 	WinLeft = 0.23;
 	WinWidth = 0.76;
 	WinHeight = 0.98;
 }
-
 
 void UAAMainPanel::InitComponent(UGUIController* MyController, UGUIComponent* MyOwner)
 {
