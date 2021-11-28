@@ -5,5 +5,7 @@
 
 Afx_exp_strikerexplosionspawner::Afx_exp_strikerexplosionspawner()
 {
-
+	//MyEmitterClasses(0) = class'AGP_Effects.fx_exp_vehicledeath';
+	//MyEmitterClasses(1) = class'AGP_Effects.fx_exp_tireexplosion';
+	//MyEmitterClasses(2) = class'AGP_Effects.fx_exp_bigfire';
 }

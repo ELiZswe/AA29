@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/GUITabPanel/AATabPanel/AAIRC_Page/AAIRC_Page.h"
-#include "AA29/Info/InternetInfo/InternetLink/TcpLink/BufferedTCPLink/AAIRCLink/AAIRCLink.h"
+#include "AA29/Object/Actor/Info/InternetInfo/InternetLink/TcpLink/BufferedTCPLink/AAIRCLink/AAIRCLink.h"
 #include "AAIRC_System.generated.h"
 
 class UAAIRC_Channel;

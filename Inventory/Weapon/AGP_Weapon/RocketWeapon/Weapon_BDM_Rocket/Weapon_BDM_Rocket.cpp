@@ -4,7 +4,7 @@
 #include "Weapon_BDM_Rocket.h"
 #include "AA29/BaseScope/ScopeW_BDM_Rocket.h"
 #include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_BDM_Rocket/Ammo_BDM_Rocket.h"
-#include "AA29/Pickup/AGP_WeaponPickup/RocketWeaponPickup/PickupW_BDM_Rocket/PickupW_BDM_Rocket.h"
+#include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/RocketWeaponPickup/PickupW_BDM_Rocket/PickupW_BDM_Rocket.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/RocketWeaponAttachment/AttachW_BDM_Rocket/AttachW_BDM_Rocket.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamageLargeArms.h"
 #include "AA29/DamageType/AGP_DamageType/ExplosionDamage/BackBlastDamage/BackBlastDamage.h"

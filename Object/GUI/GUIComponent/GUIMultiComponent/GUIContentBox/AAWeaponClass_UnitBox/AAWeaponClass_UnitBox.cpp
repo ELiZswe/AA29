@@ -6,9 +6,9 @@
 
 UAAWeaponClass_UnitBox::UAAWeaponClass_UnitBox()
 {
-	UAAWeaponClass_UnitBoxHeader* aMyHeader = NewObject<UAAWeaponClass_UnitBoxHeader>(UAAWeaponClass_UnitBoxHeader::StaticClass());
-	Header = aMyHeader;
-	//FireTeamListClass = "AGP_Interface.AAWeaponClass_FireTeamList";
+	UAAWeaponClass_UnitBoxHeader* MyHeader2 = NewObject<UAAWeaponClass_UnitBoxHeader>(UAAWeaponClass_UnitBoxHeader::StaticClass());
+	Header = MyHeader2;
+	FireTeamListClass = "AGP_Interface.AAWeaponClass_FireTeamList";
 	bScaleItemsToWidth = true;
 }
 

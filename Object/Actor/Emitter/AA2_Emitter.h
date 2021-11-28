@@ -37,6 +37,7 @@ public:
 		UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Global")	bool AutoDestroy;									//var(Global) bool AutoDestroy;
 		UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Global")	FObjectRange TimeTillResetRange;					//var(Global) Object.Range TimeTillResetRange;
 		UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Global")	FRangeVector GlobalOffsetRange;						//var(Global) Object.RangeVector GlobalOffsetRange;
-		UPROPERTY(EditAnywhere, BlueprintReadWrite)							TArray<UAA2_ParticleEmitter*> Emitters;					//var() array<ParticleEmitter> Emitters;
+		UPROPERTY(EditAnywhere, BlueprintReadWrite)							TArray<UAA2_ParticleEmitter*> Emitters;				//var() array<ParticleEmitter> Emitters;
 
+		UPROPERTY(EditAnywhere, BlueprintReadWrite)							float LifeSpan;
 };

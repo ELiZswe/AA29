@@ -6,13 +6,18 @@
 #include "AA29/Object/ScriptObject/Direction/Direction.h"
 #include "Dir_DisplayMissionResults.generated.h"
 
-/**
- * 
- */
+class AHumanController;
+
 UCLASS()
 class AA29_API UDir_DisplayMissionResults : public UDirection
 {
 	GENERATED_BODY()
 public:
 	UDir_DisplayMissionResults();
+
+	UPROPERTY()						AHumanController*	_HumanController;				//var HumanController _HumanController;
+
+	void Destroyed();
+	void DirectionStart();
+	bool ProcessParams();
 };

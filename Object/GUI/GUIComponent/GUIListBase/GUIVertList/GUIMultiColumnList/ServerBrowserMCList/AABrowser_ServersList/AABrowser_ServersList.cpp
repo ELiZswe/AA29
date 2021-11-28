@@ -1,42 +1,49 @@
 // All the original content belonged to the US Army
 
-
 #include "AA29/Object/GUI/GUIComponent/GUIListBase/GUIVertList/GUIMultiColumnList/ServerBrowserMCList/AABrowser_ServersList/AABrowser_ServersList.h"
+#include "AA29/Object/CountryFlags/CountryFlags.h"
 
 UAABrowser_ServersList::UAABrowser_ServersList()
 {
-	//Icons(0) = Texture'T_AA2_UI.HUD.hud_group_army';
-	//Icons(1) = Texture'T_AA2_UI.HUD.hud_group_honor';
-	//Icons(2) = Texture'T_AA2_UI.HUD.hud_group_PLP_a';
-	//Icons(3) = Texture'T_AA2_UI.HUD.hud_group_miles';
-	//Icons(4) = Texture'T_AA2_UI.HUD.hud_icon_punkbuster';
-	//Icons(5) = Texture'T_AA2_UI.HUD.hud_group_locked';
-	//Icons(6) = Texture'T_AA2_UI.HUD.hud_group_eta';
 
+	UCountryFlags* FlagsObject = NewObject<UCountryFlags>(UCountryFlags::StaticClass());
+	Icons = {
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/HUD/hud_group_army_Mat.hud_group_army_Mat'"), NULL, LOAD_None, NULL),
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/HUD/hud_group_honor_Mat.hud_group_honor_Mat'"), NULL, LOAD_None, NULL),
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/HUD/hud_group_PLP_a_Mat.hud_group_PLP_a_Mat'"), NULL, LOAD_None, NULL),
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/HUD/hud_group_miles_Mat.hud_group_miles_Mat'"), NULL, LOAD_None, NULL),
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/HUD/hud_icon_punkbuster_Mat.hud_icon_punkbuster_Mat'"), NULL, LOAD_None, NULL),
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/HUD/hud_group_locked_Mat.hud_group_locked_Mat'"), NULL, LOAD_None, NULL),
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/HUD/hud_group_eta_Mat.hud_group_eta_Mat'"), NULL, LOAD_None, NULL)
+	};
 	IconDescriptions = { "Official", "Honor (Leased)", "Authorized", "MILES", "PunkBuster", "Password", "Instant Action" };
 
-	//TourIcons(0) = Texture'T_AA2_UI.HUD.menu_touricon_Basic_sm';
-	//TourIcons(1) = Texture'T_AA2_UI.HUD.menu_touricon_Basic_sm';
-	//TourIcons(2) = Texture'T_AA2_UI.HUD.menu_touricon_172nd_sm';
-	//TourIcons(3) = Texture'T_AA2_UI.HUD.menu_touricon_10th_mtn_sm';
-	//TourIcons(4) = Texture'T_AA2_UI.HUD.menu_touricon_Marksmanship_sm';
-	//TourIcons(5) = Texture'T_AA2_UI.HUD.menu_touricon_AirBorne_school_sm';
-	//TourIcons(6) = Texture'T_AA2_UI.HUD.menu_touricon_82nd_sm';
-	//TourIcons(7) = Texture'T_AA2_UI.HUD.menu_touricon_Ranger_sm';
-	//TourIcons(8) = Texture'T_AA2_UI.HUD.menu_touricon_Ranger_75th_sm';
-	//TourIcons(9) = Texture'T_AA2_UI.HUD.menu_touricon_CombatMedic_sm';
-	//TourIcons(10) = Texture'T_AA2_UI.HUD.menu_touricon_SF_sm';
-	//TourIcons(11) = Texture'T_AA2_UI.HUD.menu_touricon_SF_sm';
-	//TourIcons(12) = Texture'T_AA2_UI.HUD.menu_touricon_SF_sm';
-	//FlagIcons = CountryFlags'AGP_Interface.AABrowser_ServersList.FlagsObject';
+	TourIcons = {
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/HUD/menu_touricon_Basic_sm_Mat.menu_touricon_Basic_sm_Mat'"), NULL, LOAD_None, NULL),
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/HUD/menu_touricon_Basic_sm_Mat.menu_touricon_Basic_sm_Mat'"), NULL, LOAD_None, NULL),
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/HUD/menu_touricon_172nd_sm_Mat.menu_touricon_172nd_sm_Mat'"), NULL, LOAD_None, NULL),
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/HUD/menu_touricon_10th_mtn_sm_Mat.menu_touricon_10th_mtn_sm_Mat'"), NULL, LOAD_None, NULL),
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/HUD/menu_touricon_Marksmanship_sm_Mat.menu_touricon_Marksmanship_sm_Mat'"), NULL, LOAD_None, NULL),
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/HUD/menu_touricon_AirBorne_school_sm_Mat.menu_touricon_AirBorne_school_sm_Mat'"), NULL, LOAD_None, NULL),
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/HUD/menu_touricon_82nd_sm_Mat.menu_touricon_82nd_sm_Mat'"), NULL, LOAD_None, NULL),
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/HUD/menu_touricon_Ranger_sm_Mat.menu_touricon_Ranger_sm_Mat'"), NULL, LOAD_None, NULL),
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/HUD/menu_touricon_Ranger_75th_sm_Mat.menu_touricon_Ranger_75th_sm_Mat'"), NULL, LOAD_None, NULL),
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/HUD/menu_touricon_CombatMedic_sm_Mat.menu_touricon_CombatMedic_sm_Mat'"), NULL, LOAD_None, NULL),
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/HUD/menu_touricon_SF_sm_Mat.menu_touricon_SF_sm_Mat'"), NULL, LOAD_None, NULL),
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/HUD/menu_touricon_SF_sm_Mat.menu_touricon_SF_sm_Mat'"), NULL, LOAD_None, NULL),
+		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/HUD/menu_touricon_SF_sm_Mat.menu_touricon_SF_sm_Mat'"), NULL, LOAD_None, NULL),
+	};
+	FlagIcons = { FlagsObject };
 
 	ColumnHeadings = { "Icons", "Server Name", "Map", "Players", "Ping", "Avg Honor" };
 	InitColumnPerc = { 0.09, 0.35, 0.25, 0.11, 0.11, 0.09 };
+
 	SortColumn = 4;
 	ExpandLastColumn = true;
-	//__OnDrawItem__Delegate = "AABrowser_ServersList.MyOnDrawItem";
+	//OnDrawItem = AABrowser_ServersList.MyOnDrawItem;
 	WinHeight = 1;
-	//__OnDblClick__Delegate = "AABrowser_ServersList.MyOnDblClick";
+	//OnDblClick = AABrowser_ServersList.MyOnDblClick;
+
 }
 
 //const COLUMN_ICONS = 0;

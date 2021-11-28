@@ -3,7 +3,7 @@
 
 #include "Weapon_M249_SAW.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/AttachW_M249_SAW/AttachW_M249_SAW.h"
-#include "AA29/Pickup/AGP_WeaponPickup/PickupW_M249_SAW/PickupW_M249_SAW.h"
+#include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/PickupW_M249_SAW/PickupW_M249_SAW.h"
 #include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_556mm_200_Belt/Ammo_556mm_200_Belt.h"
 #include "AA29/BaseScope/ScopeW_M249_SAW.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamage556mm_SAW.h"

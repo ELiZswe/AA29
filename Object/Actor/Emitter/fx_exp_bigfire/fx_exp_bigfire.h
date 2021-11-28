@@ -6,9 +6,6 @@
 #include "AA29/Object/Actor/Emitter/AA2_Emitter.h"
 #include "fx_exp_bigfire.generated.h"
 
-/**
- * 
- */
 UCLASS()
 class AA29_API Afx_exp_bigfire : public AAA2_Emitter
 {

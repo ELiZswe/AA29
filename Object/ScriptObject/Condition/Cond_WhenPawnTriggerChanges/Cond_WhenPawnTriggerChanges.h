@@ -20,4 +20,13 @@ public:
 	UPROPERTY()										FName _TriggerTag;					//var name _TriggerTag;
 	UPROPERTY()										AAGP_Pawn* _Pawn;					//var AGP.AGP_Pawn _Pawn;
 	UPROPERTY()										AActor* _Actor;						//var Actor _Actor;
+
+	void Destroyed();
+	void ConditionStart();
+	void ConditionFinish();
+	bool ProcessParams();
+	void SetActor(AActor* Actor);
+	void SetTriggerTag(FName trigtag);
+	void SetTriggerNotifyOnEntry(bool Entry);
+	void update();
 };

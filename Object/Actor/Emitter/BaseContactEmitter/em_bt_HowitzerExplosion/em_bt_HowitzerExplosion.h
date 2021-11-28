@@ -13,5 +13,9 @@ UCLASS()
 class AA29_API Aem_bt_HowitzerExplosion : public ABaseContactEmitter
 {
 	GENERATED_BODY()
-	
+public:
+	Aem_bt_HowitzerExplosion();
+
+	void PostBeginPlay();
+	void SpawnLight();
 };

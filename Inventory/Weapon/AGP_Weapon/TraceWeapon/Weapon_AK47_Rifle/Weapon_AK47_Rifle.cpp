@@ -4,7 +4,7 @@
 #include "Weapon_AK47_Rifle.h"
 #include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_762mm_30_Mag/Ammo_762mm_30_Mag.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/AttachW_AK47_Rifle/AttachW_AK47_Rifle.h"
-#include "AA29/Pickup/AGP_WeaponPickup/PickupW_AK47_Rifle/PickupW_AK47_Rifle.h"
+#include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/PickupW_AK47_Rifle/PickupW_AK47_Rifle.h"
 #include "AA29/BaseScope/ScopeW_AK47_Rifle.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamage762mm.h"
 #include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/AK47MuzzleFlash_1P/AK47MuzzleFlash_1P.h"

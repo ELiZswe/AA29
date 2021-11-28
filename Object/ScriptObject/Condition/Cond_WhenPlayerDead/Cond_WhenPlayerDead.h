@@ -16,4 +16,9 @@ public:
 	UCond_WhenPlayerDead();
 
 	UPROPERTY()										AHumanController* _HumanController;					//var AGP.HumanController _HumanController;
+
+	void Destroyed();
+	void ConditionStart();
+	void ConditionFinish();
+	bool ProcessParams();
 };

@@ -16,5 +16,10 @@ public:
 	UCond_WhenTimerEnds();
 
 	UPROPERTY()										FName TimerTag;						//var name TimerTag;
-	//UPROPERTY()										AAGP_Timer* _timer;					//var AGP_Gameplay.AGP_Timer _timer;
+	UPROPERTY()										AAGP_Timer* _timer;					//var AGP_Gameplay.AGP_Timer _timer;
+
+	void Destroyed();
+	void ConditionStart();
+	void ConditionFinish();
+	bool ProcessParams();
 };

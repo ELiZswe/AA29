@@ -16,4 +16,7 @@ class AA29_API Aem_bt_MaverickMissileExplosion : public Aem_bt_MissileExplosion
 public:
 	Aem_bt_MaverickMissileExplosion();
 
+	void PostBeginPlay();
+	void SpawnLight();
+
 };

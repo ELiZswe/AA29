@@ -4,7 +4,7 @@
 #include "Ammo_RPG7_PG7VR.h"
 #include "AA29/Projectile/BaseProjectile/BaseExplodingProjectile/Proj_30Gren/Proj_30Gren.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamageLargeArms.h"
-#include "AA29/Pickup/Ammo/AGP_AmmoPickup/PickupAmmo_RPG7_PG7VR.h"
+#include "AA29/Object/Actor/Pickup/Ammo/AGP_AmmoPickup/PickupAmmo_RPG7_PG7VR.h"
 
 AAmmo_RPG7_PG7VR::AAmmo_RPG7_PG7VR()
 {

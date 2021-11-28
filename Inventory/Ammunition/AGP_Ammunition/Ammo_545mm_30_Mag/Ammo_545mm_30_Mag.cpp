@@ -3,7 +3,7 @@
 
 #include "Ammo_545mm_30_Mag.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamage545mm.h"
-#include "AA29/Pickup/Ammo/AGP_AmmoPickup/PickupAmmo_545mm_30_Mag.h"
+#include "AA29/Object/Actor/Pickup/Ammo/AGP_AmmoPickup/PickupAmmo_545mm_30_Mag.h"
 AAmmo_545mm_30_Mag::AAmmo_545mm_30_Mag()
 {
 	MaxAmmo       = 30;

@@ -3,7 +3,7 @@
 
 #include "Ammo_Smoke_1_Gren.h"
 #include "AA29/Projectile/BaseProjectile/BaseExplodingProjectile/Proj_40Gren/Proj_SmokeGren/Proj_SmokeGren.h"
-#include "AA29/Pickup/Ammo/AGP_AmmoPickup/PickupAmmo_Smoke_1_Gren.h"
+#include "AA29/Object/Actor/Pickup/Ammo/AGP_AmmoPickup/PickupAmmo_Smoke_1_Gren.h"
 AAmmo_Smoke_1_Gren::AAmmo_Smoke_1_Gren(const FObjectInitializer& ObjectInitializer)
 {
 	Damage            = 0;

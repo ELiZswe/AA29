@@ -1,15 +1,16 @@
 // All the original content belonged to the US Army
 
-
 #include "AA29/Object/GUI/GUIComponent/GUIImage/GUIImageButton/GUIImageButton.h"
+#include "AA29/Object/GUI/GUIComponent/GUIToolTip/GUIToolTip.h"
 
 UGUIImageButton::UGUIImageButton()
 {
+	UGUIToolTip* GUIButtonToolTip = NewObject<UGUIToolTip>(UGUIToolTip::StaticClass());
 	bTabStop = true;
 	bAcceptsInput = true;
 	bCaptureMouse = true;
-	//ToolTip = GUIToolTip'AGP_Interface.GUIImageButton.GUIButtonToolTip';
-	//__OnKeyEvent__Delegate = "GUIImageButton.InternalOnKeyEvent";
+	ToolTip = GUIButtonToolTip;
+	//OnKeyEvent = GUIImageButton.InternalOnKeyEvent;
 }
 
 void UGUIImageButton::InitComponent(UGUIController* MyController, UGUIComponent* MyOwner)

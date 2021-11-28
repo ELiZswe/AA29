@@ -2,7 +2,7 @@
 
 
 #include "Throw_RGD5_Frag.h"
-#include "AA29/Pickup/AGP_WeaponPickup/ThrowWeaponPickup/PickupT_RGD5_Frag/PickupT_RGD5_Frag.h"
+#include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/ThrowWeaponPickup/PickupT_RGD5_Frag/PickupT_RGD5_Frag.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/AttachT_RGD5_Frag/AttachT_RGD5_Frag.h"
 #include "AA29/DamageType/AGP_DamageType/ExplosionDamage/GrenadeExplosionDamage/GrenadeExplosionDamage.h"
 #include "AA29/DamageType/AGP_DamageType/FragDamage/FragDamage.h"

@@ -2,7 +2,7 @@
 
 #include "Ammo_127mm_10_Mag.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamage127Sniper.h"
-#include "AA29/Pickup/Ammo/AGP_AmmoPickup/PickupAmmo_127mm_10_Mag.h"
+#include "AA29/Object/Actor/Pickup/Ammo/AGP_AmmoPickup/PickupAmmo_127mm_10_Mag.h"
 
 AAmmo_127mm_10_Mag::AAmmo_127mm_10_Mag()
 {

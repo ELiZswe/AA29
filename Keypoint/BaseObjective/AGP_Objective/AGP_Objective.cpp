@@ -2,7 +2,7 @@
 
 
 #include "AGP_Objective.h"
-#include "AA29/Info/ReplicationInfo/TeamInfo/TeamInfo.h"
+#include "AA29/Object/Actor/Info/ReplicationInfo/TeamInfo/TeamInfo.h"
 
 AAGP_Objective::AAGP_Objective(const FObjectInitializer& objectInitializer)
 	:Super(objectInitializer)

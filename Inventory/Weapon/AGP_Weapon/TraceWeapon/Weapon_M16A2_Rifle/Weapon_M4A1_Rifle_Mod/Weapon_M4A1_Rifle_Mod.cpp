@@ -5,7 +5,7 @@
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/AttachW_M4A1_Rifle_Mod/AttachW_M4A1_Rifle_Mod.h"
 #include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/SuppressorMuzzleFlash_1P/SuppressorMuzzleFlash_1P.h"
 #include "AA29/BaseAmmoRound/AmmoRound_556_Bullet.h"
-#include "AA29/Pickup/AGP_WeaponPickup/PickupW_M4A1_Rifle_Mod/PickupW_M4A1_Rifle_Mod.h"
+#include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/PickupW_M4A1_Rifle_Mod/PickupW_M4A1_Rifle_Mod.h"
 
 AWeapon_M4A1_Rifle_Mod::AWeapon_M4A1_Rifle_Mod()
 {

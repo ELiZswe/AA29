@@ -1,9 +1,114 @@
 // All the original content belonged to the US Army
 
-
 #include "fx_exp_MaverickMissileExplosion.h"
+#include "AA29/Object/BaseEmitter/ParticleEmitter/SpriteEmitter/SpriteEmitter.h"
+#include "AA29/Object/BaseEmitter/ParticleEmitter/MeshEmitter/MeshEmitter.h"
 
 Afx_exp_MaverickMissileExplosion::Afx_exp_MaverickMissileExplosion()
 {
-
+	USpriteEmitter* SpriteEmitter12 = NewObject<USpriteEmitter>(USpriteEmitter::StaticClass());
+	SpriteEmitter12->FadeOut = true;
+	SpriteEmitter12->FadeIn = true;
+	SpriteEmitter12->RespawnDeadParticles = false;
+	SpriteEmitter12->DisableFogging = true;
+	SpriteEmitter12->SpinParticles = true;
+	SpriteEmitter12->UseSizeScale = true;
+	SpriteEmitter12->UseRegularSizeScale = false;
+	SpriteEmitter12->UniformSize = true;
+	SpriteEmitter12->AutomaticInitialSpawning = false;
+	//SpriteEmitter12->ColorScale[0]=FParticleColorScale({0,FColor(255, 255, 255, 255)});
+	//SpriteEmitter12->ColorScale[1]=FParticleColorScale({1,FColor(255, 255, 255, 255)});
+	SpriteEmitter12->Opacity = 0.7;
+	SpriteEmitter12->DetailMode = EDetailMode::DM_Medium;
+	SpriteEmitter12->StartLocationRange = FRangeVector({ {-150, 150}, {-150, 150}, {0, 150} });
+	SpriteEmitter12->UseRotationFrom = EParticleRotationSource::PTRS_Normal;
+	SpriteEmitter12->StartSpinRange = FRangeVector({ {-3, 3}, {0, 0}, {0, 0} });
+	//SpriteEmitter12->SizeScale[0]=FParticleTimeScale({1,5});
+	SpriteEmitter12->StartSizeRange = FRangeVector({ {10, 150}, {50, 150}, {50, 150} });
+	SpriteEmitter12->InitialParticlesPerSecond = 60;
+	SpriteEmitter12->Texture = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_FX/Particles/fx_particle_startblast01_Mat.fx_particle_startblast01_Mat'"), NULL, LOAD_None, NULL);
+	SpriteEmitter12->SecondsBeforeInactive = 0;
+	SpriteEmitter12->LifetimeRange = FRange({ 0.1, 0.1 });
+	USpriteEmitter* SpriteEmitter13 = NewObject<USpriteEmitter>(USpriteEmitter::StaticClass());
+	SpriteEmitter13->UseColorScale = true;
+	SpriteEmitter13->FadeOut = true;
+	SpriteEmitter13->FadeIn = true;
+	SpriteEmitter13->RespawnDeadParticles = false;
+	SpriteEmitter13->SpinParticles = true;
+	SpriteEmitter13->UseSizeScale = true;
+	SpriteEmitter13->UseRegularSizeScale = false;
+	SpriteEmitter13->UniformSize = true;
+	SpriteEmitter13->AutomaticInitialSpawning = false;
+	SpriteEmitter13->UseVelocityScale = true;
+	SpriteEmitter13->AddVelocityFromOwner = true;
+	//SpriteEmitter13->ColorScale[0]=FParticleColorScale({0,FColor(255, 255, 255, 255)});
+	//SpriteEmitter13->ColorScale[1]=FParticleColorScale({0.25,FColor(0, 0, 0, 255)});
+	//SpriteEmitter13->ColorScale[2]=FParticleColorScale({5,FColor(0, 0, 0, 0)});
+	SpriteEmitter13->Opacity = 0.5;
+	SpriteEmitter13->FadeOutStartTime = 13;
+	SpriteEmitter13->FadeInEndTime = 1.5;
+	SpriteEmitter13->MaxParticles = 24;
+	SpriteEmitter13->StartLocationRange = FRangeVector({ {-200, 200}, {-200, 200}, {0, 200} });
+	SpriteEmitter13->UseRotationFrom = EParticleRotationSource::PTRS_Normal;
+	SpriteEmitter13->SpinsPerSecondRange = FRangeVector({ {-0.05, -0.1}, {-0.15, 0.15}, {-0.15, 0.15} });
+	SpriteEmitter13->StartSpinRange = FRangeVector({ {0, 1}, {0, 0}, {0, 0} });
+	//SpriteEmitter13->SizeScale[0]=FParticleTimeScale({1,3});
+	SpriteEmitter13->StartSizeRange = FRangeVector({ {200, 250}, {100, 100}, {100, 100} });
+	SpriteEmitter13->InitialParticlesPerSecond = 1000;
+	SpriteEmitter13->DrawStyle = EParticleDrawStyle::PTDS_AlphaBlend;
+	SpriteEmitter13->Texture = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_FX/Particles/fx_smk_ball02_Mat.fx_smk_ball02_Mat'"), NULL, LOAD_None, NULL);
+	SpriteEmitter13->LifetimeRange = FRange({ 14, 18 });
+	SpriteEmitter13->StartVelocityRange = FRangeVector({ {-50, 50}, {-50, 50}, {0, 300} });
+	//SpriteEmitter13->VelocityScale(0) = (RelativeTime = 2, RelativeVelocity = FVector(0, 0, -1));
+	USpriteEmitter* SpriteEmitter14 = NewObject<USpriteEmitter>(USpriteEmitter::StaticClass());
+	SpriteEmitter14->FadeOut = true;
+	SpriteEmitter14->RespawnDeadParticles = false;
+	SpriteEmitter14->SpinParticles = true;
+	SpriteEmitter14->UseSizeScale = true;
+	SpriteEmitter14->UseRegularSizeScale = false;
+	SpriteEmitter14->UniformSize = true;
+	SpriteEmitter14->AutomaticInitialSpawning = false;
+	SpriteEmitter14->AddVelocityFromOwner = true;
+	SpriteEmitter14->Acceleration = FVector(0, 0, -1200);
+	//SpriteEmitter14->ColorScale[0]=FParticleColorScale({0,FColor(255, 255, 255, 255)});
+	//SpriteEmitter14->ColorScale[1]=FParticleColorScale({1,FColor(255, 255, 255, 255)});
+	SpriteEmitter14->Opacity = 0.25;
+	SpriteEmitter14->FadeOutStartTime = 0.5;
+	SpriteEmitter14->MaxParticles = 16;
+	SpriteEmitter14->StartLocationRange = FRangeVector({ {-100, 100}, {-100, 100}, {0, 0} });
+	SpriteEmitter14->SpinsPerSecondRange = FRangeVector({ {0.06, 0.06}, {0, 0}, {0, 0} });
+	SpriteEmitter14->StartSpinRange = FRangeVector({ {-0.5, 0.5}, {0, 0}, {0, 0} });
+	//SpriteEmitter14->SizeScale[0]=FParticleTimeScale({1,2});
+	SpriteEmitter14->StartSizeRange = FRangeVector({ {200, 250}, {100, 100}, {100, 100} });
+	SpriteEmitter14->InitialParticlesPerSecond = 20;
+	SpriteEmitter14->DrawStyle = EParticleDrawStyle::PTDS_AlphaBlend;
+	SpriteEmitter14->Texture = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_FX/Particle/FX2_Parts_Dirtclumps_Large_Mat.FX2_Parts_Dirtclumps_Large_Mat'"), NULL, LOAD_None, NULL);
+	SpriteEmitter14->LifetimeRange = FRange({ 1, 2 });
+	SpriteEmitter14->StartVelocityRange = FRangeVector({ {-50, 50}, {-50, 50}, {500, 1000} });
+	SpriteEmitter14->WarmupTicksPerSecond = 5000;
+	SpriteEmitter14->RelativeWarmupTime = 0.1;
+	UMeshEmitter* MeshEmitter8 = NewObject<UMeshEmitter>(UMeshEmitter::StaticClass());
+	MeshEmitter8->StaticMesh = LoadObject<UStaticMesh>(NULL, TEXT("StaticMesh'/Game/AmericasArmy/Meshes/M_AA2_FX/Particles/fx_part_con_chunk1.fx_part_con_chunk1'"), NULL, LOAD_None, NULL);
+	MeshEmitter8->UseParticleColor = true;
+	MeshEmitter8->UseMaxCollisions = true;
+	MeshEmitter8->RespawnDeadParticles = false;
+	MeshEmitter8->SpinParticles = true;
+	MeshEmitter8->DampRotation = true;
+	MeshEmitter8->AutomaticInitialSpawning = false;
+	MeshEmitter8->AddVelocityFromOwner = true;
+	MeshEmitter8->Acceleration = FVector(0, 0, -600);
+	MeshEmitter8->MaxCollisions = FRange({ 10, 10 });
+	//MeshEmitter8->ColorScale[0]=FParticleColorScale({0,FColor(255, 255, 255, 255)});
+	//MeshEmitter8->ColorScale[1]=FParticleColorScale({1,FColor(255, 255, 255, 255)});
+	MeshEmitter8->FadeOutStartTime = 1;
+	MeshEmitter8->MaxParticles = 20;
+	MeshEmitter8->StartLocationRange = FRangeVector({ {-100, 100}, {-100, 100}, {0, 0} });
+	MeshEmitter8->StartMassRange = FRange({ 500, 500 });
+	MeshEmitter8->SpinsPerSecondRange = FRangeVector({ {0.25, 0.5}, {0.25, 0.5}, {0.25, 0.5} });
+	MeshEmitter8->RotationDampingFactorRange = FRangeVector({ {0.25, 0.5}, {0.25, 0.5}, {0.25, 0.5} });
+	MeshEmitter8->StartSizeRange = FRangeVector({ {1, 2}, {1, 2}, {1, 2} });
+	MeshEmitter8->InitialParticlesPerSecond = 500;
+	MeshEmitter8->StartVelocityRange = FRangeVector({ {-450, 400}, {-400, 400}, {100, 1200} });
+	Emitters = { SpriteEmitter12,SpriteEmitter13,SpriteEmitter14,MeshEmitter8 };
+	//bNoDelete = false;
 };

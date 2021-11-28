@@ -15,4 +15,7 @@ class AA29_API AJavelin_Tube_Emitter : public ABaseShellEmitter
 	GENERATED_BODY()
 public:
 	AJavelin_Tube_Emitter();
+
+	FRangeVector GetStartVelocity();
+	FRangeVector GetStartRotation();
 };

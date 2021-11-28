@@ -2,9 +2,15 @@
 
 
 #include "AA29/Object/GUI/GUIComponent/GUIListBase/GUIVertList/GUIMultiColumnList/AAGUIMultiColumnList/AAGroupMCList/AATeamList/AAUnitGMCList/AAUnitGMCList.h"
+#include "AA29/Object/GUI/GUIComponent/GUIToolTip/GUIToolTip.h"
 
 UAAUnitGMCList::UAAUnitGMCList()
 {
+	UGUIToolTip* ServerListToolTip = NewObject<UGUIToolTip>(UGUIToolTip::StaticClass());
+	ServerListToolTip->ExpirationSeconds = 8;
+	//ServerListToolTip->OnPreDraw=AAUnitGMCList.PreDrawHint;
+	//ServerListToolTip->OnDraw = AAUnitGMCList.DrawHint;
+
 	ButtonHint = "Click here to select this slot";
 	ButtonCaption = "Select";
 	SelectHint = "Click here to select this slot";

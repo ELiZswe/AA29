@@ -15,4 +15,6 @@ class AA29_API ARPG7MuzzleFlash_1P : public ABaseMuzzleFlashEmitter
 	GENERATED_BODY()
 public:
 	ARPG7MuzzleFlash_1P();
+
+	void DynamicFlash();
 };

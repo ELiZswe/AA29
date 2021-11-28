@@ -1,7 +1,7 @@
 // All the original content belonged to the US Army
 
 #include "AA29/Object/Actor/Emitter/AGP_VehicleParticles/VehicleFireHeavySmokeLarge/VehicleFireHeavySmokeLarge.h"
-#include "AA29/Object/ParticleEmitter/SpriteEmitter/SpriteEmitter.h"
+#include "AA29/Object/BaseEmitter/ParticleEmitter/SpriteEmitter/SpriteEmitter.h"
 
 AVehicleFireHeavySmokeLarge::AVehicleFireHeavySmokeLarge()
 {

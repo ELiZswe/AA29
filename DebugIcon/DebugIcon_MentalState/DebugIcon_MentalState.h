@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "AA29/DebugIcon/DebugIcon.h"
-#include "AA29/Controller/AIController/NPCBaseController/NPCBaseController.h"
+#include "AA29/Object/Actor/Controller/AIController/NPCBaseController/NPCBaseController.h"
 #include "DebugIcon_MentalState.generated.h"
 
 /**

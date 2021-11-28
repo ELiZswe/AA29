@@ -3,7 +3,7 @@
 
 #include "Ammo_AT4_Rocket.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamageLargeArms.h"
-#include "AA29/Pickup/AGP_WeaponPickup/RocketWeaponPickup/PickupW_AT4_Rocket/PickupW_AT4_Rocket.h"
+#include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/RocketWeaponPickup/PickupW_AT4_Rocket/PickupW_AT4_Rocket.h"
 #include "AA29/Projectile/BaseProjectile/BaseExplodingProjectile/RocketProjectile/Proj_AT4_Explosive/Proj_AT4_Explosive.h"
 
 AAmmo_AT4_Rocket::AAmmo_AT4_Rocket()

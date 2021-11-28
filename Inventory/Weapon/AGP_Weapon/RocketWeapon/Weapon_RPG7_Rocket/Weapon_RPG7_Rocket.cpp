@@ -5,7 +5,7 @@
 #include "AA29/BaseScope/ScopeW_RPG7_Rocket.h"
 #include "AA29/BaseAmmoRound/AmmoRound_RPG7_Rocket.h"
 #include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_RPG7_PG7B/Ammo_RPG7_PG7B.h"
-#include "AA29\Pickup\AGP_WeaponPickup\RocketWeaponPickup\PickupW_RPG7_Rocket\PickupW_RPG7_Rocket.h"
+#include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/RocketWeaponPickup/PickupW_RPG7_Rocket/PickupW_RPG7_Rocket.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/RocketWeaponAttachment/AttachW_RPG7_Rocket/AttachW_RPG7_Rocket.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamageLargeArms.h"
 #include "AA29/DamageType/AGP_DamageType/ExplosionDamage/BackBlastDamage/BackBlastDamage.h"

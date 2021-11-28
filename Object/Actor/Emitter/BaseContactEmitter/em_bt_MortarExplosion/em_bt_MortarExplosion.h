@@ -6,12 +6,13 @@
 #include "AA29/Object/Actor/Emitter/BaseContactEmitter/BaseContactEmitter.h"
 #include "em_bt_MortarExplosion.generated.h"
 
-/**
- * 
- */
 UCLASS()
 class AA29_API Aem_bt_MortarExplosion : public ABaseContactEmitter
 {
 	GENERATED_BODY()
-	
+public:
+	Aem_bt_MortarExplosion();
+
+	void PostBeginPlay();
+	void SpawnLight();
 };

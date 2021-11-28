@@ -8,7 +8,7 @@
 //#include "AA29/Inventory/InvContainer/InvContainer.h"
 
 #include "GameFramework/Actor.h"
-#include "AA29/Pickup/Pickup.h"
+#include "AA29/Object/Actor/Pickup/Pickup.h"
 //#include "AA29/Inventory/Weapon/Weapon.h"
 #include "Inventory.generated.h"
 

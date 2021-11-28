@@ -2,7 +2,7 @@
 
 
 #include "FSTS_Weapon_M9_Pistol.h"
-#include "AA29/Pickup/AGP_WeaponPickup/FSTS_WeaponPickup/PickupW_FSTS_Trainer_M9_Pistol/PickupW_FSTS_Trainer_M9_Pistol.h"
+#include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/FSTS_WeaponPickup/PickupW_FSTS_Trainer_M9_Pistol/PickupW_FSTS_Trainer_M9_Pistol.h"
 
 AFSTS_Weapon_M9_Pistol::AFSTS_Weapon_M9_Pistol()
 {

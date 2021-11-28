@@ -3,7 +3,7 @@
 
 #include "Weapon_RPK_SAW.h"
 #include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_762mm_100_Drum/Ammo_762mm_100_Drum.h"
-#include "AA29/Pickup/AGP_WeaponPickup/PickupW_RPK_SAW/PickupW_RPK_SAW.h"
+#include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/PickupW_RPK_SAW/PickupW_RPK_SAW.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/AttachW_RPK_SAW/AttachW_RPK_SAW.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamage762mm_RPK.h"
 

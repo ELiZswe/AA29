@@ -1,7 +1,7 @@
 // All the original content belonged to the US Army
 
 #include "AA29/DebugIcon/DebugIcon_MentalState/DebugIcon_MentalState.h"
-#include "AA29/Controller/AIController/NPCBaseController/NPCBaseController.h"
+#include "AA29/Object/Actor/Controller/AIController/NPCBaseController/NPCBaseController.h"
 
 ADebugIcon_MentalState::ADebugIcon_MentalState()
 {

@@ -21,4 +21,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)		uint8 OldTriggerCount;		//var byte OldTriggerCount;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)		uint8 TriggerCount;			//var byte TriggerCount
 
+	void PostNetBeginPlay();
+	void UpdateTriggerCount();
+	void PostNetReceive();
+	void Trigger(AActor* Other, APawn* EventInstigator);
+	void Reset();
 };

@@ -15,4 +15,11 @@ class AA29_API UDir_Trigger : public UDirection
 	GENERATED_BODY()
 public:
 	UDir_Trigger();
+
+	UPROPERTY()						AActor*				_Trigger;		//var Actor _Trigger;
+
+	void Destroyed();
+	void DirectionStart();
+	void DirectionFinish();
+	bool ProcessParams();
 };

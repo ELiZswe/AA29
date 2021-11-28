@@ -7,16 +7,14 @@
 #include "AA29/AA29.h"
 #include "BaseShellEmitter.generated.h"
 
-/**
- * 
- */
+class UParticleEmitter;
+
 UCLASS()
 class AA29_API ABaseShellEmitter : public AAA2_Emitter
 {
 	GENERATED_BODY()
 public:
 	ABaseShellEmitter();
-
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)		bool bUseAnimNotifyEject;				//var bool bUseAnimNotifyEject;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)		AActor* AttachTo3P;						//var Actor AttachTo3P;
@@ -33,4 +31,17 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)		TArray<USoundBase*> sWood;				//var array<Sound> sWood;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)		bool bInFirstPerson;					//var bool bInFirstPerson;
 
+
+	void PostBeginPlay();
+	void Initialize(FRotationRandomizer newShellDirInfo, FBoneOffset newOffset1P, FBoneOffset newOffset3P, AActor* newAttachTo3P);
+	void GetCollisionSound(UParticleEmitter* E, int32 PIndex, UMaterialInstance* HitMat, USoundBase*& HitSound, float& Volume, float& Radius, float& Pitch, float& Fade, float& Priority);
+	FRangeVector GetRVFromV(FVector V);
+	FRangeVector GetStartRotation();
+	FRangeVector GetStartVelocity();
+	FVector GetStartLocationOffset();
+	void SetFirstPerson(bool bFirstPerson, bool bImmediate);
+	void ImmedateUpdate1P();
+	void ImmediateUpdate3P();
+	void Eject(bool bFirstPerson);
+	void AnimControlledEject();
 };

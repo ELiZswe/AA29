@@ -15,4 +15,6 @@ class AA29_API Afx_exp_barrelspawner : public AAA2_Emitter
 	GENERATED_BODY()
 public:
 	Afx_exp_barrelspawner();
+
+	void Trigger(AActor* Other, APawn* EventInstigator);
 };

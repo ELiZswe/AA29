@@ -15,4 +15,6 @@ class AA29_API AAK47MuzzleFlash : public ABaseMuzzleFlashEmitter
 	GENERATED_BODY()
 public:
 	AAK47MuzzleFlash();
+
+	void BeginPlay();
 };

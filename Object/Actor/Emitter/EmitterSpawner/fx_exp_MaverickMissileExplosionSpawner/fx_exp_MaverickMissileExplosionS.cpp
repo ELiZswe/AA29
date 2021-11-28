@@ -5,5 +5,5 @@
 
 Afx_exp_MaverickMissileExplosionS::Afx_exp_MaverickMissileExplosionS()
 {
-
+	//MyEmitterClasses(0) = class'AGP_Effects.fx_exp_MaverickMissileExplosion';
 }

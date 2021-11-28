@@ -18,7 +18,7 @@ public:
 	UPROPERTY(EditAnywhere, Category = "EmitterDamage")								float ShakeOffsetTime;						//var(EmitterDamage) float ShakeOffsetTime;
 	UPROPERTY(EditAnywhere, Category = "EmitterDamage")								FVector ShakeOffsetRate;					//var(EmitterDamage) FVector ShakeOffsetRate;
 	UPROPERTY(EditAnywhere, Category = "EmitterDamage")								FVector ShakeOffsetMag;						//var(EmitterDamage) FVector ShakeOffsetMag;
-	UPROPERTY(EditAnywhere, Category = "EmitterDamage")								FRange ShakeRotTime;						//var(EmitterDamage) float ShakeRotTime;
+	UPROPERTY(EditAnywhere, Category = "EmitterDamage")								float ShakeRotTime;							//var(EmitterDamage) float ShakeRotTime;
 	UPROPERTY(EditAnywhere, Category = "EmitterDamage")								FVector ShakeRotRate;						//var(EmitterDamage) FVector ShakeRotRate;
 	UPROPERTY(EditAnywhere, Category = "EmitterDamage")								FVector ShakeRotMag;						//var(EmitterDamage) FVector ShakeRotMag;
 	UPROPERTY(EditAnywhere, Category = "EmitterDamage")								FRange bShakeView;							//var(EmitterDamage) bool bShakeView;
@@ -33,4 +33,11 @@ public:
 	UPROPERTY(EditAnywhere)															TArray<AEmitter*> MyEmitters;				//var array<Emitter> MyEmitters;
 	UPROPERTY(EditAnywhere)															TArray<AEmitter*> MyEmitterClasses;			//var array<class<Emitter> > MyEmitterClasses;
 
+	void Trigger(AActor* Other, APawn* EventInstigator);
+	void ShakeView();
+	void RadiusDamage(float DamageAmount, float DamageRadius, UaDamageType* DamageType, float Momentum, FVector HitLocation, float KillRadius);
+	void MatchStarting();
+	void Destroyed();
+	void DestroyMyEmitters();
+	void Tick(float DeltaTime);
 };

@@ -13,5 +13,7 @@ UCLASS()
 class AA29_API Aem_bt_MissileExplosion : public ABaseContactEmitter
 {
 	GENERATED_BODY()
-	
+public:
+	Aem_bt_MissileExplosion();
+
 };

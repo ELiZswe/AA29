@@ -6,13 +6,20 @@
 #include "AA29/Object/ScriptObject/Direction/Direction.h"
 #include "Dir_SceneJumpOnStatus.generated.h"
 
-/**
- * 
- */
+class AHumanController;
+
 UCLASS()
 class AA29_API UDir_SceneJumpOnStatus : public UDirection
 {
 	GENERATED_BODY()
 public:
 	UDir_SceneJumpOnStatus();
+
+	UPROPERTY()						AHumanController*		_HumanController;			//var HumanController _HumanController;
+	UPROPERTY()						FName					_PassScene;					//var FName _PassScene;
+	UPROPERTY()						FName					SceneIndex;					//var FName _FailScene;
+
+	void Destroyed();
+	void DirectionStart();
+	bool ProcessParams();
 };

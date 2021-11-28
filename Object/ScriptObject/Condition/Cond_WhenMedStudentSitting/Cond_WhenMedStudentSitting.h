@@ -15,6 +15,11 @@ class AA29_API UCond_WhenMedStudentSitting : public UCondition
 public:
 	UCond_WhenMedStudentSitting();
 
-	UPROPERTY()										bool bSitting;					//var bool bSitting;
-	//UPROPERTY()										AStudentController* Controller;					//var AGP.StudentController Controller;
+	UPROPERTY()										bool bSitting;							//var bool bSitting;
+	//UPROPERTY()										AStudentController* Controller;			//var AGP.StudentController Controller;
+
+	void Destroyed();
+	void ConditionStart();
+	void ConditionFinish();
+	bool ProcessParams();
 };

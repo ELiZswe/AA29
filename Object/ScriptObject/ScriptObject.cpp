@@ -13,24 +13,30 @@ void UScriptObject::Destroyed()
 {
 	//_sParameters.Remove(0, _sParameter.Max());
 }
+
 void UScriptObject::Notify()
 {
 }
+
 void UScriptObject::update()
 {
 }
+
 void UScriptObject::SetDebug(bool Debug)
 {
 	_bDebug = Debug;
 }
+
 int32 UScriptObject::GetNumParams()
 {
 	return _sParameters.Max();
 }
+
 int32 UScriptObject::GetNumParamsDefined()
 {
 	return _nNumParamsDefined;
 }
+
 FString UScriptObject::GetParam(int32 Index)
 {
 	int32 Len;

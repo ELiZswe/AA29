@@ -2,7 +2,7 @@
 
 
 #include "Demo_DoorBreacher.h"
-#include "AA29/Pickup/AGP_WeaponPickup/ThrowWeaponPickup/PickupT_DoorBreacher_Demo/PickupT_DoorBreacher_Demo.h"
+#include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/ThrowWeaponPickup/PickupT_DoorBreacher_Demo/PickupT_DoorBreacher_Demo.h"
 #include "AA29/Inventory/Weapon\AGP_Weapon\ThrowWeapon\Throw_M67_Frag\Throw_MILES_Grenade\Throw_MILES_Grenade.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/AttachT_Demo_DoorBreacher/AttachT_Demo_DoorBreacher.h"
 #include "AA29/DamageType/AGP_DamageType/ExplosionDamage/BreacherExplosionDamage/BreacherExplosionDamage.h"

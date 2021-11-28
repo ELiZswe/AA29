@@ -3,7 +3,7 @@
 
 #include "Ammo_556mm_200_Belt.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamage556mm_SAW.h"
-#include "AA29/Pickup/Ammo/AGP_AmmoPickup/PickupAmmo_556mm_200_Belt.h"
+#include "AA29/Object/Actor/Pickup/Ammo/AGP_AmmoPickup/PickupAmmo_556mm_200_Belt.h"
 AAmmo_556mm_200_Belt::AAmmo_556mm_200_Belt()
 {
 	_iTracerCount   = 5;

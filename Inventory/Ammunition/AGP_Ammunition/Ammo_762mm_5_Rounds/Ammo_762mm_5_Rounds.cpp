@@ -3,7 +3,7 @@
 
 #include "Ammo_762mm_5_Rounds.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamage762Sniper.h"
-#include "AA29/Pickup/Ammo/AGP_AmmoPickup/PickupAmmo_762mm_5_Rounds.h"
+#include "AA29/Object/Actor/Pickup/Ammo/AGP_AmmoPickup/PickupAmmo_762mm_5_Rounds.h"
 AAmmo_762mm_5_Rounds::AAmmo_762mm_5_Rounds()
 {
 	Damage            = 70;

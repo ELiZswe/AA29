@@ -15,4 +15,6 @@ class AA29_API AVehicleWeaponAmbientEmitter : public AAA2_Emitter
 	GENERATED_BODY()
 public:
 	AVehicleWeaponAmbientEmitter();
+
+	void SetEmitterStatus(bool bEnabled);
 };

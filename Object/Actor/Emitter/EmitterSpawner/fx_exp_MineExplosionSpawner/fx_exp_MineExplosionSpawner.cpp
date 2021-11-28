@@ -5,5 +5,5 @@
 
 Afx_exp_MineExplosionSpawner::Afx_exp_MineExplosionSpawner()
 {
-
+	//MyEmitterClasses(0) = class'AGP_Effects.fx_exp_MineExplosion';
 }

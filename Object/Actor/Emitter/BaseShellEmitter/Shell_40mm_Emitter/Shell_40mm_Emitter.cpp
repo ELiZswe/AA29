@@ -5,8 +5,9 @@
 
 AShell_40mm_Emitter::AShell_40mm_Emitter()
 {
-	ShellDrawScale		= FVector(45, 45, 45);
-	ShellStaticMesh		= LoadObject<class UStaticMesh>(NULL, TEXT("/Game/AmericasArmy/Meshes/M_AA2_Weapons/Projectiles/m-m203_shell.m-m203_shell"), NULL, LOAD_None, NULL);
-	fPitchModifier		= 0.5;
-	bUseAnimNotifyEject	= true;
+	ShellDrawScale = FVector(0.45, 0.45, 0.45);
+	ShellStaticMesh = LoadObject<UStaticMesh>(NULL, TEXT("StaticMesh'/Game/AmericasArmy/Meshes/M_AA2_Weapons/Projectiles/m-m203_shell.m-m203_shell'"), NULL, LOAD_None, NULL);
+	fPitchModifier = 0.5;
+	bUseAnimNotifyEject = true;
+
 };

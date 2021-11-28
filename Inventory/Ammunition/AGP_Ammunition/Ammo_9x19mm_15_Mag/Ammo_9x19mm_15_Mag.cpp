@@ -2,7 +2,7 @@
 
 
 #include "Ammo_9x19mm_15_Mag.h"
-#include "AA29/Pickup/Ammo/AGP_AmmoPickup/PickupAmmo_9x19mm_15_Mag.h"
+#include "AA29/Object/Actor/Pickup/Ammo/AGP_AmmoPickup/PickupAmmo_9x19mm_15_Mag.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamage9x19mm.h"
 AAmmo_9x19mm_15_Mag::AAmmo_9x19mm_15_Mag()
 {

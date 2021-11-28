@@ -8,6 +8,7 @@
 
 class UTab_SPPanelBase;
 class UGUIButton;
+class UGUITabButton;
 class UGUITabControl;
 
 UCLASS()

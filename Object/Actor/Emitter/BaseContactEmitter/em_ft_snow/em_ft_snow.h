@@ -13,5 +13,7 @@ UCLASS()
 class AA29_API Aem_ft_snow : public ABaseContactEmitter
 {
 	GENERATED_BODY()
-	
+public:
+	Aem_ft_snow();
+
 };

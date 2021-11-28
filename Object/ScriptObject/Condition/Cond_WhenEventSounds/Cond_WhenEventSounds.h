@@ -6,9 +6,8 @@
 #include "AA29/Object/ScriptObject/Condition/Condition.h"
 #include "Cond_WhenEventSounds.generated.h"
 
-/**
- * 
- */
+class AEventSound;
+
 UCLASS()
 class AA29_API UCond_WhenEventSounds : public UCondition
 {
@@ -16,5 +15,10 @@ class AA29_API UCond_WhenEventSounds : public UCondition
 public:
 	UCond_WhenEventSounds();
 
-	//UPROPERTY()										AEventSound* _EventSound;					//var AGP_Gameplay.EventSound _EventSound;
+	UPROPERTY()										AEventSound* _EventSound;					//var AGP_Gameplay.EventSound _EventSound;
+
+	void Destroyed();
+	void ConditionStart();
+	void ConditionFinish();
+	bool ProcessParams();
 };

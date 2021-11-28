@@ -6,13 +6,20 @@
 #include "AA29/Object/ScriptObject/Direction/Direction.h"
 #include "Dir_SetPlayerNoReload.generated.h"
 
-/**
- * 
- */
+class AHumanController;
+
 UCLASS()
 class AA29_API UDir_SetPlayerNoReload : public UDirection
 {
 	GENERATED_BODY()
 public:
 	UDir_SetPlayerNoReload();
+
+	UPROPERTY()						AHumanController*	_HumanController;		//var HumanController _HumanController;
+	UPROPERTY()						bool				_bNoReload;				//var bool _bNoReload;
+
+	void Destroyed();
+	void DirectionStart();
+	void DirectionFinish();
+	bool ProcessParams();
 };

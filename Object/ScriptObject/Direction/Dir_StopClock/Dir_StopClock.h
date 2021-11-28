@@ -15,4 +15,8 @@ class AA29_API UDir_StopClock : public UDirection
 	GENERATED_BODY()
 public:
 	UDir_StopClock();
+
+	void DirectionStart();
+	void DirectionFinish();
+	bool ProcessParams();
 };

@@ -20,4 +20,13 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)		float DustVelThresh;		//var() float DustVelThresh;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)		int32 MaxMeshPPS;			//var() int MaxMeshPPS;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)		int32 MaxSpritePPS;			//var() int MaxSpritePPS;
+
+	FEffectMatProps GetEffectProps(UMaterialInstance* M);
+	void Timer();
+	void Destroyed();
+	void SetDirtColor(FColor DirtColor);
+	void HideDirt();
+	void ShowDirt();
+	void UpdateDust(FVector vStartLocation);
+	void disableEffect();
 };

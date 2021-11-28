@@ -20,4 +20,13 @@ public:
 	UPROPERTY()										FName _VolumeTag;					//var name _VolumeTag;
 	UPROPERTY()										AAGP_Pawn* _Pawn;					//var AGP.AGP_Pawn _Pawn;
 	UPROPERTY()										AActor* _Actor;						//var Actor _Actor;
+
+	void Destroyed();
+	void ConditionStart();
+	void ConditionFinish();
+	bool ProcessParams();
+	void SetActor(AActor* Actor);
+	void SetVolumeTag(FName voltag);
+	void SetVolumeNotifyOnEntry(bool Entry);
+	void update();
 };

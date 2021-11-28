@@ -3,7 +3,7 @@
 
 #include "Throw_M83_Smoke.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/AttachT_M83_Smoke/AttachT_M83_Smoke.h"
-#include "AA29/Pickup/AGP_WeaponPickup/ThrowWeaponPickup/PickupT_M83_Smoke/PickupT_M83_Smoke.h"
+#include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/ThrowWeaponPickup/PickupT_M83_Smoke/PickupT_M83_Smoke.h"
 
 AThrow_M83_Smoke::AThrow_M83_Smoke()
 {

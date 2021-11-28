@@ -2,36 +2,69 @@
 
 
 #include "AA29/Object/Interactions/Interaction/BaseGUIController/GUIController/AAGUIController/AAGUIController.h"
-
-
+#include "AA29/Object/GUI/GUIFont/AAFontMenu/AAFontMenu.h"
+#include "AA29/Object/GUI/GUIFont/AAFontDefault/AAFontDefault.h"
+#include "AA29/Object/GUI/GUIFont/AAFontLarge/AAFontLarge.h"
+#include "AA29/Object/GUI/GUIFont/AAFontHeader/AAFontHeader.h"
+#include "AA29/Object/GUI/GUIFont/AAFontSmall/AAFontSmall.h"
+#include "AA29/Object/GUI/GUIFont/AAFontMidGame/AAFontMidGame.h"
+#include "AA29/Object/GUI/GUIFont/AAFontSmallHeader/AAFontSmallHeader.h"
+#include "AA29/Object/GUI/GUIFont/AAFontServerList/AAFontServerList.h"
+#include "AA29/Object/GUI/GUIFont/AAFontIRC/AAFontIRC.h"
+#include "AA29/Object/GUI/GUIFont/AAFontEntryPageButton/AAFontEntryPageButton.h"
+#include "AA29/Object/GUI/GUIFont/AAFontMainMenuButton/AAFontMainMenuButton.h"
+#include "AA29/Object/GUI/GUIFont/AAFontMainMenu/AAFontMainMenu.h"
+#include "AA29/Object/GUI/GUIFont/AAFontMedium/AAFontMedium.h"
+#include "AA29/Object/GUI/GUIFont/AAFontButton/AAFontButton.h"
+#include "AA29/Object/GUI/GUIFont/AAFontLabel/AAFontLabel.h"
+#include "AA29/Object/GUI/GUIFont/AAFontPanelButton/AAFontPanelButton.h"
+#include "AA29/Object/GUI/GUIFont/NMLFontSmallHeader/NMLFontSmallHeader.h"
 
 UAAGUIController::UAAGUIController()
 {
+	UAAFontMenu* GUIAAFontMenu = NewObject<UAAFontMenu>(UAAFontMenu::StaticClass());
+	UAAFontDefault* GUIAAFontDefault = NewObject<UAAFontDefault>(UAAFontDefault::StaticClass());
+	UAAFontLarge* GUIAAFontLarge = NewObject<UAAFontLarge>(UAAFontLarge::StaticClass());
+	UAAFontHeader* GUIAAFontHeader = NewObject<UAAFontHeader>(UAAFontHeader::StaticClass());
+	UAAFontSmall* GUIAAFontSmall = NewObject<UAAFontSmall>(UAAFontSmall::StaticClass());
+	UAAFontMidGame* GUIAAFontMidGame = NewObject<UAAFontMidGame>(UAAFontMidGame::StaticClass());
+	UAAFontSmallHeader* GUIAAFontSmallHeader = NewObject<UAAFontSmallHeader>(UAAFontSmallHeader::StaticClass());
+	UAAFontServerList* GUIAAFontServerList = NewObject<UAAFontServerList>(UAAFontServerList::StaticClass());
+	UAAFontIRC* GUIAAFontIRC = NewObject<UAAFontIRC>(UAAFontIRC::StaticClass());
+	UAAFontEntryPageButton* GUIAAFontEntryPageButton = NewObject<UAAFontEntryPageButton>(UAAFontEntryPageButton::StaticClass());
+	UAAFontMainMenuButton* GUIAAFontMainMenuButton = NewObject<UAAFontMainMenuButton>(UAAFontMainMenuButton::StaticClass());
+	UAAFontMainMenu* GUIAAFontMainMenu = NewObject<UAAFontMainMenu>(UAAFontMainMenu::StaticClass());
+	UAAFontMedium* GUIAAFontMedium = NewObject<UAAFontMedium>(UAAFontMedium::StaticClass());
+	UAAFontButton* GUIAAFontButton = NewObject<UAAFontButton>(UAAFontButton::StaticClass());
+	UAAFontLabel* GUIAAFontLabel = NewObject<UAAFontLabel>(UAAFontLabel::StaticClass());
+	UAAFontPanelButton* GUIAAFontPanelButton = NewObject<UAAFontPanelButton>(UAAFontPanelButton::StaticClass());
+	UNMLFontSmallHeader* GUINMLFontSmallHeader = NewObject<UNMLFontSmallHeader>(UNMLFontSmallHeader::StaticClass());
+
 	MainMenuPanelOptions= {"RECORD BRIEF","TRAINING","DEPLOYMENT","REAL HEROES","INSTANT ACTION","WEAPON MODS","AA BROWSER","SETTINGS","SUPPORT"};
 	Server = "dms1.americasarmy.com";
 	Port = 80;
 	FONT_NUM = 17;
 	STYLE_NUM = 110;
 	CURSOR_NUM = 8;
-	/*
-	FontStack(0) = AAFontMenu'AGP_Interface.AAGUIController.GUIAAFontMenu'
-	FontStack(1) = AAFontDefault'AGP_Interface.AAGUIController.GUIAAFontDefault'
-	FontStack(2) = AAFontLarge'AGP_Interface.AAGUIController.GUIAAFontLarge'
-	FontStack(3) = AAFontHeader'AGP_Interface.AAGUIController.GUIAAFontHeader'
-	FontStack(4) = AAFontSmall'AGP_Interface.AAGUIController.GUIAAFontSmall'
-	FontStack(5) = AAFontMidGame'AGP_Interface.AAGUIController.GUIAAFontMidGame'
-	FontStack(6) = AAFontSmallHeader'AGP_Interface.AAGUIController.GUIAAFontSmallHeader'
-	FontStack(7) = AAFontServerList'AGP_Interface.AAGUIController.GUIAAFontServerList'
-	FontStack(8) = AAFontIRC'AGP_Interface.AAGUIController.GUIAAFontIRC'
-	FontStack(9) = AAFontEntryPageButton'AGP_Interface.AAGUIController.GUIAAFontEntryPageButton'
-	FontStack(10) = AAFontMainMenuButton'AGP_Interface.AAGUIController.GUIAAFontMainMenuButton'
-	FontStack(11) = AAFontMainMenu'AGP_Interface.AAGUIController.GUIAAFontMainMenu'
-	FontStack(12) = AAFontMedium'AGP_Interface.AAGUIController.GUIAAFontMedium'
-	FontStack(13) = AAFontButton'AGP_Interface.AAGUIController.GUIAAFontButton'
-	FontStack(14) = AAFontLabel'AGP_Interface.AAGUIController.GUIAAFontLabel'
-	FontStack(15) = AAFontPanelButton'AGP_Interface.AAGUIController.GUIAAFontPanelButton'
-	FontStack(16) = NMLFontSmallHeader'AGP_Interface.AAGUIController.GUINMLFontSmallHeader'
-	*/
+	FontStack.SetNum(17);
+	FontStack[0] = GUIAAFontMenu;
+	FontStack[1] = GUIAAFontDefault;
+	FontStack[2] = GUIAAFontLarge;
+	FontStack[3] = GUIAAFontHeader;
+	FontStack[4] = GUIAAFontSmall;
+	FontStack[5] = GUIAAFontMidGame;
+	FontStack[6] = GUIAAFontSmallHeader;
+	FontStack[7] = GUIAAFontServerList;
+	FontStack[8] = GUIAAFontIRC;
+	FontStack[9] = GUIAAFontEntryPageButton;
+	FontStack[10] = GUIAAFontMainMenuButton;
+	FontStack[11] = GUIAAFontMainMenu;
+	FontStack[12] = GUIAAFontMedium;
+	FontStack[13] = GUIAAFontButton;
+	FontStack[14] = GUIAAFontLabel;
+	FontStack[15] = GUIAAFontPanelButton;
+	FontStack[16] = GUINMLFontSmallHeader;
+	
 	MouseCursors =
 	{
 		LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/cursor_Mat.cursor_Mat'"), NULL, LOAD_None, NULL),
@@ -45,15 +78,16 @@ UAAGUIController::UAAGUIController()
 	};
 	
 	/*
-	ImageList(0) = Texture'T_AA2_UI.Menu.box_check_selected'
-	ImageList(1) = Texture'T_AA2_UI.Menu.slider_bar'
-	ImageList(2) = Texture'T_AA2_UI.Menu.scroll_arrow_left'
-	ImageList(3) = Texture'T_AA2_UI.Menu.scroll_arrow_right'
-	ImageList(4) = Texture'T_AA2_UI.Menu.box_check_plus'
-	ImageList(5) = Texture'T_AA2_UI.Menu.box_check_minus'
-	ImageList(6) = Texture'T_AA2_UI.Menu.scroll_arrow_up'
-	ImageList(7) = Texture'T_AA2_UI.Menu.scroll_arrow_down'
+	ImageList(0) = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/box_check_selected_Mat.box_check_selected_Mat'"), NULL, LOAD_None, NULL)
+	ImageList(1) = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/slider_bar_Mat.slider_bar_Mat'"), NULL, LOAD_None, NULL)
+	ImageList(2) = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/scroll_arrow_left_Mat.scroll_arrow_left_Mat'"), NULL, LOAD_None, NULL)
+	ImageList(3) = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/scroll_arrow_right_Mat.scroll_arrow_right_Mat'"), NULL, LOAD_None, NULL)
+	ImageList(4) = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/box_check_plus_Mat.box_check_plus_Mat'"), NULL, LOAD_None, NULL)
+	ImageList(5) = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/box_check_minus_Mat.box_check_minus_Mat'"), NULL, LOAD_None, NULL)
+	ImageList(6) = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/scroll_arrow_up_Mat.scroll_arrow_up_Mat'"), NULL, LOAD_None, NULL)
+	ImageList(7) = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/scroll_arrow_down_Mat.scroll_arrow_down_Mat'"), NULL, LOAD_None, NULL);
 	*/
+
 	/*
 	DefaultStyleNames(0) = "AGP_Interface.STY_AARoundButton"
 	DefaultStyleNames(1) = "AGP_Interface.STY_AARoundScaledButton"

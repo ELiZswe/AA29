@@ -15,4 +15,6 @@ class AA29_API Afx_exp_DebrisA : public AAA2_Emitter
 	GENERATED_BODY()
 public:
 	Afx_exp_DebrisA();
+
+	void BeginPlay();
 };

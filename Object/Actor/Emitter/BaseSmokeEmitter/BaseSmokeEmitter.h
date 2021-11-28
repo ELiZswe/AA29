@@ -26,8 +26,6 @@ public:
 	UPROPERTY()															AWeapon* WeaponPtr;								//var Weapon WeaponPtr;
 	UPROPERTY()															FRange Duration;								//var Object.Range Duration;
 
-
-
 	void Tick(float DeltaTime);
 	void MatchStarting();
 	void Destroyed();

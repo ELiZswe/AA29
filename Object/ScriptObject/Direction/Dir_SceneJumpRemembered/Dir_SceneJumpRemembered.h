@@ -15,4 +15,9 @@ class AA29_API UDir_SceneJumpRemembered : public UDirection
 	GENERATED_BODY()
 public:
 	UDir_SceneJumpRemembered();
+
+	UPROPERTY()						int32				SceneIndex;				//var int32 SceneIndex;
+
+	void DirectionStart();
+	bool ProcessParams();
 };

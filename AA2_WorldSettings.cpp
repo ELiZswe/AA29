@@ -2,7 +2,7 @@
 
 #include "AA2_WorldSettings.h"
 #include "AA29/GrenadeHelper/GrenadeHelper.h"
-#include "AA29/Controller/PlayerController/HumanController/HumanController.h"
+#include "AA29/Object/Actor/Controller/PlayerController/HumanController/HumanController.h"
 
 void AAA2_WorldSettings::LoadTours()
 {

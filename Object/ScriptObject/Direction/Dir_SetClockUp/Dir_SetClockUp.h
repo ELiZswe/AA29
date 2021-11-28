@@ -15,4 +15,10 @@ class AA29_API UDir_SetClockUp : public UDirection
 	GENERATED_BODY()
 public:
 	UDir_SetClockUp();
+
+	UPROPERTY()						float					_fTime;			//var float _fTime;
+
+	void DirectionStart();
+	void DirectionFinish();
+	bool ProcessParams();
 };

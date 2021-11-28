@@ -5,5 +5,31 @@
 
 UDir_SceneEnd::UDir_SceneEnd()
 {
+	bSupportsMP = true;
+}
 
+void UDir_SceneEnd::DirectionStart()
+{
+	/*
+	if (_bDebug)
+	{
+		Log("Dir_SceneEnd::DirectionStart()");
+	}
+	if (_ParentScreenplay != None)
+	{
+		_ParentScreenplay.SceneEnd();
+	}
+	else
+	{
+		if (_bDebug)
+		{
+			Log("Dir_SceneEnd::DirectionStart() - _ParentScreenplay == None");
+		}
+	}
+	*/
+}
+
+bool UDir_SceneEnd::ProcessParams()
+{
+	return true;
 }

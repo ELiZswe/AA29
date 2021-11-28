@@ -16,11 +16,13 @@ class AA29_API AImpactSparks : public AAA2_Emitter
 public:
 	AImpactSparks();
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		bool bSparksActive;				//var bool bSparksActive;
+	UPROPERTY()										bool bSparksActive;				//var bool bSparksActive;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)		USoundBase* ScrapeSound;		//var() Sound ScrapeSound;
-	//UPROPERTY(EditAnywhere, BlueprintReadWrite)		bool SparkRate;					//var() Object.InterpCurve SparkRate;
+	//UPROPERTY(EditAnywhere, BlueprintReadWrite)		FInterpCurve SparkRate;					//var() Object.InterpCurve SparkRate;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)		float SparkRadiusScale;			//var() float SparkRadiusScale;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)		float MaxAdditionalVelocity;	//var() float MaxAdditionalVelocity;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)		float AdditionalVelocityScale;	//var() float AdditionalVelocityScale;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)		float HorizontalVelocityRange;	//var() float HorizontalVelocityRange;
+
+	void UpdateSparks(float SparkRadius, FVector VehicleVelocity);
 };

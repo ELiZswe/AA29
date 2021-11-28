@@ -3,7 +3,7 @@
 
 #include "Throw_MILES_Grenade.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/AttachT_M67_Frag/AttachT_MILES_Grenade/AttachT_MILES_Grenade.h"
-#include "AA29/Pickup/AGP_WeaponPickup/ThrowWeaponPickup/PickupT_M67_Frag/PickupT_MILES_Grenade/PickupT_MILES_Grenade.h"
+#include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/ThrowWeaponPickup/PickupT_M67_Frag/PickupT_MILES_Grenade/PickupT_MILES_Grenade.h"
 #include "AA29/DamageType/AGP_DamageType/MILESGrenadeDamage/MILESGrenadeDamage.h"
 AThrow_MILES_Grenade::AThrow_MILES_Grenade()
 {

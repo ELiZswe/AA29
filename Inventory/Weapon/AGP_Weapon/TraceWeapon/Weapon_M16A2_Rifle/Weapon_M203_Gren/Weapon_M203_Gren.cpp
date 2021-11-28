@@ -3,7 +3,7 @@
 
 #include "Weapon_M203_Gren.h"
 #include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_40mm_1_Gren/Ammo_40mm_1_Gren.h"
-#include "AA29/Pickup/AGP_WeaponPickup/PickupW_M203_Gren/PickupW_M203_Gren.h"
+#include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/PickupW_M203_Gren/PickupW_M203_Gren.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/AttachW_M203_Gren/AttachW_M203_Gren.h"
 
 AWeapon_M203_Gren::AWeapon_M203_Gren()

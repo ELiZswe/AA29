@@ -6,9 +6,6 @@
 #include "AA29/Object/GUI/GUIComponent/GUIImage/GUIImage.h"
 #include "GUIImageButton.generated.h"
 
-/**
- * 
- */
 UCLASS()
 class AA29_API UGUIImageButton : public UGUIImage
 {

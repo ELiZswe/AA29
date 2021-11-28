@@ -15,4 +15,7 @@ class AA29_API UDir_SceneRestart : public UDirection
 	GENERATED_BODY()
 public:
 	UDir_SceneRestart();
+
+	void DirectionStart();
+	bool ProcessParams();
 };

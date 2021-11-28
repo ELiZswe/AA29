@@ -6,3 +6,8 @@ Aaux_light_ExpLight::Aaux_light_ExpLight()
 {
 
 };
+
+
+void Aaux_light_ExpLight::PostBeginPlay()
+{
+}

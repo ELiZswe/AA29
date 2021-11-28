@@ -1,7 +1,7 @@
 // All the original content belonged to the US Army
 
 #include "AA29/Object/Actor/Emitter/BaseContactEmitter/aux_em_mortar/aux_em_mortar.h"
-#include "AA29/Object/ParticleEmitter/SpriteEmitter/SpriteEmitter.h"
+#include "AA29/Object/BaseEmitter/ParticleEmitter/SpriteEmitter/SpriteEmitter.h"
 
 Aaux_em_mortar::Aaux_em_mortar()
 {

@@ -6,9 +6,8 @@
 #include "AA29/Object/ScriptObject/Condition/Condition.h"
 #include "Cond_WhenDoorIsOpen.generated.h"
 
-/**
- * 
- */
+class ADoorTrigger;
+
 UCLASS()
 class AA29_API UCond_WhenDoorIsOpen : public UCondition
 {
@@ -16,13 +15,11 @@ class AA29_API UCond_WhenDoorIsOpen : public UCondition
 public:
 	UCond_WhenDoorIsOpen();
 
-	UPROPERTY()										bool bOpen;					//var bool bOpen;
-	//UPROPERTY()										ADoorTrigger* DoorTrigger;					//var AGP_Gameplay.DoorTrigger DoorTrigger;
-
+	UPROPERTY()										bool			bOpen;					//var bool bOpen;
+	UPROPERTY()										ADoorTrigger*	DoorTrigger;			//var AGP_Gameplay.DoorTrigger DoorTrigger;
 
 	void Destroyed();
 	void ConditionStart();
 	void ConditionFinish();
 	bool ProcessParams();
-
 };

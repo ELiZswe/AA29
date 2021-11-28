@@ -2,7 +2,7 @@
 
 
 #include "AGP_ActivatedObjective.h"
-#include "AA29/Controller/PlayerController/HumanController/HumanController.h"
+#include "AA29/Object/Actor/Controller/PlayerController/HumanController/HumanController.h"
 #include "AA29/Object/Actor/Pawn/AGP_Pawn/AGP_Pawn.h"
 
 AAGP_ActivatedObjective::AAGP_ActivatedObjective(const FObjectInitializer& objectInitializer)

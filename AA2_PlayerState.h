@@ -8,7 +8,7 @@
 //#include "AA29/Inventory/Weapon/AGP_Weapon/AGP_Weapon.h"
 
 #include "GameFramework/PlayerState.h"
-#include "AA29/Info/ReplicationInfo/TeamInfo/TeamInfo.h"
+#include "AA29/Object/Actor/Info/ReplicationInfo/TeamInfo/TeamInfo.h"
 
 #include "AA29/AA2_WorldSettings.h"
 

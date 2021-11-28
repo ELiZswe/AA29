@@ -6,6 +6,36 @@
 #include "UObject/ObjectMacros.h"
 
 UENUM(BlueprintType)
+enum class EeAnimationCommand : uint8
+{
+	/* 0 */ AC_PlayAnim															UMETA(DisplayName = "AC_PlayAnim"),
+	/* 0 */ AC_LoopAnim															UMETA(DisplayName = "AC_LoopAnim"),
+	/* 0 */ AC_TweenAnim														UMETA(DisplayName = "AC_TweenAnim"),
+	/* 0 */ AC_StopAnimating													UMETA(DisplayName = "AC_StopAnimating"),
+	/* 0 */ AC_FreezeAnimAt														UMETA(DisplayName = "AC_FreezeAnimAt"),
+	/* 0 */ AC_ClearQueue														UMETA(DisplayName = "AC_ClearQueue")
+};
+
+
+UENUM(BlueprintType)
+enum class EVar : uint8
+{
+	/* 0 */ EV_None																UMETA(DisplayName = "EV_None"),
+	/* 1 */ EV_SET																UMETA(DisplayName = "EV_SET"),
+	/* 2 */ EV_INC																UMETA(DisplayName = "EV_INC"),
+	/* 3 */ EV_DEC																UMETA(DisplayName = "EV_DEC")
+};
+
+
+UENUM(BlueprintType)
+enum class EeFontScale : uint8
+{
+	/* 0 */ FNS_Small															UMETA(DisplayName = "FNS_Small"),
+	/* 1 */ FNS_Medium															UMETA(DisplayName = "FNS_Medium"),
+	/* 2 */ FNS_Large															UMETA(DisplayName = "FNS_Large")
+};
+
+UENUM(BlueprintType)
 enum class EBeamEndPointType : uint8
 {
 	/* 0 */ PTEP_Velocity															UMETA(DisplayName = "PTEP_Velocity"),

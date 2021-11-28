@@ -2,8 +2,8 @@
 
 
 #include "AA29/Object/Actor/Emitter/BaseContactEmitter/em_bt_BDMexplosion/em_bt_BDMexplosion.h"
-#include "AA29/Object/ParticleEmitter/SpriteEmitter/SpriteEmitter.h"
-#include "AA29/Object/ParticleEmitter/MeshEmitter/MeshEmitter.h"
+#include "AA29/Object/BaseEmitter/ParticleEmitter/SpriteEmitter/SpriteEmitter.h"
+#include "AA29/Object/BaseEmitter/ParticleEmitter/MeshEmitter/MeshEmitter.h"
 
 Aem_bt_BDMexplosion::Aem_bt_BDMexplosion()
 {

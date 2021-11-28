@@ -2,8 +2,8 @@
 
 #include "AGP_CarryObjective.h"
 #include "AA29/Object/Actor/Pawn/AGP_Pawn/AGP_Pawn.h"
-#include "AA29/Controller/PlayerController/HumanController/HumanController.h"
-#include "AA29/Pickup/AGP_ObjectivePickup/AGP_ObjectivePickup.h"
+#include "AA29/Object/Actor/Controller/PlayerController/HumanController/HumanController.h"
+#include "AA29/Object/Actor/Pickup/AGP_ObjectivePickup/AGP_ObjectivePickup.h"
 
 AAGP_CarryObjective::AAGP_CarryObjective(const FObjectInitializer& objectInitializer)
 	:Super(objectInitializer)

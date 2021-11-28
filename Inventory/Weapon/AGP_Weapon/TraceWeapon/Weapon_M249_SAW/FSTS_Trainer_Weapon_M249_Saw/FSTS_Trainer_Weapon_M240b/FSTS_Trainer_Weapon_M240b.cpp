@@ -2,7 +2,7 @@
 
 
 #include "FSTS_Trainer_Weapon_M240b.h"
-#include "AA29/Pickup/AGP_WeaponPickup/FSTS_WeaponPickup/PickupW_FSTS_Trainer_M240b/PickupW_FSTS_Trainer_M240b.h"
+#include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/FSTS_WeaponPickup/PickupW_FSTS_Trainer_M240b/PickupW_FSTS_Trainer_M240b.h"
 
 AFSTS_Trainer_Weapon_M240b::AFSTS_Trainer_Weapon_M240b()
 {

@@ -2,7 +2,7 @@
 
 
 #include "Ammo_556mm_20_Mag.h"
-#include "AA29/Pickup/Ammo/AGP_AmmoPickup/PickupAmmo_556mm_20_Mag.h"
+#include "AA29/Object/Actor/Pickup/Ammo/AGP_AmmoPickup/PickupAmmo_556mm_20_Mag.h"
 AAmmo_556mm_20_Mag::AAmmo_556mm_20_Mag()
 {
 	MaxAmmo       = 20;

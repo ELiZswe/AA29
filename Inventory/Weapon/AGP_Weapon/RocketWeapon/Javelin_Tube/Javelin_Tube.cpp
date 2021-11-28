@@ -4,7 +4,7 @@
 #include "Javelin_Tube.h"
 #include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_Javelin/Ammo_Javelin.h"
 #include "AA29/BaseAmmoRound/AmmoRound_Javelin.h"
-#include "AA29/Pickup/AGP_WeaponPickup/Pickup_Javelin_Tube/Pickup_Javelin_Tube.h"
+#include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/Pickup_Javelin_Tube/Pickup_Javelin_Tube.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/AttachW_Javelin_Tube/AttachW_Javelin_Tube.h"
 
 AJavelin_Tube::AJavelin_Tube()

@@ -5,7 +5,7 @@
 
 #include "AA29/Projectile/BaseProjectile/BaseExplodingProjectile/Proj_40Gren_Mod/Proj_40Gren_Mod.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamageLargeArms.h"
-#include "AA29/Pickup/Ammo/AGP_AmmoPickup/PickupAmmo_40mm_1_Gren.h"
+#include "AA29/Object/Actor/Pickup/Ammo/AGP_AmmoPickup/PickupAmmo_40mm_1_Gren.h"
 
 AAmmo_40mm_1_Gren_Mod::AAmmo_40mm_1_Gren_Mod()
 {

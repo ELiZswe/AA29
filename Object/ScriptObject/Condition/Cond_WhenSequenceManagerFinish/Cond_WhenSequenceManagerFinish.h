@@ -6,7 +6,7 @@
 #include "AA29/Object/ScriptObject/Condition/Condition.h"
 #include "Cond_WhenSequenceManagerFinish.generated.h"
 
-//class SequenceManager;
+class ASequenceManager;
 
 UCLASS()
 class AA29_API UCond_WhenSequenceManagerFinish : public UCondition
@@ -15,5 +15,10 @@ class AA29_API UCond_WhenSequenceManagerFinish : public UCondition
 public:
 	UCond_WhenSequenceManagerFinish();
 
-	//UPROPERTY()										ASequenceManager; _SequenceManager;					//var AGP_Gameplay.SequenceManager _SequenceManager;
+	UPROPERTY()										ASequenceManager*	_SequenceManager;					//var AGP_Gameplay.SequenceManager _SequenceManager;
+
+	void Destroyed();
+	void ConditionStart();
+	void ConditionFinish();
+	bool ProcessParams();
 };

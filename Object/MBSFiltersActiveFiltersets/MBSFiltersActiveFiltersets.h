@@ -10,13 +10,13 @@
 /**
  * 
  */
-UCLASS()
+UCLASS(Config = Game)
 class AA29_API UMBSFiltersActiveFiltersets : public UObject
 {
 	GENERATED_BODY()
 public:
 	UMBSFiltersActiveFiltersets();
 
-	UPROPERTY()							FActiveFilterSet Set;						//var config MBSFiltersActiveFiltersets.ActiveFilterSet Set;
+	UPROPERTY(Config)							FActiveFilterSet Set;						//var config MBSFiltersActiveFiltersets.ActiveFilterSet Set;
 
 };

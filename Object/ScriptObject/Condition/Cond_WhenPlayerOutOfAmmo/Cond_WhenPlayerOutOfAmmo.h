@@ -17,4 +17,10 @@ public:
 
 	UPROPERTY()										AHumanController* _HumanController;		//var AGP.HumanController _HumanController;
 	UPROPERTY()										bool _bWeaponOnly;						//var bool _bWeaponOnly;
+
+	void Destroyed();
+	void ConditionStart();
+	void ConditionFinish();
+	bool ProcessParams();
+	void update();
 };

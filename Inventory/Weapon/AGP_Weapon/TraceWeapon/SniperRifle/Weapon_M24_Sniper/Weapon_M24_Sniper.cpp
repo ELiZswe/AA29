@@ -4,7 +4,7 @@
 #include "Weapon_M24_Sniper.h"
 #include "AA29/BaseScope/ScopeW_M24_Sniper.h"
 #include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_762mm_5_Rounds/Ammo_762mm_5_Rounds.h"
-#include "AA29/Pickup/AGP_WeaponPickup/PickupW_M24_Sniper/PickupW_M24_Sniper.h"
+#include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/PickupW_M24_Sniper/PickupW_M24_Sniper.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/AttachW_M24_Sniper/AttachW_M24_Sniper.h"
 #include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/AK47MuzzleFlash_1P/AK47MuzzleFlash_1P.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamage762Sniper.h"

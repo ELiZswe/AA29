@@ -15,4 +15,6 @@ class AA29_API AVSSSuppressorMuzzleFlash : public ABaseMuzzleFlashEmitter
 	GENERATED_BODY()
 public:
 	AVSSSuppressorMuzzleFlash();
+
+	void BeginPlay();
 };

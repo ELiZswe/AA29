@@ -5,5 +5,7 @@
 
 Afx_exp_TowerExplosionSpawner::Afx_exp_TowerExplosionSpawner()
 {
-
+	//MyEmitterClasses(0) = class'AGP_Effects.fx_exp_vehicledeath'
+	//MyEmitterClasses(1) = class'AGP_Effects.fx_exp_bigfire'
+	//MyEmitterClasses(2) = class'AGP_Effects.fx_exp_DebrisA';
 }

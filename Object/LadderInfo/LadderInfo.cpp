@@ -3,10 +3,17 @@
 
 #include "AA29/Object/LadderInfo/LadderInfo.h"
 #include "AA29/Object/GameProfile/GameProfile.h"
+#include "AA29/Object/MatchInfo/MatchInfo.h"
 
 ULadderInfo::ULadderInfo()
 {
-	//CTFMatches(0) = MatchInfo'Engine.LadderInfo.CTFMatchInfo1'
+	UMatchInfo* CTFMatchInfo1 = NewObject<UMatchInfo>(UMatchInfo::StaticClass());
+	CTFMatchInfo1->LevelName = "CTF-Maul";
+	CTFMatchInfo1->EnemyTeamName = "xGame.TeamIronGuard";
+	CTFMatchInfo1->GoalScore = 3;
+	CTFMatchInfo1->URLString = "?mutator=xgame.mutinstagib";
+	CTFMatchInfo1->MenuDescription = "Instagib!";
+	CTFMatches = { CTFMatchInfo1 };
 	OpenNextLadderAtRung = { 3,3,2,3,3 };
 }
 

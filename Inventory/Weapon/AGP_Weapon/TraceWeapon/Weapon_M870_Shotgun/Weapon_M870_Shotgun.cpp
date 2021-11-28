@@ -2,7 +2,7 @@
 
 
 #include "Weapon_M870_Shotgun.h"
-#include "AA29/Pickup/AGP_WeaponPickup/PickupW_M870_Shotgun/PickupW_M870_Shotgun.h"
+#include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/PickupW_M870_Shotgun/PickupW_M870_Shotgun.h"
 #include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/AK47MuzzleFlash_1P/AK47MuzzleFlash_1P.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/AttachW_M870_Shotgun/AttachW_M870_Shotgun.h"
 #include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_762mm_5_Rounds/Ammo_762mm_5_Rounds.h"

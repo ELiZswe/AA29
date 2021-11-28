@@ -5,5 +5,5 @@
 
 Afx_exp_medfirespawner::Afx_exp_medfirespawner()
 {
-
+	//MyEmitterClasses(0) = class'AGP_Effects.fx_exp_mediumfire';
 }

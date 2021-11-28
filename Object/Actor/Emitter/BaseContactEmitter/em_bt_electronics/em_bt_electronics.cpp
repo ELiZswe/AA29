@@ -1,7 +1,7 @@
 // All the original content belonged to the US Army
 
 #include "AA29/Object/Actor/Emitter/BaseContactEmitter/em_bt_electronics/em_bt_electronics.h"
-#include "AA29/Object/ParticleEmitter/SpriteEmitter/SpriteEmitter.h"
+#include "AA29/Object/BaseEmitter/ParticleEmitter/SpriteEmitter/SpriteEmitter.h"
 
 Aem_bt_electronics::Aem_bt_electronics()
 {

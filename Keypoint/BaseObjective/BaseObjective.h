@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "AA29/Info/ReplicationInfo/TeamInfo/TeamInfo.h"
+#include "AA29/Object/Actor/Info/ReplicationInfo/TeamInfo/TeamInfo.h"
 
 #include "AA29/Keypoint/Keypoint.h"
 #include "BaseObjective.generated.h"

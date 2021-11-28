@@ -15,4 +15,9 @@ class AA29_API UDir_SceneJump : public UDirection
 	GENERATED_BODY()
 public:
 	UDir_SceneJump();
+
+	UPROPERTY()						FName		_SceneTag;			//var FName _SceneTag;
+	
+	void DirectionStart();
+	bool ProcessParams();
 };

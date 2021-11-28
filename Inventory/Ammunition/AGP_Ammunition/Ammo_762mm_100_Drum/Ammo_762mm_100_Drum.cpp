@@ -3,7 +3,7 @@
 
 #include "Ammo_762mm_100_Drum.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamage762mm_RPK.h"
-#include "AA29/Pickup/Ammo/AGP_AmmoPickup/PickupAmmo_762mm_100_Drum.h"
+#include "AA29/Object/Actor/Pickup/Ammo/AGP_AmmoPickup/PickupAmmo_762mm_100_Drum.h"
 
 AAmmo_762mm_100_Drum::AAmmo_762mm_100_Drum()
 {

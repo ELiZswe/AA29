@@ -4,7 +4,7 @@
 #include "Weapon_SVD_Sniper.h"
 #include "AA29/BaseScope/ScopeW_SVD_Sniper.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/AttachW_SVD_Sniper/AttachW_SVD_Sniper.h"
-#include "AA29/Pickup/AGP_WeaponPickup/PickupW_SVD_Sniper/PickupW_SVD_Sniper.h"
+#include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/PickupW_SVD_Sniper/PickupW_SVD_Sniper.h"
 #include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_127mm_10_Mag/Ammo_127mm_10_Mag.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamage127Sniper.h"
 #include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/AK47MuzzleFlash_1P/AK47MuzzleFlash_1P.h"

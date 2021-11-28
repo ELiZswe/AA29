@@ -13,5 +13,7 @@ UCLASS()
 class AA29_API ABaseTracerEmitter : public AAA2_Emitter
 {
 	GENERATED_BODY()
-	
+public:
+	ABaseTracerEmitter();
+
 };

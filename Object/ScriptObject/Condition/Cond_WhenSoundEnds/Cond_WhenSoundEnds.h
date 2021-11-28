@@ -16,4 +16,9 @@ public:
 	UCond_WhenSoundEnds();
 
 	UPROPERTY()										AAGP_Sound* _Sound;					//var AGP_Gameplay.AGP_Sound _Sound;
+
+	void Destroyed();
+	void ConditionStart();
+	void ConditionFinish();
+	bool ProcessParams();
 };

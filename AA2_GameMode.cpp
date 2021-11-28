@@ -2,7 +2,7 @@
 
 
 #include "AA2_GameMode.h"
-#include "AA29/HUD/AGP_HUD/AGP_HUD.h"
+#include "AA29/Object/Actor/HUD/AGP_HUD/AGP_HUD.h"
 #include "Kismet/GameplayStatics.h"
 
 
@@ -11,9 +11,9 @@
 
 #include "AA29/AA2_GameState.h"
 #include "AA29/AA2_PlayerState.h"
-#include "AA29/PlayerStart/AGP_PlayerStart/AGP_PlayerStart.h"
+#include "AA29/Object/Actor/NavigationPoint/SmallNavigationPoint/PlayerStart/AGP_PlayerStart/AGP_PlayerStart.h"
 
-#include "AA29/Controller/PlayerController/HumanController/HumanController.h"
+#include "AA29/Object/Actor/Controller/PlayerController/HumanController/HumanController.h"
 #include "AA29/Inventory/Weapon/AGP_Weapon/TraceWeapon/SniperRifle/Weapon_M24_Sniper/Weapon_M24_Sniper.h"
 #include "Engine/World.h"
 

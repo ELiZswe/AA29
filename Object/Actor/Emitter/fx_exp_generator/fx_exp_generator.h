@@ -15,4 +15,8 @@ class AA29_API Afx_exp_generator : public AAA2_Emitter
 	GENERATED_BODY()
 public:
 	Afx_exp_generator();
+
+	void PostBeginPlay();
+	void SpawnLight();
+	void BeginPlay();
 };

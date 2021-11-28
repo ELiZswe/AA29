@@ -7,3 +7,13 @@ Aem_bt_MaverickMissileExplosion::Aem_bt_MaverickMissileExplosion()
 {
 
 }
+
+void Aem_bt_MaverickMissileExplosion::PostBeginPlay()
+{
+	SpawnLight();
+}
+
+void Aem_bt_MaverickMissileExplosion::SpawnLight()
+{
+	//Spawn(class'AGP_Effects.aux_light_ExpLightB');
+}

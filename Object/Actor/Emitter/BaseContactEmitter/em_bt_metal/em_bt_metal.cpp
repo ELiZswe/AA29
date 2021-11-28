@@ -1,5 +1,106 @@
 // All the original content belonged to the US Army
 
-
 #include "AA29/Object/Actor/Emitter/BaseContactEmitter/em_bt_metal/em_bt_metal.h"
+#include "AA29/Object/BaseEmitter/ParticleEmitter/SpriteEmitter/SpriteEmitter.h"
 
+Aem_bt_metal::Aem_bt_metal()
+{
+	USpriteEmitter* SpriteEmitter1 = NewObject<USpriteEmitter>(USpriteEmitter::StaticClass());
+	SpriteEmitter1->UseDirectionAs = EParticleDirectionUsage::PTDU_Up;
+	SpriteEmitter1->UseCollision = true;
+	SpriteEmitter1->UseMaxCollisions = true;
+	SpriteEmitter1->UseColorScale = true;
+	SpriteEmitter1->FadeOut = true;
+	SpriteEmitter1->ResetAfterChange = true;
+	SpriteEmitter1->RespawnDeadParticles = false;
+	SpriteEmitter1->UseSizeScale = true;
+	SpriteEmitter1->UseRegularSizeScale = false;
+	SpriteEmitter1->AutomaticInitialSpawning = false;
+	SpriteEmitter1->Acceleration = FVector(0, 0, -950);
+	//SpriteEmitter1->DampingFactorRange=X=(Min=1, Max=1)|Y=(Min=1, Max=1)|Z=(Min=0.1, Max=0.5);
+	SpriteEmitter1->MaxCollisions = FRange({ 2, 2 });
+	SpriteEmitter1->bOnlyBSPCollision = true;
+	//SpriteEmitter1->ColorScale[0]=FParticleColorScale({0,FColor(210, 255, 255, 0)});
+	//SpriteEmitter1->ColorScale[1]=FParticleColorScale({1,FColor(230, 255, 255, 0)});
+	SpriteEmitter1->FadeOutStartTime = 0.4;
+	SpriteEmitter1->MaxParticles = 3;
+	SpriteEmitter1->UseRotationFrom = EParticleRotationSource::PTRS_Actor;
+	//SpriteEmitter1->SizeScale[0]=FParticleTimeScale({0,1});
+	//SpriteEmitter1->SizeScale[1]=FParticleTimeScale({0.7,0.9});
+	//SpriteEmitter1->SizeScale[2]=FParticleTimeScale({1,0.3});
+	//SpriteEmitter1->StartSizeRange=X=(Min=1, Max=1.2)|Y=(Min=9, Max=13)|Z=(Min=9, Max=13);
+	SpriteEmitter1->InitialParticlesPerSecond = 1000;
+	SpriteEmitter1->DrawStyle = EParticleDrawStyle::PTDS_Brighten;
+	SpriteEmitter1->Texture = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_FX/Particle/fx2_part_spark01_Mat.fx2_part_spark01_Mat'"), NULL, LOAD_None, NULL);
+	SpriteEmitter1->SecondsBeforeInactive = 0;
+	SpriteEmitter1->LifetimeRange = FRange({ 0.1, 0.5 });
+	//SpriteEmitter1->StartVelocityRange=X=(Min=50, Max=300)|Y=(Min=277, Max=-277)|Z=(Min=277, Max=-277);
+	USpriteEmitter* SpriteEmitter2 = NewObject<USpriteEmitter>(USpriteEmitter::StaticClass());
+	SpriteEmitter2->UseColorScale = true;
+	SpriteEmitter2->FadeOut = true;
+	SpriteEmitter2->RespawnDeadParticles = false;
+	SpriteEmitter2->UseSizeScale = true;
+	SpriteEmitter2->UseRegularSizeScale = false;
+	SpriteEmitter2->UniformSize = true;
+	SpriteEmitter2->AutomaticInitialSpawning = false;
+	SpriteEmitter2->BlendBetweenSubdivisions = true;
+	//SpriteEmitter2->ColorScale[0]=FParticleColorScale({0,FColor(14, 15, 15, 0)});
+	//SpriteEmitter2->ColorScale[1]=FParticleColorScale({1,FColor(0, 0, 0, 0)});
+	SpriteEmitter2->FadeOutStartTime = 1;
+	SpriteEmitter2->MaxParticles = 1;
+	SpriteEmitter2->StartLocationOffset = FVector(15, 0, 0);
+	SpriteEmitter2->UseRotationFrom = EParticleRotationSource::PTRS_Actor;
+	//SpriteEmitter2->SizeScale[0]=FParticleTimeScale({0,0.1});
+	//SpriteEmitter2->SizeScale[1]=FParticleTimeScale({1,0.5});
+	SpriteEmitter2->InitialParticlesPerSecond = 1000;
+	SpriteEmitter2->Texture = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_FX/Particles/fx_part_smokeanim01_Mat.fx_part_smokeanim01_Mat'"), NULL, LOAD_None, NULL);
+	SpriteEmitter2->TextureUSubdivisions = 4;
+	SpriteEmitter2->TextureVSubdivisions = 2;
+	SpriteEmitter2->SecondsBeforeInactive = 0;
+	SpriteEmitter2->LifetimeRange = FRange({ 1, 1.5 });
+	//SpriteEmitter2->StartVelocityRange=X=(Min=-25, Max=-25)|Y=(Min=-10, Max=10)|Z=(Min=-10, Max=10);
+	USpriteEmitter* SpriteEmitter4 = NewObject<USpriteEmitter>(USpriteEmitter::StaticClass());
+	SpriteEmitter4->ResetAfterChange = true;
+	SpriteEmitter4->RespawnDeadParticles = false;
+	SpriteEmitter4->SpinParticles = true;
+	SpriteEmitter4->UseSizeScale = true;
+	SpriteEmitter4->UniformSize = true;
+	SpriteEmitter4->AutomaticInitialSpawning = false;
+	SpriteEmitter4->MaxParticles = 1;
+	SpriteEmitter4->UseRotationFrom = EParticleRotationSource::PTRS_Actor;
+	//SpriteEmitter4->StartSpinRange=X=(Min=0, Max=32600)|Y=(Min=0, Max=0)|Z=(Min=0, Max=0);
+	//SpriteEmitter4->SizeScale[0]=FParticleTimeScale({0,1});
+	//SpriteEmitter4->SizeScale[1]=FParticleTimeScale({1,5});
+	//SpriteEmitter4->StartSizeRange=X=(Min=2, Max=4)|Y=(Min=100, Max=100)|Z=(Min=100, Max=100);
+	SpriteEmitter4->InitialParticlesPerSecond = 1000;
+	SpriteEmitter4->DrawStyle = EParticleDrawStyle::PTDS_AlphaBlend;
+	SpriteEmitter4->Texture = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_FX/Particles/fx_particle_startblast01_Mat.fx_particle_startblast01_Mat'"), NULL, LOAD_None, NULL);
+	SpriteEmitter4->SecondsBeforeInactive = 0;
+	SpriteEmitter4->LifetimeRange = FRange({ 0.03, 0.03 });
+	USpriteEmitter* SpriteEmitter5 = NewObject<USpriteEmitter>(USpriteEmitter::StaticClass());
+	SpriteEmitter5->UseDirectionAs = EParticleDirectionUsage::PTDU_Up;
+	SpriteEmitter5->UseColorScale = true;
+	SpriteEmitter5->FadeOut = true;
+	SpriteEmitter5->ResetAfterChange = true;
+	SpriteEmitter5->RespawnDeadParticles = false;
+	SpriteEmitter5->UseSizeScale = true;
+	SpriteEmitter5->UseRegularSizeScale = false;
+	SpriteEmitter5->AutomaticInitialSpawning = false;
+	SpriteEmitter5->Acceleration = FVector(0, 0, -350);
+	//SpriteEmitter5->ColorScale[0]=FParticleColorScale({0,FColor(220, 254, 253, 0)});
+	//SpriteEmitter5->ColorScale[1]=FParticleColorScale({1,FColor(235, 255, 255, 0)});
+	SpriteEmitter5->FadeOutStartTime = 0.3;
+	SpriteEmitter5->UseRotationFrom = EParticleRotationSource::PTRS_Actor;
+	//SpriteEmitter5->SizeScale[0]=FParticleTimeScale({0,1});
+	//SpriteEmitter5->SizeScale[1]=FParticleTimeScale({0.7,0.9});
+	//SpriteEmitter5->SizeScale[2]=FParticleTimeScale({1,2.5});
+	//SpriteEmitter5->StartSizeRange=X=(Min=1, Max=1)|Y=(Min=14, Max=17)|Z=(Min=14, Max=17);
+	SpriteEmitter5->InitialParticlesPerSecond = 1000;
+	SpriteEmitter5->DrawStyle = EParticleDrawStyle::PTDS_Brighten;
+	SpriteEmitter5->Texture = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_FX/Corona/fx2_cor_05_Mat.fx2_cor_05_Mat'"), NULL, LOAD_None, NULL);
+	SpriteEmitter5->SecondsBeforeInactive = 0;
+	SpriteEmitter5->LifetimeRange = FRange({ 0.03, 0.05 });
+	//SpriteEmitter5->StartVelocityRange=X=(Min=250, Max=350)|Y=(Min=200, Max=-250)|Z=(Min=200, Max=-250);
+	Emitters = { SpriteEmitter1,SpriteEmitter2,SpriteEmitter4,SpriteEmitter5 };
+
+}

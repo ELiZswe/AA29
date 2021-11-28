@@ -4,7 +4,7 @@
 #include "Weapon_M82_Sniper.h"
 #include "AA29/BaseScope/ScopeW_M82_Sniper.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/AttachW_M82_Sniper/AttachW_M82_Sniper.h"
-#include "AA29/Pickup/AGP_WeaponPickup/PickupW_M82_Sniper/PickupW_M82_Sniper.h"
+#include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/PickupW_M82_Sniper/PickupW_M82_Sniper.h"
 #include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_127mm_10_Mag/Ammo_127mm_10_Mag.h"
 #include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/M82MuzzleFlash_1P/M82MuzzleFlash_1P.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamage127Sniper.h"

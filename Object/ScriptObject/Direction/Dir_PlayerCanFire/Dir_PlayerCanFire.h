@@ -15,4 +15,11 @@ class AA29_API UDir_PlayerCanFire : public UDirection
 	GENERATED_BODY()
 public:
 	UDir_PlayerCanFire();
+
+	UPROPERTY()						bool		bCanFire;		//var bool bCanFire;
+
+	void Destroyed();
+	void DirectionStart();
+	void DirectionFinish();
+	bool ProcessParams();
 };

@@ -5,5 +5,5 @@
 
 Afx_exp_MortarExplosionSpawner::Afx_exp_MortarExplosionSpawner()
 {
-
+	//MyEmitterClasses(0) = class'AGP_Effects.fx_exp_MortarExplosion';
 }

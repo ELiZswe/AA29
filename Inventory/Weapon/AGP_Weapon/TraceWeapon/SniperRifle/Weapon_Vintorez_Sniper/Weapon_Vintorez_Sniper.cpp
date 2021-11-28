@@ -4,7 +4,7 @@
 #include "Weapon_Vintorez_Sniper.h"
 #include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_9x39_10_Mag/Ammo_9x39_10_Mag.h"
 #include "AA29/BaseAmmoRound/AmmoRound_9x39_Bullet.h"
-#include "AA29/Pickup/AGP_WeaponPickup/PickupW_Vintorez_Sniper/PickupW_Vintorez_Sniper.h"
+#include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/PickupW_Vintorez_Sniper/PickupW_Vintorez_Sniper.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/AttachW_Vintorez_Sniper/AttachW_Vintorez_Sniper.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamage762mm_Vintorez.h"
 #include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/SuppressorMuzzleFlash_1P/SuppressorMuzzleFlash_1P.h"

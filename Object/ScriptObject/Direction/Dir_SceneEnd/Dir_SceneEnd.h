@@ -15,4 +15,8 @@ class AA29_API UDir_SceneEnd : public UDirection
 	GENERATED_BODY()
 public:
 	UDir_SceneEnd();
+
+	void DirectionStart();
+	bool ProcessParams();
+
 };

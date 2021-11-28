@@ -3,7 +3,7 @@
 
 #include "Ammo_Flare_1_Gren.h"
 #include "AA29/Projectile/BaseProjectile/BaseExplodingProjectile/Proj_FlareGren/Proj_FlareGren.h"
-#include "AA29/Pickup/Ammo/AGP_AmmoPickup/PickupAmmo_Flare_1_Gren.h"
+#include "AA29/Object/Actor/Pickup/Ammo/AGP_AmmoPickup/PickupAmmo_Flare_1_Gren.h"
 AAmmo_Flare_1_Gren::AAmmo_Flare_1_Gren()
 {
 	Damage             = 0;

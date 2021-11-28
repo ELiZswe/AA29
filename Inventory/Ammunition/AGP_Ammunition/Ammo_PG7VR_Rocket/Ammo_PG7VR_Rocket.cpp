@@ -4,7 +4,7 @@
 #include "Ammo_PG7VR_Rocket.h"
 #include "AA29/Projectile/BaseProjectile/BaseExplodingProjectile/RocketProjectile/Proj_PG7VR_Demolition/Proj_PG7VR_Demolition.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamageLargeArms.h"
-#include "AA29/Pickup/Ammo/AGP_AmmoPickup/PickupAmmo_RPG7_PG7VR.h"
+#include "AA29/Object/Actor/Pickup/Ammo/AGP_AmmoPickup/PickupAmmo_RPG7_PG7VR.h"
 AAmmo_PG7VR_Rocket::AAmmo_PG7VR_Rocket()
 {
 	Damage            = 100;

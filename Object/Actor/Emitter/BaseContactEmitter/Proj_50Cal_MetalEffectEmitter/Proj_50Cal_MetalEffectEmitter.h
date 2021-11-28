@@ -13,5 +13,7 @@ UCLASS()
 class AA29_API AProj_50Cal_MetalEffectEmitter : public ABaseContactEmitter
 {
 	GENERATED_BODY()
-	
+public:
+	AProj_50Cal_MetalEffectEmitter();
+
 };

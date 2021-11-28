@@ -8,6 +8,13 @@ Aem_bt_glasspane::Aem_bt_glasspane()
 
 }
 
+/*
+Function Trigger(Actor Other, Pawn EventInstigator)
+{
+    Spawn(class'AGP_Effects.aux_em_glasspane');
+}
+*/
+
 
 void Aem_bt_glasspane::Trigger(AActor* Other, APawn* EventInstigator)
 {

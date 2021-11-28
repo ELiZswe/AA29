@@ -4,7 +4,7 @@
 #include "Ammo_RPG7_PG7B.h"
 #include "AA29/Projectile/BaseProjectile/BaseExplodingProjectile/RocketProjectile/Proj_PG7B/Proj_PG7B.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamageLargeArms.h"
-#include "AA29/Pickup/Ammo/AGP_AmmoPickup/PickupAmmo_RPG7_PG7b.h"
+#include "AA29/Object/Actor/Pickup/Ammo/AGP_AmmoPickup/PickupAmmo_RPG7_PG7b.h"
 AAmmo_RPG7_PG7B::AAmmo_RPG7_PG7B()
 {
 	Damage				= 90;

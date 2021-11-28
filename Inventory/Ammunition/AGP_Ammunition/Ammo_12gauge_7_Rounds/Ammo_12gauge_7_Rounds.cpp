@@ -3,7 +3,7 @@
 
 #include "Ammo_12gauge_7_Rounds.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamage762Sniper.h"
-#include "AA29/Pickup/Ammo/AGP_AmmoPickup/PickupAmmo_12gauge_7_Rounds.h"
+#include "AA29/Object/Actor/Pickup/Ammo/AGP_AmmoPickup/PickupAmmo_12gauge_7_Rounds.h"
 AAmmo_12gauge_7_Rounds::AAmmo_12gauge_7_Rounds()
 {
 	MomentumTransfer  = 20000;

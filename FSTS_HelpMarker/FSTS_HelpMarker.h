@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "AA29/MyStructs.h"
 #include "FSTS_HelpMarker.generated.h"
 
 UCLASS()

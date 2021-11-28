@@ -3,10 +3,10 @@
 
 #include "AA2_PlayerState.h"
 #include "AA29/Inventory/DummyItem/Item_Bullseye/Item_Bullseye.h"
-#include "AA29/Controller/PlayerController/HumanController/HumanController.h"
-#include "AA29/PlayerStart/AGP_Playerstart/AGP_Playerstart.h"
-#include "AA29/Controller/AIController/aAIController.h"
-#include "AA29/Info/GameInfo/GameInfo.h"
+#include "AA29/Object/Actor/Controller/PlayerController/HumanController/HumanController.h"
+#include "AA29/Object/Actor/NavigationPoint/SmallNavigationPoint/PlayerStart/AGP_Playerstart/AGP_Playerstart.h"
+#include "AA29/Object/Actor/Controller/AIController/aAIController.h"
+#include "AA29/Object/Actor/Info/GameInfo/GameInfo.h"
 #include "EngineUtils.h"
 
 AAA2_PlayerState::AAA2_PlayerState()

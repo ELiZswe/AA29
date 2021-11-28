@@ -15,4 +15,6 @@ class AA29_API ABDMMuzzleFlash : public ABaseMuzzleFlashEmitter
 	GENERATED_BODY()
 public:
 	ABDMMuzzleFlash();
+
+	void SpawnLight();
 };

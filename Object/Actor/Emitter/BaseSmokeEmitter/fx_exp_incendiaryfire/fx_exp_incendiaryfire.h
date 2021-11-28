@@ -15,4 +15,6 @@ class AA29_API Afx_exp_incendiaryfire : public ABaseSmokeEmitter
 	GENERATED_BODY()
 public:
 	Afx_exp_incendiaryfire();
+
+	void BeginPlay();
 };

@@ -3,7 +3,7 @@
 
 #include "Throw_M14_Incendiary.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/AttachT_M14_Incendiary/AttachT_M14_Incendiary.h"
-#include "AA29/Pickup/AGP_WeaponPickup/ThrowWeaponPickup/PickupT_M14_Incendiary/PickupT_M14_Incendiary.h"
+#include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/ThrowWeaponPickup/PickupT_M14_Incendiary/PickupT_M14_Incendiary.h"
 #include "AA29/DamageType/AGP_DamageType/FragDamage/FragDamage.h"
 #include "AA29/DamageType/AGP_DamageType/ExplosionDamage/IncendiaryDamage/IncendiaryDamage.h"
 #include "AA29/DamageType/AGP_DamageType/ExplosionDamage/ExplosionDamage.h"

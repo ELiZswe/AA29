@@ -4,7 +4,7 @@
 #include "Weapon_PG7VR_Rocket.h"
 #include "AA29/BaseAmmoRound/AmmoRound_PG7VR_Rocket.h"
 #include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_PG7VR_Rocket/Ammo_PG7VR_Rocket.h"
-#include "AA29/Pickup/AGP_WeaponPickup/RocketWeaponPickup/PickupW_PG7VR_Rocket/PickupW_PG7VR_Rocket.h"
+#include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/RocketWeaponPickup/PickupW_PG7VR_Rocket/PickupW_PG7VR_Rocket.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/RocketWeaponAttachment/AttachW_RPG7_Rocket/AttachW_PG7VR_Rocket/AttachW_PG7VR_Rocket.h"
 
 AWeapon_PG7VR_Rocket::AWeapon_PG7VR_Rocket()

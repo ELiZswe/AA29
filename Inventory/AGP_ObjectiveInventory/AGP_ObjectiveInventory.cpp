@@ -2,7 +2,7 @@
 
 
 #include "AGP_ObjectiveInventory.h"
-#include "AA29/Pickup/AGP_ObjectivePickup/AGP_ObjectivePickup.h"
+#include "AA29/Object/Actor/Pickup/AGP_ObjectivePickup/AGP_ObjectivePickup.h"
 #include "AA29/InventoryAttachment/ItemAttachment/AGP_ObjectiveAttachment/AGP_ObjectiveAttachment.h"
 
 

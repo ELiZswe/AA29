@@ -5,5 +5,5 @@
 
 Afx_exp_BTRdeathspawner::Afx_exp_BTRdeathspawner()
 {
-
+	//MyEmitterClasses(0) = class'AGP_Effects.fx_exp_BTRdeath';
 }

@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "AA29/InventoryAttachment/ItemAttachment/ItemAttachment.h"
-#include "AA29/Pickup/AGP_ObjectivePickup/AGP_ObjectivePickup.h"
+#include "AA29/Object/Actor/Pickup/AGP_ObjectivePickup/AGP_ObjectivePickup.h"
 #include "AGP_ObjectiveAttachment.generated.h"
 
 /**

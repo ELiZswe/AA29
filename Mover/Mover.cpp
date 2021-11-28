@@ -3,8 +3,8 @@
 
 #include "Mover.h"
 #include "AA29/Object/Actor/Pawn/AGP_Pawn/AGP_Pawn.h"
-#include "AA29/Controller/PlayerController/HumanController/HumanController.h"
-#include "AA29/Info/GameInfo/GameInfo.h"
+#include "AA29/Object/Actor/Controller/PlayerController/HumanController/HumanController.h"
+#include "AA29/Object/Actor/Info/GameInfo/GameInfo.h"
 #include "TimerManager.h"
 #include "Kismet/KismetMathLibrary.h"
 #include "Kismet/KismetStringLibrary.h"

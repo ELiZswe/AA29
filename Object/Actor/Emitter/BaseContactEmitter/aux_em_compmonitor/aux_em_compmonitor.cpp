@@ -1,7 +1,7 @@
 // All the original content belonged to the US Army
 
 #include "AA29/Object/Actor/Emitter/BaseContactEmitter/aux_em_compmonitor/aux_em_compmonitor.h"
-#include "AA29/Object/ParticleEmitter/SpriteEmitter/SpriteEmitter.h"
+#include "AA29/Object/BaseEmitter/ParticleEmitter/SpriteEmitter/SpriteEmitter.h"
 
 Aaux_em_compmonitor::Aaux_em_compmonitor()
 {

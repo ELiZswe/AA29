@@ -7,3 +7,9 @@ Afx_exp_generatorspawner::Afx_exp_generatorspawner()
 {
 
 };
+
+void Afx_exp_generatorspawner::Trigger(AActor* Other, APawn* EventInstigator)
+{
+	//Spawn(class'AGP_Effects.fx_exp_generator');
+}
+

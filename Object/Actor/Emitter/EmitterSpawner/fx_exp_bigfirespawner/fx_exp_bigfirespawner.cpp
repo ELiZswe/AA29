@@ -5,5 +5,5 @@
 
 Afx_exp_bigfirespawner::Afx_exp_bigfirespawner()
 {
-
+	//MyEmitterClasses(0) = class'AGP_Effects.fx_exp_bigfire';
 }

@@ -2,7 +2,7 @@
 
 
 #include "FSTS_Trainer_Weapon_MK19_AGL.h"
-#include "AA29/Pickup/AGP_WeaponPickup/FSTS_WeaponPickup/PickupW_FSTS_Trainer_MK19_AGL/PickupW_FSTS_Trainer_MK19_AGL.h"
+#include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/FSTS_WeaponPickup/PickupW_FSTS_Trainer_MK19_AGL/PickupW_FSTS_Trainer_MK19_AGL.h"
 #include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_MK19_Grenade/Ammo_MK19_Grenade.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamageLargeArms.h"
 #include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/M16A2MuzzleFlash_1P/M16A2MuzzleFlash_1P.h"

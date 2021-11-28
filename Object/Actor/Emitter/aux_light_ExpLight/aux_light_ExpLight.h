@@ -15,4 +15,6 @@ class AA29_API Aaux_light_ExpLight : public AAA2_Emitter
 	GENERATED_BODY()
 public:
 	Aaux_light_ExpLight();
+
+	void PostBeginPlay();
 };

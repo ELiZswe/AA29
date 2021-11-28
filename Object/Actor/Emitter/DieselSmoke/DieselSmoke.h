@@ -16,4 +16,10 @@ class AA29_API ADieselSmoke : public AAA2_Emitter
 public:
 	ADieselSmoke();
 
+	UPROPERTY(EditAnywhere)						int32 MaxPPS;								//var() int32 MaxPPS;
+
+	void disableEffect();
+	void SetEmitterColor(FColor DirtColor, int32 emitterNum);
+	void UpdatePrecacheMaterials();
+	void updatePuff(float puffCoeff);
 };

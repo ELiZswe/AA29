@@ -15,4 +15,11 @@ class AA29_API Am2a2MuzzleFlash : public ABaseMuzzleFlashEmitter
 	GENERATED_BODY()
 public:
 	Am2a2MuzzleFlash();
+
+
+
+	UPROPERTY()								AEmitter* smokeemitter;								//var Emitter smokeemitter;
+	UPROPERTY()								AEmitter* smokeclass;								//var class<Emitter> smokeclass;
+
+	void DynamicFlash();
 };

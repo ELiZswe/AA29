@@ -5,7 +5,7 @@
 #include "AA29/BaseScope/ScopeW_AK74su_Rifle.h"
 #include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_762mm_30_Mag/Ammo_762mm_30_Mag.h"
 #include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_30mm_1_Gren/Ammo_30mm_1_Gren.h"
-#include "AA29/Pickup/AGP_WeaponPickup/PickupW_GP30_Gren/PickupW_GP30_Gren.h"
+#include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/PickupW_GP30_Gren/PickupW_GP30_Gren.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/AttachW_GP30_Gren/AttachW_GP30_Gren.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamage762mm.h"
 #include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/AK47MuzzleFlash_1P/AK47MuzzleFlash_1P.h"

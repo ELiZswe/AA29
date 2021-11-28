@@ -3,7 +3,7 @@
 
 #include "Throw_M84_Stun.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/AttachT_M84_Stun/AttachT_M84_Stun.h"
-#include "AA29/Pickup/AGP_WeaponPickup/ThrowWeaponPickup/PickupT_M84_Stun/PickupT_M84_Stun.h"
+#include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/ThrowWeaponPickup/PickupT_M84_Stun/PickupT_M84_Stun.h"
 #include "AA29/DamageType/AGP_DamageType/FragDamage/FragDamage.h"
 #include "AA29/DamageType/AGP_DamageType/ExplosionDamage/GrenadeExplosionDamage/GrenadeExplosionDamage.h"
 AThrow_M84_Stun::AThrow_M84_Stun()

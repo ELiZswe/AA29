@@ -4,11 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
+#include "AA29/AA29.h"
 #include "ScriptObject.generated.h"
 
-/**
- * 
- */
 UCLASS()
 class AA29_API UScriptObject : public UObject
 {
@@ -20,10 +18,6 @@ public:
 	UPROPERTY()										TArray<FString> _sParameters;				//var array<String> _sParameters;
 	UPROPERTY()										bool bSupportsMP;							//var bool bSupportsMP;
 	UPROPERTY()										bool _bDebug;								//var bool _bDebug;
-
-
-
-
 
 	void Destroyed();
 	void Notify();

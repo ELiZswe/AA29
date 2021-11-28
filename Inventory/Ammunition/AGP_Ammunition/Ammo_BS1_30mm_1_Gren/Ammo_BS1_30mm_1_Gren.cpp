@@ -4,7 +4,7 @@
 #include "Ammo_BS1_30mm_1_Gren.h"
 #include "AA29/Projectile/BaseProjectile/BaseExplodingProjectile/Proj_BS1_30Gren/Proj_BS1_30Gren.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamageLargeArms.h"
-#include "AA29/Pickup/Ammo/AGP_AmmoPickup/PickupAmmo_BS1_30mm_1_Gren.h"
+#include "AA29/Object/Actor/Pickup/Ammo/AGP_AmmoPickup/PickupAmmo_BS1_30mm_1_Gren.h"
 
 
 AAmmo_BS1_30mm_1_Gren::AAmmo_BS1_30mm_1_Gren()

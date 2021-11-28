@@ -16,4 +16,7 @@ class AA29_API ADamagedEffect : public AAA2_Emitter
 public:
 	ADamagedEffect();
 
+	void PostBeginPlay();
+	void SetEffectScale(float Scaling);
+	void UpdateDamagedEffect(bool bFlame, float VelMag);
 };

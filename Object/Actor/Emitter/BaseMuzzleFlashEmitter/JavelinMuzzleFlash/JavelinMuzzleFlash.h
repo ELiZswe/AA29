@@ -15,4 +15,7 @@ class AA29_API AJavelinMuzzleFlash : public ABaseMuzzleFlashEmitter
 	GENERATED_BODY()
 public:
 	AJavelinMuzzleFlash();
+
+	void BeginPlay();
+	void DynamicFlash();
 };

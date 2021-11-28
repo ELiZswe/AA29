@@ -15,4 +15,9 @@ class AA29_API UDir_ControlThrowWeapon : public UDirection
 	GENERATED_BODY()
 public:
 	UDir_ControlThrowWeapon();
+
+	UPROPERTY()						bool						_bThrow;				//var bool _bThrow;
+
+	void DirectionStart();
+	bool ProcessParams();
 };

@@ -7,3 +7,8 @@ Afx_exp_barrelspawner::Afx_exp_barrelspawner()
 {
 
 };
+
+void Afx_exp_barrelspawner::Trigger(AActor* Other, APawn* EventInstigator)
+{
+	//Spawn(class'AGP_Effects.fx_exp_barrel');
+}

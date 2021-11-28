@@ -15,4 +15,10 @@ class AA29_API UDir_PlayerLockMovement : public UDirection
 	GENERATED_BODY()
 public:
 	UDir_PlayerLockMovement();
+
+	UPROPERTY()						bool		_bLockMovement;		//var bool _bLockMovement;
+	UPROPERTY()						bool		_bLockRotation;		//var bool _bLockRotation;
+
+	void DirectionStart();
+	bool ProcessParams();
 };

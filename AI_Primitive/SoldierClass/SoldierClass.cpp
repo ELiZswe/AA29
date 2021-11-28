@@ -3,7 +3,7 @@
 
 #include "SoldierClass.h"
 #include "AA29/Object/Actor/Pawn/AGP_Pawn/AGP_Pawn.h"
-#include "AA29/PlayerStart/AGP_PlayerStart/AGP_PlayerStart.h"
+#include "AA29/Object/Actor/NavigationPoint/SmallNavigationPoint/PlayerStart/AGP_PlayerStart/AGP_PlayerStart.h"
 
 
 ASoldierClass::ASoldierClass()

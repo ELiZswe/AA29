@@ -6,7 +6,7 @@
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/AttachW_AK74su_Rifle/AttachW_AK74su_Rifle.h"
 #include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_545mm_30_Mag/Ammo_545mm_30_Mag.h"
 #include "AA29/BaseAmmoRound/AmmoRound_545x39_Bullet.h"
-#include "AA29/Pickup/AGP_WeaponPickup/PickupW_AK74su_Rifle/PickupW_AK74su_Rifle.h"
+#include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/PickupW_AK74su_Rifle/PickupW_AK74su_Rifle.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamage545mm.h"
 #include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/SuppressorMuzzleFlash_1P/SuppressorMuzzleFlash_1P.h"
 

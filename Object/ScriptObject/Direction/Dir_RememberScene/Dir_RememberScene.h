@@ -16,4 +16,9 @@ class AA29_API UDir_RememberScene : public UDirection
 public:
 	UDir_RememberScene();
 
+	UPROPERTY()						int32		SceneIndex;			//var int32 SceneIndex;
+	UPROPERTY()						FName		SceneName;			//var FName SceneName;
+
+	void DirectionStart();
+	bool ProcessParams();
 };

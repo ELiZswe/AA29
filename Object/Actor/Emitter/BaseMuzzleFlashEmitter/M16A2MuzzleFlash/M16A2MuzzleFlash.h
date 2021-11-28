@@ -15,4 +15,6 @@ class AA29_API AM16A2MuzzleFlash : public ABaseMuzzleFlashEmitter
 	GENERATED_BODY()
 public:
 	AM16A2MuzzleFlash();
+
+	void BeginPlay();
 };

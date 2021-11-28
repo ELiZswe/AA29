@@ -7,3 +7,7 @@ AVehicleWeaponAmbientEmitter::AVehicleWeaponAmbientEmitter()
 {
 
 };
+
+void AVehicleWeaponAmbientEmitter::SetEmitterStatus(bool bEnabled)
+{
+}

@@ -6,13 +6,12 @@
 #include "AA29/Object/Actor/Emitter/AA2_Emitter.h"
 #include "fx_exp_generatorspawner.generated.h"
 
-/**
- * 
- */
 UCLASS()
 class AA29_API Afx_exp_generatorspawner : public AAA2_Emitter
 {
 	GENERATED_BODY()
 public:
 	Afx_exp_generatorspawner();
+
+	void Trigger(AActor* Other, APawn* EventInstigator);
 };

@@ -3,7 +3,7 @@
 
 #include "Ammo_Incendiary_1_Gren.h"
 #include "AA29/Projectile/BaseProjectile/BaseExplodingProjectile/Proj_IncendiaryGren/Proj_IncendiaryGren.h"
-#include "AA29/Pickup/Ammo/AGP_AmmoPickup/PickupAmmo_Incendiary_1_Gren.h"
+#include "AA29/Object/Actor/Pickup/Ammo/AGP_AmmoPickup/PickupAmmo_Incendiary_1_Gren.h"
 AAmmo_Incendiary_1_Gren::AAmmo_Incendiary_1_Gren()
 {
 	Damage            = 0;

@@ -2,7 +2,7 @@
 
 
 #include "WEAPON_Javelin.h"
-#include "AA29/Pickup/AGP_WeaponPickup/PickupW_Javelin/PickupW_Javelin.h"
+#include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/PickupW_Javelin/PickupW_Javelin.h"
 #include "AA29/BaseScope/ScopeW_Javelin.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/RocketWeaponAttachment/AttachW_Javelin/AttachW_Javelin.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamageLargeArms.h"

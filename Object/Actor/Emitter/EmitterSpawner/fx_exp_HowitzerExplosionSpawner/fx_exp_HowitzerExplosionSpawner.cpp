@@ -5,5 +5,5 @@
 
 Afx_exp_HowitzerExplosionSpawner::Afx_exp_HowitzerExplosionSpawner()
 {
-
+	//MyEmitterClasses(0) = class'AGP_Effects.fx_exp_HowitzerExplosion';
 }

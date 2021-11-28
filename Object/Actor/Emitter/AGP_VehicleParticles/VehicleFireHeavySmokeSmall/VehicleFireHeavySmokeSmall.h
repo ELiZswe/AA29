@@ -13,5 +13,7 @@ UCLASS()
 class AA29_API AVehicleFireHeavySmokeSmall : public AAGP_VehicleParticles
 {
 	GENERATED_BODY()
-	
+public:
+	AVehicleFireHeavySmokeSmall();
+
 };

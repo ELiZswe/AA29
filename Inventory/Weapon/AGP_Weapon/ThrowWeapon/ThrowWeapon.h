@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "AA29/Inventory/Weapon/AGP_Weapon/AGP_Weapon.h"
-#include "AA29/Pickup/AGP_WeaponPickup/ThrowWeaponPickup/ThrowWeaponPickup.h"
+#include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/ThrowWeaponPickup/ThrowWeaponPickup.h"
 #include "ThrowWeapon.generated.h"
 
 /**

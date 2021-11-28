@@ -8,7 +8,6 @@ Aem_bt_glasspaneB::Aem_bt_glasspaneB()
 
 }
 
-
 void Aem_bt_glasspaneB::Trigger(AActor* Other, APawn* EventInstigator)
 {
 	//Spawn('aux_em_glasspaneB');

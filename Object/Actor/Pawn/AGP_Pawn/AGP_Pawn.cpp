@@ -7,7 +7,7 @@
 #include "GameFramework/PawnMovementComponent.h"
 #include "GameFramework/Controller.h"
 #include "AA29/AA2_WorldSettings.h"
-#include "AA29/Controller/PlayerController/HumanController/HumanController.h"
+#include "AA29/Object/Actor/Controller/PlayerController/HumanController/HumanController.h"
 
 #include "AA29/Inventory/Inventory.h"
 #include "AA29/Inventory/DummyItem/DummyItem.h"
@@ -34,14 +34,12 @@
 #include "Components/SkeletalMeshComponent.h"
 #include "Kismet/KismetMathLibrary.h"
 #include "GameFramework/CharacterMovementComponent.h"
-#include "AA29/Eventlab/Eventlab.h"
+#include "AA29/Object/Actor/EventLab/Eventlab.h"
+#include "AA29/Object/KarmaParamsCollision/KarmaParams/KarmaParamsSkel/KarmaParamsSkel.h"
 
 #include "EngineGlobals.h"
 #include "Engine/Engine.h"
-
-
 #include "Materials/MaterialInstance.h"
-
 
 void AAGP_Pawn::LoadMesh()
 {
@@ -250,15 +248,8 @@ AAGP_Pawn::AAGP_Pawn()
 	Mesh_3P->SetAnimInstanceClass(PreviewBP);
 	*/
 
+	UKarmaParamsSkel* PawnKParams = NewObject<UKarmaParamsSkel>(UKarmaParamsSkel::StaticClass());
 }
-
-
-
-
-
-
-
-
 
 
 // Called when the game starts or when spawned

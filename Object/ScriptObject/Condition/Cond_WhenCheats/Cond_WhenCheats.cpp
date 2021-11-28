@@ -2,7 +2,7 @@
 
 
 #include "AA29/Object/ScriptObject/Condition/Cond_WhenCheats/Cond_WhenCheats.h"
-#include "AA29/Controller/PlayerController/HumanController/HumanController.h"
+#include "AA29/Object/Actor/Controller/PlayerController/HumanController/HumanController.h"
 
 UCond_WhenCheats::UCond_WhenCheats()
 {

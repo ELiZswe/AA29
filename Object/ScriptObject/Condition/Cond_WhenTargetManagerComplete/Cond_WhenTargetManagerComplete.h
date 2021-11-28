@@ -16,4 +16,10 @@ public:
 	UCond_WhenTargetManagerComplete();
 
 	UPROPERTY()										ATargetManager* _TargetManager;					//var AGP_Gameplay.TargetManager _TargetManager;
+
+	void Destroyed();
+	void ConditionStart();
+	void ConditionFinish();
+	bool ProcessParams();
+
 };

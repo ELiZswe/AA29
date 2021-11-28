@@ -4,7 +4,7 @@
 #include "Weapon_SPR_Sniper.h"
 #include "AA29/BaseAmmoRound/AmmoRound_556_Bullet.h"
 #include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_556mm_30_Mag/Ammo_556mm_20_Mag_SPR/Ammo_556mm_20_Mag_SPR.h"
-#include "AA29/Pickup/AGP_WeaponPickup/PickupW_SPR_Sniper/PickupW_SPR_Sniper.h"
+#include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/PickupW_SPR_Sniper/PickupW_SPR_Sniper.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/AttachW_SPR_Sniper/AttachW_SPR_Sniper.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamage556mm_SPR.h"
 #include "AA29/Object/Actor/Emitter/BaseMuzzleFlashEmitter/M16A2MuzzleFlash_1P/M16A2MuzzleFlash_1P.h"

@@ -3,7 +3,7 @@
 
 #include "Ammo_556mm_30_Mag.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamage556mm.h"
-#include "AA29/Pickup/Ammo/AGP_AmmoPickup/PickupAmmo_556mm_30_Mag.h"
+#include "AA29/Object/Actor/Pickup/Ammo/AGP_AmmoPickup/PickupAmmo_556mm_30_Mag.h"
 
 
 

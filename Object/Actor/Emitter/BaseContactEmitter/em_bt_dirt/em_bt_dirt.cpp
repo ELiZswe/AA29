@@ -1,8 +1,8 @@
 // All the original content belonged to the US Army
 
 #include "AA29/Object/Actor/Emitter/BaseContactEmitter/em_bt_dirt/em_bt_dirt.h"
-#include "AA29/Object/ParticleEmitter/SpriteEmitter/SpriteEmitter.h"
-#include "AA29/Object/ParticleEmitter/MeshEmitter/MeshEmitter.h"
+#include "AA29/Object/BaseEmitter/ParticleEmitter/SpriteEmitter/SpriteEmitter.h"
+#include "AA29/Object/BaseEmitter/ParticleEmitter/MeshEmitter/MeshEmitter.h"
 
 Aem_bt_dirt::Aem_bt_dirt()
 {

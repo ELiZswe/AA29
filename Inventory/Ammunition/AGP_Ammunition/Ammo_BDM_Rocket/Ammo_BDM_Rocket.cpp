@@ -3,7 +3,7 @@
 
 #include "Ammo_BDM_Rocket.h"
 #include "AA29/DamageType/AGP_DamageType/ProjectileDamage/ProjectileDamageLargeArms.h"
-#include "AA29/Pickup/AGP_WeaponPickup/RocketWeaponPickup/PickupW_BDM_Rocket/PickupW_BDM_Rocket.h"
+#include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/RocketWeaponPickup/PickupW_BDM_Rocket/PickupW_BDM_Rocket.h"
 #include "AA29/Projectile/BaseProjectile/BaseExplodingProjectile/RocketProjectile/Proj_BDM_Demolition/Proj_BDM_Demolition.h"
 AAmmo_BDM_Rocket::AAmmo_BDM_Rocket()
 {

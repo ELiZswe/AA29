@@ -5,10 +5,11 @@
 
 UAAScoreboard_UnitBox::UAAScoreboard_UnitBox()
 {
-	UAAScoreboard_UnitBoxHeader* aMyHeader = NewObject<UAAScoreboard_UnitBoxHeader>(UAAScoreboard_UnitBoxHeader::StaticClass());
-	Header = aMyHeader;
-	//FireTeamListClass = "AGP_Interface.AAScoreboard_FireTeamList";
+	UAAScoreboard_UnitBoxHeader* MyHeader2 = NewObject<UAAScoreboard_UnitBoxHeader>(UAAScoreboard_UnitBoxHeader::StaticClass());
+	Header = MyHeader2;
+	FireTeamListClass = "AGP_Interface.AAScoreboard_FireTeamList";
 	bScaleItemsToWidth = true;
+
 }
 
 void UAAScoreboard_UnitBox::InitComponent(UGUIController* MyController, UGUIComponent* MyOwner)

@@ -19,4 +19,10 @@ public:
 	UPROPERTY()										bool _bEntry;							//var bool _bEntry;
 	UPROPERTY()										FName _TriggerTag;						//var name _TriggerTag;
 	UPROPERTY()										AHumanController* _HumanController;		//var AGP.HumanController _HumanController;
+
+	void Destroyed();
+	void ConditionStart();
+	void ConditionFinish();
+	bool ProcessParams();
+	void update();
 };

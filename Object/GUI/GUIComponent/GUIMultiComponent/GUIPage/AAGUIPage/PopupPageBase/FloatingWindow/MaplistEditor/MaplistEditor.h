@@ -13,6 +13,7 @@ class UGUIEditBox;
 class UGUIComboBox;
 class UGUISectionBackground;
 class UGUITreeList;
+class UGUIListBase;
 
 UCLASS()
 class AA29_API UMaplistEditor : public UFloatingWindow

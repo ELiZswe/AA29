@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "AA29/AA29.h"
-#include "AA29/Pickup/Pickup.h"
+#include "AA29/Object/Actor/Pickup/Pickup.h"
 #include "GrenadeHelper.generated.h"
 
 

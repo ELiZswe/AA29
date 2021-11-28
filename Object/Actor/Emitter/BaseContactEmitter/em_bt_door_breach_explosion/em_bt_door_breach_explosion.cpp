@@ -1,7 +1,7 @@
 // All the original content belonged to the US Army
 
 #include "AA29/Object/Actor/Emitter/BaseContactEmitter/em_bt_door_breach_explosion/em_bt_door_breach_explosion.h"
-#include "AA29/Object/ParticleEmitter/SpriteEmitter/SpriteEmitter.h"
+#include "AA29/Object/BaseEmitter/ParticleEmitter/SpriteEmitter/SpriteEmitter.h"
 
 Aem_bt_door_breach_explosion::Aem_bt_door_breach_explosion()
 {

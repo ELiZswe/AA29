@@ -1,7 +1,7 @@
 // All the original content belonged to the US Army
 
 #include "AA29/Object/Actor/Emitter/BaseContactEmitter/em_bt_dirtsquib/em_bt_dirtsquib.h"
-#include "AA29/Object/ParticleEmitter/SpriteEmitter/SpriteEmitter.h"
+#include "AA29/Object/BaseEmitter/ParticleEmitter/SpriteEmitter/SpriteEmitter.h"
 
 Aem_bt_dirtsquib::Aem_bt_dirtsquib()
 {
@@ -13,7 +13,7 @@ Aem_bt_dirtsquib::Aem_bt_dirtsquib()
 	SpriteEmitter0->AutomaticInitialSpawning = false;
 	SpriteEmitter0->Acceleration = FVector(0, 0, -40);
 	SpriteEmitter0->MaxParticles = 1;
-	SpriteEmitter0->AutoResetTimeRange = (Min = 1, Max = 1);
+	SpriteEmitter0->AutoResetTimeRange = FRange({ 1, 1 });
 	SpriteEmitter0->StartLocationOffset = FVector(0, 0, 10);
 	//SpriteEmitter0->StartSizeRange=X=(Min=-50, Max=-50)|Y=(Min=0, Max=0)|Z=(Min=0, Max=0);
 	SpriteEmitter0->ParticlesPerSecond = 1;
@@ -32,7 +32,7 @@ Aem_bt_dirtsquib::Aem_bt_dirtsquib()
 	SpriteEmitter1->AutomaticInitialSpawning = false;
 	SpriteEmitter1->Acceleration = FVector(0, 0, -40);
 	SpriteEmitter1->MaxParticles = 1;
-	SpriteEmitter1->AutoResetTimeRange = (Min = 1, Max = 1);
+	SpriteEmitter1->AutoResetTimeRange = FRange({ 1, 1 });
 	SpriteEmitter1->StartLocationOffset = FVector(0, 0, 13);
 	//SpriteEmitter1->StartSizeRange=X=(Min=-50, Max=-50)|Y=(Min=0, Max=0)|Z=(Min=0, Max=0);
 	SpriteEmitter1->ParticlesPerSecond = 1;
@@ -54,7 +54,7 @@ Aem_bt_dirtsquib::Aem_bt_dirtsquib()
 	SpriteEmitter2->UniformSize = true;
 	SpriteEmitter2->AutomaticInitialSpawning = false;
 	SpriteEmitter2->MaxParticles = 1;
-	SpriteEmitter2->AutoResetTimeRange = (Min = 1, Max = 1);
+	SpriteEmitter2->AutoResetTimeRange = FRange({ 1, 1 });
 	//SpriteEmitter2->SizeScale[0]=FParticleTimeScale({0.25,2});
 	//SpriteEmitter2->SizeScale[1]=FParticleTimeScale({-0.7,0});
 	//SpriteEmitter2->StartSizeRange=X=(Min=20, Max=10)|Y=(Min=20, Max=10)|Z=(Min=20, Max=20);

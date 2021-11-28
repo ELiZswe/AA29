@@ -6,7 +6,7 @@
 #include "GameFramework/Actor.h"
 
 #include "AA29/AA29.h"
-#include "AA29/NavigationPoint/NavigationPoint.h"
+#include "AA29/Object/Actor/NavigationPoint/NavigationPoint.h"
 #include "Mover.generated.h"
 
 class UaDamageType;

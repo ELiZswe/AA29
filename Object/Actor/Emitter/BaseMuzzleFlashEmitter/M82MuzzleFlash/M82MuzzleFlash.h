@@ -15,4 +15,6 @@ class AA29_API AM82MuzzleFlash : public ABaseMuzzleFlashEmitter
 	GENERATED_BODY()
 public:
 	AM82MuzzleFlash();
+
+	void BeginPlay();
 };

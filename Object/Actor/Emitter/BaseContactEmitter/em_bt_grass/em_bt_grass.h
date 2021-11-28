@@ -13,5 +13,8 @@ UCLASS()
 class AA29_API Aem_bt_grass : public ABaseContactEmitter
 {
 	GENERATED_BODY()
-	
+public:
+	Aem_bt_grass();
+
+	void BeginPlay();
 };

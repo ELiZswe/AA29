@@ -1,16 +1,16 @@
 // All the original content belonged to the US Army
 
 #include "AGP_Character.h"
-#include "AA29/Controller/PlayerController/HumanController/HumanController.h"
-#include "AA29/Controller/AIController/aAIController.h"
-#include "AA29/Controller/AIController/ScriptedController/DSController/DSController.h"
-#include "AA29/Controller/AIController/NPCBaseController/NPCBaseController.h"
+#include "AA29/Object/Actor/Controller/PlayerController/HumanController/HumanController.h"
+#include "AA29/Object/Actor/Controller/AIController/aAIController.h"
+#include "AA29/Object/Actor/Controller/AIController/ScriptedController/DSController/DSController.h"
+#include "AA29/Object/Actor/Controller/AIController/NPCBaseController/NPCBaseController.h"
 
 #include "AA29/AA2_WorldSettings.h"
 #include "AA29/InventoryAttachment/ItemAttachment/ItemAttachment.h"
 #include "AA29/InventoryAttachment/InventoryAttachment.h"
 #include "AA29/AI_Primitive/SoldierClass/ClassGuerrillaBase/ClassGuerrillaBase.h"
-#include "AA29/PlayerStart/AGP_PlayerStart/AGP_PlayerStart.h"
+#include "AA29/Object/Actor/NavigationPoint/SmallNavigationPoint/PlayerStart/AGP_PlayerStart/AGP_PlayerStart.h"
 
 #include "AA29/Inventory/Inventory.h"
 #include "AA29/Inventory/Weapon/Weapon.h"
@@ -33,9 +33,9 @@
 #include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_545mm_30_Mag/Ammo_545mm_30_Mag.h"
 
 
-#include "AA29/PlayerStart/AGP_PlayerStart/RiflemanPS/RiflemanPS.h"
-#include "AA29/PlayerStart/AGP_PlayerStart/AutomaticRiflemanPS/AutomaticRiflemanPS.h"
-#include "AA29/PlayerStart/AGP_PlayerStart/GuerrillaAK74suPS/GuerrillaAK74suPS.h"
+#include "AA29/Object/Actor/NavigationPoint/SmallNavigationPoint/PlayerStart/AGP_PlayerStart/ClassRiflemanPS/ClassRiflemanPS.h"
+#include "AA29/Object/Actor/NavigationPoint/SmallNavigationPoint/PlayerStart/AGP_PlayerStart/ClassAutomaticRiflemanPS/ClassAutomaticRiflemanPS.h"
+#include "AA29/Object/Actor/NavigationPoint/SmallNavigationPoint/PlayerStart/AGP_PlayerStart/ClassGuerrillaAK74suPS/ClassGuerrillaAK74suPS.h"
 
 #include "AA29/DecoMesh/DecoMesh.h"
 #include "AA29/AA2_PlayerState.h"
@@ -1426,7 +1426,7 @@ void AAGP_Character::PossessedBy(AController* C)
 	AAA2_PlayerState* PState = Cast<AAA2_PlayerState>(GetPlayerState());
 	if (PState)
 	{
-		if (PS->IsA(AAutomaticRiflemanPS::StaticClass()))
+		if (PS->IsA(AClassAutomaticRiflemanPS::StaticClass()))
 		{
 			this_inventory =
 			{
@@ -1449,7 +1449,7 @@ void AAGP_Character::PossessedBy(AController* C)
 			TSubclassOf <class ASoldierClass>  SC = Cast<AAGP_PlayerStart>(PS)->SpawnClass;
 			Client_Set_Weapon(SC);
 		}
-		if (PS->IsA(ARiflemanPS::StaticClass()))
+		if (PS->IsA(AClassRiflemanPS::StaticClass()))
 		{
 			this_inventory =
 			{
@@ -1481,7 +1481,7 @@ void AAGP_Character::PossessedBy(AController* C)
 			TSubclassOf <class ASoldierClass>  SC = Cast<AAGP_PlayerStart>(PS)->SpawnClass;
 			Client_Set_Weapon(SC);
 		}
-		if (PS->IsA(AGuerrillaAK74suPS::StaticClass()))
+		if (PS->IsA(AClassGuerrillaAK74suPS::StaticClass()))
 		{
 			this_inventory =
 			{
@@ -2831,7 +2831,7 @@ void AAGP_Character::AddDefaultInventory()
 		FActorSpawnParameters SpawnParams;
 		SpawnParams.Owner = this;
 		SpawnParams.Instigator = Instigator;
-		AActor* const SpawningObject = World->SpawnActor<AActor>(AAutomaticRiflemanPS::StaticClass(), myLocation, FRotator::ZeroRotator, SpawnParams);
+		AActor* const SpawningObject = World->SpawnActor<AActor>(AClassAutomaticRiflemanPS::StaticClass(), myLocation, FRotator::ZeroRotator, SpawnParams);
 
 	}
 	*/

@@ -2,7 +2,7 @@
 
 
 #include "Weapon_MosinNagant_Sniper.h"
-#include "AA29/Pickup/AGP_WeaponPickup/PickupW_MosinNagant_Sniper/PickupW_MosinNagant_Sniper.h"
+#include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/PickupW_MosinNagant_Sniper/PickupW_MosinNagant_Sniper.h"
 #include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/AttachW_MosinNagant_Sniper/AttachW_MosinNagant_Sniper.h"
 #include "AA29/BaseScope/ScopeW_MosinNagant_Sniper.h"
 
