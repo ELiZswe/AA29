@@ -46,6 +46,10 @@
 
 class UCondition;
 class UDirection;
+class UBillboardComponent;
+class USceneComponent;
+class UScriptEvent;
+class UScriptScene;
 
 UCLASS()
 class AA29_API AScreenplay : public AActor
@@ -56,10 +60,8 @@ public:
 	// Sets default values for this actor's properties
 	AScreenplay();
 
-
-
-	//UPROPERTY(EditAnywhere)							TArray<ScriptEvent> GlobalEvents;				//var() array<ScriptEvent> GlobalEvents;			// may not need this
-	//UPROPERTY(EditAnywhere)							TArray<ScriptScene> Scenes;						//var() array<ScriptScene> Scenes;
+	UPROPERTY(EditAnywhere)							TArray<UScriptEvent*> GlobalEvents;				//var() array<ScriptEvent> GlobalEvents;			// may not need this
+	UPROPERTY(EditAnywhere)							TArray<UScriptScene*> Scenes;						//var() array<ScriptScene> Scenes;
 	UPROPERTY()										bool _bGlobalEvents;							//var bool _bGlobalEvents;							// bool to state that we are in the process of creating a global event
 	UPROPERTY()										bool _bGlobalEventsDone;						//var bool _bGlobalEventsDone;						// bool to make sure we dont create global events in more than one place
 	UPROPERTY()										bool _bEvent;									//var bool _bEvent;									// bool to state that we are in the process of creating an event
@@ -126,9 +128,6 @@ public:
 	AController* GetControllerList();
 	//void DisplayDebug(UCanvas* Canvas, float &YL, float &YPos);
 	void NotifyCheated();
-
-
-
 
 
 protected:

@@ -188,7 +188,7 @@ void ABaseShellEmitter::GetCollisionSound(UParticleEmitter* E, int32 PIndex, UMa
 
 FRangeVector ABaseShellEmitter::GetRVFromV(FVector V)
 {
-	FRangeVector RV;
+	FRangeVector RV = FRangeVector({FRange({ 0, 0 }), FRange({ 0, 0 }), FRange({ 0, 0 })});
 	/*
 	RV.X.Min = V.X;
 	RV.X.Max = V.X;

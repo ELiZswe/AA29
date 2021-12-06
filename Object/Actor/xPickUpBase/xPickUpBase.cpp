@@ -8,8 +8,6 @@ AxPickUpBase::AxPickUpBase()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
-
 	SpawnHeight = 50;
 	//DrawType =  2;
 	//CullDistance = 7000;
@@ -83,7 +81,7 @@ void AxPickUpBase::CheckForErrors()
 		Return CheckForErrors();
 	*/
 }
-int32 AxPickUpBase::GetInventoryGroup()
+uint8 AxPickUpBase::GetInventoryGroup()
 {
 	return 0;
 }

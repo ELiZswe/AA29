@@ -7,7 +7,76 @@ AAGP_Bot::AAGP_Bot()
 {
 
 }
+/*
+State Idle
+{
+}
 
+State Walking extends Idle
+{
+	Event BeginState()
+	{
+		if (DestinationNode == None)
+		{
+			GotoState('Idle');
+		}
+		DebugLog(DEBUG_AI,"AGP_BOT:Walking:BeginState():DestinationNode =" $ string(DestinationNode));
+		GotoState(GetStateName(),'DestNode');
+	}
+	Function Arrived(Actor Destination)
+	{
+		Super::Arrived(Destination);
+		DebugLog(DEBUG_AI,"AGP_BOT:Walking:Arrived():Destination=" $ string(Destination));
+		ResumeState();
+	}
+Begin:
+	if (DestinationNode != None)
+	{
+		if (actorReachable(DestinationNode))
+		{
+			NextPath=DestinationNode;
+		}
+		else
+		{
+			NextPath=NavigationPoint(FindPathToward(DestinationNode));
+		}
+		MoveToward(NextPath);
+		if (NextPath == DestinationNode)
+		{
+			Arrived(DestinationNode);
+		}
+	}
+	Sleep(0);
+	JL'DestNode'
+;
+}
+
+State Patrolling extends Walking
+{
+	Event BeginState()
+	{
+		if ((DestinationNode == None) && (PatrolPath != None))
+		{
+			DestinationNode=PatrolPath.GetNode(Location,Pawn);
+		}
+		DebugLog(DEBUG_AI,"AGP_BOT:Patrolling:BeginState():DestinationNode =" $ string(DestinationNode));
+		Super::BeginState();
+	}
+	Function Arrived(Actor Destination)
+	{
+		local NavigationPoint Dest;
+		Super::Arrived(Destination);
+		DebugLog(DEBUG_AI,"AGP_BOT:Patrolling:Arrived():Destination=" $ string(Destination));
+		Dest=NavigationPoint(Destination);
+		if ((Dest != None) && (PatrolPath != None))
+		{
+			PatrolPath.Arrived(Dest,Pawn);
+			DestinationNode=PatrolPath.GetNextNode(Dest,Pawn);
+			DebugLog(DEBUG_AI,"AGP_BOT:Patrolling:Arrived():NextDestination=" $ string(DestinationNode));
+		}
+	}
+}
+*/
 
 void AAGP_Bot::Arrived(AActor* Destination)
 {
@@ -73,7 +142,7 @@ void AAGP_Bot::Think()
 	}
 	*/
 }
-void AAGP_Bot::AddThought(AAI_Thought* Thought)
+void AAGP_Bot::AddThought(UAI_Thought* Thought)
 {
 	/*
 	local AI_Thought Next;

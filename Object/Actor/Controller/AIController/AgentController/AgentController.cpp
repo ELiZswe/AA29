@@ -2534,23 +2534,20 @@ void AAgentController::FireWeapon(bool bSuppressiveFire)
 		}
 		*/
 }
-/*
+
 void AAgentController::registerNotification(AAction* new_action)
 {
-		ActiveAction=new_action;
-		actionFailed=false;
+	ActiveAction=new_action;
+	actionFailed=false;
 }
-*/
 
 void AAgentController::NotifyComplete()
 {
-	/*
-		if (ActiveAction != None)
-		{
-			ActiveAction.NotifyComplete(actionFailed);
-			ActiveAction=nullptr;
-		}
-		*/
+	if (ActiveAction != nullptr)
+	{
+		//ActiveAction.NotifyComplete(actionFailed);
+		ActiveAction=nullptr;
+	}
 }
 bool AAgentController::HandlePickupQuery(APickup* pick)
 {
@@ -2678,18 +2675,18 @@ bool AAgentController::NPC_isDistanceDetected(float fLen, APawn* p)
 void AAgentController::NPC_UpdateOldVisionDistanceChecked()
 {
 	/*
-		if (FRand() < fNPC_Experience)
+	if (FRand() < fNPC_Experience)
+	{
+		if (fNPC_OldVisionDistanceChecked > 0)
 		{
-			if (fNPC_OldVisionDistanceChecked > 0)
-			{
-				fNPC_OldVisionDistanceChecked -= FRand() * fNPC_Experience;
-			}
-			else
-			{
-				fNPC_OldVisionDistanceChecked=0;
-			}
+			fNPC_OldVisionDistanceChecked -= FRand() * fNPC_Experience;
 		}
-		*/
+		else
+		{
+			fNPC_OldVisionDistanceChecked=0;
+		}
+	}
+	*/
 }
 void AAgentController::NPC_AlertYourBuddies(APawn* p)
 {

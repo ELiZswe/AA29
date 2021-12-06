@@ -237,23 +237,22 @@ void AaAIController::GetOrders()
 		Return 'None';
 	*/
 }
-/*
 void AaAIController::PrepareForMove(ANavigationPoint* Goal, AReachSpec* Path)
 {
 }
-*/
-/*
 void AaAIController::WaitForMover(AMover* M)
 {
-		if (Enemy != None && GetWorld()->GetTimeSeconds() - LastSeenTime < 3)
-		{
-			Focus=Enemy;
-		}
-		PendingMover=M;
-		bPreparingMove=True;
-		Pawn.Acceleration=vect(0 0 0);
+	/*
+	if (Enemy != None && GetWorld()->GetTimeSeconds() - LastSeenTime < 3)
+	{
+		Focus=Enemy;
+	}
+	PendingMover=M;
+	bPreparingMove=True;
+	Pawn.Acceleration=vect(0 0 0);
+	*/
 }
-*/
+
 void AaAIController::MoverFinished()
 {
 	/*
@@ -264,27 +263,27 @@ void AaAIController::MoverFinished()
 		}
 	*/
 }
-/*
 void AaAIController::UnderLift(AMover* M)
 {
-		local NavigationPoint N;
-		bPreparingMove=False;
-		PendingMover=None;
-		if (MoveTarget == None || MoveTarget.IsA('LiftCenter'))
+	/*
+	local NavigationPoint N;
+	bPreparingMove=False;
+	PendingMover=None;
+	if (MoveTarget == None || MoveTarget.IsA('LiftCenter'))
+	{
+		N=Level.NavigationPointList;
+		if (N != None)
 		{
-			N=Level.NavigationPointList;
-			if (N != None)
+			if (N.IsA('LiftExit') && LiftExit(N).LiftTag == M.Tag && actorReachable(N))
 			{
-				if (N.IsA('LiftExit') && LiftExit(N).LiftTag == M.Tag && actorReachable(N))
-				{
-					MoveTarget=N;
-					Return;
-				}
-				N=N.nextNavigationPoint;
+				MoveTarget=N;
+				Return;
 			}
+			N=N.nextNavigationPoint;
 		}
+	}
+	*/
 }
-*/
 
 bool AaAIController::PriorityObjective()
 {

@@ -31,6 +31,37 @@ class UGUIButton;
 class AAmmunition;
 class AProjectile;
 
+USTRUCT(BlueprintType)
+struct FAA2_ProcMeshVertex
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ProcMeshVertex")				FVector				Position;		//var Vector Position;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ProcMeshVertex")				FVector				Normal;			//var Vector Normal;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ProcMeshVertex")				FColor				Color;			//var Color Color;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ProcMeshVertex")				float				U;				//var float U;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ProcMeshVertex")				float				V;				//var float V;
+};
+
+
+USTRUCT(BlueprintType)
+struct FConvSpeech
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ConvSpeech")					FString				sMemberName;			//var FString sMemberName;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ConvSpeech")					FName				nameLipSynchAudio;		//var FName nameLipSynchAudio;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ConvSpeech")					FName				nameAnimation;			//var FName nameAnimation;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ConvSpeech")					USoundBase*			sndNonLSAudio;			//var Sound sndNonLSAudio;
+};
+
+USTRUCT(BlueprintType)
+struct FAnimInfo2
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FireProperties")					FName				SeqName;			//var FName SeqName;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FireProperties")					float				AnimFrame;			//var float AnimFrame;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FireProperties")					float				AnimRate;			//var float AnimRate;
+};
+
 
 USTRUCT(BlueprintType)
 struct FFireProperties
@@ -1509,8 +1540,8 @@ struct FLSAnim
 	GENERATED_BODY()
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PrevNext")									FName Anim;											//var name Anim;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PrevNext")									USoundBase* Sound;									//var Sound Sound;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PrevNext")									FName GestureAnim;									//var name GestureAnim;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PrevNext")									float GestureDelay;									//var float GestureDelay;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PrevNext")									TArray<FName> GestureAnim;							//var name GestureAnim;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PrevNext")									TArray<float> GestureDelay;							//var float GestureDelay;
 };
 USTRUCT(BlueprintType)
 struct FGameAnim

@@ -11,8 +11,8 @@
  */
 class AThrowWeaponPickup;
 class ANavigationPoint;
-//class AGoal_Interface;
-//class AAction;
+class AGoal_Interface;
+class AAction;
 
 UCLASS()
 class AA29_API AAgentController : public AaAIController
@@ -115,10 +115,10 @@ public:
 	UPROPERTY()										float fWait;							//var float fWait;
 	UPROPERTY()										EAction CurrentOrder;					//var EAction CurrentOrder;
 	UPROPERTY()										int32 Check;							//var int Check;
-	//UPROPERTY()										AGoal_Interface* my_goal_decider;		//var Goal_Interface my_goal_decider;
+	UPROPERTY()										AGoal_Interface* my_goal_decider;		//var Goal_Interface my_goal_decider;
 	UPROPERTY()										bool actionFailed;						//var bool actionFailed;
 	UPROPERTY()										float actionStarted;					//var float actionStarted;
-	//UPROPERTY()										AAction* ActiveAction;					//var Action ActiveAction;
+	UPROPERTY()										AAction* ActiveAction;					//var Action ActiveAction;
 	UPROPERTY()										bool ActiveGoal;						//var Goal ActiveGoal;
 	UPROPERTY()										EAction CurrentAction;					//var EAction CurrentAction;
 	UPROPERTY()										ANavigationPoint* NCoverPlace;			//var NavigationPoint NCoverPlace;
@@ -197,7 +197,7 @@ public:
 	bool CheckIfShouldCrouch(FVector StartPosition, FVector TargetPosition, float Probability);
 	bool CheckIfShouldProne(FVector StartPosition, FVector TargetPosition, float Probability);
 	void FireWeapon(bool bSuppressiveFire);
-	//void registerNotification(AAction* new_action);
+	void registerNotification(AAction* new_action);
 	void NotifyComplete();
 	bool HandlePickupQuery(APickup* pick);
 	bool NPC_isDistanceDetected(float fLen, APawn* p);
@@ -229,6 +229,4 @@ public:
 	void infront(FVector vec, APawn* Who);
 	void NPC_PilotSay(int32 Snd, bool Force);
 	void NPC_Say(int32 theSound, bool shout, bool forceplay, bool bFriend);
-
-
 };

@@ -1,7 +1,7 @@
 // All the original content belonged to the US Army
 
-
 #include "AA29/Object/Actor/Patrol/Patrol.h"
+#include "AA29/Object/Actor/Controller/AIController/ScriptedController/Bot/AGP_Bot/AGP_Bot.h"
 
 // Sets default values
 APatrol::APatrol()
@@ -26,9 +26,9 @@ void APatrol::Tick(float DeltaTime)
 
 void APatrol::PostBeginPlay()
 {
-	/*
 	int32 i = 0;
-	local AGP_Bot Bot;
+	AAGP_Bot* Bot=nullptr;
+	/*
 	Log("Patrol:PostBeginPlay()");
 	Log("Patrol:PostBeginPlay():StartPatrollers.Length=" $ string(StartPatrollers.Length));
 	for (i = 0; i < StartPatrollers.Length; i++)
@@ -59,8 +59,8 @@ ANavigationPoint* APatrol::GetNode(FVector Location, APawn* Bot)
 
 void APatrol::Arrived(ANavigationPoint* Destination, APawn* Bot)
 {
+	AAGP_Bot* Controller = nullptr;
 	/*
-	local AGP_Bot Controller;
 	DebugLog(DEBUG_AI, "Patrol:Arrived()");
 	Controller = AGP_Bot(Bot.Controller);
 	if (Controller != None)

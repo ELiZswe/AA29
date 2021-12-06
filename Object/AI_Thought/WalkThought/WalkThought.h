@@ -18,5 +18,5 @@ public:
 
 	UPROPERTY()											ANavigationPoint* Destination;									//var() NavigationPoint Destination;
 
-	void Preformed(AAGP_Bot* Bot);
+	bool Preformed(AAGP_Bot* Bot);
 };

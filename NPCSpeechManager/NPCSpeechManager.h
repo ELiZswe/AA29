@@ -6,6 +6,9 @@
 #include "GameFramework/Actor.h"
 #include "NPCSpeechManager.generated.h"
 
+class UBillboardComponent;
+class USceneComponent;
+
 UCLASS()
 class AA29_API ANPCSpeechManager : public AActor
 {

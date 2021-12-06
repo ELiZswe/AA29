@@ -13,5 +13,6 @@ UCLASS()
 class AA29_API AStudentController : public AHumanController
 {
 	GENERATED_BODY()
-	
+public:
+	AStudentController();
 };

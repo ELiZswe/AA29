@@ -9,11 +9,13 @@ UAGP_UI_PBVerification::UAGP_UI_PBVerification()
 }
 
 //native Function VerifyPBInstance();
-void UAGP_UI_PBVerification::VerifyPBInstance()
+bool UAGP_UI_PBVerification::VerifyPBInstance()
 {
+	return true;    //FAKE   /ELiZ
 }
 
 //native Function MPOSCheck();
-void UAGP_UI_PBVerification::MPOSCheck()
+bool UAGP_UI_PBVerification::MPOSCheck()
 {
+	return true;    //FAKE   /ELiZ
 }

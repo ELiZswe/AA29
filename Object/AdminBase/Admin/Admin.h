@@ -6,9 +6,6 @@
 #include "AA29/Object/AdminBase/AdminBase.h"
 #include "Admin.generated.h"
 
-/**
- * 
- */
 UCLASS()
 class AA29_API UAdmin : public UAdminBase
 {
@@ -18,5 +15,4 @@ public:
 
 	void DoLogin(FString UserName, FString Password);
 	void DoLogout();
-
 };

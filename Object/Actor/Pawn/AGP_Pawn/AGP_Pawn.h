@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "AA29/MyStructs.h"
-#include "AA29/AAGamePlay/DebugSphere/DebugSphere.h"
+#include "AA29/Object/Actor/AAGameplay/DebugSphere/DebugSphere.h"
 #include "AA29/AI_Primitive/SoldierClass/SoldierClass.h"
 #include "AA29/AI_Primitive/SoldierRole/SoldierRole.h"
 #include "AA29/Inventory/Weapon/AGP_Weapon/AGP_Weapon.h"

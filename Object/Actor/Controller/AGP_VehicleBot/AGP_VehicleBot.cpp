@@ -46,19 +46,17 @@ State Driving
 }
 */
 
-/*
-void AAGP_VehicleBot::SetCurrentNode(AGP_VehicleNode newNode)
-{
-	//CurIntermediate = newNode;
-}
-*/
 
-/*
-void AAGP_VehicleBot::SetDestination(AGP_VehicleNode newNode)
+void AAGP_VehicleBot::SetCurrentNode(AAGP_VehicleNode* newNode)
 {
-	//CurDestination = newNode;
+	CurIntermediate = newNode;
 }
-*/
+
+void AAGP_VehicleBot::SetDestination(AAGP_VehicleNode* newNode)
+{
+	CurDestination = newNode;
+}
+
 void AAGP_VehicleBot::Trigger(AActor* Other, APawn* EventInstigator)
 {
 	//GotoState('Driving');

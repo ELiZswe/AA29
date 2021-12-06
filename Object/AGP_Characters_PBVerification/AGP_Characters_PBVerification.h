@@ -6,9 +6,6 @@
 #include "UObject/NoExportTypes.h"
 #include "AGP_Characters_PBVerification.generated.h"
 
-/**
- * 
- */
 UCLASS()
 class AA29_API UAGP_Characters_PBVerification : public UObject
 {
@@ -16,7 +13,6 @@ class AA29_API UAGP_Characters_PBVerification : public UObject
 public:
 	UAGP_Characters_PBVerification();
 
-	void VerifyPBInstance();
-	void MPOSCheck();
-
+	bool VerifyPBInstance();
+	bool MPOSCheck();
 };

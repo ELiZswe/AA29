@@ -7,6 +7,9 @@
 #include "GameFramework/Actor.h"
 #include "xEmitter.generated.h"
 
+class UBillboardComponent;
+class USceneComponent;
+
 UCLASS()
 class AA29_API AxEmitter : public AActor
 {
@@ -23,7 +26,6 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
 
 	UPROPERTY()											int32 mHeadIndex;								//var transient int mHeadIndex;
 	UPROPERTY()											bool bCallPreSpawn;								//var bool bCallPreSpawn;
@@ -121,8 +123,6 @@ public:
 	UPROPERTY()										USceneComponent* Root;
 	UPROPERTY()										UBillboardComponent* SpriteComponent;
 	UPROPERTY(EditAnywhere)							TArray<UMaterialInstance*> OverrideMaterials;
-
-
 
 	void CollisionSound();
 	void PreSpawned();

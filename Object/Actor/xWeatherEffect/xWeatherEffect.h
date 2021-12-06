@@ -19,7 +19,7 @@ public:
 
 	UPROPERTY()										TArray<AVolume*> pclBlockers;					//var transient array<Volume> pclBlockers;
 	UPROPERTY()										TArray<FWeatherPcl> pcl;						//var transient array<WeatherPcl> pcl;
-	UPROPERTY(EditAnywhere)							bool bForceAffected;							//var(Force) bool bForceAffected;
+	UPROPERTY(EditAnywhere, Category = "Force")		bool bForceAffected;							//var(Force) bool bForceAffected;
 	UPROPERTY(EditAnywhere)							FRange EyeSizeClamp;							//var() Object.Range EyeSizeClamp;
 	UPROPERTY(EditAnywhere)							FRange Size;									//var() Object.Range Size;
 	UPROPERTY(EditAnywhere)							FRange Life;									//var() Object.Range Life;
@@ -49,7 +49,6 @@ public:
 	UPROPERTY()										UTexture2D* Texture;
 	UPROPERTY()										USceneComponent* Root;
 	UPROPERTY()										UBillboardComponent* SpriteComponent;
-
 
 protected:
 	// Called when the game starts or when spawned

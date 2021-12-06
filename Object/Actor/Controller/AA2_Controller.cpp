@@ -23,7 +23,7 @@ AAA2_Controller::AAA2_Controller()
 	bOnlyRelevantToOwner = true;
 	//RemoteRole = ROLE_None;
 	//RotationRate = FRotator(3072, 30000, 2048);
-	bHiddenEd = true;
+	//bHiddenEd = true;
 }
 
 //const LATENT_MOVETOWARD = 503;
@@ -162,7 +162,7 @@ void AAA2_Controller::MoveTo(FVector NewDestination, AActor* ViewFocus, bool bSh
 
 }
 
-//native(502) final Latent Function MoveToward(Actor NewTarget, Actor ViewFocus, float DestinationOffset, bool bUseStrafing, bool bShouldWalk);
+//native(502) final Latent Function MoveToward(AActor* NewTarget, Actor ViewFocus, float DestinationOffset, bool bUseStrafing, bool bShouldWalk);
 void AAA2_Controller::MoveToward(AActor* NewTarget, AActor* ViewFocus, float DestinationOffset, bool bUseStrafing, bool bShouldWalk)
 {
 
@@ -175,7 +175,7 @@ void AAA2_Controller::FinishRotation()
 }
 
 /*
-//native(514) final Function bool LineOfSightTo(Actor Other);
+//native(514) final Function bool LineOfSightTo(AActor* Other);
 bool AAA2_Controller::LineOfSightTo(AActor* Other)
 {
 	return false;     //FAKE   /EliZ
@@ -194,7 +194,7 @@ AActor* AAA2_Controller::FindPathTo(FVector aPoint)
 	return nullptr;     //FAKE   /EliZ
 }
 
-//native(517) final Function Actor FindPathToward(Actor anActor, bool bWeightDetours);
+//native(517) final Function Actor FindPathToward(AActor* anActor, bool bWeightDetours);
 AActor* AAA2_Controller::FindPathToward(AActor* anActor, bool bWeightDetours)
 {
 	return nullptr;     //FAKE   /EliZ
@@ -230,7 +230,7 @@ bool AAA2_Controller::pointReachable(FVector aPoint)
 	return false;     //FAKE   /EliZ
 }
 
-//native(520) final Function bool actorReachable(Actor anActor);
+//native(520) final Function bool actorReachable(AActor* anActor);
 bool AAA2_Controller::actorReachable(AActor* anActor)
 {
 	return false;     //FAKE   /EliZ
@@ -301,7 +301,7 @@ void AAA2_Controller::EndClimbLadder()
 
 }
 
-//native final Function bool CanMakePathTo(Actor A);
+//native final Function bool CanMakePathTo(AActor* A);
 bool AAA2_Controller::CanMakePathTo(AActor* A)
 {
 	return false;     //FAKE   /EliZ

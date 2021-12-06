@@ -9,11 +9,13 @@ UAGP_Armory_PBVerification::UAGP_Armory_PBVerification()
 }
 
 //native Function VerifyPBInstance();
-void UAGP_Armory_PBVerification::VerifyPBInstance()
+bool UAGP_Armory_PBVerification::VerifyPBInstance()
 {
+	return true;    //FAKE   /ELiZ
 }
 
 //native Function MPOSCheck();
-void UAGP_Armory_PBVerification::MPOSCheck()
+bool UAGP_Armory_PBVerification::MPOSCheck()
 {
+	return true;    //FAKE   /ELiZ
 }

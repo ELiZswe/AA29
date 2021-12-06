@@ -7,6 +7,8 @@
 #include "SVehicleFactory.generated.h"
 
 class ANavigationPoint;
+class USceneComponent;
+class UBillboardComponent;
 
 UCLASS()
 class AA29_API ASVehicleFactory : public AActor

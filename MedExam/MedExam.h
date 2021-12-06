@@ -8,6 +8,8 @@
 #include "MedExam.generated.h"
 
 class AExamAnswer;
+class UBillboardComponent;
+class USceneComponent;
 
 UCLASS()
 class AA29_API AMedExam : public AActor

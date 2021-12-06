@@ -1,6 +1,5 @@
 // All the original content belonged to the US Army
 
-
 #include "AA29/Object/AdminBase/AdminBase.h"
 
 UAdminBase::UAdminBase()
@@ -66,33 +65,35 @@ void UAdminBase::GoToNextMap()
 }
 void UAdminBase::ShowCurrentMapList()
 {
+	int32 i = 0;
+	int32 C = 0;
+	TArray<FString> Ar = {};
 	/*
-	local int i;
-	local int C;
-	local array<String> Ar;
 	i = Outer.MapHandler.GetGameIndex(Outer.Level.Game.Class);
 	C = Outer.MapHandler.GetActiveList(i);
 	Ar = Outer.MapHandler.GetCacheMapList(Outer.Level.Game.Acronym);
 	SendComplexMsg(Ar, Msg_AllGameMaps @ Outer.MapHandler.GetMapListTitle(i, C));
 	*/
 }
-void UAdminBase::GetMapListNames(FString aGameType)
+TArray<FString> UAdminBase::GetMapListNames(FString aGameType)
 {
+	int32 i = 0;
+	TArray<FString> Ar = {};
 	/*
 	local int i;
 	local array<String> Ar;
 	i = Outer.MapHandler.GetGameIndex(GameType);
 	Ar = Outer.MapHandler.GetMapListNames(i);
-	Return Ar;
 	*/
+	return Ar;
 }
 void UAdminBase::MaplistCommand(FString Cmd, FString Extra)
 {
+	TArray<FString> Values = {};
+	FString str = "";
+	int32 i = 0;
+	int32 C = 0;
 	/*
-	local array<String> Values;
-	local string str;
-	local int i;
-	local int C;
 	if (CanPerform("Ml"))
 	{
 		Cmd = Caps(Cmd);
@@ -175,7 +176,7 @@ void UAdminBase::RestartCurrentMap()
 void UAdminBase::PlayerList()
 {
 	/*
-	local PlayerReplicationInfo PRI;
+	AAA2_PlayerState* PRI = nullptr;
 	if (CanPerform("Xp"))
 	{
 		Log(Msg_PlayerList);
@@ -248,11 +249,11 @@ bool UAdminBase::CanPerform(FString priv)
 {
 	return true;
 }
-void UAdminBase::FindGameType(FString aGameType)
+FString UAdminBase::FindGameType(FString aGameType)
 {
+	int32 i = 0;
+	TArray<FGameRecord> Records = {};
 	/*
-	local int i;
-	local array<CacheManager.GameRecord> Records;
 	'CacheManager'.GetGameTypeList(Records);
 	for (i = 0; i < Records.Length; i++)
 	{
@@ -278,16 +279,18 @@ void UAdminBase::FindGameType(FString aGameType)
 	}
 	Return "";
 	*/
+
+	return "FAKE";    //FAKE   /EliZ
 }
 void UAdminBase::SendComplexMsg(TArray<FString> Arr, FString Title)
 {
+	int32 i = 0;
+	int32 Longest = 0;
+	FString Line = "";
+	FString Border = "";
+	FString Prefix = "";
+	FString Suffix = "";
 	/*
-	local int i;
-	local int Longest;
-	local string Line;
-	local string Border;
-	local string Prefix;
-	local string Suffix;
 	for (i = 0; i < Arr.Length; i++)
 	{
 		if (Len(Arr[i]) > Longest)
@@ -318,12 +321,12 @@ void UAdminBase::SendComplexMsg(TArray<FString> Arr, FString Title)
 	Outer.ClientMessage(Border);
 	*/
 }
-void UAdminBase::MaskedCompare(FString SettingName, FString Mask)
+bool UAdminBase::MaskedCompare(FString SettingName, FString Mask)
 {
+	bool bMaskLeft = false;
+	bool bMaskRight = false;
+	int32 MaskLen = 0;
 	/*
-	local bool bMaskLeft;
-	local bool bMaskRight;
-	local int MaskLen;
 	if (Mask == "*" || Mask == "**")
 	{
 		Return True;
@@ -345,12 +348,15 @@ void UAdminBase::MaskedCompare(FString SettingName, FString Mask)
 	}
 	Return SettingName ~= Mask;
 	*/
+
+	return false;    //FAKE  /EliZ
 }
-void UAdminBase::IsNumeric(FString Param, bool bPositiveOnly)
+
+bool UAdminBase::IsNumeric(FString Param, bool bPositiveOnly)
 {
-	/*
-	local int p;
+	int32 p = 0;
 	p = 0;
+	/*
 	if (Mid(Param, p, 1) == " ")
 	{
 		p++;
@@ -367,17 +373,16 @@ void UAdminBase::IsNumeric(FString Param, bool bPositiveOnly)
 	{
 		Return False;
 	}
-	Return True;
 	*/
+	return true;
 }
-void UAdminBase::SplitParams(FString Params)
+TArray<FString> UAdminBase::SplitParams(FString Params)
 {
+	TArray<FString> Splitted = {};
+	FString Delim = "";
+	int32 p = 0;
+	int32 Start = 0;
 	/*
-	local array<String> Splitted;
-	local string Delim;
-	local int p;
-	local int Start;
-	if (Params != "")
 	{
 		p = 0;
 		if (Mid(Params, p, 1) == " ")
@@ -412,6 +417,6 @@ void UAdminBase::SplitParams(FString Params)
 		}
 		Params = Mid(Params, p);
 	}
-	Return Splitted;
 	*/
+	return Splitted;
 }

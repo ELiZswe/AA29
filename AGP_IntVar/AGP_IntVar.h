@@ -7,6 +7,8 @@
 #include "AGP_IntVar.generated.h"
 
 class UScriptObject;
+class USceneComponent;
+class UBillboardComponent;
 
 UCLASS()
 class AA29_API AAGP_IntVar : public AActor

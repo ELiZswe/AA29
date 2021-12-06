@@ -40,6 +40,8 @@ class ATrigger;
 class AVehiclePosition;
 class AVehicleWeapon;
 class AAGP_HUD;
+class USceneComponent;
+class UBillboardComponent;
 
 UCLASS()
 class AA29_API AEventLab : public AActor

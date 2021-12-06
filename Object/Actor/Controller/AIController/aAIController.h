@@ -10,20 +10,21 @@
 #include "AA29/Inventory/Weapon/Weapon.h"
 #include "aAIController.generated.h"
 
-/**
- * 
- */
+class AAIScript;
+class ANavigationPoint;
+class AMover;
+class AReachSpec;
+
 UCLASS()
 class AA29_API AaAIController : public AController
 {
 	GENERATED_BODY()
-
 public:
 
 	AaAIController();
 
 	UPROPERTY()										float Skill;						//var float Skill;
-	//UPROPERTY()									AAIScript* MyScript;				//var AIScript MyScript;
+	UPROPERTY()										AAIScript* MyScript;				//var AIScript MyScript;
 	UPROPERTY()										bool bPlannedJump;					//var bool bPlannedJump;
 	UPROPERTY()										bool bAdjustFromWalls;				//var bool bAdjustFromWalls;
 	UPROPERTY()										bool bHunting;						//var bool bHunting;
@@ -48,10 +49,10 @@ public:
 	void SetOrders(FName NewOrders, AController* OrderGiver);
 	void GetOrderObject();
 	void GetOrders();
-	//void PrepareForMove(ANavigationPoint* Goal, AReachSpec* Path);
-	//void WaitForMover(AMover* M);
+	void PrepareForMove(ANavigationPoint* Goal, AReachSpec* Path);
+	void WaitForMover(AMover* M);
 	void MoverFinished();
-	//void UnderLift(AMover* M);
+	void UnderLift(AMover* M);
 	bool PriorityObjective();
 	void Startle(AActor* A);
 	void NotifyBuzzedByBullet(AActor* aShooter);

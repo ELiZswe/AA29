@@ -68,7 +68,7 @@ void UGUIDynArrayPage::InitializeList()
 
 FArrayControl UGUIDynArrayPage::AddButton(int32 Index)
 {
-	FArrayControl AC;
+	FArrayControl AC= FArrayControl({nullptr,nullptr});
 	/*
 	AC.b_New = GUIButton(AddComponent("XInterface.GUIButton", true));
 	AC.b_New.TabOrder = (Index + 1);

@@ -7,13 +7,13 @@
 #include "AA29/Object/Actor/HUD/AGP_HUD/AGP_HUD.h"
 #include "NPCBaseController.generated.h"
 
-/**
- * 
- */
+class ANPCPathNode;
 class AAGP_Weapon;
 class ANPCPlayerStart;
 class AMover;
 class AThrowWeaponPickup;
+class ANPCConversationPack;
+class ANPCItemOfInterest;
 
 UCLASS()
 class AA29_API ANPCBaseController : public AaAIController
@@ -43,7 +43,7 @@ public:
 		UPROPERTY()										int32 iFlashGrenadeCount;							//var int iFlashGrenadeCount;
 		UPROPERTY()										int32 iSmokeGrenadeCount;							//var int iSmokeGrenadeCount;
 		UPROPERTY()										int32 iFragGrenadeCount;							//var int iFragGrenadeCount;
-		//UPROPERTY()										TArray<ANPCPathNode*> apnPathNodesForPatrol;						//var array<NPCPathNode> apnPathNodesForPatrol;
+		UPROPERTY()										TArray<ANPCPathNode*> apnPathNodesForPatrol;		//var array<NPCPathNode> apnPathNodesForPatrol;
 		UPROPERTY()										FRotator rotInitialRotation;						//var Object.Rotator rotInitialRotation;
 		UPROPERTY()										FVector vInitialLocation;							//var FVector vInitialLocation;
 		UPROPERTY()										ETravelSpeed etsTravelSpeed;						//var ETravelSpeed etsTravelSpeed;
@@ -108,7 +108,7 @@ public:
 		UPROPERTY()										bool bUsePatrolStartTrigger;						//var bool bUsePatrolStartTrigger;
 		UPROPERTY()										bool bUseResumePatrolStartTrigger;					//var bool bUseResumePatrolStartTrigger;
 		UPROPERTY()										int32 iCurrentIdleAnimIndex;						//var int iCurrentIdleAnimIndex;
-		UPROPERTY()										TArray<FNPCAnimSequenceSet> anpcassNPCIdleAnimations;						//var array<NPCAnimSequenceSet> anpcassNPCIdleAnimations;
+		UPROPERTY()										TArray<FNPCAnimSequenceSet> anpcassNPCIdleAnimations;	//var array<NPCAnimSequenceSet> anpcassNPCIdleAnimations;
 		UPROPERTY()										FName nameAssaultLocationTag;						//var name nameAssaultLocationTag;
 		UPROPERTY()										float fNPCLastTalkTime;								//var float fNPCLastTalkTime;
 		UPROPERTY()										bool bUseAlternatePath;								//var bool bUseAlternatePath;
@@ -138,14 +138,14 @@ public:
 		UPROPERTY()										bool bDebugMode;									//var bool bDebugMode;
 		UPROPERTY()										bool bDebugPath;									//var bool bDebugPath;
 		UPROPERTY()										bool bDebugSenses;									//var bool bDebugSenses;
-		UPROPERTY()										FGrenadeThreatContact agtcGrenadeThreats;						//var NPCBaseController.GrenadeThreatContact agtcGrenadeThreats;
-		UPROPERTY()										FRecentContact arcContactHistory;						//var NPCBaseController.RecentContact arcContactHistory;
-		UPROPERTY()										int32 iMaxContactAge;						//var int iMaxContactAge;
-		UPROPERTY()										TArray<AActor*> actAttachments;				//var array<Actor> actAttachments;
-		UPROPERTY()										TArray<FNPCAttachObject> aoAttachments;	//var array<NPCAttachObject> aoAttachments;
-		UPROPERTY()										FName namePreConversationPackState;						//var name namePreConversationPackState;
-		//UPROPERTY()										ANPCConversationPack* npccpCurrentConversation;						//var NPCConversationPack npccpCurrentConversation;
-		//UPROPERTY()										TArray<ANPCConversationPack*> anpccpConversations;						//var array<NPCConversationPack> anpccpConversations;
+		UPROPERTY()										FGrenadeThreatContact agtcGrenadeThreats;			//var NPCBaseController.GrenadeThreatContact agtcGrenadeThreats;
+		UPROPERTY()										FRecentContact arcContactHistory;					//var NPCBaseController.RecentContact arcContactHistory;
+		UPROPERTY()										int32 iMaxContactAge;								//var int iMaxContactAge;
+		UPROPERTY()										TArray<AActor*> actAttachments;						//var array<Actor> actAttachments;
+		UPROPERTY()										TArray<FNPCAttachObject> aoAttachments;				//var array<NPCAttachObject> aoAttachments;
+		UPROPERTY()										FName namePreConversationPackState;					//var name namePreConversationPackState;
+		UPROPERTY()										ANPCConversationPack* npccpCurrentConversation;		//var NPCConversationPack npccpCurrentConversation;
+		UPROPERTY()										TArray<ANPCConversationPack*> anpccpConversations;	//var array<NPCConversationPack> anpccpConversations;
 		UPROPERTY()										float fpUnmanagedAudioMinDelayTime;					//var float fpUnmanagedAudioMinDelayTime;
 		UPROPERTY()										float fpUnmanagedAudioTimeNextPlay;					//var float fpUnmanagedAudioTimeNextPlay;
 		UPROPERTY()										float fpAudioTriggerRangeToPlayerUU;				//var float fpAudioTriggerRangeToPlayerUU;
@@ -175,7 +175,7 @@ public:
 		UPROPERTY()										AMover* mLastDoorOpened;							//var Mover mLastDoorOpened;
 		UPROPERTY()										FName nameWaitingAnimation;							//var name nameWaitingAnimation;
 		UPROPERTY()										float fpTimeSinceLastSawIOI;						//var float fpTimeSinceLastSawIOI;
-		//UPROPERTY()										ANPCItemOfInterest* npcioiLastFound;					//var NPCItemOfInterest npcioiLastFound;
+		UPROPERTY()										ANPCItemOfInterest* npcioiLastFound;				//var NPCItemOfInterest npcioiLastFound;
 		//UPROPERTY()										ALadderVolume* lvLadderEntry;							//var LadderVolume lvLadderEntry;
 		//UPROPERTY()										APathNode* pnCurrentNodeLeadingToPathNode;				//var PathNode pnCurrentNodeLeadingToPathNode;
 		//UPROPERTY()										APathNode* pnCurrentNodeOnPathToCover;					//var PathNode pnCurrentNodeOnPathToCover;
@@ -249,7 +249,7 @@ public:
 		bool UsedBy(APawn* User);
 		void NotifyNPCTouchedByPlayer(APawn* pawnTouch);
 		void NotifyPlayerPawnWatchingMe(APawn* pawnSeen);
-		//void NotifyItemOfInterestFound(ANPCItemOfInterest* npcioi);
+		void NotifyItemOfInterestFound(ANPCItemOfInterest* npcioi);
 		void NotifyHeardWeaponNoise(float fpLoudness, AAGP_Weapon* agpwWeaponHeard, FVector vSoundLocation);
 		void NotifyHeardPlayerNoise(float fpLoudness, APawn* pawnHeard);
 		void NotifyPlayerPawnInSight(APawn* pawnSeen);

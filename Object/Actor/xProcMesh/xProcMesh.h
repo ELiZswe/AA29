@@ -7,6 +7,9 @@
 #include "AA29/AA29.h"
 #include "xProcMesh.generated.h"
 
+class AEffects;
+class UBillboardComponent;
+
 UCLASS()
 class AA29_API AxProcMesh : public AActor
 {
@@ -22,19 +25,18 @@ public:
 	UPROPERTY(EditAnywhere)													UStaticMeshComponent* StaticMesh;
 	UPROPERTY(EditAnywhere)													TArray<UMaterialInstance*> OverrideMaterials;
 
-
 	UPROPERTY(EditAnywhere)										float InfluenceRadius;						//var() float InfluenceRadius;
 	UPROPERTY(EditAnywhere)										float TouchStrength;						//var() float TouchStrength;
 	UPROPERTY(EditAnywhere)										float ShootStrength;						//var() float ShootStrength;
 	UPROPERTY(EditAnywhere)										float BigTouchThreshold;					//var() float BigTouchThreshold;
 	UPROPERTY(EditAnywhere)										float BigMomentumThreshold;					//var() float BigMomentumThreshold;
-	//UPROPERTY(EditAnywhere)										AEffects* BigHitEffect;					//var() class<Effects> BigHitEffect;
-	//UPROPERTY(EditAnywhere)										AEffects* HitEffect;					//var() class<Effects> HitEffect;
+	UPROPERTY(EditAnywhere)										AEffects* BigHitEffect;						//var() class<Effects> BigHitEffect;
+	UPROPERTY(EditAnywhere)										AEffects* HitEffect;						//var() class<Effects> HitEffect;
 	UPROPERTY()													Fpointer pProcData;							//var const transient pointer pProcData;
 	UPROPERTY(EditAnywhere)										bool bRigidEdges;							//var() bool bRigidEdges;
-	UPROPERTY(EditAnywhere)										bool bForceAffected;						//var(Force) bool bForceAffected;
+	UPROPERTY(EditAnywhere, Category = "Force")					bool bForceAffected;						//var(Force) bool bForceAffected;
 	UPROPERTY(EditAnywhere)										EProcMeshType ProcType;						//var() EProcMeshType ProcType;
-	UPROPERTY(EditAnywhere)										float NoiseCounter;							//var transient float NoiseCounter;
+	UPROPERTY()													float NoiseCounter;							//var transient float NoiseCounter;
 	UPROPERTY(EditAnywhere)										FRange NoiseTimer;							//var() Object.Range NoiseTimer;
 	UPROPERTY(EditAnywhere)										FRange NoiseForce;							//var() Object.Range NoiseForce;
 	UPROPERTY(EditAnywhere)										float Noise;								//var() float Noise;
@@ -46,10 +48,8 @@ public:
 	UPROPERTY(EditAnywhere)										FRange MovementClamp;						//var() Object.Range MovementClamp;
 	UPROPERTY(EditAnywhere)										FRange DampeningRange;						//var() Object.Range DampeningRange;
 	UPROPERTY(EditAnywhere)										float Dampening;							//var() float Dampening;
-	UPROPERTY(EditAnywhere)										TArray<int32> SectionOffsets;				//var const array<int> SectionOffsets;
-	//UPROPERTY(EditAnywhere)										TArray<FProcMeshVertex> Vertices;			//var const array<ProcMeshVertex> Vertices;
-
-
+	UPROPERTY()													TArray<int32> SectionOffsets;				//var const array<int> SectionOffsets;
+	UPROPERTY()													TArray<FAA2_ProcMeshVertex> Vertices;			//var const array<ProcMeshVertex> Vertices;
 
 protected:
 	// Called when the game starts or when spawned

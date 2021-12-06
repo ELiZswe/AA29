@@ -6,9 +6,13 @@
 #include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIPanel/GUITabPanel/AATabPanel/AAMainSubPanel/AABackgroundSubPanel/AASoldierSubPanel/AAPersonnelJacketSubPanel.h"
 #include "AAPersonnelJacket_Profile.generated.h"
 
-/**
- * 
- */
+class UGUIImage;
+class UGUIButton;
+class UmoEditBox;
+class UmoCheckBox;
+class UGUILabel;
+class ASpinnySoldier;
+
 UCLASS()
 class AA29_API UAAPersonnelJacket_Profile : public UAAPersonnelJacketSubPanel
 {
@@ -40,7 +44,7 @@ public:
 	UPROPERTY(EditAnywhere)			UGUILabel*		l_PlayerAccountStatus;		//var() automated XInterface.GUILabel l_PlayerAccountStatus;
 	UPROPERTY(EditAnywhere)			UGUILabel*		l_PlayerLogin;				//var() automated XInterface.GUILabel l_PlayerLogin;
 	UPROPERTY(EditAnywhere)			UGUILabel*		l_NewPlayer;				//var() automated XInterface.GUILabel l_NewPlayer;
-	//UPROPERTY(EditAnywhere)			ASpinnySoldier* SpinnyCharacter;			//var() editconst noexport SpinnySoldier SpinnyCharacter;
+	UPROPERTY(EditAnywhere)			ASpinnySoldier* SpinnyCharacter;			//var() editconst noexport SpinnySoldier SpinnyCharacter;
 	UPROPERTY(EditAnywhere)			FVector			SpinnyCharacterOffset;		//var() Vector SpinnyCharacterOffset;
 	UPROPERTY(EditAnywhere)			bool			bRenderCharacter;			//var() bool bRenderCharacter;
 	UPROPERTY(EditAnywhere)			bool			bSaveProfile;				//var() noexport bool bSaveProfile;
@@ -77,5 +81,4 @@ public:
 	void Closed(UGUIComponent* Sender, bool bCancelled);
 	void Free();
 	void logspinnycharacter();
-
 };

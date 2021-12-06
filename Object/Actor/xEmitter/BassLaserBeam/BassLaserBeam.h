@@ -6,20 +6,17 @@
 #include "AA29/Object/Actor/xEmitter/xEmitter.h"
 #include "BassLaserBeam.generated.h"
 
-/**
- * 
- */
+class ABass;
+
 UCLASS()
 class AA29_API ABassLaserBeam : public AxEmitter
 {
 	GENERATED_BODY()
 public:
 	ABassLaserBeam();
-	//UPROPERTY()								ABass* IlltemperedSeaBass;								//var Bass IlltemperedSeaBass;
-
+	UPROPERTY()								ABass* IlltemperedSeaBass;								//var Bass IlltemperedSeaBass;
 
 	void SetBeamLocation();
-	void SetBeamRotation();
+	FVector SetBeamRotation();
 	void Tick(float dt);
-
 };

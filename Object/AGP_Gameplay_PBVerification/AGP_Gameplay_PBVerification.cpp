@@ -9,11 +9,13 @@ UAGP_Gameplay_PBVerification::UAGP_Gameplay_PBVerification()
 }
 
 //native Function VerifyPBInstance();
-void UAGP_Gameplay_PBVerification::VerifyPBInstance()
+bool UAGP_Gameplay_PBVerification::VerifyPBInstance()
 {
+	return true;    //FAKE   /ELiZ
 }
 
 //native Function MPOSCheck();
-void UAGP_Gameplay_PBVerification::MPOSCheck()
+bool UAGP_Gameplay_PBVerification::MPOSCheck()
 {
+	return true;    //FAKE   /ELiZ
 }

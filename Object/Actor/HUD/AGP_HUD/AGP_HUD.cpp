@@ -4,7 +4,7 @@
 #include "AGP_HUD.h"
 #include "AA29/MyStructs.h"
 #include "AA29/Object/Actor/Pawn/AGP_Pawn/AGP_Pawn.h"
-#include "AA29/Volume/CommVolume/AA2_CommVolume.h"
+#include "AA29/Object/Actor/Volume/CommVolume/AA2_CommVolume.h"
 #include "AA29/Object/Actor/Controller/PlayerController/HumanController/HumanController.h"
 #include "AA29/AA29.h"
 #include "Math/UnrealMathUtility.h"

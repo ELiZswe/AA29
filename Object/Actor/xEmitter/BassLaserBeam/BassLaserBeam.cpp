@@ -25,7 +25,7 @@ void ABassLaserBeam::SetBeamLocation()
 	}
 	*/
 }
-void ABassLaserBeam::SetBeamRotation()
+FVector ABassLaserBeam::SetBeamRotation()
 {
 	/*
 	if (IlltemperedSeaBass != None && IlltemperedSeaBass.LaserAttachment != None)
@@ -35,22 +35,25 @@ void ABassLaserBeam::SetBeamRotation()
 	}
 	else
 	{
-		Return vect(0 0 0);
+		return vect(0 0 0);
 	}
 	*/
+
+	return FVector(0, 0, 0);     //FAKE   /ELiZ
 }
+
 void ABassLaserBeam::Tick(float dt)
 {
-	/*
-	local FVector BeamDir;
-	local FVector HitLocation;
-	local FVector HitNormal;
-	if (IlltemperedSeaBass == None)
+	FVector BeamDir = FVector(0, 0, 0);
+	FVector HitLocation = FVector(0, 0, 0);
+	FVector HitNormal = FVector(0, 0, 0);
+	if (IlltemperedSeaBass == nullptr)
 	{
 		Destroy();
-		Return;
+		return;
 	}
 	SetBeamLocation();
+	/*
 	BeamDir = SetBeamRotation();
 	Trace(HitLocation, HitNormal, Location + BeamDir * 1000, Location, true);
 	mSpawnVecA = HitLocation;

@@ -9,11 +9,13 @@ UAGP_Inventory_PBVerification::UAGP_Inventory_PBVerification()
 }
 
 //native Function VerifyPBInstance();
-void UAGP_Inventory_PBVerification::VerifyPBInstance()
+bool UAGP_Inventory_PBVerification::VerifyPBInstance()
 {
+	return true;    //FAKE   /ELiZ
 }
 
 //native Function MPOSCheck();
-void UAGP_Inventory_PBVerification::MPOSCheck()
+bool UAGP_Inventory_PBVerification::MPOSCheck()
 {
+	return true;    //FAKE   /ELiZ
 }

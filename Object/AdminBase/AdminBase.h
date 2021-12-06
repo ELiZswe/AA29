@@ -49,7 +49,7 @@ public:
 	void DoSwitch(FString URL);
 	void GoToNextMap();
 	void ShowCurrentMapList();
-	void GetMapListNames(FString aGameType);
+	TArray<FString> GetMapListNames(FString aGameType);
 	void MaplistCommand(FString Cmd, FString Extra);
 	void RestartCurrentMap();
 	void PlayerList();
@@ -61,9 +61,9 @@ public:
 	void MapList(FString Cmd, FString Extra);
 	void Switch(FString URL);
 	bool CanPerform(FString priv);
-	void FindGameType(FString aGameType);
+	FString FindGameType(FString aGameType);
 	void SendComplexMsg(TArray<FString> Arr, FString Title);
-	void MaskedCompare(FString SettingName, FString Mask);
-	void IsNumeric(FString Param, bool bPositiveOnly);
-	void SplitParams(FString Params);
+	bool MaskedCompare(FString SettingName, FString Mask);
+	bool IsNumeric(FString Param, bool bPositiveOnly);
+	TArray<FString> SplitParams(FString Params);
 };

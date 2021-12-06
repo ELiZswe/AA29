@@ -6,9 +6,9 @@
 #include "Engine/Light.h"
 #include "AA2_Light.generated.h"
 
-/**
- * 
- */
+class UBillboardComponent;
+class USceneComponent;
+
 UCLASS()
 class AA29_API AAA2_Light : public ALight
 {
@@ -23,12 +23,9 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Corona")										float MaxCoronaSize;						//var(Corona) float MaxCoronaSize;
 	UPROPERTY(EditAnywhere, Category = "Corona")										float MinCoronaSize;						//var(Corona) float MinCoronaSize;
 
-
-
 	UPROPERTY()																USceneComponent* Root;
 	UPROPERTY()																UTexture2D* Texture;
 	UPROPERTY()																UBillboardComponent* SpriteComponent;
-
 
 	void LoadEditorIcon();
 };
