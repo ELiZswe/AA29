@@ -7,37 +7,37 @@
 #include "AA29/Object/Actor/Controller/AIController/NPCBaseController/NPCBaseController.h"
 
 #include "AA29/AA2_WorldSettings.h"
-#include "AA29/InventoryAttachment/ItemAttachment/ItemAttachment.h"
-#include "AA29/InventoryAttachment/InventoryAttachment.h"
-#include "AA29/AI_Primitive/SoldierClass/ClassGuerrillaBase/ClassGuerrillaBase.h"
+#include "AA29/Object/Actor/InventoryAttachment/ItemAttachment/ItemAttachment.h"
+#include "AA29/Object/Actor/InventoryAttachment/InventoryAttachment.h"
+#include "AA29/Object/Actor/AI_Primitive/SoldierClass/ClassGuerrillaBase/ClassGuerrillaBase.h"
 #include "AA29/Object/Actor/NavigationPoint/SmallNavigationPoint/PlayerStart/AGP_PlayerStart/AGP_PlayerStart.h"
 
-#include "AA29/Inventory/Inventory.h"
-#include "AA29/Inventory/Weapon/Weapon.h"
+#include "AA29/Object/Actor/Inventory/Inventory.h"
+#include "AA29/Object/Actor/Inventory/Weapon/Weapon.h"
 
-#include "AA29/Inventory/Weapon/AGP_Weapon/TraceWeapon/Weapon_M16A2_Rifle/Weapon_M16A2_Rifle.h"
-#include "AA29/Inventory/Weapon/AGP_Weapon/TraceWeapon/Weapon_M249_SAW/Weapon_M249_SAW.h"
-#include "AA29/Inventory/Weapon/AGP_Weapon/TraceWeapon/Weapon_AK47_Rifle/Weapon_AK74su_Rifle/Weapon_AK74su_Rifle.h"
+#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/TraceWeapon/Weapon_M16A2_Rifle/Weapon_M16A2_Rifle.h"
+#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/TraceWeapon/Weapon_M249_SAW/Weapon_M249_SAW.h"
+#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/TraceWeapon/Weapon_AK47_Rifle/Weapon_AK74su_Rifle/Weapon_AK74su_Rifle.h"
 
 
-#include "AA29/Inventory/Weapon/AGP_Weapon/ThrowWeapon/Throw_M67_Frag/Throw_M67_Frag.h"
-#include "AA29/Inventory/Weapon/AGP_Weapon/ThrowWeapon/Throw_M84_Stun/Throw_M84_Stun.h"
-#include "AA29/Inventory/Weapon/AGP_Weapon/ThrowWeapon/Throw_M83_Smoke/Throw_M83_Smoke.h"
-#include "AA29/Inventory/Weapon/AGP_Weapon/Item_Parachute/Item_Parachute.h"
+#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/ThrowWeapon/Throw_M67_Frag/Throw_M67_Frag.h"
+#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/ThrowWeapon/Throw_M84_Stun/Throw_M84_Stun.h"
+#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/ThrowWeapon/Throw_M83_Smoke/Throw_M83_Smoke.h"
+#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/Item_Parachute/Item_Parachute.h"
 
-#include "AA29/Inventory/DummyItem/Item_Bullseye/Item_Bullseye.h"
+#include "AA29/Object/Actor/Inventory/DummyItem/Item_Bullseye/Item_Bullseye.h"
 
-#include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_556mm_30_Mag/Ammo_556mm_30_Mag.h"
-#include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_556mm_200_Belt/Ammo_556mm_200_Belt.h"
+#include "AA29/Object/Actor/Inventory/Ammunition/AGP_Ammunition/Ammo_556mm_30_Mag/Ammo_556mm_30_Mag.h"
+#include "AA29/Object/Actor/Inventory/Ammunition/AGP_Ammunition/Ammo_556mm_200_Belt/Ammo_556mm_200_Belt.h"
 
-#include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_545mm_30_Mag/Ammo_545mm_30_Mag.h"
+#include "AA29/Object/Actor/Inventory/Ammunition/AGP_Ammunition/Ammo_545mm_30_Mag/Ammo_545mm_30_Mag.h"
 
 
 #include "AA29/Object/Actor/NavigationPoint/SmallNavigationPoint/PlayerStart/AGP_PlayerStart/ClassRiflemanPS/ClassRiflemanPS.h"
 #include "AA29/Object/Actor/NavigationPoint/SmallNavigationPoint/PlayerStart/AGP_PlayerStart/ClassAutomaticRiflemanPS/ClassAutomaticRiflemanPS.h"
 #include "AA29/Object/Actor/NavigationPoint/SmallNavigationPoint/PlayerStart/AGP_PlayerStart/ClassGuerrillaAK74suPS/ClassGuerrillaAK74suPS.h"
 
-#include "AA29/DecoMesh/DecoMesh.h"
+#include "AA29/Object/Actor/DecoMesh/DecoMesh.h"
 #include "AA29/AA2_PlayerState.h"
 
 #include "UObject/Class.h"

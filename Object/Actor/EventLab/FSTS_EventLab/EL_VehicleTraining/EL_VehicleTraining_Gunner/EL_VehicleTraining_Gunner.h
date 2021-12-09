@@ -12,7 +12,7 @@ class UFSTS_PlayerHint;
 class AAGP_VehicleNode;
 
 UCLASS()
-class AA29_API AEL_VehicleTraining_Gunner : public AEL_VehicleTraining
+class AEL_VehicleTraining_Gunner : public AEL_VehicleTraining
 {
 	GENERATED_BODY()
 public:

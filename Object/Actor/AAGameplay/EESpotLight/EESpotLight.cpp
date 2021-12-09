@@ -6,8 +6,8 @@
 #include "AA29/Object/Actor/AAGameplay/EESpotLightPart/EESpotLightPart.h"
 #include "AA29/Object/Actor/AAGameplay/NPC_EEGuard/NPC_EEGuard.h"
 #include "AA29/Object/Actor/AAGameplay/DebugSphere/DebugSphere.h"
-#include "AA29/Keypoint/LookTarget/LookTarget.h"
-#include "AA29/MultiTimer/MultiTimer.h"
+#include "AA29/Object/Actor/Keypoint/LookTarget/LookTarget.h"
+#include "AA29/Object/Actor/MultiTimer/MultiTimer.h"
 
 #include "Kismet/GameplayStatics.h"
 

@@ -2,7 +2,7 @@
 
 
 #include "PickupW_M203_Gren.h"
-#include "AA29/Inventory/Weapon/AGP_Weapon/TraceWeapon/Weapon_M16A2_Rifle/Weapon_M203_Gren/Weapon_M203_Gren.h"
+#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/TraceWeapon/Weapon_M16A2_Rifle/Weapon_M203_Gren/Weapon_M203_Gren.h"
 #include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/PickupW_GP30_Gren/PickupW_GP30_Gren.h"
 
 APickupW_M203_Gren::APickupW_M203_Gren()

@@ -2,7 +2,7 @@
 
 
 #include "PickupW_M249_SAW.h"
-#include "AA29/Inventory/Weapon/AGP_Weapon/TraceWeapon/Weapon_M249_SAW/Weapon_M249_SAW.h"
+#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/TraceWeapon/Weapon_M249_SAW/Weapon_M249_SAW.h"
 #include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/PickupW_RPK_SAW/PickupW_RPK_SAW.h"
 
 APickupW_M249_SAW::APickupW_M249_SAW()

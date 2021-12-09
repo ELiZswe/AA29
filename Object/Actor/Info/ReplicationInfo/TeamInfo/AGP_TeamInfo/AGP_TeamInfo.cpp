@@ -5,17 +5,17 @@
 #include "AA29/Object/Actor/NavigationPoint/SmallNavigationPoint/PlayerStart/AGP_Playerstart/AGP_Playerstart.h"
 #include "AA29/AA2_WorldSettings.h"
 #include "AA29/Object/Actor/Info/GameInfo/AGP_GameInfo/AGP_GameInfo.h"
-#include "AA29/PSSet/PSSet.h"
+#include "AA29/Object/Actor/PSSet/PSSet.h"
 
 #include "AA29/Object/Actor/Controller/PlayerController/HumanController/HumanController.h"
-#include "AA29/AI_Primitive/SoldierClass/ClassRifleman/ClassRifleman.h"
-#include "AA29/AI_Primitive/SoldierClass/ClassRifleman/ClassRiflemanM4A1AutoIron/ClassRiflemanM4A1AutoIron.h"
-#include "AA29/AI_Primitive/SoldierClass/ClassRifleman/ClassRiflemanM4A1AutoIron/ClassRiflemanM4A1Auto/ClassRiflemanM4A1Auto.h"
-#include "AA29/AI_Primitive/SoldierClass/ClassRiflemanBare/ClassRiflemanBare.h"
-#include "AA29/AI_Primitive/SoldierClass/ClassGrenadier/ClassGrenadier.h"
-#include "AA29/AI_Primitive/SoldierClass/ClassSniperBase/ClassSniper/ClassSniper.h"
-#include "AA29/AI_Primitive/SoldierClass/ClassSniperBase/ClassSniper24_US/ClassSniper24_US.h"
-#include "AA29/AI_Primitive/SoldierClass/ClassAutomaticRifleman/ClassAutomaticRifleman.h"
+#include "AA29/Object/Actor/AI_Primitive/SoldierClass/ClassRifleman/ClassRifleman.h"
+#include "AA29/Object/Actor/AI_Primitive/SoldierClass/ClassRifleman/ClassRiflemanM4A1AutoIron/ClassRiflemanM4A1AutoIron.h"
+#include "AA29/Object/Actor/AI_Primitive/SoldierClass/ClassRifleman/ClassRiflemanM4A1AutoIron/ClassRiflemanM4A1Auto/ClassRiflemanM4A1Auto.h"
+#include "AA29/Object/Actor/AI_Primitive/SoldierClass/ClassRiflemanBare/ClassRiflemanBare.h"
+#include "AA29/Object/Actor/AI_Primitive/SoldierClass/ClassGrenadier/ClassGrenadier.h"
+#include "AA29/Object/Actor/AI_Primitive/SoldierClass/ClassSniperBase/ClassSniper/ClassSniper.h"
+#include "AA29/Object/Actor/AI_Primitive/SoldierClass/ClassSniperBase/ClassSniper24_US/ClassSniper24_US.h"
+#include "AA29/Object/Actor/AI_Primitive/SoldierClass/ClassAutomaticRifleman/ClassAutomaticRifleman.h"
 
 AAGP_TeamInfo::AAGP_TeamInfo()
 {

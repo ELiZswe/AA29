@@ -7,7 +7,7 @@
 #include "AA29/Object/Actor/Pickup/Pickup.h"
 #include "AA29/AA29.h"
 
-#include "AA29/Inventory/Weapon/Weapon.h"
+#include "AA29/Object/Actor/Inventory/Weapon/Weapon.h"
 #include "aAIController.generated.h"
 
 class AAIScript;

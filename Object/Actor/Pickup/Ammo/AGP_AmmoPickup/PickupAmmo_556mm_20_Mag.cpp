@@ -2,7 +2,7 @@
 
 
 #include "PickupAmmo_556mm_20_Mag.h"
-#include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_556mm_30_Mag/Ammo_556mm_20_Mag/Ammo_556mm_20_Mag.h"
+#include "AA29/Object/Actor/Inventory/Ammunition/AGP_Ammunition/Ammo_556mm_30_Mag/Ammo_556mm_20_Mag/Ammo_556mm_20_Mag.h"
 
 APickupAmmo_556mm_20_Mag::APickupAmmo_556mm_20_Mag()
 {

@@ -2,7 +2,7 @@
 
 
 #include "AGP_HUD.h"
-#include "AA29/MyStructs.h"
+#include "AA29/MyEnums.h"
 #include "AA29/Object/Actor/Pawn/AGP_Pawn/AGP_Pawn.h"
 #include "AA29/Object/Actor/Volume/CommVolume/AA2_CommVolume.h"
 #include "AA29/Object/Actor/Controller/PlayerController/HumanController/HumanController.h"
@@ -14,9 +14,9 @@
 #include "AA29/AA2_GameState.h"
 #include "AA29/AA2_PlayerState.h"
 #include "GameFramework/PlayerController.h"
-#include "AA29/Inventory/Weapon/AGP_Weapon/ThrowWeapon/Throw_M67_Frag/Throw_M67_Frag.h"
-#include "AA29/Inventory/Weapon/AGP_Weapon/ThrowWeapon/Throw_M83_Smoke/Throw_M83_Smoke.h"
-#include "AA29/Inventory/Weapon/AGP_Weapon/ThrowWeapon/Throw_M84_Stun/Throw_M84_Stun.h"
+#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/ThrowWeapon/Throw_M67_Frag/Throw_M67_Frag.h"
+#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/ThrowWeapon/Throw_M83_Smoke/Throw_M83_Smoke.h"
+#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/ThrowWeapon/Throw_M84_Stun/Throw_M84_Stun.h"
 #include "UObject/ConstructorHelpers.h"
 #include "Engine/Canvas.h"
 

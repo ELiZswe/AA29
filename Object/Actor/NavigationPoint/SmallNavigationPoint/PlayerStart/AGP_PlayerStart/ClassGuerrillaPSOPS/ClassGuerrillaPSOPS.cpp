@@ -2,7 +2,7 @@
 
 
 #include "AA29/Object/Actor/NavigationPoint/SmallNavigationPoint/PlayerStart/AGP_PlayerStart/ClassGuerrillaPSOPS/ClassGuerrillaPSOPS.h"
-#include "AA29/AI_Primitive/SoldierClass/ClassGuerrillaBase/ClassGuerrillaAK74su/ClassGuerrillaPSO/ClassGuerrillaPSO.h"
+#include "AA29/Object/Actor/AI_Primitive/SoldierClass/ClassGuerrillaBase/ClassGuerrillaAK74su/ClassGuerrillaPSO/ClassGuerrillaPSO.h"
 
 AClassGuerrillaPSOPS::AClassGuerrillaPSOPS(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {

@@ -3,7 +3,7 @@
 
 #include "AA29/Object/Actor/Info/GameRules/GameRules.h"
 #include "AA29/AA29.h"
-#include "AA29/DamageType/aDamageType.h"
+#include "AA29/Object/DamageType/aDamageType.h"
 
 UGameRules::UGameRules()
 {

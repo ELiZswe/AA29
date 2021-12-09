@@ -9,7 +9,7 @@
 #include "AA29/AA2_PlayerState.h"
 
 #include "AA29/Object/Actor/Pawn/AGP_Pawn/AGP_Pawn.h"
-#include "AA29/DecoMesh/DecoMesh.h"
+#include "AA29/Object/Actor/DecoMesh/DecoMesh.h"
 #include "AA29/Object/Actor/Controller/PlayerController/HumanController/HumanController.h"
 #include "AA29/Object/PlayInfo/PlayInfo.h"
 #include "AA29/Object/Actor/Info/GameRules/GameRules.h"
@@ -20,7 +20,6 @@
 
 AGameInfo::AGameInfo()
 {
-	
 	bRestartLevel = true;
 	bCanChangeSkin = true;
 	bCanViewOthers = true;

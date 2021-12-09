@@ -2,7 +2,7 @@
 
 
 #include "PickupAmmo_127mm_10_Mag.h"
-#include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_127mm_10_Mag/Ammo_127mm_10_Mag.h"
+#include "AA29/Object/Actor/Inventory/Ammunition/AGP_Ammunition/Ammo_127mm_10_Mag/Ammo_127mm_10_Mag.h"
 
 APickupAmmo_127mm_10_Mag::APickupAmmo_127mm_10_Mag()
 {

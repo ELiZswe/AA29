@@ -14,10 +14,8 @@ class AAGP_Weapon;
 class ATextDisplay;
 class ATeleporter;
 
-
-
 UCLASS()
-class AA29_API AEL_JavelinTraining : public AEventLab
+class AEL_JavelinTraining : public AEventLab
 {
 	GENERATED_BODY()
 public:

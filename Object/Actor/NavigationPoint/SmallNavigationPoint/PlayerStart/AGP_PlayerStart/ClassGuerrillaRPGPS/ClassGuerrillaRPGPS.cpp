@@ -2,7 +2,7 @@
 
 
 #include "AA29/Object/Actor/NavigationPoint/SmallNavigationPoint/PlayerStart/AGP_PlayerStart/ClassGuerrillaRPGPS/ClassGuerrillaRPGPS.h"
-#include "AA29/AI_Primitive/SoldierClass/ClassGuerrillaBase/ClassGuerrillaRPG/ClassGuerrillaRPG.h"
+#include "AA29/Object/Actor/AI_Primitive/SoldierClass/ClassGuerrillaBase/ClassGuerrillaRPG/ClassGuerrillaRPG.h"
 
 AClassGuerrillaRPGPS::AClassGuerrillaRPGPS(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {

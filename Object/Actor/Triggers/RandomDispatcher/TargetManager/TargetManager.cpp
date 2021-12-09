@@ -2,7 +2,7 @@
 
 
 #include "AA29/Object/Actor/Triggers/RandomDispatcher/TargetManager/TargetManager.h"
-#include "AA29/ScoreKeeper/ScoreKeeper.h"
+#include "AA29/Object/Actor/ScoreKeeper/ScoreKeeper.h"
 
 ATargetManager::ATargetManager()
 {

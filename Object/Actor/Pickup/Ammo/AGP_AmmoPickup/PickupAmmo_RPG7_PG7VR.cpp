@@ -2,7 +2,7 @@
 
 
 #include "PickupAmmo_RPG7_PG7VR.h"
-#include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_PG7VR_Rocket/Ammo_PG7VR_Rocket.h"
+#include "AA29/Object/Actor/Inventory/Ammunition/AGP_Ammunition/Ammo_PG7VR_Rocket/Ammo_PG7VR_Rocket.h"
 
 APickupAmmo_RPG7_PG7VR::APickupAmmo_RPG7_PG7VR()
 {

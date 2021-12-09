@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "AA29/MyStructs.h"
+#include "AA29/MyEnums.h"
 #include "Team_Interface.generated.h"
 
 class AAGP_Pawn;

@@ -2,7 +2,7 @@
 
 
 #include "AA29/Object/Actor/NavigationPoint/SmallNavigationPoint/PlayerStart/AGP_PlayerStart/ClassPrisonerPS/ClassPrisonerPS.h"
-#include "AA29/AI_Primitive/SoldierClass/ClassPrisoner/ClassPrisoner.h"
+#include "AA29/Object/Actor/AI_Primitive/SoldierClass/ClassPrisoner/ClassPrisoner.h"
 
 AClassPrisonerPS::AClassPrisonerPS(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {

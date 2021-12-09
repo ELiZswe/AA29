@@ -2,7 +2,7 @@
 
 
 #include "AA29/Object/Actor/NavigationPoint/SmallNavigationPoint/PlayerStart/AGP_PlayerStart/ClassSFPS/ClassSFPS.h"
-#include "AA29/AI_Primitive/SoldierClass/ClassSF/ClassSF.h"
+#include "AA29/Object/Actor/AI_Primitive/SoldierClass/ClassSF/ClassSF.h"
 
 AClassSFPS::AClassSFPS(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {

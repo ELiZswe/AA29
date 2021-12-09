@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "AA29/Object/Actor/Info/ReplicationInfo/ReplicationInfo.h"
 
-#include "AA29/MyStructs.h"
+#include "AA29/MyEnums.h"
 #include "TeamInfo.generated.h"
 
 class AAA2_PlayerState;

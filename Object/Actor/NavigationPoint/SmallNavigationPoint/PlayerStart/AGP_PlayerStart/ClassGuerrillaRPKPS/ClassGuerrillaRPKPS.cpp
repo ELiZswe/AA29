@@ -2,7 +2,7 @@
 
 
 #include "AA29/Object/Actor/NavigationPoint/SmallNavigationPoint/PlayerStart/AGP_PlayerStart/ClassGuerrillaRPKPS/ClassGuerrillaRPKPS.h"
-#include "AA29/AI_Primitive/SoldierClass/ClassGuerrillaBase/ClassGuerrillaRPK/ClassGuerrillaRPK.h"
+#include "AA29/Object/Actor/AI_Primitive/SoldierClass/ClassGuerrillaBase/ClassGuerrillaRPK/ClassGuerrillaRPK.h"
 
 AClassGuerrillaRPKPS::AClassGuerrillaRPKPS(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {

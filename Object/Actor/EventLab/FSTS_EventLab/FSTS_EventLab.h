@@ -10,7 +10,7 @@ class UFSTS_PlayerHint;
 class AFSTS_NPC_DrillSergeant;
 
 UCLASS()
-class AA29_API AFSTS_EventLab : public AEventLab
+class AFSTS_EventLab : public AEventLab
 {
 	GENERATED_BODY()
 public:

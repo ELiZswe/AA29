@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "AA29/Object/Actor/Volume/PhysicsVolume/AA2_PhysicsVolume.h"
-#include "AA29/MyStructs.h"
+#include "AA29/MyEnums.h"
 #include "RiskVolume.generated.h"
 
 class AVolumeTimer;

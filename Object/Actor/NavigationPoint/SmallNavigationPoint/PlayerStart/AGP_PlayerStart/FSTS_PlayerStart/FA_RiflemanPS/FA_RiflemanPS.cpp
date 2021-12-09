@@ -2,7 +2,7 @@
 
 
 #include "AA29/Object/Actor/NavigationPoint/SmallNavigationPoint/PlayerStart/AGP_PlayerStart/FSTS_PlayerStart/FA_RiflemanPS/FA_RiflemanPS.h"
-#include "AA29/AI_Primitive/SoldierClass/FA_ClassRifleman/FA_ClassRifleman.h"
+#include "AA29/Object/Actor/AI_Primitive/SoldierClass/FA_ClassRifleman/FA_ClassRifleman.h"
 
 AFA_RiflemanPS::AFA_RiflemanPS(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {

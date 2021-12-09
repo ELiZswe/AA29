@@ -1,8 +1,8 @@
 // All the original content belonged to the US Army
 
 #include "AA29/Object/Actor/AAGameplay/MarksmanTarget/MarksmanTarget.h"
-#include "AA29/MyStructs.h"
-#include "AA29/Mover/DynamicMover/DynamicMover.h"
+#include "AA29/MyEnums.h"
+#include "AA29/Object/Actor/DecoMesh/Mover/DynamicMover/DynamicMover.h"
 #include "AA29/Object/Actor/AAGameplay/MarksmanTarget_Base/MarksmanTarget_Base.h"
 #include "AA29/Object/Actor/AAGameplay/MarksmanTarget_Part/MarksmanTarget_Part.h"
 #include "AA29/AA29.h"

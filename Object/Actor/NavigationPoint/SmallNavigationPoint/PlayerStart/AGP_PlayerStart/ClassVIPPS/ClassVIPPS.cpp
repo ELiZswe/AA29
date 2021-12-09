@@ -2,7 +2,7 @@
 
 
 #include "AA29/Object/Actor/NavigationPoint/SmallNavigationPoint/PlayerStart/AGP_PlayerStart/ClassVIPPS/ClassVIPPS.h"
-#include "AA29/AI_Primitive/SoldierClass/ClassVIP/ClassVIP.h"
+#include "AA29/Object/Actor/AI_Primitive/SoldierClass/ClassVIP/ClassVIP.h"
 
 AClassVIPPS::AClassVIPPS(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {

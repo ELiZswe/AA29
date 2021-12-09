@@ -2,7 +2,7 @@
 
 
 #include "PickupAmmo_12gauge_7_Rounds.h"
-#include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_12gauge_7_Rounds/Ammo_12gauge_7_Rounds.h"
+#include "AA29/Object/Actor/Inventory/Ammunition/AGP_Ammunition/Ammo_12gauge_7_Rounds/Ammo_12gauge_7_Rounds.h"
 
 APickupAmmo_12gauge_7_Rounds::APickupAmmo_12gauge_7_Rounds()
 {

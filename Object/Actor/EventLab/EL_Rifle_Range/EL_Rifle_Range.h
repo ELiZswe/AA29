@@ -12,7 +12,7 @@ class AAGP_Location;
 class ANPC_DrillInstructor;
 
 UCLASS()
-class AA29_API AEL_Rifle_Range : public AEventLab
+class AEL_Rifle_Range : public AEventLab
 {
 	GENERATED_BODY()
 public:

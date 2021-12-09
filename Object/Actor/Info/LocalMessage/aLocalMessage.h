@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "AA29/Object/Actor/Info/AA2_Info.h"
-#include "AA29/MyStructs.h"
+#include "AA29/MyEnums.h"
 #include "aLocalMessage.generated.h"
 
 class AAA2_PlayerState;

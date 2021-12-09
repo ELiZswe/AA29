@@ -2,7 +2,7 @@
 
 
 #include "PickupW_FSTS_Trainer_M249_SAW.h"
-#include "AA29/Inventory/Weapon/AGP_Weapon/TraceWeapon/Weapon_M249_SAW/FSTS_Trainer_Weapon_M249_Saw/FSTS_Trainer_Weapon_M249_Saw.h"
+#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/TraceWeapon/Weapon_M249_SAW/FSTS_Trainer_Weapon_M249_Saw/FSTS_Trainer_Weapon_M249_Saw.h"
 
 APickupW_FSTS_Trainer_M249_SAW::APickupW_FSTS_Trainer_M249_SAW()
 {

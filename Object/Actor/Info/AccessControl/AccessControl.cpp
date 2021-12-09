@@ -1,7 +1,7 @@
 // All the original content belonged to the US Army
 
 #include "AA29/Object/Actor/Info/AccessControl/AccessControl.h"
-#include "AA29/MyStructs.h"
+#include "AA29/MyEnums.h"
 #include "AA29/AA2_WorldSettings.h"
 #include "AA29/AA29.h"
 

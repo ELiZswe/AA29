@@ -2,7 +2,7 @@
 
 
 #include "PickupW_Guerilla_RPG7_Rocket.h"
-#include "AA29/Inventory/Weapon/AGP_Weapon/RocketWeapon/Weapon_RPG7_Rocket/Weapon_Guerilla_RPG7_Rocket/Weapon_Guerilla_RPG7_Rocket.h"
+#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/RocketWeapon/Weapon_RPG7_Rocket/Weapon_Guerilla_RPG7_Rocket/Weapon_Guerilla_RPG7_Rocket.h"
 
 APickupW_Guerilla_RPG7_Rocket::APickupW_Guerilla_RPG7_Rocket()
 {

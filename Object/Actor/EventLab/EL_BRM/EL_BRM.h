@@ -15,7 +15,7 @@ class ABRM_HudOverlay;
 class AAGP_Objective;
 
 UCLASS()
-class AA29_API AEL_BRM : public AEventLab
+class AEL_BRM : public AEventLab
 {
 	GENERATED_BODY()
 public:

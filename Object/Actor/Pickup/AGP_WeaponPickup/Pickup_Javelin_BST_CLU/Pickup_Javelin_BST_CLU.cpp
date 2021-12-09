@@ -2,7 +2,7 @@
 
 
 #include "Pickup_Javelin_BST_CLU.h"
-#include "AA29/Inventory/Weapon/AGP_Weapon/RocketWeapon/WEAPON_Javelin/Javelin_BST_CLU/Javelin_BST_CLU.h"
+#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/RocketWeapon/WEAPON_Javelin/Javelin_BST_CLU/Javelin_BST_CLU.h"
 
 APickup_Javelin_BST_CLU::APickup_Javelin_BST_CLU()
 {

@@ -2,7 +2,7 @@
 
 
 #include "AA29/Object/Actor/NavigationPoint/SmallNavigationPoint/PlayerStart/AGP_PlayerStart/ClassSniper24PS/ClassSniper24PS.h"
-#include "AA29/AI_Primitive/SoldierClass/ClassSniperBase/ClassSniper24_US/ClassSniper24_US.h"
+#include "AA29/Object/Actor/AI_Primitive/SoldierClass/ClassSniperBase/ClassSniper24_US/ClassSniper24_US.h"
 
 AClassSniper24PS::AClassSniper24PS(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {

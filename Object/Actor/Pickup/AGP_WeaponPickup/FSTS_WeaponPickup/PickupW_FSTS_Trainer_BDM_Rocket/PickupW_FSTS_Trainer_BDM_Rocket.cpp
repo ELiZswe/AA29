@@ -2,7 +2,7 @@
 
 
 #include "PickupW_FSTS_Trainer_BDM_Rocket.h"
-#include "AA29/Inventory/Weapon/AGP_Weapon/RocketWeapon/Weapon_BDM_Rocket/Weapon_BDM_Rocket.h"
+#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/RocketWeapon/Weapon_BDM_Rocket/Weapon_BDM_Rocket.h"
 #include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/RocketWeaponPickup/PickupW_PG7VR_Rocket/PickupW_PG7VR_Rocket.h"
 
 APickupW_FSTS_Trainer_BDM_Rocket::APickupW_FSTS_Trainer_BDM_Rocket()

@@ -44,7 +44,7 @@ class USceneComponent;
 class UBillboardComponent;
 
 UCLASS()
-class AA29_API AEventLab : public AActor
+class AEventLab : public AActor
 {
 	GENERATED_BODY()
 	

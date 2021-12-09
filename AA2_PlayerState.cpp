@@ -2,7 +2,7 @@
 
 
 #include "AA2_PlayerState.h"
-#include "AA29/Inventory/DummyItem/Item_Bullseye/Item_Bullseye.h"
+#include "AA29/Object/Actor/Inventory/DummyItem/Item_Bullseye/Item_Bullseye.h"
 #include "AA29/Object/Actor/Controller/PlayerController/HumanController/HumanController.h"
 #include "AA29/Object/Actor/NavigationPoint/SmallNavigationPoint/PlayerStart/AGP_Playerstart/AGP_Playerstart.h"
 #include "AA29/Object/Actor/Controller/AIController/aAIController.h"

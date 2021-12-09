@@ -2,7 +2,7 @@
 
 
 #include "PickupT_POM_2S.h"
-#include "AA29/Inventory/Weapon/AGP_Weapon/ThrowWeapon/Throw_POM_2S/Throw_POM_2S.h"
+#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/ThrowWeapon/Throw_POM_2S/Throw_POM_2S.h"
 #include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/ThrowWeaponPickup/PickupT_PDM_Munition/PickupT_PDM_Munition.h"
 
 APickupT_POM_2S::APickupT_POM_2S()

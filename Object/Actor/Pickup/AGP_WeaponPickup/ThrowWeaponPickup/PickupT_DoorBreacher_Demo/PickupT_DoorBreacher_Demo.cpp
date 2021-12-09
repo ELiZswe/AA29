@@ -2,7 +2,7 @@
 
 
 #include "PickupT_DoorBreacher_Demo.h"
-#include "AA29/Inventory/Weapon/AGP_Weapon/ThrowWeapon/Demo_DoorBreacher/Demo_DoorBreacher.h"
+#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/ThrowWeapon/Demo_DoorBreacher/Demo_DoorBreacher.h"
 #include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/ThrowWeaponPickup/PickupT_DoorBreacher_Demo/PickupT_PipeBomb_Demo/PickupT_PipeBomb_Demo.h"
 
 APickupT_DoorBreacher_Demo::APickupT_DoorBreacher_Demo()

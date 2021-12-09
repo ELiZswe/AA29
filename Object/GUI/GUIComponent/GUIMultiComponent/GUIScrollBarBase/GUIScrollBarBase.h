@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIMultiComponent.h"
-#include "AA29/MyStructs.h"
+#include "AA29/MyEnums.h"
 #include "GUIScrollBarBase.generated.h"
 
 class UGUIGripButtonBase;

@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "Particles/Emitter.h"
 #include "AA29/AA29.h"
-#include "AA29/MyStructs.h"
+#include "AA29/MyEnums.h"
 #include "AA2_Emitter.generated.h"
 
 class UAA2_ParticleEmitter;

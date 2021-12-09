@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/GameStateBase.h"
 #include "Net/UnrealNetwork.h"
-#include "AA29/MyStructs.h"
+#include "AA29/MyEnums.h"
 #include "AA2_GameState.generated.h"
 
 

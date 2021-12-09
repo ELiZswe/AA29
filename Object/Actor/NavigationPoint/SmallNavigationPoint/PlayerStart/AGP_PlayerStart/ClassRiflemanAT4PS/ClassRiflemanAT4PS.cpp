@@ -2,7 +2,7 @@
 
 
 #include "AA29/Object/Actor/NavigationPoint/SmallNavigationPoint/PlayerStart/AGP_PlayerStart/ClassRiflemanAT4PS/ClassRiflemanAT4PS.h"
-#include "AA29/AI_Primitive/SoldierClass/ClassAT4Rocket/ClassAT4Rocket.h"
+#include "AA29/Object/Actor/AI_Primitive/SoldierClass/ClassAT4Rocket/ClassAT4Rocket.h"
 
 AClassRiflemanAT4PS::AClassRiflemanAT4PS(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {

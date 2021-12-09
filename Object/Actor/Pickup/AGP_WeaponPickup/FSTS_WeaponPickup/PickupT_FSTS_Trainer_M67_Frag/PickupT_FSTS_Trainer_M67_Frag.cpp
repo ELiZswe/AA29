@@ -2,7 +2,7 @@
 
 
 #include "PickupT_FSTS_Trainer_M67_Frag.h"
-#include "AA29/Inventory/Weapon/AGP_Weapon/ThrowWeapon/Throw_M67_Frag/Throw_M67_Frag.h"
+#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/ThrowWeapon/Throw_M67_Frag/Throw_M67_Frag.h"
 
 APickupT_FSTS_Trainer_M67_Frag::APickupT_FSTS_Trainer_M67_Frag()
 {

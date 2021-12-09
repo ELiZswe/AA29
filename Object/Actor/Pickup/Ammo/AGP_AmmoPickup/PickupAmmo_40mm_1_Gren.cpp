@@ -2,7 +2,7 @@
 
 
 #include "PickupAmmo_40mm_1_Gren.h"
-#include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_40mm_1_Gren/Ammo_40mm_1_Gren.h"
+#include "AA29/Object/Actor/Inventory/Ammunition/AGP_Ammunition/Ammo_40mm_1_Gren/Ammo_40mm_1_Gren.h"
 
 APickupAmmo_40mm_1_Gren::APickupAmmo_40mm_1_Gren()
 {

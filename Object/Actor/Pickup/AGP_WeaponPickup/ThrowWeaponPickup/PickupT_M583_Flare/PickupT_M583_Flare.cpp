@@ -2,7 +2,7 @@
 
 
 #include "PickupT_M583_Flare.h"
-#include "AA29/Inventory/Weapon/AGP_Weapon/ThrowWeapon/Throw_M583_Flare/Throw_M583_Flare.h"
+#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/ThrowWeapon/Throw_M583_Flare/Throw_M583_Flare.h"
 
 APickupT_M583_Flare::APickupT_M583_Flare()
 {

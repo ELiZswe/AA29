@@ -2,7 +2,7 @@
 
 
 #include "AA29/Object/Actor/NavigationPoint/SmallNavigationPoint/PlayerStart/AGP_PlayerStart/ClassGuerrillaSniperPS/ClassGuerrillaSniperPS.h"
-#include "AA29/AI_Primitive/SoldierClass/ClassGuerrillaBase/ClassGuerrillaSniper/ClassGuerrillaSniper.h"
+#include "AA29/Object/Actor/AI_Primitive/SoldierClass/ClassGuerrillaBase/ClassGuerrillaSniper/ClassGuerrillaSniper.h"
 
 AClassGuerrillaSniperPS::AClassGuerrillaSniperPS(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {

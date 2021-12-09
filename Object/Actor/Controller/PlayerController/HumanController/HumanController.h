@@ -4,9 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "AA29/AA29.h"
-#include "AA29/Keypoint/BaseObjective/AGP_Objective/AGP_Objective.h"
-#include "AA29/Mover/Mover.h"
-#include "AA29/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/FixedWeaponAttachment/FixedWeaponAttachment.h"
+#include "AA29/Object/Actor/Keypoint/BaseObjective/AGP_Objective/AGP_Objective.h"
+#include "AA29/Object/Actor/DecoMesh/Mover/Mover.h"
+#include "AA29/Object/Actor/InventoryAttachment/WeaponAttachment/BaseWeaponAttachment/FixedWeaponAttachment/FixedWeaponAttachment.h"
 #include "AA29/AA2_Playerstate.h"
 #include "AA29/Object/CameraEffect/CamEffect_FlashBang/CamEffect_FlashBang.h"
 #include "GameFramework/PlayerController.h"

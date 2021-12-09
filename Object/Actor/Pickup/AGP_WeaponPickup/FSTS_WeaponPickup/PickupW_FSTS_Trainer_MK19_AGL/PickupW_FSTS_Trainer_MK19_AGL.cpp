@@ -2,7 +2,7 @@
 
 
 #include "PickupW_FSTS_Trainer_MK19_AGL.h"
-#include "AA29/Inventory/Weapon/AGP_Weapon/ProjWeapon/FSTS_Trainer_Weapon_MK19_AGL/FSTS_Trainer_Weapon_MK19_AGL.h"
+#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/ProjWeapon/FSTS_Trainer_Weapon_MK19_AGL/FSTS_Trainer_Weapon_MK19_AGL.h"
 
 APickupW_FSTS_Trainer_MK19_AGL::APickupW_FSTS_Trainer_MK19_AGL()
 {

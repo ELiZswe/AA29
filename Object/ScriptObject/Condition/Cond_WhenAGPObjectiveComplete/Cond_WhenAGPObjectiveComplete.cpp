@@ -1,7 +1,7 @@
 // All the original content belonged to the US Army
 
 #include "AA29/Object/ScriptObject/Condition/Cond_WhenAGPObjectiveComplete/Cond_WhenAGPObjectiveComplete.h"
-#include "AA29/Keypoint/BaseObjective/AGP_Objective/AGP_Objective.h"
+#include "AA29/Object/Actor/Keypoint/BaseObjective/AGP_Objective/AGP_Objective.h"
 
 UCond_WhenAGPObjectiveComplete::UCond_WhenAGPObjectiveComplete()
 {

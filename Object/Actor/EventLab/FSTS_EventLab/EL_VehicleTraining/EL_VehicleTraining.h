@@ -11,7 +11,7 @@ class AAGP_VehicleFactory;
 class AAGP_Vehicle; 
 
 UCLASS()
-class AA29_API AEL_VehicleTraining : public AFSTS_EventLab
+class AEL_VehicleTraining : public AFSTS_EventLab
 {
 	GENERATED_BODY()
 public:

@@ -15,7 +15,7 @@ class ADoorTrigger;
 class ATextDisplay;
 
 UCLASS()
-class AA29_API AEL_SFMOUT : public AEventLab
+class AEL_SFMOUT : public AEventLab
 {
 	GENERATED_BODY()
 public:

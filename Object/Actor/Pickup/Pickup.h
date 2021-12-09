@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "AA29/MyStructs.h"
+#include "AA29/MyEnums.h"
 #include "AA29/AA2_PlayerState.h"
 #include "AA29/Object/Actor/xPickUpBase/xPickUpBase.h"
 #include "GameFramework/Actor.h"

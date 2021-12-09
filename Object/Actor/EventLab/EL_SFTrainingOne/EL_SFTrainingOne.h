@@ -13,7 +13,7 @@ class AMedExam;
 class ANPC_MedInstructor;
 
 UCLASS()
-class AA29_API AEL_SFTrainingOne : public AEventLab
+class AEL_SFTrainingOne : public AEventLab
 {
 	GENERATED_BODY()
 public:

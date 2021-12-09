@@ -4,18 +4,15 @@
 
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
+#include "AA29/MyEnums.h"
 #include "SoundParameters.generated.h"
 
-/**
- * 
- */
 UCLASS()
 class AA29_API USoundParameters : public UObject
 {
 	GENERATED_BODY()
 public:
 	USoundParameters();
-
 
 	UPROPERTY(EditAnywhere)						bool bAttenuate;								//var() bool bAttenuate;
 	UPROPERTY(EditAnywhere)						float Pitch;									//var() float Pitch;

@@ -2,7 +2,7 @@
 
 
 #include "PickupT_M84_Stun.h"
-#include "AA29/Inventory/Weapon/AGP_Weapon/ThrowWeapon/Throw_M84_Stun/Throw_M84_Stun.h"
+#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/ThrowWeapon/Throw_M84_Stun/Throw_M84_Stun.h"
 
 APickupT_M84_Stun::APickupT_M84_Stun()
 {

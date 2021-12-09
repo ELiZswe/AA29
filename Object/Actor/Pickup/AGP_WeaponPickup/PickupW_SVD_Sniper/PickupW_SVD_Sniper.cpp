@@ -2,7 +2,7 @@
 
 
 #include "PickupW_SVD_Sniper.h"
-#include "AA29/Inventory/Weapon/AGP_Weapon/TraceWeapon/SniperRifle/Weapon_SVD_Sniper/Weapon_SVD_Sniper.h"
+#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/TraceWeapon/SniperRifle/Weapon_SVD_Sniper/Weapon_SVD_Sniper.h"
 #include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/PickupW_M82_Sniper/PickupW_M82_Sniper.h"
 
 APickupW_SVD_Sniper::APickupW_SVD_Sniper()

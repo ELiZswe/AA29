@@ -7,9 +7,9 @@
 #include "AA29/AA2_GameMode.h"
 #include "AA29/Object/Actor/Info/StatsInfo/StatsInfo.h"
 #include "AA29/Object/Actor/NavigationPoint/SmallNavigationPoint/PlayerStart/AGP_PlayerStart/AGP_PlayerStart.h"
-#include "AA29/MyStructs.h"
+#include "AA29/MyEnums.h"
 #include "AA29/AA29.h"
-#include "AA29/PSSet/PSSet.h"
+#include "AA29/Object/Actor/PSSet/PSSet.h"
 
 #include "GameInfo.generated.h"
 

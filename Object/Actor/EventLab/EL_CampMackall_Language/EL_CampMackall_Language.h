@@ -18,7 +18,7 @@ class ASlideProjector;
 class ATriggerVolume;
 
 UCLASS()
-class AA29_API AEL_CampMackall_Language : public AEventLab
+class AEL_CampMackall_Language : public AEventLab
 {
 	GENERATED_BODY()
 public:
@@ -102,47 +102,47 @@ public:
 	UPROPERTY()   int32 GoofCount;								//var int GoofCount;
 	UPROPERTY()   int32 InstructorUseCount;						//var int InstructorUseCount;
 
-	//bool DoorTrigger_UsedBy(ADoorTrigger* Trigger, AActor* aInstigator);
-	//bool DoorTriggerOne_UsedBy(ADoorTrigger* Trigger, AActor* aInstigator);
-	//bool AGP_UseTrigger_UsedBy(AAGP_UseTrigger* Trigger, AActor* aInstigator);
-	//bool Pickup_PickedUp(APickup* NotifyActor, AActor* Instigator, FString Parms);
-	//bool headphones_PickedUp(APickup* NotifyActor, AActor* Instigator, FString Parms);
-	//bool SeatTriggerOne_UsedBy(AAGP_UseTrigger* Trigger, AActor* aInstigator);
-	//bool SeatTriggerTwo_UsedBy(AAGP_UseTrigger* Trigger, AActor* aInstigator);
-	//bool CheatExamTrigger_UsedBy(AAGP_UseTrigger* Trigger, AActor* aInstigator);
-	//bool AGP_Trigger_Trigger(AAGP_Trigger* Trigger, AActor* aInstigator);
-	//bool AGP_Trigger_UnTrigger(AAGP_Trigger* Trigger, AActor* aInstigator);
-	//bool SeatVolumeOne_Trigger(AAGP_Trigger* Trigger, AActor* aInstigator);
-	//bool SeatVolumeOne_UnTrigger(AAGP_Trigger* Trigger, AActor* aInstigator);
-	//bool SeatVolumeTwo_Trigger(AAGP_Trigger* Trigger, AActor* aInstigator);
-	//bool SeatVolumeTwo_UnTrigger(AAGP_Trigger* Trigger, AActor* aInstigator);
-	//bool TriggerVolume_Enter(ATriggerVolume* Trigger, AActor* aInstigator);
-	//bool ClassVolumeOne_Enter(ATriggerVolume* Trigger, AActor* aInstigator);
+	bool DoorTrigger_UsedBy(ADoorTrigger* Trigger, AActor* aInstigator);
+	bool DoorTriggerOne_UsedBy(ADoorTrigger* Trigger, AActor* aInstigator);
+	bool AGP_UseTrigger_UsedBy(AAGP_UseTrigger* Trigger, AActor* aInstigator);
+	bool Pickup_PickedUp(APickup* NotifyActor, AActor* Instigator, FString Parms);
+	bool headphones_PickedUp(APickup* NotifyActor, AActor* Instigator, FString Parms);
+	bool SeatTriggerOne_UsedBy(AAGP_UseTrigger* Trigger, AActor* aInstigator);
+	bool SeatTriggerTwo_UsedBy(AAGP_UseTrigger* Trigger, AActor* aInstigator);
+	bool CheatExamTrigger_UsedBy(AAGP_UseTrigger* Trigger, AActor* aInstigator);
+	bool AGP_Trigger_Trigger(AAGP_Trigger* Trigger, AActor* aInstigator);
+	bool AGP_Trigger_UnTrigger(AAGP_Trigger* Trigger, AActor* aInstigator);
+	bool SeatVolumeOne_Trigger(AAGP_Trigger* Trigger, AActor* aInstigator);
+	bool SeatVolumeOne_UnTrigger(AAGP_Trigger* Trigger, AActor* aInstigator);
+	bool SeatVolumeTwo_Trigger(AAGP_Trigger* Trigger, AActor* aInstigator);
+	bool SeatVolumeTwo_UnTrigger(AAGP_Trigger* Trigger, AActor* aInstigator);
+	bool TriggerVolume_Enter(ATriggerVolume* Trigger, AActor* aInstigator);
+	bool ClassVolumeOne_Enter(ATriggerVolume* Trigger, AActor* aInstigator);
 
-	//void PreInit();
-	//void Init();
-	//void PostInit();
-	//void PostPostInit();
-	//bool InstructorTriggerOne_UsedBy(AAGP_UseTrigger* Trigger, AActor* aInstigator);
-	//bool InstructorTriggerTwo_UsedBy(AAGP_UseTrigger* Trigger, AActor* aInstigator);
-	//bool HasHeardLecture_Enter(ATriggerVolume* Trigger, AActor* aInstigator);
-	//bool GetDown_Trigger(ATriggerVolume* Trigger, AActor* aInstigator);
-	//bool resetvolume_Trigger(ATriggerVolume* Trigger, AActor* aInstigator);
-	//bool AudioLabTalkToInstructor_Enter(ATriggerVolume* Trigger, AActor* aInstigator);
-	//bool DeskVolumeOne_Trigger(AAGP_Trigger* Trigger, AActor* aInstigator);
-	//void ResetLipsincAnim();
-	//bool GlobalTimer(FName Name);
-	//bool UpdateTestAnswers(int32 Switch);
-	//void StudentsTakeNotes();
-	//void StudentsIdle();
-	//void StudentsRaiseHands(int32 Which);
-	//void StudentsLowerHands(int32 Which);
-	//void SayTestWord(int32 Snd);
-	//void StudentAnswer(int32 Which);
-	//void StudentReturnsToIdle(int32 Which);
-	//void DisplayCorrectAnswer(int32 Key);
-	//void PrepareQuestion();
-	//void DisplayCorrectPageOnTest();
+	void PreInit();
+	void Init();
+	void PostInit();
+	void PostPostInit();
+	bool InstructorTriggerOne_UsedBy(AAGP_UseTrigger* Trigger, AActor* aInstigator);
+	bool InstructorTriggerTwo_UsedBy(AAGP_UseTrigger* Trigger, AActor* aInstigator);
+	bool HasHeardLecture_Enter(ATriggerVolume* Trigger, AActor* aInstigator);
+	bool GetDown_Trigger(ATriggerVolume* Trigger, AActor* aInstigator);
+	bool resetvolume_Trigger(ATriggerVolume* Trigger, AActor* aInstigator);
+	bool AudioLabTalkToInstructor_Enter(ATriggerVolume* Trigger, AActor* aInstigator);
+	bool DeskVolumeOne_Trigger(AAGP_Trigger* Trigger, AActor* aInstigator);
+	void ResetLipsincAnim();
+	bool GlobalTimer(FName Name);
+	bool UpdateTestAnswers(int32 Switch);
+	void StudentsTakeNotes();
+	void StudentsIdle();
+	void StudentsRaiseHands(int32 Which);
+	void StudentsLowerHands(int32 Which);
+	void SayTestWord(int32 Snd);
+	void StudentAnswer(int32 Which);
+	void StudentReturnsToIdle(int32 Which);
+	void DisplayCorrectAnswer(int32 Key);
+	void PrepareQuestion();
+	void DisplayCorrectPageOnTest();
 
 	void UpdateCorrectAnswersFromLecture();
 	void SayTestQuestion(bool bMessageOnly);

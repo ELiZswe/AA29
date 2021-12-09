@@ -2,7 +2,7 @@
 
 
 #include "PickupAmmo_545mm_30_Mag.h"
-#include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_545mm_30_Mag/Ammo_545mm_30_Mag.h"
+#include "AA29/Object/Actor/Inventory/Ammunition/AGP_Ammunition/Ammo_545mm_30_Mag/Ammo_545mm_30_Mag.h"
 
 APickupAmmo_545mm_30_Mag::APickupAmmo_545mm_30_Mag()
 {

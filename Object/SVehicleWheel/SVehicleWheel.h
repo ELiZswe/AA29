@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "AA29/AA29.h"
-#include "AA29/MyStructs.h"
+#include "AA29/MyEnums.h"
 #include "SVehicleWheel.generated.h"
 
 UCLASS()

@@ -12,14 +12,16 @@ class AAGP_NPC;
 class ACameraPoint;
 class AGP_Objective;
 class AAGP_UseTrigger;
+class ALevelInfo;
+class AEEBlackHawk;
+class ANPC_EEGuard;
 
 UCLASS()
-class AA29_API AEL_EscapeAndEvade : public AEventLab
+class AEL_EscapeAndEvade : public AEventLab
 {
 	GENERATED_BODY()
 public:
 	AEL_EscapeAndEvade();
-
 
 	UPROPERTY()												AAGP_UseTrigger* MusicTrigger;					//var AGP.AGP_UseTrigger MusicTrigger;
 	UPROPERTY()												bool bPlayingMusic;								//var bool bPlayingMusic;
@@ -36,8 +38,8 @@ public:
 	UPROPERTY()												AAGP_Objective* CheckpointB;					//var AGP.AGP_Objective CheckpointB;
 	UPROPERTY()												AAGP_Objective* CheckpointA;					//var AGP.AGP_Objective CheckpointA;
 	UPROPERTY()												AAGP_UseTrigger* TruckUse;						//var AGP.AGP_UseTrigger TruckUse;
-	//UPROPERTY()												AEEBlackHawk* blackhawk;					//var AGP_Gameplay.EEBlackHawk blackhawk;
-	//UPROPERTY()												TArray<ANPC_EEGuard*> Guards;				//var array<NPC_EEGuard> Guards;
+	UPROPERTY()												AEEBlackHawk* blackhawk;					//var AGP_Gameplay.EEBlackHawk blackhawk;
+	UPROPERTY()												TArray<ANPC_EEGuard*> Guards;				//var array<NPC_EEGuard> Guards;
 	UPROPERTY()												int32 ViewedCinematicCount;						//var int ViewedCinematicCount;
 	UPROPERTY()												FString MissionTime;							//var string MissionTime;
 	UPROPERTY()												float FOVTweenTime;								//var float FOVTweenTime;
@@ -77,5 +79,35 @@ public:
 	UPROPERTY(EditAnywhere, Category = "GuardSounds")		TArray<USoundBase*> BlueforSeeSounds;			//var(GuardSounds) array<Sound> BlueforSeeSounds;
 	UPROPERTY(EditAnywhere, Category = "GuardSounds")		TArray<USoundBase*> BlueforHearSounds;			//var(GuardSounds) array<Sound> BlueforHearSounds;
 
-
+	void PreInit();
+	void Init();
+	void PostInit();
+	void PostPostInit();
+	bool LevelInfo_FirstDraw(ALevelInfo* NotifyActor, AActor* aInstigator, FString Parms);
+	void InitLanguage();
+	void InitVelocityArray();
+	void DisableGuards();
+	void ResetGuards();
+	void ResetScript();
+	void EventLabTick(float DeltaTime);
+	void PlayAmbientSounds();
+	void DisableAmbient();
+	void EnableAmbient();
+	ANoiseMarker* GetRandomMarker();
+	float GetStealth();
+	USoundBase* GetRareSound();
+	USoundBase* GetCommonSound();
+	USoundBase* GetDogSound();
+	void UpdateVelocityAverage();
+	float AveragePlayerVelocities();
+	void CreateSoundMarkers();
+	void UpdateSoundMarkers();
+	bool AGP_UseTrigger_UsedBy(AAGP_UseTrigger* NotifyActor, AActor* aInstigator);
+	float GetPlayerVisibility();
+	float GetPlayerAudibility();
+	float GetVelocityRiskVisual();
+	float GetVelocityRiskAudio();
+	float GetPostureRiskVisual();
+	void SendNoise(AActor* aInstigator, float Loudness);
+	bool Timer_Timer(FName Name);
 };

@@ -4,14 +4,14 @@
 
 #include "CoreMinimal.h"
 #include "AA29/Object/Actor/Info/AA2_Info.h"
-#include "AA29/MyStructs.h"
+#include "AA29/MyEnums.h"
 #include "AA29/AA29.h"
 #include "AccessControl.generated.h"
 
 class AAA2_PlayerState;
 
 UCLASS()
-class AA29_API AAccessControl : public AAA2_Info
+class AAccessControl : public AAA2_Info
 {
 	GENERATED_BODY()
 public:

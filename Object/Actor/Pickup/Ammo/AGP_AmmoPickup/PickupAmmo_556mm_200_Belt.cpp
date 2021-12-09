@@ -2,7 +2,7 @@
 
 
 #include "PickupAmmo_556mm_200_Belt.h"
-#include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_556mm_200_Belt/Ammo_556mm_200_Belt.h"
+#include "AA29/Object/Actor/Inventory/Ammunition/AGP_Ammunition/Ammo_556mm_200_Belt/Ammo_556mm_200_Belt.h"
 
 APickupAmmo_556mm_200_Belt::APickupAmmo_556mm_200_Belt()
 {

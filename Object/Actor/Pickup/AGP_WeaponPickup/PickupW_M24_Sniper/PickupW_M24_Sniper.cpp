@@ -2,7 +2,7 @@
 
 
 #include "PickupW_M24_Sniper.h"
-#include "AA29/Inventory/Weapon/AGP_Weapon/TraceWeapon/SniperRifle/Weapon_M24_Sniper/Weapon_M24_Sniper.h"
+#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/TraceWeapon/SniperRifle/Weapon_M24_Sniper/Weapon_M24_Sniper.h"
 #include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/PickupW_MosinNagant_Sniper/PickupW_MosinNagant_Sniper.h"
 
 APickupW_M24_Sniper::APickupW_M24_Sniper()

@@ -2,7 +2,7 @@
 
 
 #include "PickupT_RGD5_Frag.h"
-#include "AA29/Inventory/Weapon/AGP_Weapon/ThrowWeapon/Throw_RGD5_Frag/Throw_RGD5_Frag.h"
+#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/ThrowWeapon/Throw_RGD5_Frag/Throw_RGD5_Frag.h"
 #include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/ThrowWeaponPickup/PickupT_M67_Frag/PickupT_M67_Frag.h"
 
 APickupT_RGD5_Frag::APickupT_RGD5_Frag()

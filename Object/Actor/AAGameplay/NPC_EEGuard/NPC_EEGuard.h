@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "AA29/Object/Actor/AAGameplay/AAGameplay.h"
-#include "AA29/MyStructs.h"
+#include "AA29/MyEnums.h"
 #include "NPC_EEGuard.generated.h"
 
 class AAGP_Pawn;

@@ -5,13 +5,13 @@
 #include "AA29/Object/Actor/Info/ReplicationInfo/TeamInfo/AGP_TeamInfo/AGP_TeamInfo.h"
 #include "AA29/Object/Actor/Controller/PlayerController/HumanController/HumanController.h"
 
-#include "AA29/AI_Primitive/SoldierClass/ClassJavelin/ClassJavelin.h"
-#include "AA29/AI_Primitive/SoldierClass/ClassSniperBase/ClassSniper/ClassSniper.h"
-#include "AA29/AI_Primitive/SoldierClass/ClassSniperBase/ClassSniper24_US/ClassSniper24_US.h"
+#include "AA29/Object/Actor/AI_Primitive/SoldierClass/ClassJavelin/ClassJavelin.h"
+#include "AA29/Object/Actor/AI_Primitive/SoldierClass/ClassSniperBase/ClassSniper/ClassSniper.h"
+#include "AA29/Object/Actor/AI_Primitive/SoldierClass/ClassSniperBase/ClassSniper24_US/ClassSniper24_US.h"
 
 #include "AA29/Object/Actor/Controller/AIController/aAIController.h"
 #include "AA29/Object/Actor/Pawn/AGP_Pawn/AGP_Pawn.h"
-#include "AA29/Keypoint/AGP_Viewpoint/AGP_Viewpoint.h"
+#include "AA29/Object/Actor/Keypoint/AGP_Viewpoint/AGP_Viewpoint.h"
 #include "AA29/Object/Actor/Info/ReplicationInfo/TeamInfo/TeamInfo.h"
 #include "AA29/AA2_GameState.h"
 

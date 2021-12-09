@@ -2,7 +2,7 @@
 
 
 #include "Pickup_Headphones.h"
-#include "AA29/Inventory/Weapon/AGP_Weapon/item_headphones/item_headphones.h"
+#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/item_headphones/item_headphones.h"
 
 APickup_Headphones::APickup_Headphones()
 {

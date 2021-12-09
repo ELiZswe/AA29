@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "MyStructs.h"
+#include "MyEnums.h"
 #include "AA29.generated.h"
 
 class AAGP_Objective;

@@ -12,7 +12,7 @@ class ANPC_MedInstructor;
 class ADoorTrigger;
 
 UCLASS()
-class AA29_API AEL_MedicTrainingThree : public AEventLab
+class AEL_MedicTrainingThree : public AEventLab
 {
 	GENERATED_BODY()
 public:

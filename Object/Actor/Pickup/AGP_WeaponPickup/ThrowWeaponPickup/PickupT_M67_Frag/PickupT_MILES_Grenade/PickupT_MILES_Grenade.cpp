@@ -2,7 +2,7 @@
 
 
 #include "PickupT_MILES_Grenade.h"
-#include "AA29/Inventory/Weapon\AGP_Weapon\ThrowWeapon\Throw_M67_Frag\Throw_MILES_Grenade\Throw_MILES_Grenade.h"
+#include "AA29/Object/Actor/Inventory/Weapon\AGP_Weapon\ThrowWeapon\Throw_M67_Frag\Throw_MILES_Grenade\Throw_MILES_Grenade.h"
 
 APickupT_MILES_Grenade::APickupT_MILES_Grenade()
 {

@@ -9,7 +9,7 @@
 class AEL_MultiScript;
 
 UCLASS()
-class AA29_API AEL_MultiScript : public AEventLab
+class AEL_MultiScript : public AEventLab
 {
 	GENERATED_BODY()
 public:

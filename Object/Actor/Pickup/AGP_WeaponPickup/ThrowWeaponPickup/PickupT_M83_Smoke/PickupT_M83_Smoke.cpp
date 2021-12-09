@@ -2,7 +2,7 @@
 
 
 #include "PickupT_M83_Smoke.h"
-#include "AA29/Inventory/Weapon/AGP_Weapon/ThrowWeapon/Throw_M83_Smoke/Throw_M83_Smoke.h"
+#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/ThrowWeapon/Throw_M83_Smoke/Throw_M83_Smoke.h"
 
 APickupT_M83_Smoke::APickupT_M83_Smoke()
 {

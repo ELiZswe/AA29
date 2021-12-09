@@ -2,7 +2,7 @@
 
 
 #include "AA29/Object/Actor/NavigationPoint/SmallNavigationPoint/PlayerStart/AGP_PlayerStart/ClassGrenadierPS/ClassGrenadierPS.h"
-#include "AA29/AI_Primitive/SoldierClass/ClassGrenadier/ClassGrenadier.h"
+#include "AA29/Object/Actor/AI_Primitive/SoldierClass/ClassGrenadier/ClassGrenadier.h"
 
 AClassGrenadierPS::AClassGrenadierPS(const FObjectInitializer & ObjectInitializer) : Super(ObjectInitializer)
 {

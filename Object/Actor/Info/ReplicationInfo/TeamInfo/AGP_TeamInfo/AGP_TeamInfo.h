@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "AA29/Object/Actor/Info/ReplicationInfo/TeamInfo/TeamInfo.h"
 #include "AA29/AA2_PlayerState.h"
-#include "AA29/MyStructs.h"
+#include "AA29/MyEnums.h"
 #include "AGP_TeamInfo.generated.h"
 
 class AAGP_PlayerStart;

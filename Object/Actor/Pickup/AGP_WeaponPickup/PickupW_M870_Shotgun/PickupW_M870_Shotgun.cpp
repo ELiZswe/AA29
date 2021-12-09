@@ -2,7 +2,7 @@
 
 
 #include "PickupW_M870_Shotgun.h"
-#include "AA29/Inventory/Weapon/AGP_Weapon/TraceWeapon/Weapon_M870_Shotgun/Weapon_M870_Shotgun.h"
+#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/TraceWeapon/Weapon_M870_Shotgun/Weapon_M870_Shotgun.h"
 
 APickupW_M870_Shotgun::APickupW_M870_Shotgun()
 {

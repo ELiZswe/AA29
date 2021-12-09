@@ -2,7 +2,7 @@
 
 
 #include "PickupW_M16A2_Rifle.h"
-#include "AA29/Inventory/Weapon/AGP_Weapon/TraceWeapon/Weapon_M16A2_Rifle/Weapon_M16A2_Rifle.h"
+#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/TraceWeapon/Weapon_M16A2_Rifle/Weapon_M16A2_Rifle.h"
 #include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/PickupW_AK47_Rifle/PickupW_AK47_Rifle.h"
 
 APickupW_M16A2_Rifle::APickupW_M16A2_Rifle()

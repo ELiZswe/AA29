@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "AA29/Object/Actor/HUD/AA2_HUD.h"
-#include "AA29/MyStructs.h"
+#include "AA29/MyEnums.h"
 #include "Engine/Canvas.h"
 #include "AA29/Object/Actor/Controller/PlayerController/HumanController/HumanController.h"
 #include "AGP_HUD.generated.h"

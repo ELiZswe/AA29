@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "Engine.h"
 #include "Net/UnrealNetwork.h"
-//#include "AA29/Inventory/Weapon/AGP_Weapon/AGP_Weapon.h"
+//#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/AGP_Weapon.h"
 
 #include "GameFramework/PlayerState.h"
 #include "AA29/Object/Actor/Info/ReplicationInfo/TeamInfo/TeamInfo.h"

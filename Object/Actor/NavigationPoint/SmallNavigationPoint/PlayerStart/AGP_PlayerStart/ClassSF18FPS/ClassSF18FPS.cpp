@@ -2,7 +2,7 @@
 
 
 #include "AA29/Object/Actor/NavigationPoint/SmallNavigationPoint/PlayerStart/AGP_PlayerStart/ClassSF18FPS/ClassSF18FPS.h"
-#include "AA29/AI_Primitive/SoldierClass/ClassSFBase/ClassSF18F/ClassSF18F.h"
+#include "AA29/Object/Actor/AI_Primitive/SoldierClass/ClassSFBase/ClassSF18F/ClassSF18F.h"
 
 AClassSF18FPS::AClassSF18FPS(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {

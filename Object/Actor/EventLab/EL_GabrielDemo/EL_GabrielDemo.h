@@ -10,7 +10,7 @@ class AAGP_PlayerStart;
 class ANPC_Ambient;
 
 UCLASS()
-class AA29_API AEL_GabrielDemo : public AEventLab
+class AEL_GabrielDemo : public AEventLab
 {
 	GENERATED_BODY()
 public:

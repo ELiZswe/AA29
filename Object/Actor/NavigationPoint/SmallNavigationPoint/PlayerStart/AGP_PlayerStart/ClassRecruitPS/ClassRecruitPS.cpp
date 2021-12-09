@@ -2,7 +2,7 @@
 
 
 #include "AA29/Object/Actor/NavigationPoint/SmallNavigationPoint/PlayerStart/AGP_PlayerStart/ClassRecruitPS/ClassRecruitPS.h"
-#include "AA29/AI_Primitive/SoldierClass/ClassRecruit/ClassRecruit.h"
+#include "AA29/Object/Actor/AI_Primitive/SoldierClass/ClassRecruit/ClassRecruit.h"
 	
 AClassRecruitPS::AClassRecruitPS(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {

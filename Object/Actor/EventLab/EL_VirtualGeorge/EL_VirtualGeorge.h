@@ -9,7 +9,7 @@
 class ANPC_VirtualGeorge;
 
 UCLASS()
-class AA29_API AEL_VirtualGeorge : public AEventLab
+class AEL_VirtualGeorge : public AEventLab
 {
 	GENERATED_BODY()
 public:

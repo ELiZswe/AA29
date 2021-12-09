@@ -2,7 +2,7 @@
 
 
 #include "PickupW_FSTS_Trainer_M2_HMG.h"
-#include "AA29/Inventory/Weapon/AGP_Weapon/TraceWeapon/FSTS_Trainer_Weapon_M2_HMG/FSTS_Trainer_Weapon_M2_HMG.h"
+#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/TraceWeapon/FSTS_Trainer_Weapon_M2_HMG/FSTS_Trainer_Weapon_M2_HMG.h"
 
 APickupW_FSTS_Trainer_M2_HMG::APickupW_FSTS_Trainer_M2_HMG()
 {

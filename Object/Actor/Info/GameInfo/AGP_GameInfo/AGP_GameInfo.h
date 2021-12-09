@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "AA29/Object/Actor/Info/GameInfo/GameInfo.h"
-#include "AA29/MyStructs.h"
+#include "AA29/MyEnums.h"
 #include "AGP_GameInfo.generated.h"
 
 class ASoldierClass;

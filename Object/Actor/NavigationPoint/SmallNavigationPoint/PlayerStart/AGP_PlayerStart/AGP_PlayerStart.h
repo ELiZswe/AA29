@@ -3,10 +3,10 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "AA29/MyStructs.h"
-#include "AA29/PSSet/PSSet.h"
+#include "AA29/MyEnums.h"
+#include "AA29/Object/Actor/PSSet/PSSet.h"
 #include "GameFramework/Actor.h"
-#include "AA29/Inventory/Inventory.h"
+#include "AA29/Object/Actor/Inventory/Inventory.h"
 #include "GameFramework/PlayerStart.h"
 #include "AGP_PlayerStart.generated.h"
 

@@ -11,7 +11,7 @@ class ALinksParser;
 class ATriggerURL;
 
 UCLASS()
-class AA29_API AEL_GabrielGoArmy : public AEventLab
+class AEL_GabrielGoArmy : public AEventLab
 {
 	GENERATED_BODY()
 public:

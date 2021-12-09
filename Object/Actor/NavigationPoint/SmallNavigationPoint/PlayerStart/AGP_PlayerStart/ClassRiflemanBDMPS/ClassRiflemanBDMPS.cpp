@@ -2,7 +2,7 @@
 
 
 #include "AA29/Object/Actor/NavigationPoint/SmallNavigationPoint/PlayerStart/AGP_PlayerStart/ClassRiflemanBDMPS/ClassRiflemanBDMPS.h"
-#include "AA29/AI_Primitive/SoldierClass/ClassBDMRocket/ClassBDMRocket.h"
+#include "AA29/Object/Actor/AI_Primitive/SoldierClass/ClassBDMRocket/ClassBDMRocket.h"
 
 AClassRiflemanBDMPS::AClassRiflemanBDMPS(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {

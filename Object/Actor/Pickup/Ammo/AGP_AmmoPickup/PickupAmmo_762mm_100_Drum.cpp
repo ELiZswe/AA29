@@ -2,7 +2,7 @@
 
 
 #include "PickupAmmo_762mm_100_Drum.h"
-#include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_762mm_100_Drum/Ammo_762mm_100_Drum.h"
+#include "AA29/Object/Actor/Inventory/Ammunition/AGP_Ammunition/Ammo_762mm_100_Drum/Ammo_762mm_100_Drum.h"
 
 APickupAmmo_762mm_100_Drum::APickupAmmo_762mm_100_Drum()
 {

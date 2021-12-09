@@ -11,7 +11,7 @@ class ATeamInfo;
 class ABaseObjective;
 class UaDamageType;
 class AaLocalMessage;
-class APlayerReplicationInfo;
+class AAA2_PlayerState;
 
 UCLASS()
 class AA29_API ABaseStatsInterface : public AAA2_Info

@@ -2,7 +2,7 @@
 
 
 #include "PickupT_M83_GreenSmoke.h"
-#include "AA29/Inventory/Weapon/AGP_Weapon/ThrowWeapon/Throw_M83_Smoke/Throw_M83_GreenSmoke/Throw_M83_GreenSmoke.h"
+#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/ThrowWeapon/Throw_M83_Smoke/Throw_M83_GreenSmoke/Throw_M83_GreenSmoke.h"
 
 APickupT_M83_GreenSmoke::APickupT_M83_GreenSmoke()
 {

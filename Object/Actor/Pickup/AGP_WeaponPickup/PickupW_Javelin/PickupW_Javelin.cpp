@@ -2,7 +2,7 @@
 
 
 #include "PickupW_Javelin.h"
-#include "AA29/Inventory/Weapon\AGP_Weapon\RocketWeapon\WEAPON_Javelin\WEAPON_Javelin.h"
+#include "AA29/Object/Actor/Inventory/Weapon\AGP_Weapon\RocketWeapon\WEAPON_Javelin\WEAPON_Javelin.h"
 
 APickupW_Javelin::APickupW_Javelin()
 {

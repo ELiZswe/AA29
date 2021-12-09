@@ -2,7 +2,7 @@
 
 
 #include "Pickup_Javelin_Tube.h"
-#include "AA29/Inventory/Weapon/AGP_Weapon/RocketWeapon/Javelin_Tube/Javelin_Tube.h"
+#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/RocketWeapon/Javelin_Tube/Javelin_Tube.h"
 
 APickup_Javelin_Tube::APickup_Javelin_Tube()
 {

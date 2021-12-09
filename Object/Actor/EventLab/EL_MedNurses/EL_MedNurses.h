@@ -12,7 +12,7 @@ class AAGP_UseTrigger;
 class AAGP_Trigger;
 
 UCLASS()
-class AA29_API AEL_MedNurses : public AEventLab
+class AEL_MedNurses : public AEventLab
 {
 	GENERATED_BODY()
 public:

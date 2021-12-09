@@ -2,7 +2,7 @@
 
 
 #include "AA29/Object/Actor/NavigationPoint/SmallNavigationPoint/PlayerStart/AGP_PlayerStart/ClassGuerrillaVIPPS/ClassGuerrillaVIPPS.h"
-#include "AA29/AI_Primitive/SoldierClass/ClassGuerrillaBase/ClassGuerrillaVIP/ClassGuerrillaVIP.h"
+#include "AA29/Object/Actor/AI_Primitive/SoldierClass/ClassGuerrillaBase/ClassGuerrillaVIP/ClassGuerrillaVIP.h"
 
 AClassGuerrillaVIPPS::AClassGuerrillaVIPPS(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {

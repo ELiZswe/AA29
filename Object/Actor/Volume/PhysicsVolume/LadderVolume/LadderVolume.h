@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/PhysicsVolume.h"
-#include "AA29/MyStructs.h"
+#include "AA29/MyEnums.h"
 #include "LadderVolume.generated.h"
 
 class ALadder;

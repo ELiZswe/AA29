@@ -2,7 +2,7 @@
 
 
 #include "AA29/Object/Actor/NavigationPoint/SmallNavigationPoint/PlayerStart/AGP_PlayerStart/ClassRiflemanBarePS/ClassRiflemanBarePS.h"
-#include "AA29/AI_Primitive/SoldierClass/ClassRiflemanBare/ClassRiflemanBare.h"
+#include "AA29/Object/Actor/AI_Primitive/SoldierClass/ClassRiflemanBare/ClassRiflemanBare.h"
 
 AClassRiflemanBarePS::AClassRiflemanBarePS(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {

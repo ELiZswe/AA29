@@ -2,7 +2,7 @@
 
 
 #include "PickupW_FSTS_Trainer_M203_Gren.h"
-#include "AA29/Inventory/Weapon/AGP_Weapon/TraceWeapon/Weapon_M16A2_Rifle/Weapon_M203_Gren/FSTS_Trainer_Weapon_M203_Gren/FSTS_Trainer_Weapon_M203_Gren.h"
+#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/TraceWeapon/Weapon_M16A2_Rifle/Weapon_M203_Gren/FSTS_Trainer_Weapon_M203_Gren/FSTS_Trainer_Weapon_M203_Gren.h"
 
 APickupW_FSTS_Trainer_M203_Gren::APickupW_FSTS_Trainer_M203_Gren()
 {

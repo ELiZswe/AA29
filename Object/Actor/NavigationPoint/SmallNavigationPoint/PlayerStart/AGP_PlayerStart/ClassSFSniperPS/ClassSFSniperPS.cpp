@@ -2,7 +2,7 @@
 
 
 #include "AA29/Object/Actor/NavigationPoint/SmallNavigationPoint/PlayerStart/AGP_PlayerStart/ClassSFSniperPS/ClassSFSniperPS.h"
-#include "AA29/AI_Primitive/SoldierClass/ClassSFBase/ClassSFSniper/ClassSFSniper.h"
+#include "AA29/Object/Actor/AI_Primitive/SoldierClass/ClassSFBase/ClassSFSniper/ClassSFSniper.h"
 
 AClassSFSniperPS::AClassSFSniperPS(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {

@@ -2,7 +2,7 @@
 
 
 #include "PickupAmmo_Flare_1_Gren.h"
-#include "AA29/Inventory/Ammunition/AGP_Ammunition/Ammo_Flare_1_Gren/Ammo_Flare_1_Gren.h"
+#include "AA29/Object/Actor/Inventory/Ammunition/AGP_Ammunition/Ammo_Flare_1_Gren/Ammo_Flare_1_Gren.h"
 
 APickupAmmo_Flare_1_Gren::APickupAmmo_Flare_1_Gren()
 {

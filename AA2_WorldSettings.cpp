@@ -1,7 +1,7 @@
 // All the original content belonged to the US Army
 
 #include "AA2_WorldSettings.h"
-#include "AA29/GrenadeHelper/GrenadeHelper.h"
+#include "AA29/Object/Actor/GrenadeHelper/GrenadeHelper.h"
 #include "AA29/Object/Actor/Controller/PlayerController/HumanController/HumanController.h"
 
 void AAA2_WorldSettings::LoadTours()

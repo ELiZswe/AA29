@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "AA29/Object/Actor/Vignette/Vignette.h"
-#include "AA29/MyStructs.h"
+#include "AA29/MyEnums.h"
 #include "TestVignette.generated.h"
 
 class AFont;

@@ -4,7 +4,7 @@
 #include "AGP_GameTeamObjective.h"
 
 #include "AA29/Object/Actor/Pawn/AGP_Pawn/AGP_Character/AGP_Character.h"
-#include "AA29/Keypoint/BaseObjective/AGP_Objective/AGP_Objective.h"
+#include "AA29/Object/Actor/Keypoint/BaseObjective/AGP_Objective/AGP_Objective.h"
 #include "AA29/Object/Actor/HUD/AGP_HUD/AGP_HUD.h"
 #include "AA29/Object/Actor/Info/ReplicationInfo/TeamInfo/AGP_TeamInfo/AGP_TeamInfo.h"
 #include "AA29/Object/Actor/NavigationPoint/SmallNavigationPoint/PlayerStart/AGP_PlayerStart/AGP_PlayerStart.h"

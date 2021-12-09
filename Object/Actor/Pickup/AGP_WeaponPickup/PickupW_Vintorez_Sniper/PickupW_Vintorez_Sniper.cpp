@@ -2,7 +2,7 @@
 
 
 #include "PickupW_Vintorez_Sniper.h"
-#include "AA29/Inventory/Weapon/AGP_Weapon/TraceWeapon/SniperRifle/Weapon_Vintorez_Sniper/Weapon_Vintorez_Sniper.h"
+#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/TraceWeapon/SniperRifle/Weapon_Vintorez_Sniper/Weapon_Vintorez_Sniper.h"
 #include "AA29/Object/Actor/Pickup/AGP_WeaponPickup/PickupW_SPR_Sniper/PickupW_SPR_Sniper.h"
 
 APickupW_Vintorez_Sniper::APickupW_Vintorez_Sniper()
