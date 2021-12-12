@@ -52,4 +52,8 @@ public:
 	UPROPERTY()						int32 OutsideShotCounter;									//var int OutsideShotCounter;
 	UPROPERTY()						ACounter* LaneCounter;										//var Gameplay.Counter LaneCounter;
 	UPROPERTY()						AFSTS_WeaponPickup* WeaponPickup;							//var FSTS_WeaponPickup WeaponPickup;
+
+	void PostBeginPlay();
+	void Reset();
+	void DoReferenceLinking();
 };

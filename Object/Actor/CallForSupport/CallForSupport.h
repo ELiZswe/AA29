@@ -15,8 +15,6 @@ public:
 	// Sets default values for this actor's properties
 	ACallForSupport();
 
-
-
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -24,8 +22,6 @@ protected:
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
-
 
 	UPROPERTY()										int32 InitialStrikesAvailable;					//var int InitialStrikesAvailable;
 	UPROPERTY()										APlayerController* Caller;						//var PlayerController Caller;
@@ -58,7 +54,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)		int32 StrikesAvailable;							//var() int StrikesAvailable;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)		float ArrivalTime;								//var() float ArrivalTime;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)		uint8 TeamNumber;								//var() byte TeamNumber;
-
 
 	UFUNCTION()	void Reset();
 	UFUNCTION()	void GetInPosition();

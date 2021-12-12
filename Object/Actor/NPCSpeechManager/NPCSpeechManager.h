@@ -67,4 +67,21 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 	void LoadEditorIcon();
+	void PostBeginPlay();
+	USoundBase* GetRandomAttackingSounds(bool bIsMaleVoice);
+	USoundBase* GetRandomInjuredSounds(bool bIsMaleVoice);
+	USoundBase* GetRandomTerrifiedSounds(bool bIsMaleVoice);
+	USoundBase* GetRandomAngrySounds(bool bIsMaleVoice);
+	USoundBase* GetRandomIdleSounds(bool bIsMaleVoice);
+	USoundBase* GetRandomConcernedSounds(bool bIsMaleVoice);
+	USoundBase* GetRandomTauntSounds(bool bIsMaleVoice);
+	USoundBase* GetRandomWoundedSounds(bool bIsMaleVoice);
+	USoundBase* GetRandomFriendWoundedSounds(bool bIsMaleVoice);
+	USoundBase* GetRandomGrenadeSounds(bool bIsMaleVoice);
+	USoundBase* GetRandomFriendDownSounds(bool bIsMaleVoice);
+	USoundBase* GetRandomSurrenderSounds(bool bIsMaleVoice);
+	USoundBase* GetRandomVehicleSpottedSounds(bool bIsMaleVoice);
+	USoundBase* GetRandomEnemySpottedSounds(bool bIsMaleVoice);
+	USoundBase* GetRandomWarningSounds(bool bIsMaleVoice);
+	bool AddSoundToSoundHistory(USoundBase* Snd);
 };

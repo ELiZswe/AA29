@@ -55,4 +55,7 @@ public:
 	UPROPERTY()   ACounter* Lane03Counter;				//var Gameplay.Counter Lane03Counter;
 	UPROPERTY()   AFSTS_WeaponPickup* WeaponPickup;		//var FSTS_WeaponPickup WeaponPickup;
 
+	void PostBeginPlay();
+	void DoReferenceLinking();
+	void Reset();
 };

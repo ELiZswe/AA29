@@ -16,4 +16,10 @@ public:
 	AEL_VirtualGeorge();
 
 	UPROPERTY()						ANPC_VirtualGeorge* VG;											//var AGP_Characters.NPC_VirtualGeorge VG;
+
+	void PreInit();
+	void Init();
+	void PostInit();
+	void PostPostInit();
+
 };

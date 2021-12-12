@@ -25,7 +25,6 @@ enum class EeAnimationCommand : uint8
 	/* 5 */ AC_ClearQueue														UMETA(DisplayName = "AC_ClearQueue")
 };
 
-
 UENUM(BlueprintType)
 enum class EVar : uint8
 {
@@ -888,7 +887,6 @@ enum class ESmokeGrenadeStatus : uint8
 	/* 1 */ SGS_PlayerHolding								 			UMETA(DisplayName = "SGS_PlayerHolding"),
 	/* 2 */ SGS_Thrown								 					UMETA(DisplayName = "SGS_Thrown")
 };
-
 
 UENUM(BlueprintType)
 enum class EMedicalItemState : uint8

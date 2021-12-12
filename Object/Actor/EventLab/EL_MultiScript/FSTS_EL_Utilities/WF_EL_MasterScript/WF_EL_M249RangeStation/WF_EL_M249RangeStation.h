@@ -58,4 +58,8 @@ public:
 	UPROPERTY()						int32 OutsideShotLimit;									//var int OutsideShotLimit;
 	UPROPERTY()						int32 OutsideShotCounter;								//var int OutsideShotCounter;
 	UPROPERTY()						APickupW_FSTS_Trainer_M249_SAW* SAWPickup;				//var PickupW_FSTS_Trainer_M249_SAW SAWPickup;
+
+	void PostPostInit();
+	void DoReferenceLinking();
+	void Reset();
 };

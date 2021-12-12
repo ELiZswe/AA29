@@ -18,15 +18,22 @@ class AEL_Rifle_Range : public AEventLab
 public:
 	AEL_Rifle_Range();
 
+	UPROPERTY()						float					fadeoutTimer;					//var float fadeoutTimer;
+	UPROPERTY()						bool					InstructorMoved;				//var bool InstructorMoved;
+	UPROPERTY()						AAGP_Location*			locDrillStart;					//var AGP_Gameplay.AGP_Location locDrillStart;
+	UPROPERTY()						AAGP_Location*			TranslatePosition;				//var AGP_Gameplay.AGP_Location TranslatePosition;
+	UPROPERTY()						ATriggerVolume*			InstructorStart;				//var AGP_Gameplay.TriggerVolume InstructorStart;
+	UPROPERTY()						ATriggerVolume*			TranslateInstructor;			//var AGP_Gameplay.TriggerVolume TranslateInstructor;
+	UPROPERTY()						ANPC_TowerObserver*		pawnTower1;						//var AGP_Characters.NPC_TowerObserver pawnTower1;
+	UPROPERTY()						ANPC_DrillInstructor*	PawnInstructorTwo;				//var AGP_Characters.NPC_DrillInstructor PawnInstructorTwo;
+	UPROPERTY()						ANPC_DrillInstructor*	pawnInstructor;					//var AGP_Characters.NPC_DrillInstructor pawnInstructor;
+	UPROPERTY()						bool					bInstructorTranslate;			//var bool bInstructorTranslate;
 
-	UPROPERTY()						float fadeoutTimer;												//var float fadeoutTimer;
-	UPROPERTY()						bool InstructorMoved;											//var bool InstructorMoved;
-	UPROPERTY()						AAGP_Location* locDrillStart;									//var AGP_Gameplay.AGP_Location locDrillStart;
-	UPROPERTY()						AAGP_Location* TranslatePosition;								//var AGP_Gameplay.AGP_Location TranslatePosition;
-	UPROPERTY()						ATriggerVolume* InstructorStart;								//var AGP_Gameplay.TriggerVolume InstructorStart;
-	UPROPERTY()						ATriggerVolume* TranslateInstructor;							//var AGP_Gameplay.TriggerVolume TranslateInstructor;
-	UPROPERTY()						ANPC_TowerObserver* pawnTower1;									//var AGP_Characters.NPC_TowerObserver pawnTower1;
-	UPROPERTY()						ANPC_DrillInstructor* PawnInstructorTwo;						//var AGP_Characters.NPC_DrillInstructor PawnInstructorTwo;
-	UPROPERTY()						ANPC_DrillInstructor* pawnInstructor;							//var AGP_Characters.NPC_DrillInstructor pawnInstructor;
-	UPROPERTY()						bool bInstructorTranslate;										//var bool bInstructorTranslate;
+	void PreInit();
+	bool TriggerVolume_Enter(ATriggerVolume* Trigger, AActor* aInstigator);
+	bool InstructorStartTrigger(ATriggerVolume* Trigger, AActor* aInstigator);
+	bool TranslateInstructorPosition(ATriggerVolume* Trigger, AActor* aInstigator);
+	void Init();
+	void PostInit();
+	void PostPostInit();
 };

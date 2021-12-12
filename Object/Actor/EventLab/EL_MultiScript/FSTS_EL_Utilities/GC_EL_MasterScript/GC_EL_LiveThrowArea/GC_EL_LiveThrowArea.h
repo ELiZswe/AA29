@@ -23,4 +23,7 @@ public:
 	UPROPERTY()						bool bThrowIsAuthorized;									//var bool bThrowIsAuthorized;
 	UPROPERTY()						AActor* LiveThrowPosition;									//var Actor LiveThrowPosition;
 	UPROPERTY()						AFSTS_WeaponPickup* GrenadePickup;							//var FSTS_WeaponPickup GrenadePickup;
+
+	void DoReferenceLinking();
+	void Reset();
 };

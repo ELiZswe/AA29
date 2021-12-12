@@ -85,4 +85,11 @@ public:
 	UPROPERTY()   AFSTS_WeaponPickup* BDMPickup;		//var FSTS_WeaponPickup BDMPickup;
 	UPROPERTY()   AFSTS_WeaponPickup* AT4Pickup;		//var FSTS_WeaponPickup AT4Pickup;
 	UPROPERTY()   AFSTS_WeaponPickup* M203Pickup;		//var FSTS_WeaponPickup M203Pickup;
+
+	void Reset();
+	void GivePlayerAT4();
+	void GivePlayerBDM();
+	void DoReferenceLinking();
+	void skiptoat4();
+	void skiptobdm();
 };

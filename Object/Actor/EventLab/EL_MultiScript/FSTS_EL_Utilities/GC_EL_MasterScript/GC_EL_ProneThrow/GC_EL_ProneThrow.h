@@ -21,4 +21,7 @@ public:
 	UPROPERTY()						AActor* Target1;									//var Actor Target1;
 	UPROPERTY()						AActor* ThrowPosition;								//var Actor ThrowPosition;
 	UPROPERTY()						AFSTS_WeaponPickup* GrenadePickup;					//var FSTS_WeaponPickup GrenadePickup;
+
+	void Reset();
+	void DoReferenceLinking();
 };

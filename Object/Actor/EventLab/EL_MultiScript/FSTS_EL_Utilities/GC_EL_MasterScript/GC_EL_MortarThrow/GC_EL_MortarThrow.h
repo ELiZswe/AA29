@@ -16,9 +16,11 @@ class AA29_API AGC_EL_MortarThrow : public AGC_EL_MasterScript
 public:
 	AGC_EL_MortarThrow();
 
-
 	UPROPERTY()						int32 MissedThrows;								//var int MissedThrows;
 	UPROPERTY()						AVolume* Target;								//var Volume Target;
 	UPROPERTY()						AActor* ThrowPosition;							//var Actor ThrowPosition;
 	UPROPERTY()						AFSTS_WeaponPickup* GrenadePickup;				//var FSTS_WeaponPickup GrenadePickup;
+
+	void Reset();
+	void DoReferenceLinking();
 };

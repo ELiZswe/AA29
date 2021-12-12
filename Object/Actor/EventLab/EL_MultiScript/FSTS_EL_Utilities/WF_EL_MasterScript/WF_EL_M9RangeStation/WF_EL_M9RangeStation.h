@@ -15,8 +15,6 @@ class AA29_API AWF_EL_M9RangeStation : public AWF_EL_MasterScript
 public:
 	AWF_EL_M9RangeStation();
 
-
-
 	UPROPERTY()						FString countDownMessage;								//var string countDownMessage;
 	UPROPERTY()						int32 secondsLeft;										//var int secondsLeft;
 	UPROPERTY()						FString ReloadMsg;										//var localized string ReloadMsg;
@@ -64,4 +62,6 @@ public:
 	UPROPERTY()						int32 OutsideShotCounter;								//var int OutsideShotCounter;
 	UPROPERTY()						AFSTS_WeaponPickup* WeaponPickup;						//var FSTS_WeaponPickup WeaponPickup;
 
+	void Reset();
+	void DoReferenceLinking();
 };

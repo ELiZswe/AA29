@@ -7,6 +7,7 @@
 #include "ET_EL_RopeBridges.generated.h"
 
 class AAGP_UseTrigger;
+class ATriggeredPlayerBlockingVolume;
 
 UCLASS()
 class AA29_API AET_EL_RopeBridges : public AET_EL_MasterScript
@@ -14,7 +15,6 @@ class AA29_API AET_EL_RopeBridges : public AET_EL_MasterScript
 	GENERATED_BODY()
 public:
 	AET_EL_RopeBridges();
-
 
 	UPROPERTY()						FString StationNameMsg;										//var localized string StationNameMsg;
 	UPROPERTY()						FString StationMsg;											//var localized string StationMsg;
@@ -35,7 +35,10 @@ public:
 	UPROPERTY()						AActor* Rope3Start;											//var Actor Rope3Start;
 	UPROPERTY()						AActor* Rope2Start;											//var Actor Rope2Start;
 	UPROPERTY()						AActor* Rope1Start;											//var Actor Rope1Start;
-	//UPROPERTY()					ATriggeredPlayerBlockingVolume* HighTowerBlockingVolume;	//var TriggeredPlayerBlockingVolume HighTowerBlockingVolume;
-	//UPROPERTY()					ATriggeredPlayerBlockingVolume* LowTowerBlockingVolume;		//var TriggeredPlayerBlockingVolume LowTowerBlockingVolume;
+	UPROPERTY()						ATriggeredPlayerBlockingVolume* HighTowerBlockingVolume;	//var TriggeredPlayerBlockingVolume HighTowerBlockingVolume;
+	UPROPERTY()						ATriggeredPlayerBlockingVolume* LowTowerBlockingVolume;		//var TriggeredPlayerBlockingVolume LowTowerBlockingVolume;
 
+	void Reset();
+	void PostBeginPlay();
+	void DoReferenceLinking();
 };

@@ -16,7 +16,6 @@ class AA29_API AGC_EL_BunkerThrow : public AGC_EL_MasterScript
 public:
 	AGC_EL_BunkerThrow();
 
-
 	UPROPERTY()						bool bWaitingForStation2_2Finish;					//var bool bWaitingForStation2_2Finish;
 	UPROPERTY()						AVolume* BunkerVolume;								//var Volume BunkerVolume;
 	UPROPERTY()						int32 MissedThrows;									//var int MissedThrows;
@@ -27,4 +26,7 @@ public:
 	UPROPERTY()						bool bFirstProneEvent;								//var bool bFirstProneEvent;
 	UPROPERTY()						bool bPlayerMustBeProne;							//var bool bPlayerMustBeProne;
 	UPROPERTY()						AFSTS_WeaponPickup* GrenadePickup;					//var FSTS_WeaponPickup GrenadePickup;
+
+	void DoReferenceLinking();
+	void Reset();
 };

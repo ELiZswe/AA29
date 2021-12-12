@@ -10,7 +10,6 @@ class AFA_NPC_SplintFractureMannequin;
 class AFA_SplintAttachment;
 class AFA_CravatPadAttachment;
 class AFA_CravatAttachment;
-
 class AFA_SplintPickup;
 class AFA_RolledCravatPickup;
 class AFA_CravatPadPickup;
@@ -34,5 +33,12 @@ public:
 	UPROPERTY()						EMedicalItemState CravatState;								//var FA_EL_MasterScript.EMedicalItemState CravatState;
 	UPROPERTY()						bool bTieCravats;											//var bool bTieCravats;
 
-
+	void PostBeginPlay();
+	void PostPostInit();
+	void DoReferenceLinking();
+	void AssignDrillSergeants(AFSTS_NPC_DrillSergeant* Sergeant);
+	void Reset();
+	void Destroyed();
+	void FFDrillSergeantScold();
+	void DrillSergeantMoveOn(AFSTS_NPC_DrillSergeant* Sergeant);
 };

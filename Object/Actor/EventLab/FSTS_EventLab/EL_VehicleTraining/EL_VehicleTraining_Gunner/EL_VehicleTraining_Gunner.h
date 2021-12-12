@@ -51,7 +51,6 @@ public:
 	UPROPERTY()						APathNode* EntryPoint;									//var PathNode EntryPoint;
 	UPROPERTY()						TArray<FTargetInfo> TargetInfos;						//var TargetInfo TargetInfos[9];
 
-
 	void PostInit();
 	void AssignSgt();
 	AAGP_VehicleNode* GetVehicleNode(FName nodeTag);

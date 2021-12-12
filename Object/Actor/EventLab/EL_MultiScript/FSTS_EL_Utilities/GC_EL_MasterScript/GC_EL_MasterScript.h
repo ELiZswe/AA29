@@ -35,4 +35,21 @@ public:
 	UPROPERTY()						AGC_EL_StagingArea* ConfidenceStagingArea;					//var GC_EL_StagingArea ConfidenceStagingArea;
 	UPROPERTY()						AGC_EL_LiveThrowArea* LiveThrowArea;						//var GC_EL_LiveThrowArea LiveThrowArea;
 	UPROPERTY()						AGC_EL_MasterScript* GCMasterScript;						//var GC_EL_MasterScript GCMasterScript;
+
+	void EventLabTick(float DeltaTime);
+	void PostInit();
+	void PostPostInit();
+	void DoReferenceLinking();
+	bool AllowGrenade();
+	void GrenadeExploded(AActor* Grenade, EEventType Event, AActor* Instigator, FString Parms);
+	bool Volume_Enter(AVolume* NotifyActor, AActor* Instigator);
+	void Reset();
+	bool GenerateLevelSpecificSuccessStrings(FString& Line1, FString& Line2);
+	bool GenerateLevelSpecificFailureStrings(FString& Line1, FString& Line2);
+	void GenerateAuthNumStationsPassed(int32 StationsPassed);
+	FString GetTrainingMapName();
+	void SetMasterScript();
+	void CheatSkipToStation(int32 StationNum);
+	void CreateCustomLevelScriptsLinks();
+
 };

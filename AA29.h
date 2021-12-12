@@ -30,6 +30,118 @@ class AMBSPingServerRequestAdapter;
 class UGUIButton;
 class AAmmunition;
 class AProjectile;
+class ASceneManager;
+class ANPCNCOController;
+class ANPCBaseSoldierController;
+class ANPCSquadDetails;
+class ANPCBaseController;
+class ASmallNavigationPoint;
+
+USTRUCT(BlueprintType)
+struct FNPCSquadDetails
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")			ANPCNCOController*					npcncoLeader;			//var NPCNCOController npcncoLeader;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")			TArray<ANPCBaseSoldierController*>	npcscMembers;			//var TArray<NPCBaseSoldierController> npcscMembers;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")			int32								iSquadOrders;			//var int32 iSquadOrders;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")			float								fpTimeSinceLastOrders;	//var float fpTimeSinceLastOrders;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")			bool								bSquadDead;				//var bool bSquadDead;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")			int32								iAmbushSet;				//var int32 iAmbushSet;
+};
+
+USTRUCT(BlueprintType)
+struct FNPCPlatoons
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCPlatoons")			FNPCSquadDetails		anpcsdSquads;			//var NPCSquadDetails anpcsdSquads[8];
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCPlatoons")			FString					sPlatoonName;			//var FString sPlatoonName;
+};
+
+USTRUCT(BlueprintType)
+struct FEnemyContact
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "EnemyContact")			ANPCBaseController*		npcbcReporting;			//var NPCBaseController npcbcReporting;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "EnemyContact")			APawn*					pawnEnemyContact;		//var Pawn pawnEnemyContact;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "EnemyContact")			int32					iContactType;			//var int32 iContactType;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "EnemyContact")			FVector					vLocation;				//var Vector vLocation;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "EnemyContact")			FRotator				rotRotation;			//var Rotator rotRotation;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "EnemyContact")			float					fpEstimatedRange;		//var float fpEstimatedRange;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "EnemyContact")			int32					iThreatLevel;			//var int32 iThreatLevel;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "EnemyContact")			float					fpTimeOfReport;			//var float fpTimeOfReport;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "EnemyContact")			bool					bContactLost;			//var bool bContactLost;
+};
+
+USTRUCT(BlueprintType)
+struct FOrderQueue
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "OrderQueue")			ANPCBaseController*		npcbc;					//var NPCBaseController npcbc;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "OrderQueue")			int32					iSupportRequest;		//var int32 iSupportRequest;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "OrderQueue")			bool					bOrderForAll;			//var bool bOrderForAll;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "OrderQueue")			FString					sAICCCombatAction;		//var FString sAICCCombatAction;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "OrderQueue")			int32					iOrder;					//var int32 iOrder;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "OrderQueue")			int32					iTacticalOrder;			//var int32 iTacticalOrder;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "OrderQueue")			float					fpTimeToDeliver;		//var float fpTimeToDeliver;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "OrderQueue")			FVector					vSupportArea;			//var Vector vSupportArea;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "OrderQueue")			APawn*					pawnTarget;				//var Pawn pawnTarget;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "OrderQueue")			bool					bSmokeMission;			//var bool bSmokeMission;
+};
+
+USTRUCT(BlueprintType)
+struct FFireMissionInFlight
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FireMissionInFlight")			FVector				vTargetArea;			//var Vector vTargetArea;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FireMissionInFlight")			float				fpSpawnTime;			//var float fpSpawnTime;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FireMissionInFlight")			float				fpSkill;				//var float fpSkill;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FireMissionInFlight")			APawn*				pawnSpotter;			//var Pawn pawnSpotter;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FireMissionInFlight")			bool				bSmokeMission;			//var bool bSmokeMission;
+};
+
+USTRUCT(BlueprintType)
+struct FSupportFireRequestQueue
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SupportFireRequestQueue")			ANPCBaseSoldierController*	npcbscSpotter;			//var NPCBaseSoldierController npcbscSpotter;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SupportFireRequestQueue")			float						fpSkillLevel;			//var float fpSkillLevel;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SupportFireRequestQueue")			int32						iSupportType;			//var int32 iSupportType;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SupportFireRequestQueue")			int32						iRoundsToFire;			//var int32 iRoundsToFire;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SupportFireRequestQueue")			float						fpTimeToFire;			//var float fpTimeToFire;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SupportFireRequestQueue")			float						fpTimeToSpawn;			//var float fpTimeToSpawn;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SupportFireRequestQueue")			FVector						vTargetArea;			//var Vector vTargetArea;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SupportFireRequestQueue")			bool						bSmokeMission;			//var bool bSmokeMission;
+};
+
+USTRUCT(BlueprintType)
+struct FMortarRangeTable
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MortarRangeTable")			float				fpMin;				//var float fpMin;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MortarRangeTable")			float				fpMax;				//var float fpMax;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MortarRangeTable")			float				fpFlightTime;		//var float fpFlightTime;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MortarRangeTable")			float				fpAngle;			//var float fpAngle;
+};
+
+USTRUCT(BlueprintType)
+struct FReinforcementRespawn
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ReinforcementRespawn")			ASmallNavigationPoint*		snpStart;				//var SmallNavigationPoint snpStart;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ReinforcementRespawn")			int32						iRespawnsLeft;			//var int32 iRespawnsLeft;
+};
+
+
+USTRUCT(BlueprintType)
+struct FLensFlareDescriptor
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "LensFlareDescriptor")			UMaterialInstance*	LensFlareMaterial;		//var Material LensFlareMaterial;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "LensFlareDescriptor")			FColor				LensFlareColor;			//var Color LensFlareColor;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "LensFlareDescriptor")			float				LensFlareOffset;		//var float LensFlareOffset;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "LensFlareDescriptor")			float				LensFlareRadius_Min;	//var float LensFlareRadius_Min;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "LensFlareDescriptor")			float				LensFlareRadius_Max;	//var float LensFlareRadius_Max;
+};
 
 USTRUCT(BlueprintType)
 struct FAA2_ProcMeshVertex
@@ -1501,7 +1613,7 @@ struct FHeliPath
 {
 	GENERATED_BODY()
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HeliPath")									FName Name;											//var name Name;
-	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HeliPath")									ASceneManager* Path;								//var SceneManager Path;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HeliPath")									ASceneManager* Path;								//var SceneManager Path;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HeliPath")									bool bFlown;										//var bool bFlown;
 };
 

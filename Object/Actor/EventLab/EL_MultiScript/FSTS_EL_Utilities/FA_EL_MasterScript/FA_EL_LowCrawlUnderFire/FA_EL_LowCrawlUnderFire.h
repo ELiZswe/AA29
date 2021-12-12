@@ -7,6 +7,7 @@
 #include "FA_EL_LowCrawlUnderFire.generated.h"
 
 class AVolume;
+class AM249MuzzleFlash;
 
 UCLASS()
 class AA29_API AFA_EL_LowCrawlUnderFire : public AFA_EL_MasterScript
@@ -18,7 +19,7 @@ public:
 	UPROPERTY()						ESmokeGrenadeStatus SmokeGrenadeStatus;					//var ESmokeGrenadeStatus SmokeGrenadeStatus;
 	UPROPERTY()						AVolume* GrenadeExplodeVolume;							//var Volume GrenadeExplodeVolume;
 	UPROPERTY()						uint8 BurstNum;											//var byte BurstNum;
-	//UPROPERTY()						AM249MuzzleFlash* FlashEmitter;							//var AGP_Effects.M249MuzzleFlash FlashEmitter;
+	UPROPERTY()						AM249MuzzleFlash* FlashEmitter;							//var AGP_Effects.M249MuzzleFlash FlashEmitter;
 	UPROPERTY()						AActor* SmokeSpawnActor;								//var Actor SmokeSpawnActor;
 	UPROPERTY()						bool bPlayerStoodUp;									//var bool bPlayerStoodUp;
 	UPROPERTY()						bool bBadSmokeGrenadeThrow;								//var bool bBadSmokeGrenadeThrow;
@@ -31,4 +32,15 @@ public:
 	UPROPERTY()						bool bNoGoMessageStarted;								//var bool bNoGoMessageStarted;
 	UPROPERTY()						bool bPlayerNoGo;										//var bool bPlayerNoGo;
 	UPROPERTY()						bool bPlayerMustBeProne;								//var bool bPlayerMustBeProne;
+
+	void PostBeginPlay();
+	void PostPostInit();
+	void DoReferenceLinking();
+	void AssignDrillSergeants(AFSTS_NPC_DrillSergeant* Sergeant);
+	void RemoveGrenadeFromInventory();
+	void Reset();
+	void FFDrillSergeantScold();
+	void DrillSergeantMoveOn(AFSTS_NPC_DrillSergeant* Sergeant);
+	void PlayFire();
+	void QueueFiring(int32 BurstLength);
 };

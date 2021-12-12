@@ -22,7 +22,6 @@ class AA29_API AFA_EL_BleedingControl : public AFA_EL_MasterScript
 public:
 	AFA_EL_BleedingControl();
 
-
 	UPROPERTY()						AFA_NPC_TraumaDressingMannequin* TraumaMannequin;		//var FA_NPC_TraumaDressingMannequin TraumaMannequin;
 	UPROPERTY()						AFA_NPC_ControlBleedingMannequin* AmputatedMannequin;	//var FA_NPC_ControlBleedingMannequin AmputatedMannequin;
 	UPROPERTY()						AFA_RuckSackAttachment* RuckSackAttachment;				//var FA_RuckSackAttachment RuckSackAttachment;
@@ -37,4 +36,14 @@ public:
 	UPROPERTY()						bool bRaiseTraumaMannequinLeftLeg;						//var bool bRaiseTraumaMannequinLeftLeg;
 	UPROPERTY()						bool bApplyCAT;											//var bool bApplyCAT;
 	UPROPERTY()						bool bSwapCATHeadTexture;								//var bool bSwapCATHeadTexture;
+
+	void PostBeginPlay();
+	void PostPostInit();
+	void DoReferenceLinking();
+	void Reset();
+	void FFDrillSergeantScold();
+	void DrillSergeantMoveOn(AFSTS_NPC_DrillSergeant* Sergeant);
+	void Destroyed();
+	void AssignDrillSergeants(AFSTS_NPC_DrillSergeant* Sergeant);
+	void SpawnRuckSack();
 };

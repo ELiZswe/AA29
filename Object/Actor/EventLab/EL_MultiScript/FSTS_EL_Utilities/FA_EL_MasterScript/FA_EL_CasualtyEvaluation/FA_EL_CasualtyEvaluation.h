@@ -24,4 +24,15 @@ public:
 	UPROPERTY()						bool bChestChecked;											//var bool bChestChecked;
 	UPROPERTY()						bool bHeadChecked;											//var bool bHeadChecked;
 	UPROPERTY()						bool bSearchForInjury;										//var bool bSearchForInjury;
+
+	void PostBeginPlay();
+	void PostPostInit();
+	void DoReferenceLinking();
+	void CreateMarkers();
+	void AssignDrillSergeants(AFSTS_NPC_DrillSergeant* Sergeant);
+	void Reset();
+	void Destroyed();
+	void FFDrillSergeantScold();
+	void DrillSergeantMoveOn(AFSTS_NPC_DrillSergeant* Sergeant);
+	void CheckedIfHurt();
 };
