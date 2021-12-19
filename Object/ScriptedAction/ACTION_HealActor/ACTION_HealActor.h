@@ -20,5 +20,5 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Action")		int32 HealAmount;					//var(Action) int HealAmount;
 	UPROPERTY(EditAnywhere, Category = "Action")		FName HealTag;						//var(Action) name HealTag;
 
-	bool InitActionFor(UScriptedController* C);
+	bool InitActionFor(AScriptedController* C);
 };

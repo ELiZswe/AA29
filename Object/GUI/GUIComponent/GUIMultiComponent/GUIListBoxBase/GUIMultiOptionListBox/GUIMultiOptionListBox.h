@@ -11,7 +11,7 @@ class UGUIListBase;
 class UGUIMenuOption;
 
 UCLASS()
-class AA29_API UGUIMultiOptionListBox : public UGUIListBoxBase
+class UGUIMultiOptionListBox : public UGUIListBoxBase
 {
 	GENERATED_BODY()
 public:
@@ -24,13 +24,12 @@ public:
 	void InitComponent(UGUIController* MyController, UGUIComponent* MyOwner);
 	bool InternalOnClick(UGUIComponent* Sender);
 	void InternalOnChange(UGUIComponent* Sender);
-	void ItemCount();
+	int32 ItemCount();
 	void ListLoadIni(UGUIComponent* Sender, FString S);
-	void ListSaveIni(UGUIComponent* Sender);
+	FString ListSaveIni(UGUIComponent* Sender);
 	void ListCreateComponent(UGUIMenuOption* NewComp, UGUIMultiOptionList* Sender);
 	void InternalOnCreateComponent(UGUIComponent* NewComp, UGUIComponent* Sender);
 	void InternalOnScrollRelease(UGUIComponent* Sender);
 	void EnableMe();
 	void DisableMe();
-
 };

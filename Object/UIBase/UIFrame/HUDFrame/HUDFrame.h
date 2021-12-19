@@ -52,15 +52,13 @@ public:
 	UPROPERTY()										bool _bShowRackItems;							//var bool _bShowRackItems;
 	UPROPERTY()										bool _bContainersSet;							//var bool _bContainersSet;
 
-
 	void Destroyed();
 	void SetHUDActor();
 	void FreeHUDActor();
-	void GetControl(int32 Id);
+	UUIControl* GetControl(int32 Id);
 	void Draw(UCanvas* Canvas);
 	void CreateHUDFrame(AHUD* pHUD, AAA2_Playerstate* pcPlayerController);
 	void SetTask(int32 task);
 	void ShowRackItems(bool Status);
 	void ClearRackItems();
-	
 };

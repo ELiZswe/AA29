@@ -1,6 +1,7 @@
 // All the original content belonged to the US Army
 
 #include "AA29/Object/Actor/Keypoint/AIScript/ScriptedSequence/ScriptedTrigger/ScriptedTrigger.h"
+#include "AA29/Object/ScriptedAction/ScriptedAction.h"
 
 AScriptedTrigger::AScriptedTrigger(const FObjectInitializer& objectInitializer)	: Super(objectInitializer)
 {
@@ -23,7 +24,8 @@ void AScriptedTrigger::PostBeginPlay()
 	}
 	*/
 }
-void AScriptedTrigger::NextNeededEvent()
+
+FName AScriptedTrigger::NextNeededEvent()
 {
 	/*
 	local int i;
@@ -36,13 +38,14 @@ void AScriptedTrigger::NextNeededEvent()
 	{
 		if (Action_WAITFOREVENT(Actions[i]) != None)
 		{
-			Return Action_WAITFOREVENT(Actions[i]).ExternalEvent;
+			return Action_WAITFOREVENT(Actions[i]).ExternalEvent;
 		}
 	}
-	Return 'None';
 	*/
+	return "None";
 }
-void AScriptedTrigger::TriggersEvent(FName E)
+
+bool AScriptedTrigger::TriggersEvent(FName E)
 {
 	/*
 	local int i;
@@ -55,16 +58,18 @@ void AScriptedTrigger::TriggersEvent(FName E)
 	{
 		if (ACTION_TriggerEvent(Actions[i]) != None && ACTION_TriggerEvent(Actions[i]).Event == E)
 		{
-			Return True;
+			return true;
 		}
 	}
-	Return False;
 	*/
+	return false;
 }
-void AScriptedTrigger::ValidAction(int32 N)
+
+bool AScriptedTrigger::ValidAction(int32 N)
 {
-	//Return Actions[N].bValidForTrigger;
+	return Actions[N]->bValidForTrigger;
 }
+
 void AScriptedTrigger::Reset()
 {
 	/*

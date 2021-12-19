@@ -634,7 +634,7 @@ public:
 	UFUNCTION(BlueprintCallable)		void ChangeWpnScale(float fScale);
 	UFUNCTION(BlueprintCallable)		void ChangeWpnFOV(float new_fov);
 	UFUNCTION(BlueprintCallable)		void DoFade(bool FadeIn, bool Black, float Time, float percentage);
-	//UFUNCTION(BlueprintCallable)		void DisplayDebug(UCanvas* Canvas, float YL, float YPos);
+	//UFUNCTION(BlueprintCallable)		void DisplayDebug(class UCanvas* Canvas, const class FDebugDisplayInfo& DebugDisplay, float& YL, float& YPos)
 	UFUNCTION(BlueprintCallable)		void AutoTraceDebug();
 	UFUNCTION(BlueprintCallable)		void PermaTraceDebug();
 	UFUNCTION(BlueprintCallable)		void DumpControllers();

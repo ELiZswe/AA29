@@ -8,7 +8,7 @@
 #include "BaseAmmoRound.generated.h"
 
 UCLASS()
-class AA29_API ABaseAmmoRound : public AActor
+class ABaseAmmoRound : public AActor
 {
 	GENERATED_BODY()
 	
@@ -17,14 +17,13 @@ public:
 	ABaseAmmoRound();
 
 	UPROPERTY()		ABaseAmmoRound* NextAmmoRound;		//var BaseAmmoRound NextAmmoRound;
-	UPROPERTY()		int32 ammo_id;						//var int ammo_id;
+	UPROPERTY()		int32 ammo_id;						//var int32 ammo_id;
 	UPROPERTY()		UStaticMesh* ExpendedSM;			//var StaticMesh ExpendedSM;
 	UPROPERTY()		bool bHasBreechRound;				//var bool bHasBreechRound;
 	UPROPERTY()		bool bRoundInBreech;				//var bool bRoundInBreech;
-
+	
 	//From Actor
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		EDrawType DrawType;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		UStaticMesh* StaticMesh;
+	UPROPERTY()		UStaticMesh* StaticMesh;
 
 protected:
 	// Called when the game starts or when spawned
@@ -34,8 +33,9 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	virtual void AdjustAmmoRound() ;
-	virtual void AdjustSpecialAmmoRounds() ;
-	virtual void SetAmmoID() ;
-	virtual void GetBoneName() ;
+	void Destroyed();
+	void AdjustAmmoRound(int32 total_ammo);
+	void AdjustSpecialAmmoRounds(bool bRender);
+	void SetAmmoID(int32 new_id);
+	FName GetBoneNameForAmmoAttach(bool bAux, bool bSpecial);
 };

@@ -19,6 +19,6 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Action")		FName NextScriptTag;				//var(Action) name NextScriptTag;
 
 	AScriptedSequence* GetScript(AScriptedSequence* S);
-	bool InitActionFor(UScriptedController* C);
+	bool InitActionFor(AScriptedController* C);
 
 };

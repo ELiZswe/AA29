@@ -18,11 +18,11 @@ void ABMP1_Gunner::TryToDrive(APawn* p)
 	/*
 	if (HumanController(p.Controller) != None)
 	{
-		Return False;
+		return false;
 	}
 	else
 	{
-		Return TryToDrive(p);
+		return TryToDrive(p);
 	}
 	*/
 }

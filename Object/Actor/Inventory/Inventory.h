@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "AA29/MyEnums.h"
+#include "AA29/AA29.h"
 #include "AA29/Object/DamageType/aDamageType.h"
 //#include "AA29/Object/Actor/Inventory/InvContainer/InvContainer.h"
 
@@ -25,13 +26,13 @@ public:
 	// Sets default values for this actor's properties
 	AInventory();
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)								FString ItemName;													//var() localized string ItemName;
-	//UPROPERTY(EditAnywhere, BlueprintReadWrite)							UTexture2D* IconCoords;												//var() Object.IntBox IconCoords;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)								UTexture2D* IconMaterial;											//var() Material IconMaterial;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)								FString				ItemName;										//var() localized string ItemName;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)								FIntBox				IconCoords;										//var() Object.IntBox IconCoords;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)								UMaterialInstance*	IconMaterial;									//var() Material IconMaterial;
 	UPROPERTY()																TArray<TSubclassOf<class AInventoryAttachment>> AttachmentClass;	//var class<InventoryAttachment> AttachmentClass;
-	UPROPERTY()																AActor* ThirdPersonActor;											//var Actor ThirdPersonActor;
-	UPROPERTY()																bool bUseAttachment;												//var bool bUseAttachment;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)								float BobDamping;													//var() float BobDamping;
+	UPROPERTY()																AActor*				ThirdPersonActor;								//var Actor ThirdPersonActor;
+	UPROPERTY()																bool				bUseAttachment;									//var bool bUseAttachment;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)								float				BobDamping;										//var() float BobDamping;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)								bool bDrawingFirstPerson;											//var() bool bDrawingFirstPerson;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="FirstPerson")		FRotator PlayerViewPivot;											//var(FirstPerson) Object.Rotator PlayerViewPivot;
 	UPROPERTY()																FVector PlayerViewOffset;											//var FVector PlayerViewOffset;

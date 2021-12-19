@@ -6,6 +6,8 @@
 #include "GameFramework/Actor.h"
 #include "AGP_ItemList.generated.h"
 
+class AInventory;
+
 UCLASS()
 class AA29_API AAGP_ItemList : public AActor
 {
@@ -28,6 +30,13 @@ public:
 	UPROPERTY()																USceneComponent* Root;
 	UPROPERTY()																UTexture2D* Texture;
 	UPROPERTY()																UBillboardComponent* SpriteComponent;
+
+	void PreBeginPlay();
+	int32 GetNumItems();
+	AInventory* GetItem(int32 Index);
+	FString GetItemString(int32 Index);
+	int32 GetItemQuantity(int32 Index);
+	AInventory* MakeItem(FString ClassName);
 
 protected:
 	// Called when the game starts or when spawned

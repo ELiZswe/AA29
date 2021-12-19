@@ -15,7 +15,7 @@ class UGUILabel;
 class UGUIContextMenu;
 
 UCLASS()
-class AA29_API UGUIComponent : public UGUI
+class UGUIComponent : public UGUI
 {
 	GENERATED_BODY()
 public:
@@ -121,7 +121,7 @@ public:
 	bool OnDesignModeKeyEvent(EInputKey Key, EInputAction State);
 	bool OnCapturedMouseMove(float deltaX, float deltaY);
 	void OnLoadINI(UGUIComponent* Sender, FString S);
-	void OnSaveINI(UGUIComponent* Sender);
+	FString OnSaveINI(UGUIComponent* Sender);
 	bool OnMultiSelect(UGUIComponent* Sender);
 	bool OnBeginDrag(UGUIComponent* Sender);
 	void OnEndDrag(UGUIComponent* Sender, bool bAccepted);

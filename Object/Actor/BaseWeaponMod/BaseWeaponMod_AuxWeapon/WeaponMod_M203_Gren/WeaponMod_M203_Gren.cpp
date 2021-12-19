@@ -29,29 +29,30 @@ AWeaponMod_M203_Gren::AWeaponMod_M203_Gren()
 	DrawType				= EDrawType::DT_None;
 }
 
-void AWeaponMod_M203_Gren::ModNotAllowed()
+bool AWeaponMod_M203_Gren::ModNotAllowed()
 {
+	uint8 Team = 0;
 	/*
-	uint8 Team;
-
-	if (Pawn(Owner).PlayerReplicationInfo.Team == None)
+	if (Pawn(Owner).PlayerReplicationInfo.Team == nullptr)
 	{
-		Return False;
+		return false;
 	}
 	Team=Pawn(Owner).PlayerReplicationInfo.Team.TeamIndex;
 	if (Level.Game.GameReplicationInfo.Disable203Grenades())
 	{
 		Log("WeaponMod_M203_Gren.ModNotAllowed - disabling 203 for TM");
-		Return True;
-	}
-	Switch(Team)
-	{
-		case 0:
-		Return ! Level.bTeam0AllowM203Mod;
-		case 1:
-		Return ! Level.bTeam1AllowM203Mod;
-		default:
-		Return ! Level.bTeam0AllowM203Mod || ! Level.bTeam1AllowM203Mod;
+		return true;
 	}
 	*/
+
+	switch(Team)
+	{
+		case 0:
+			return ! Cast<AAA2_WorldSettings>(GetWorldSettings())->bTeam0AllowM203Mod;
+		case 1:
+			return ! Cast<AAA2_WorldSettings>(GetWorldSettings())->bTeam1AllowM203Mod;
+		default:
+			return ! Cast<AAA2_WorldSettings>(GetWorldSettings())->bTeam0AllowM203Mod || ! Cast<AAA2_WorldSettings>(GetWorldSettings())->bTeam1AllowM203Mod;
+	}
+	return false;    //FAKE   /ELiZ
 }

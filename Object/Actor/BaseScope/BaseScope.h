@@ -49,16 +49,15 @@ public:
 	void ZoomIn(APlayerController* PC);
 	void CycleZoom(APlayerController* PC);
 	void UnZoom(APlayerController* PC);
-	void GetaZoomFOV();
+	float GetaZoomFOV();
 	void Zoom(APlayerController* PC);
 	bool IsZoomed();
 	float GetZoomMultiplier();
 	bool HasNVMode();
-	void GetZoomOverlay();
+	UTexture2D* GetZoomOverlay();
 	void RenderOverlays(UCanvas* Canvas, bool bWeaponAndAttachmentsOnly);
 	void VerticalMinuteAngle(bool increase);
 	void LateralMinuteAngle(bool increase);
 	void Zero();
-	void GetAimAdjustment();
-
+	FRotator GetAimAdjustment();
 };

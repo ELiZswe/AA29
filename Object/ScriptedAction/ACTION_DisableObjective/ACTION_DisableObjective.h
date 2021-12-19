@@ -22,6 +22,6 @@ public:
 
 
 	void PostBeginPlay(AScriptedSequence* SS);
-	bool InitActionFor(UScriptedController* C);
+	bool InitActionFor(AScriptedController* C);
 	FString GetActionString();
 };

@@ -7,9 +7,6 @@
 #include "AA29/Object/Actor/Controller/AIController/aAIController.h"
 #include "InventorySpot.generated.h"
 
-
-
-	
 UCLASS()
 class AA29_API AInventorySpot : public ASmallNavigationPoint
 {
@@ -21,7 +18,6 @@ public:
 	UPROPERTY()										bool bSuperPickup;						//var bool bSuperPickup;
 	UPROPERTY()										AxPickUpBase* myPickupBase;				//var xPickUpBase myPickupBase;
 	UPROPERTY()										APickup* markedItem;					//var Pickup markedItem;
-
 
 	AActor* GetMoveTargetFor(AaAIController* B, float MaxWait);
 	float DetourWeight(APawn* Other, float PathWeight);

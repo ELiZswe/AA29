@@ -20,7 +20,7 @@ public:
 
 	void ClientInitialize(AAA2_Playerstate* Sender, AAA2_Playerstate* Recipient, FName messagetype, uint8 messageIndex);
 	void PlayerSpeech(FName Type, int32 Index, FString Callsign, AActor* PackOwner);
-	int32 GetMessageIndex(FName PhraseName);
+	uint8 GetMessageIndex(FName PhraseName);
 	int32 PickRandomTauntFor(AController* C, bool bNoMature, bool bNoHumanOnly);
 
 };

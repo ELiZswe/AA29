@@ -6,7 +6,6 @@
 #include "AA29/Object/UIBase/UIBase.h"
 #include "UIScreen.generated.h"
 
-
 class AInventory;
 class AInvContainer;
 class UUIInvDef;
@@ -25,12 +24,6 @@ public:
 	//const kResX = 800.0;
 	//const kResY = 600.0;
 
-	/*
-
-	*/
-
-
-
 	UPROPERTY()										FString _sTitle;					//var string _sTitle;
 	UPROPERTY()										FPoint offset;						//var UIBase.Point offset;
 	UPROPERTY()										float fScaleY;						//var float fScaleY;
@@ -41,7 +34,6 @@ public:
 	UPROPERTY()										UUIControl* cFocus;					//var UIControl cFocus;
 	UPROPERTY()										UUIControl* cControlList;			//var UIControl cControlList;
 	UPROPERTY()										UUIScreen* cNextScreen;				//var UIScreen cNextScreen;
-
 
 	void Create(UUIFrame* frame, int32 pID, FString sTitle);
 	void Destroyed();

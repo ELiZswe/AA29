@@ -17,5 +17,5 @@ public:
 
 	UPROPERTY(EditAnywhere, Category = "Action")		AWeapon* newWeapon;		//var(Action) class<Weapon> newWeapon;
 
-	bool InitActionFor(UScriptedController* C);
+	bool InitActionFor(AScriptedController* C);
 };

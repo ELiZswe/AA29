@@ -11,12 +11,11 @@ class USkeletalMesh;
 class AAGP_Weapon;
 
 UCLASS()
-class AA29_API ABaseWeaponMod_AuxWeapon : public ABaseWeaponMod
+class ABaseWeaponMod_AuxWeapon : public ABaseWeaponMod
 {
 	GENERATED_BODY()
 public:
 	ABaseWeaponMod_AuxWeapon();
-
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)		USoundBase* AltReloadSound;							//var Sound AltReloadSound;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)		USoundBase* AuxOutdoorSingleFire;					//var Sound AuxOutdoorSingleFire;
@@ -30,8 +29,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)		USkeletalMesh* AuxWeaponMesh;						//var Mesh AuxWeaponMesh;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)		USkeletalMesh* NewWeaponMesh;						//var Mesh NewWeaponMesh;
 
-
-	virtual void MutuallyExclusive(ABaseWeaponMod* OtherMod) override;
+	virtual bool MutuallyExclusive(ABaseWeaponMod* OtherMod) override;
 	virtual void ModifyWeapon() override;
 	void SetupAuxWeapon();
 };

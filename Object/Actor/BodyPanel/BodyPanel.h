@@ -7,6 +7,8 @@
 #include "AA29/MyEnums.h"
 #include "BodyPanel.generated.h"
 
+class AVehicle;
+
 UCLASS()
 class AA29_API ABodyPanel : public AActor
 {
@@ -43,7 +45,7 @@ public:
 	UPROPERTY()					bool bInvincible;								//var bool bInvincible;
 	UPROPERTY()					int32 PanelID;									//var int PanelID;
 	UPROPERTY()					FRotator RelRotation;							//var Object.Rotator RelRotation;
-	//UPROPERTY()					AVehicle EntryVehicle;						//var Vehicle EntryVehicle;
+	UPROPERTY()					AVehicle* EntryVehicle;							//var Vehicle EntryVehicle;
 	UPROPERTY()					bool bDoHighlight;								//var bool bDoHighlight;
 	UPROPERTY()					float EntryRadius;								//var float EntryRadius;
 	UPROPERTY()					FName EntryBone;								//var name EntryBone;
@@ -51,9 +53,9 @@ public:
 
 	void PostBeginPlay();
 	void PostNetBeginPlay();
-	void FindEntryVehicle(APawn* p);
+	AVehicle* FindEntryVehicle(APawn* p);
 	void AddLinkedPanel(ABodyPanel* PanelToLink);
-	void UsedBy(APawn* User);
+	bool UsedBy(APawn* User);
 	//void TakeDamage(int32 Damage, APawn* instigatedBy, FVector HitLocation, FVector Momentum, UaDamageType* DamageType, FBoneInfo Bone, AController* KillerController, AActor* ResponsibleActor, UMaterialInstance HitMaterial);
 	void HandleDamage(int32 Damage, eBodyPanelDamageType BPDT);
 	void PostNetReceive();

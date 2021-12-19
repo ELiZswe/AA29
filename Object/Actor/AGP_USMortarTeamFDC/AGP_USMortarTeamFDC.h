@@ -7,8 +7,7 @@
 #include "AA29/Object/Actor/Projectile/BaseProjectile/BaseProjectile.h"
 #include "AGP_USMortarTeamFDC.generated.h"
 
-static const int32 FDCSTEP_WAITINGFORORDER = 0;
-static const int32 FDCSTEP_PROCESSINGORDER = 1;
+class AAGP_USMortarTeam;
 
 UCLASS()
 class AA29_API AAGP_USMortarTeamFDC : public AActor
@@ -22,7 +21,7 @@ public:
 	UPROPERTY()																	int32 iTotalRoundsFired;							//var int iTotalRoundsFired;
 	UPROPERTY()																	int32 iCurrentMissionStep;							//var int iCurrentMissionStep;
 	UPROPERTY()																	bool bFireMissionCanBeRepeated;						//var bool bFireMissionCanBeRepeated;
-	//UPROPERTY()																AAGP_USMortarTeam* agpusmtMortarTeam;				//var AGP_USMortarTeam agpusmtMortarTeam;
+	UPROPERTY()																	AAGP_USMortarTeam* agpusmtMortarTeam;				//var AGP_USMortarTeam agpusmtMortarTeam;
 	UPROPERTY()																	float fpBaseReloadTime;								//var float fpBaseReloadTime;
 	UPROPERTY()																	int32 iLastAdjustAmount;							//var int iLastAdjustAmount;
 	UPROPERTY()																	FString sLastAdjustCommand;							//var string sLastAdjustCommand;
@@ -89,7 +88,7 @@ public:
 	UFUNCTION()	void Reset();
 	UFUNCTION()	void StartPolarFireMission(FString sMissionTypeRequest, FString sTargetType_);
 	UFUNCTION()	void StartGridFireMission(FString sMissionTypeRequest, FString sTargetType_);
-	UFUNCTION()	void ValidateMissionArguments(FString sMissionTypeRequest, FString sTargetType_);
+	UFUNCTION()	bool ValidateMissionArguments(FString sMissionTypeRequest, FString sTargetType_);
 	UFUNCTION()	void ConfigureFireMission(FString sMissionTypeRequest, FString sTargetType_);
 	UFUNCTION()	void TransmitRadioRequest(FString sMsg);
 	UFUNCTION()	void TransmitRadioResponse(FString sMsg, bool bTransmitBeep);
@@ -118,7 +117,6 @@ public:
 	UFUNCTION()	void  PlayAudioRadioMessage(USoundBase* sndAudioMessage);
 	UFUNCTION()	void TransmitAudioRadioNumber(int32 iNumber, bool bFDCNumber);
 
-
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -126,5 +124,4 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
 };

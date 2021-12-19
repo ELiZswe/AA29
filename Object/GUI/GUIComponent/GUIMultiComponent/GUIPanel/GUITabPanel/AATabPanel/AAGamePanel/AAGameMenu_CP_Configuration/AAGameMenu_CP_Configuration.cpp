@@ -562,7 +562,7 @@ bool UAAGameMenu_CP_Configuration::ButtonClick(UGUIComponent* Sender)
 	GOTO JL057A;
 		default:
 		JL057A:
-			Return True;
+			return true;
 
 	*/
 

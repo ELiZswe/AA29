@@ -356,7 +356,7 @@ int32 UAAIRC_Panel::FindServerHistoryIndex(FString ServerName)
 	{
 		if (ServerHistory[i] ~= ServerName)
 		{
-			Return i;
+			return i;
 		}
 	}
 	*/
@@ -371,7 +371,7 @@ int32 UAAIRC_Panel::FindChannelHistoryIndex(FString ChannelName)
 	{
 		if (ChannelHistory[i] ~= ChannelName)
 		{
-			Return i;
+			return i;
 		}
 	}
 	*/
@@ -385,7 +385,7 @@ bool UAAIRC_Panel::IsCurrentServer(FString ServerAddress)
 	{
 		return false;
 	}
-	Return InStr(ServerAddress, tp_System.link.ServerAddress) != -1;
+	return InStr(ServerAddress, tp_System.link.ServerAddress) != -1;
 	*/
 	return false;   //FAKE    /ELiZ
 }

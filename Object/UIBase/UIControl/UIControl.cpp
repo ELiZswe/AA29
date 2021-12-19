@@ -55,7 +55,7 @@ void UUIControl::CreateUIControl(FString ControlName)
 	local class<UIControl>  cUIControl;
 	cUIControl = class<UIControl>(DynamicLoadObject(ControlName, Class'Class'));
 	myControl = new (None) classcUIControl;
-	Return myControl;
+	return myControl;
 	*/
 }
 void UUIControl::ScaleControl(UCanvas* Canvas)

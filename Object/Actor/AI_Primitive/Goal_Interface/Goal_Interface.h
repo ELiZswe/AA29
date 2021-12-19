@@ -9,7 +9,7 @@
 class AAgentController;
 
 UCLASS()
-class AA29_API AGoal_Interface : public AAI_Primitive
+class AGoal_Interface : public AAI_Primitive
 {
 	GENERATED_BODY()
 public:
@@ -18,7 +18,6 @@ public:
 	UPROPERTY()														AAgentController* Controller;								//var AgentController Controller;
 
 	void selectActiveGoal();
-	void increaseTension(float Add);
+	float increaseTension(float Add);
 	void reweightGoals();
-
 };

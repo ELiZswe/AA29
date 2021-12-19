@@ -191,7 +191,7 @@ int32 UAATreeAndExclusiveListPanel::TreeIndexToDataIndex(int32 TreeIndex)
 	{
 		if (TreeIndex == ItemIndexList[DataIndex])
 		{
-			Return DataIndex;
+			return DataIndex;
 		}
 		else
 		{

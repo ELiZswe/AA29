@@ -10,26 +10,24 @@ class UxAdminUserList;
 class UxAdminUser;
 
 UCLASS()
-class AA29_API UxAdminGroup : public UXAdminBase
+class UxAdminGroup : public UXAdminBase
 {
 	GENERATED_BODY()
 public:
 	UxAdminGroup();
 
-
-	UPROPERTY()										bool bMasterAdmin;					//var bool bMasterAdmin;
-	UPROPERTY()										UxAdminUserList* Managers;			//var xAdminUserList Managers;
-	UPROPERTY()										UxAdminUserList* Users;				//var xAdminUserList Users;
-	UPROPERTY()										uint8 GameSecLevel;					//var byte GameSecLevel;
-	UPROPERTY()										FString Privileges;					//var string Privileges;
-	UPROPERTY()										FString GroupName;					//var string GroupName;
-
+	UPROPERTY()				bool				bMasterAdmin;		//var bool bMasterAdmin;
+	UPROPERTY()				UxAdminUserList*	Managers;			//var xAdminUserList Managers;
+	UPROPERTY()				UxAdminUserList*	Users;				//var xAdminUserList Users;
+	UPROPERTY()				uint8				GameSecLevel;		//var byte GameSecLevel;
+	UPROPERTY()				FString				Privileges;			//var string Privileges;
+	UPROPERTY()				FString				GroupName;			//var string GroupName;
 
 	void Created();
 	void Init(FString sGroupName, FString sPrivileges, uint8 nGameSecLevel);
 	void SetPrivs(FString privs);
-	void ValidName(FString uname);
+	bool ValidName(FString uname);
 	void UnlinkUsers();
 	void RemoveUser(UxAdminUser* User);
-	void HasPrivilege(FString priv);
+	bool HasPrivilege(FString priv);
 };

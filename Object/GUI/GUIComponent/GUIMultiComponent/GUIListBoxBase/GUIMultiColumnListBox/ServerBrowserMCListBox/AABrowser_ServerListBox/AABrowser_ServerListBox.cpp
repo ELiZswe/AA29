@@ -86,13 +86,13 @@ bool UAABrowser_ServerListBox::PreDrawHint(UCanvas* C)
 	/*
 	if (MousingOverIcons())
 	{
-		Return PreDrawIconsHint(C);
+		return PreDrawIconsHint(C);
 	}
 	else
 	{
 		if (MousingOverPing())
 		{
-			Return PreDrawPingHint(C);
+			return PreDrawPingHint(C);
 		}
 	}
 	ToolTip.bResetPosition = True;
@@ -153,13 +153,13 @@ bool UAABrowser_ServerListBox::DrawHint(UCanvas* C)
 	/*
 	if (MousingOverIcons())
 	{
-		Return DrawIconsHint(C);
+		return DrawIconsHint(C);
 	}
 	else
 	{
 		if (MousingOverPing())
 		{
-			Return DrawPingHint(C);
+			return DrawPingHint(C);
 		}
 	}
 	*/
@@ -231,11 +231,11 @@ bool UAABrowser_ServerListBox::MousingOverIcons()
 	local float IconWidth;
 	if (List == None || Controller == None)
 	{
-		Return False;
+		return false;
 	}
 	List.GetCellLeftWidth(0, IconLeft, IconWidth);
 	IconRight = IconLeft + IconWidth;
-	Return Controller.MouseX >= IconLeft && Controller.MouseX <= IconRight;
+	return Controller.MouseX >= IconLeft && Controller.MouseX <= IconRight;
 	*/
 	return false;    //FAKE    /ELiZ
 }
@@ -248,11 +248,11 @@ bool UAABrowser_ServerListBox::MousingOverPing()
 	local float IconWidth;
 	if (List == None || Controller == None)
 	{
-		Return False;
+		return false;
 	}
 	List.GetCellLeftWidth(4, IconLeft, IconWidth);
 	IconRight = IconLeft + IconWidth;
-	Return Controller.MouseX >= IconLeft && Controller.MouseX <= IconRight;
+	return Controller.MouseX >= IconLeft && Controller.MouseX <= IconRight;
 	*/
 	return false;    //FAKE    /ELiZ
 }

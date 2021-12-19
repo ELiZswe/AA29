@@ -10,7 +10,7 @@ class ABaseModAttachment;
 class AInventory;
 
 UCLASS()
-class AA29_API AAttachmentHandler : public AActor
+class AAttachmentHandler : public AActor
 {
 	GENERATED_BODY()
 	
@@ -28,19 +28,17 @@ public:
 	UPROPERTY()										ABaseModAttachment* WM_Attachment;			//var class<BaseModAttachment> WM_Attachment;
 	UPROPERTY()										int32 num_mods;								//var int num_mods;
 
-
-
 	void NotifyReplicationComplete();
-	void IsReplicationComplete();
+	bool IsReplicationComplete();
 	void SetupHandler(AActor* newproxy, AActor* AttachTo, AInventory* i);
 	void SetSlotDraw(int32 Slot, bool bDraw);
 	void LoadModAttachment(ABaseModAttachment* BMA, int32 Slot);
 	void CopyModsFrom(AInventory* i);
 	void CountModAttachments();
-	void IsEnemy();
-	void InvalidAttachProxy();
+	bool IsEnemy();
+	bool InvalidAttachProxy();
 	void SpawnModAttachments();
-	void SpawnSingleAttachment(int32 Slot, bool bIsEnemy);
+	ABaseModAttachment* SpawnSingleAttachment(int32 Slot, bool bIsEnemy);
 	void SetSpecialSkinTag(FString skin_tag);
 	void SetDefaultWeaponMesh(UStaticMesh* NewDefaultWeaponMesh);
 	void SetWeaponMesh(UStaticMesh* NewWeaponMesh);
@@ -57,5 +55,4 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
 };

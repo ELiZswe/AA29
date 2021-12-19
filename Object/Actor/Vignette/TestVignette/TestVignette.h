@@ -7,7 +7,7 @@
 #include "AA29/MyEnums.h"
 #include "TestVignette.generated.h"
 
-class AFont;
+class UFont;
 
 UCLASS()
 class AA29_API ATestVignette : public AVignette
@@ -24,7 +24,7 @@ public:
 	UPROPERTY(EditAnywhere)		float				LogoScaleX;				//var() float LogoScaleX;
 	UPROPERTY(EditAnywhere)		float				LogoScaleY;				//var() float LogoScaleY;
 	UPROPERTY(EditAnywhere)		FString				LoadingFontName;		//var() localized FString LoadingFontName;
-	//UPROPERTY(EditAnywhere)		AFont*				LoadingFontFont;		//var() Font LoadingFontFont;
+	UPROPERTY(EditAnywhere)		UFont*				LoadingFontFont;		//var() Font LoadingFontFont;
 	UPROPERTY(EditAnywhere)		FString				LoadingString;			//var() localized FString LoadingString;
 	UPROPERTY(EditAnywhere)		float				LoadingPosX;			//var() float LoadingPosX;
 	UPROPERTY(EditAnywhere)		float				LoadingPosY;			//var() float LoadingPosY;
@@ -34,6 +34,6 @@ public:
 
 	void Init();
 	void ScreenText(UCanvas* C, FString Text, float PosX, float PosY, float ScaleX, float ScaleY);
-	AFont* LoadLoadingFont();
+	UFont* LoadLoadingFont();
 	void DrawVignette(UCanvas* C, float Progress);
 };

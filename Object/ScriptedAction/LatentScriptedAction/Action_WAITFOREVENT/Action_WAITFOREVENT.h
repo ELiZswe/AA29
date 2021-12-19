@@ -19,7 +19,7 @@ public:
 	//UPROPERTY()														ATriggeredCondition* t;						//var TriggeredCondition t;
 	UPROPERTY(EditAnywhere, Category = "Action")					FName ExternalEvent;						//var(Action) name ExternalEvent;
 
-	bool InitActionFor(UScriptedController* C);
+	bool InitActionFor(AScriptedController* C);
 	bool CompleteWhenTriggered();
 	FString GetActionString();
 };

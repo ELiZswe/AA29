@@ -174,7 +174,7 @@ bool UAAGameMenu_TournamentServerInfo::InternalOnPreDraw(UCanvas* C)
 	}
 	if (GRI == None)
 	{
-		Return False;
+		return false;
 	}
 	HC = HumanController(PlayerOwner());
 	MapName = PlayerOwner().Level.GetLevelNamePrivate();

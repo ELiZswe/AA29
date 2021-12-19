@@ -16,26 +16,33 @@ public:
 	// Sets default values for this actor's properties
 	AFSTS_HelpMarker();
 
-	UPROPERTY()						AActor* CustomDisplayClass;									//var class<Actor> CustomDisplayClass;
-	UPROPERTY()						AActor* CustomDisplay;										//var Actor CustomDisplay;
-	UPROPERTY()						EBounceAxis BounceAxis;										//var EBounceAxis BounceAxis;
-	UPROPERTY()						UStaticMesh* AltStaticMesh;									//var StaticMesh AltStaticMesh;
-	UPROPERTY()						UStaticMesh* PrimaryStaticMesh;								//var StaticMesh PrimaryStaticMesh;
-	UPROPERTY()						float AltDrawScale;											//var float AltDrawScale;
-	UPROPERTY()						float PrimaryDrawScale;										//var float PrimaryDrawScale;
-	UPROPERTY()						FVector OldLocation;										//var FVector OldLocation;
-	UPROPERTY()						FVector OldMarkLocation;									//var FVector OldMarkLocation;
-	UPROPERTY()						FVector MarkOffset;											//var FVector MarkOffset;
-	UPROPERTY()						bool bNoFollowMarkingActor;									//var bool bNoFollowMarkingActor;
-	UPROPERTY()						AActor* MarkActor;											//var Actor MarkActor;
-	UPROPERTY()						float BounceTime;											//var float BounceTime;
+	UPROPERTY()			EBounceAxis		BounceAxis;				//var Enum EBounceAxis  BounceAxis;
+	UPROPERTY()			float			BounceTime;				//var float BounceTime;
+	UPROPERTY()			AActor*			MarkActor;				//var Actor MarkActor;
+	UPROPERTY()			bool			bNoFollowMarkingActor;	//var bool bNoFollowMarkingActor;
+	UPROPERTY()			FVector			MarkOffset;				//var Vector MarkOffset;
+	UPROPERTY()			FVector			OldMarkLocation;		//var Vector OldMarkLocation;
+	UPROPERTY()			FVector			OldLocation;			//var Vector OldLocation;
+	UPROPERTY()			float			PrimaryDrawScale;		//var float PrimaryDrawScale;
+	UPROPERTY()			float			AltDrawScale;			//var float AltDrawScale;
+	UPROPERTY()			UStaticMesh*	PrimaryStaticMesh;		//var StaticMesh PrimaryStaticMesh;
+	UPROPERTY()			UStaticMesh*	AltStaticMesh;			//var StaticMesh AltStaticMesh;
+	UPROPERTY()			AActor*			CustomDisplay;			//var Actor CustomDisplay;
+	UPROPERTY()			AActor*			CustomDisplayClass;		//var class<Actor> CustomDisplayClass;
+
+	void PostBeginPlay();
+	void Tick(float dt);
+	void ChangedMarker(FVector MarkingActorLocation, FVector MarkerOffset, bool bNoFollowTarget);
+	bool SetMarkingActor(AActor* Target, FVector MarkerOffset, bool bNoFollowTarget);
+	bool SetMarkingLocation(FVector NewLocation, FVector MarkerOffset);
+	void ActivateMarker();
+	void DeactivateMarker();
+	bool IsActive();
+	void SetDisplayMesh(bool bUsePrimaryMesh);
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-
 };

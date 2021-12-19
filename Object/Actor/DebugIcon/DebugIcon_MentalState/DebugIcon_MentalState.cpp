@@ -15,7 +15,7 @@ ADebugIcon_MentalState::ADebugIcon_MentalState()
 	Texture							= MentalState_Normal_Texture;
 }
 
-void  ADebugIcon_MentalState::UpdateMentalState(ANPCBaseController* CheckController)
+void ADebugIcon_MentalState::UpdateMentalState(ANPCBaseController* CheckController)
 {
 	if (CheckController->IsSuppressed())
 	{

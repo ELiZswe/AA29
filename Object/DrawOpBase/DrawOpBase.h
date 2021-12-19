@@ -6,10 +6,8 @@
 #include "UObject/NoExportTypes.h"
 #include "DrawOpBase.generated.h"
 
-class AFont;
-
 UCLASS()
-class AA29_API UDrawOpBase : public UObject
+class UDrawOpBase : public UObject
 {
 	GENERATED_BODY()
 public:
@@ -26,7 +24,6 @@ public:
 	void SetPos(float t, float L);
 	void SetSize(float H, float W);
 	void Draw(UCanvas* Canvas);
-	AFont* GetFont(FString FontClassName, float ResX);
-	AFont* GetGUIFont(FString FontClassName, float ResX);
-
+	UFont* GetFont(FString FontClassName, float ResX);
+	UFont* GetGUIFont(FString FontClassName, float ResX);
 };

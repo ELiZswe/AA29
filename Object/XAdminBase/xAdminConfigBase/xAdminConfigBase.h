@@ -10,13 +10,12 @@ class UxAdminUserList;
 class UxAdminGroupList;
 
 UCLASS()
-class AA29_API UxAdminConfigBase : public UXAdminBase
+class UxAdminConfigBase : public UXAdminBase
 {
 	GENERATED_BODY()
 public:
 	UxAdminConfigBase();
 
-	void Load(UxAdminUserList* Users, UxAdminGroupList* Groups, bool bDontAddDefaultAdmin);
-	void Save(UxAdminUserList* Users, UxAdminGroupList* Groups);
-
+	bool Load(UxAdminUserList* Users, UxAdminGroupList* Groups, bool bDontAddDefaultAdmin);
+	bool Save(UxAdminUserList* Users, UxAdminGroupList* Groups);
 };

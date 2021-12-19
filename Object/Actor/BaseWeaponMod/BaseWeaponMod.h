@@ -7,18 +7,17 @@
 #include "GameFramework/Actor.h"
 #include "BaseWeaponMod.generated.h"
 
-
 class AAGP_Weapon;
+class ABaseModAttachment;
 
 UCLASS()
-class AA29_API ABaseWeaponMod : public AActor
+class ABaseWeaponMod : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
 	// Sets default values for this actor's properties
 	ABaseWeaponMod();
-
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)	    USkeletalMesh* Mesh;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)		bool bCanSwapLense;
@@ -59,21 +58,19 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-
-
 	void PostNetBeginPlay();
-	void GetActorLevelSkin(int32 Index, UTexture2D* old_material, FString level_tag);
-	void GetModAttachment();
-	void GetModName();
-	void IsSuppressorReady();
-	void IsReplicationComplete();
+	FString GetActorLevelSkin(int32 Index, UTexture2D* old_material, FString level_tag);
+	ABaseModAttachment* GetModAttachment();
+	FString GetModName();
+	bool IsSuppressorReady();
+	bool IsReplicationComplete();
 	void NotifyReplicationComplete();
 	virtual void Destroyed();
-	virtual void MutuallyExclusive(ABaseWeaponMod* OtherMod);
-	virtual void ModNotAllowed();
-	void CanAttachToWeapon();
-	void GetAttachBone(int32 Slot);
-	void AttachToWeapon(AAGP_Weapon* W, int32 attach_slot);
+	virtual bool MutuallyExclusive(ABaseWeaponMod* OtherMod);
+	bool ModNotAllowed();
+	bool CanAttachToWeapon();
+	FName GetAttachBone(int32 Slot);
+	bool AttachToWeapon(AAGP_Weapon* W, int32 attach_slot);
 	virtual void Toggle();
 	bool IsSuppressor();
 	void SetSuppressor();
@@ -87,5 +84,4 @@ public:
 	//void Tick float DeltaTime);
 	void IncrementCounter();
 	//void RenderTexture(ScriptedTexture Tex);
-
 };

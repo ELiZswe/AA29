@@ -9,6 +9,11 @@
 
 class ASoldierClass;
 class AHumanController;
+class ANPCPlayerStart;
+class AInternetInfo;
+class AAI_Interface;
+class AScreenplay;
+class ALevelInfo;
 
 UCLASS()
 class AA29_API AAGP_GameInfo : public AGameInfo
@@ -16,8 +21,6 @@ class AA29_API AAGP_GameInfo : public AGameInfo
 	GENERATED_BODY()
 public:
 	AAGP_GameInfo();
-
-
 
 	UPROPERTY(globalconfig)		bool GoalsbDisableESSScored;					//var globalconfig bool bDisableESS;
 	UPROPERTY(globalconfig)		int32 iDelayedRoundStartTimeSeconds;			//var globalconfig int iDelayedRoundStartTimeSeconds;
@@ -43,7 +46,7 @@ public:
 	UPROPERTY()					int32 iPlayersSpawned;							//var int iPlayersSpawned;
 	UPROPERTY()					int32 iNPCsSpawned;								//var int iNPCsSpawned;
 	UPROPERTY()					int32 iNPCPSSpawnIndex;							//var int iNPCPSSpawnIndex;
-	//UPROPERTY()				TArray<ANPCPlayerStart*> anpcpsPSToSpawn;		//var array<NPCPlayerStart> anpcpsPSToSpawn;
+	UPROPERTY()					TArray<ANPCPlayerStart*> anpcpsPSToSpawn;		//var array<NPCPlayerStart> anpcpsPSToSpawn;
 	UPROPERTY(globalconfig)		bool bAutoAT;									//var globalconfig bool bAutoAT;
 	UPROPERTY()					int32 iMaxBTRsToSpawn;							//var int iMaxBTRsToSpawn;
 	UPROPERTY()					int32 iMaxBMPsToSpawn;							//var int iMaxBMPsToSpawn;
@@ -64,42 +67,34 @@ public:
 	UPROPERTY()					float NextAuthTime;								//var float NextAuthTime;
 	UPROPERTY()					int32 ServerAuthFailures;						//var int ServerAuthFailures;
 	UPROPERTY()					int32 MaxAuthConnections;						//var int MaxAuthConnections;
-	//UPROPERTY()				TArray<AInternetInfo*> AuthList;				//var array<InternetInfo> AuthList;
+	UPROPERTY()					TArray<AInternetInfo*> AuthList;				//var array<InternetInfo> AuthList;
 	UPROPERTY(globalconfig)		bool bDemoExploreTheArmyMode;					//var globalconfig bool bDemoExploreTheArmyMode;
 	UPROPERTY(globalconfig)		EForceGameplayMode ForceGameplay;				//var globalconfig EForceGameplayMode ForceGameplay;
 	UPROPERTY()					bool bNoInventory;								//var bool bNoInventory;
 	UPROPERTY()					bool bDeadGame;									//var bool bDeadGame;
-	//UPROPERTY()				AScreenplay* _Screenplay;						//var Screenplay _Screenplay;
-	//UPROPERTY()				AAI_Interface* AI_global;						//var AI_Interface AI_global;
+	UPROPERTY()					AScreenplay* _Screenplay;						//var Screenplay _Screenplay;
+	UPROPERTY()					AAI_Interface* AI_global;						//var AI_Interface AI_global;
 
-//	virtual void BeginPlay() override;
-//	virtual void PreBeginPlay() override;
-//	virtual void PostBeginPlay() override;
-//	virtual void StartMatch() override;
-
-
+	void BeginPlay() override;
+	void PreBeginPlay() override;
+	void PostBeginPlay() override;
+	void StartMatch() override;
 	void RestartPlayer(AController* aPlayer);
-
 	virtual void PostLogin(APlayerController* NewPlayer) override;
-
-	//void Login(FString Portal, FString Options, FString Error);
+	
+	//APlayerController* Login(FString Portal, FString Options, FString Error);
 
 	void InitGame(const FString& MapName, const FString& Options, FString& ErrorMessage);
-
-
 	void FinishPostLogin(APlayerController* NewPlayer);
-
-
-
 	void EvaluatePlayerStatus(APlayerController* PC);
-	void GetSystemTimeSeconds();
-	//void PrecacheGameTextures(ALevelInfo* myLevel);
-	//void PrecacheGameStaticMeshes(ALevelInfo* myLevel);
+	float GetSystemTimeSeconds();
+	void PrecacheGameTextures(ALevelInfo* myLevel);
+	void PrecacheGameStaticMeshes(ALevelInfo* myLevel);
 	void DisableQualification();
 	void InitLogging();
 	void EndLogging(FString Reason);
 	void AddAllPlayersToStatsInfo();
-	void GetStatForPlayer(AHumanController* HC, FString sStatName);
+	int32 GetStatForPlayer(AHumanController* HC, FString sStatName);
 	bool ShouldIgnoreStats();
 	bool IsTrainingMission();
 	void UpdateClientsOfCheatAndForceclassStatus();
@@ -114,15 +109,15 @@ public:
 	void AssignClassAndRole();
 	void RecordStartMatch();
 	void CheckClassWithPlayerStart(AController* PC);
-	void IsClassLegal(ASoldierClass* sclass);
+	bool IsClassLegal(ASoldierClass* sclass);
 	void StartScreenplay();
 	bool IsRequireAuthorization();
-	void GetTeamClass(AController* C);
-	void GetDefaultTeamClass();
-	void GetTeamRole(AController* C);
-	void GetDefaultTeamRole();
+	AActor* GetTeamClass(AController* C);
+	AActor* GetDefaultTeamClass();
+	AActor* GetTeamRole(AController* C);
+	AActor* GetDefaultTeamRole();
 	bool ShouldRespawn(APickup* Other);
-	void PickupQuery(APawn* Other, APickup* Item);
+	bool PickupQuery(APawn* Other, APickup* Item);
 	void SetFirstObjective(AActor* Objective);
 	void SetSquadTarget(int32 iTeamIndex, uint8 objnum);
 	void ScoreAGPObjective(ATeamInfo* Team, AActor* Objective, bool bGameEnded, AAA2_PlayerState*  Scorer, bool bScorerOnly);
@@ -137,12 +132,11 @@ public:
 	bool IsTeamFriend(uint8 Team, APawn* you);
 	bool IsTeamGame();
 	uint8 GetPlayerTeamIndex(AController* C);
-	void GetScreenplay();
+	AScreenplay* GetScreenplay();
 	bool IsUnlimitedRespawn();
 	bool IsAllowRepawn();
 	bool IsAllowLateJoin();
 	void BanPlayerAccount(APlayerController* Cheater);
-
 	void EnterSpectatorMode(AController* aPlayer);
 	bool ShouldSpectate(AAA2_PlayerState*  p);
 	bool CanRespawn(AController* C);
@@ -151,8 +145,8 @@ public:
 	//void ChangeName(AController* Other, FString S, bool bNameChange);
 	void SimulateAuthFailure();
 	void SimulateAuthRecovery();
-	void GetServerAuthData();
-	void GetMapServerInfo();
+	FString GetServerAuthData();
+	FString GetMapServerInfo();
 	void AuthorizeServer();
 	void AuthorizeServerNow();
 	void SetServerMode(int32 ServerMode, FString ServerModeName);
@@ -165,6 +159,5 @@ public:
 	void ReceivedToursText(FString Filename, FString TextChunk);
 	void OnReceivedCachedTours(FString ReceivedFileName);
 	bool ShouldDownloadTours();
-	void DisableToursDownload();
-
+	bool DisableToursDownload();
 };

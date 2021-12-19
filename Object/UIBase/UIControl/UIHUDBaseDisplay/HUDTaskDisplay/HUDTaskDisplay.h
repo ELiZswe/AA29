@@ -8,6 +8,7 @@
 
 class AInventory;
 class ACallForSupport;
+class UFont;
 
 UCLASS()
 class AA29_API UHUDTaskDisplay : public UUIHUDBaseDisplay
@@ -70,7 +71,6 @@ public:
 	UPROPERTY()										int32 Grenades_ysize;						//var int Grenades_ysize;
 	UPROPERTY()										int32 Grenades_xsize;						//var int Grenades_xsize;
 
-
 	void Destroyed();
 	void ProcessParams();
 	void ScaleControl(UCanvas* Canvas);
@@ -79,19 +79,19 @@ public:
 	void DrawOptics(UCanvas* Canvas);
 	void DrawHolster(UCanvas* Canvas);
 	void DrawTime(UCanvas* Canvas);
-	void TwoDigitString(int32 Num);
+	FString TwoDigitString(int32 Num);
 	void DrawRank(UCanvas* Canvas);
 	void DrawMedical(UCanvas* Canvas);
 	void DrawBreacher(UCanvas* Canvas);
 	void DrawGrenades(UCanvas* Canvas);
-	void GetStatusFont(UCanvas* Canvas);
+	UFont* GetStatusFont(UCanvas* Canvas);
 	void DrawAmmo(UCanvas* Canvas);
 	void DrawObjectives(UCanvas* Canvas);
 	void DrawCompass(UCanvas* Canvas);
 	void DrawRadar(UCanvas* Canvas);
 	void InitializeSupport();
 	void DrawSupport(UCanvas* Canvas);
-	void CheckFlashTime();
+	bool CheckFlashTime();
 	void SetCurrentTask(int32 task);
 	int32 GetCurrentTask();
 	bool ProcessSpotterMenu(APlayerController* PC, int32 iMenuX, int32 iMenuY);

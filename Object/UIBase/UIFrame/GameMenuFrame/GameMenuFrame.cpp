@@ -242,35 +242,35 @@ void UGameMenuFrame::SetActiveScreen(int32 screen_id)
 }
 void UGameMenuFrame::SelectClass(int32 control_id)
 {
+	UUIScreen* screen = nullptr;
 	/*
-	local AGP_UI.UIScreen screen;
 	local AGP_UI.UIClassButton Control;
 	screen = GetScreen(3);
 	if (_iSelectedClass != 0)
 	{
-		Control = UIClassButton(screen.GetControl(_iSelectedClass));
+		Control = UIClassButton(screen->GetControl(_iSelectedClass));
 		Control.SetSelected(False);
 	}
 	_iSelectedClass = control_id;
-	Control = UIClassButton(screen.GetControl(_iSelectedClass));
+	Control = UIClassButton(screen->GetControl(_iSelectedClass));
 	Control.SetSelected(True);
 	*/
 }
 void UGameMenuFrame::DoSelectClass()
 {
+	UUIScreen* screen = nullptr;
 	/*
-	local AGP_UI.UIScreen screen;
 	local AGP_UI.UIClassButton Control;
 	local bool bLeader;
 	local bool bMedic;
 	screen = GetScreen(3);
-	Control = UIClassButton(screen.GetControl(_iSelectedClass));
+	Control = UIClassButton(screen->GetControl(_iSelectedClass));
 	if (Control.GetClassIndex() == 5 || Control.GetClassIndex() == 6)
 	{
-		UICheckboxB(screen.GetControl(18)).Select(False);
+		UICheckboxB(screen->GetControl(18)).Select(False);
 	}
-	bLeader = UICheckboxB(screen.GetControl(18)).IsSelected();
-	bMedic = UICheckboxB(screen.GetControl(19)).IsSelected();
+	bLeader = UICheckboxB(screen->GetControl(18)).IsSelected();
+	bMedic = UICheckboxB(screen->GetControl(19)).IsSelected();
 	if (Control != nullptr)
 	{
 		HumanController(AGP_HUD(cHUD).PlayerOwner).SetPreferredClass(Control.GetClassIndex(), bLeader, bMedic, prev_SelectedClass, prev_AvoidLeader);
@@ -324,31 +324,31 @@ void UGameMenuFrame::RefreshClassSelect()
 }
 void UGameMenuFrame::EnableMedicPreference(int32 ndesired, int32 navail)
 {
+	UUIScreen* screen = nullptr;
+	UUICheckboxB* cbox = nullptr;
 	/*
-	local AGP_UI.UIScreen screen;
-	local AGP_UI.UICheckboxB cbox;
 	screen = GetScreen(3);
-	cbox = UICheckboxB(screen.GetControl(19));
+	cbox = UICheckboxB(screen->GetControl(19));
 	cbox.SetLabel("REQUEST MEDIC [" $ ndesired $ "/" $ navail $ "]");
 	*/
 }
 void UGameMenuFrame::EnableLeaderPreference(int32 ndesired, int32 navail)
 {
-	/*
-	local AGP_UI.UIScreen screen;
-	local AGP_UI.UICheckboxB cbox;
+	UUIScreen* screen = nullptr;
+	UUICheckboxB* cbox = nullptr;
 	screen = GetScreen(3);
-	cbox = UICheckboxB(screen.GetControl(18));
+	/*
+	cbox = UICheckboxB(screen->GetControl(18));
 	cbox.SetLabel("AVOID LEADER ROLES [" $ ndesired $ "/" $ navail $ "]");
 	*/
 }
 void UGameMenuFrame::EnableClassSelect(bool bState, bool bQual, uint8 yalt, FString Label, int32 control_id)
 {
 	/*
-	local AGP_UI.UIScreen screen;
+	UUIScreen* screen = nullptr;
 	local AGP_UI.UIClassButton Control;
 	screen = GetScreen(3);
-	Control = UIClassButton(screen.GetControl(control_id));
+	Control = UIClassButton(screen->GetControl(control_id));
 	Control.SetEnabled(bState);
 	Control.SetQualified(bQual);
 	Control.SetUseAltClass(yalt);
@@ -358,13 +358,13 @@ void UGameMenuFrame::EnableClassSelect(bool bState, bool bQual, uint8 yalt, FStr
 void UGameMenuFrame::SelectTeam(int32 Team)
 {
 	/*
-	local AGP_UI.UIScreen screen;
+	UUIScreen* screen = nullptr;
 	local AGP_UI.UITextPageDisplay Control;
 	local AGP_UI.UITextPageDisplay control2;
 	screen = GetScreen(1);
-	Control = UITextPageDisplay(screen.GetControl(22 + Team));
+	Control = UITextPageDisplay(screen->GetControl(22 + Team));
 	screen = GetScreen(2);
-	control2 = UITextPageDisplay(screen.GetControl(21));
+	control2 = UITextPageDisplay(screen->GetControl(21));
 	_iSelectedTeam = Team;
 	UITextDisplay(GetScreen(2).GetControl(20)).SetLabel(_sTeam[_iSelectedTeam]);
 	control2.SetStringList(Control.GetStringList());
@@ -480,10 +480,9 @@ void UGameMenuFrame::CreateScreens()
 }
 void UGameMenuFrame::CreateMainMenuScreen()
 {
-	/*
 	UUIScreen* screen;
-	FPosition pos;
-	//screen = GetScreen(0);
+	FPosition pos = {};
+	screen = GetScreen(0);
 	pos.X = 200;
 	pos.Y = 82;
 	pos.W = 112;
@@ -504,15 +503,13 @@ void UGameMenuFrame::CreateMainMenuScreen()
 	pos.W = 116;
 	pos.H = 20;
 	screen->AddUITextButton(0, 5, pos, "Exit Menu", 1, "");
-	*/
 }
 void UGameMenuFrame::CreateClassSelectScreen()
 {
-	/*
 	UUIScreen* screen;
-	FPosition pos;
-	FPosition dim;
-	//screen = GetScreen(3);
+	FPosition pos = {};
+	FPosition dim = {};
+	screen = GetScreen(3);
 	pos.Y = 16;
 	dim.X = 0;
 	dim.Y = 0;
@@ -612,19 +609,19 @@ void UGameMenuFrame::CreateClassSelectScreen()
 	screen->AddUIClassButton(16, 16, pos, dim, 6, "T_AA2_UI.menu.ui_gm_rifleman", "T_AA2_UI.menu.ui_gm_m4a1", "T_AA2_UI.menu.ui_gm_m4a1_mod", "T_AA2_UI.menu.ui_gm_automaticrifleman", "T_AA2_UI.menu.ui_gm_overlay_sgt");
 	pos.X = 80;
 	pos.Y += 96;
-	screen->AddUIClassButton(10, 10, pos, dim, 0, "T_AA2_UI.menu.ui_gm_rifleman", "T_AA2_UI.menu.ui_gm_m4a1", "T_AA2_UI.menu.ui_gm_m4a1_mod");
+	//screen->AddUIClassButton(10, 10, pos, dim, 0, "T_AA2_UI.menu.ui_gm_rifleman", "T_AA2_UI.menu.ui_gm_m4a1", "T_AA2_UI.menu.ui_gm_m4a1_mod");
 	pos.X = 336;
-	screen->AddUIClassButton(11, 11, pos, dim, 1, "T_AA2_UI.menu.ui_gm_grenadier");
+	//screen->AddUIClassButton(11, 11, pos, dim, 1, "T_AA2_UI.menu.ui_gm_grenadier");
 	pos.Y += 96;
 	pos.X = 80;
-	screen->AddUIClassButton(12, 12, pos, dim, 2, "T_AA2_UI.menu.ui_gm_sniper82");
+	//screen->AddUIClassButton(12, 12, pos, dim, 2, "T_AA2_UI.menu.ui_gm_sniper82");
 	pos.X = 336;
-	screen->AddUIClassButton(13, 13, pos, dim, 3, "T_AA2_UI.menu.ui_gm_sniper24");
+	//screen->AddUIClassButton(13, 13, pos, dim, 3, "T_AA2_UI.menu.ui_gm_sniper24");
 	pos.Y += 96;
 	pos.X = 80;
-	screen->AddUIClassButton(14, 14, pos, dim, 4, "T_AA2_UI.menu.ui_gm_automaticrifleman");
+	//screen->AddUIClassButton(14, 14, pos, dim, 4, "T_AA2_UI.menu.ui_gm_automaticrifleman");
 	pos.X = 336;
-	screen->AddUIClassButton(17, 17, pos, dim, -1, "T_AA2_UI.menu.ui_gm_random");
+	//screen->AddUIClassButton(17, 17, pos, dim, -1, "T_AA2_UI.menu.ui_gm_random");
 	pos.Y += 78;
 	pos.X = 192;
 	pos.W = 200;
@@ -641,24 +638,25 @@ void UGameMenuFrame::CreateClassSelectScreen()
 	pos.W = 200;
 	pos.H = 20;
 	screen->AddUICheckBoxB(19, 0, pos, dCheckBox, "T_AA2_UI.menu.hud_menu_elements", "REQUEST MEDIC", 0, "", 0, "", "");
-	*/
 }
+
 void UGameMenuFrame::CreateTeamSelectScreen()
 {
-	/*
-	local AGP_UI.UIControl Control;
-	local AGP_UI.UIScreen screen;
-	local UIBase.Position pos;
-	local UIBase.Position dim;
-	local FString string0;
-	local FString string1;
-	local FString string2;
-	local int32 pos0;
-	local int32 pos1;
-	local int32 pos2;
+	
+	UUIControl* Control = nullptr;
+	UUIScreen* screen = nullptr;
+	FPosition pos = {};
+	FPosition dim = {};
+
+	FString string0 = "";
+	FString string1 = "";
+	FString string2 = "";
+	int32 pos0 = 0;
+	int32 pos1 = 0;
+	int32 pos2 = 0;
 	screen = GetScreen(1);
-	_sTeam[0] = cHUD.Level.TeamName[0];
-	_sTeam[1] = cHUD.Level.TeamName[1];
+	//_sTeam[0] = cHUD.Level.TeamName[0];
+	//_sTeam[1] = cHUD.Level.TeamName[1];
 	dim.X = 0;
 	dim.Y = 0;
 	dim.W = 16;
@@ -667,7 +665,7 @@ void UGameMenuFrame::CreateTeamSelectScreen()
 	pos.Y = 88;
 	pos.W = 16;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 16;
 	dim.Y = 0;
 	dim.W = 16;
@@ -676,7 +674,7 @@ void UGameMenuFrame::CreateTeamSelectScreen()
 	pos.Y = 88;
 	pos.W = 528;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 32;
 	dim.Y = 0;
 	dim.W = 16;
@@ -685,7 +683,7 @@ void UGameMenuFrame::CreateTeamSelectScreen()
 	pos.Y = 88;
 	pos.W = 16;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 0;
 	dim.Y = 16;
 	dim.W = 16;
@@ -694,7 +692,7 @@ void UGameMenuFrame::CreateTeamSelectScreen()
 	pos.Y = 104;
 	pos.W = 16;
 	pos.H = 80;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 16;
 	dim.Y = 16;
 	dim.W = 16;
@@ -703,7 +701,7 @@ void UGameMenuFrame::CreateTeamSelectScreen()
 	pos.Y = 104;
 	pos.W = 528;
 	pos.H = 80;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 32;
 	dim.Y = 16;
 	dim.W = 16;
@@ -712,7 +710,7 @@ void UGameMenuFrame::CreateTeamSelectScreen()
 	pos.Y = 104;
 	pos.W = 16;
 	pos.H = 80;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 0;
 	dim.Y = 32;
 	dim.W = 16;
@@ -721,7 +719,7 @@ void UGameMenuFrame::CreateTeamSelectScreen()
 	pos.Y = 184;
 	pos.W = 16;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 16;
 	dim.Y = 32;
 	dim.W = 16;
@@ -730,7 +728,7 @@ void UGameMenuFrame::CreateTeamSelectScreen()
 	pos.Y = 184;
 	pos.W = 528;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 32;
 	dim.Y = 32;
 	dim.W = 16;
@@ -739,22 +737,22 @@ void UGameMenuFrame::CreateTeamSelectScreen()
 	pos.Y = 184;
 	pos.W = 16;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	pos.X = 128;
 	pos.Y = 100;
 	pos.W = 384;
 	pos.H = 16;
-	screen.AddUITextDisplay(0, 0, pos, _sTeam[0], 0, "", 1, 0);
+	screen->AddUITextDisplay(0, 0, pos, _sTeam[0], 0, "", 1, 0);
 	pos.X = 52;
 	pos.Y = 120;
 	pos.W = 400;
 	pos.H = 170;
-	screen.AddUITextPageDisplay(22, pos, 0, 6, False);
+	screen->AddUITextPageDisplay(22, pos, 0, 6, false);
 	pos.X = 512;
 	pos.Y = 208;
 	pos.W = 68;
 	pos.H = 20;
-	screen.AddRolloverBitmapButton(0, 20, pos, "T_AA2_UI.menu.hud_menu_elements3", dMoreButton, 0, "");
+	screen->AddRolloverBitmapButton(0, 20, pos, "T_AA2_UI.menu.hud_menu_elements3", dMoreButton, 0, "");
 	dim.X = 0;
 	dim.Y = 0;
 	dim.W = 16;
@@ -763,7 +761,7 @@ void UGameMenuFrame::CreateTeamSelectScreen()
 	pos.Y = 248;
 	pos.W = 16;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 16;
 	dim.Y = 0;
 	dim.W = 16;
@@ -772,7 +770,7 @@ void UGameMenuFrame::CreateTeamSelectScreen()
 	pos.Y = 248;
 	pos.W = 528;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 32;
 	dim.Y = 0;
 	dim.W = 16;
@@ -781,7 +779,7 @@ void UGameMenuFrame::CreateTeamSelectScreen()
 	pos.Y = 248;
 	pos.W = 16;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 0;
 	dim.Y = 16;
 	dim.W = 16;
@@ -790,7 +788,7 @@ void UGameMenuFrame::CreateTeamSelectScreen()
 	pos.Y = 264;
 	pos.W = 16;
 	pos.H = 80;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 16;
 	dim.Y = 16;
 	dim.W = 16;
@@ -799,7 +797,7 @@ void UGameMenuFrame::CreateTeamSelectScreen()
 	pos.Y = 264;
 	pos.W = 528;
 	pos.H = 80;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 32;
 	dim.Y = 16;
 	dim.W = 16;
@@ -808,7 +806,7 @@ void UGameMenuFrame::CreateTeamSelectScreen()
 	pos.Y = 264;
 	pos.W = 16;
 	pos.H = 80;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 0;
 	dim.Y = 32;
 	dim.W = 16;
@@ -817,7 +815,7 @@ void UGameMenuFrame::CreateTeamSelectScreen()
 	pos.Y = 344;
 	pos.W = 16;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 16;
 	dim.Y = 32;
 	dim.W = 16;
@@ -826,7 +824,7 @@ void UGameMenuFrame::CreateTeamSelectScreen()
 	pos.Y = 344;
 	pos.W = 528;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 32;
 	dim.Y = 32;
 	dim.W = 16;
@@ -835,27 +833,28 @@ void UGameMenuFrame::CreateTeamSelectScreen()
 	pos.Y = 344;
 	pos.W = 16;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	pos.X = 128;
 	pos.Y = 260;
 	pos.W = 384;
 	pos.H = 16;
-	screen.AddUITextDisplay(0, 0, pos, _sTeam[1], 0, "", 1, 0);
+	screen->AddUITextDisplay(0, 0, pos, _sTeam[1], 0, "", 1, 0);
 	pos.X = 52;
 	pos.Y = 280;
 	pos.W = 400;
 	pos.H = 170;
-	screen.AddUITextPageDisplay(23, pos, 0, 6, False);
+	screen->AddUITextPageDisplay(23, pos, 0, 6, false);
 	pos.X = 64;
 	pos.Y = 368;
 	pos.W = 68;
 	pos.H = 20;
-	screen.AddRolloverBitmapButton(0, 5, pos, "T_AA2_UI.menu.hud_menu_elements3", dCancelButton, 0, "");
+	screen->AddRolloverBitmapButton(0, 5, pos, "T_AA2_UI.menu.hud_menu_elements3", dCancelButton, 0, "");
 	pos.X = 512;
 	pos.Y = 368;
 	pos.W = 68;
 	pos.H = 20;
-	screen.AddRolloverBitmapButton(0, 21, pos, "T_AA2_UI.menu.hud_menu_elements3", dMoreButton, 0, "");
+	screen->AddRolloverBitmapButton(0, 21, pos, "T_AA2_UI.menu.hud_menu_elements3", dMoreButton, 0, "");
+	/*
 	string0 = cHUD.Level.GetLocalURL();
 	pos0 = InStr(string0, "/");
 	pos1 = InStr(string0, ".");
@@ -872,18 +871,18 @@ void UGameMenuFrame::CreateTeamSelectScreen()
 		pos1 = pos2;
 	}
 	string2 = Left(string0, pos1);
-	Control = screen.GetControl(22);
+	Control = screen->GetControl(22);
 	UITextPageDisplay(Control).SetTextFile(_sBriefingsDir $ string2 $ "_team0.txt");
-	Control = screen.GetControl(23);
+	Control = screen->GetControl(23);
 	UITextPageDisplay(Control).SetTextFile(_sBriefingsDir $ string2 $ "_team1.txt");
 	*/
 }
+
 void UGameMenuFrame::CreateTeamBriefScreen()
 {
-	/*
-	local AGP_UI.UIScreen screen;
-	local UIBase.Position pos;
-	local UIBase.Position dim;
+	UUIScreen* screen = nullptr;
+	FPosition pos = {};
+	FPosition dim = {};
 	screen = GetScreen(2);
 	dim.X = 0;
 	dim.Y = 0;
@@ -893,7 +892,7 @@ void UGameMenuFrame::CreateTeamBriefScreen()
 	pos.Y = 112;
 	pos.W = 16;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 16;
 	dim.Y = 0;
 	dim.W = 16;
@@ -902,7 +901,7 @@ void UGameMenuFrame::CreateTeamBriefScreen()
 	pos.Y = 112;
 	pos.W = 528;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 32;
 	dim.Y = 0;
 	dim.W = 16;
@@ -911,7 +910,7 @@ void UGameMenuFrame::CreateTeamBriefScreen()
 	pos.Y = 112;
 	pos.W = 16;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 0;
 	dim.Y = 16;
 	dim.W = 16;
@@ -920,7 +919,7 @@ void UGameMenuFrame::CreateTeamBriefScreen()
 	pos.Y = 128;
 	pos.W = 16;
 	pos.H = 192;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 16;
 	dim.Y = 16;
 	dim.W = 16;
@@ -929,7 +928,7 @@ void UGameMenuFrame::CreateTeamBriefScreen()
 	pos.Y = 128;
 	pos.W = 528;
 	pos.H = 192;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 32;
 	dim.Y = 16;
 	dim.W = 16;
@@ -938,7 +937,7 @@ void UGameMenuFrame::CreateTeamBriefScreen()
 	pos.Y = 128;
 	pos.W = 16;
 	pos.H = 192;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 0;
 	dim.Y = 32;
 	dim.W = 16;
@@ -947,7 +946,7 @@ void UGameMenuFrame::CreateTeamBriefScreen()
 	pos.Y = 320;
 	pos.W = 16;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 16;
 	dim.Y = 32;
 	dim.W = 16;
@@ -956,7 +955,7 @@ void UGameMenuFrame::CreateTeamBriefScreen()
 	pos.Y = 320;
 	pos.W = 528;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 32;
 	dim.Y = 32;
 	dim.W = 16;
@@ -965,35 +964,34 @@ void UGameMenuFrame::CreateTeamBriefScreen()
 	pos.Y = 320;
 	pos.W = 16;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	pos.X = 128;
 	pos.Y = 124;
 	pos.W = 384;
 	pos.H = 16;
-	screen.AddUITextDisplay(20, 0, pos, "TEAM NAME", 0, "", 1, 0);
+	screen->AddUITextDisplay(20, 0, pos, "TEAM NAME", 0, "", 1, 0);
 	pos.X = 52;
 	pos.Y = 144;
 	pos.W = 400;
 	pos.H = 170;
-	screen.AddUITextPageDisplay(21, pos, 0, 14, False);
+	screen->AddUITextPageDisplay(21, pos, 0, 14, false);
 	pos.X = 64;
 	pos.Y = 344;
 	pos.W = 68;
 	pos.H = 20;
-	screen.AddRolloverBitmapButton(0, 2, pos, "T_AA2_UI.menu.hud_menu_elements3", dCancelButton, 0, "");
+	screen->AddRolloverBitmapButton(0, 2, pos, "T_AA2_UI.menu.hud_menu_elements3", dCancelButton, 0, "");
 	pos.X = 512;
 	pos.Y = 344;
 	pos.W = 68;
 	pos.H = 20;
-	screen.AddRolloverBitmapButton(0, 22, pos, "T_AA2_UI.menu.hud_menu_elements3", dSelectButton, 0, "");
-	*/
+	screen->AddRolloverBitmapButton(0, 22, pos, "T_AA2_UI.menu.hud_menu_elements3", dSelectButton, 0, "");
 }
+
 void UGameMenuFrame::CreateLoginScreen()
 {
-	/*
-	local AGP_UI.UIScreen screen;
-	local UIBase.Position pos;
-	local UIBase.Position dim;
+	UUIScreen* screen = nullptr;
+	FPosition pos = {};
+	FPosition dim = {};
 	screen = GetScreen(4);
 	dim.X = 0;
 	dim.Y = 0;
@@ -1003,7 +1001,7 @@ void UGameMenuFrame::CreateLoginScreen()
 	pos.Y = 56;
 	pos.W = 16;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 16;
 	dim.Y = 0;
 	dim.W = 16;
@@ -1012,7 +1010,7 @@ void UGameMenuFrame::CreateLoginScreen()
 	pos.Y = 56;
 	pos.W = 480;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 32;
 	dim.Y = 0;
 	dim.W = 16;
@@ -1021,7 +1019,7 @@ void UGameMenuFrame::CreateLoginScreen()
 	pos.Y = 56;
 	pos.W = 16;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 0;
 	dim.Y = 16;
 	dim.W = 16;
@@ -1030,7 +1028,7 @@ void UGameMenuFrame::CreateLoginScreen()
 	pos.Y = 72;
 	pos.W = 16;
 	pos.H = 336;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 16;
 	dim.Y = 16;
 	dim.W = 16;
@@ -1039,7 +1037,7 @@ void UGameMenuFrame::CreateLoginScreen()
 	pos.Y = 72;
 	pos.W = 480;
 	pos.H = 336;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 32;
 	dim.Y = 16;
 	dim.W = 16;
@@ -1048,7 +1046,7 @@ void UGameMenuFrame::CreateLoginScreen()
 	pos.Y = 72;
 	pos.W = 16;
 	pos.H = 336;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 0;
 	dim.Y = 32;
 	dim.W = 16;
@@ -1057,7 +1055,7 @@ void UGameMenuFrame::CreateLoginScreen()
 	pos.Y = 408;
 	pos.W = 16;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 16;
 	dim.Y = 32;
 	dim.W = 16;
@@ -1066,7 +1064,7 @@ void UGameMenuFrame::CreateLoginScreen()
 	pos.Y = 408;
 	pos.W = 480;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 32;
 	dim.Y = 32;
 	dim.W = 16;
@@ -1075,19 +1073,19 @@ void UGameMenuFrame::CreateLoginScreen()
 	pos.Y = 408;
 	pos.W = 16;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	pos.X = 128;
 	pos.Y = 64;
 	pos.W = 384;
 	pos.H = 16;
-	screen.AddUITextDisplay(0, 0, pos, "SOLDIER LOGIN", 0, "", 2, 1);
+	screen->AddUITextDisplay(0, 0, pos, "SOLDIER LOGIN", 0, "", 2, 1);
 	pos.X = 80;
 	pos.Y = 146;
 	pos.W = 112;
 	pos.H = 20;
-	screen.AddUITextDisplay(0, 0, pos, "SOLDIER NAME", 1, "", 2, 0);
+	screen->AddUITextDisplay(0, 0, pos, "SOLDIER NAME", 1, "", 2, 0);
 	pos.Y += 50;
-	screen.AddUITextDisplay(0, 0, pos, "PASSWORD", 1, "", 2, 0);
+	screen->AddUITextDisplay(0, 0, pos, "PASSWORD", 1, "", 2, 0);
 	dim.X = 0;
 	dim.Y = 116;
 	dim.W = 256;
@@ -1096,54 +1094,53 @@ void UGameMenuFrame::CreateLoginScreen()
 	pos.Y = 136;
 	pos.W = 256;
 	pos.H = 32;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements", dim, 1);
 	pos.X = 306;
 	pos.Y += 50;
 	pos.W = 256;
 	pos.H = 32;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements", dim, 1);
 	pos.X = 306;
 	pos.Y = 136;
 	pos.W = 256;
 	pos.H = 32;
-	screen.AddUIEditBox(30, 0, pos, "login", 0, "", 20);
+	screen->AddUIEditBox(30, 0, pos, "login", 0, "", 20);
 	pos.X = 306;
 	pos.Y += 50;
 	pos.W = 256;
 	pos.H = 32;
-	screen.AddUIEditBox(31, 0, pos, "password", 1, "", 20);
+	screen->AddUIEditBox(31, 0, pos, "password", 1, "", 20);
 	pos.X = 80;
 	pos.W = 512;
 	pos.Y += 128;
-	screen.AddUITextDisplay(32, 0, pos, "WAITING", 0, "", 2, 1);
+	screen->AddUITextDisplay(32, 0, pos, "WAITING", 0, "", 2, 1);
 	pos.X = 80;
 	pos.W = 512;
 	pos.Y += 32;
-	screen.AddUITextDisplay(33, 0, pos, "", 0, "", 2, 1);
+	screen->AddUITextDisplay(33, 0, pos, "", 0, "", 2, 1);
 	pos.X = 80;
 	pos.Y = 392;
 	pos.W = 68;
 	pos.H = 20;
-	screen.AddRolloverBitmapButton(0, 30, pos, "T_AA2_UI.menu.hud_menu_elements3", dMenuButton, 0, "");
+	screen->AddRolloverBitmapButton(0, 30, pos, "T_AA2_UI.menu.hud_menu_elements3", dMenuButton, 0, "");
 	pos.X = 496;
 	pos.Y = 392;
 	pos.W = 68;
 	pos.H = 20;
-	screen.AddRolloverBitmapButton(34, 31, pos, "T_AA2_UI.menu.hud_menu_elements3", dLogInButton, 0, "");
+	screen->AddRolloverBitmapButton(34, 31, pos, "T_AA2_UI.menu.hud_menu_elements3", dLogInButton, 0, "");
 	pos.X = 496;
 	pos.Y = 392;
 	pos.W = 68;
 	pos.H = 20;
-	screen.AddRolloverBitmapButton(35, 43, pos, "T_AA2_UI.menu.hud_menu_elements3", dContinueButton, 0, "");
-	screen.AddUIKeyCapture(0, 0);
-	*/
+	screen->AddRolloverBitmapButton(35, 43, pos, "T_AA2_UI.menu.hud_menu_elements3", dContinueButton, 0, "");
+	screen->AddUIKeyCapture(0, 0);
 }
+
 void UGameMenuFrame::CreateMissionSuccessScreen()
 {
-	/*
-	local AGP_UI.UIScreen screen;
-	local UIBase.Position pos;
-	local UIBase.Position dim;
+	UUIScreen* screen = nullptr;
+	FPosition pos = {};
+	FPosition dim = {};
 	screen = GetScreen(5);
 	dim.X = 0;
 	dim.Y = 0;
@@ -1153,7 +1150,7 @@ void UGameMenuFrame::CreateMissionSuccessScreen()
 	pos.Y = 56;
 	pos.W = 16;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 16;
 	dim.Y = 0;
 	dim.W = 16;
@@ -1162,7 +1159,7 @@ void UGameMenuFrame::CreateMissionSuccessScreen()
 	pos.Y = 56;
 	pos.W = 480;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 32;
 	dim.Y = 0;
 	dim.W = 16;
@@ -1171,7 +1168,7 @@ void UGameMenuFrame::CreateMissionSuccessScreen()
 	pos.Y = 56;
 	pos.W = 16;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 0;
 	dim.Y = 16;
 	dim.W = 16;
@@ -1180,7 +1177,7 @@ void UGameMenuFrame::CreateMissionSuccessScreen()
 	pos.Y = 72;
 	pos.W = 16;
 	pos.H = 336;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 16;
 	dim.Y = 16;
 	dim.W = 16;
@@ -1189,7 +1186,7 @@ void UGameMenuFrame::CreateMissionSuccessScreen()
 	pos.Y = 72;
 	pos.W = 480;
 	pos.H = 336;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 32;
 	dim.Y = 16;
 	dim.W = 16;
@@ -1198,7 +1195,7 @@ void UGameMenuFrame::CreateMissionSuccessScreen()
 	pos.Y = 72;
 	pos.W = 16;
 	pos.H = 336;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 0;
 	dim.Y = 32;
 	dim.W = 16;
@@ -1207,7 +1204,7 @@ void UGameMenuFrame::CreateMissionSuccessScreen()
 	pos.Y = 408;
 	pos.W = 16;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 16;
 	dim.Y = 32;
 	dim.W = 16;
@@ -1216,7 +1213,7 @@ void UGameMenuFrame::CreateMissionSuccessScreen()
 	pos.Y = 408;
 	pos.W = 480;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 32;
 	dim.Y = 32;
 	dim.W = 16;
@@ -1225,61 +1222,60 @@ void UGameMenuFrame::CreateMissionSuccessScreen()
 	pos.Y = 408;
 	pos.W = 16;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	pos.X = 128;
 	pos.Y = 64;
 	pos.W = 384;
 	pos.H = 16;
-	screen.AddUITextDisplay(0, 0, pos, "MISSION SUCCESS", 0, "", 2, 1);
+	screen->AddUITextDisplay(0, 0, pos, "MISSION SUCCESS", 0, "", 2, 1);
 	pos.X = 80;
 	pos.Y = 96;
 	pos.W = 64;
 	pos.H = 64;
-	screen.AddUIDynamicBitmap(40, pos, "", 0);
+	screen->AddUIDynamicBitmap(40, pos, "", 0);
 	pos.X = 208;
 	pos.Y = 96;
 	pos.W = 256;
 	pos.H = 32;
-	screen.AddUITextDisplay(41, 0, pos, "temp test string", 0, "", 2, 1);
+	screen->AddUITextDisplay(41, 0, pos, "temp test string", 0, "", 2, 1);
 	pos.X = 208;
 	pos.Y = 116;
 	pos.W = 256;
 	pos.H = 32;
-	screen.AddUITextDisplay(47, 0, pos, "", 0, "", 2, 1);
+	screen->AddUITextDisplay(47, 0, pos, "", 0, "", 2, 1);
 	pos.X = 80;
 	pos.Y = 250;
 	pos.W = 480;
 	pos.H = 32;
-	screen.AddUITextDisplay(45, 0, pos, "", 0, "", 2, 1);
+	screen->AddUITextDisplay(45, 0, pos, "", 0, "", 2, 1);
 	pos.X = 80;
 	pos.Y = 282;
 	pos.W = 480;
 	pos.H = 32;
-	screen.AddUITextDisplay(46, 0, pos, "", 0, "", 2, 1);
+	screen->AddUITextDisplay(46, 0, pos, "", 0, "", 2, 1);
 	pos.X = 80;
 	pos.Y = 392;
 	pos.W = 68;
 	pos.H = 20;
-	screen.AddRolloverBitmapButton(42, 60, pos, "T_AA2_UI.menu.hud_menu_elements3", dMenuButton, 0, "");
+	screen->AddRolloverBitmapButton(42, 60, pos, "T_AA2_UI.menu.hud_menu_elements3", dMenuButton, 0, "");
 	pos.X = 276;
 	pos.Y = 392;
 	pos.W = 68;
 	pos.H = 20;
-	screen.AddRolloverBitmapButton(43, 61, pos, "T_AA2_UI.menu.hud_menu_elements3", dReplayButton, 0, "");
+	screen->AddRolloverBitmapButton(43, 61, pos, "T_AA2_UI.menu.hud_menu_elements3", dReplayButton, 0, "");
 	pos.X = 496;
 	pos.Y = 392;
 	pos.W = 68;
 	pos.H = 20;
-	screen.AddRolloverBitmapButton(44, 42, pos, "T_AA2_UI.menu.hud_menu_elements3", dContinueButton, 0, "");
-	screen.AddUIKeyCapture(0, 0);
-	*/
+	screen->AddRolloverBitmapButton(44, 42, pos, "T_AA2_UI.menu.hud_menu_elements3", dContinueButton, 0, "");
+	screen->AddUIKeyCapture(0, 0);
 }
+
 void UGameMenuFrame::CreateMissionFailureScreen()
 {
-	/*
-	local AGP_UI.UIScreen screen;
-	local UIBase.Position pos;
-	local UIBase.Position dim;
+	UUIScreen* screen = nullptr;
+	FPosition pos = {};
+	FPosition dim = {};
 	screen = GetScreen(6);
 	dim.X = 0;
 	dim.Y = 0;
@@ -1289,7 +1285,7 @@ void UGameMenuFrame::CreateMissionFailureScreen()
 	pos.Y = 56;
 	pos.W = 16;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 16;
 	dim.Y = 0;
 	dim.W = 16;
@@ -1298,7 +1294,7 @@ void UGameMenuFrame::CreateMissionFailureScreen()
 	pos.Y = 56;
 	pos.W = 480;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 32;
 	dim.Y = 0;
 	dim.W = 16;
@@ -1307,7 +1303,7 @@ void UGameMenuFrame::CreateMissionFailureScreen()
 	pos.Y = 56;
 	pos.W = 16;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 0;
 	dim.Y = 16;
 	dim.W = 16;
@@ -1316,7 +1312,7 @@ void UGameMenuFrame::CreateMissionFailureScreen()
 	pos.Y = 72;
 	pos.W = 16;
 	pos.H = 336;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 16;
 	dim.Y = 16;
 	dim.W = 16;
@@ -1325,7 +1321,7 @@ void UGameMenuFrame::CreateMissionFailureScreen()
 	pos.Y = 72;
 	pos.W = 480;
 	pos.H = 336;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 32;
 	dim.Y = 16;
 	dim.W = 16;
@@ -1334,7 +1330,7 @@ void UGameMenuFrame::CreateMissionFailureScreen()
 	pos.Y = 72;
 	pos.W = 16;
 	pos.H = 336;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 0;
 	dim.Y = 32;
 	dim.W = 16;
@@ -1343,7 +1339,7 @@ void UGameMenuFrame::CreateMissionFailureScreen()
 	pos.Y = 408;
 	pos.W = 16;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 16;
 	dim.Y = 32;
 	dim.W = 16;
@@ -1352,7 +1348,7 @@ void UGameMenuFrame::CreateMissionFailureScreen()
 	pos.Y = 408;
 	pos.W = 480;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 32;
 	dim.Y = 32;
 	dim.W = 16;
@@ -1361,46 +1357,45 @@ void UGameMenuFrame::CreateMissionFailureScreen()
 	pos.Y = 408;
 	pos.W = 16;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	pos.X = 128;
 	pos.Y = 64;
 	pos.W = 384;
 	pos.H = 16;
-	screen.AddUITextDisplay(0, 0, pos, "MISSION FAILURE", 0, "", 2, 1);
+	screen->AddUITextDisplay(0, 0, pos, "MISSION FAILURE", 0, "", 2, 1);
 	pos.X = 208;
 	pos.Y = 96;
 	pos.W = 256;
 	pos.H = 32;
-	screen.AddUITextDisplay(41, 0, pos, "temp test string", 0, "", 2, 1);
+	screen->AddUITextDisplay(41, 0, pos, "temp test string", 0, "", 2, 1);
 	pos.X = 208;
 	pos.Y = 116;
 	pos.W = 256;
 	pos.H = 32;
-	screen.AddUITextDisplay(47, 0, pos, "", 0, "", 2, 1);
+	screen->AddUITextDisplay(47, 0, pos, "", 0, "", 2, 1);
 	pos.X = 80;
 	pos.Y = 96;
 	pos.W = 64;
 	pos.H = 64;
-	screen.AddUIDynamicBitmap(40, pos, "", 0);
+	screen->AddUIDynamicBitmap(40, pos, "", 0);
 	pos.X = 80;
 	pos.Y = 392;
 	pos.W = 68;
 	pos.H = 20;
-	screen.AddRolloverBitmapButton(0, 60, pos, "T_AA2_UI.menu.hud_menu_elements3", dMenuButton, 0, "");
+	screen->AddRolloverBitmapButton(0, 60, pos, "T_AA2_UI.menu.hud_menu_elements3", dMenuButton, 0, "");
 	pos.X = 496;
 	pos.Y = 392;
 	pos.W = 68;
 	pos.H = 20;
-	screen.AddRolloverBitmapButton(0, 61, pos, "T_AA2_UI.menu.hud_menu_elements3", dReplayButton, 0, "");
-	screen.AddUIKeyCapture(0, 0);
-	*/
+	screen->AddRolloverBitmapButton(0, 61, pos, "T_AA2_UI.menu.hud_menu_elements3", dReplayButton, 0, "");
+	screen->AddUIKeyCapture(0, 0);
 }
+
 void UGameMenuFrame::CreateLandNavScoreScreen()
 {
-	/*
-	local AGP_UI.UIScreen screen;
-	local UIBase.Position pos;
-	local UIBase.Position dim;
+	UUIScreen* screen = nullptr;
+	FPosition pos = {};
+	FPosition dim = {};
 	screen = GetScreen(8);
 	dim.X = 0;
 	dim.Y = 0;
@@ -1410,7 +1405,7 @@ void UGameMenuFrame::CreateLandNavScoreScreen()
 	pos.Y = 56;
 	pos.W = 16;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 16;
 	dim.Y = 0;
 	dim.W = 16;
@@ -1419,7 +1414,7 @@ void UGameMenuFrame::CreateLandNavScoreScreen()
 	pos.Y = 56;
 	pos.W = 480;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 32;
 	dim.Y = 0;
 	dim.W = 16;
@@ -1428,7 +1423,7 @@ void UGameMenuFrame::CreateLandNavScoreScreen()
 	pos.Y = 56;
 	pos.W = 16;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 0;
 	dim.Y = 16;
 	dim.W = 16;
@@ -1437,7 +1432,7 @@ void UGameMenuFrame::CreateLandNavScoreScreen()
 	pos.Y = 72;
 	pos.W = 16;
 	pos.H = 336;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 16;
 	dim.Y = 16;
 	dim.W = 16;
@@ -1446,7 +1441,7 @@ void UGameMenuFrame::CreateLandNavScoreScreen()
 	pos.Y = 72;
 	pos.W = 480;
 	pos.H = 336;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 32;
 	dim.Y = 16;
 	dim.W = 16;
@@ -1455,7 +1450,7 @@ void UGameMenuFrame::CreateLandNavScoreScreen()
 	pos.Y = 72;
 	pos.W = 16;
 	pos.H = 336;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 0;
 	dim.Y = 32;
 	dim.W = 16;
@@ -1464,7 +1459,7 @@ void UGameMenuFrame::CreateLandNavScoreScreen()
 	pos.Y = 408;
 	pos.W = 16;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 16;
 	dim.Y = 32;
 	dim.W = 16;
@@ -1473,7 +1468,7 @@ void UGameMenuFrame::CreateLandNavScoreScreen()
 	pos.Y = 408;
 	pos.W = 480;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 32;
 	dim.Y = 32;
 	dim.W = 16;
@@ -1482,67 +1477,66 @@ void UGameMenuFrame::CreateLandNavScoreScreen()
 	pos.Y = 408;
 	pos.W = 16;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	pos.X = 128;
 	pos.Y = 90;
 	pos.W = 384;
 	pos.H = 16;
-	screen.AddUITextDisplay(1009, 0, pos, "MISSION SUCCESS", 0, "", 2, 1);
+	screen->AddUITextDisplay(1009, 0, pos, "MISSION SUCCESS", 0, "", 2, 1);
 	pos.X = 80;
 	pos.Y = 130;
 	pos.W = 480;
 	pos.H = 32;
-	screen.AddUITextDisplay(1001, 0, pos, "ID_LNTextString01", 0, "", 2, 1);
+	screen->AddUITextDisplay(1001, 0, pos, "ID_LNTextString01", 0, "", 2, 1);
 	pos.X = 80;
 	pos.Y = 150;
 	pos.W = 480;
 	pos.H = 32;
-	screen.AddUITextDisplay(1002, 0, pos, "ID_LNTextString02", 0, "", 2, 1);
+	screen->AddUITextDisplay(1002, 0, pos, "ID_LNTextString02", 0, "", 2, 1);
 	pos.X = 80;
 	pos.Y = 170;
 	pos.W = 480;
 	pos.H = 32;
-	screen.AddUITextDisplay(1003, 0, pos, "ID_LNTextString03", 0, "", 2, 1);
+	screen->AddUITextDisplay(1003, 0, pos, "ID_LNTextString03", 0, "", 2, 1);
 	pos.X = 80;
 	pos.Y = 190;
 	pos.W = 480;
 	pos.H = 32;
-	screen.AddUITextDisplay(1004, 0, pos, "ID_LNTextString04", 0, "", 2, 1);
+	screen->AddUITextDisplay(1004, 0, pos, "ID_LNTextString04", 0, "", 2, 1);
 	pos.X = 80;
 	pos.Y = 210;
 	pos.W = 480;
 	pos.H = 32;
-	screen.AddUITextDisplay(1005, 0, pos, "ID_LNTextString05", 0, "", 2, 1);
+	screen->AddUITextDisplay(1005, 0, pos, "ID_LNTextString05", 0, "", 2, 1);
 	pos.X = 80;
 	pos.Y = 230;
 	pos.W = 480;
 	pos.H = 32;
-	screen.AddUITextDisplay(1006, 0, pos, "ID_LNTextString06", 0, "", 2, 1);
+	screen->AddUITextDisplay(1006, 0, pos, "ID_LNTextString06", 0, "", 2, 1);
 	pos.X = 80;
 	pos.Y = 250;
 	pos.W = 480;
 	pos.H = 32;
-	screen.AddUITextDisplay(1007, 0, pos, "ID_LNTextString07", 0, "", 2, 1);
+	screen->AddUITextDisplay(1007, 0, pos, "ID_LNTextString07", 0, "", 2, 1);
 	pos.X = 80;
 	pos.Y = 290;
 	pos.W = 480;
 	pos.H = 32;
-	screen.AddUITextDisplay(1008, 0, pos, "ID_LNTextString08", 0, "", 2, 1);
+	screen->AddUITextDisplay(1008, 0, pos, "ID_LNTextString08", 0, "", 2, 1);
 	pos.X = 496;
 	pos.Y = 392;
 	pos.W = 68;
 	pos.H = 20;
-	screen.AddRolloverBitmapButton(44, 62, pos, "T_AA2_UI.menu.hud_menu_elements3", dContinueButton, 0, "");
-	screen.AddUIKeyCapture(0, 0);
-	*/
+	screen->AddRolloverBitmapButton(44, 62, pos, "T_AA2_UI.menu.hud_menu_elements3", dContinueButton, 0, "");
+	screen->AddUIKeyCapture(0, 0);
 }
 void UGameMenuFrame::CreateServerAdminScreen()
 {
-	/*
-	local AGP_UI.UIScreen screen;
-	local UIBase.Position pos;
-	local UIBase.Position dim;
+	FPosition pos = {};
+	FPosition dim = {};
+	UUIScreen* screen = nullptr;
 	screen = GetScreen(7);
+
 	dim.X = 0;
 	dim.Y = 0;
 	dim.W = 16;
@@ -1551,7 +1545,7 @@ void UGameMenuFrame::CreateServerAdminScreen()
 	pos.Y = 32;
 	pos.W = 16;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 16;
 	dim.Y = 0;
 	dim.W = 16;
@@ -1560,7 +1554,7 @@ void UGameMenuFrame::CreateServerAdminScreen()
 	pos.Y = 32;
 	pos.W = 480;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 32;
 	dim.Y = 0;
 	dim.W = 16;
@@ -1569,7 +1563,7 @@ void UGameMenuFrame::CreateServerAdminScreen()
 	pos.Y = 32;
 	pos.W = 16;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 0;
 	dim.Y = 16;
 	dim.W = 16;
@@ -1578,7 +1572,7 @@ void UGameMenuFrame::CreateServerAdminScreen()
 	pos.Y = 48;
 	pos.W = 16;
 	pos.H = 384;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 16;
 	dim.Y = 16;
 	dim.W = 16;
@@ -1587,7 +1581,7 @@ void UGameMenuFrame::CreateServerAdminScreen()
 	pos.Y = 48;
 	pos.W = 480;
 	pos.H = 384;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 32;
 	dim.Y = 16;
 	dim.W = 16;
@@ -1596,7 +1590,7 @@ void UGameMenuFrame::CreateServerAdminScreen()
 	pos.Y = 48;
 	pos.W = 16;
 	pos.H = 384;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 0;
 	dim.Y = 32;
 	dim.W = 16;
@@ -1605,7 +1599,7 @@ void UGameMenuFrame::CreateServerAdminScreen()
 	pos.Y = 432;
 	pos.W = 16;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 16;
 	dim.Y = 32;
 	dim.W = 16;
@@ -1614,7 +1608,7 @@ void UGameMenuFrame::CreateServerAdminScreen()
 	pos.Y = 432;
 	pos.W = 480;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	dim.X = 32;
 	dim.Y = 32;
 	dim.W = 16;
@@ -1623,32 +1617,32 @@ void UGameMenuFrame::CreateServerAdminScreen()
 	pos.Y = 432;
 	pos.W = 16;
 	pos.H = 16;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements3", dim, 1);
 	pos.X = 82;
 	pos.Y = 42;
 	pos.W = 508;
 	pos.H = 16;
-	screen.AddUITextDisplay(0, 0, pos, "SERVER ADMIN COMMAND POST", 0, "", 2, 0);
+	screen->AddUITextDisplay(0, 0, pos, "SERVER ADMIN COMMAND POST", 0, "", 2, 0);
 	pos.X = 82;
 	pos.Y = 76;
 	pos.W = 182;
 	pos.H = 16;
-	screen.AddUITextDisplay(0, 0, pos, "PLAYERS", 0, "", 2, 0);
+	screen->AddUITextDisplay(0, 0, pos, "PLAYERS", 0, "", 2, 0);
 	pos.X = 330;
 	pos.Y = 76;
 	pos.W = 256;
 	pos.H = 16;
-	screen.AddUITextDisplay(0, 0, pos, "SETTINGS", 0, "", 2, 0);
+	screen->AddUITextDisplay(0, 0, pos, "SETTINGS", 0, "", 2, 0);
 	pos.X = 82;
 	pos.Y = 98;
 	pos.W = 246;
 	pos.H = 256;
-	screen.AddUIPlayerList(50, pos, 0);
+	screen->AddUIPlayerList(50, pos, 0);
 	pos.X = 330;
 	pos.Y = 98;
 	pos.W = 256;
 	pos.H = 256;
-	screen.AddUISettingsList(51, pos, 0);
+	screen->AddUISettingsList(51, pos, 0);
 	dim.X = 0;
 	dim.Y = 116;
 	dim.W = 256;
@@ -1657,75 +1651,74 @@ void UGameMenuFrame::CreateServerAdminScreen()
 	pos.Y = 376;
 	pos.W = 256;
 	pos.H = 32;
-	screen.AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements", dim, 1);
+	screen->AddUIBitmapB(0, pos, "T_AA2_UI.menu.hud_menu_elements", dim, 1);
 	pos.X = 264;
 	pos.Y = 376;
 	pos.W = 256;
 	pos.H = 32;
-	screen.AddUIEditBox(53, 0, pos, "", 0, "", 20);
+	screen->AddUIEditBox(53, 0, pos, "", 0, "", 20);
 	pos.X = 524;
 	pos.Y = 378;
 	pos.W = 10;
 	pos.H = 10;
-	screen.AddUITextButton(0, 50, pos, "SEND", 1, "");
+	screen->AddUITextButton(0, 50, pos, "SEND", 1, "");
 	pos.X = 82;
 	pos.Y = 355;
 	pos.W = 68;
 	pos.H = 20;
-	screen.AddRolloverBitmapButton(0, 53, pos, "T_AA2_UI.menu.hud_menu_elements", dBackButton, 0, "");
+	screen->AddRolloverBitmapButton(0, 53, pos, "T_AA2_UI.menu.hud_menu_elements", dBackButton, 0, "");
 	pos.X = 260;
 	pos.Y = 355;
 	pos.W = 68;
 	pos.H = 20;
-	screen.AddRolloverBitmapButton(0, 54, pos, "T_AA2_UI.menu.hud_menu_elements", dNextButton, 0, "");
+	screen->AddRolloverBitmapButton(0, 54, pos, "T_AA2_UI.menu.hud_menu_elements", dNextButton, 0, "");
 	pos.X = 330;
 	pos.Y = 355;
 	pos.W = 68;
 	pos.H = 20;
-	screen.AddRolloverBitmapButton(0, 55, pos, "T_AA2_UI.menu.hud_menu_elements", dBackButton, 0, "");
+	screen->AddRolloverBitmapButton(0, 55, pos, "T_AA2_UI.menu.hud_menu_elements", dBackButton, 0, "");
 	pos.X = 518;
 	pos.Y = 355;
 	pos.W = 68;
 	pos.H = 20;
-	screen.AddRolloverBitmapButton(0, 56, pos, "T_AA2_UI.menu.hud_menu_elements", dNextButton, 0, "");
+	screen->AddRolloverBitmapButton(0, 56, pos, "T_AA2_UI.menu.hud_menu_elements", dNextButton, 0, "");
 	pos.X = 80;
 	pos.Y = 378;
 	pos.W = 10;
 	pos.H = 10;
-	screen.AddUITextButton(0, 51, pos, "KICK", 1, "");
+	screen->AddUITextButton(0, 51, pos, "KICK", 1, "");
 	pos.X = 149;
 	pos.Y = 378;
 	pos.W = 10;
 	pos.H = 10;
-	screen.AddUITextButton(0, 52, pos, "BAN", 1, "");
+	screen->AddUITextButton(0, 52, pos, "BAN", 1, "");
 	pos.X = 80;
 	pos.Y = 424;
 	pos.W = 500;
 	pos.H = 20;
-	screen.AddUIConsole(0, pos, 0);
-	*/
+	screen->AddUIConsole(0, pos, 0);
 }
 void UGameMenuFrame::RefreshLoginScreen()
 {
+	UUIScreen* screen = nullptr;
 	/*
-	local AGP_UI.UIScreen screen;
 	local AGP_UI.UIControl Control;
 	local FString sTemp;
 	screen = GetScreen(4);
-	Control = screen.GetControl(30);
+	Control = screen->GetControl(30);
 	sTemp = HumanController(AGP_HUD(cHUD).PlayerOwner).UserName;
 	UIEditBox(Control).SetLabel(sTemp);
-	Control = screen.GetControl(31);
+	Control = screen->GetControl(31);
 	sTemp = HumanController(AGP_HUD(cHUD).PlayerOwner).UserPassword;
 	UIEditBox(Control).SetLabel(sTemp);
-	Control = screen.GetControl(32);
+	Control = screen->GetControl(32);
 	UITextDisplay(Control).SetLabel("Please log in to upload your results!");
 	_iLoginStatus = 0;
-	Control = screen.GetControl(33);
+	Control = screen->GetControl(33);
 	UITextDisplay(Control).SetLabel("");
-	Control = screen.GetControl(34);
+	Control = screen->GetControl(34);
 	Control.SetEnabled(True);
-	Control = screen.GetControl(35);
+	Control = screen->GetControl(35);
 	Control.SetEnabled(False);
 	*/
 }
@@ -1737,8 +1730,8 @@ void UGameMenuFrame::CancelLogin()
 }
 void UGameMenuFrame::SelectLogin()
 {
+	UUIScreen* screen = nullptr;
 	/*
-	local AGP_UI.UIScreen screen;
 	local AGP_UI.UIControl Control;
 	if (_iLoginStatus == 2)
 	{
@@ -1752,9 +1745,9 @@ void UGameMenuFrame::SelectLogin()
 			{
 			}
 			screen = GetScreen(4);
-			Control = screen.GetControl(30);
+			Control = screen->GetControl(30);
 			PrivateSet("humancontroller username " $ UIEditBox(Control).GetLabel());
-			Control = screen.GetControl(31);
+			Control = screen->GetControl(31);
 			PrivateSet("humancontroller userpassword " $ UIEditBox(Control).GetLabel());
 			HumanController(AGP_HUD(cHUD).PlayerOwner).MissionCompleted();
 			_iLoginStatus = -99;
@@ -1765,108 +1758,108 @@ void UGameMenuFrame::SelectLogin()
 void UGameMenuFrame::SetLoginStatus(int32 iStatus, FString sStatus, FString sNavMsg)
 {
 	/*
-	local AGP_UI.UIScreen screen;
+	UUIScreen* screen = nullptr;
 	local AGP_UI.UIControl Control;
 	_iLoginStatus = iStatus;
 	screen = GetScreen(4);
-	Control = screen.GetControl(32);
+	Control = screen->GetControl(32);
 	UITextDisplay(Control).SetLabel(sStatus);
-	Control = screen.GetControl(33);
+	Control = screen->GetControl(33);
 	UITextDisplay(Control).SetLabel(sNavMsg);
 	if (_iLoginStatus == 2)
 	{
-		Control = screen.GetControl(34);
+		Control = screen->GetControl(34);
 		Control.SetEnabled(False);
-		Control = screen.GetControl(35);
+		Control = screen->GetControl(35);
 		Control.SetEnabled(True);
 	}
 	*/
 }
 void UGameMenuFrame::SetMissionSuccessScreen(FString Texture, FString Text, FString text2, int32 USize, int32 VSize, int32 RenderStyle, FName replayscene, bool bCheater)
 {
+	UUIScreen* screen = nullptr;
 	/*
-	local AGP_UI.UIScreen screen;
 	local AGP_UI.UIControl Control;
 	screen = GetScreen(5);
-	Control = screen.GetControl(40);
+	Control = screen->GetControl(40);
 	UIDynamicBitmap(Control).SetTexture(Texture, USize, VSize, RenderStyle);
-	Control = screen.GetControl(41);
+	Control = screen->GetControl(41);
 	UITextDisplay(Control).SetLabel(Text);
-	Control = screen.GetControl(47);
+	Control = screen->GetControl(47);
 	UITextDisplay(Control).SetLabel(text2);
 	nReplayScene = replayscene;
 	if (bCheater)
 	{
-		Control = screen.GetControl(43);
+		Control = screen->GetControl(43);
 		Control.SetEnabled(False);
-		Control = screen.GetControl(44);
+		Control = screen->GetControl(44);
 		Control.SetEnabled(False);
-		Control = screen.GetControl(45);
+		Control = screen->GetControl(45);
 		UITextDisplay(Control).SetLabel("Cannot authorize due to use of player cheats.");
-		Control = screen.GetControl(46);
+		Control = screen->GetControl(46);
 		UITextDisplay(Control).SetLabel("Click MENU to return to the main menu.");
 	}
 	else
 	{
-		Control = screen.GetControl(43);
+		Control = screen->GetControl(43);
 		Control.SetEnabled(True);
-		Control = screen.GetControl(44);
+		Control = screen->GetControl(44);
 		Control.SetEnabled(True);
-		Control = screen.GetControl(45);
+		Control = screen->GetControl(45);
 		UITextDisplay(Control).SetLabel("Do you wish to enter these results in your permanent");
-		Control = screen.GetControl(46);
+		Control = screen->GetControl(46);
 		UITextDisplay(Control).SetLabel("personnel jacket?");
 	}
 	*/
 }
 void UGameMenuFrame::SetMissionFailureScreen(FString Texture, FString Text, FString text2, int32 USize, int32 VSize, int32 RenderStyle, FName replayscene)
 {
+	UUIScreen* screen = nullptr;
 	/*
-	local AGP_UI.UIScreen screen;
 	local AGP_UI.UIControl Control;
 	screen = GetScreen(6);
-	Control = screen.GetControl(40);
+	Control = screen->GetControl(40);
 	UIDynamicBitmap(Control).SetTexture(Texture, USize, VSize, RenderStyle);
-	Control = screen.GetControl(41);
+	Control = screen->GetControl(41);
 	UITextDisplay(Control).SetLabel(Text);
-	Control = screen.GetControl(47);
+	Control = screen->GetControl(47);
 	UITextDisplay(Control).SetLabel(text2);
 	nReplayScene = replayscene;
 	*/
 }
 void UGameMenuFrame::SetLandNavScoreScreen(FString text1, FString text2, FString text3, FString text4, FString text5, FString text6, FString text7, FString text8, bool bCheater)
 {
+	UUIScreen* screen = nullptr;
 	/*
-	local AGP_UI.UIScreen screen;
 	local AGP_UI.UIControl Control;
 	screen = GetScreen(8);
 	if (bCheater)
 	{
-		Control = screen.GetControl(1009);
+		Control = screen->GetControl(1009);
 		UITextDisplay(Control).SetLabel("CHEATS DETECTED");
 	}
-	Control = screen.GetControl(1001);
+	Control = screen->GetControl(1001);
 	UITextDisplay(Control).SetLabel(text1);
-	Control = screen.GetControl(1002);
+	Control = screen->GetControl(1002);
 	UITextDisplay(Control).SetLabel(text2);
-	Control = screen.GetControl(1003);
+	Control = screen->GetControl(1003);
 	UITextDisplay(Control).SetLabel(text3);
-	Control = screen.GetControl(1004);
+	Control = screen->GetControl(1004);
 	UITextDisplay(Control).SetLabel(text4);
-	Control = screen.GetControl(1005);
+	Control = screen->GetControl(1005);
 	UITextDisplay(Control).SetLabel(text5);
-	Control = screen.GetControl(1006);
+	Control = screen->GetControl(1006);
 	UITextDisplay(Control).SetLabel(text6);
-	Control = screen.GetControl(1007);
+	Control = screen->GetControl(1007);
 	UITextDisplay(Control).SetLabel(text7);
-	Control = screen.GetControl(1008);
+	Control = screen->GetControl(1008);
 	UITextDisplay(Control).SetLabel(text8);
 	*/
 }
 void UGameMenuFrame::ScaleControls(UCanvas* Canvas)
 {
 	/*
-	local AGP_UI.UIScreen screen;
+	UUIScreen* screen = nullptr;
 	if (_iOldSizeX == Canvas.SizeX && _iOldSizeY == Canvas.SizeY)
 	{
 		return;
@@ -1889,8 +1882,8 @@ void UGameMenuFrame::ScaleControls(UCanvas* Canvas)
 	screen = cScreenList;
 	if (screen != nullptr)
 	{
-		screen.ScaleControls(Canvas);
-		screen = screen.cNextScreen;
+		screen->ScaleControls(Canvas);
+		screen = screen->cNextScreen;
 	}
 	if (cMouse != nullptr)
 	{
@@ -1921,45 +1914,45 @@ void UGameMenuFrame::PlayMenuSoundSpecific(USoundBase* Sound)
 }
 void UGameMenuFrame::QueryServerListReply(int32 Index, FString Section, FString Setting, FString Value, int32 Type)
 {
+	UUIScreen* screen = nullptr;
 	/*
-	local AGP_UI.UIScreen screen;
 	local AGP_UI.UIControl Control;
 	screen = GetScreen(7);
-	Control = screen.GetControl(51);
+	Control = screen->GetControl(51);
 	UISettingsList(Control).SetSetting(Index, Section, Setting, Value, Type);
 	*/
 }
 void UGameMenuFrame::SetServerSettingReply(int32 Index, FString Value)
 {
+	UUIScreen* screen = nullptr;
 	/*
-	local AGP_UI.UIScreen screen;
 	local AGP_UI.UIControl Control;
 	screen = GetScreen(7);
-	Control = screen.GetControl(51);
+	Control = screen->GetControl(51);
 	UISettingsList(Control).UpdateSettingValue(Index, Value);
 	*/
 }
 void UGameMenuFrame::SetSettingsValue(FString Value)
 {
+	UUIScreen* screen = nullptr;
 	/*
-	local AGP_UI.UIScreen screen;
 	local AGP_UI.UIControl Control;
 	screen = GetScreen(7);
-	Control = screen.GetControl(53);
+	Control = screen->GetControl(53);
 	UIEditBox(Control).SetLabel(Value);
 	*/
 }
 void UGameMenuFrame::UpdateServerSetting()
 {
+	UUIScreen* screen = nullptr;
 	/*
-	local AGP_UI.UIScreen screen;
 	local AGP_UI.UIControl Control;
 	local int32 Index;
 	local FString Value;
 	screen = GetScreen(7);
-	Control = screen.GetControl(53);
+	Control = screen->GetControl(53);
 	Value = UIEditBox(Control).GetLabel();
-	Control = screen.GetControl(51);
+	Control = screen->GetControl(51);
 	Index = UISettingsList(Control).GetSelectedIndex();
 	cHUD.PlayerOwner.SetServerSetting(Index, Value);
 	*/
@@ -1967,11 +1960,11 @@ void UGameMenuFrame::UpdateServerSetting()
 void UGameMenuFrame::BanPlayer()
 {
 	/*
-	local AGP_UI.UIScreen screen;
+	UUIScreen* screen = nullptr;
 	local AGP_UI.UIControl Control;
 	local FString Value;
 	screen = GetScreen(7);
-	Control = screen.GetControl(50);
+	Control = screen->GetControl(50);
 	Value = UIPlayerList(Control).GetSelectedPlayer();
 	HumanController(AGP_HUD(cHUD).PlayerOwner).Admin("kickban" @ Value);
 	*/
@@ -1979,22 +1972,22 @@ void UGameMenuFrame::BanPlayer()
 void UGameMenuFrame::KickPlayer()
 {
 	/*
-	local AGP_UI.UIScreen screen;
+	UUIScreen* screen = nullptr;
 	local AGP_UI.UIControl Control;
 	local FString Value;
 	screen = GetScreen(7);
-	Control = screen.GetControl(50);
+	Control = screen->GetControl(50);
 	Value = UIPlayerList(Control).GetSelectedPlayer();
 	HumanController(AGP_HUD(cHUD).PlayerOwner).Admin("kick" @ Value);
 	*/
 }
 void UGameMenuFrame::PlayerList(int32 Direction)
 {
+	UUIScreen* screen = nullptr;
 	/*
-	local AGP_UI.UIScreen screen;
 	local AGP_UI.UIControl Control;
 	screen = GetScreen(7);
-	Control = screen.GetControl(50);
+	Control = screen->GetControl(50);
 	if (Direction == -1)
 	{
 		UIPlayerList(Control).PrevPage();
@@ -2007,11 +2000,11 @@ void UGameMenuFrame::PlayerList(int32 Direction)
 }
 void UGameMenuFrame::SettingList(int32 Direction)
 {
+	UUIScreen* screen = nullptr;
 	/*
-	local AGP_UI.UIScreen screen;
 	local AGP_UI.UISettingsList Control;
 	screen = GetScreen(7);
-	Control = UISettingsList(screen.GetControl(51));
+	Control = UISettingsList(screen->GetControl(51));
 	if (Direction == 1)
 	{
 		Control.NextPage();

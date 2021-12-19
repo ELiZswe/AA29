@@ -44,7 +44,6 @@ public:
 	UPROPERTY()															AFixedWeapon* FWeapon;								//var FixedWeapon FWeapon;
 	UPROPERTY()															TSubclassOf<class AFixedWeapon> FixedWeaponClass;	//var class<FixedWeapon> FixedWeaponClass;
 
-
 	void PostBeginPlay();
 	void MatchStarting();
 	void LinkTurrets();
@@ -60,9 +59,9 @@ public:
 	void SetTurretRotation(FRotator NewRotation);
 	void moveTurret();
 	void Timer();
-	void GetSource();
-	void GetAngleDelta(int curr, int Old, float DeltaTime);
-	void InterpolateAngle(float Interp, int32 Target, float Delta, int32 Mid);
+	AActor* GetSource();
+	float GetAngleDelta(int curr, int Old, float DeltaTime);
+	float InterpolateAngle(float Interp, int32 Target, float Delta, int32 Mid);
 	void InterpolateRotation(float DeltaTime);
 	void SetPitchYaw(float NewPitch, float NewYaw);
 	void ClientsVerifyMesh(float fAgain);
@@ -71,7 +70,5 @@ public:
 	void VerifyMesh();
 	void Trigger(AActor* Other, APawn* EventInstigator);
 	float GetRotationMultiplier();
-	void CanManTurret(AAGP_Pawn* p, FString Reason);
-
-
+	bool CanManTurret(AAGP_Pawn* p, FString Reason);
 };

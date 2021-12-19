@@ -6,6 +6,54 @@
 #include "UObject/ObjectMacros.h"
 
 UENUM(BlueprintType)
+enum class EBounceAxis : uint8
+{
+	/* 0 */ BA_WorldZAxis														UMETA(DisplayName = "BA_WorldZAxis"),
+	/* 1 */ BA_WorldXAxis														UMETA(DisplayName = "BA_WorldXAxis"),
+	/* 2 */ BA_WorldYAxis														UMETA(DisplayName = "BA_WorldYAxis"),
+	/* 3 */ BA_LocalZAxis														UMETA(DisplayName = "BA_LocalZAxis"),
+	/* 4 */ BA_LocalXAxis														UMETA(DisplayName = "BA_LocalXAxis"),
+	/* 5 */ BA_LocalYAxis														UMETA(DisplayName = "BA_LocalYAxis")
+};
+
+UENUM(BlueprintType)
+enum class EHelpMarkerDisplay : uint8
+{
+	/* 0 */ HMD_Standard														UMETA(DisplayName = "HMD_Standard"),
+	/* 1 */ HMD_Custom															UMETA(DisplayName = "HMD_Custom")
+};
+
+
+UENUM(BlueprintType)
+enum class EMusicTransition : uint8
+{
+	/* 0 */ MTRAN_None															UMETA(DisplayName = "MTRAN_None"),
+	/* 1 */ MTRAN_Instant														UMETA(DisplayName = "MTRAN_Instant"),
+	/* 2 */ MTRAN_Segue															UMETA(DisplayName = "MTRAN_Segue"),
+	/* 3 */ MTRAN_Fade															UMETA(DisplayName = "MTRAN_Fade"),
+	/* 4 */ MTRAN_FastFade														UMETA(DisplayName = "MTRAN_FastFade"),
+	/* 5 */ MTRAN_SlowFade														UMETA(DisplayName = "MTRAN_SlowFade")
+};
+
+UENUM(BlueprintType)
+enum class EScaleMode : uint8
+{
+	/* 0 */ SM_None																UMETA(DisplayName = "THA_Left"),
+	/* 1 */ SM_Up																UMETA(DisplayName = "THA_Left"),
+	/* 2 */ SM_Down																UMETA(DisplayName = "THA_Left"),
+	/* 3 */ SM_Left																UMETA(DisplayName = "THA_Left"),
+	/* 4 */ SM_Right															UMETA(DisplayName = "THA_Left")
+};
+
+UENUM(BlueprintType)
+enum class ETextHorzAlignment : uint8
+{
+	/* 0 */ THA_Left															UMETA(DisplayName = "THA_Left"),
+	/* 1 */ THA_Centered														UMETA(DisplayName = "THA_Centered"),
+	/* 2 */ THA_Right															UMETA(DisplayName = "THA_Right")
+};
+
+UENUM(BlueprintType)
 enum class EHingeType : uint8
 {
 	/* 0 */ HT_Normal															UMETA(DisplayName = "HT_Normal"),
@@ -849,26 +897,6 @@ enum class ESoundOcclusion : uint8
 	/* 2 */ OCCLUSION_BSP								 				UMETA(DisplayName = "OCCLUSION_BSP"),
 	/* 3 */ OCCLUSION_StaticMeshes						 				UMETA(DisplayName = "OCCLUSION_StaticMeshes")
 };
-
-
-UENUM(BlueprintType)
-enum class EBounceAxis : uint8
-{
-	/* 0 */ BA_WorldZAxis								 				UMETA(DisplayName = "BA_WorldZAxis"),
-	/* 1 */ BA_WorldXAxis								 				UMETA(DisplayName = "BA_WorldXAxis"),
-	/* 2 */ BA_WorldYAxis								 				UMETA(DisplayName = "BA_WorldYAxis"),
-	/* 3 */ BA_LocalZAxis								 				UMETA(DisplayName = "BA_LocalZAxis"),
-	/* 4 */ BA_LocalXAxis								 				UMETA(DisplayName = "BA_LocalXAxis"),
-	/* 5 */ BA_LocalYAxis								 				UMETA(DisplayName = "BA_LocalYAxis")
-};
-
-UENUM(BlueprintType)
-enum class EHelpMarkerDisplay : uint8
-{
-	/* 0 */ HMD_Standard								 				UMETA(DisplayName = "HMD_Standard"),
-	/* 1 */ HMD_Custom								 					UMETA(DisplayName = "HMD_Custom")
-};
-
 
 UENUM(BlueprintType)
 enum class EQualificationState : uint8
@@ -2694,7 +2722,7 @@ enum class ENewAuxMode : uint8
 };
 
 UENUM(BlueprintType)
-enum class RateofFire : uint8
+enum class ERateofFire : uint8
 {
 	/* 0 */	ROF_None        UMETA(DisplayName = "ROF_None"),
 	/* 1 */ ROF_Single      UMETA(DisplayName = "ROF_Single"),

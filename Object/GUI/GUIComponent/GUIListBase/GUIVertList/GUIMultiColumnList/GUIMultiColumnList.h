@@ -34,7 +34,7 @@ public:
 	void AddedItem(int32 YourArrayIndex);
 	void GetSortString(int32 YourArrayIndex);
 	int32 CurrentListId();
-	int32 OnSortChanged();
+	void OnSortChanged();
 	void Clear();
 	void RemovedCurrent();
 	void ResolutionChanged(int32 ResX, int32 ResY);

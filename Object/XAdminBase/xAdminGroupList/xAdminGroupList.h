@@ -17,13 +17,13 @@ public:
 
 	UPROPERTY()										TArray<UxAdminGroup*> Groups;					//var array<xAdminGroup> Groups;
 
-	void Count();
-	void CreateGroup(FString GroupName, FString Privileges, uint8 GameSecLevel);
+	int32 Count();
+	UxAdminGroup* CreateGroup(FString GroupName, FString Privileges, uint8 GameSecLevel);
 	void Add(UxAdminGroup* Group);
 	void Remove(UxAdminGroup* Group);
-	void Get(int32 Index);
-	void FindByName(FString GroupName);
+	UxAdminGroup* Get(int32 Index);
+	UxAdminGroup* FindByName(FString GroupName);
 	bool Contains(UxAdminGroup* Group);
-	void FindMasterGroup();
+	UxAdminGroup* FindMasterGroup();
 	void Clear();
 };

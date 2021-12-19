@@ -30,18 +30,18 @@ bool UUIHUD_Radar::ShouldDrawRadar()
 	local Weapon wpn;
 	if (Pawn(cFrame.cActor).Controller.IsInState('MedicTraining_SittingAtDesk') || Pawn(cFrame.cActor).Controller.IsInState('MedicTraining_SittingAtDesk2') || Pawn(cFrame.cActor).Controller.IsInState('MedicTraining_TakingExam') || Pawn(cFrame.cActor).Controller.IsInState('MedicTraining_TakingExam2'))
 	{
-		Return False;
+		return false;
 	}
 	if (Pawn(cFrame.cActor) == None)
 	{
-		Return False;
+		return false;
 	}
 	wpn = Pawn(cFrame.cActor).Weapon;
 	if (wpn == None)
 	{
-		Return True;
+		return true;
 	}
-	Return !wpn.IsZoomed();
+	return !wpn.IsZoomed();
 	*/
 	return true;     //FAKE    /ELiZ
 }

@@ -476,11 +476,11 @@ void UAAGameMenu_CP_PlayerManagement::ComparePlayerListItems(FGUIListElem ElemA,
 	/*
 	if (StrCmp(Right(ElemA.Item, 2), Right(ElemB.Item, 2), , False) == 0)
 	{
-		Return StrCmp(ElemA.Item, ElemB.Item, , False);
+		return StrCmp(ElemA.Item, ElemB.Item, , False);
 	}
 	else
 	{
-		Return StrCmp(Right(ElemA.Item, 2), Right(ElemB.Item, 2), , False);
+		return StrCmp(Right(ElemA.Item, 2), Right(ElemB.Item, 2), , False);
 	}
 	*/
 }
@@ -695,14 +695,14 @@ FString UAAGameMenu_CP_PlayerManagement::GetPlayerWeapon(int32 iPlayerID)
 	priPlayer = FindPRIFromID(iPlayerID);
 	if (priPlayer == None)
 	{
-		Return "No Weapon";
+		return "No Weapon";
 	}
 	sWeaponClass = priPlayer.sCurrentWeaponClass;
 	for (iWeaponScan = 0; iWeaponScan < asWeaponClassNames.Length; iWeaponScan++)
 	{
 		if (sWeaponClass ~= asWeaponClassNames[iWeaponScan] || sWeaponClass ~= asWeaponAltClassNames[iWeaponScan])
 		{
-			Return asWeaponNames[iWeaponScan];
+			return asWeaponNames[iWeaponScan];
 		}
 	}
 	*/
@@ -717,15 +717,15 @@ void UAAGameMenu_CP_PlayerManagement::FindPRIFromID(int32 iPlayerID)
 	GRI = PlayerOwner().GameReplicationInfo;
 	if (GRI == None)
 	{
-		Return None;
+		return None;
 	}
 	for (iPlayerIndex = 0; iPlayerIndex < GRI.PRIArray.Length; iPlayerIndex++)
 	{
 		if (GRI.PRIArray[iPlayerIndex] != None && GRI.PRIArray[iPlayerIndex].PlayerID == iPlayerID)
 		{
-			Return GRI.PRIArray[iPlayerIndex];
+			return GRI.PRIArray[iPlayerIndex];
 		}
 	}
-	Return None;
+	return None;
 	*/
 }

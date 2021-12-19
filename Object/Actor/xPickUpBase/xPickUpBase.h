@@ -11,7 +11,7 @@ class AEmitter;
 class AInventorySpot;
 
 UCLASS()
-class AA29_API AxPickUpBase : public AActor
+class AxPickUpBase : public AActor
 {
 	GENERATED_BODY()
 	
@@ -26,7 +26,6 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
 
 	UPROPERTY()																float NewDrawScale;				//var float NewDrawScale;
 	UPROPERTY()																FVector NewPrePivot;			//var FVector NewPrePivot;
@@ -45,7 +44,4 @@ public:
 	uint8 GetInventoryGroup();
 	void TurnOn();
 	void SpawnPickup();
-
-
-
 };

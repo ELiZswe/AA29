@@ -89,11 +89,14 @@ public:
 	//Functions:
 
 	virtual	void PostBeginPlay();
-	virtual uint8 GetInitialParaState();							//GetInitialParaState
+	virtual int32 GetInitialParaState();							//GetInitialParaState
+	
+	void ResetSkipInventory();
+	void Reset();
 	virtual bool SkipInventory(FString AddName);					//SkipInventory
 	virtual bool ShouldSetInitialParaState();						//ShouldSetInitialParaState
 
-	virtual TSubclassOf <class ASoldierClass> GetSpawnClass();		//simulated function Class<SoldierClass> GetSpawnClass()
+	TSubclassOf <class ASoldierClass> GetSpawnClass();									//simulated function Class<SoldierClass> GetSpawnClass()
 	virtual int32 GetInitialHealth();								//simulated function int GetInitialHealth()
 	virtual float GetScore();										//function float GetScore()
 	virtual bool CanSpawn();										//function bool CanSpawn()
@@ -104,12 +107,10 @@ public:
 	virtual void UsePlayerStart();									//Function UsePlayerStart ()
 	virtual uint8 getFT();											//function byte GetFT()
 	virtual FString toString();										//function string toString(){
-	virtual void FindNewStartIndex(APSSet* UseSet);								//Function FindNewStartIndex (optional PSSet UseSet)
+	virtual void FindNewStartIndex(APSSet* UseSet);					//Function FindNewStartIndex (optional PSSet UseSet)
 	virtual FVector GetStartLocation();								//function vector GetStartLocation()
 	virtual FRotator GetStartRotation();							//function rotator GetStartRotation()
 
-
 	virtual void LoadEditorIcon();
 	//virtual void SetClass();
-
 };

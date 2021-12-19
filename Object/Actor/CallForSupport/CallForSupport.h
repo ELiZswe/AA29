@@ -55,18 +55,17 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)		float ArrivalTime;								//var() float ArrivalTime;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)		uint8 TeamNumber;								//var() byte TeamNumber;
 
-	UFUNCTION()	void Reset();
-	UFUNCTION()	void GetInPosition();
-	UFUNCTION()	void Acknowledge();
-	UFUNCTION()	void Respond();
-	UFUNCTION()	void Strike();
-	UFUNCTION()	void CallForSupport(APlayerController* PC);
-	UFUNCTION()	bool CheckMark(APawn* Aimer, FVector TestMark, bool bFire);
-	UFUNCTION()	bool IsFiring();
-	UFUNCTION()	bool IsReady();
-	UFUNCTION()	bool IsAvailable();
-	UFUNCTION()	int32 GetNumStrikesAvailable();
-	UFUNCTION()	uint8 GetTeamNumber();
-
-
+	void PostBeginPlay();
+	void Reset();
+	void GetInPosition();
+	void Acknowledge();
+	void Respond();
+	void Strike();
+	void CallForSupport(APlayerController* PC);
+	bool CheckMark(APawn* Aimer, FVector TestMark, bool bFire);
+	bool IsFiring();
+	bool IsReady();
+	bool IsAvailable();
+	int32 GetNumStrikesAvailable();
+	uint8 GetTeamNumber();
 };

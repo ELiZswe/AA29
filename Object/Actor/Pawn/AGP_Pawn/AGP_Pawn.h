@@ -650,7 +650,7 @@ public:
 	virtual TSubclassOf<AInventory> getAltShoulderInventory();
 	virtual void DiscardInventory();
 	virtual void KnowAll(FString S);
-	virtual void CanSwapHands();
+	bool CanSwapHands();
 	virtual void SwapHands();
 	virtual void SwapHip();
 	virtual void SwapAltShoulder();
@@ -854,7 +854,7 @@ public:
 	virtual void AttachDebugIcons();
 	virtual void CreateVisualHearingDebugSpheres(float fpHearingDistance, float fpVisualDistance);
 	virtual void CreateDebugSphere(bool bVisionSphere);
-	//virtual void DisplayDebug(UCanvas* Canvas, float YL, float YPos);
+	//virtual void DisplayDebug(class UCanvas* Canvas, const class FDebugDisplayInfo& DebugDisplay, float& YL, float& YPos)
 	virtual void GetThreatLevel();
 	virtual void NPCAlertPlayerEvent();
 	virtual void AltFire(float F);

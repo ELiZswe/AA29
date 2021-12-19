@@ -34,6 +34,5 @@ public:
 	void BeginPlay();
 	void SetAssociatedActor(AActor* Other);
 	void PostBeginPlay();
-	//void DisplayDebug(UCanvas* Canvas, float& YL, float& YPos);
 	void DisplayDebug(class UCanvas* Canvas, const class FDebugDisplayInfo& DebugDisplay, float& YL, float& YPos);
 };

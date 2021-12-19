@@ -604,7 +604,7 @@ bool UAAGameMenu_CP_Rules::ButtonClick(UGUIComponent* Sender)
 				GOTO JL0CCF;
 			default:
 			JL0CCF:
-				Return True;
+				return true;
 	}
 	*/
 	return false;    //FAKE  /EliZ

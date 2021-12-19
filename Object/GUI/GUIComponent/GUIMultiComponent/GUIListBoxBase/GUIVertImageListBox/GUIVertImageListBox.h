@@ -26,15 +26,13 @@ public:
 	UPROPERTY(EditAnywhere)									EeCellStyle CellStyle;						//var() GUI.eCellStyle CellStyle;
 	UPROPERTY()												UGUIVertImageList* List;					//var GUIVertImageList List;
 
-
 	void InitBaseList(UGUIListBase* LocalList);
 	void InitComponent(UGUIController* MyController, UGUIComponent* MyOwner);
 	bool InternalOnClick(UGUIComponent* Sender);
 	void InternalOnChange(UGUIComponent* Sender);
-	void ItemCount();
+	int32 ItemCount();
 	void AddImage(UMaterialInstance* Image, int32 Item);
-	void MyOpen(UGUIContextMenu* Menu, UGUIComponent* ContextMenuOwner);
-	void MyClose(UGUIContextMenu* Sender);
+	bool MyOpen(UGUIContextMenu* Menu, UGUIComponent* ContextMenuOwner);
+	bool MyClose(UGUIContextMenu* Sender);
 	void Clear();
-
 };

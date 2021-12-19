@@ -91,14 +91,14 @@ void UAABrowser_FilterSetPanel::InternalOnClick(UGUIComponent* Sender)
 	{
 			case ClearFilters:
 				OnClearFilters();
-				Return True;
+				return true;
 				break;
 			case ShowFilters:
 				OnShowFilters();
-				Return True;
+				return true;
 				break;
 			default:
-				Return False;
+				return false;
 				break;
 	}
 	*/

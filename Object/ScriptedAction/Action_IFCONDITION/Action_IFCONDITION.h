@@ -19,7 +19,7 @@ public:
 	//UPROPERTY()											ATriggeredCondition* t;						//var TriggeredCondition t;
 	UPROPERTY(EditAnywhere, Category = "Action")		FName TriggeredConditionTag;				//var(Action) name TriggeredConditionTag;
 
-	void ProceedToNextAction(UScriptedController* C);
+	void ProceedToNextAction(AScriptedController* C);
 	bool StartsSection();
 	FString GetActionString();
 

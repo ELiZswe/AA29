@@ -51,6 +51,11 @@ public:
 	UPROPERTY()													TArray<int32> SectionOffsets;				//var const array<int> SectionOffsets;
 	UPROPERTY()													TArray<FAA2_ProcMeshVertex> Vertices;			//var const array<ProcMeshVertex> Vertices;
 
+
+	void ProcPling(FVector Position, float Strength, float Radius, FVector& EffectLocation, FVector& EffectNormal);
+	//void TakeDamage(int32 Damage, Pawn instigatedBy, Vector HitLocation, Vector Momentum, class<DamageType>  DamageType, Actor.BoneInfo Bone, Controller KillerController, Actor ResponsibleActor, Material HitMaterial);
+	void Touch(AActor* Other);
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

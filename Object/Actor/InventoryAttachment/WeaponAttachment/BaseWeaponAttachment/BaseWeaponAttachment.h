@@ -69,7 +69,7 @@ public:
 	void SetbIsDetaching(bool Detach);
 	void PreBeginPlay();
 	void InitializeShellEmitter();
-	void GetStaticMesh(bool bFriendly);
+	UStaticMesh* GetStaticMesh(bool bFriendly);
 	void GetMesh(bool bFriendly);
 	void NotifyNewMesh(bool bFriendly);
 	void SetupForClass(ABaseWeaponAttachment* NewClass);

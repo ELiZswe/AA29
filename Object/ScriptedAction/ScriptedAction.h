@@ -7,7 +7,7 @@
 #include "ScriptedAction.generated.h"
 
 class AScriptedSequence;
-class UScriptedController;
+class AScriptedController;
 
 UCLASS()
 class AA29_API UScriptedAction : public UObject
@@ -22,11 +22,11 @@ public:
 	void ActionCompleted();
 	void PostBeginPlay(AScriptedSequence* SS);
 	void Reset();
-	bool InitActionFor(UScriptedController* C);
+	bool InitActionFor(AScriptedController* C);
 	bool EndsSection();
 	bool StartsSection();
 	AScriptedSequence* GetScript(AScriptedSequence* S);
-	void ProceedToNextAction(UScriptedController* C);
-	void ProceedToSectionEnd(UScriptedController* C);
+	void ProceedToNextAction(AScriptedController* C);
+	void ProceedToSectionEnd(AScriptedController* C);
 	FString GetActionString();
 };

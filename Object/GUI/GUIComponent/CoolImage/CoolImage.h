@@ -29,7 +29,7 @@ public:
 
 	void InitComponent(UGUIController* MyController, UGUIComponent* MyOwner);
 	void GetPos(float Scale, float& X, float& Y);
-	void DoCollisionTest(int32 i);
-	void TestCollision(int32 i, int32 j);
+	bool DoCollisionTest(int32 i);
+	bool TestCollision(int32 i, int32 j);
 	void ResetItem(int32 i);
 };

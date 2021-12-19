@@ -150,7 +150,7 @@ void UAABrowser_PlayerServerSearchPane::MakeFilter()
 			break;
 	}
 	filter.Value = SearchText.GetText();
-	Return filter;
+	return filter;
 	*/
 }
 
@@ -162,10 +162,10 @@ bool UAABrowser_PlayerServerSearchPane::InternalOnClick(UGUIComponent* Sender)
 		case Search:
 			UpdateAndSaveSearchHistories();
 			OnSearch(MakeFilter());
-			Return True;
+			return true;
 			break;
 		default:
-			Return False;
+			return false;
 			break;
 	}
 	*/
@@ -184,7 +184,7 @@ bool UAABrowser_PlayerServerSearchPane::IsInSearchHistory(FString SearchString)
 			{
 				if (SearchString == PlayerNameSearchHistory[Index])
 				{
-					Return True;
+					return true;
 				}
 				++Index;
 				break;
@@ -195,13 +195,13 @@ bool UAABrowser_PlayerServerSearchPane::IsInSearchHistory(FString SearchString)
 			{
 				if (SearchString == ServerNameSearchHistory[Index])
 				{
-					Return True;
+					return true;
 				}
 			}
 			GOTO JL0088;
 		default:
 		JL0088:
-			Return False;
+			return false;
 	}
 	*/
 	return false;    //FAKE   /ELiZ

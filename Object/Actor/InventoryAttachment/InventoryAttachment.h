@@ -54,9 +54,9 @@ public:
 
 	virtual void InitFor(AInventory* i);
 	virtual void BeginPlay();
-	virtual void GetAttachBoneFor(AInventory* Inv);
+	virtual FName GetAttachBoneFor(AInventory* Inv);
 	virtual void GetMesh(bool bFriendly);
-	virtual void GetStaticMesh(bool bFriendly);
+	UStaticMesh* GetStaticMesh(bool bFriendly);
 	virtual void NotifyBaseChange();
 	virtual void NotifyFoundClient();
 	virtual float GetDrawScaleDecision(float PawnScale);

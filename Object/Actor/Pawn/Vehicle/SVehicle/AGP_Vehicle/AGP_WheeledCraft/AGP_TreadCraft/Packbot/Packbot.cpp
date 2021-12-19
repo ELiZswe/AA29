@@ -222,7 +222,7 @@ void APackbot::KDriverLeave(bool bForceLeave)
 {
 	/*
 	SetTimer(0, False);
-	Return KDriverLeave(bForceLeave);
+	return KDriverLeave(bForceLeave);
 	*/
 }
 
@@ -262,11 +262,11 @@ bool APackbot::TryToDrive(APawn* p)
 	/*
 	if (HumanController(p.Controller) != None)
 	{
-		Return False;
+		return false;
 	}
 	else
 	{
-		Return TryToDrive(p);
+		return TryToDrive(p);
 	}
 	*/
 

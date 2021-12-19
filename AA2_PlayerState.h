@@ -52,7 +52,7 @@ public:
 	virtual void GetPortrait();
 	void UpdateCharacter();
 	virtual void UpdatePlayerLocation();
-	//virtual void DisplayDebug(UCanvas* Canvas, float YL, float YPos);
+	//virtual void DisplayDebug(class UCanvas* Canvas, const class FDebugDisplayInfo& DebugDisplay, float& YL, float& YPos)
 	void ClientNameChange();
 	void SetPlayerName(const FString& S);
 	void SetWaitingPlayer(bool B);

@@ -161,14 +161,14 @@ void UAABrowser_UpdateJoinAndPBPanel::InternalOnClick(UGUIComponent* Sender)
 			case UpdateServerList:
 				DeactivateServerListButtonEyecatcher();
 				OnUpdateServerList();
-				Return True;
+				return true;
 				break;
 			case JoinServer:
 				OnJoinServer();
-				Return True;
+				return true;
 				break;
 			default:
-				Return False;
+				return false;
 				break;
 	}
 	*/

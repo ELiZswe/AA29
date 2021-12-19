@@ -9,17 +9,18 @@
 class AFA_EL_Ambush;
 
 UCLASS()
-class AA29_API AFSTS_Shot_Detection_Volume : public AAA2_Volume
+class AFSTS_Shot_Detection_Volume : public AAA2_Volume
 {
 	GENERATED_BODY()
 public:
 	AFSTS_Shot_Detection_Volume();
 
-	UPROPERTY()											AFA_EL_Ambush* Ambush_Lab;				//var FA_EL_Ambush Ambush_Lab;
-
+	UPROPERTY()														AFA_EL_Ambush* Ambush_Lab;				//var FA_EL_Ambush Ambush_Lab;
 
 	//From BlockingVolume
 	UPROPERTY(EditAnywhere)											TArray<AActor*> BlockedClasses;			//var() array<class<Actor> > BlockedClasses;
 	UPROPERTY(EditAnywhere)											bool bClassBlocker;						//var() bool bClassBlocker;
 	UPROPERTY(EditAnywhere)											bool bClampFluid;						//var() bool bClampFluid;
+
+	//void AFSTS_Shot_Detection_Volume::TakeDamage(int32 Damage, Pawn instigatedBy, Vector HitLocation, Vector Momentum, class<DamageType>  DamageType, Actor.BoneInfo Bone, Controller KillerController, Actor ResponsibleActor, Material HitMaterial)
 };

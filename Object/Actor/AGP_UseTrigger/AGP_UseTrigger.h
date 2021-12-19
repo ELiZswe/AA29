@@ -26,9 +26,7 @@ public:
 	UPROPERTY(EditAnywhere)											int32 ResetTime;			//var() int ResetTime;
 	UPROPERTY(EditAnywhere)											USoundBase* UseSound;		//var() Sound UseSound;
 	UPROPERTY(EditAnywhere)											bool bSwitched;				//var() bool bSwitched;
-	
 	UPROPERTY(EditAnywhere)											FString HUDText;			//Mine   ELiZ.. from actor
-
 
 	UPROPERTY()							UTexture2D* Texture;
 	UPROPERTY()							USceneComponent* Root;
@@ -37,9 +35,17 @@ public:
 	UPROPERTY(EditAnywhere)				UStaticMeshComponent* StaticMesh;
 	UPROPERTY(EditAnywhere)				TArray<UMaterialInstance*> OverrideMaterials;
 
+	bool IsSwitched();
+	bool IsActive();
+	void SetActive(bool Active);
+	void SetHUDText(FString NewText);
+	void BeginPlay();
+	void Trigger(AActor* Other, APawn* EventInstigator);
+	bool UsedBy(APawn* User);
+	void Timer();
+
 protected:
 	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
 
 	UFUNCTION()							void LoadEditorIcon();
 	UFUNCTION()							void LoadMesh();

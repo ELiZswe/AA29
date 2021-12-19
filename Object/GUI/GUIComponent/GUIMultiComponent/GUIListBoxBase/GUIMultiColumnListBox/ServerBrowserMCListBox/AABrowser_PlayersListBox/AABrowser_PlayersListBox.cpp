@@ -119,7 +119,7 @@ bool UAABrowser_PlayersListBox::InternalOnOpen(UGUIContextMenu* Menu)
 			}
 			ReplaceText(MenuText, "%s", PlayerInfo.Name);
 			Menu.addItem(MenuText);
-			Return InternalOnOpen(Menu);
+			return InternalOnOpen(Menu);
 		}
 	}
 	*/
@@ -130,6 +130,6 @@ void UAABrowser_PlayersListBox::InternalOnClose(UGUIContextMenu* Sender)
 {
 	/*
 	Sender.ContextItems.remove(0, Sender.ContextItems.Length);
-	Return InternalOnClose(Sender);
+	return InternalOnClose(Sender);
 	*/
 }

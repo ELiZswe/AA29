@@ -7,13 +7,16 @@
 #include "FSTS_FA_MedicalPickups.generated.h"
 
 UCLASS()
-class AA29_API AFSTS_FA_MedicalPickups : public AActor
+class AFSTS_FA_MedicalPickups : public AActor
 {
 	GENERATED_BODY()
-	
 public:	
 	// Sets default values for this actor's properties
 	AFSTS_FA_MedicalPickups();
+
+	void DisablePickup();
+	void ActivatePickup();
+	void Reset();
 
 protected:
 	// Called when the game starts or when spawned

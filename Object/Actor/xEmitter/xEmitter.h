@@ -9,6 +9,7 @@
 
 class UBillboardComponent;
 class USceneComponent;
+class ALevelInfo;
 
 UCLASS()
 class AA29_API AxEmitter : public AActor
@@ -129,6 +130,6 @@ public:
 	void ClampToMaxParticles(float InPart);
 	void Trigger(AActor* Other, APawn* EventInstigator);
 	void UpdatePrecacheMaterials();
-	//void PrecacheContent (LevelInfo Level);
+	void PrecacheContent (ALevelInfo* Level);
 	void LoadEditorIcon();
 };

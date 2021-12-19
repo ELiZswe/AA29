@@ -13,7 +13,7 @@ class AInvContainer;
 class UUIInvDef;
 class UUIMouse;
 class AInventory;
-
+class UFont;
 
 UCLASS()
 class AA29_API UUIFrame : public UUIBase
@@ -22,16 +22,12 @@ class AA29_API UUIFrame : public UUIBase
 public:
 	UUIFrame();
 
-	//const kResX = 800.0;
-	//const kResY = 600.0;
-
-
 	UPROPERTY()										bool bTestA;						//var bool bTestA;
 	UPROPERTY()										bool _bToolTipActive;				//var bool _bToolTipActive;
 	UPROPERTY()										FPoint _ScaledToolTipLoc;			//var UIBase.Point _ScaledToolTipLoc;
 	UPROPERTY()										FPoint _ToolTipLoc;					//var UIBase.Point _ToolTipLoc;
 	UPROPERTY()										FPoint offset;						//var UIBase.Point offset;
-	//UPROPERTY()										AFont* Fonts;						//var Font Fonts;
+	UPROPERTY()										UFont* Fonts;						//var Font Fonts;
 	UPROPERTY()										float fScaleY;						//var float fScaleY;
 	UPROPERTY()										float fScaleX;						//var float fScaleX;
 	UPROPERTY()										int32 _iOldSizeY;					//var int _iOldSizeY;
@@ -60,8 +56,8 @@ public:
 	void SetMouse(int32 mX, int32 mY);
 	void ScaleControls(UCanvas* Canvas);
 	void Create(AHUD* pHUD);
-	void KeyType(int32 Key);
-	void ProcessKeyEvent(int32 Key, int32 Action, float Delta);
+	bool KeyType(int32 Key);
+	bool ProcessKeyEvent(int32 Key, int32 Action, float Delta);
 	void Draw(UCanvas* Canvas);
 	void Notify(int32 pUIEvent);
 	void CreateUIListItems(FString ListItemsName);
@@ -76,14 +72,14 @@ public:
 	void GetProperSizeFontPrivate(UCanvas* Canvas);
 	void DumpScreenLog();
 	void UILog(FString S);
-	void CreateUIScreen(FString ScreenName);
+	UUIScreen* CreateUIScreen(FString ScreenName);
 	void AddScreen(int32 pID, FString Title);
-	void GetScreen(int32 Id);
+	UUIScreen* GetScreen(int32 Id);
 	void SetActiveScreen(int32 Id);
 	void SetActiveScreen2(int32 Id);
-	void GetActiveScreen();
+	UUIScreen* GetActiveScreen();
 	void ResetActiveScreen();
-	void GetLastScreen();
+	UUIScreen* GetLastScreen();
 	void AddScreenToTail(UUIScreen* screen);
 	void AddStaticScreen(int32 Id);
 	void RemoveStaticScreen();
@@ -95,24 +91,24 @@ public:
 	void GetItemID();
 	void GetItemSize();
 	void SetItem(UUIInvSlotBase* List, int32 Slot, int32 Item);
-	void GetHeldItem();
-	void GetHeldContainer();
+	AInventory* GetHeldItem();
+	AInvContainer* GetHeldContainer();
 	void SetHeldItem(AInventory* Item);
 	void SetHeldContainer(AInvContainer* container);
 	void DropHeldItem();
 	void ReloadWeapon();
 	void Hide();
 	void EnableControl(int32 Id, bool State);
-	void GetToolTipLocation();
+	FPoint GetToolTipLocation();
 	void SetToolTipLocation(FPoint pLoc);
-	void SetMouseOver(UUIControl* Control);
+	bool SetMouseOver(UUIControl* Control);
 	void GetLastDrawTime();
 	void AddMessageBox();
-	void GetMessageBox();
+	UUIScreen* GetMessageBox();
 	void OpenMessageBox();
 	void CloseMessageBox();
 	void SetMouseBusy(bool busy);
-	void IsMouseBusyDrawing();
+	bool IsMouseBusyDrawing();
 	void PlayMenuSoundSpecific(USoundBase* Sound);
 	void GetClientBeacon();
 	void GetCurrentServerBrowser();

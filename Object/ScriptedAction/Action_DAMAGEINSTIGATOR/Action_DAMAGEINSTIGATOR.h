@@ -18,6 +18,6 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Action")		UaDamageType* DamageType;			//var(Action) class<DamageType> DamageType;
 	UPROPERTY(EditAnywhere, Category = "Action")		int32 Damage;						//var(Action) int Damage;
 
-	bool InitActionFor(UScriptedController* C);
+	bool InitActionFor(AScriptedController* C);
 	FString GetActionString();
 };

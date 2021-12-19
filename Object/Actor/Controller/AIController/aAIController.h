@@ -30,9 +30,10 @@ public:
 	UPROPERTY()										bool bHunting;						//var bool bHunting;
 
 	//from Controller
-	UPROPERTY()										bool bAdvancedTactics;				//var bool bAdvancedTactics;
-	UPROPERTY()										bool bSlowerZAcquire;				//var bool bSlowerZAcquire;
-	UPROPERTY()										bool bProp;							//var bool bProp;
+	UPROPERTY()										bool	bAdvancedTactics;				//var bool bAdvancedTactics;
+	UPROPERTY()										bool	bSlowerZAcquire;				//var bool bSlowerZAcquire;
+	UPROPERTY()										bool	bProp;							//var bool bProp;
+	UPROPERTY()										AActor*	Focus;							//var Actor Focus;
 
 	void WaitToSeeEnemy();
 	void NotifyFlashBanged(float Duration, float VisIntensity, float AudIntensity);
@@ -42,7 +43,7 @@ public:
 	void Trigger(AActor* Other, APawn* EventInstigator);
 	void WeaponFireAgain(float RefireRate, bool bFinishedFire);
 	void TriggerScript(AActor* Other, APawn* EventInstigator);
-	//void DisplayDebug (UCanvas Canvas, float YL, float YPos);
+	//void DisplayDebug (UCanvas Canvas, float& YL, float& YPos);
 	int32 AdjustDesireFor(APickup* p);
 	void GetFacingDirection();
 	void AdjustView(float DeltaTime);

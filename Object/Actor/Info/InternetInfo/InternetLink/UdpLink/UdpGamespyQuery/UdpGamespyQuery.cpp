@@ -98,15 +98,15 @@ void AUdpGamespyQuery::DebugPortSwap(AActor* Ref)
 	Log("***************");
 	*/
 }
-void AUdpGamespyQuery::GetFullName(UObject* obj)
+FString AUdpGamespyQuery::GetFullName(UObject* obj)
 {
+	FString FullName = "";
 	/*
-	local string FullName;
 	local array<Object> Outers;
 	local int i;
 	if (obj == None)
 	{
-		Return "";
+		return "";
 	}
 	Outers[0] = obj;
 	if (Outers[0].Outer != None)
@@ -122,9 +122,10 @@ void AUdpGamespyQuery::GetFullName(UObject* obj)
 		}
 		FullName $ = Outers[i].Name;
 	}
-	Return FullName;
 	*/
+	return FullName;
 }
+
 void AUdpGamespyQuery::ReceivedText(FIpAddr Addr, FString Text)
 {
 	/*
@@ -163,21 +164,22 @@ void AUdpGamespyQuery::ReceivedText(FIpAddr Addr, FString Text)
 	}
 	*/
 }
-void AUdpGamespyQuery::ParseNextQuery(FString Query, FString &QueryType, FString &QueryValue, FString &QueryRest, int32 &bFinalPacket)
+
+bool AUdpGamespyQuery::ParseNextQuery(FString Query, FString &QueryType, FString &QueryValue, FString &QueryRest, int32 &bFinalPacket)
 {
 	/*
 	local string TempQuery;
 	local int ClosingSlash;
 	if (Query == "")
 	{
-		Return False;
+		return false;
 	}
 	if (Left(Query, 1) == "\")
 	{
 		ClosingSlash = InStr(Right(Query, Len(Query) - 1), "\");
 			if (ClosingSlash == 0)
 			{
-				Return False;
+				return false;
 			}
 		TempQuery = Query;
 		QueryType = Right(Query, Len(Query) - 1);
@@ -186,13 +188,13 @@ void AUdpGamespyQuery::ParseNextQuery(FString Query, FString &QueryType, FString
 		if (QueryRest == "" || Len(QueryRest) == 1)
 		{
 			bFinalPacket = 1;
-			Return True;
+			return true;
 		}
 		else
 		{
 			if (Left(QueryRest, 1) == "\")
 			{
-				Return True;
+				return true;
 			}
 		}
 		ClosingSlash = InStr(QueryRest, "\");
@@ -208,33 +210,35 @@ void AUdpGamespyQuery::ParseNextQuery(FString Query, FString &QueryType, FString
 		if (QueryRest == "")
 		{
 			bFinalPacket = 1;
-			Return True;
+			return true;
 		}
 		else
 		{
-			Return True;
+			return true;
 		}
 	}
 	else
 	{
-		Return False;
+		return false;
 	}
 	*/
+	return false;    //FAKE   /ELiZ
 }
-void AUdpGamespyQuery::ParseQuery(FIpAddr Addr, FString Query, int32 QueryNum, int32 &PacketNum)
+
+FString AUdpGamespyQuery::ParseQuery(FIpAddr Addr, FString Query, int32 QueryNum, int32 &PacketNum)
 {
-	/*
-	local string QueryType;
-	local string QueryValue;
-	local string QueryRest;
-	local string ValidationString;
-	local bool Result;
-	local int bFinalPacket;
+	FString QueryType = "";
+	FString QueryValue = "";
+	FString QueryRest = "";
+	FString ValidationString = "";
+	bool Result = false;
+	int bFinalPacket = 0;
 	bFinalPacket = 0;
+	/*
 	Result = ParseNextQuery(Query, QueryType, QueryValue, QueryRest, bFinalPacket);
 	if (!Result)
 	{
-		Return "";
+		return "";
 	}
 	if (QueryType == "basic")
 	{
@@ -321,13 +325,13 @@ void AUdpGamespyQuery::ParseQuery(FIpAddr Addr, FString Query, int32 QueryNum, i
 			}
 		}
 	}
-	Return QueryRest;
 	*/
+	return QueryRest;
 }
-void AUdpGamespyQuery::SendAPacket(FIpAddr Addr, int32 QueryNum, int32 &PacketNum, int32 bFinalPacket)
+bool AUdpGamespyQuery::SendAPacket(FIpAddr Addr, int32 QueryNum, int32 &PacketNum, int32 bFinalPacket)
 {
+	bool Result = false;
 	/*
-	local bool Result;
 	ReplyData = ReplyData $ "\queryid\" $ QueryNum $ "." $ ++ PacketNum;
 		if (bFinalPacket == 1)
 		{
@@ -335,14 +339,15 @@ void AUdpGamespyQuery::SendAPacket(FIpAddr Addr, int32 QueryNum, int32 &PacketNu
 		}
 	Result = SendText(Addr, ReplyData);
 	ReplyData = "";
-	Return Result;
 	*/
+	return Result;
 }
-void AUdpGamespyQuery::SendQueryPacket(FIpAddr Addr, FString SendString, int32 QueryNum, int32 &PacketNum, int32 &bFinalPacket)
+
+bool AUdpGamespyQuery::SendQueryPacket(FIpAddr Addr, FString SendString, int32 QueryNum, int32 &PacketNum, int32 &bFinalPacket)
 {
-	/*
-	local bool Result;
+	bool Result = false;
 	Result = true;
+	/*
 	if (Len(ReplyData) + Len(SendString) > 1000)
 	{
 		Result = SendAPacket(Addr, QueryNum, PacketNum, 0);
@@ -352,10 +357,11 @@ void AUdpGamespyQuery::SendQueryPacket(FIpAddr Addr, FString SendString, int32 Q
 	{
 		Result = SendAPacket(Addr, QueryNum, PacketNum, bFinalPacket);
 	}
-	Return Result;
 	*/
+	return Result;
 }
-void AUdpGamespyQuery::GetBasic()
+
+FString AUdpGamespyQuery::GetBasic()
 {
 	/*
 	local string ResultSet;
@@ -370,15 +376,17 @@ void AUdpGamespyQuery::GetBasic()
 			ResultSet = ResultSet $ "\minnetver\" $ Level.MinNetVersion;
 		}
 	ResultSet = ResultSet $ "\location\" $ 'UdpGamespyUplink'.Default.ServerRegion;
-		Return ResultSet;
+		return ResultSet;
 	*/
+	return "FAKE";     //FAKE   /EliZ
 }
-void AUdpGamespyQuery::GetInfo()
+
+FString AUdpGamespyQuery::GetInfo()
 {
+	FString ResultSet = "";
+	FString ServerName = "";
+	int32 NumPlayers = 0;
 	/*
-	local string ResultSet;
-	local string ServerName;
-	local int NumPlayers;
 	ServerName = Level.Game.GameReplicationInfo.ServerName;
 	ReplaceText(ServerName, "\","");
 		ResultSet = "\hostname\" $ ServerName;
@@ -403,13 +411,14 @@ void AUdpGamespyQuery::GetInfo()
 		{
 			ResultSet = ResultSet $ "\minnetver\" $ Level.MinNetVersion;
 		}
-	Return ResultSet;
 	*/
+	return ResultSet;
 }
-void AUdpGamespyQuery::GetRules()
+
+FString AUdpGamespyQuery::GetRules()
 {
+	FString ResultSet = "";
 	/*
-	local string ResultSet;
 	if (Level.Game.GameReplicationInfo.AdminName != "")
 	{
 		ResultSet = ResultSet $ "\AdminName\" $ Level.Game.GameReplicationInfo.AdminName;
@@ -426,38 +435,40 @@ void AUdpGamespyQuery::GetRules()
 	{
 		ResultSet = ResultSet $ "\password\0";
 	}
-	Return ResultSet;
 	*/
+	return ResultSet;
 }
-void AUdpGamespyQuery::GetPlayer(APlayerController* p, int32 PlayerNum)
+
+FString AUdpGamespyQuery::GetPlayer(APlayerController* p, int32 PlayerNum)
 {
+	FString ResultSet = "";
+	FString PlayerName = "";
 	/*
-	local string ResultSet;
-	local string PlayerName;
 	PlayerName = p.PlayerReplicationInfo.PlayerName;
 	ReplaceText(PlayerName, "\","");
-		ResultSet = "\player_" $ PlayerNum $ "\" $ PlayerName;
-		ResultSet = ResultSet $ "\frags_" $ PlayerNum $ "\" $ p.PlayerReplicationInfo.Score_Kills;
-		ResultSet = ResultSet $ "\ping_" $ PlayerNum $ "\" $ p.ConsoleCommand("GETPING");
-		if (p.PlayerReplicationInfo.Team != None)
-		{
-			ResultSet = ResultSet $ "\team_" $ PlayerNum $ "\" $ p.PlayerReplicationInfo.Team.TeamIndex;
-		}
-		else
-		{
-			ResultSet = ResultSet $ "\team_" $ PlayerNum $ "\0";
-		}
-	Return ResultSet;
+	ResultSet = "\player_" $ PlayerNum $ "\" $ PlayerName;
+	ResultSet = ResultSet $ "\frags_" $ PlayerNum $ "\" $ p.PlayerReplicationInfo.Score_Kills;
+	ResultSet = ResultSet $ "\ping_" $ PlayerNum $ "\" $ p.ConsoleCommand("GETPING");
+	if (p.PlayerReplicationInfo.Team != None)
+	{
+		ResultSet = ResultSet $ "\team_" $ PlayerNum $ "\" $ p.PlayerReplicationInfo.Team.TeamIndex;
+	}
+	else
+	{
+		ResultSet = ResultSet $ "\team_" $ PlayerNum $ "\0";
+	}
 	*/
+	return ResultSet;
 }
-void AUdpGamespyQuery::SendPlayers(FIpAddr Addr, int32 QueryNum, int32 &PacketNum, int32 bFinalPacket)
+
+bool AUdpGamespyQuery::SendPlayers(FIpAddr Addr, int32 QueryNum, int32 &PacketNum, int32 bFinalPacket)
 {
+	AController* C = nullptr;
+	int32 i = 0;
+	bool Result = false;
+	bool SendResult = false;
+	Result = false;
 	/*
-	local Controller C;
-	local int i;
-	local bool Result;
-	local bool SendResult;
-	Result = False;
 	C = Level.ControllerList;
 	if (i < Level.Game.NumPlayers)
 	{
@@ -465,56 +476,55 @@ void AUdpGamespyQuery::SendPlayers(FIpAddr Addr, int32 QueryNum, int32 &PacketNu
 		{
 			if (bFinalPacket == 1)
 			{
-				SendResult = SendAPacket(Addr, QueryNum, PacketNum, bFinalPacket);
+				SendResult=SendAPacket(Addr,QueryNum,PacketNum,bFinalPacket);
 			}
-			Result = SendResult || Result;
+			Result=(SendResult || Result);
 		}
 		else
 		{
-	else
-	{
-		if (C.IsA('PlayerController') && C.PlayerReplicationInfo != None && !C.PlayerReplicationInfo.bOnlySpectator)
-		{
-			if (i == Level.Game.NumPlayers - 1 && bFinalPacket == 1)
-			{
-				SendResult = SendQueryPacket(Addr, GetPlayer(PlayerController(C), i), QueryNum, PacketNum, 1);
-			}
 			else
 			{
-				SendResult = SendQueryPacket(Addr, GetPlayer(PlayerController(C), i), QueryNum, PacketNum, 0);
+				if ((C.IsA("PlayerController") && (C.PlayerReplicationInfo != None)) && (! C.PlayerReplicationInfo.bOnlySpectator))
+				{
+					if ((i == (Level.Game.NumPlayers - 1)) && (bFinalPacket == 1))
+					{
+						SendResult=SendQueryPacket(Addr,GetPlayer(PlayerController(C),i),QueryNum,PacketNum,1);
+					}
+					else
+					{
+						SendResult=SendQueryPacket(Addr,GetPlayer(PlayerController(C),i),QueryNum,PacketNum,0);
+					}
+					Result=(SendResult || Result);
+					i ++;
+				}
 			}
-			Result = SendResult || Result;
-			i++;
+			C=C.nextController;
 		}
 	}
-	C = C.nextController;
-		}
-	}
-	Return Result;
 	*/
+	return Result;
 }
-void AUdpGamespyQuery::GetLevelProperty(FString Prop)
+
+FString AUdpGamespyQuery::GetLevelProperty(FString Prop)
 {
-	/*
-	local string ResultSet;
-	ResultSet = "\" $ Prop $ "\" $ Level.GetPropertyText(Prop);
-		Return ResultSet;
-	*/
+	FString ResultSet = "";
+	//ResultSet = "\" $ Prop $ "\" $ Level.GetPropertyText(Prop);
+	return ResultSet;
 }
-void AUdpGamespyQuery::GetGameProperty(FString Prop)
+
+FString AUdpGamespyQuery::GetGameProperty(FString Prop)
 {
-	/*
-	local string ResultSet;
-	ResultSet = "\" $ Prop $ "\" $ Level.Game.GetPropertyText(Prop);
-		Return ResultSet;
-	*/
+	FString ResultSet = "";
+	//ResultSet = "\" $ Prop $ "\" $ Level.Game.GetPropertyText(Prop);
+	return ResultSet;
 }
-void AUdpGamespyQuery::GetPlayerProperty(FString Prop)
+
+FString AUdpGamespyQuery::GetPlayerProperty(FString Prop)
 {
+	FString ResultSet = "";
+	int32 i = 0;
+	AController* C = nullptr;
 	/*
-	local string ResultSet;
-	local int i;
-	local Controller C;
 	ForEach AllActors(Class'Controller', C)
 	{
 		if (C.PlayerReplicationInfo != None && !C.PlayerReplicationInfo.bBot)
@@ -523,6 +533,6 @@ void AUdpGamespyQuery::GetPlayerProperty(FString Prop)
 			ResultSet = ResultSet $ "\" $ Prop $ "_" $ i $ "\" $ C.GetPropertyText(Prop);
 		}
 	}
-	Return ResultSet;
 	*/
+	return ResultSet;
 }

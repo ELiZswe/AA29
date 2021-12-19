@@ -10,12 +10,11 @@
 class AInventory;
 
 UCLASS()
-class AA29_API AWeaponAttachment : public AInventoryAttachment
+class AWeaponAttachment : public AInventoryAttachment
 {
 	GENERATED_BODY()
 public:
 	AWeaponAttachment();
-
 	
 	UPROPERTY()		int32 TurretYaw;					//var int TurretYaw;
 	UPROPERTY()		int32 TurretPitch;					//var int TurretPitch;
@@ -50,10 +49,8 @@ public:
 	void VerifyMesh();
 	void SetLaser();
 	int32 GetMaxBulletTraces();
-	void GetAttachBoneFor(AInventory* Inv);
+	FName GetAttachBoneFor(AInventory* Inv);
 	void AdjustAttachmentFor(AInventory* Inv);
 	void AttachmentAnimation();
 	void ThirdPersonTrace();
-
-
 };

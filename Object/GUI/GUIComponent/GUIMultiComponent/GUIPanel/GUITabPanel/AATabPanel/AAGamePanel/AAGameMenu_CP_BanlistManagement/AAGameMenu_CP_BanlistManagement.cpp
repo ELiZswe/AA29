@@ -419,15 +419,15 @@ void UAAGameMenu_CP_BanlistManagement::FindPRIFromID(int32 iPlayerID)
 	GRI = PlayerOwner().GameReplicationInfo;
 	if (GRI == None)
 	{
-		Return None;
+		return None;
 	}
 	for (iPlayerIndex = 0; iPlayerIndex < GRI.PRIArray.Length; iPlayerIndex++)
 	{
 		if (GRI.PRIArray[iPlayerIndex] != None && GRI.PRIArray[iPlayerIndex].PlayerID == iPlayerID)
 		{
-			Return GRI.PRIArray[iPlayerIndex];
+			return GRI.PRIArray[iPlayerIndex];
 		}
 	}
-	Return None;
+	return None;
 	*/
 }

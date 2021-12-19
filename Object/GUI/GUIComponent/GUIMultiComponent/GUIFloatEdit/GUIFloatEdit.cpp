@@ -116,7 +116,7 @@ bool UGUIFloatEdit::EditKeyEvent(uint8& Key, uint8& State, float Delta)
 		SpinnerMinusClick(None);
 		return true;
 	}
-	Return MyEditBox.InternalOnKeyEvent(Key, State, Delta);
+	return MyEditBox.InternalOnKeyEvent(Key, State, Delta);
 	*/
 	return false;    //FAKE    /ELiZ
 }

@@ -26,7 +26,7 @@ public:
 	bool InternalOnClick(UGUIComponent* Sender);
 	bool InternalOnDblClick(UGUIComponent* Sender);
 	void InternalOnChange(UGUIComponent* Sender);
-	void ItemCount();
-	void MyOpen(UGUIContextMenu* Menu);
-	void MyClose(UGUIContextMenu* Sender);
+	int32 ItemCount();
+	bool MyOpen(UGUIContextMenu* Menu);
+	bool MyClose(UGUIContextMenu* Sender);
 };

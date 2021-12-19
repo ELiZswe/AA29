@@ -17,7 +17,7 @@ public:
 
 	UPROPERTY(EditAnywhere)		UaDamageType* DamageType;						//var() class<DamageType> DamageType;
 
-	bool InitActionFor(UScriptedController* C);
+	bool InitActionFor(AScriptedController* C);
 	FString GetActionString();
 
 };

@@ -20,6 +20,6 @@ public:
 	//UPROPERTY(EditAnywhere, Category = "Action")		ALocalMessage* MessageClass;			//var(Action) class<LocalMessage> MessageClass;
 
 
-	bool InitActionFor(UScriptedController* C);
+	bool InitActionFor(AScriptedController* C);
 	FString GetActionString();
 };

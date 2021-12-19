@@ -29,23 +29,24 @@ AWeaponMod_Flare_Gren::AWeaponMod_Flare_Gren()
 	DrawType				= EDrawType::DT_None;
 }
 
-void AWeaponMod_Flare_Gren::ModNotAllowed()
+bool AWeaponMod_Flare_Gren::ModNotAllowed()
 {
+	uint8 Team = 0;
 	/*
-	uint8 Team;
-	if (Pawn(Owner).PlayerReplicationInfo.Team == None)
+	if (Pawn(Owner).PlayerReplicationInfo.Team == nullptr)
 	{
-		Return False;
+		return false;
 	}
 	Team = Pawn(Owner).PlayerReplicationInfo.Team.TeamIndex;
 	Switch(Team)
 	{
 			case 0:
-				Return !Level.bTeam0AllowFlares;
+				return !Level.bTeam0AllowFlares;
 			case 1:
-				Return !Level.bTeam1AllowFlares;
+				return !Level.bTeam1AllowFlares;
 			default:
-				Return !Level.bTeam0AllowFlares || !Level.bTeam1AllowFlares;
+				return !Level.bTeam0AllowFlares || !Level.bTeam1AllowFlares;
 	}
 	*/
+	return false;    //FAKE   /ELiZ
 }

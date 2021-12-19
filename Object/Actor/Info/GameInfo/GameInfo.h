@@ -25,6 +25,7 @@ class AVotingHandler;
 class APlayInfo;
 class UGameRules;
 class AaLocalMessage;
+class AVehicle;
 
 UCLASS()
 class AA29_API AGameInfo : public AAA2_GameMode
@@ -43,7 +44,7 @@ public:
 	UPROPERTY()							float MaxIdleTime;										//var float MaxIdleTime;										// maximum time players are allowed to idle before being kicked
 	UPROPERTY()							FString ServerSkillLevel;								//var string ServerSkillLevel;									// The Server Skill Level ( 0 - 2, Beginner - Advanced )
 	UPROPERTY()							TArray<FString> CallSigns;								//var string CallSigns;
-	//UPROPERTY()						AVehicle* VehicleList;									//var Vehicle VehicleList;
+	UPROPERTY()							AVehicle* VehicleList;									//var Vehicle VehicleList;
 
 	// Maplist management
 	UPROPERTY()							FString MaplistHandlerType;								//var string MaplistHandlerType;

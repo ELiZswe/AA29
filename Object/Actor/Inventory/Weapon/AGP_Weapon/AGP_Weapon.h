@@ -11,6 +11,9 @@
 #include "Particles/Emitter.h"
 #include "AGP_Weapon.generated.h"
 
+class ALevelInfo;
+class UScriptObject;
+
 UCLASS()
 class AA29_API AAGP_Weapon : public AWeapon
 {
@@ -18,7 +21,6 @@ class AA29_API AAGP_Weapon : public AWeapon
 public:
 	AAGP_Weapon();
 
-	
 	UPROPERTY()										FRotator rotCoaxWeaponAim;					//var Object.Rotator rotCoaxWeaponAim;
 	UPROPERTY()										float fpWeaponThreatLevel;					//var float fpWeaponThreatLevel;
 	UPROPERTY()										float PendingChangeWeaponTimeStamp;			//var float PendingChangeWeaponTimeStamp;
@@ -150,8 +152,8 @@ public:
 	UPROPERTY()										TSubclassOf<class ABaseMuzzleFlashEmitter> SavedMuzzleFlashEmitter;			//var AGP_Effects.BaseMuzzleFlashEmitter SavedMuzzleFlashEmitter;
 	UPROPERTY()										UStaticMesh* NrmFireMesh;													//var Mesh NrmFireMesh;
 	UPROPERTY()										USkeletalMesh* AuxFireMesh;													//var Mesh AuxFireMesh;
-	UPROPERTY()										RateofFire AuxROF;															//var Weapon.RateofFire AuxROF;
-	UPROPERTY()										RateofFire LastROF;															//var Weapon.RateofFire LastROF;
+	UPROPERTY()										ERateofFire AuxROF;															//var Weapon.RateofFire AuxROF;
+	UPROPERTY()										ERateofFire LastROF;														//var Weapon.RateofFire LastROF;
 	UPROPERTY()										TSubclassOf<class ABaseAmmoRound> SpecialAmmoRoundList;						//var BaseAmmoRound SpecialAmmoRoundList;
 	UPROPERTY()										TSubclassOf<class ABaseAmmoRound> SpecialAmmoRoundClass;					//var class<BaseAmmoRound> SpecialAmmoRoundClass;
 	UPROPERTY()										TSubclassOf<class ABaseAmmoRound> AuxAmmoRoundList;							//var BaseAmmoRound AuxAmmoRoundList;
@@ -177,31 +179,30 @@ public:
 	UPROPERTY()										ABaseScope* _Scope;															//var BaseScope _Scope;
 	UPROPERTY()										FRotationRandomizer _AutoRecoilDirInfo;										//var Object.RotationRandomizer _AutoRecoilDirInfo;
 	UPROPERTY()										FRotationRandomizer _RecoilDirInfo;											//var Object.RotationRandomizer _RecoilDirInfo;
-	//UPROPERTY()									int32 _JammedMonitor;													//var ScriptObject _JammedMonitor;
-	//UPROPERTY()									int32 _AmmoMonitor;														//var ScriptObject _AmmoMonitor;
+	UPROPERTY()										UScriptObject* _JammedMonitor;												//var ScriptObject _JammedMonitor;
+	UPROPERTY()										UScriptObject* _AmmoMonitor;												//var ScriptObject _AmmoMonitor;
 	UPROPERTY()										TSubclassOf<class AInventory>  _cMILESAltClass;								//var class<Inventory> _cMILESAltClass;
-
 
 	void InterpolateZoomView(bool moveToZoomed);
 	void Strawberry();
-	//void DisplayDebug(UCanvas* Canvas, float YL, float YPos);
+	void DisplayDebug(class UCanvas* Canvas, const class FDebugDisplayInfo& DebugDisplay, float& YL, float& YPos);
 	void ClientGotoState(FName NewState, FName NewLabel);
-	//void StaticPrecache(LevelInfo L);
+	void StaticPrecache(ALevelInfo* L);
 	void PreBeginPlay();
 	void PostBeginPlay();
 	void Destroyed();
 	void BeginPlay();
 	bool ShouldUse3dSights();
-	void Get3dScopeLocation();
-	void Get3dScopeRotation();
+	FVector Get3dScopeLocation();
+	FRotator Get3dScopeRotation();
 	void ServerJamit();
 	void AttachToPawn(APawn* p);
-	void GetFireStart(FVector X, FVector Y, FVector Z);
-	void NPC_GetFireStart(FVector X, FVector Y, FVector Z);
+	FVector GetFireStart(FVector X, FVector Y, FVector Z);
+	FVector NPC_GetFireStart(FVector X, FVector Y, FVector Z);
 	void RenderOverlays(UCanvas* Canvas, bool bWeaponAndAttachmentsOnly);
 	//void RenderTexture(ScriptedTexture Tex);
-	void AdjustAim(bool bBreatheBonus);
-	void GetWeightedAim();
+	FRotator AdjustAim(bool bBreatheBonus);
+	float GetWeightedAim();
 	void ServerFire(bool bNoAdjustAim, bool bRapid, bool bBreatheBonus);
 	void NPC_ServerFire(bool bNoAdjustAim, bool bRapid, bool bBreatheBonus, APawn* Enemy, float Value);
 	void LocalFire();
@@ -210,17 +211,17 @@ public:
 	void ProjectileFire();
 	void NPC_ProjectileFire();
 	void TraceFire(float Accuracy, float YOffset, float ZOffset);
-	void GetFireRot();
+	FRotator GetFireRot();
 	void NPC_TraceFire(float Accuracy, float YOffset, float ZOffset);
-	void GetPenetrationPercent(AActor* A, UTexture2D* M);
-	void GetRicochetThreshold(AActor* A, UTexture2D* M);
-	void GetRicochetDirection(FVector TraceDirection, FVector HitNormal, float CosTheta);
-	void GetPenetrateDirection(FVector TraceDirection, float fStrength);
-	void GetPenetrateStrength(AActor* TraceFrom, FVector StartTrace, FVector EndTrace, float fStrength);
-	void CanTraceMore(ABaseWeaponAttachment* BA, int32 num_traces);
-	void DoTrace(AActor* TraceFrom, FVector StartTrace, FVector TraceDirection, float fTraceDistance, float fStrength, int32 num_traces, ABaseWeaponAttachment* BA, bool btestdepth);
-	void NPC_DoTrace(AActor* TraceFrom, FVector StartTrace, FVector TraceDirection, float fTraceDistance, float fStrength, int32 num_traces, ABaseWeaponAttachment* BA, bool btestdepth);
-	void RepeatFire();
+	float GetPenetrationPercent(AActor* A, UTexture2D* M);
+	float GetRicochetThreshold(AActor* A, UTexture2D* M);
+	FVector GetRicochetDirection(FVector TraceDirection, FVector HitNormal, float CosTheta);
+	FVector GetPenetrateDirection(FVector TraceDirection, float fStrength);
+	float GetPenetrateStrength(AActor* TraceFrom, FVector StartTrace, FVector EndTrace, float fStrength);
+	bool CanTraceMore(ABaseWeaponAttachment* BA, int32 num_traces);
+	int32 DoTrace(AActor* TraceFrom, FVector StartTrace, FVector TraceDirection, float fTraceDistance, float fStrength, int32 num_traces, ABaseWeaponAttachment* BA, bool btestdepth);
+	int32 NPC_DoTrace(AActor* TraceFrom, FVector StartTrace, FVector TraceDirection, float fTraceDistance, float fStrength, int32 num_traces, ABaseWeaponAttachment* BA, bool btestdepth);
+	bool RepeatFire();
 	void CheckRapidMisfire(bool bRapid);
 	void CalcNextMisFire();
 	void ClientSendNextMisFire(int32 NextW, float Rand);
@@ -236,30 +237,30 @@ public:
 	void GiveTo(APawn* Other, APickup* Pickup);
 	void SpawnAndAttachScope();
 	void OwnerRecieved();
-	void IsLegalMod(ABaseWeaponMod* cmod);
+	bool IsLegalMod(ABaseWeaponMod* cmod);
 	void LoadWeaponMods();
 	void SetupModAttachments();
-	void GetWeaponModName(int32 i);
+	FString GetWeaponModName(int32 i);
 	void LoadDefaultMods();
 	void CreateWeaponMod(FString nameWM, int32 Slot);
 	void AddWeaponMod(ABaseWeaponMod* WM);
 	void NotifyWeaponModAnimations(FName Sequence, float Rate, float TweenTime, bool bLoop);
 	void NotifyWeaponModZoom();
 	void UpdateCurrentAmmoRounds(bool bRoundInBreech);
-	void SpawnSingleAmmoRound(bool bAux, int32 ammo_id, bool bSpecial);
+	ABaseAmmoRound* SpawnSingleAmmoRound(bool bAux, int32 ammo_id, bool bSpecial);
 	void SpawnAndAttachAmmoRounds();
 	void SpawnAndAttachMILESGear();
-	void IsReplicationComplete();
+	bool IsReplicationComplete();
 	void NotifyReplicationComplete();
 	void SetupClientWeapon();
 	void SpawnMuzzleFlash();
 	void SetWeaponSkins();
-	void GetActorLevelSkin(int32 Index, UTexture2D* old_material, FString level_tag);
-	void GetSleeve(bool bFriendly);
+	FString GetActorLevelSkin(int32 Index, UTexture2D* old_material, FString level_tag);
+	FString GetSleeve(bool bFriendly);
 	void GiveAmmo(APawn* p);
 	virtual void RecountAmmo() override;
 	void TravelPostAccept();
-	void GetPendingShots();
+	int32 GetPendingShots();
 	virtual void Fire(float Value) override;
 	void NPC_Fire(float Value, APawn* Enemy);
 	virtual void AltFire(float Value) override;
@@ -277,16 +278,16 @@ public:
 	void ClientTempLowerWeapon(bool bActive);
 	void TempRaiseWeapon();
 	void GuardWeapon();
-	void GetSuppressor();
-	void IsSuppressed();
+	ABaseWeaponMod* GetSuppressor();
+	bool IsSuppressed();
 	void ToggleSuppressor();
 	void ServerToggleSuppressor();
 	void DoSuppressor(bool bNewSuppressor);
 	void PlaySuppressor();
 	void ToggleLeftRail();
 	void ToggleRightRail();
-	void CanZoom();
-	void CalcZoomWander();
+	bool CanZoom();
+	FRotator CalcZoomWander();
 	void CycleZoom();
 	void ToggleZoom();
 	void ForceUnzoom(bool bForce);
@@ -305,7 +306,7 @@ public:
 	void Tick(float DeltaTime);
 	bool CanUseWeapon(int32 DesiredAction);
 	virtual bool CanSprint() override;
-	void CanCombatRoll(bool bActual);
+	bool CanCombatRoll(bool bActual);
 	EUpperBodyAnim GetUpperBodyLowerAnim();
 	EUpperBodyAnim GetUpperBodyRaiseAnim();
 	EUpperBodyAnim GetUpperBodyReadyAnim();
@@ -314,17 +315,17 @@ public:
 	virtual bool IsBusy() override;
 	EContactSpecialWeapons getMyType();
 	void SetFastMove(bool fast);
-	void ShouldDrawCrosshair();
+	bool ShouldDrawCrosshair();
 	FString getROFString();
 	float GetBreatheMultiplier();
-	void AmmoStatus();
+	float AmmoStatus();
 	void HasAmmo();
 	void NotifyOutOfAmmo();
-	void GetAmmoMonitor();
-	//void SetAmmoMonitor(ScriptObject sobj);
+	UScriptObject* GetAmmoMonitor();
+	void SetAmmoMonitor(UScriptObject* sobj);
 	void NotifyJammed();
-	void GetJammedMonitor();
-	//void SetJammedMonitor(ScriptObject sobj);
+	UScriptObject* GetJammedMonitor();
+	void SetJammedMonitor(UScriptObject* sobj);
 	virtual void BringUp() override;
 	void ClientBringUp();
 	virtual bool PutDown() override;
@@ -334,19 +335,19 @@ public:
 	void DoChangeFireModeLast();
 	void DoFixJam();
 	void DoSupported();
-	void GetSoundActor();
+	AActor* GetSoundActor();
 	void PlayWeaponSound(USoundBase* pSound, USoundBase* esound, float Volume, float Radius);
 	void ServerDryFire();
 	void DryFire();
 	void PlayDryFire();
-	void AnimEnd(int Channel);
+	void AnimEnd(int32 Channel);
 	virtual void PlayIdleAnim() override;
-	void GetAnimActor();
+	AActor* GetAnimActor();
 	void RunAnimation(FName Sequence, float Rate, float TweenTime, bool bLoop);
 	void NotifyWeaponAttachmentAnimations(FName Sequence, float Rate, float TweenTime, bool bLoop);
-	void GetFireSound();
-	void GetEnemyFireSound();
-	void GetSpecialFireAnim(FName SpecialAnimName);
+	USoundBase* GetFireSound();
+	USoundBase* GetEnemyFireSound();
+	bool GetSpecialFireAnim(FName SpecialAnimName);
 	virtual void PlayFiring() override;
 	void HandleRecoil();
 	void NPC_PlayFiring();
@@ -374,10 +375,10 @@ public:
 	void IncrementFlashCount();
 	void NotifyAddAmmo(AAmmunition* NewAmmo);
 	void NotifyDeleteAmmo(AAmmunition* OldAmmo);
-	void WeaponDisabled();
-	int32 GetMinimumRange();
-	int32 GetOptimalRange();
-	int32 GetMaximumRange();
+	bool WeaponDisabled();
+	float GetMinimumRange();
+	float GetOptimalRange();
+	float GetMaximumRange();
 	TSubclassOf<AAmmunition> GetCurrentAmmoName();
 	AAmmunition* GetCurrentAmmoType();
 	void SetCurrentAmmoType(AAmmunition* newAmmoType);
@@ -386,15 +387,15 @@ public:
 	AAmmunition* GetAuxAmmoType();
 	virtual int32 GetClipCount(uint8 clip, bool bAuxAmmo) override;
 	void SetClipCount(uint8 clip, int32 Count, bool bAuxAmmo);
-	void GetBestClip();
+	uint8 GetBestClip();
 	virtual bool CheckForNoReload() override;
 	bool OutOfAmmo();
 	virtual bool SingleShotWeapon();
 	void ReloadClip(uint8 newclip);
-	void AddClip(AAmmunition* AmmoClass);
+	bool AddClip(AAmmunition* AmmoClass);
 	bool ValidAmmo(TSubclassOf<AAmmunition> AmmoClass);
-	void SpawnAmmoFor(AAGP_Weapon* OldW, AAmmunition* oldA);
-	bool IsLegalROF(RateofFire testROF);
+	AAmmunition* SpawnAmmoFor(AAGP_Weapon* OldW, AAmmunition* oldA);
+	bool IsLegalROF(ERateofFire testROF);
 	void CopyROF(AAGP_Weapon* W);
 	void InitFor(AInventory* Inv);
 	void CopyWeaponMods(AAGP_Weapon* W);
@@ -404,7 +405,4 @@ public:
 	APawn* NPC_GetEnemy();
 	void NPC_SetValue(float Value);
 	void MatchEnding();
-
-
-
 };

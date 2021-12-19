@@ -27,7 +27,6 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-
 	UPROPERTY()								bool bSpinnyActive;									//var bool bSpinnyActive;
 	UPROPERTY()								USkeletalMesh* SpinnyMesh;							//var StaticMesh SpinnyMesh;
 	UPROPERTY()								USkeletalMesh* WeaponMesh;							//var Mesh WeaponMesh;
@@ -40,15 +39,15 @@ public:
 
 	void PostNetBeginPlay();
 	void GetWeaponMod();
-	void GetAttachBone(int32 Slot);
+	FName GetAttachBone(int32 Slot);
 	void NotifyAttachmentAnimation(uint8 AnimState);
 	void Destroyed();
-	void GetEnemyClass();
+	ABaseModAttachment* GetEnemyClass();
 	void NotifyAttachMod();
 	void NotifyDetachMod();
 	void SetFriendlyMesh(bool bFriendly);
 	void SetDefaultMesh();
-	void IsSuppressor();
-	void GetSuppressorMuzzleFlash();
-
+	bool IsSuppressor();
+	bool IsSuppressed();
+	ABaseMuzzleFlashEmitter* GetSuppressorMuzzleFlash();
 };
