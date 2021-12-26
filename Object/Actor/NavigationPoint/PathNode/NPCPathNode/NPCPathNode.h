@@ -18,7 +18,7 @@ public:
 
 	UPROPERTY()																ANPCBaseController* npcbcUsingHallway;					//var NPCBaseController npcbcUsingHallway;
 	UPROPERTY()																ANPCPathNode* npcpnHallwayOtherEnd;						//var NPCPathNode npcpnHallwayOtherEnd;
-	UPROPERTY(EditAnywhere, Category = "NPCNodeOptions")					ENodeType nameHallway;									//var(NPCNodeOptions) name nameHallway;
+	UPROPERTY(EditAnywhere, Category = "NPCNodeOptions")					FName nameHallway;										//var(NPCNodeOptions) name nameHallway;
 	UPROPERTY()																int32 iNPCOrderTableWaypointIndex;						//var int iNPCOrderTableWaypointIndex;
 	UPROPERTY(EditAnywhere, Category = "NPCNodeOptions")					bool bNarrowPassageway;									//var(NPCNodeOptions) bool bNarrowPassageway;
 	UPROPERTY(EditAnywhere, Category = "NPCNodeOptions")					float fpMentalStateRecoveryModifier;					//var(NPCNodeBonuses) float fpMentalStateRecoveryModifier;
@@ -43,7 +43,7 @@ public:
 	UPROPERTY()																ENodeType bInUse;										//var bool bInUse;
 
 	void BeginPlay();
-	void IsHallwayEntry();
-	void RequestHallway(ANPCBaseController* npcbc);
+	bool IsHallwayEntry();
+	bool RequestHallway(ANPCBaseController* npcbc);
 	void ReleaseHallway(ANPCBaseController* npcbc);
 };

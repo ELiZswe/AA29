@@ -163,10 +163,10 @@ void UAAIRC_Panel::GetSizingButton()
 	local int i;
 	for (i = 0; i < Components.Length; i++)
 	{
-		if (GUIButton(Components[i]) == None)
+		if (GUIButton(Components[i]) == nullptr)
 		{
 		}
-		if (SizingButton == None || Len(GUIButton(Components[i]).Caption) > Len(SizingButton.Caption))
+		if (SizingButton == nullptr || Len(GUIButton(Components[i]).Caption) > Len(SizingButton.Caption))
 		{
 			SizingButton = GUIButton(Components[i]);
 		}
@@ -381,7 +381,7 @@ int32 UAAIRC_Panel::FindChannelHistoryIndex(FString ChannelName)
 bool UAAIRC_Panel::IsCurrentServer(FString ServerAddress)
 {
 	/*
-	if (tp_System == None || !tp_System.IsConnected() || tp_System.link == None || tp_System.link.ServerAddress == "" || ServerAddress == "")
+	if (tp_System == nullptr || !tp_System.IsConnected() || tp_System.link == nullptr || tp_System.link.ServerAddress == "" || ServerAddress == "")
 	{
 		return false;
 	}

@@ -9,18 +9,16 @@
 class ANPC_MedInstructor;
 
 UCLASS()
-class AA29_API ANPC_MedStudent : public AAGP_NPC
+class ANPC_MedStudent : public AAGP_NPC
 {
 	GENERATED_BODY()
 public:
 	ANPC_MedStudent();
 
-
 	UPROPERTY()											float fAnimTimer;				//var float fAnimTimer;
 	UPROPERTY(EditAnywhere)								float fEyeTrackPitchOffset;		//var() float fEyeTrackPitchOffset;
 	UPROPERTY()											int32 UseCountBusy;				//var int UseCountBusy;
 	UPROPERTY()											int32 UseCountGreet;			//var int UseCountGreet;
-
 	UPROPERTY()											TArray<FName> VGreet;					//var name VGreet;
 	UPROPERTY()											TArray<FName> VBusy;					//var name VBusy;
 	UPROPERTY()											TArray<FName> VAdrienneBusy;			//var name VAdrienneBusy;
@@ -52,7 +50,7 @@ public:
 
 	void findMedInstructor();
 	void BeginPlay();
-	void UsedBy(APawn* User);
+	bool UsedBy(APawn* User);
 	void BusyTalk();
 	void GreetTalk();
 	void Timer();
@@ -61,6 +59,4 @@ public:
 	FRotator NPC_SwapAxes(FRotator R);
 	void NPC_EyeTrack(FVector TrackThis, bool useHead);
 	void StudentEyeTrack();
-
-
 };

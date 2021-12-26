@@ -36,7 +36,6 @@ public:
 //	UFUNCTION()							void Set_Weapon(TSubclassOf<AAGP_Weapon> Weapon);
 	UFUNCTION(BlueprintCallable)		FString GetHumanReadableName() const;
 
-
 	void PostAuthComplete();
 	void BlinkCharacterOnRadar(float BlinkDuration);
 	TWeakObjectPtr < class AActor > GetPlayerStart();
@@ -52,7 +51,7 @@ public:
 	virtual void GetPortrait();
 	void UpdateCharacter();
 	virtual void UpdatePlayerLocation();
-	//virtual void DisplayDebug(class UCanvas* Canvas, const class FDebugDisplayInfo& DebugDisplay, float& YL, float& YPos)
+	void DisplayDebug(UCanvas* Canvas, const class FDebugDisplayInfo& DebugDisplay, float& YL, float& YPos);
 	void ClientNameChange();
 	void SetPlayerName(const FString& S);
 	void SetWaitingPlayer(bool B);

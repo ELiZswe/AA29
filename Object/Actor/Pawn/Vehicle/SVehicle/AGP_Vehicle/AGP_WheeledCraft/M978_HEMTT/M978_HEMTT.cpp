@@ -305,7 +305,7 @@ AM978_HEMTT::AM978_HEMTT()
 	AirRollDamping = 35;
 	//PositionTypes(0) = ({ class'AGP_Vehicles.PassengerPosition',"None","Seat_Passenger_1_Bone",FVector(290, 55, 85),FVector(0, 0, 0),FRotator(0,0,0) });
 	EntryPoints = { DriverSideEntry,Entry_Passenger };
-	IdleSound = LoadObject<USoundBase>(NULL, TEXT("SoundCue'/Game/AmericasArmy/Sounds/S_AA2_Vehicles/HEMTT/HEMMT_Idle_Lp_4_Que.HEMMT_Idle_Lp_4_Que'"), NULL, LOAD_None, NULL);
+	IdleSound = LoadObject<USoundBase>(NULL, TEXT("SoundCue'/Game/AmericasArmy/Sounds/S_AA2_Vehicles/HEMTT/HEMMT_Idle_Lp_4_Que.HEMMT_Idle_Lp_4_Cue'"), NULL, LOAD_None, NULL);
 	StartUpForce = "PRVStartUp";
 	ShutDownForce = "PRVShutDown";
 	DestroyedVehicleMesh = LoadObject<UStaticMesh>(NULL, TEXT("StaticMesh'/Game/AmericasArmy/Meshes/M_AA2_Vehicles/HEMTT/HEMTT_Fuel_Static.HEMTT_Fuel_Static'"), NULL, LOAD_None, NULL);

@@ -322,7 +322,7 @@ bool UKeyBindMenu::RawKey(uint8 NewKey)
 	UpdateHint(NewIndex);
 	NewIndex = -1;
 	bPendingRawInput = false;
-	Controller.__OnNeedRawKeyPress__Delegate = None;
+	Controller.__OnNeedRawKeyPress__Delegate = nullptr;
 	Controller.Master.bRequireRawJoystick = false;
 	PlayerOwner().ClientPlaySound(Controller.ClickSound);
 	*/
@@ -335,7 +335,7 @@ void UKeyBindMenu::Closed(UGUIComponent* Sender, bool bCancelled)
 	if (bPendingRawInput)
 	{
 		bPendingRawInput = false;
-		Controller.__OnNeedRawKeyPress__Delegate = None;
+		Controller.__OnNeedRawKeyPress__Delegate = nullptr;
 		Controller.Master.bRequireRawJoystick = false;
 	}
 	*/

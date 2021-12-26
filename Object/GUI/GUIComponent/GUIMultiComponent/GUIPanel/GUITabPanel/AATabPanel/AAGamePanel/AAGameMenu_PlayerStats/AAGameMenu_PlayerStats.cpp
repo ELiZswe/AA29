@@ -147,7 +147,7 @@ bool UAAGameMenu_PlayerStats::InternalOnPreDraw(UCanvas* C)
 	{
 		GRI = PlayerOwner().GameReplicationInfo;
 	}
-	if (GRI == None)
+	if (GRI == nullptr)
 	{
 		return false;
 	}

@@ -102,7 +102,7 @@ void UUT2SettingsPage::InitComponent(UGUIController* MyController, UGUIComponent
 void UUT2SettingsPage::TabChange(UGUIComponent* Sender)
 {
 	/*
-	if (GUITabButton(Sender) == None)
+	if (GUITabButton(Sender) == nullptr)
 	{
 		return;
 	}
@@ -168,12 +168,12 @@ void UUT2SettingsPage::InternalOnClose(bool bCanceled)
 	if (pWeaponPref.SpinnyWeap != None)
 	{
 		pWeaponPref.SpinnyWeap.Destroy();
-		pWeaponPref = None;
+		pWeaponPref = nullptr;
 	}
 	if (pPlayer.SpinnyDude != None)
 	{
 		pPlayer.SpinnyDude.Destroy();
-		pPlayer.SpinnyDude = None;
+		pPlayer.SpinnyDude = nullptr;
 	}
 	newRot = PlayerOwner().Rotation;
 	newRot.Pitch = int(SavedPitch);

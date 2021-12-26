@@ -274,7 +274,7 @@ bool UStreamPlaylistEditor::ClosePreDraw(UCanvas* C)
 bool UStreamPlaylistEditor::InternalRightClick(UGUIComponent* Sender)
 {
 	/*
-	if ((Controller == None) || (Controller.ActiveControl != li_Directory))
+	if ((Controller == nullptr) || (Controller.ActiveControl != li_Directory))
 	{
 		return false;
 	}
@@ -327,13 +327,13 @@ bool UStreamPlaylistEditor::SetFileManager()
 	/*
 	if (FileManager != None)
 	{
-		if ((PlaylistManager == None) && (!SetPlaylistManager()))
+		if ((PlaylistManager == nullptr) && (!SetPlaylistManager()))
 		{
 			return false;
 		}
 		return true;
 	}
-	if ((PlaylistManager == None) && (!SetPlaylistManager()))
+	if ((PlaylistManager == nullptr) && (!SetPlaylistManager()))
 	{
 		return false;
 	}
@@ -347,13 +347,13 @@ bool UStreamPlaylistEditor::SetPlaylistManager()
 	/*
 	if (PlaylistManager != None)
 	{
-		if ((Handler == None) && (!SetHandler()))
+		if ((Handler == nullptr) && (!SetHandler()))
 		{
 			return false;
 		}
 		return true;
 	}
-	if ((Handler == None) && (!SetHandler()))
+	if ((Handler == nullptr) && (!SetHandler()))
 	{
 		return false;
 	}
@@ -367,7 +367,7 @@ bool UStreamPlaylistEditor::SetHandler()
 {
 	/*
 	int32 i = 0;
-	if ((Controller == None) || (Controller.ViewportOwner == None))
+	if ((Controller == nullptr) || (Controller.ViewportOwner == nullptr))
 	{
 		return false;
 	}

@@ -26,7 +26,7 @@ public:
 	UPROPERTY()			AVoiceChatReplicationInfo*	VoiceChatManager;	//var VoiceChatReplicationInfo VoiceChatManager;
 	UPROPERTY()			AGameReplicationInfo*		GRI;				//var GameReplicationInfo GRI;
 
-	AAA2_PlayerState* GetMembers();
+	TArray<AAA2_PlayerState*> GetMembers();
 	int32 GetMaxChatters();
 	int32 GetMask();
 	FString GetPassword();

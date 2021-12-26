@@ -158,11 +158,11 @@ void AAAServerLoading::SetText()
 		return;
 	}
 	HintOp = DrawOpText(Operations[2]);
-	if (HintOp == None)
+	if (HintOp == nullptr)
 	{
 		return;
 	}
-	if (GameClass == None)
+	if (GameClass == nullptr)
 	{
 		Warn("Invalid game class, so cannot draw loading hint!");
 		return;

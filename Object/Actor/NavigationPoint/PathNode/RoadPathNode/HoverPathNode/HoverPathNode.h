@@ -6,7 +6,7 @@
 #include "AA29/Object/Actor/NavigationPoint/PathNode/RoadPathNode/RoadPathNode.h"
 #include "HoverPathNode.generated.h"
 
-
+class UReachSpec;
 
 UCLASS()
 class AA29_API AHoverPathNode : public ARoadPathNode
@@ -15,5 +15,5 @@ class AA29_API AHoverPathNode : public ARoadPathNode
 public:
 	AHoverPathNode();
 
-	//int32 SpecialCost(APawn* Other, AReachSpec* Path)
+	int32 SpecialCost(APawn* Other, UReachSpec* Path);
 };

@@ -8,7 +8,7 @@
 #include "AGP_Location.generated.h"
 
 UCLASS()
-class AA29_API AAGP_Location : public AActor
+class AAGP_Location : public AActor
 {
 	GENERATED_BODY()
 	
@@ -22,6 +22,8 @@ public:
 	UPROPERTY()											UBillboardComponent* SpriteComponent;
 	UPROPERTY()											USceneComponent* LRoot;
 
+	void Start(AActor* Actor);
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -29,5 +31,4 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-	void Start(AActor* Actor);
 };

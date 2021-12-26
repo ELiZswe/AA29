@@ -288,7 +288,7 @@ void UAAGameMenu_CP_Configuration::InitComponent(UGUIController* MyController, U
 void UAAGameMenu_CP_Configuration::InitializeDataFields()
 {
 	/*
-	if (aagpCommandPost == None)
+	if (aagpCommandPost == nullptr)
 	{
 		Log("Warning: The CP Configuration page does not have a valid Command Post page.");
 		Return;

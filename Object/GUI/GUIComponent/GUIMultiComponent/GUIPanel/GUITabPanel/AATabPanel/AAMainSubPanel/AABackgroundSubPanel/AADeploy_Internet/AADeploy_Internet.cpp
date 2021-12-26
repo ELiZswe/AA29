@@ -245,7 +245,7 @@ void UAADeploy_Internet::UpdateServerList(FString GameSpyFilterString, TArray<FF
 	/*
 	local IpDrv.ServerBrowserBase ServerBrowser;
 	ServerBrowser = AGP_HUD(HumanController(PlayerOwner()).myHUD).GetCurrentServerBrowser();
-	if ((PlayerOwner() == None) || (ServerBrowser == None))
+	if ((PlayerOwner() == nullptr) || (ServerBrowser == nullptr))
 	{
 		return;
 	}

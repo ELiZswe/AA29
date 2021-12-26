@@ -6,6 +6,36 @@
 #include "UObject/ObjectMacros.h"
 
 UENUM(BlueprintType)
+enum class EFluidGridType : uint8
+{
+	/* 0 */ FGT_Square															UMETA(DisplayName = "FGT_Square"),
+	/* 1 */ FGT_Hexagonal														UMETA(DisplayName = "FGT_Hexagonal")
+};
+
+
+UENUM(BlueprintType)
+enum class EProjectorBlending : uint8
+{
+	/* 0 */ PB_None																UMETA(DisplayName = "PB_None"),
+	/* 1 */ PB_Modulate															UMETA(DisplayName = "PB_Modulate"),
+	/* 2 */ PB_AlphaBlend														UMETA(DisplayName = "PB_AlphaBlend"),
+	/* 3 */ PB_Add																UMETA(DisplayName = "PB_Add")
+};
+
+UENUM(BlueprintType)
+enum class EDoubleClickDir : uint8
+{
+	/* 0 */ DCLICK_None															UMETA(DisplayName = "DCLICK_None"),
+	/* 1 */ DCLICK_Left															UMETA(DisplayName = "DCLICK_Left"),
+	/* 2 */ DCLICK_Right														UMETA(DisplayName = "DCLICK_Right"),
+	/* 3 */ DCLICK_Forward														UMETA(DisplayName = "DCLICK_Forward"),
+	/* 4 */ DCLICK_Back															UMETA(DisplayName = "DCLICK_Back"),
+	/* 5 */ DCLICK_Active														UMETA(DisplayName = "DCLICK_Active"),
+	/* 6 */ DCLICK_Done															UMETA(DisplayName = "DCLICK_Done")
+};
+
+
+UENUM(BlueprintType)
 enum class EBounceAxis : uint8
 {
 	/* 0 */ BA_WorldZAxis														UMETA(DisplayName = "BA_WorldZAxis"),

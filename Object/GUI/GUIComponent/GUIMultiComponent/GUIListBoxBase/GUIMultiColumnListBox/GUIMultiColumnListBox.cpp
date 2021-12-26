@@ -15,7 +15,7 @@ UGUIMultiColumnListBox::UGUIMultiColumnListBox()
 void UGUIMultiColumnListBox::InitBaseList(UGUIListBase* LocalList)
 {
 	/*
-	if (List == None || List != LocalList && GUIMultiColumnList(LocalList) != None)
+	if (List == nullptr || List != LocalList && GUIMultiColumnList(LocalList) != None)
 	{
 		List = GUIMultiColumnList(LocalList);
 	}
@@ -35,13 +35,13 @@ void UGUIMultiColumnListBox::InitComponent(UGUIController* MyController, UGUICom
 	if (DefaultListClass != "")
 	{
 		List = GUIMultiColumnList(AddComponent(DefaultListClass));
-		if (List == None)
+		if (List == nullptr)
 		{
 			Log(Class $ ".InitComponent - Could not create default list [" $ DefaultListClass $ "]");
 			Return;
 		}
 	}
-	if (List == None)
+	if (List == nullptr)
 	{
 		Warn("Could not initialize list!");
 		Return;
@@ -49,7 +49,7 @@ void UGUIMultiColumnListBox::InitComponent(UGUIController* MyController, UGUICom
 	InitBaseList(List);
 	if (bFullHeightStyle)
 	{
-		List.Style = None;
+		List.Style = nullptr;
 	}
 	*/
 }

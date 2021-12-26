@@ -52,13 +52,13 @@ bool UID3TagEditor::SetFileManager()
 	/*
 	if (FileManager != None)
 	{
-		if ((Handler == None) && (!SetHandler()))
+		if ((Handler == nullptr) && (!SetHandler()))
 		{
 			return false;
 		}
 		return true;
 	}
-	if ((Handler == None) && (!SetHandler()))
+	if ((Handler == nullptr) && (!SetHandler()))
 	{
 		return false;
 	}
@@ -71,7 +71,7 @@ bool UID3TagEditor::SetHandler()
 {
 	/*
 	int32 i = 0;
-	if ((Controller == None) || (Controller.ViewportOwner == None))
+	if ((Controller == nullptr) || (Controller.ViewportOwner == nullptr))
 	{
 		return false;
 	}
@@ -96,7 +96,7 @@ void UID3TagEditor::HandleObject(UObject* obj, UObject* OptionalObject_1, UObjec
 	{
 		Stream = Stream(obj);
 	}
-	if (Stream == None)
+	if (Stream == nullptr)
 	{
 		Stream = FileManager.CreateStream(Filename);
 	}
@@ -122,7 +122,7 @@ void UID3TagEditor::InternalOnChange(UGUIComponent* Sender)
 	if (GUIMultiOptionList(Sender) != None)
 	{
 		mo = li_Fields.Get();
-		if (mo == None)
+		if (mo == nullptr)
 		{
 			Warn("mo was None");
 			return;
@@ -156,7 +156,7 @@ void UID3TagEditor::ReadTag()
 	/*
 	int32 i = 0;
 	local AnimatedEditBox Box;
-	if (ID3Tag == None)
+	if (ID3Tag == nullptr)
 	{
 		return;
 	}

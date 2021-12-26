@@ -13,7 +13,7 @@
 class AAIScript;
 class ANavigationPoint;
 class AMover;
-class AReachSpec;
+class UReachSpec;
 
 UCLASS()
 class AA29_API AaAIController : public AController
@@ -42,15 +42,15 @@ public:
 	float RateWeapon(AWeapon* W);
 	void Trigger(AActor* Other, APawn* EventInstigator);
 	void WeaponFireAgain(float RefireRate, bool bFinishedFire);
-	void TriggerScript(AActor* Other, APawn* EventInstigator);
-	//void DisplayDebug (UCanvas Canvas, float& YL, float& YPos);
+	bool TriggerScript(AActor* Other, APawn* EventInstigator);
+	void DisplayDebug(UCanvas* Canvas, const class FDebugDisplayInfo& DebugDisplay, float& YL, float& YPos);
 	int32 AdjustDesireFor(APickup* p);
 	void GetFacingDirection();
 	void AdjustView(float DeltaTime);
 	void SetOrders(FName NewOrders, AController* OrderGiver);
 	void GetOrderObject();
 	void GetOrders();
-	void PrepareForMove(ANavigationPoint* Goal, AReachSpec* Path);
+	void PrepareForMove(ANavigationPoint* Goal, UReachSpec* Path);
 	void WaitForMover(AMover* M);
 	void MoverFinished();
 	void UnderLift(AMover* M);

@@ -9,9 +9,8 @@
 
 class UMBSFiltersActiveFiltersets;
 
-
 UCLASS()
-class AA29_API UMBSFilters : public UObject
+class UMBSFilters : public UObject
 {
 	GENERATED_BODY()
 public:
@@ -23,26 +22,26 @@ public:
 
 	void OnGenerateChoices(FString CategoryName, FString FilterName);
 	void CreateActiveFilterSets();
-	void NumFilters(FString ServerBrowserType);
-	void GetCategoryName(int32 Index);
-	void GetFilterName(int32 Index);
+	int32 NumFilters(FString ServerBrowserType);
+	FString GetCategoryName(int32 Index);
+	FString GetFilterName(int32 Index);
 	int32 NumFilterChoices(int32 Index);
-	void GetFilterChoiceLabel(int32 FilterIndex, int32 ChoiceIndex);
-	void IsValidFilter(FActiveFilter filter);
-	void ActivateFilter(int32 FilterIndex, int32 ChoiceIndex);
-	void DeactivateFilter(int32 FilterIndex, int32 ChoiceIndex);
+	FString GetFilterChoiceLabel(int32 FilterIndex, int32 ChoiceIndex);
+	bool IsValidFilter(FActiveFilter filter);
+	bool ActivateFilter(int32 FilterIndex, int32 ChoiceIndex);
+	bool DeactivateFilter(int32 FilterIndex, int32 ChoiceIndex);
 	bool ActivateFilterByName(FString CategoryName, FString FilterName, FString FilterChoiceLabel);
 	void HandleConflictingFilters(FString CategoryName, FString FilterName, FString FilterChoiceLabel);
 	void ClearDependentFilters(FString CategoryName, FString FilterName);
 	bool DeactivateFilterByName(FString CategoryName, FString FilterName, FString FilterChoiceLabel);
 	bool IsFilterActive(FString CategoryName, FString FilterName, FString FilterChoiceLabel);
-	void GetFilterIndex(FString CategoryName, FString FilterName, FString FilterChoiceLabel);
+	int32 GetFilterIndex(FString CategoryName, FString FilterName, FString FilterChoiceLabel);
 	void SetFilterSet(int32 FilterSet);
 	void ClearFilterSet();
 	void DumpFilterSets();
-	void GetFilterAndChoiceIndexFromActiveFilter(int32& FilterIndex, int32& ChoiceIndex, int32 ActiveFilterIndex);
+	bool GetFilterAndChoiceIndexFromActiveFilter(int32& FilterIndex, int32& ChoiceIndex, int32 ActiveFilterIndex);
 	void CreateDeploymentModeFilters(FString sDeploymentModeMap);
-	void BuildDBMBSFilterList();
+	TArray<FFilterItem> BuildDBMBSFilterList();
 	FString BuildGameSpyFilterString();
 	TArray<FKeyValuePair> BuildFilterDescriptions();
 };

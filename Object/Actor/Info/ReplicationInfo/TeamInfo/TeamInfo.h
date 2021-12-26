@@ -11,7 +11,7 @@
 class AAA2_PlayerState;
 
 UCLASS()
-class AA29_API ATeamInfo : public AReplicationInfo
+class ATeamInfo : public AReplicationInfo
 {
 	GENERATED_BODY()
 public:
@@ -50,54 +50,50 @@ public:
 	UPROPERTY()										bool bTournamentTeamReady;						//var bool bTournamentTeamReady;
 	UPROPERTY()										bool bTournamentRequestDeadRound;				//var bool bTournamentRequestDeadRound;
 
-
-
-	void CheckIf_NoEnemy();
-	void CheckIf_SmallGame();
-	void CheckIf_ShortGame();
+	bool CheckIf_NoEnemy();
+	bool CheckIf_SmallGame();
+	bool CheckIf_ShortGame();
 	void FindValidFireTeams();
 	void TestMedics();
 	void SubmitPlayerRequest(AAA2_PlayerState*  PRI, int32 UnitID, int32 Index);
 	void RemovePlayerRequest(AAA2_PlayerState*  PRI);
-	void GetWinBonus(bool bSurvived);
+	int32 GetWinBonus(bool bSurvived);
 	ATeamInfo* GetOtherTeam();
 	virtual int32 NumAlive(bool bFT, uint8 FT);
 	void ScoreRound(bool bWon);
-	void CountActivePlayers();
+	int32 CountActivePlayers();
 	void LogTeamStructure();
-	virtual AAA2_PlayerState* GetSquadLeader(AAA2_PlayerState*  PRI);
-	virtual AAA2_PlayerState* GetFTLeader(AAA2_PlayerState*  PRI);
-	void GetAnyTeamMember();
-	void GetFTLeaderFromList(int32 Index);
-	void GetFromList(int32 Index);
+	AAA2_PlayerState* GetSquadLeader(AAA2_PlayerState*  PRI);
+	AAA2_PlayerState* GetFTLeader(AAA2_PlayerState*  PRI);
+	AAA2_PlayerState* GetAnyTeamMember();
+	AAA2_PlayerState* GetFTLeaderFromList(int32 Index);
+	AAA2_PlayerState* GetFromList(int32 Index);
 	void CountDesiredPlayerStarts();
-	void GetAvailableClass();
-	void removeSubordinate(AAA2_PlayerState*  Remove);
-	void replaceSubordinate(AAA2_PlayerState*  old_sub, AAA2_PlayerState*  new_sub);
+	AActor* GetAvailableClass();
+	bool removeSubordinate(AAA2_PlayerState*  Remove);
+	bool replaceSubordinate(AAA2_PlayerState*  old_sub, AAA2_PlayerState*  new_sub);
 	void printTeam();
 	void TeamReset();
-	void GetNumLeadersAvailable();
-	void GetNumLeadersDesired();
-	void GetNumMedicsAvailable();
-	void GetNumMedicsDesired();
-	void GetNumClasses();
-	void IsClassAvailable(int32 Index);
-	void UseAltClass(int32 Index);
-	void IsSquadLeader(int32 Index);
-	void IsFTLeader(int32 Index);
-	void GetClassDisplayName(int32 Index);
-	void GetClass(int32 Index);
-	void GetPlayerUnitID(AAA2_PlayerState*  PRI);
-	void GetPlayerIndex(AAA2_PlayerState*  PRI);
+	int32 GetNumLeadersAvailable();
+	int32 GetNumLeadersDesired();
+	int32 GetNumMedicsAvailable();
+	int32 GetNumMedicsDesired();
+	int32 GetNumClasses();
+	bool IsClassAvailable(int32 Index);
+	int32 UseAltClass(int32 Index);
+	bool IsSquadLeader(int32 Index);
+	bool IsFTLeader(int32 Index);
+	FString GetClassDisplayName(int32 Index);
+	UObject* GetClass(int32 Index);
+	int32 GetPlayerUnitID(AAA2_PlayerState*  PRI);
+	int32 GetPlayerIndex(AAA2_PlayerState*  PRI);
 	void SubmitSwapRequest();
 	void SubmitPauseRequest();
 	void SubmitResumeRequest();
 	bool BelongsOnTeam(APawn* PawnClass);
-	//void GetHumanReadableName();
-	void AddToTeam(AController* Other);
+	FString GetHumanReadableName() const;
+	bool AddToTeam(AController* Other);
 	void RemoveFromTeam(AController* Other);
 	void SetCharacters(TArray<FString> Chars);
 	void GetAllCharacters(TArray<FString> Chars);
-
-	
 };

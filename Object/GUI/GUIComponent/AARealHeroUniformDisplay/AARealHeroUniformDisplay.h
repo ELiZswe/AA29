@@ -9,22 +9,19 @@
 class UAARealHeroStats;
 
 UCLASS()
-class AA29_API UAARealHeroUniformDisplay : public UGUIComponent
+class UAARealHeroUniformDisplay : public UGUIComponent
 {
 	GENERATED_BODY()
 public:
 	UAARealHeroUniformDisplay();
 
-
-	UPROPERTY()														int32 HighlightedBadge;								//var int HighlightedBadge;
-	UPROPERTY()														UMaterialInstance* UniformImage;					//var Material UniformImage;
-	UPROPERTY()														TArray<FString> Uniforms;							//var array<String> Uniforms;
-	UPROPERTY()														int32 UniformIndex;									//var int UniformIndex;
-	UPROPERTY()														UAARealHeroStats* MyRealHeroStatsClass;				//var class<AARealHeroStats> MyRealHeroStatsClass;
-
+	UPROPERTY()				int32					HighlightedBadge;			//var int HighlightedBadge;
+	UPROPERTY()				UMaterialInstance*		UniformImage;				//var Material UniformImage;
+	UPROPERTY()				TArray<FString>			Uniforms;					//var array<String> Uniforms;
+	UPROPERTY()				int32					UniformIndex;				//var int UniformIndex;
+	UPROPERTY()				UAARealHeroStats*		MyRealHeroStatsClass;		//var class<AARealHeroStats> MyRealHeroStatsClass;
 
 	void dOnDescribeBadge(FString BadgeToDescribe, bool bForceLoad);
 	void SwitchUniforms(int32 Index);
-	void InternalOnClick(UGUIComponent* Sender);
-
+	bool InternalOnClick(UGUIComponent* Sender);
 };

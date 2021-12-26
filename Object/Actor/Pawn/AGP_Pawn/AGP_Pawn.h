@@ -4,33 +4,44 @@
 
 #include "CoreMinimal.h"
 #include "AA29/MyEnums.h"
-#include "AA29/Object/Actor/AAGameplay/DebugSphere/DebugSphere.h"
-#include "AA29/Object/Actor/AI_Primitive/SoldierClass/SoldierClass.h"
-#include "AA29/Object/Actor/AI_Primitive/SoldierRole/SoldierRole.h"
-#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/AGP_Weapon.h"
-#include "AA29/Object/Actor/Inventory/Weapon/AGP_Weapon/ThrowWeapon/ThrowWeapon.h"
-#include "AA29/Object/Actor/InventoryAttachment/BaseOptics/BaseOptics.h"
-#include "AA29/Object/Actor/Inventory/Powerups/Powerups.h"
-#include "AA29/Object/Team_Interface/Team_Interface.h"
-#include "AA29/Object/Actor/Inventory/InvContainer/InvContainer.h"
-#include "AA29/Object/Actor/SideEffect/SideEffect.h"
-//#include "GameFramework/Pawn.h"
-#include "GameFramework/Character.h"
-//#include "Camera/CameraComponent.h"
-#include "Components/InputComponent.h"
 #include "AA29/AA2_PlayerState.h"
-
-#include "AA29/Object/Actor/Projectile/Projectile.h"
+#include "GameFramework/Character.h"
+#include "Components/InputComponent.h"
+#include "AA29/Object/Actor/AI_Primitive/SoldierClass/SoldierClass.h"
+//#include "Camera/CameraComponent.h"
+//#include "GameFramework/Pawn.h"
 #include "AGP_Pawn.generated.h"
-
 
 #define printvector(variable)               if (GEngine) GEngine->AddOnScreenDebugMessage(-1, 1.5f, FColor::Green, FString::Printf(TEXT(#variable ": %s"), *variable.ToCompactString()), false)
 
+class UTeam_Interface;
+class ADebugIcon_Interrupt;
+class ADebugIcon_Action;
+class ADebugIcon_MentalState;
+class ADebugSphere;
+class ASoldierClass;
+class ASoldierRole;
+class AAGP_Weapon;
+class AThrowWeapon;
+class ABaseOptics;
+class APowerups;
+class AInvContainer;
+class ASideEffect;
+class ATeam_Interface;
+class AProjectile;
 class AItemAttachment;
 class AVolume;
 class AEventlab;
 class UScriptObject;
 class AAuxCollisionCylinder;
+class AAI_Stats;
+class AAnimationController;
+class AMentalModel;
+class ALadderVolume;
+class AInfoSource;
+class AInventoryAttachment;
+class AWeapon;
+class AAGP_ObjectiveInventory;
 
 UCLASS()
 class AA29_API AAGP_Pawn : public ACharacter
@@ -58,9 +69,9 @@ public:
 	UPROPERTY()																int32 nSubordinates;								//var int nSubordinates;						// How many subordinates
 
 //AI Stuff dnback
-	//UPROPERTY()															AAI_Stats* Stats;									//var AI_Stats Stats;
-	//UPROPERTY()															AInfoSource* perception;							//var InfoSource perception;
-	//UPROPERTY()															AMentalModel* _mentalModel;							//var MentalModel _mentalModel;
+	UPROPERTY()																AAI_Stats* Stats;									//var AI_Stats Stats;
+	UPROPERTY()																AInfoSource* perception;							//var InfoSource perception;
+	UPROPERTY()																AMentalModel* _mentalModel;							//var MentalModel _mentalModel;
 	UPROPERTY()																ABaseOptics* _OpticsDevice;							//var BaseOptics _OpticsDevice;
 
 // Volume monitor values: martin
@@ -74,7 +85,7 @@ public:
 	UPROPERTY()																UScriptObject* _TriggerMonitor2;					//var ScriptObject _TriggerMonitor2;			// the script object currently monitoring any AGP_Trigger changes
 	UPROPERTY()																UScriptObject* _TriggerMonitor3;					//var ScriptObject _TriggerMonitor3;			// the script object currently monitoring any AGP_Trigger changes
 	UPROPERTY()																UScriptObject* _TriggerMonitor4;					//var ScriptObject _TriggerMonitor4;			// the script object currently monitoring any AGP_Trigger changes
-	//UPROPERTY()															AAnimationController* _AnimationMonitor;			//var AnimationController _AnimationMonitor;	// Animation controller pointer for NPC pawns
+	UPROPERTY()																AAnimationController* _AnimationMonitor;			//var AnimationController _AnimationMonitor;	// Animation controller pointer for NPC pawns
 	UPROPERTY()																bool FirstTime;										//var bool FirstTime;
 	UPROPERTY()																bool tween;											//var bool tween;
 
@@ -168,9 +179,9 @@ public:
 	UPROPERTY()																float fpTimeSinceLastCEMUpdate;						//var float fpTimeSinceLastCEMUpdate;
 	UPROPERTY()																ADebugSphere* VisionDistActor;						//var DebugSphere VisionDistActor;
 	UPROPERTY()																ADebugSphere* AudioDistActor;						//var DebugSphere AudioDistActor;
-	//UPROPERTY()																ADebugIcon_MentalState* MyDebug_MentalStateIcon;	//var DebugIcon_MentalState MyDebug_MentalStateIcon;
-	//UPROPERTY()																ADebugIcon_Action* MyDebug_ActionIcon;				//var DebugIcon_Action MyDebug_ActionIcon;
-	//UPROPERTY()																ADebugIcon_Interrupt* MyDebug_InterruptIcon;		//var DebugIcon_Interrupt MyDebug_InterruptIcon;
+	UPROPERTY()																ADebugIcon_MentalState* MyDebug_MentalStateIcon;	//var DebugIcon_MentalState MyDebug_MentalStateIcon;
+	UPROPERTY()																ADebugIcon_Action* MyDebug_ActionIcon;				//var DebugIcon_Action MyDebug_ActionIcon;
+	UPROPERTY()																ADebugIcon_Interrupt* MyDebug_InterruptIcon;		//var DebugIcon_Interrupt MyDebug_InterruptIcon;
 
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)								FName AnimSequence;									//var() name AnimSequence;						// Animation sequence name
@@ -388,8 +399,6 @@ public:
 	UPROPERTY()													uint8 _InvSelfHealMedPacks;					//var byte _InvSelfHealMedPacks;
 	UPROPERTY()													uint8 _InvMedPacks;							//var byte _InvMedPacks;
 
-
-
 //From Pawn
 	UPROPERTY()													AWeapon* PendingWeapon;						//var Weapon PendingWeapon;
 	UPROPERTY()													AAuxCollisionCylinder* BoneAuxCyl;			//var AuxCollisionCylinder BoneAuxCyl;
@@ -475,7 +484,6 @@ public:
 
 	bool bClientFriend;
 
-
 	//Not replicated
 	USkeletalMeshComponent* Mesh_1P;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Animation)		TArray<UAnimBlueprintGeneratedClass*> Anim_BP;
@@ -501,7 +509,7 @@ public:
 
 
 	//These is the new ones:
-	virtual void Clone();
+	AAGP_Pawn* Clone();
 	virtual void AnimateGrenadeMoving();
 	virtual void RemoveParachuteSkins();
 	virtual void MatchStarting();
@@ -517,39 +525,41 @@ public:
 	virtual void AlertAIOfPlayerNoiseTimer();
 	virtual void PostBeginNetPlay();
 	virtual bool AllowAnimFiring();
-	virtual void SpawnContainer(FString class_name);
-	virtual void AddContainer(AInvContainer* Add);
+	AInvContainer* SpawnContainer(FString class_name);
+	void AddContainer(AInvContainer* Add);
 	
 	virtual void SpawnTeamClass(AActor* actor_class);
 	virtual void SpawnTeamRole(AActor* actor_class);
-	virtual void getMentalModel();
-	virtual void createMentalModel();
-	virtual void resetMentalModel();
-	//virtual void  setMentalModel(MentalModel set_mm);
-	virtual void ownsMentalModel();
-	virtual void GetInterpolatedRotation();
+	AMentalModel* getMentalModel();
+	AMentalModel* createMentalModel();
+	AMentalModel* resetMentalModel();
+	virtual void setMentalModel(AMentalModel* set_mm);
+	bool ownsMentalModel();
+	FRotator GetInterpolatedRotation();
 	virtual void LockMovement(bool bLock);
 	virtual void LimitRotation(bool bLimit);
 	virtual void SetMovementPhysics();
 	virtual void SetWalking(bool bNewIsWalking);
 	virtual void UpdateGroundspeeds();
-	//virtual void  EndClimbLadder(ALadderVolume* OldLadder);
-	//virtual void ClimbLadder(ALadderVolume* L);
-	virtual void CanGrabLadder();
-	virtual void GetSprintModifier(float DeltaYaw, float DeltaTime, bool bJumped);
-	virtual void GetSpeedModifier();
+	virtual void EndClimbLadder(ALadderVolume* OldLadder);
+	void ClimbLadder(ALadderVolume* L);
+	bool CanGrabLadder();
+	float GetSprintModifier(float DeltaYaw, float DeltaTime, bool bJumped);
+	float GetSpeedModifier();
 	virtual float GetSpeedModifier_Always();
 	virtual void StartMantle(int32 EndPosture, FVector MantleLoc, FRotator BaseRot);
 	virtual void EndMantle(int32 EndPosture);
-	//virtual void GetViewRotation();
-	virtual bool UseAnimatedEyeRotation();
-	virtual FVector EyePosition();
-	virtual void EyeRotation();
+
+	FRotator GetViewRotation() const;
+	bool UseAnimatedEyeRotation();
+	FVector EyePosition();
+	FRotator EyeRotation();
+
 	virtual void CheckBob(float DeltaTime, FVector Y);
 	virtual void AngleEditorCalculate();
 	virtual void PlayBoneAnim(FName BoneName);
 	virtual void UpdateBoneAnim();
-	virtual void ShouldDrawCrosshair();
+	bool ShouldDrawCrosshair();
 	//void StopDriving(Vehicle V);
 	virtual void AnimEnd(int32 Channel);
 	virtual void PredictUpperBodyAnim();
@@ -564,9 +574,9 @@ public:
 	virtual bool CanLeanInAnimationState();
 	virtual bool CanHandSignal();
 	virtual bool CanCommo();
-	virtual void CanJump();
-	virtual void CanSprint();
-	virtual void DoJump(bool bUpdating);
+	bool CanJump();
+	bool CanSprint();
+	bool DoJump(bool bUpdating);
 	virtual bool CanChangePosture(bool bForce, bool bForceUnzoom);
 	virtual bool CanCombatRoll(bool bActual);
 	virtual void ShouldStand(bool bForce);
@@ -582,13 +592,13 @@ public:
 	virtual void SetZoomed(bool bNewZoomed);
 	virtual void NPCSetWeaponZoom(bool bZoomWeapon);
 	virtual float GetZoomMultiplier();
-	virtual void SetSupported(bool newSupported, bool bForce);
+	bool SetSupported(bool newSupported, bool bForce);
 	virtual bool SupportablePosition();
 	virtual bool OverRotated(FRotator Desired, FRotator Actual);
 	virtual void UpdateParachute(int32 Type);
 	virtual void FlareParachute();
 	virtual bool HasParachute();
-	virtual void CheckParachuteLandingFall();
+	int32 CheckParachuteLandingFall();
 	virtual void ParachuteLanding(bool bFailed);
 	virtual void PlayPLF();
 	virtual void ChangeAnimation();
@@ -599,7 +609,7 @@ public:
 	virtual FName HandSignalGet();
 	virtual void PlayHandSignalIndex();
 	virtual void PlayHandSignal(FName Anim);
-	virtual void GetWeaponAttachment();
+	ABaseWeaponAttachment* GetWeaponAttachment();
 	virtual void PlayLanding();
 	virtual void PlayFiring(float Rate, FName FiringMode);
 	virtual void ClientPlayBulletWhip(FVector HitLocation, bool bCrack, AActor* aShooter);
@@ -607,10 +617,10 @@ public:
 	virtual bool CanMantle(float Height);
 	virtual bool PressingAction();
 	virtual void AddDefaultInventory();
-	virtual void CreateInventoryFromName(FString InventoryClassName, bool bIndigenous);
-	virtual void CreateInventory(AInventory* InventoryClass, bool bRealInventory, bool bIndigenous);
-	virtual void IsValidInventory(AInventory* InventoryClass, AInventory* out_AltClass);
-	virtual void CalcDrawOffset(AInventory* Inv);
+	AInventory* CreateInventoryFromName(FString InventoryClassName, bool bIndigenous);
+	AInventory* CreateInventory(AInventory* InventoryClass, bool bRealInventory, bool bIndigenous);
+	bool IsValidInventory(AInventory* InventoryClass, AInventory* out_AltClass);
+	FVector CalcDrawOffset(AInventory* Inv);
 	virtual void Reload3p(EUpperBodyAnim Anim);
 	virtual void GuardWeapon3p(EUpperBodyAnim Anim);
 	virtual void Roll3p(EFullBodyAnim Anim);
@@ -627,14 +637,14 @@ public:
 	virtual void ClientDoReload(int32 iAmmoAmount);
 	virtual void ServerReload();
 	virtual void ClientReload();
-	virtual void ReloadWithThisClip(AAmmunition* newclip);
+	AAmmunition* ReloadWithThisClip(AAmmunition* newclip);
 	virtual void DropSpecificItem(AInventory* Item);
 	virtual void DropSpecificItemBehind(AInventory* Item);
 	virtual void EmptyInventory(bool bDropObjectives);
-	//void EmptyContainer(AInvContainer* container, bool bDropObjectives);
+	void EmptyContainer(AInvContainer* container, bool bDropObjectives);
 	virtual void NextItem();
-	virtual void FindInventoryType(AInventory*  DesiredClass);
-	virtual void CountInventoryType(AInventory*  DesiredClass);
+	AInventory* FindInventoryType(AInventory*  DesiredClass);
+	int32 CountInventoryType(AInventory*  DesiredClass);
 	virtual bool AddInventory(TSubclassOf<AInventory> NewItem);
 	virtual void DeleteInventory(AInventory* Item);
 	virtual void ChangedWeapon();
@@ -656,9 +666,8 @@ public:
 	virtual void SwapAltShoulder();
 	virtual void DropAndSwap();
 	virtual void getItemToPutInHands();
-	virtual void GetSwapContainer();
-	virtual void FinishSwapHands();
-
+	AInvContainer* GetSwapContainer();
+	bool FinishSwapHands();
 	virtual bool CanPutInHands(TSubclassOf<AInventory> Item);
 	virtual bool CanPutAway(TSubclassOf<AInventory> Item);
 	virtual void ItemPutInHands(TSubclassOf<AInventory> Item);
@@ -680,8 +689,8 @@ public:
 	virtual void ChangeInventoryWeight(float Weight);
 	virtual void SetInventoryWeight(float Weight);
 	virtual float GetInventoryWeight();
-	virtual void CanUseAmmo(AInventory* weap, AInventory* Ammo);
-	virtual void CanPickupItem(AInventory* Item, bool bVirtual);
+	bool CanUseAmmo(AInventory* weap, AInventory* Ammo);
+	bool CanPickupItem(AInventory* Item, bool bVirtual);
 	virtual bool AreHandsEmpty();
 	virtual void NotifyOpticsStatusChangingTo(bool bActive);
 	virtual void NotifyBinocularsStatusChangingTo(bool bZoom);
@@ -694,14 +703,14 @@ public:
 	virtual void FixJam();
 	virtual void ClientTossWeapon(FVector TossVel);
 	virtual void TossWeapon(FVector TossVel);
-	virtual void GetPickupSpawnLocation(APickup* PickupClass);
-	virtual void HaveUnlimitedAmmo();
-	virtual void WeaponEffectivenessBonus();
-	virtual void BreatheCycle(float DeltaTime);
+	FVector GetPickupSpawnLocation(APickup* PickupClass);
+	bool HaveUnlimitedAmmo();
+	float WeaponEffectivenessBonus();
+	FRotator BreatheCycle(float DeltaTime);
 	virtual EHealthCondition GetHealthCondition();
 	virtual EWoundSeverity GetWoundSeverity();
 	virtual FString GetHealthString();
-	//virtual void Landed(FVector HitNormal);
+	void Landed(const FHitResult& Hit);
 	virtual void HitWall(FVector HitNormal, AActor* Wall);
 	virtual void ClientSpawnSideEffect(ASideEffect* SideEffectClass, int32 Damage);
 	virtual void ServerSpawnSideEffect(ASideEffect*  SideEffectClass, int32 Damage);
@@ -723,26 +732,26 @@ public:
 	virtual bool FlashBleeding();
 	virtual void BleedTick(float DeltaTime);
 	virtual void CheckInventoryOverload();
-	virtual void ReTryHeal();
+	bool ReTryHeal();
 	virtual void DoBleed(int32 drain);
 	virtual float GetBleedTime();
 	virtual bool CanHealMe(APawn* H);
-	virtual void IsCarrying();
-	virtual void IsPickingUp();
+	bool IsCarrying();
+	bool IsPickingUp();
 	virtual bool MustBeCarried();
 	virtual bool CanCarryMe(APawn* C);
-	virtual void UsedBy(APawn* User);
+	bool UsedBy(APawn* User);
 	virtual void MedicHealSelf();
 	virtual void HealLock(bool bLock, bool bSuppressWeaponMove);
 	virtual void HealingInterrupted();
 	virtual void HealingCanceled();
 	virtual void StopBleeding();
-	virtual void GetHealScore();
+	int32 GetHealScore();
 	virtual void SendHealingPercentage();
 	virtual void SendHealingComplete();
-	virtual void GetFirstObjectiveInventory();
-	virtual void CanGiveMeObjective(APawn* p);
-	virtual void IsGivingObjective();
+	AAGP_ObjectiveInventory* GetFirstObjectiveInventory();
+	bool CanGiveMeObjective(APawn* p);
+	bool IsGivingObjective();
 	virtual void ObjectiveGiveTick(float DeltaTime);
 	virtual void GiveObjective();
 	virtual void ObjectiveGiveCanceled();
@@ -753,25 +762,25 @@ public:
 	virtual void PickupInterrupted();
 	virtual void PickupCanceled();
 	virtual void FinishedPickup();
-	virtual void GetFallingDamage(float fallspeed);
+	int32 GetFallingDamage(float fallspeed);
 	virtual void SaveFallSpeed(float fallspeed);
 	virtual void TakeFallingDamage();
 	virtual int32 AbsorbDamage(int32 Damage, UaDamageType* DamageType, FVector HitLocation);
 	virtual void AddVelocity(FVector NewVelocity);
 	virtual void PlayHit(float Damage, APawn* instigatedBy, FVector HitLocation, UaDamageType*  DamageType, FVector Momentum);
 	virtual void PlayTakeHit(FVector HitLoc, int32 Damage, UaDamageType* DamageType);
-	virtual void IsEnemy(APawn* Other);
-	virtual bool IsFriend(APawn* Other);
+	bool IsEnemy(APawn* Other);
+	bool IsFriend(APawn* Other);
 	virtual void ReportCivilianEvent(APawn* Other, float OthersDistance_sq, AController* hcInstigator);
-	virtual void IsReportableCivi(APawn* Other);
-	virtual void CivilianReportDistance(APawn* Other);
-	virtual void CivilianReportEvent(APawn* Other);
-	//virtual void SetDeathMonitor(ScriptObject mon);
+	bool IsReportableCivi(APawn* Other);
+	int32 CivilianReportDistance(APawn* Other);
+	FName CivilianReportEvent(APawn* Other);
+	virtual void SetDeathMonitor(UScriptObject* mon);
 	virtual void DropUtilityInventory();
 	virtual void DropWeaponsAfterDeath();
 	virtual void ClientStopSideEffects();
-	//virtual void Died(AController* Killer, UaDamageType* DamageType, FVector HitLocation, FVector HitDir, Actor.BoneInfo Bone);
-	//virtual void PlayDying(UaDamageType* DamageType, FVector HitLoc, FVector HitDir, Actor.BoneInfo Bone);
+	void Died(AController* Killer, UaDamageType* DamageType, FVector HitLocation, FVector HitDir, FBoneInfo Bone);
+	void PlayDying(UaDamageType DamageType, FVector HitLoc, FVector HitDir, FBoneInfo Bone);
 	virtual void CloseEyes();
 	virtual void CloseHands();
 	virtual void PlayDyingAnimation(UaDamageType* DamageType, FVector HitLoc);
@@ -809,31 +818,30 @@ public:
 	virtual AActor* GetCurrentTrigger();
 	virtual void EnterTrigger(AActor* trig);
 	virtual void ExitTrigger(AActor* trig);
-	//virtual void SetAnimationMonitor(AnimationController AM);
-	//virtual void SetAmmoMonitor(ScriptObject monitor, bool weaponly);
-	//virtual void SetJammedMonitor(ScriptObject monitor);
+	virtual void SetAnimationMonitor(AAnimationController* AM);
+	virtual void SetAmmoMonitor(UScriptObject* monitor, bool weaponly);
+	virtual void SetJammedMonitor(UScriptObject* monitor);
 	virtual void InduceJam();
-	virtual void IsOutOfAmmo(bool weaponly);
-	virtual void getBestAmmoFromWeapon(AWeapon* weap, AAmmunition* AmmoName);
+	bool IsOutOfAmmo(bool weaponly);
+	int32 getBestAmmoFromWeapon(AWeapon* weap, AAmmunition* AmmoName);
 	virtual void CombatEffectivenessEvent(ECombatEffectEvent Event, float DeltaTime);
 	virtual float GetPostureComponent();
-	virtual void GetWeapEffectivenessComponent();
-	virtual void GetFriendlyMorale(float TMBonusRadius);
-	virtual void GetMoraleComponent();
-	virtual void GetPanicComponent();
-	virtual void GetHealthSubcomponent();
-	virtual void GetBleedingSubcomponent();
-	virtual void GetInjuryFactor();
-	virtual float GetMovementFactor();
-	virtual void GetWeapQualifyFactor();
-	virtual float GetActivityFlag();
+	float GetWeapEffectivenessComponent();
+	float GetFriendlyMorale(float TMBonusRadius);
+	float GetMoraleComponent();
+	float GetPanicComponent();
+	float GetHealthSubcomponent();
+	float GetBleedingSubcomponent();
+	float GetInjuryFactor();
+	float GetMovementFactor();
+	float GetWeapQualifyFactor();
+	float GetActivityFlag();
 	virtual void RecoveryTick(float DeltaTime);
 	virtual void UpdateCombatEffectiveness(float DeltaTime);
 	virtual bool IsSniperClass(APawn* p);
-	virtual void infront(FVector vec, APawn* Who);
+	float infront(FVector vec, APawn* Who);
 	virtual void StealthBlend(float DeltaTime);
-	//virtual void FastTick(float DeltaTime);
-	
+	virtual void FastTick(float DeltaTime);
 	virtual void Cower(int32 Type);
 	virtual void PickIdle(int32 pickOne);
 	virtual int32 MoralCheck(float fNPCMoral);
@@ -853,9 +861,9 @@ public:
 	virtual void DestroyDebugIcons();
 	virtual void AttachDebugIcons();
 	virtual void CreateVisualHearingDebugSpheres(float fpHearingDistance, float fpVisualDistance);
-	virtual void CreateDebugSphere(bool bVisionSphere);
-	//virtual void DisplayDebug(class UCanvas* Canvas, const class FDebugDisplayInfo& DebugDisplay, float& YL, float& YPos)
-	virtual void GetThreatLevel();
+	ADebugSphere* CreateDebugSphere(bool bVisionSphere);
+	void DisplayDebug(UCanvas* Canvas, const class FDebugDisplayInfo& DebugDisplay, float& YL, float& YPos);
+	float GetThreatLevel();
 	virtual void NPCAlertPlayerEvent();
 	virtual void AltFire(float F);
 	virtual bool isKilledByIED();
@@ -868,7 +876,11 @@ public:
 	UFUNCTION(Client, Reliable)					void Client_Set_Weapon(TSubclassOf<ASoldierClass> SC);
 	virtual void PostInitializeComponents() override;
 	virtual bool IsLeaning();
+
+	void Client_Set_Weapon_Implementation(TSubclassOf<ASoldierClass> SC);
 	
+	void GetLifetimeReplicatedProps(TArray< FLifetimeProperty >& OutLifetimeProps) const;
+
 
 protected:
 	// Called when the game starts or when spawned

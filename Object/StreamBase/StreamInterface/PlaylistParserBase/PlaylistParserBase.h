@@ -15,11 +15,11 @@ class AA29_API UPlaylistParserBase : public UStreamInterface
 public:
 	UPlaylistParserBase();
 
-	UPROPERTY()									FHtmlChar SpecialChars;									//var array<HtmlChar> SpecialChars;
-	UPROPERTY()									TArray<FString> Lines;									//var array<String> Lines;
-	UPROPERTY()									TArray<FString> Paths;									//var array<String> Paths;
-	UPROPERTY()									FString PlaylistName;									//var string PlaylistName;
-	UPROPERTY()									EStreamPlaylistType Type;								//var StreamBase.EStreamPlaylistType Type;
+	UPROPERTY()									TArray<FHtmlChar>	SpecialChars;				//var array<HtmlChar> SpecialChars;
+	UPROPERTY()									TArray<FString>		Lines;						//var array<String> Lines;
+	UPROPERTY()									TArray<FString>		Paths;						//var array<String> Paths;
+	UPROPERTY()									FString				PlaylistName;				//var string PlaylistName;
+	UPROPERTY()									EStreamPlaylistType Type;						//var StreamBase.EStreamPlaylistType Type;
 
 
 	EStreamPlaylistType GetType();

@@ -12,7 +12,7 @@
 class APlayerStart;
 
 UCLASS()
-class AA29_API APSProxy : public ASmallNavigationPoint
+class APSProxy : public ASmallNavigationPoint
 {
 	GENERATED_BODY()
 public:
@@ -22,7 +22,8 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Proxy")					FName ProxyTag;				//var(Proxy) name ProxyTag;
 	UPROPERTY()																		APlayerStart* PS;			//var const PlayerStart PS;
 
-
+	void FindPlayerStart();
+	void BeginPlay();
 
 // Sprite Component
 	class UBillboardComponent* SpriteComponent;

@@ -331,7 +331,7 @@ void ANPCAICombatController::EndGame()
 	bStarted = false;
 	Log(string(Self) $ ".EndGame() entered, resetting officer available and available Mortar attacks to " $ string(iMaxMortarAttacks));
 	npcsdCommandos.npcscMembers.remove(0, npcsdCommandos.npcscMembers.Length);
-	npcsdCommandos.npcncoLeader = None;
+	npcsdCommandos.npcncoLeader = nullptr;
 	npcsdCommandos.bSquadDead = false;
 	anpcbcVehicles.remove(0, anpcbcVehicles.Length);
 	afmifActiveRounds.remove(0, afmifActiveRounds.Length);
@@ -343,7 +343,7 @@ void ANPCAICombatController::EndGame()
 		for (iSquad = 0; iSquad < 8; iSquad++)
 		{
 			anpcpPlatoons[iPlatoon].anpcsdSquads[iSquad].npcscMembers.remove(0, anpcpPlatoons[iPlatoon].anpcsdSquads[iSquad].npcscMembers.Length);
-			anpcpPlatoons[iPlatoon].anpcsdSquads[iSquad].npcncoLeader = None;
+			anpcpPlatoons[iPlatoon].anpcsdSquads[iSquad].npcncoLeader = nullptr;
 			anpcpPlatoons[iPlatoon].anpcsdSquads[iSquad].bSquadDead = false;
 			anpcpPlatoons[iPlatoon].anpcsdSquads[iSquad].iAmbushSet = 0;
 		}
@@ -434,13 +434,13 @@ void ANPCAICombatController::PostBeginPlay()
 			Log("WARNING - Speech manager voice " $ string(npcsmgrIterator.iVoiceIndex) $ " defined more than once in " $ string(anpcsmgrSpeechManager[npcsmgrIterator.iVoiceIndex]) $ " and " $ string(npcsmgrIterator));
 		}
 		bSpeechManagerVoicesFound = true;
-		if (npcsmgrDefault == None)
+		if (npcsmgrDefault == nullptr)
 		{
 			npcsmgrDefault = npcsmgrIterator;
 		}
 		anpcsmgrSpeechManager[npcsmgrIterator.iVoiceIndex] = npcsmgrIterator;
 	}
-	if (anpcsmgrSpeechManager[0] == None)
+	if (anpcsmgrSpeechManager[0] == nullptr)
 	{
 		anpcsmgrSpeechManager[0] = npcsmgrDefault;
 	}
@@ -1007,7 +1007,7 @@ void ANPCAICombatController::SpawnLevelReinforcements(int32 iLevel, int32 iCurre
 							{
 								npcbscSpawned.iHeadToLocationCoverOption = 0;
 							}
-							npcbscSpawned.npcpnTravelLocation = None;
+							npcbscSpawned.npcpnTravelLocation = nullptr;
 							npcbscSpawned.HeadToObjective(0, true);
 						}
 					}
@@ -1124,7 +1124,7 @@ void ANPCAICombatController::EnterAnarchyState()
 void ANPCAICombatController::ProcessIdleTimer(ANPCBaseSoldierController* npcsc)
 {
 	/*
-	if (npcsc == None)
+	if (npcsc == nullptr)
 	{
 		return;
 	}
@@ -1277,7 +1277,7 @@ void ANPCAICombatController::AddOrderToQueue(ANPCBaseController* npcbc, int32 iO
 	oqOrdersWaitingDeployment[(oqOrdersWaitingDeployment.Length - 1)].npcbc = npcbc;
 	oqOrdersWaitingDeployment[(oqOrdersWaitingDeployment.Length - 1)].iOrder = iOrderCommand;
 	oqOrdersWaitingDeployment[(oqOrdersWaitingDeployment.Length - 1)].iTacticalOrder = iTacticalOrder;
-	if (npcbc == None)
+	if (npcbc == nullptr)
 	{
 		oqOrdersWaitingDeployment[(oqOrdersWaitingDeployment.Length - 1)].bOrderForAll = true;
 	}
@@ -1424,11 +1424,11 @@ void ANPCAICombatController::ProcessInFlightFireMissions()
 	int32 iRound = 0;
 	FVector vTarget = FVector(0, 0, 0);
 	local BaseProjectile bpMortarRound;
-	if (bpMortarRoundClass == None)
+	if (bpMortarRoundClass == nullptr)
 	{
 		bpMortarRoundClass = class<BaseProjectile>(DynamicLoadObject("AGP_Inventory.Proj_60mmMortar", Class'Class'));
 	}
-	if (bpMortarSmokeRoundClass == None)
+	if (bpMortarSmokeRoundClass == nullptr)
 	{
 		bpMortarSmokeRoundClass = class<BaseProjectile>(DynamicLoadObject("AGP_Inventory.Proj_60mmSmokeMortar", Class'Class'));
 	}
@@ -1531,7 +1531,7 @@ int32 ANPCAICombatController::EvaluatePlatoonSquadMembers(FNPCSquadDetails npcsd
 void ANPCAICombatController::IssueOrder(ANPCBaseController* npcbc, int32 iNewOrder)
 {
 	/*
-	if (npcbc == None)
+	if (npcbc == nullptr)
 	{
 		return;
 	}
@@ -1815,7 +1815,7 @@ bool ANPCAICombatController::ReportContact(ANPCBaseController* npcbcReporter, in
 	float fpRangeInaccuracy = 0;
 	/*
 	local Controller ctrlrIterator;
-	if (((pawnContact == None) || (npcbcReporter == None)) || (npcbcReporter.Pawn == None))
+	if (((pawnContact == nullptr) || (npcbcReporter == nullptr)) || (npcbcReporter.Pawn == nullptr))
 	{
 		return false;
 	}
@@ -2001,7 +2001,7 @@ bool ANPCAICombatController::ReportVehicleContact(ANPCBaseController* npcbcRepor
 	int32 iVehicle = 0;
 	float fpRangeInaccuracy = 0;
 	/*
-	if (((pawnContact == None) || (npcbcReporter == None)) || (npcbcReporter.Pawn == None))
+	if (((pawnContact == nullptr) || (npcbcReporter == nullptr)) || (npcbcReporter.Pawn == nullptr))
 	{
 		return false;
 	}
@@ -2190,7 +2190,7 @@ bool ANPCAICombatController::ReportNeedToEnterAnarchyState(ANPCBaseSoldierContro
 {
 	/*
 	FString sCombatAction = "";
-	if (npcbcReporter == None)
+	if (npcbcReporter == nullptr)
 	{
 		return false;
 	}
@@ -2283,11 +2283,11 @@ float ANPCAICombatController::PlayEventAudio(ANPCBaseSoldierController* npcbscRe
 	/*
 	local Sound sndToPlay;
 	local AActor* actSound;
-	if (npcbscReporter == None)
+	if (npcbscReporter == nullptr)
 	{
 		return 0;
 	}
-	if (npcbscReporter.Pawn == None)
+	if (npcbscReporter.Pawn == nullptr)
 	{
 		return 0;
 	}
@@ -2295,7 +2295,7 @@ float ANPCAICombatController::PlayEventAudio(ANPCBaseSoldierController* npcbscRe
 	{
 		return 0;
 	}
-	if (anpcsmgrSpeechManager[0] == None)
+	if (anpcsmgrSpeechManager[0] == nullptr)
 	{
 		Log(string(Self) $ "WARNING - NPC PlayAudio() request with no audio defined");
 		return 0;
@@ -2323,7 +2323,7 @@ float ANPCAICombatController::PlayEventAudio(ANPCBaseSoldierController* npcbscRe
 	{
 		Log(string(Self) $ "PlayEventAudio() trying to play audio for " $ string(npcbscReporter.Tag) $ " in state " $ string(npcbscReporter.GetStateName()) $ " Type: \"" $ sType $ "\"");
 	}
-	if (anpcsmgrSpeechManager[npcbscReporter.iVoiceIndex] == None)
+	if (anpcsmgrSpeechManager[npcbscReporter.iVoiceIndex] == nullptr)
 	{
 		iVoiceIndex = 0;
 	}
@@ -2430,7 +2430,7 @@ float ANPCAICombatController::PlayEventAudio(ANPCBaseSoldierController* npcbscRe
 		{
 		}
 	}
-	if (sndToPlay == None)
+	if (sndToPlay == nullptr)
 	{
 		return 0;
 	}
@@ -2440,7 +2440,7 @@ float ANPCAICombatController::PlayEventAudio(ANPCBaseSoldierController* npcbscRe
 	}
 	actSound = Spawn(Class'EffectLocation', , , npcbscReporter.Pawn.Location);
 	actSound.LifeSpan = GetSoundDuration(sndToPlay);
-	if (anpcsmgrSpeechManager[npcbscReporter.iVoiceIndex] == None)
+	if (anpcsmgrSpeechManager[npcbscReporter.iVoiceIndex] == nullptr)
 	{
 		if (npcbscReporter.fpVoicePitch != 0)
 		{

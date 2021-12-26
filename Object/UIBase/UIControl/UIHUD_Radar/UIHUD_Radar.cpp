@@ -32,12 +32,12 @@ bool UUIHUD_Radar::ShouldDrawRadar()
 	{
 		return false;
 	}
-	if (Pawn(cFrame.cActor) == None)
+	if (Pawn(cFrame.cActor) == nullptr)
 	{
 		return false;
 	}
 	wpn = Pawn(cFrame.cActor).Weapon;
-	if (wpn == None)
+	if (wpn == nullptr)
 	{
 		return true;
 	}

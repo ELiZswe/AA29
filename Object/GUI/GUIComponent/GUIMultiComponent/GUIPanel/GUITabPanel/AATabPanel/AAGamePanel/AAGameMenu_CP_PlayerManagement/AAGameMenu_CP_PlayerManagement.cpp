@@ -693,7 +693,7 @@ FString UAAGameMenu_CP_PlayerManagement::GetPlayerWeapon(int32 iPlayerID)
 	local string sWeaponClass;
 	local PlayerReplicationInfo priPlayer;
 	priPlayer = FindPRIFromID(iPlayerID);
-	if (priPlayer == None)
+	if (priPlayer == nullptr)
 	{
 		return "No Weapon";
 	}
@@ -715,7 +715,7 @@ void UAAGameMenu_CP_PlayerManagement::FindPRIFromID(int32 iPlayerID)
 	local GameReplicationInfo GRI;
 	local int32 iPlayerIndex;
 	GRI = PlayerOwner().GameReplicationInfo;
-	if (GRI == None)
+	if (GRI == nullptr)
 	{
 		return None;
 	}

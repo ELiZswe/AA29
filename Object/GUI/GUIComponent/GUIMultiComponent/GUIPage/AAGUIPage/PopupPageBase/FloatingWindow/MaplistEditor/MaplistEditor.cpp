@@ -497,7 +497,7 @@ void UMaplistEditor::CreateNewMaplist(bool bCancelled)
 		}
 		return true;
 	}
-	if (GUIButton(Sender) == None)
+	if (GUIButton(Sender) == nullptr)
 	{
 		return false;
 	}
@@ -810,7 +810,7 @@ int32 UMaplistEditor::FindCacheRecordIndex(FString MapName)
 void UMaplistEditor::Free()
 {
 	/*
-	MapHandler = None;
+	MapHandler = nullptr;
 	Super::Free();
 	*/
 }

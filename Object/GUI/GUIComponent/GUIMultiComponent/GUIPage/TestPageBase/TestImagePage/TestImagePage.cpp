@@ -229,7 +229,7 @@ void UTestImagePage::InternalOnRendered(UCanvas* C)
 	{
 		nu_Width.Value = string(i_Test.ActualWidth());
 		nu_Height.Value = string(i_Test.ActualHeight());
-		__OnRendered__Delegate = None;
+		__OnRendered__Delegate = nullptr;
 	}
 	*/
 }

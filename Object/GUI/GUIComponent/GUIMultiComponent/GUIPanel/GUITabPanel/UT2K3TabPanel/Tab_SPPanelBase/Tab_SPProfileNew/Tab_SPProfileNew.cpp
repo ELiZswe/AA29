@@ -368,7 +368,7 @@ bool UTab_SPProfileNew::CreateClick(UGUIComponent* Sender)
 	GP = PlayerOwner().Level.Game.LoadDataObject(profileclass, "GameProfile", ProfileName);
 	if (GP != None)
 	{
-		GP = None;
+		GP = nullptr;
 		bFileExists = false;
 		Controller.GetProfileList("", profilenames);
 		i = 0;

@@ -71,7 +71,7 @@ bool UAATab_AAScoreboard_DefenseTeam::InternalOnPreDraw(UCanvas* C)
 	{
 		GRI = PlayerOwner().GameReplicationInfo;
 	}
-	if (GRI == None)
+	if (GRI == nullptr)
 	{
 		return false;
 	}

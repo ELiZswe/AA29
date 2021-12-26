@@ -176,8 +176,8 @@ public:
 		void AssignSquadLeader(AController* C);
 		void AssignFTLeader(AController* C, uint8 FT);
 		AAA2_PlayerState* GetAnyTeamMember();
-		virtual AAA2_PlayerState* GetSquadLeader(AAA2_PlayerState*  PRI) override;
-		virtual AAA2_PlayerState* GetFTLeader(AAA2_PlayerState*  PRI) override;
+		AAA2_PlayerState* GetSquadLeader(AAA2_PlayerState* PRI);
+		AAA2_PlayerState* GetFTLeader(AAA2_PlayerState*  PRI);
 		AAA2_PlayerState* GetFromList(int32 Index);
 		AAA2_PlayerState* GetFTLeaderFromList(int32 Index);
 		void VerifyTeamStructure();

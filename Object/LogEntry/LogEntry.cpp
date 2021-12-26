@@ -12,7 +12,7 @@ void ULogEntry::Insert(ULogEntry* newLE)
 {
 	/*
 	local LogEntry cur;
-	if (Next == None)
+	if (Next == nullptr)
 	{
 		Next = newLE;
 	}

@@ -7,11 +7,9 @@
 #include "GameFramework/Actor.h"
 #include "InventoryAttachment.generated.h"
 
-
 class AInventory;
 class USkeletalMesh;
 class UMaterialInstance;
-
 
 UCLASS()
 class AA29_API AInventoryAttachment : public AActor
@@ -55,7 +53,7 @@ public:
 	virtual void InitFor(AInventory* i);
 	virtual void BeginPlay();
 	virtual FName GetAttachBoneFor(AInventory* Inv);
-	virtual void GetMesh(bool bFriendly);
+	USkeletalMesh* GetMesh(bool bFriendly);
 	UStaticMesh* GetStaticMesh(bool bFriendly);
 	virtual void NotifyBaseChange();
 	virtual void NotifyFoundClient();

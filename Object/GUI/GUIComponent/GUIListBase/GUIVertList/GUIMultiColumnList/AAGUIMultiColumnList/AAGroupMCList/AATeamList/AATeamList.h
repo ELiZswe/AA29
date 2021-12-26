@@ -11,7 +11,7 @@ class ATeamInfo;
 class AAGP_PlayerStart;
 
 UCLASS()
-class AA29_API UAATeamList : public UAAGroupMCList
+class UAATeamList : public UAAGroupMCList
 {
 	GENERATED_BODY()
 public:
@@ -39,19 +39,19 @@ public:
 	UPROPERTY()						bool bScores;											//var bool bScores;
 
 	void SetTeam(ATeamInfo* TI);
-	void GetGroupIcon(AAA2_PlayerState* PRI);
-	void GetSubClassIcon(AAA2_PlayerState* PRI);
+	UMaterialInstance* GetGroupIcon(AAA2_PlayerState* PRI);
+	UMaterialInstance* GetSubClassIcon(AAA2_PlayerState* PRI);
 	UMaterialInstance* GetRankIcon(AAGP_PlayerStart* PS);
 	UMaterialInstance* GetSFIcon(AAGP_PlayerStart* PS);
-	void GetNativeWeapon(AAGP_PlayerStart* PS);
+	uint8 GetNativeWeapon(AAGP_PlayerStart* PS);
 	UMaterialInstance* GetClassIcon(AAGP_PlayerStart* PS);
 	UMaterialInstance* GetIcon(UMaterialInstance* M, AAGP_PlayerStart* PS);
 	UMaterialInstance* MaybeGray(UMaterialInstance* M);
 	UMaterialInstance* GetGray(UMaterialInstance* M);
-	void GetPlayerStart(AAA2_PlayerState* PlayerItem);
-	void GetPlayerAtIndex(int32 Index);
+	AAGP_PlayerStart* GetPlayerStart(AAA2_PlayerState* PlayerItem);
+	AAA2_PlayerState* GetPlayerAtIndex(int32 Index);
 	FString GetPlayerName(AAA2_PlayerState* PRI);
-	int32 GetPlayerState(AAA2_PlayerState* PRI);
+	uint8 GetPlayerState(AAA2_PlayerState* PRI);
 	bool IsEnabled();
 	bool IsPSEnabled(AAGP_PlayerStart* PS);
 	bool IsQualified(AAGP_PlayerStart* PS, AAA2_PlayerState* PRI);

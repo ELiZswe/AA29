@@ -138,7 +138,7 @@ bool UUT2MultiplayerHostPage::PlayButtonClick(UGUIComponent* Sender)
 void UUT2MultiplayerHostPage::TabChange(UGUIComponent* Sender)
 {
 	/*
-	if (GUITabButton(Sender) == None)
+	if (GUITabButton(Sender) == nullptr)
 	{
 		return;
 	}

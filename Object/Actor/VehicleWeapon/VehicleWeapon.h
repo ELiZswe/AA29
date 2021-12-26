@@ -127,7 +127,7 @@ public:
 	UPROPERTY(EditAnywhere)				FName							YawBone;										//var() name YawBone;
 
 	void LimitPitch(int32 Pitch, FRotator ForwardRotation, int32 WeaponYaw);
-	//void DisplayDebug(Canvas Canvas, out float YL, out float YPos);
+	void DisplayDebug(UCanvas* Canvas, const class FDebugDisplayInfo& DebugDisplay, float& YL, float& YPos);
 	void SetInstantFire(bool bInstant);
 	void SetInstantFireMode(bool bSetInstantFire);
 	void ClientToggleFireMode();

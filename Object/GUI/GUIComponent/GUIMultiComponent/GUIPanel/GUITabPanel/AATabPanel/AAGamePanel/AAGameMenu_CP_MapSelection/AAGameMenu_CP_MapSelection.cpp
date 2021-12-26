@@ -295,7 +295,7 @@ void UAAGameMenu_CP_MapSelection::UpdateTourInfo()
 	local FString S;
 	C = AAGUIController(Controller);
 	gimgTour.Image = Material(DynamicLoadObject(PlayerOwner().Level.GetTourImage(iTourID), Class'Material', True));
-	if (gimgTour.Image == None)
+	if (gimgTour.Image == nullptr)
 	{
 		gimgTour.Image = Material(DynamicLoadObject("T_AAO_UI.Logo.T_UI_LOGO_AA", Class'Material', True));
 	}

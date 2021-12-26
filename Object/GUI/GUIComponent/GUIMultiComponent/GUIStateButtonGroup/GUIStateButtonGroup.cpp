@@ -16,7 +16,7 @@ void UGUIStateButtonGroup::OnSelectionChanged(int32 NewIndex)
 void UGUIStateButtonGroup::AddButton(UGUIStateButton* Button)
 {
 	/*
-	if (Button == None)
+	if (Button == nullptr)
 	{
 		return;
 	}
@@ -39,7 +39,7 @@ void UGUIStateButtonGroup::Clear()
 		{
 			Buttons[i].Free();
 		}
-		Buttons[i] = None;
+		Buttons[i] = nullptr;
 	}
 	if (Buttons.Length > 0)
 	{
@@ -54,7 +54,7 @@ bool UGUIStateButtonGroup::ButtonClick(UGUIComponent* Sender)
 	local GUIStateButton B;
 	int32 i = 0;
 	B = GUIStateButton(Sender);
-	if ((B == None) || (SelectedButton == B))
+	if ((B == nullptr) || (SelectedButton == B))
 	{
 		return true;
 	}
@@ -78,7 +78,7 @@ bool UGUIStateButtonGroup::ButtonClick(UGUIComponent* Sender)
 void UGUIStateButtonGroup::SetSelection(UGUIStateButton* B)
 {
 	/*
-	if ((B == None) && (Buttons.Length > 0))
+	if ((B == nullptr) && (Buttons.Length > 0))
 	{
 		B = Buttons[0];
 	}

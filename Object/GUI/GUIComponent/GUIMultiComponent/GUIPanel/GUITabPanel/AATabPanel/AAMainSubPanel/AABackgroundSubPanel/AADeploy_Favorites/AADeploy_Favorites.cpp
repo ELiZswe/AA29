@@ -165,7 +165,7 @@ void UAADeploy_Favorites::UpdateServerList(TArray<FFilterItem> FilterList)
 	/*
 	local IpDrv.ServerBrowserBase ServerBrowser;
 	ServerBrowser = AGP_HUD(HumanController(PlayerOwner()).myHUD).GetCurrentServerBrowser();
-	if (PlayerOwner() == None)
+	if (PlayerOwner() == nullptr)
 	{
 		return;
 	}

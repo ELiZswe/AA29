@@ -198,7 +198,7 @@ public:
 	void SuspensionThreshold(float DeltaTravel);
 	void RollThreshold(float DeltaRoll);
 	void DisplayVehicleDebug(UCanvas* Canvas, float &YL, float &YPos);
-	//void DisplayDebug(Canvas Canvas, out float YL, out float YPos);
+	void DisplayDebug(UCanvas* Canvas, const class FDebugDisplayInfo& DebugDisplay, float& YL, float& YPos);
 	//void TakeDamage(int32 Damage, Pawn instigatedBy, Object.Vector HitLocation, Object.Vector Momentum, UaDamageType* DamageType, optional Actor.BoneInfo Bone, optional Controller KillerController, optional Actor ResponsibleActor, optional Material HitMaterial);
 	void Timer();
 };

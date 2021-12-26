@@ -23,7 +23,7 @@ class AAccessControl;
 class AGameStats;
 class AVotingHandler;
 class APlayInfo;
-class UGameRules;
+class AGameRules;
 class AaLocalMessage;
 class AVehicle;
 
@@ -111,7 +111,7 @@ public:
 	//UPROPERTY()						ABroadcastHandler* BroadcastHandler;					//var BroadcastHandler BroadcastHandler;
 	//UPROPERTY(EditAnywhere)			ABroadcastHandler* BroadcastClass;						//var() class<BroadcastHandler> BroadcastClass;
 	UPROPERTY(EditAnywhere)				FString BroadcastHandlerClass;							//var() string BroadcastHandlerClass;
-	UPROPERTY()							UGameRules* GameRulesModifiers;							//var GameRules GameRulesModifiers;
+	UPROPERTY()							AGameRules* GameRulesModifiers;							//var GameRules GameRulesModifiers;
 	UPROPERTY()							AAccessControl* AccessControl;							//var AccessControl AccessControl;
 	UPROPERTY(EditAnywhere, globalconfig)	FString AccessControlClass;								//var() globalconfig string AccessControlClass;
 	//UPROPERTY()						AMutator* BaseMutator;									//var Mutator BaseMutator;
@@ -353,7 +353,7 @@ public:
 	
 	void AddMutator(FString mutname, bool bUserAdded);
 
-	void AddGameModifier(UGameRules* NewRule);
+	void AddGameModifier(AGameRules* NewRule);
 	FString GetBeaconText();
 	//void ProcessServerTravel(FString URL, bool bItems);
 	int32 GetIntOption(FString Options, FString ParseString, int32 CurrentValue);

@@ -28,7 +28,7 @@ void UAARealHeroBrief_Stats::InitComponent(UGUIController* MyController, UGUICom
 	MyNMLContent = new (None) class'AGP_Interface.NMLContent';
 	if (MyNMLContent != None)
 	{
-		if (MyNMLContent.Controller == None)
+		if (MyNMLContent.Controller == nullptr)
 		{
 			MyNMLContent.InitComponent(MyController, MyOwner);
 		}

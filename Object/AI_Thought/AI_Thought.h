@@ -9,13 +9,13 @@
 class AAGP_Bot;
 
 UCLASS()
-class AA29_API UAI_Thought : public UObject
+class UAI_Thought : public UObject
 {
 	GENERATED_BODY()
 public:
 	UAI_Thought();
 
-	UPROPERTY()											UAI_Thought* NextThought;									//var AI_Thought NextThought;
+	UPROPERTY()			UAI_Thought*	NextThought;					//var AI_Thought NextThought;
 
-	void Preformed(AAGP_Bot* Bot);
+	bool Preformed(AAGP_Bot* Bot);
 };

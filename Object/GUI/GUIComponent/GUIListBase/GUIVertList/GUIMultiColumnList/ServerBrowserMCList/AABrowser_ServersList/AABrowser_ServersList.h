@@ -9,7 +9,7 @@
 class UCountryFlags;
 
 UCLASS(Config = Game)
-class AA29_API UAABrowser_ServersList : public UServerBrowserMCList
+class UAABrowser_ServersList : public UServerBrowserMCList
 {
 	GENERATED_BODY()
 public:
@@ -55,7 +55,7 @@ public:
 	void InvalidatePings();
 	void AutopingServers();
 	void StopPings();
-	void RemoveServerAt(int32 pos);
+	int32 RemoveServerAt(int32 pos);
 	int32 RemoveCurrentServer();
 	FString GetSortString(int32 i);
 	FString Get(bool bGuarantee);
@@ -71,7 +71,7 @@ public:
 	void SetServerPassword(FString Password);
 	bool IsOnFavoritesList(FGameSpyServerItem ServerItem);
 	void MyOnDrawItem(UCanvas* Canvas, int32 i, float X, float Y, float W, float H, bool bSelected, bool bPending);
-	void TestGroups(FString Groups);
+	bool TestGroups(FString Groups);
 	void SBRePingAllServers();
 	void OnSortChanged();
 };

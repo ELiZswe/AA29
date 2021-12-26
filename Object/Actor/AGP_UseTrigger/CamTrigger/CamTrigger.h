@@ -9,17 +9,23 @@
 class AHumanController;
 
 UCLASS()
-class AA29_API ACamTrigger : public AAGP_UseTrigger
+class ACamTrigger : public AAGP_UseTrigger
 {
 	GENERATED_BODY()
 public:
 	ACamTrigger();
 
-	UPROPERTY(EditAnywhere)											AHumanController* HC;					//var AGP.HumanController HC;
-	UPROPERTY(EditAnywhere)											bool bSwitch;							//var bool bSwitch;
-	UPROPERTY(EditAnywhere)											UMaterialInstance* HUDCamOverlay;		//var() Material HUDCamOverlay;
-	UPROPERTY(EditAnywhere)											FName SwitchState;						//var() name SwitchState;
-	UPROPERTY(EditAnywhere)											bool bUseTriggered;						//var() bool bUseTriggered;
-	UPROPERTY(EditAnywhere)											int32 UseFOV;							//var() int UseFOV;
-	UPROPERTY(EditAnywhere)											FName ViewActorTag;						//var() name ViewActorTag;
+	UPROPERTY(EditAnywhere)								FName				ViewActorTag;		//var() name ViewActorTag;
+	UPROPERTY(EditAnywhere)								int32				UseFOV;				//var() int UseFOV;
+	UPROPERTY(EditAnywhere)								bool				bUseTriggered;		//var() bool bUseTriggered;
+	UPROPERTY(EditAnywhere)								FName				SwitchState;		//var() name SwitchState;
+	UPROPERTY(EditAnywhere)								UMaterialInstance* HUDCamOverlay;		//var() Material HUDCamOverlay;
+	UPROPERTY()											bool				bSwitch;			//var bool bSwitch;
+	UPROPERTY()											AHumanController* HC;					//var AGP.HumanController HC;
+
+	void SetActive(bool Active);
+	bool IsActive();
+	void Trigger(AActor* Other, APawn* EventInstigator);
+	bool UsedBy(APawn* User);
+	bool IsError();
 };

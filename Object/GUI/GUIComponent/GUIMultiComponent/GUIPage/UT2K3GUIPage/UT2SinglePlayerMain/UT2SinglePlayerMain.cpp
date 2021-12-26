@@ -230,7 +230,7 @@ bool UUT2SinglePlayerMain::ButtonClick(UGUIComponent* Sender)
 void UUT2SinglePlayerMain::TabChange(UGUIComponent* Sender)
 {
 	/*
-	if (GUITabButton(Sender) == None)
+	if (GUITabButton(Sender) == nullptr)
 	{
 		return;
 	}
@@ -276,7 +276,7 @@ void UUT2SinglePlayerMain::ProfileUpdated()
 		return;
 	}
 	GP = PlayerOwner().Level.Game.CurrentGameProfile;
-	if (GP == None)
+	if (GP == nullptr)
 	{
 		bRosterOn = false;
 	}
@@ -286,7 +286,7 @@ void UUT2SinglePlayerMain::ProfileUpdated()
 	}
 	if (bRosterOn)
 	{
-		if (TP_Roster == None)
+		if (TP_Roster == nullptr)
 		{
 			TP_Roster = Tab_SPPanelBase(TabC.AddTab(TabNameRoster, "xinterface.Tab_SPRoster", , ""));
 			TP_Roster.MyButton.Hint = TabHintRoster;
@@ -297,7 +297,7 @@ void UUT2SinglePlayerMain::ProfileUpdated()
 		if (TP_Roster != None)
 		{
 			TabC.RemoveTab(TabNameRoster);
-			TP_Roster = None;
+			TP_Roster = nullptr;
 		}
 	}
 	*/

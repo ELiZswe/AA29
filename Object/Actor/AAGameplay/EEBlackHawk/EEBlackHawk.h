@@ -49,7 +49,7 @@ public:
 	//Mine
 	UPROPERTY()								UPoseableMeshComponent* PMC;
 
-
+	void PostBeginPlay();
 	void BeginPlay();
 	void ResetAnims();
 	void TurnOnLandingLights();

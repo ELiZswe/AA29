@@ -10,7 +10,7 @@ class UMBSFilters;
 class UGUITreeNode;
 
 UCLASS()
-class AA29_API UAABrowser_FilterPanel : public UAATreeAndExclusiveListPanel
+class UAABrowser_FilterPanel : public UAATreeAndExclusiveListPanel
 {
 	GENERATED_BODY()
 public:
@@ -24,11 +24,11 @@ public:
 	void ClearFilterSet();
 	void ShowFilterSummary();
 	void PutIntoDeploymentMode(FString sDeploymentModeMap);
-	void GetGameSpyFilterString();
-	void GetDBMBSFilterList();
+	FString GetGameSpyFilterString();
+	TArray<FFilterItem> GetDBMBSFilterList();
 	void NumItemsInTree();
 	bool GetItemForTreeAtIndex(UGUITreeNode*& TreeNode, int32 Index);
-	void NumItemsInExclusiveList(int32 TreeIndex);
+	int32 NumItemsInExclusiveList(int32 TreeIndex);
 	bool GetItemForExclusiveList(FString& Label, int32 TreeIndex, int32 Index);
 	void IsExclusiveListChoice(int32 TreeIndex, int32 ChoiceIndex);
 	void InternalOnExclusiveItemSelection(int32 TreeIndex, int32 ChoiceIndex);

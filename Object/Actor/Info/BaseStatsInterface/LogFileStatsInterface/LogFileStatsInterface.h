@@ -12,48 +12,47 @@ class APlayerReplicationInfo;
 class ATeamInfo;
 
 UCLASS()
-class AA29_API ALogFileStatsInterface : public ABaseStatsInterface
+class ALogFileStatsInterface : public ABaseStatsInterface
 {
 	GENERATED_BODY()
 public:
 	ALogFileStatsInterface();
 
-
-	UPROPERTY(globalconfig)		FString LogFileName;					//var globalconfig string LogFileName;
-	UPROPERTY(config)			TArray<uint8> SuppressStat;				//var config array<byte> SuppressStat;
-	UPROPERTY(config)			float LogFileLifespanMinutes;			//var config float LogFileLifespanMinutes;
-	UPROPERTY()					FString Delimiter;						//var string Delimiter;
-	UPROPERTY()					FString Tab;							//var string Tab;
-	UPROPERTY()					AAA2_GameState* GRI;					//var GameReplicationInfo GRI;
-	UPROPERTY()					AFileLog* TempLog;						//var FileLog TempLog;
-	UPROPERTY()					int32 MinimumLifespan;					//var int MinimumLifespan;
-	UPROPERTY()					float LogFileStartTime;					//var float LogFileStartTime;
-	UPROPERTY()					bool bLogFileOpen;						//var bool bLogFileOpen;
-	UPROPERTY()					AFileLog* LogFile;						//var FileLog LogFile;
+	UPROPERTY(globalconfig)		FString				LogFileName;				//var globalconfig string LogFileName;
+	UPROPERTY(config)			TArray<uint8>		SuppressStat;				//var config array<byte> SuppressStat;
+	UPROPERTY(config)			float				LogFileLifespanMinutes;		//var config float LogFileLifespanMinutes;
+	UPROPERTY()					FString				Delimiter;					//var string Delimiter;
+	UPROPERTY()					FString				Tab;						//var string Tab;
+	UPROPERTY()					AAA2_GameState*		GRI;						//var GameReplicationInfo GRI;
+	UPROPERTY()					AFileLog*			TempLog;					//var FileLog TempLog;
+	UPROPERTY()					int32				MinimumLifespan;			//var int MinimumLifespan;
+	UPROPERTY()					float				LogFileStartTime;			//var float LogFileStartTime;
+	UPROPERTY()					bool				bLogFileOpen;				//var bool bLogFileOpen;
+	UPROPERTY()					AFileLog*			LogFile;					//var FileLog LogFile;
 
 	void PostBeginPlay();
 	void Destroyed();
 	void Init();
 	void Shutdown();
-	void GetLogFilename();
+	FString GetLogFilename();
 	void Logf(FString S);
 	void Flush();
-	void TimeStamp();
-	void Header();
-	void SubHeader();
-	void FullTimeDate();
-	void TimeZone();
-	void MapName();
+	FString TimeStamp();
+	FString Header();
+	FString SubHeader();
+	FString FullTimeDate();
+	FString TimeZone();
+	FString MapName();
 	void NewGame();
 	void GameInfo();
 	void ServerInfo();
 	void EndGame(FString Reason);
 	void NewLogFile(FString Filename);
-	void SuppressEvent(int32 EventKey);
-	void GetActorStamp(AActor* Info);
-	void GetTimeStamp();
-	void StartEventLine(int32 Key, AActor* A);
-	void AddField(FString existing_line, FString Info);
+	bool SuppressEvent(int32 EventKey);
+	FString GetActorStamp(AActor* Info);
+	FString GetTimeStamp();
+	FString StartEventLine(int32 Key, AActor* A);
+	FString AddField(FString existing_line, FString Info);
 	void NotifyRoundEnded();
 	void RecordLogOn(AController* C);
 	void RecordLogOut(AController* C);
@@ -84,6 +83,4 @@ public:
 	void RecordPlayer(AController* C, FString Message);
 	void RecordPlayerLocation(AController* C, FString Message);
 	void RecordSpecial(AActor* A, FString Message);
-
-
 };

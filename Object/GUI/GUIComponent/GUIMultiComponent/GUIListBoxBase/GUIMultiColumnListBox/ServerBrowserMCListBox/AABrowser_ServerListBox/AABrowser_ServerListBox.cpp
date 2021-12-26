@@ -112,7 +112,7 @@ bool UAABrowser_ServerListBox::PreDrawIconsHint(UCanvas* C)
 	local float TotalHeight;
 	local XInterface.GUIStyles S;
 	L = AABrowser_ServersList(List);
-	if (L == None || Controller == None || !MousingOverIcons() || ToolTip == None || ToolTip.Style == None)
+	if (L == nullptr || Controller == nullptr || !MousingOverIcons() || ToolTip == nullptr || ToolTip.Style == nullptr)
 	{
 		return true;
 	}
@@ -180,7 +180,7 @@ bool UAABrowser_ServerListBox::DrawIconsHint(UCanvas* C)
 	local float XL;
 	local float YL;
 	L = AABrowser_ServersList(List);
-	if (L == None || Controller == None || !MousingOverIcons() || ToolTip == None || ToolTip.Style == None)
+	if (L == nullptr || Controller == nullptr || !MousingOverIcons() || ToolTip == nullptr || ToolTip.Style == nullptr)
 	{
 		return true;
 	}
@@ -229,7 +229,7 @@ bool UAABrowser_ServerListBox::MousingOverIcons()
 	local float IconRight;
 	local float IconLeft;
 	local float IconWidth;
-	if (List == None || Controller == None)
+	if (List == nullptr || Controller == nullptr)
 	{
 		return false;
 	}
@@ -246,7 +246,7 @@ bool UAABrowser_ServerListBox::MousingOverPing()
 	local float IconRight;
 	local float IconLeft;
 	local float IconWidth;
-	if (List == None || Controller == None)
+	if (List == nullptr || Controller == nullptr)
 	{
 		return false;
 	}
@@ -460,7 +460,7 @@ void UAABrowser_ServerListBox::InitBaseList(UGUIListBase* LocalList)
 	/*
 	local XInterface.GUIMultiColumnList L;
 	L = GUIMultiColumnList(LocalList);
-	if (L == None || List == LocalList)
+	if (L == nullptr || List == LocalList)
 	{
 		Return;
 	}

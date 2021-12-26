@@ -150,7 +150,7 @@ void UAADeploy_LAN::UpdateServerList()
 	local IpDrv.ServerBrowserBase ServerBrowser;
 	ServersPlayersRulesPanel.Clear();
 	ServerBrowser = AGP_HUD(HumanController(PlayerOwner()).myHUD).GetCurrentServerBrowser(bIsLAN);
-	if (PlayerOwner() == None)
+	if (PlayerOwner() == nullptr)
 	{
 		return;
 	}

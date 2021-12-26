@@ -69,7 +69,7 @@ void UAATraining_Details::InitComponent(UGUIController* MyController, UGUICompon
 	MyNML = new (None) class'AGP_Interface.NMLContent';
 	if (MyNML != None)
 	{
-		if (MyNML.Controller == None)
+		if (MyNML.Controller == nullptr)
 		{
 			MyNML.InitComponent(MyController, MyOwner);
 		}

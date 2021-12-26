@@ -14,14 +14,13 @@ class USkeletalMesh;
 class UMaterialInstance;
 
 UCLASS()
-class AA29_API APickup : public AActor
+class APickup : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
 	// Sets default values for this actor's properties
 	APickup();
-
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)							bool bActiveOnTrigger;									//var() bool bActiveOnTrigger;
 	UPROPERTY()															bool bDestroyOnMoverEncroach;							//var bool bDestroyOnMoverEncroach;
@@ -83,8 +82,6 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-
-
 	void AddToNavigation();
 	void RemoveFromNavigation();
 	//void StaticPrecache(LevelInfo L);
@@ -93,25 +90,25 @@ public:
 	void Trigger(AActor* Other, APawn* EventInstigator);
 	void MatchEnding();
 	void Destroyed();
-	//void GetHumanReadableName();
+	FString GetHumanReadableName() const;
 	bool IsSuperItem();
 	//void UpdateHUD(AHUD* H);
 	void Reset();
 	void RespawnEffect();
-	void Transmogrify(APickup*  NewClass);
+	APickup* Transmogrify(APickup*  NewClass);
 	float DetourWeight(APawn* Other, float PathWeight);
 	float BotDesireability(APawn* Bot);
 	bool UseEnemyClass(AAA2_PlayerState* PRI);
-	void GetInventoryClassFor(APawn* Other);
-	void SpawnCopy(APawn* Other, bool bRealInventory);
-	void ValidTouch(AActor* Other);
-	void CanSpawnCopy(APawn* Other, bool bRealInventory);
+	AInventory* GetInventoryClassFor(APawn* Other);
+	AInventory* SpawnCopy(APawn* Other, bool bRealInventory);
+	bool ValidTouch(AActor* Other);
+	bool CanSpawnCopy(APawn* Other, bool bRealInventory);
 	void SetupCopy(AInventory* Copy, APawn* Other);
 	void PickupTaken();
 	void StartSleeping();
 	void AnnouncePickup(APawn* Receiver);
 	void SetRespawn();
-	//void GetLocalString(int32 Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2);
+	FString GetLocalString(int32 Switch, AAA2_PlayerState* RelatedPRI_1, AAA2_PlayerState* RelatedPRI_2);
 	AInventory* TakeItem(AActor* Other);
 	void InitDroppedPickupFor(AInventory* Inv, bool bFreeze);
 	void MaybeAdjustCollisionSize();
@@ -119,5 +116,4 @@ public:
 	bool ReadyToPickup(float MaxWait);
 	void Landed(FVector HitNormal);
 	float GetRespawnTime();
-
 };

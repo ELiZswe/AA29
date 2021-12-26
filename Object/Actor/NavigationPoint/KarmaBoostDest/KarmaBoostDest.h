@@ -6,7 +6,7 @@
 #include "AA29/Object/Actor/NavigationPoint/NavigationPoint.h"
 #include "KarmaBoostDest.generated.h"
 
-//class AReachSpec;
+//class UReachSpec;
 
 UCLASS()
 class AA29_API AKarmaBoostDest : public ANavigationPoint
@@ -15,6 +15,6 @@ class AA29_API AKarmaBoostDest : public ANavigationPoint
 public:
 	AKarmaBoostDest();
 
-	//int32 SpecialCost(APawn* Other, AReachSpec* Path);
+	//int32 SpecialCost(APawn* Other, UReachSpec* Path);
 	
 };

@@ -87,8 +87,8 @@ void UIngameChat::MyOnClose(bool bCanceled)
 	/*
 	if (MyConsole != None)
 	{
-		MyConsole.ChatMenu = None;
-		MyConsole = None;
+		MyConsole.ChatMenu = nullptr;
+		MyConsole = nullptr;
 	}
 	PlayerOwner().myHUD.ConsoleMessageCount = OldCMC;
 	OnClose(bCanceled);

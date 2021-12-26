@@ -9,13 +9,12 @@
 class AGUIComponent;
 
 UCLASS()
-class AA29_API UAAMultiColumnList : public UGUIMultiColumnList
+class UAAMultiColumnList : public UGUIMultiColumnList
 {
 	GENERATED_BODY()
 public:
 	UAAMultiColumnList();
 
-	void OnGetSortString(AGUIComponent* Sender, int32 Item, int32 Column);
-	void InternalGetSortString(int32 i);
-
+	FString OnGetSortString(AGUIComponent* Sender, int32 Item, int32 Column);
+	FString InternalGetSortString(int32 i);
 };

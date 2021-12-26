@@ -108,7 +108,7 @@ public:
 		UPROPERTY()										FVector					DirectionHint;						//var Vector DirectionHint;
 		UPROPERTY()										APathNode*				pnCurrentlyOccupiedPathNode;		//var PathNode pnCurrentlyOccupiedPathNode;
 		UPROPERTY(EditAnywhere)							AAA2_PlayerState*		PlayerReplicationInfoClass;			//var() class<PlayerReplicationInfo> PlayerReplicationInfoClass;
-		UPROPERTY()										float					PlayerReplicationInfo;				//var PlayerReplicationInfo PlayerReplicationInfo;
+		UPROPERTY()										AAA2_PlayerState*		PlayerReplicationInfo;				//var PlayerReplicationInfo PlayerReplicationInfo;
 		UPROPERTY()										APawn*					PawnClass;							//var class<Pawn> PawnClass;
 		UPROPERTY()										APawn*					PreviousPawnClass;					//var class<Pawn> PreviousPawnClass;
 		UPROPERTY()										AActor*					TeamRoleClass;						//var class<Actor> TeamRoleClass;
@@ -300,7 +300,7 @@ public:
 		//void Possess(APawn* aPawn);
 		//void UnPossess();
 		//bool LineOfSightTo(AActor* Other);
-		//void DisplayDebug(UCanvas* Canvas, float& YL, float& YPos);
+		void DisplayDebug(UCanvas* Canvas, const class FDebugDisplayInfo& DebugDisplay, float& YL, float& YPos);
 		//FString GetHumanReadableName();
 		//void GameHasEnded();
 };

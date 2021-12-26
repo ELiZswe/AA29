@@ -115,7 +115,7 @@ void UAABrowser_UpdateJoinAndPBPanel::DeactivateServerListButtonEyecatcher()
 	if (None != UpdateServerListOriginalStyle)
 	{
 		UpdateServerList.Style = UpdateServerListOriginalStyle;
-		UpdateServerListOriginalStyle = None;
+		UpdateServerListOriginalStyle = nullptr;
 	}
 	*/
 }

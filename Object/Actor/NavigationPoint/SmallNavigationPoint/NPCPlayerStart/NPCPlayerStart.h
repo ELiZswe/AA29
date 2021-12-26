@@ -5,28 +5,27 @@
 #include "CoreMinimal.h"
 #include "AA29/Object/Actor/NavigationPoint/SmallNavigationPoint/SmallNavigationPoint.h"
 #include "AA29/Object/Actor/Pawn/AGP_Pawn/AGP_Pawn.h"
-#include "AA29/Object/Actor/Controller/AIController/NPCBaseController/NPCBaseController.h"
-#include "AA29/Object/Actor/Controller/AIController/NPCBaseController/NPCBaseSoldierController/NPCBaseSoldierController.h"
-#include "AA29/Object/Actor/NavigationPoint/PathNode/NPCPathNode/NPCPathNode.h"
-
 #include "Components/CapsuleComponent.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "Components/BillboardComponent.h"
 #include "NPCPlayerStart.generated.h"
 
-class NPCBaseController;
+class ANPCBaseController;
+class ANPCAICombatController;
+class ANPCPathNode;
+class ANPCConversationPack;
+class AAGP_Weapon;
 
 UCLASS()
-class AA29_API ANPCPlayerStart : public ASmallNavigationPoint
+class ANPCPlayerStart : public ASmallNavigationPoint
 {
 	GENERATED_BODY()
 public:
 	ANPCPlayerStart();
 
-
-	//UPROPERTY()																			ANPCAICombatController* npcaiccCombatController;			//var NPCAICombatController npcaiccCombatController;
-	//UPROPERTY()																			ANPCPathNode* npcpnStartingPathNode;						//var NPCPathNode npcpnStartingPathNode;
-	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCController")				TArray<ANPCConversationPack*> anpccpConversationList;		//var(NPCController) array<NPCConversationPack> anpccpConversationList;
+	UPROPERTY()																				ANPCAICombatController* npcaiccCombatController;			//var NPCAICombatController npcaiccCombatController;
+	UPROPERTY()																				ANPCPathNode* npcpnStartingPathNode;						//var NPCPathNode npcpnStartingPathNode;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCController")					TArray<ANPCConversationPack*> anpccpConversationList;		//var(NPCController) array<NPCConversationPack> anpccpConversationList;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCCombatDecisions")			float fpBOPMajorDisadvantageThreshold;						//var(NPCCombatDecisions) float fpBOPMajorDisadvantageThreshold;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCCombatDecisions")			float fpBOPMinorDisadvantageThreshold;						//var(NPCCombatDecisions) float fpBOPMinorDisadvantageThreshold;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCCombatDecisions")			float fpBOPMinorAdvantageThreshold;							//var(NPCCombatDecisions) float fpBOPMinorAdvantageThreshold;
@@ -175,13 +174,12 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)												bool bDebugInit;											//var() bool bDebugInit;
 	UPROPERTY()																				bool bEnabled;												//var bool bEnabled;
 
-
+	UPROPERTY(VisibleAnywhere)		class USkeletalMeshComponent* SkeletalMesh;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)												FString Group;
 
 	void BeginPlay();
-
 	void DebugNavMarker(bool bShowMarker, bool bFinalGoalMarker);
 	void Reset();
-	
 	void PostBeginPlay();
 	bool ShouldUseStartSpot();
 	void CustomCreation(ANPCBaseController* npbcController, AAGP_Pawn* agpPawn);
@@ -190,15 +188,7 @@ public:
 	void RegisterControllerWithAICC(ANPCBaseSoldierController* npcbc, ANPCPathNode* npcpnStart);
 	void ConfigurePawn(ANPCBaseController* npbcController, AAGP_Pawn* agpPawnNew);
 	AAGP_Pawn* GetPawnSpawnClass();
-	void GetPathNodeCount(ANPCBaseController* npcbc);
-	void GetRequestedPathNode(ANPCBaseController* npcbc, int32 iPathNodeIndex);
+	int32 GetPathNodeCount(ANPCBaseController* npcbc);
+	APathNode* GetRequestedPathNode(ANPCBaseController* npcbc, int32 iPathNodeIndex);
 	void SetInitialPrimaryOrders(int32 iOrderIndex);
-
-
-
-	
-
-
-	UPROPERTY(VisibleAnywhere)		class USkeletalMeshComponent* SkeletalMesh;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)												FString Group;
 };

@@ -85,7 +85,7 @@ void AAALevelLoading::SetImage()
 		}
 	}
 	until(((mat != None) || ((++cnt) >= 10)));
-	if (mat == None)
+	if (mat == nullptr)
 	{
 		Warn("Unable to find any valid images for vignette class" @ string(Name) $ "!");
 	}
@@ -139,11 +139,11 @@ void AAALevelLoading::SetText()
 		return;
 	}
 	HintOp = DrawOpText(Operations[3]);
-	if (HintOp == None)
+	if (HintOp == nullptr)
 	{
 		return;
 	}
-	if (GameClass == None)
+	if (GameClass == nullptr)
 	{
 		Warn("Invalid game class, so cannot draw loading hint!");
 		return;

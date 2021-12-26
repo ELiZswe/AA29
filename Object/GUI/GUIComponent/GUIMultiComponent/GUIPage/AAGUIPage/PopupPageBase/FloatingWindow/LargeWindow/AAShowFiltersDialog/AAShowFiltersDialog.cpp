@@ -71,7 +71,7 @@ void UAAShowFiltersDialog::SetFilterDescriptions(TArray<FKeyValuePair> FilterDes
 	MyNML = new (None) class'AGP_Interface.NMLContent';
 	if (MyNML != None)
 	{
-		if (MyNML.Controller == None)
+		if (MyNML.Controller == nullptr)
 		{
 			MyNML.InitComponent(Controller, MenuOwner);
 		}

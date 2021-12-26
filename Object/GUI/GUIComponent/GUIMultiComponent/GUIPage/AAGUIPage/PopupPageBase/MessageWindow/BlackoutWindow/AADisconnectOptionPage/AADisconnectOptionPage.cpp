@@ -80,7 +80,7 @@ void UAADisconnectOptionPage::SetSizingCaption()
 	for (i = 0; i < Components.Length; i++)
 	{
 		B = GUIButton(Components[i]);
-		if (B == None)
+		if (B == nullptr)
 		{
 		}
 		if ((S == "") || (Len(B.Caption) > Len(S)))
@@ -91,7 +91,7 @@ void UAADisconnectOptionPage::SetSizingCaption()
 	for (i = 0; i < Components.Length; i++)
 	{
 		B = GUIButton(Components[i]);
-		if (B == None)
+		if (B == nullptr)
 		{
 		}
 		B.SizingCaption = S;
@@ -162,7 +162,7 @@ bool UAADisconnectOptionPage::InternalOnClick(UGUIComponent* Sender)
 {
 	/*
 	local XInterface.GUIController C;
-	if (GUIButton(Sender) == None)
+	if (GUIButton(Sender) == nullptr)
 	{
 		return false;
 	}

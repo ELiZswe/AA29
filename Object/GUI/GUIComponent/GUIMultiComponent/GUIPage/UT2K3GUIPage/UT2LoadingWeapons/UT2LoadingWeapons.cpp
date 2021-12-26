@@ -45,7 +45,7 @@ void UUT2LoadingWeapons::Timer()
 	WeaponTab.MyCurWeaponList.List.SetIndex(0);
 	WeaponTab.UpdateCurrentWeapon();
 	WeaponTab.bWeapPrefInitialised = true;
-	WeaponTab = None;
+	WeaponTab = nullptr;
 	Controller.CloseMenu();
 	*/
 }

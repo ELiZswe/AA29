@@ -36,7 +36,7 @@ void UUT2LoadingWeaponsArena::Timer()
 	{
 		Config.WeaponCombo.addItem(Config.WeaponClass[i].Default.ItemName, None, string(Config.WeaponClass[i]));
 	}
-	Config = None;
+	Config = nullptr;
 	Controller.CloseMenu();
 	*/
 }

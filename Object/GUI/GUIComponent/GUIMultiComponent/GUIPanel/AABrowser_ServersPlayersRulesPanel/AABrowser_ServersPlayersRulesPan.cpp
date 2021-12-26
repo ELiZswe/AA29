@@ -54,7 +54,7 @@ void UAABrowser_ServersPlayersRulesPan::Opened(UGUIComponent* Sender)
 {
 	/*
 	Opened(Sender);
-	if (ServerListBox != None && ServerListBox.List == None)
+	if (ServerListBox != None && ServerListBox.List == nullptr)
 	{
 		InitServerList();
 	}

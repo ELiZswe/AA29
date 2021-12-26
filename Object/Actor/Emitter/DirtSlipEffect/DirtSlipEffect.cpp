@@ -105,7 +105,7 @@ void ADirtSlipEffect::UpdateDust(ASVehicleWheel* t, float DustSlipRate, float Du
 		Emitters[0].InitialParticlesPerSecond = 0;
 		Emitters[1].ParticlesPerSecond = 0;
 		Emitters[1].InitialParticlesPerSecond = 0;
-		AmbientSound = None;
+		AmbientSound = nullptr;
 	}
 	*/
 }

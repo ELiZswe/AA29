@@ -78,7 +78,7 @@ void AUdpGamespyQuery::DebugPortSwap(AActor* Ref)
 		Ref.GetReferencers(Queries[i], Referencers);
 		for (j = 0; j < Referencers.Length; j++)
 		{
-			if (Level(Referencers[j]) == None && GameEngine(Referencers[j]) == None)
+			if (Level(Referencers[j]) == nullptr && GameEngine(Referencers[j]) == nullptr)
 			{
 				str = GetFullName(Referencers[j]);
 				Log("");
@@ -104,7 +104,7 @@ FString AUdpGamespyQuery::GetFullName(UObject* obj)
 	/*
 	local array<Object> Outers;
 	local int i;
-	if (obj == None)
+	if (obj == nullptr)
 	{
 		return "";
 	}
@@ -472,7 +472,7 @@ bool AUdpGamespyQuery::SendPlayers(FIpAddr Addr, int32 QueryNum, int32 &PacketNu
 	C = Level.ControllerList;
 	if (i < Level.Game.NumPlayers)
 	{
-		if (C == None)
+		if (C == nullptr)
 		{
 			if (bFinalPacket == 1)
 			{

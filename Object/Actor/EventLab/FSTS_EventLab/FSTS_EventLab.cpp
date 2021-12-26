@@ -85,11 +85,11 @@ void AFSTS_EventLab::LinkDrillSergeants()
 	local AActor* SearchActor;
 	ForEach AllActors(Class'Actor', SearchActor)
 	{
-		if ((DrillSergeant == None) && (DrillSergeantTag == SearchActor.Tag))
+		if ((DrillSergeant == nullptr) && (DrillSergeantTag == SearchActor.Tag))
 		{
 			DrillSergeant = FSTS_NPC_DrillSergeant(SearchActor);
 		}
-		if ((AltDrillSergeant == None) && (AltDrillSergeantTag == SearchActor.Tag))
+		if ((AltDrillSergeant == nullptr) && (AltDrillSergeantTag == SearchActor.Tag))
 		{
 			AltDrillSergeant = FSTS_NPC_DrillSergeant(SearchActor);
 		}

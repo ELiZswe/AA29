@@ -362,7 +362,7 @@ void UAAMissionsSubPanel::CanDeploy()
 {
 	/*
 	local GUI.eMenuState CurrentMenuState;
-	if (b_Deploy == None)
+	if (b_Deploy == nullptr)
 	{
 		return;
 	}

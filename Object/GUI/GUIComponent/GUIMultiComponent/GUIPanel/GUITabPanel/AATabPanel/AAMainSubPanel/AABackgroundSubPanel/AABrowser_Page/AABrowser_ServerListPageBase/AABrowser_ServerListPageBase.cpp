@@ -191,7 +191,7 @@ void UAABrowser_ServerListPageBase::Opened(UGUIComponent* Sender)
 void UAABrowser_ServerListPageBase::ShowPanel(bool bShow)
 {
 	/*
-	if (PlayerOwner() == None)
+	if (PlayerOwner() == nullptr)
 	{
 		return;
 	}
@@ -227,7 +227,7 @@ void UAABrowser_ServerListPageBase::Refresh()
 {
 	/*
 	Super::Refresh();
-	if (li_Server == None)
+	if (li_Server == nullptr)
 	{
 		InitServerList();
 	}
@@ -238,7 +238,7 @@ void UAABrowser_ServerListPageBase::Refresh()
 void UAABrowser_ServerListPageBase::InitServerList()
 {
 	/*
-	if (li_Server == None)
+	if (li_Server == nullptr)
 	{
 		li_Server = new (None) class'AGP_Interface.AABrowser_ServersList';
 	}
@@ -268,7 +268,7 @@ void UAABrowser_ServerListPageBase::UpdateStatusPingCount()
 	local FString StatusText;
 	CheckJoinButton(li_Server.IsValid());
 	CheckSpectateButton(li_Server.IsValid());
-	if (li_Server == None)
+	if (li_Server == nullptr)
 	{
 		return;
 	}
@@ -512,7 +512,7 @@ void UAABrowser_ServerListPageBase::SetProgress(FString Progress)
 bool UAABrowser_ServerListPageBase::InternalOnClick(UGUIComponent* Sender)
 {
 	/*
-	if (GUIButton(Sender) == None)
+	if (GUIButton(Sender) == nullptr)
 	{
 		return false;
 	}

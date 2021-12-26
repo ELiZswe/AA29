@@ -61,7 +61,7 @@ public:
 	AScreenplay();
 
 	UPROPERTY(EditAnywhere)							TArray<UScriptEvent*> GlobalEvents;				//var() array<ScriptEvent> GlobalEvents;			// may not need this
-	UPROPERTY(EditAnywhere)							TArray<UScriptScene*> Scenes;						//var() array<ScriptScene> Scenes;
+	UPROPERTY(EditAnywhere)							TArray<UScriptScene*> Scenes;					//var() array<ScriptScene> Scenes;
 	UPROPERTY()										bool _bGlobalEvents;							//var bool _bGlobalEvents;							// bool to state that we are in the process of creating a global event
 	UPROPERTY()										bool _bGlobalEventsDone;						//var bool _bGlobalEventsDone;						// bool to make sure we dont create global events in more than one place
 	UPROPERTY()										bool _bEvent;									//var bool _bEvent;									// bool to state that we are in the process of creating an event
@@ -83,7 +83,7 @@ public:
 	UPROPERTY()										USceneComponent* ScreenplayRoot;
 
 	void SetRememberedScene(FName SceneName, int32 Index);
-	void GetRememberedScene(int32 Index);
+	FName GetRememberedScene(int32 Index);
 	void Destroyed();
 	void Init();
 	void Draw(UCanvas* Canvas);
@@ -104,10 +104,10 @@ public:
 	void SceneEnd_Start();
 	void SceneEnd_Finish();
 	bool CanAddCondition();
-	void AddCondition(UCondition* con);
+	bool AddCondition(UCondition* con);
 	void Condition(FString szCon, FString szParams);
 	bool CanAddDirection();
-	void AddDirection(UDirection* Dir);
+	bool AddDirection(UDirection* Dir);
 	void Direction(FString szDir, FString szParams, FName DummyName);
 	void PostBeginPlay();
 	void Trigger(AActor* Other, APawn* EventInstigator);
@@ -117,16 +117,16 @@ public:
 	void SceneRestart();
 	void SceneJump(FName Tag);
 	void SceneStop();
-	void CreateNewEvent();
-	void CreateNewScene();
-	void CreateNewDirection(FString Dir);
-	void CreateNewCondition(FString con);
+	UScriptEvent* CreateNewEvent();
+	UScriptScene* CreateNewScene();
+	UDirection* CreateNewDirection(FString Dir);
+	UCondition* CreateNewCondition(FString con);
 	void SetDebug(bool Debug);
 	void DumpScreenplay();
 	void GlobalEventsStart();
 	APlayerController* GetHumanController();
 	AController* GetControllerList();
-	//void DisplayDebug(UCanvas* Canvas, float &YL, float &YPos);
+	void DisplayDebug(UCanvas* Canvas, const class FDebugDisplayInfo& DebugDisplay, float& YL, float& YPos);
 	void NotifyCheated();
 
 

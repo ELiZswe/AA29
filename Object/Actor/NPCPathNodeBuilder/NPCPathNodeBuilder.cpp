@@ -234,11 +234,11 @@ void ANPCPathNodeBuilder::ResetPathBuilding()
 	}
 	anpcpnPathNodes.remove(0, anpcpnPathNodes.Length);
 	anpcpsPlayerStarts.remove(0, anpcpsPlayerStarts.Length);
-	npcpnLastDroppedPathNode = None;
-	npcpnNodeBeingEdited = None;
-	npcpnNodeLastEdited = None;
-	npcpsBeingEdited = None;
-	npcpsBeingDeleted = None;
+	npcpnLastDroppedPathNode = nullptr;
+	npcpnNodeBeingEdited = nullptr;
+	npcpnNodeLastEdited = nullptr;
+	npcpsBeingEdited = nullptr;
+	npcpsBeingDeleted = nullptr;
 	vLastTestedAutoDropLocation = MakeVect(0, 0, 0);
 	*/
 }
@@ -252,7 +252,7 @@ bool ANPCPathNodeBuilder::CanDropNode(bool bAutoDropTest)
 {
 	/*
 	local Actor actIterator;
-	if (scOwner == None)
+	if (scOwner == nullptr)
 	{
 		return false;
 	}
@@ -298,7 +298,7 @@ ANPCPlayerStart* ANPCPathNodeBuilder::DropNPCPlayerStart(FString sType)
 	ANPCPlayerStart* anpcpsClass = nullptr;
 	ANPCPlayerStart* npcpsNew = nullptr;
 	/*
-	if (scOwner == None)
+	if (scOwner == nullptr)
 	{
 		return None;
 	}
@@ -353,7 +353,7 @@ bool ANPCPathNodeBuilder::DropCustomNode(FString sType)
 	local class<NPCPathNode>  anpcpnClass;
 	local NPCPathNode npcpnNew;
 	bool bSetWaypointTag = false;
-	if (scOwner == None)
+	if (scOwner == nullptr)
 	{
 		return false;
 	}
@@ -399,7 +399,7 @@ bool ANPCPathNodeBuilder::DropCustomNode(FString sType)
 	EnableTransientNaming(true);
 	npcpnNew = Spawn(anpcpnClass, , , scOwner.Pawn.Location, scOwner.Pawn.Rotation, false, true);
 	EnableTransientNaming(false);
-	if (npcpnNew == None)
+	if (npcpnNew == nullptr)
 	{
 		Log("Failed to create node of type " $ string(npcpnNew) $ " \"" $ sType $ "\"");
 		ClientMessage("Failed to create pathnode");
@@ -426,8 +426,8 @@ bool ANPCPathNodeBuilder::DropCustomNode(FString sType)
 		SetCurrentWaypointNodeTag(sWaypointNavTag $ "-" $ string(iWaypointIndex));
 		iWaypointIndex++;
 	}
-	npcpsBeingEdited = None;
-	npcpsBeingDeleted = None;
+	npcpsBeingEdited = nullptr;
+	npcpsBeingDeleted = nullptr;
 	if (npcpnNew.IsA("NPCFirePositionPathNode"))
 	{
 		NPCFirePositionPathNode(npcpnNew).bCrouchHere = scOwner.Pawn.bIsCrouched;
@@ -534,7 +534,7 @@ void ANPCPathNodeBuilder::DropNode(bool bIsAutoDrop)
 {
 	/*
 	local NPCPathNode npcpnNew;
-	if (scOwner == None)
+	if (scOwner == nullptr)
 	{
 		return;
 	}
@@ -567,7 +567,7 @@ void ANPCPathNodeBuilder::DropNode(bool bIsAutoDrop)
 	}
 	EnableTransientNaming(false);
 	Log("Created node " $ string(npcpnNew.Name));
-	if (npcpnNew == None)
+	if (npcpnNew == nullptr)
 	{
 		scOwner.NotifyAdminMessage("Failure creating pathnode (probably collision)");
 		ClientMessage("Failed to create pathnode");
@@ -603,10 +603,10 @@ void ANPCPathNodeBuilder::DropNode(bool bIsAutoDrop)
 	npcpnLastDroppedPathNode = npcpnNew;
 	npcpnNodeLastEdited = npcpnNodeBeingEdited;
 	npcpnNodeBeingEdited = npcpnLastDroppedPathNode;
-	npcpnNodeBeingDeleted = None;
+	npcpnNodeBeingDeleted = nullptr;
 	vLastTestedAutoDropLocation = npcpnLastDroppedPathNode.Location;
-	npcpsBeingEdited = None;
-	npcpsBeingDeleted = None;
+	npcpsBeingEdited = nullptr;
+	npcpsBeingDeleted = nullptr;
 	ClientMessage("Node added (you now have " $ string(anpcpnPathNodes.Length) $ " nodes defined)");
 	*/
 }
@@ -635,7 +635,7 @@ void ANPCPathNodeBuilder::DropRoadNode(bool bIsAutoDrop)
 	}
 	EnableTransientNaming(true);
 	npcpnNew = Spawn(Class'RoadPathNode', , , scOwner.Pawn.Location, scOwner.Pawn.Rotation, false, true);
-	if (npcpnNew == None)
+	if (npcpnNew == nullptr)
 	{
 		scOwner.NotifyAdminMessage("Failure creating pathnode (probably collision)");
 		ClientMessage("Failed to create pathnode");
@@ -673,10 +673,10 @@ void ANPCPathNodeBuilder::DropRoadNode(bool bIsAutoDrop)
 	npcpnLastDroppedPathNode = npcpnNew;
 	npcpnNodeLastEdited = npcpnNodeBeingEdited;
 	npcpnNodeBeingEdited = npcpnLastDroppedPathNode;
-	npcpnNodeBeingDeleted = None;
+	npcpnNodeBeingDeleted = nullptr;
 	vLastTestedAutoDropLocation = npcpnLastDroppedPathNode.Location;
-	npcpsBeingEdited = None;
-	npcpsBeingDeleted = None;
+	npcpsBeingEdited = nullptr;
+	npcpsBeingDeleted = nullptr;
 	ClientMessage("Node added (you now have " $ string(anpcpnPathNodes.Length) $ " nodes defined)");
 	*/
 }
@@ -716,7 +716,7 @@ void ANPCPathNodeBuilder::AutoDropNodeLastGoodLocation()
 	EnableTransientNaming(true);
 	npcpnNew = Spawn(class'AGP.NPCPathNode', , , vLastTestedAutoDropLocation, vLastTestedAutoDropRotation, false, true);
 	EnableTransientNaming(false);
-	if (npcpnNew == None)
+	if (npcpnNew == nullptr)
 	{
 		ClientMessage("Failed to create pathnode");
 		return;
@@ -816,7 +816,7 @@ void ANPCPathNodeBuilder::DropWaypointNode()
 {
 	/*
 	local NPCPathNode npcpnNew;
-	if (scOwner == None)
+	if (scOwner == nullptr)
 	{
 		return;
 	}
@@ -830,8 +830,8 @@ void ANPCPathNodeBuilder::DropWaypointNode()
 		ClientMessage("You must define the waypoint nav tag before trying to drop a patrol pathnode");
 		return;
 	}
-	npcpsBeingDeleted = None;
-	npcpsBeingEdited = None;
+	npcpsBeingDeleted = nullptr;
+	npcpsBeingEdited = nullptr;
 	EnableTransientNaming(true);
 	npcpnNew = Spawn(class'AGP.NPCWaypointPathNode', , , scOwner.Pawn.Location, scOwner.Pawn.Rotation, false, true);
 	EnableTransientNaming(false);
@@ -932,7 +932,7 @@ void ANPCPathNodeBuilder::Action()
 		}
 		if (IsLocationInFrontOfOwner(npIterator.Location))
 		{
-			if (npClosestToCenter == None)
+			if (npClosestToCenter == nullptr)
 			{
 				npClosestToCenter = npIterator;
 			}
@@ -976,10 +976,10 @@ void ANPCPathNodeBuilder::Action()
 			npcpsBeingEdited.DebugNavMarker(false, false);
 		}
 		npcpnNodeLastEdited = npcpnNodeBeingEdited;
-		npcpnNodeBeingDeleted = None;
-		npcpsBeingDeleted = None;
-		npcpsBeingEdited = None;
-		npcpnNodeBeingEdited = None;
+		npcpnNodeBeingDeleted = nullptr;
+		npcpsBeingDeleted = nullptr;
+		npcpsBeingEdited = nullptr;
+		npcpnNodeBeingEdited = nullptr;
 		if (npClosestToCenter.IsA("NPCPathNode"))
 		{
 			npcpnNodeBeingEdited = NPCPathNode(npClosestToCenter);
@@ -1053,11 +1053,11 @@ void ANPCPathNodeBuilder::RequestDeleteNode()
 {
 	/*
 	int32 iNode = 0;
-	if ((npcpnNodeBeingEdited == None) && (npcpsBeingEdited == None))
+	if ((npcpnNodeBeingEdited == nullptr) && (npcpsBeingEdited == nullptr))
 	{
 		return;
 	}
-	if ((npcpnNodeBeingDeleted == None) && (npcpsBeingDeleted == None))
+	if ((npcpnNodeBeingDeleted == nullptr) && (npcpsBeingDeleted == nullptr))
 	{
 		if (((npcpnNodeBeingEdited != None) && npcpnNodeBeingEdited.IsA("NPCWaypointPathNode")) && (iWaypointIndex < 1))
 		{
@@ -1122,10 +1122,10 @@ void ANPCPathNodeBuilder::RequestDeleteNode()
 		}
 	}
 	fpTimeSinceDeleteRequest = 0;
-	npcpnNodeBeingEdited = None;
-	npcpnNodeBeingDeleted = None;
-	npcpsBeingDeleted = None;
-	npcpsBeingEdited = None;
+	npcpnNodeBeingEdited = nullptr;
+	npcpnNodeBeingDeleted = nullptr;
+	npcpsBeingDeleted = nullptr;
+	npcpsBeingEdited = nullptr;
 	*/
 }
 
@@ -1317,14 +1317,14 @@ void ANPCPathNodeBuilder::Tick(float DeltaTime)
 	/*
 	float fpDistanceToLastNode = 0;
 	Super::Tick(DeltaTime);
-	if (scOwner == None)
+	if (scOwner == nullptr)
 	{
 		return;
 	}
 	if (((fpTimeSinceDeleteRequest > 0) && (npcpnNodeBeingDeleted != None)) && ((Level.TimeSeconds - fpTimeSinceDeleteRequest) > 5))
 	{
 		fpTimeSinceDeleteRequest = 0;
-		npcpnNodeBeingDeleted = None;
+		npcpnNodeBeingDeleted = nullptr;
 	}
 	if ((fpTimeSinceResetPathsRequest > 0) && ((Level.TimeSeconds - fpTimeSinceResetPathsRequest) > 5))
 	{
@@ -1362,7 +1362,7 @@ void ANPCPathNodeBuilder::Tick(float DeltaTime)
 		}
 		return;
 	}
-	if (npcpnLastDroppedPathNode == None)
+	if (npcpnLastDroppedPathNode == nullptr)
 	{
 		return;
 	}

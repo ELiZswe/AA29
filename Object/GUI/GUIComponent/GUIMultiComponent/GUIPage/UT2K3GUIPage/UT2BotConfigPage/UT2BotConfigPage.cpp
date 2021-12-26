@@ -243,7 +243,7 @@ void UUT2BotConfigPage::SliderChange(UGUIComponent* Sender)
 	{
 		S = moSlider(Sender).MySlider;
 	}
-	if (bIgnoreChange || (S == None))
+	if (bIgnoreChange || (S == nullptr))
 	{
 		return;
 	}

@@ -459,7 +459,7 @@ void UAAGameMenu_CP_Tournament::InitComponent(UGUIController* MyController, UGUI
 void UAAGameMenu_CP_Tournament::InitializeDataFields()
 {
 	/*
-	if (aagpCommandPost == None)
+	if (aagpCommandPost == nullptr)
 	{
 		Log("Warning: The CP Rules page does not have a valid Command Post page.");
 		Return;

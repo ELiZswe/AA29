@@ -11,7 +11,7 @@ class UmoCheckBox;
 class UmoEditBox;
 
 UCLASS()
-class AA29_API UAATab_Demos : public USettings_Tabs
+class UAATab_Demos : public USettings_Tabs
 {
 	GENERATED_BODY()
 public:
@@ -26,4 +26,8 @@ public:
 	UPROPERTY(EditAnywhere)			bool			bIgnoreChange;					//var() noexport bool bIgnoreChange;
 	UPROPERTY(EditAnywhere)			FString			RelaunchQuestion;				//var() localized FString RelaunchQuestion;
 
+	void InternalOnLoadINI(UGUIComponent* Sender, FString S);
+	void InternalOnChange(UGUIComponent* Sender);
+	bool EnableDemoModeClick(uint8 Btn);
+	void SaveSettings();
 };

@@ -119,7 +119,7 @@ UAABrowser_Footer::UAABrowser_Footer()
 bool UAABrowser_Footer::InternalOnClick(UGUIComponent* Sender)
 {
 	/*
-	if (GUIButton(Sender) == None)
+	if (GUIButton(Sender) == nullptr)
 	{
 		return false;
 	}
@@ -160,7 +160,7 @@ bool UAABrowser_Footer::InternalOnClick(UGUIComponent* Sender)
 void UAABrowser_Footer::UpdateActiveButtons(UAABrowser_Page* CurrentPanel)
 {
 	/*
-	if (CurrentPanel == None)
+	if (CurrentPanel == nullptr)
 	{
 		Return;
 	}

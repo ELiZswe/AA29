@@ -24,7 +24,7 @@ State Activated
 		Super::EndState();
 		if ((Pawn(Owner) != None) && (ProtectionType != Pawn(Owner).ReducedDamageType))
 		{
-			Pawn(Owner).ReducedDamageType = None;
+			Pawn(Owner).ReducedDamageType = nullptr;
 		}
 	}
 }
@@ -90,11 +90,11 @@ AArmor* AArmor::PrioritizeArmor(int32 Damage, UaDamageType* DamageType, FVector 
 	}
 	else
 	{
-		FirstArmor = None;
+		FirstArmor = nullptr;
 	}
-	if (FirstArmor == None)
+	if (FirstArmor == nullptr)
 	{
-		NextArmor = None;
+		NextArmor = nullptr;
 		return Self;
 	}
 	if (FirstArmor.ArmorPriority(DamageType) < ArmorPriority(DamageType))

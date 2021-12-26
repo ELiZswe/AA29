@@ -36,51 +36,113 @@ class ANPCBaseSoldierController;
 class ANPCSquadDetails;
 class ANPCBaseController;
 class ASmallNavigationPoint;
+class AAGP_VehicleParticles;
+class AVehicleWeapon;
+
+USTRUCT(BlueprintType)
+struct Fpointer
+{
+	GENERATED_BODY()
+		UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "pointer")				int32 Dummy = 0;										//var native const int Dummy;
+};
+
+USTRUCT(BlueprintType)
+struct FProjectorRenderInfoPtr
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ProjectorRenderInfoPtr")	Fpointer Ptr;					//var transient Fpointer Ptr;
+};
+
+USTRUCT(BlueprintType)
+struct FVAEPosterViewingInfo
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VAEPosterViewingInfo")		FString sPosterMaterial = "";		//var FString sPosterMaterial;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VAEPosterViewingInfo")		float fpViewingTime = 0;			//var float fpViewingTime;
+};
+
+USTRUCT(BlueprintType)
+struct FStoredChatBan
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "StoredChatBan")		FString PlayerHash = "";					//var FString PlayerHash;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "StoredChatBan")		uint8 Restriction = 0;						//var uint8 Restriction;
+};
+
+USTRUCT(BlueprintType)
+struct FChatBan
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ChatBan")			int32 PlayerID = 0;							//var int32 PlayerID;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ChatBan")			FString PlayerHash = "";						//var FString PlayerHash;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ChatBan")			FString PlayerAddress = "";					//var FString PlayerAddress;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ChatBan")			uint8 PlayerVoiceMask = 0;					//var uint8 PlayerVoiceMask;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ChatBan")			uint8 Restriction = 0;						//var uint8 Restriction;
+};
+
+USTRUCT(BlueprintType)
+struct FNPCObjectiveResponse
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCTracking")			int32 iReservePlatoonID = 0;						//var int32 iReservePlatoonID;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCTracking")			int32 iReserveSquadID = 0;							//var int32 iReserveSquadID;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCTracking")			int32 iReserveFireteamID = 0;						//var int32 iReserveFireteamID;
+	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCTracking")			ENPCReserveObjectiveCommand enpcrocNPCCommand;	//var NPCObjectiveResponse.ENPCReserveObjectiveCommand enpcrocNPCCommand;
+};
+
+USTRUCT(BlueprintType)
+struct FVoiceChatCodec
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCTracking")			FString Codec = "";					//var FString Codec;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCTracking")			FString CodecName = "";				//var localized FString CodecName;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCTracking")			FString CodecDescription = "";		//var localized FString CodecDescription;
+};
 
 USTRUCT(BlueprintType)
 struct FNPCTracking
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCTracking")			APawn* pawnSeen;				//var Pawn pawnSeen;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCTracking")			float		fpTimeSeen;			//var float fpTimeSeen;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCTracking")			APawn* pawnSeen = nullptr;			//var Pawn pawnSeen;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCTracking")			float fpTimeSeen = 0;				//var float fpTimeSeen;
 };
 
 USTRUCT(BlueprintType)
 struct FFireMissionRequests
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FireMissionRequests")			FVector		vLocation;			//var FVector vLocation;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FireMissionRequests")			APawn*		pawnTarget;			//var APawn* pawnTarget;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FireMissionRequests")			float		fpTime;				//var float fpTime;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FireMissionRequests")			bool		bMissionFiring;		//var bool bMissionFiring;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FireMissionRequests")			FVector		vLocation = FVector(0,0,0);		//var FVector vLocation;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FireMissionRequests")			APawn*		pawnTarget = nullptr;			//var APawn* pawnTarget;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FireMissionRequests")			float		fpTime = 0;						//var float fpTime;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FireMissionRequests")			bool		bMissionFiring = false;			//var bool bMissionFiring;
 };
 
 USTRUCT(BlueprintType)
 struct FIntBox
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "IntBox")			int32			X1;			//var int32 X1;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "IntBox")			int32			Y1;			//var int32 Y1;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "IntBox")			int32			X2;			//var int32 X2;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "IntBox")			int32			Y2;			//var int32 Y2;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "IntBox")			int32			X1 = 0;			//var int32 X1;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "IntBox")			int32			Y1 = 0;			//var int32 Y1;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "IntBox")			int32			X2 = 0;			//var int32 X2;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "IntBox")			int32			Y2 = 0;			//var int32 Y2;
 };
 
 USTRUCT(BlueprintType)
 struct FConsoleMessage
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ConsoleMessage")			FString				Text;			//var FString Text;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ConsoleMessage")			FColor				TextColor;		//var Color TextColor;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ConsoleMessage")			float				MessageLife;	//var float MessageLife;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ConsoleMessage")			AAA2_PlayerState*	PRI;			//var PlayerReplicationInfo PRI;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ConsoleMessage")		FString				Text = "";						//var FString Text;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ConsoleMessage")		FColor				TextColor = FColor(0,0,0);		//var Color TextColor;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ConsoleMessage")		float				MessageLife = 0;				//var float MessageLife;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ConsoleMessage")		AAA2_PlayerState*	PRI = nullptr;					//var PlayerReplicationInfo PRI;
 };
 
 USTRUCT(BlueprintType)
 struct FWeaponState
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponState")				float		PickupTimer;		//var float PickupTimer;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponState")				bool		HasWeapon;			//var bool HasWeapon;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponState")		float		PickupTimer = 0;			//var float PickupTimer;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponState")		bool		HasWeapon = false;			//var bool HasWeapon;
 };
 
 
@@ -88,78 +150,78 @@ USTRUCT(BlueprintType)
 struct FDigitSet
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "DigitSet")				UMaterialInstance*		DigitTexture;		//var Material DigitTexture;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "DigitSet")				FIntBox					TextureCoords;		//var IntBox TextureCoords[11];
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "DigitSet")				UMaterialInstance*		DigitTexture = nullptr;						//var Material DigitTexture;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "DigitSet")				FIntBox					TextureCoords = FIntBox({ 0,0,0,0 });		//var IntBox TextureCoords[11];
 };
 
 USTRUCT(BlueprintType)
 struct FSpriteWidget
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")		UMaterialInstance*		WidgetTexture;		//var Material WidgetTexture;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")		ERenderStyle			RenderStyle;		//var Actor.ERenderStyle RenderStyle;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")		FIntBox					TextureCoords;		//var IntBox TextureCoords;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")		float					TextureScale;		//var float TextureScale;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")		EDrawPivot				DrawPivot;			//var Object.EDrawPivot DrawPivot;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")		float					PosX;				//var float PosX;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")		float					PosY;				//var float PosY;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")		int32					OffsetX;			//var int32 OffsetX;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")		int32					OffsetY;			//var int32 OffsetY;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")		EScaleMode				ScaleMode;			//var EScaleMode ScaleMode;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")		float					Scale;				//var float Scale;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")		TArray<FColor>			Tints;				//var Color Tints[2];
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")		UMaterialInstance*		WidgetTexture = nullptr;					//var Material WidgetTexture;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")		ERenderStyle			RenderStyle = ERenderStyle::STY_None;		//var Actor.ERenderStyle RenderStyle;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")		FIntBox					TextureCoords = FIntBox({ 0,0,0,0 });		//var IntBox TextureCoords;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")		float					TextureScale = 0;							//var float TextureScale;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")		EDrawPivot				DrawPivot = EDrawPivot::DP_UpperLeft;		//var Object.EDrawPivot DrawPivot;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")		float					PosX = 0;									//var float PosX;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")		float					PosY = 0;									//var float PosY;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")		int32					OffsetX = 0;								//var int32 OffsetX;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")		int32					OffsetY = 0;								//var int32 OffsetY;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")		EScaleMode				ScaleMode = EScaleMode::SM_None;			//var EScaleMode ScaleMode;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")		float					Scale = 0;									//var float Scale;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")		TArray<FColor>			Tints = {};									//var Color Tints[2];
 };
 
 USTRUCT(BlueprintType)
 struct FNumericWidget
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NumericWidget")			ERenderStyle			RenderStyle;		//var Actor.ERenderStyle RenderStyle;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NumericWidget")			int32					MinDigitCount;		//var int32 MinDigitCount;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NumericWidget")			float					TextureScale;		//var float TextureScale;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NumericWidget")			EDrawPivot				DrawPivot;			//var Object.EDrawPivot DrawPivot;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NumericWidget")			float					PosX;				//var float PosX;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NumericWidget")			float					PosY;				//var float PosY;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NumericWidget")			int32					OffsetX;			//var int32 OffsetX;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NumericWidget")			int32					OffsetY;			//var int32 OffsetY;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NumericWidget")			TArray<FColor>			Tints;				//var Color Tints[2];
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NumericWidget")			int32					bPadWithZeroes;		//var int32 bPadWithZeroes;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NumericWidget")			int32					Value;				//var transient int32 Value;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NumericWidget")			ERenderStyle			RenderStyle = ERenderStyle::STY_None;		//var Actor.ERenderStyle RenderStyle;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NumericWidget")			int32					MinDigitCount = 0;							//var int32 MinDigitCount;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NumericWidget")			float					TextureScale = 0;							//var float TextureScale;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NumericWidget")			EDrawPivot				DrawPivot = EDrawPivot::DP_UpperLeft;		//var Object.EDrawPivot DrawPivot;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NumericWidget")			float					PosX = 0;									//var float PosX;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NumericWidget")			float					PosY = 0;									//var float PosY;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NumericWidget")			int32					OffsetX = 0;								//var int32 OffsetX;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NumericWidget")			int32					OffsetY = 0;								//var int32 OffsetY;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NumericWidget")			TArray<FColor>			Tints = {};									//var Color Tints[2];
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NumericWidget")			int32					bPadWithZeroes = 0;							//var int32 bPadWithZeroes;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NumericWidget")			int32					Value = 0;									//var transient int32 Value;
 };
 
 USTRUCT(BlueprintType)
 struct FHudLocalizedMessage
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HudLocalizedMessage")			ULocalMessage*		Message;		//var class<LocalMessage>  Message;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HudLocalizedMessage")			FString				StringMessage;	//var FString StringMessage;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HudLocalizedMessage")			int32				Switch;			//var int32 Switch;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HudLocalizedMessage")			AAA2_PlayerState*	RelatedPRI;		//var PlayerReplicationInfo RelatedPRI;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HudLocalizedMessage")			AAA2_PlayerState*	RelatedPRI2;	//var PlayerReplicationInfo RelatedPRI2;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HudLocalizedMessage")			UObject*			OptionalObject;	//var Object OptionalObject;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HudLocalizedMessage")			float				EndOfLife;		//var float EndOfLife;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HudLocalizedMessage")			float				Lifetime;		//var float Lifetime;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HudLocalizedMessage")			UFont*				StringFont;		//var Font StringFont;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HudLocalizedMessage")			FColor				DrawColor;		//var Color DrawColor;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HudLocalizedMessage")			EDrawPivot			DrawPivot;		//var Object.EDrawPivot DrawPivot;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HudLocalizedMessage")			EStackMode			StackMode;		//var LocalMessage.EStackMode StackMode;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HudLocalizedMessage")			float				PosX;			//var float PosX;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HudLocalizedMessage")			float				PosY;			//var float PosY;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HudLocalizedMessage")			float				dx;				//var float dx;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HudLocalizedMessage")			float				dy;				//var float dy;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HudLocalizedMessage")			bool				Drawn;			//var bool Drawn;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HudLocalizedMessage")			ULocalMessage*		Message = nullptr;						//var class<LocalMessage>  Message;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HudLocalizedMessage")			FString				StringMessage = "";						//var FString StringMessage;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HudLocalizedMessage")			int32				Switch = 0;								//var int32 Switch;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HudLocalizedMessage")			AAA2_PlayerState*	RelatedPRI = nullptr;					//var PlayerReplicationInfo RelatedPRI;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HudLocalizedMessage")			AAA2_PlayerState*	RelatedPRI2 = nullptr;					//var PlayerReplicationInfo RelatedPRI2;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HudLocalizedMessage")			UObject*			OptionalObject = nullptr;				//var Object OptionalObject;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HudLocalizedMessage")			float				EndOfLife = 0;							//var float EndOfLife;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HudLocalizedMessage")			float				Lifetime = 0;							//var float Lifetime;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HudLocalizedMessage")			UFont*				StringFont = nullptr;					//var Font StringFont;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HudLocalizedMessage")			FColor				DrawColor = FColor(0,0,0);				//var Color DrawColor;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HudLocalizedMessage")			EDrawPivot			DrawPivot = EDrawPivot::DP_UpperLeft;	//var Object.EDrawPivot DrawPivot;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HudLocalizedMessage")			EStackMode			StackMode = EStackMode::SM_None;		//var LocalMessage.EStackMode StackMode;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HudLocalizedMessage")			float				PosX = 0;								//var float PosX;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HudLocalizedMessage")			float				PosY = 0;								//var float PosY;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HudLocalizedMessage")			float				dx = 0;									//var float dx;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HudLocalizedMessage")			float				dy = 0;									//var float dy;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HudLocalizedMessage")			bool				Drawn = false;							//var bool Drawn;
 };
 
 USTRUCT(BlueprintType)
 struct FNPCSquadDetails
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")			ANPCNCOController*					npcncoLeader;			//var NPCNCOController npcncoLeader;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")			TArray<ANPCBaseSoldierController*>	npcscMembers;			//var TArray<NPCBaseSoldierController> npcscMembers;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")			int32								iSquadOrders;			//var int32 iSquadOrders;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")			float								fpTimeSinceLastOrders;	//var float fpTimeSinceLastOrders;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")			bool								bSquadDead;				//var bool bSquadDead;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")			int32								iAmbushSet;				//var int32 iAmbushSet;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")			ANPCNCOController*					npcncoLeader = nullptr;			//var NPCNCOController npcncoLeader;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")			TArray<ANPCBaseSoldierController*>	npcscMembers = {};				//var TArray<NPCBaseSoldierController> npcscMembers;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")			int32								iSquadOrders = 0;				//var int32 iSquadOrders;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")			float								fpTimeSinceLastOrders = 0;		//var float fpTimeSinceLastOrders;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")			bool								bSquadDead = false;				//var bool bSquadDead;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCSquadDetails")			int32								iAmbushSet = 0;					//var int32 iAmbushSet;
 };
 
 USTRUCT(BlueprintType)
@@ -177,8 +239,8 @@ struct FEnemyContact
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "EnemyContact")			ANPCBaseController*		npcbcReporting;			//var NPCBaseController npcbcReporting;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "EnemyContact")			APawn*					pawnEnemyContact;		//var APawn* pawnEnemyContact;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "EnemyContact")			int32					iContactType;			//var int32 iContactType;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "EnemyContact")			FVector					vLocation;				//var FVector vLocation;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "EnemyContact")			FRotator				rotRotation;			//var Rotator rotRotation;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "EnemyContact")			FVector					vLocation = FVector(0, 0, 0);				//var FVector vLocation;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "EnemyContact")			FRotator				rotRotation = FRotator(0, 0, 0);			//var Rotator rotRotation;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "EnemyContact")			float					fpEstimatedRange;		//var float fpEstimatedRange;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "EnemyContact")			int32					iThreatLevel;			//var int32 iThreatLevel;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "EnemyContact")			float					fpTimeOfReport;			//var float fpTimeOfReport;
@@ -196,7 +258,7 @@ struct FOrderQueue
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "OrderQueue")			int32					iOrder;					//var int32 iOrder;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "OrderQueue")			int32					iTacticalOrder;			//var int32 iTacticalOrder;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "OrderQueue")			float					fpTimeToDeliver;		//var float fpTimeToDeliver;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "OrderQueue")			FVector					vSupportArea;			//var FVector vSupportArea;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "OrderQueue")			FVector					vSupportArea = FVector(0, 0, 0);			//var FVector vSupportArea;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "OrderQueue")			APawn*					pawnTarget;				//var APawn* pawnTarget;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "OrderQueue")			bool					bSmokeMission;			//var bool bSmokeMission;
 };
@@ -205,7 +267,7 @@ USTRUCT(BlueprintType)
 struct FFireMissionInFlight
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FireMissionInFlight")			FVector				vTargetArea;			//var FVector vTargetArea;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FireMissionInFlight")			FVector				vTargetArea = FVector(0, 0, 0);			//var FVector vTargetArea;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FireMissionInFlight")			float				fpSpawnTime;			//var float fpSpawnTime;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FireMissionInFlight")			float				fpSkill;				//var float fpSkill;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FireMissionInFlight")			APawn*				pawnSpotter;			//var APawn* pawnSpotter;
@@ -222,7 +284,7 @@ struct FSupportFireRequestQueue
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SupportFireRequestQueue")			int32						iRoundsToFire;			//var int32 iRoundsToFire;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SupportFireRequestQueue")			float						fpTimeToFire;			//var float fpTimeToFire;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SupportFireRequestQueue")			float						fpTimeToSpawn;			//var float fpTimeToSpawn;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SupportFireRequestQueue")			FVector						vTargetArea;			//var FVector vTargetArea;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SupportFireRequestQueue")			FVector						vTargetArea = FVector(0, 0, 0);			//var FVector vTargetArea;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SupportFireRequestQueue")			bool						bSmokeMission;			//var bool bSmokeMission;
 };
 
@@ -260,8 +322,8 @@ USTRUCT(BlueprintType)
 struct FAA2_ProcMeshVertex
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ProcMeshVertex")				FVector				Position;		//var FVector Position;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ProcMeshVertex")				FVector				Normal;			//var FVector Normal;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ProcMeshVertex")				FVector				Position = FVector(0, 0, 0);		//var FVector Position;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ProcMeshVertex")				FVector				Normal = FVector(0, 0, 0);			//var FVector Normal;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ProcMeshVertex")				FColor				Color;			//var Color Color;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ProcMeshVertex")				float				U;				//var float U;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ProcMeshVertex")				float				V;				//var float V;
@@ -365,10 +427,10 @@ USTRUCT(BlueprintType)
 struct FCoords
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Coords")					FVector Origin;						//var config FVector Origin;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Coords")					FVector XAxis;						//var config FVector XAxis;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Coords")					FVector YAxis;						//var config FVector YAxis;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Coords")					FVector ZAxis;						//var config FVector ZAxis;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Coords")					FVector Origin = FVector(0, 0, 0);						//var config FVector Origin;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Coords")					FVector XAxis = FVector(0, 0, 0);						//var config FVector XAxis;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Coords")					FVector YAxis = FVector(0, 0, 0);						//var config FVector YAxis;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Coords")					FVector ZAxis = FVector(0, 0, 0);						//var config FVector ZAxis;
 };
 
 USTRUCT(BlueprintType)
@@ -421,7 +483,7 @@ USTRUCT(BlueprintType)
 struct FParticleBeamData
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleBeamData")					FVector Location;					//var FVector Location;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleBeamData")					FVector Location = FVector(0, 0, 0);					//var FVector Location;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleBeamData")					float t;							//var float t;
 };
 
@@ -438,25 +500,25 @@ USTRUCT(BlueprintType)
 struct FParticleBeamScale
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleBeamScale")					FVector FrequencyScale;				//var FVector FrequencyScale;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleBeamScale")					FVector RelativeLength;				//var float RelativeLength;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleBeamScale")					FVector FrequencyScale = FVector(0, 0, 0);				//var FVector FrequencyScale;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleBeamScale")					FVector RelativeLength = FVector(0, 0, 0);				//var float RelativeLength;
 };
 
 USTRUCT(BlueprintType)
 struct FParticleSparkData
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleSparkData")					FVector TimeBeforeVisible;					//var float TimeBeforeVisible;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleSparkData")					FVector TimeBetweenSegments;				//var float TimeBetweenSegments;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleSparkData")					FVector StartLocation;						//var FVector StartLocation;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleSparkData")					FVector StartVelocity;						//var FVector StartVelocity;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleSparkData")					FVector TimeBeforeVisible = FVector(0, 0, 0);					//var float TimeBeforeVisible;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleSparkData")					FVector TimeBetweenSegments = FVector(0, 0, 0);				//var float TimeBetweenSegments;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleSparkData")					FVector StartLocation = FVector(0, 0, 0);						//var FVector StartLocation;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleSparkData")					FVector StartVelocity = FVector(0, 0, 0);						//var FVector StartVelocity;
 };
 
 USTRUCT(BlueprintType)
 struct FParticleTrailData
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Range")								FVector Location;							//var FVector Location;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Range")								FVector Location = FVector(0, 0, 0);							//var FVector Location;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Range")								FColor Color;								//var Color Color;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Range")								float Size;									//var float Size;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Range")								int32 DoubleDummy1;							//var int32 DoubleDummy1;
@@ -469,8 +531,8 @@ struct FParticleTrailInfo
 	GENERATED_BODY()
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Range")								int32 TrailIndex;							//var int32 TrailIndex;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Range")								int32 NumPoints;							//var int32 NumPoints;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Range")								FVector LastLocation;						//var FVector LastLocation;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Range")								FVector LastEmitterLocation;				//var FVector LastEmitterLocation;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Range")								FVector LastLocation = FVector(0, 0, 0);						//var FVector LastLocation;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Range")								FVector LastEmitterLocation = FVector(0, 0, 0);				//var FVector LastEmitterLocation;
 };
 
 USTRUCT(BlueprintType)
@@ -486,7 +548,7 @@ struct FParticleRevolutionScale
 {
 	GENERATED_BODY()
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleRevolutionScale")			float RelativeTime;							//var float RelativeTime;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleRevolutionScale")			FVector RelativeRevolution;					//var FVector RelativeRevolution;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleRevolutionScale")			FVector RelativeRevolution = FVector(0, 0, 0);					//var FVector RelativeRevolution;
 };
 
 USTRUCT(BlueprintType)
@@ -502,27 +564,27 @@ struct FParticleVelocityScale
 {
 	GENERATED_BODY()
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleVelocityScale")					float RelativeTime;							//var float RelativeTime;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleVelocityScale")					FVector RelativeVelocity;						//var FVector RelativeVelocity;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ParticleVelocityScale")					FVector RelativeVelocity = FVector(0, 0, 0);						//var FVector RelativeVelocity;
 };
 
 USTRUCT(BlueprintType)
 struct FParticle
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector Location;						//var FVector Location;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector OldLocation;					//var FVector OldLocation;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector Velocity;						//var FVector Velocity;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector StartSize;						//var FVector StartSize;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector SpinsPerSecond;					//var FVector SpinsPerSecond;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector StartSpin;						//var FVector StartSpin;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector RevolutionCenter;				//var FVector RevolutionCenter;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector RevolutionsPerSecond;			//var FVector RevolutionsPerSecond;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector RevolutionsMultiplier;			//var FVector RevolutionsMultiplier;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector Size;							//var FVector Size;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector StartLocation;					//var FVector StartLocation;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector ColorMultiplier;				//var FVector ColorMultiplier;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector VelocityMultiplier;				//var FVector VelocityMultiplier;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector OldMeshLocation;				//var FVector OldMeshLocation;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector Location = FVector(0, 0, 0);						//var FVector Location;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector OldLocation = FVector(0, 0, 0);					//var FVector OldLocation;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector Velocity = FVector(0, 0, 0);						//var FVector Velocity;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector StartSize = FVector(0, 0, 0);						//var FVector StartSize;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector SpinsPerSecond = FVector(0, 0, 0);					//var FVector SpinsPerSecond;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector StartSpin = FVector(0, 0, 0);						//var FVector StartSpin;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector RevolutionCenter = FVector(0, 0, 0);				//var FVector RevolutionCenter;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector RevolutionsPerSecond = FVector(0, 0, 0);			//var FVector RevolutionsPerSecond;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector RevolutionsMultiplier = FVector(0, 0, 0);			//var FVector RevolutionsMultiplier;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector Size = FVector(0, 0, 0);							//var FVector Size;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector StartLocation = FVector(0, 0, 0);					//var FVector StartLocation;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector ColorMultiplier = FVector(0, 0, 0);				//var FVector ColorMultiplier;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector VelocityMultiplier = FVector(0, 0, 0);				//var FVector VelocityMultiplier;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FVector OldMeshLocation = FVector(0, 0, 0);				//var FVector OldMeshLocation;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					FColor Color;							//var Color Color;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					float Time;								//var float Time;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particle")					float MaxLifetime;						//var float MaxLifetime;
@@ -700,42 +762,41 @@ USTRUCT(BlueprintType)
 struct FAssetFileInfo
 {
 	GENERATED_BODY()
-	UPROPERTY(BlueprintReadWrite, Category = "AA2_AssetMapping")						FString FullName;							//var FString FullName;
-	UPROPERTY(BlueprintReadWrite, Category = "AA2_AssetMapping")						FString Name;								//var FString Name;
-	UPROPERTY(BlueprintReadWrite, Category = "AA2_AssetMapping")						FString Path;								//var FString Path;
-	UPROPERTY(BlueprintReadWrite, Category = "AA2_AssetMapping")						int32 FileLength;							//var int32 FileLength;
-	UPROPERTY(BlueprintReadWrite, Category = "AA2_AssetMapping")						FString SHA;								//var FString SHA;
-	UPROPERTY(BlueprintReadWrite, Category = "AA2_AssetMapping")						FString Date;								//var FString Date;
-	UPROPERTY(BlueprintReadWrite, Category = "AA2_AssetMapping")						int32 bShouldRemove;						//var int32 bShouldRemove;
+	UPROPERTY(BlueprintReadWrite, Category = "AA2_AssetMapping")						FString FullName = "";				//var FString FullName;
+	UPROPERTY(BlueprintReadWrite, Category = "AA2_AssetMapping")						FString Name = "";					//var FString Name;
+	UPROPERTY(BlueprintReadWrite, Category = "AA2_AssetMapping")						FString Path = "";					//var FString Path;
+	UPROPERTY(BlueprintReadWrite, Category = "AA2_AssetMapping")						int32 FileLength = 0;				//var int32 FileLength;
+	UPROPERTY(BlueprintReadWrite, Category = "AA2_AssetMapping")						FString SHA = "";					//var FString SHA;
+	UPROPERTY(BlueprintReadWrite, Category = "AA2_AssetMapping")						FString Date = "";					//var FString Date;
+	UPROPERTY(BlueprintReadWrite, Category = "AA2_AssetMapping")						int32 bShouldRemove = 0;			//var int32 bShouldRemove;
 };
 
 USTRUCT(BlueprintType)
 struct FAA2_AssetMapping
 {
 	GENERATED_BODY()
-	UPROPERTY(BlueprintReadWrite, Category = "AA2_AssetMapping")						FString AssetName;								//var FString AssetName;
-	UPROPERTY(BlueprintReadWrite, Category = "AA2_AssetMapping")						FString AssetFileName;							//var FString AssetFileName;
-	UPROPERTY(BlueprintReadWrite, Category = "AA2_AssetMapping")						FString AssetTitle;								//var FString AssetTitle;
+	UPROPERTY(BlueprintReadWrite, Category = "AA2_AssetMapping")			FString AssetName = "";				//var FString AssetName;
+	UPROPERTY(BlueprintReadWrite, Category = "AA2_AssetMapping")			FString AssetFileName = "";			//var FString AssetFileName;
+	UPROPERTY(BlueprintReadWrite, Category = "AA2_AssetMapping")			FString AssetTitle = "";			//var FString AssetTitle;
 };
 
 USTRUCT(BlueprintType)
 struct FKeyValuePair
 {
 	GENERATED_BODY()
-	UPROPERTY(BlueprintReadWrite, Category = "KeyValuePair")						FString Key;								//var string Key;
-	UPROPERTY(BlueprintReadWrite, Category = "KeyValuePair")						FString Value;								//var string Value;
+	UPROPERTY(BlueprintReadWrite, Category = "KeyValuePair")			FString Key = "";					//var string Key;
+	UPROPERTY(BlueprintReadWrite, Category = "KeyValuePair")			FString Value = "";					//var string Value;
 };
-
 
 USTRUCT(BlueprintType)
 struct FPlayerResponseLine
 {
 	GENERATED_BODY()
-	UPROPERTY(BlueprintReadWrite, Category = "PlayerResponseLine")					int32 PlayerNum;							//var int PlayerNum;
-	UPROPERTY(BlueprintReadWrite, Category = "PlayerResponseLine")					FString PlayerName;							//var string PlayerName;
-	UPROPERTY(BlueprintReadWrite, Category = "PlayerResponseLine")					int32 Ping;									//var int Ping;
-	UPROPERTY(BlueprintReadWrite, Category = "PlayerResponseLine")					int32 Score;								//var int Score;
-	UPROPERTY(BlueprintReadWrite, Category = "PlayerResponseLine")					int32 StatsID;								//var int StatsID;
+	UPROPERTY(BlueprintReadWrite, Category = "PlayerResponseLine")		int32 PlayerNum = 0;				//var int PlayerNum;
+	UPROPERTY(BlueprintReadWrite, Category = "PlayerResponseLine")		FString PlayerName = "";			//var string PlayerName;
+	UPROPERTY(BlueprintReadWrite, Category = "PlayerResponseLine")		int32 Ping = 0;						//var int Ping;
+	UPROPERTY(BlueprintReadWrite, Category = "PlayerResponseLine")		int32 Score = 0;					//var int Score;
+	UPROPERTY(BlueprintReadWrite, Category = "PlayerResponseLine")		int32 StatsID = 0;					//var int StatsID;
 };
 
 
@@ -744,36 +805,35 @@ USTRUCT(BlueprintType)
 struct FServerResponseLine
 {
 	GENERATED_BODY()
-	UPROPERTY(BlueprintReadWrite, Category = "ServerResponseLine")					int32 ServerID;								//var int ServerID;
-	UPROPERTY(BlueprintReadWrite, Category = "ServerResponseLine")					FString IP;									//var string IP;
-	UPROPERTY(BlueprintReadWrite, Category = "ServerResponseLine")					int32 Port;									//var int Port;
-	UPROPERTY(BlueprintReadWrite, Category = "ServerResponseLine")					int32 QueryPort;							//var int QueryPort;
-	UPROPERTY(BlueprintReadWrite, Category = "ServerResponseLine")					FString ServerName;							//var string ServerName;
-	UPROPERTY(BlueprintReadWrite, Category = "ServerResponseLine")					FString MapName;							//var string MapName;
-	UPROPERTY(BlueprintReadWrite, Category = "ServerResponseLine")					FString GameType;							//var string GameType;
-	UPROPERTY(BlueprintReadWrite, Category = "ServerResponseLine")					int32 CurrentPlayers;						//var int CurrentPlayers;
-	UPROPERTY(BlueprintReadWrite, Category = "ServerResponseLine")					int32 MaxPlayers;							//var int MaxPlayers;
-	UPROPERTY(BlueprintReadWrite, Category = "ServerResponseLine")					int32 Ping;									//var int Ping;
-	UPROPERTY(BlueprintReadWrite, Category = "ServerResponseLine")					int32 Flags;								//var int Flags;
-	UPROPERTY(BlueprintReadWrite, Category = "ServerResponseLine")					FString SkillLevel;							//var string SkillLevel;
-	UPROPERTY(BlueprintReadWrite, Category = "ServerResponseLine")					TArray<FKeyValuePair>  ServerInfo;			//var array<KeyValuePair> ServerInfo;
-	UPROPERTY(BlueprintReadWrite, Category = "ServerResponseLine")					TArray<FPlayerResponseLine> PlayerInfo;		//var array<PlayerResponseLine> PlayerInfo;
+	UPROPERTY(BlueprintReadWrite, Category = "ServerResponseLine")		int32 ServerID = 0;								//var int ServerID;
+	UPROPERTY(BlueprintReadWrite, Category = "ServerResponseLine")		FString IP = "";								//var string IP;
+	UPROPERTY(BlueprintReadWrite, Category = "ServerResponseLine")		int32 Port = 0;									//var int Port;
+	UPROPERTY(BlueprintReadWrite, Category = "ServerResponseLine")		int32 QueryPort = 0;							//var int QueryPort;
+	UPROPERTY(BlueprintReadWrite, Category = "ServerResponseLine")		FString ServerName = "";						//var string ServerName;
+	UPROPERTY(BlueprintReadWrite, Category = "ServerResponseLine")		FString MapName = "";							//var string MapName;
+	UPROPERTY(BlueprintReadWrite, Category = "ServerResponseLine")		FString GameType = "";							//var string GameType;
+	UPROPERTY(BlueprintReadWrite, Category = "ServerResponseLine")		int32 CurrentPlayers = 0;						//var int CurrentPlayers;
+	UPROPERTY(BlueprintReadWrite, Category = "ServerResponseLine")		int32 MaxPlayers = 0;							//var int MaxPlayers;
+	UPROPERTY(BlueprintReadWrite, Category = "ServerResponseLine")		int32 Ping = 0;									//var int Ping;
+	UPROPERTY(BlueprintReadWrite, Category = "ServerResponseLine")		int32 Flags = 0;								//var int Flags;
+	UPROPERTY(BlueprintReadWrite, Category = "ServerResponseLine")		FString SkillLevel = "";						//var string SkillLevel;
+	UPROPERTY(BlueprintReadWrite, Category = "ServerResponseLine")		TArray<FKeyValuePair>  ServerInfo = {};			//var array<KeyValuePair> ServerInfo;
+	UPROPERTY(BlueprintReadWrite, Category = "ServerResponseLine")		TArray<FPlayerResponseLine> PlayerInfo ={};		//var array<PlayerResponseLine> PlayerInfo;
 };
-
 
 USTRUCT(BlueprintType)
 struct FHeaderColumnPos
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HeaderColumnPos")			TArray<float> ColumnSizes;		//var TArray<float> ColumnSizes;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HeaderColumnPos")		TArray<float> ColumnSizes ={};		//var TArray<float> ColumnSizes;
 };
 
 USTRUCT(BlueprintType)
 struct FeServerCacheInfo
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FeServerCacheInfo")			FString GameType;				//var FString GameType;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FeServerCacheInfo")			int32 SubnetIndex;				//var int32 SubnetIndex;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FeServerCacheInfo")			FString GameType = "";				//var FString GameType;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FeServerCacheInfo")			int32 SubnetIndex = 0;				//var int32 SubnetIndex;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FeServerCacheInfo")			FServerResponseLine SRL;		//var GameInfo.ServerResponseLine SRL;
 };
 
@@ -782,7 +842,7 @@ USTRUCT(BlueprintType)
 struct FUAVFlightPlannerWaypoint
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UAVFlightPlannerWaypoint")		FVector vLocation;			//var FVector vLocation;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UAVFlightPlannerWaypoint")		FVector vLocation = FVector(0, 0, 0);			//var FVector vLocation;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UAVFlightPlannerWaypoint")		float fpHeight;				//var float fpHeight;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UAVFlightPlannerWaypoint")		float fpSpeed;				//var float fpSpeed;
 };
@@ -956,64 +1016,64 @@ USTRUCT(BlueprintType)
 struct FDriverWeaponStruct
 {
 	GENERATED_BODY()
-	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "DriverWeaponStruct")				AVehicleWeapon* WeaponClass;			//var class<VehicleWeapon>  WeaponClass;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "DriverWeaponStruct")				FName WeaponBone;						//var name WeaponBone;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "DriverWeaponStruct")				AVehicleWeapon*	WeaponClass		= nullptr;			//var class<VehicleWeapon>  WeaponClass;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "DriverWeaponStruct")				FName			WeaponBone		= "";					//var name WeaponBone;
 };
 
 USTRUCT(BlueprintType)
 struct FVehiclePositionStruct
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VehiclePositionStruct")				AVehiclePosition* VehiclePositionClass;		//var class<VehiclePosition>  VehiclePositionClass;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VehiclePositionStruct")				FName WeaponBone;							//var name WeaponBone;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VehiclePositionStruct")				FName PositionBone;							//var name PositionBone;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VehiclePositionStruct")				FVector FPCameraOffset;						//var Object.Vector FPCameraOffset;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VehiclePositionStruct")				FVector PosOffset;							//var Object.Vector PosOffset;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VehiclePositionStruct")				FRotator RotOffset;							//var Object.Rotator RotOffset;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VehiclePositionStruct")				AVehiclePosition*	VehiclePositionClass	= nullptr;				//var class<VehiclePosition>  VehiclePositionClass;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VehiclePositionStruct")				FName				WeaponBone				= "";					//var name WeaponBone;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VehiclePositionStruct")				FName				PositionBone			= "";					//var name PositionBone;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VehiclePositionStruct")				FVector				FPCameraOffset			= FVector(0, 0, 0);		//var Object.Vector FPCameraOffset;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VehiclePositionStruct")				FVector				PosOffset				= FVector(0, 0, 0);		//var Object.Vector PosOffset;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VehiclePositionStruct")				FRotator			RotOffset				= FRotator(0, 0, 0);	//var Object.Rotator RotOffset;
 };
 
 USTRUCT(BlueprintType)
 struct FsDamageInfo
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "sDamageInfo")				UaDamageType* AcceptsDamage;				//var class<DamageType>  AcceptsDamage;
-	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "sDamageInfo")				AAGP_VehicleParticles* DamageEffect;				//var class<AGP_Effects.AGP_VehicleParticles>  DamageEffect;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "sDamageInfo")				float AM_Front_Left;					//var float AM_Front_Left;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "sDamageInfo")				float AM_Front_Right;					//var float AM_Front_Right;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "sDamageInfo")				float AM_Back_Left;						//var float AM_Back_Left;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "sDamageInfo")				float AM_Back_Right;					//var float AM_Back_Right;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "sDamageInfo")				float AM_Undercarriage;					//var float AM_Undercarriage;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "sDamageInfo")				float AM_Turret;						//var float AM_Turret;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "sDamageInfo")				float AM_Roof;							//var float AM_Roof;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "sDamageInfo")				float AM_Tread_Left;					//var float AM_Tread_Left;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "sDamageInfo")				float AM_Tread_Right;					//var float AM_Tread_Right;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "sDamageInfo")				float AM_Wheels_Left;					//var float AM_Wheels_Left;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "sDamageInfo")				float AM_Wheels_Right;					//var float AM_Wheels_Right;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "sDamageInfo")				float DamageEffectPct;					//var float DamageEffectPct;
-};
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "sDamageInfo")				UaDamageType*			AcceptsDamage		= nullptr;				//var class<DamageType>  AcceptsDamage;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "sDamageInfo")				AAGP_VehicleParticles*	DamageEffect		= nullptr;				//var class<AGP_Effects.AGP_VehicleParticles>  DamageEffect;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "sDamageInfo")				float					AM_Front_Left		= 0;					//var float AM_Front_Left;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "sDamageInfo")				float					AM_Front_Right		= 0;					//var float AM_Front_Right;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "sDamageInfo")				float					AM_Back_Left		= 0;					//var float AM_Back_Left;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "sDamageInfo")				float					AM_Back_Right		= 0;					//var float AM_Back_Right;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "sDamageInfo")				float					AM_Undercarriage	= 0;					//var float AM_Undercarriage;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "sDamageInfo")				float					AM_Turret			= 0;					//var float AM_Turret;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "sDamageInfo")				float					AM_Roof				= 0;					//var float AM_Roof;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "sDamageInfo")				float					AM_Tread_Left		= 0;					//var float AM_Tread_Left;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "sDamageInfo")				float					AM_Tread_Right		= 0;					//var float AM_Tread_Right;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "sDamageInfo")				float					AM_Wheels_Left		= 0;					//var float AM_Wheels_Left;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "sDamageInfo")				float					AM_Wheels_Right		= 0;					//var float AM_Wheels_Right;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "sDamageInfo")				float					DamageEffectPct		= 0;					//var float DamageEffectPct;
+};	
 
 USTRUCT(BlueprintType)
 struct FTestDamageZoneInfo
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TestDamageZoneInfo")				FName ZoneName;							//var name ZoneName;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TestDamageZoneInfo")				uint8 ZoneNumber;						//var byte ZoneNumber;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TestDamageZoneInfo")				int32 ArmorThreshold;					//var int ArmorThreshold;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TestDamageZoneInfo")				int32 MaxHitPoints;						//var int MaxHitPoints;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TestDamageZoneInfo")				uint8 bInitialSyncToVehicleHealth;		//var byte bInitialSyncToVehicleHealth;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TestDamageZoneInfo")				uint8 bNoPassDamageToVehicle;			//var byte bNoPassDamageToVehicle;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TestDamageZoneInfo")				float DamageModifier;					//var float DamageModifier;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TestDamageZoneInfo")				float DS1HealthPct;						//var float DS1HealthPct;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TestDamageZoneInfo")				float DS2HealthPct;						//var float DS2HealthPct;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TestDamageZoneInfo")				FName	ZoneName						= "";		//var name ZoneName;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TestDamageZoneInfo")				uint8	ZoneNumber						= 0;		//var byte ZoneNumber;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TestDamageZoneInfo")				int32	ArmorThreshold					= 0;		//var int ArmorThreshold;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TestDamageZoneInfo")				int32	MaxHitPoints					= 0;		//var int MaxHitPoints;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TestDamageZoneInfo")				uint8	bInitialSyncToVehicleHealth		= 0;		//var byte bInitialSyncToVehicleHealth;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TestDamageZoneInfo")				uint8	bNoPassDamageToVehicle			= 0;		//var byte bNoPassDamageToVehicle;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TestDamageZoneInfo")				float	DamageModifier					= 0;		//var float DamageModifier;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TestDamageZoneInfo")				float	DS1HealthPct					= 0;		//var float DS1HealthPct;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TestDamageZoneInfo")				float	DS2HealthPct					= 0;		//var float DS2HealthPct;
 };
 
 USTRUCT(BlueprintType)
 struct FIniParticleInfo
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "IniParticleInfo")				FName ZoneName;						//var name ZoneName;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "IniParticleInfo")				FString DS1ParticleString;			//var string DS1ParticleString;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "IniParticleInfo")				FString DS2ParticleString;			//var string DS2ParticleString;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "IniParticleInfo")				FName	ZoneName			= "";			//var name ZoneName;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "IniParticleInfo")				FString DS1ParticleString	= "";			//var string DS1ParticleString;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "IniParticleInfo")				FString DS2ParticleString	= "";			//var string DS2ParticleString;
 };
 
 
@@ -1021,50 +1081,50 @@ USTRUCT(BlueprintType)
 struct FActorAttachment
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ActorAttachment")				AActor* attachClass;				//var class<Actor>  attachClass;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ActorAttachment")				FName AttachBone;					//var name AttachBone;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ActorAttachment")				AActor* attachClass		= nullptr;				//var class<Actor>  attachClass;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ActorAttachment")				FName	AttachBone		= "";					//var name AttachBone;
 };
 
 USTRUCT(BlueprintType)
 struct FImpactInfoStruct
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ImpactInfoStruct")				AActor* Other;					//var AActor* Other;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ImpactInfoStruct")				FVector pos;					//var Object.Vector pos;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ImpactInfoStruct")				FVector impactVel;				//var Object.Vector impactVel;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ImpactInfoStruct")				FVector impactNorm;				//var Object.Vector impactNorm;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ImpactInfoStruct")				FVector ImpactAccel;			//var Object.Vector ImpactAccel;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ImpactInfoStruct")				AActor* Other			= nullptr;					//var AActor* Other;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ImpactInfoStruct")				FVector pos				= FVector(0, 0, 0);			//var Object.Vector pos;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ImpactInfoStruct")				FVector impactVel		= FVector(0, 0, 0);			//var Object.Vector impactVel;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ImpactInfoStruct")				FVector impactNorm		= FVector(0, 0, 0);			//var Object.Vector impactNorm;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ImpactInfoStruct")				FVector ImpactAccel		= FVector(0, 0, 0);			//var Object.Vector ImpactAccel;
 };
 
 USTRUCT(BlueprintType)
 struct FTrackedCraftState
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TrackedCraftState")				FVector ChassisPosition;			//var Object.Vector ChassisPosition;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TrackedCraftState")				FQuat ChassisQuaternion;			//var Object.Quat ChassisQuaternion;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TrackedCraftState")				FVector ChassisLinVel;				//var Object.Vector ChassisLinVel;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TrackedCraftState")				FVector ChassisAngVel;				//var Object.Vector ChassisAngVel;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TrackedCraftState")				uint8 ServerThrust;					//var byte ServerThrust;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TrackedCraftState")				uint8 ServerTurn;					//var byte ServerTurn;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TrackedCraftState")				int32 ServerViewPitch;				//var int ServerViewPitch;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TrackedCraftState")				int32 ServerViewYaw;				//var int ServerViewYaw;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TrackedCraftState")				FVector ChassisPosition		= FVector(0, 0, 0);		//var Object.Vector ChassisPosition;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TrackedCraftState")				FQuat	ChassisQuaternion	= FQuat(0,0,0,0);		//var Object.Quat ChassisQuaternion;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TrackedCraftState")				FVector ChassisLinVel		= FVector(0, 0, 0);		//var Object.Vector ChassisLinVel;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TrackedCraftState")				FVector ChassisAngVel		= FVector(0, 0, 0);		//var Object.Vector ChassisAngVel;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TrackedCraftState")				uint8	ServerThrust		= 0;					//var byte ServerThrust;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TrackedCraftState")				uint8	ServerTurn			= 0;					//var byte ServerTurn;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TrackedCraftState")				int32	ServerViewPitch		= 0;					//var int ServerViewPitch;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TrackedCraftState")				int32	ServerViewYaw		= 0;					//var int ServerViewYaw;
 };
 
 USTRUCT(BlueprintType)
 struct FSCarState
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SCarState")				FVector ChassisPosition;				//var Object.Vector ChassisPosition;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SCarState")				FQuat ChassisQuaternion;				//var Object.Quat ChassisQuaternion;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SCarState")				FVector ChassisLinVel;					//var Object.Vector ChassisLinVel;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SCarState")				FVector ChassisAngVel;					//var Object.Vector ChassisAngVel;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SCarState")				uint8 ServerHandbrake;					//var byte ServerHandbrake;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SCarState")				uint8 ServerBrake;						//var byte ServerBrake;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SCarState")				uint8 ServerGas;						//var byte ServerGas;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SCarState")				uint8 ServerGear;						//var byte ServerGear;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SCarState")				uint8 ServerSteering;					//var byte ServerSteering;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SCarState")				int32 ServerViewPitch;					//var int ServerViewPitch;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SCarState")				int32 ServerViewYaw;					//var int ServerViewYaw;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SCarState")				FVector ChassisPosition			= FVector(0, 0, 0);		//var Object.Vector ChassisPosition;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SCarState")				FQuat	ChassisQuaternion		= FQuat(0, 0, 0,0);		//var Object.Quat ChassisQuaternion;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SCarState")				FVector ChassisLinVel			= FVector(0, 0, 0);		//var Object.Vector ChassisLinVel;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SCarState")				FVector ChassisAngVel			= FVector(0, 0, 0);		//var Object.Vector ChassisAngVel;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SCarState")				uint8	ServerHandbrake			= 0;					//var byte ServerHandbrake;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SCarState")				uint8	ServerBrake				= 0;						//var byte ServerBrake;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SCarState")				uint8	ServerGas				= 0;						//var byte ServerGas;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SCarState")				uint8	ServerGear				= 0;						//var byte ServerGear;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SCarState")				uint8	ServerSteering			= 0;					//var byte ServerSteering;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SCarState")				int32	ServerViewPitch			= 0;					//var int ServerViewPitch;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SCarState")				int32	ServerViewYaw			= 0;					//var int ServerViewYaw;
 };
 
 /*
@@ -1115,10 +1175,10 @@ USTRUCT(BlueprintType)
 struct FCopterState
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CopterState")					FVector ChassisPosition;		//var Object.Vector ChassisPosition;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CopterState")					FVector ChassisPosition = FVector(0, 0, 0);		//var Object.Vector ChassisPosition;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CopterState")					FQuat ChassisQuaternion;		//var Object.Quat ChassisQuaternion;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CopterState")					FVector ChassisLinVel;			//var Object.Vector ChassisLinVel;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CopterState")					FVector ChassisAngVel;			//var Object.Vector ChassisAngVel;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CopterState")					FVector ChassisLinVel = FVector(0, 0, 0);			//var Object.Vector ChassisLinVel;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CopterState")					FVector ChassisAngVel = FVector(0, 0, 0);			//var Object.Vector ChassisAngVel;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CopterState")					uint8 ServerThrust;				//var byte ServerThrust;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CopterState")					uint8 ServerStrafe;				//var byte ServerStrafe;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CopterState")					uint8 ServerRise;				//var byte ServerRise;
@@ -1166,40 +1226,40 @@ USTRUCT(BlueprintType)
 struct FGameRecordGroup
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GameRecordGroup")					FString GameType;						//var string GameType;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GameRecordGroup")					FString ActiveMaplist;					//var string ActiveMaplist;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GameRecordGroup")		FString		GameType		= "";			//var string GameType;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GameRecordGroup")		FString		ActiveMaplist	= "";			//var string ActiveMaplist;
 };
 
 USTRUCT(BlueprintType)
 struct FMaplistRecordGroup
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MaplistRecordGroup")				FString GameType;						//var string GameType;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MaplistRecordGroup")				int32 Active;							//var int Active;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MaplistRecordGroup")				int32 LastActive;						//var int LastActive;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MaplistRecordGroup")				TArray<FMapItem> AllMaps;				//var array<MaplistRecord.MapItem> AllMaps;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MaplistRecordGroup")				TArray<UMaplistRecord*> Records;		//var array<MaplistRecord> Records;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MaplistRecordGroup")	FString					GameType	= "";		//var string GameType;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MaplistRecordGroup")	int32					Active		= 0;		//var int Active;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MaplistRecordGroup")	int32					LastActive	= 0;		//var int LastActive;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MaplistRecordGroup")	TArray<FMapItem>		AllMaps		= {};		//var array<MaplistRecord.MapItem> AllMaps;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MaplistRecordGroup")	TArray<UMaplistRecord*> Records		= {};		//var array<MaplistRecord> Records;
 };
 
 USTRUCT(BlueprintType)
 struct FKeyInfo
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "KeyInfo")				FString Alias;										//var string Alias;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "KeyInfo")				FString KeyLabel;									//var string KeyLabel;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "KeyInfo")				bool bIsSection;									//var bool bIsSection;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "KeyInfo")				FString Alias = "";										//var string Alias;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "KeyInfo")				FString KeyLabel= "";									//var string KeyLabel;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "KeyInfo")				bool bIsSection=false;									//var bool bIsSection;
 };
 
 USTRUCT(BlueprintType)
 struct FBoneEditVars
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BoneEditVars")			FName Name;											//var name Name;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BoneEditVars")			float Radius;										//var float Radius;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BoneEditVars")			bool bCheckCaps;									//var bool bCheckCaps;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BoneEditVars")			float DamageModifier;								//var float DamageModifier;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BoneEditVars")			EBoneRegion BoneRegion;								//var Object.EBoneRegion BoneRegion;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BoneEditVars")			int32 BoneIdx;										//var int BoneIdx;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BoneEditVars")			FName Name = "";										//var name Name;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BoneEditVars")			float Radius = 0;									//var float Radius;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BoneEditVars")			bool bCheckCaps=false;								//var bool bCheckCaps;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BoneEditVars")			float DamageModifier=0;								//var float DamageModifier;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BoneEditVars")			EBoneRegion BoneRegion = EBoneRegion::BR_NONE;		//var Object.EBoneRegion BoneRegion;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BoneEditVars")			int32 BoneIdx=0;										//var int BoneIdx;
 };
 
 USTRUCT(BlueprintType)
@@ -1207,47 +1267,37 @@ struct FPlaylistParser
 {
 	GENERATED_BODY()
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PlaylistParser")			EStreamPlaylistType Type;						//var StreamBase.EStreamPlaylistType Type;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PlaylistParser")			FString ParserClass;							//var string ParserClass;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PlaylistParser")			FString ParserClass="";							//var string ParserClass;
 };
 
 USTRUCT(BlueprintType)
 struct FHtmlChar
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HtmlChar")					FString Plain;									//var string Plain;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HtmlChar")					FString Coded;									//var string Coded;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HtmlChar")					FString Plain="";									//var string Plain;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HtmlChar")					FString Coded="";									//var string Coded;
 };
-
 
 USTRUCT(BlueprintType)
-struct Fpointer
+struct FaFilePath
 {
 	GENERATED_BODY()
-		UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "pointer")				int32 Dummy;										//var native const int Dummy;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FilePath")					FString FullPath="";									//var string FullPath;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FilePath")					FString Directory = "";									//var string Directory;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FilePath")					FString Filename = "";									//var string Filename;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FilePath")					FString Extension = "";									//var string Extension;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FilePath")					TArray<FString> DirectoryParts={};						//var array<String> DirectoryParts;
 };
-
-/*
-USTRUCT(BlueprintType)
-struct FFilePath
-{
-	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FilePath")					FString FullPath;									//var string FullPath;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FilePath")					FString Directory;									//var string Directory;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FilePath")					FString Filename;									//var string Filename;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FilePath")					FString Extension;									//var string Extension;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FilePath")					TArray<FString> DirectoryParts;						//var array<String> DirectoryParts;
-};
-*/
 
 USTRUCT(BlueprintType)
 struct FID3Field
 {
 	GENERATED_BODY()
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FID3Field")					Fpointer ID3Field;									//var pointer ID3Field;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FID3Field")					FString FieldName;									//var string FieldName;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FID3Field")					FString FieldValue;									//var string FieldValue;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FID3Field")					uint8 FieldID;										//var byte FieldID;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FID3Field")					uint8 Code;											//var byte Code;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FID3Field")					FString FieldName = "";									//var string FieldName;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FID3Field")					FString FieldValue = "";									//var string FieldValue;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FID3Field")					uint8 FieldID = 0;										//var byte FieldID;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FID3Field")					uint8 Code = 0;											//var byte Code;
 };
 
 
@@ -1281,19 +1331,19 @@ USTRUCT(BlueprintType)
 struct Ft_VideoMode
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "t_VideoMode")						int32 X;												//var int X;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "t_VideoMode")						int32 Y;												//var int Y;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "t_VideoMode")						int32 X = 0;												//var int X;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "t_VideoMode")						int32 Y = 0;												//var int Y;
 };
 
 USTRUCT(BlueprintType)
 struct FLine
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Line")								FString Text;											//var string Text;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Line")								int32 ix;												//var int ix;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Line")								int32 iY;												//var int iY;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Line")								int32 iScaledX;											//var int iScaledX;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Line")								int32 iScaledY;											//var int iScaledY;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Line")			FString Text	= "";											//var string Text;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Line")			int32 ix		= 0;												//var int ix;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Line")			int32 iY		= 0;												//var int iY;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Line")			int32 iScaledX	= 0;											//var int iScaledX;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Line")			int32 iScaledY	= 0;											//var int iScaledY;
 };
 USTRUCT(BlueprintType)
 struct FScoring
@@ -1329,28 +1379,28 @@ USTRUCT(BlueprintType)
 struct FPoint
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Point")										int32 X;											//var int X;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Point")										int32 Y;											//var int Y;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Point")			int32 X=0;											//var int X;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Point")			int32 Y=0;											//var int Y;
 };
 
 USTRUCT(BlueprintType)
 struct FPosition
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Position")									int32 X;											//var int X;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Position")									int32 Y;											//var int Y;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Position")									int32 W;											//var int W;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Position")									int32 H;											//var int H;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Position")									int32 X=0;											//var int X;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Position")									int32 Y=0;											//var int Y;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Position")									int32 W=0;											//var int W;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Position")									int32 H=0;											//var int H;
 };
 
 USTRUCT(BlueprintType)
 struct FInvProperties
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "InvProperties")								int32 iItemID;										//var int iItemID;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "InvProperties")								int32 iParam;										//var int iParam;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "InvProperties")								int32 iSize;										//var int iSize;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "InvProperties")								float fWeight;										//var float fWeight;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "InvProperties")								int32 iItemID=0;										//var int iItemID;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "InvProperties")								int32 iParam=0;										//var int iParam;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "InvProperties")								int32 iSize=0;										//var int iSize;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "InvProperties")								float fWeight=0;										//var float fWeight;
 };
 
 
@@ -1419,8 +1469,8 @@ struct FVectorStat
 	GENERATED_BODY()
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VectorStat")								FString statName;								//var string statName;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VectorStat")								FVector trueValue;								//var Object.Vector trueValue;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VectorStat")								FVector spoofValue;								//var Object.Vector spoofValue;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VectorStat")								FVector trueValue = FVector(0, 0, 0);								//var Object.Vector trueValue;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VectorStat")								FVector spoofValue = FVector(0, 0, 0);								//var Object.Vector spoofValue;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VectorStat")								float spoofChance;								//var float spoofChance;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VectorStat")								float obscurity;								//var float obscurity;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VectorStat")								bool isStatic;									//var bool isStatic;
@@ -1444,7 +1494,7 @@ USTRUCT(BlueprintType)
 struct FUAVFlightPlanWaypoints
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UAVFlightPlanWaypoints")					FVector vLocation;								//var Object.Vector vLocation;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UAVFlightPlanWaypoints")					FVector vLocation = FVector(0, 0, 0);								//var Object.Vector vLocation;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UAVFlightPlanWaypoints")					float fpSpeed;									//var float fpSpeed;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UAVFlightPlanWaypoints")					float fpAltitude;								//var float fpAltitude;
 };
@@ -1498,7 +1548,7 @@ struct FOrientation
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Orientation")							float PctInStart;									//var float PctInStart;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Orientation")							float PctInEnd;										//var float PctInEnd;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Orientation")							float PctInDuration;								//var float PctInDuration;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Orientation")							FRotator StartingRotation;							//var Object.Rotator StartingRotation;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Orientation")							FRotator StartingRotation = FRotator(0, 0, 0);							//var Object.Rotator StartingRotation;
 };
 
 USTRUCT(BlueprintType)
@@ -1543,8 +1593,8 @@ struct FScoreItem
 	GENERATED_BODY()
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ScoreItem")								FName Name;											//var name Name;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ScoreItem")								FName PosActorTag;									//var name PosActorTag;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ScoreItem")								FVector Location;									//var FVector Location;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ScoreItem")								FRotator Rotation;									//var Object.Rotator Rotation;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ScoreItem")								FVector Location = FVector(0, 0, 0);									//var FVector Location;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ScoreItem")								FRotator Rotation = FRotator(0, 0, 0);									//var Object.Rotator Rotation;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ScoreItem")								bool bBaseToPosActor;								//var bool bBaseToPosActor;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ScoreItem")								EFontType Font;										//var EFontType Font;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ScoreItem")								AActor* PosActor;									//var AActor* PosActor;
@@ -1850,8 +1900,8 @@ USTRUCT(BlueprintType)
 struct FWeatherPcl
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeatherPcl")								FVector pos;										//var FVector pos;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeatherPcl")								FVector Vel;										//var FVector Vel;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeatherPcl")								FVector pos = FVector(0, 0, 0);										//var FVector pos;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeatherPcl")								FVector Vel = FVector(0, 0, 0);										//var FVector Vel;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeatherPcl")								float Life;											//var float Life;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeatherPcl")								float Size;											//var float Size;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeatherPcl")								float HitTime;										//var float HitTime;
@@ -1936,13 +1986,13 @@ USTRUCT(BlueprintType)
 struct FNPCAttachObject
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCAttachObject")							AActor* actSpawnedItem;								//var AActor* actSpawnedItem;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCAttachObject")							AActor* Attachment;									//var class<Actor>  Attachment;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCAttachObject")							FName Bone;											//var name Bone;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCAttachObject")							FVector LocationOffset;								//var FVector LocationOffset;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCAttachObject")							FRotator RotationOffset;							//var Object.Rotator RotationOffset;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCAttachObject")							bool bUseParentScale;								//var bool bUseParentScale;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCAttachObject")							float Scale;										//var float Scale;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCAttachObject")		AActor*		actSpawnedItem		= nullptr;				//var AActor* actSpawnedItem;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCAttachObject")		AActor*		Attachment			= nullptr;				//var class<Actor>  Attachment;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCAttachObject")		FName		Bone				= "";					//var name Bone;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCAttachObject")		FVector		LocationOffset		= FVector(0, 0, 0);		//var FVector LocationOffset;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCAttachObject")		FRotator	RotationOffset		= FRotator(0, 0, 0);	//var Object.Rotator RotationOffset;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCAttachObject")		bool		bUseParentScale		= false;				//var bool bUseParentScale;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCAttachObject")		float		Scale				=0;						//var float Scale;
 };
 
 USTRUCT(BlueprintType)
@@ -1952,7 +2002,7 @@ struct FRecentContact
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "RecentContact")								APawn* pawnContact;									//var APawn* pawnContact;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "RecentContact")								bool bHumanControlled;								//var bool bHumanControlled;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "RecentContact")								bool bEnemy;										//var bool bEnemy;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "RecentContact")								FVector vLocation;									//var FVector vLocation;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "RecentContact")								FVector vLocation = FVector(0, 0, 0);									//var FVector vLocation;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "RecentContact")								float fpThreatLevel;								//var float fpThreatLevel;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "RecentContact")								float fpTimeSeen;									//var float fpTimeSeen;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "RecentContact")								float fpClosureRate;								//var float fpClosureRate;
@@ -1986,14 +2036,14 @@ struct FTarget
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Target")									UStaticMesh* StaticMesh;							//var StaticMesh StaticMesh;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Target")									UStaticMesh* ZoneMesh;								//var StaticMesh ZoneMesh;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Target")									float Z1Scale;										//var float Z1Scale;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Target")									FVector Z1Scale3D;									//var FVector Z1Scale3D;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Target")									FVector Z1Offset;									//var FVector Z1Offset;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Target")									FRotator Z1Rotation;								//var Object.Rotator Z1Rotation;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Target")									FVector Z1Scale3D = FVector(0, 0, 0);									//var FVector Z1Scale3D;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Target")									FVector Z1Offset = FVector(0, 0, 0);									//var FVector Z1Offset;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Target")									FRotator Z1Rotation = FRotator(0, 0, 0);								//var Object.Rotator Z1Rotation;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Target")									FString Z1ID;										//var string Z1ID;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Target")									float Z2Scale;										//var float Z2Scale;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Target")									FVector Z2Scale3D;									//var FVector Z2Scale3D;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Target")									FVector Z2Offset;									//var FVector Z2Offset;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Target")									FRotator Z2Rotation;								//var Object.Rotator Z2Rotation;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Target")									FVector Z2Scale3D = FVector(0, 0, 0);									//var FVector Z2Scale3D;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Target")									FVector Z2Offset = FVector(0, 0, 0);									//var FVector Z2Offset;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Target")									FRotator Z2Rotation = FRotator(0, 0, 0);								//var Object.Rotator Z2Rotation;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Target")									FString Z2ID;										//var string Z2ID;
 };
 
@@ -2014,8 +2064,8 @@ struct FAttachObject
 
 	UPROPERTY(BlueprintReadWrite, Category = "AttachObject")									AActor* Attachment;									//var class<Actor>  Attachment;
 	UPROPERTY(BlueprintReadWrite, Category = "AttachObject")									FName Bone;											//var name Bone;
-	UPROPERTY(BlueprintReadWrite, Category = "AttachObject")									FVector LocationOffset;								//var FVector LocationOffset;
-	UPROPERTY(BlueprintReadWrite, Category = "AttachObject")									FRotator RotationOffset;							//var Object.Rotator RotationOffset;
+	UPROPERTY(BlueprintReadWrite, Category = "AttachObject")									FVector LocationOffset = FVector(0, 0, 0);								//var FVector LocationOffset;
+	UPROPERTY(BlueprintReadWrite, Category = "AttachObject")									FRotator RotationOffset = FRotator(0, 0, 0);							//var Object.Rotator RotationOffset;
 	UPROPERTY(BlueprintReadWrite, Category = "AttachObject")									bool bUseParentScale;								//var bool bUseParentScale;
 	UPROPERTY(BlueprintReadWrite, Category = "AttachObject")									float Scale;										//var float Scale;
 };
@@ -2341,10 +2391,10 @@ struct FClientAdjustment
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ClientAdjustment")					float TimeStamp;									//var float TimeStamp;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ClientAdjustment")					FName NewState;										//var name NewState;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ClientAdjustment")					EPhysics newPhysics;								//var Actor.EPhysics newPhysics;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ClientAdjustment")					FVector NewLoc;										//var FVector NewLoc;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ClientAdjustment")					FVector NewVel;										//var FVector NewVel;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ClientAdjustment")					FVector NewLoc = FVector(0, 0, 0);										//var FVector NewLoc;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ClientAdjustment")					FVector NewVel = FVector(0, 0, 0);										//var FVector NewVel;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ClientAdjustment")					AActor* NewBase;									//var AActor* NewBase;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ClientAdjustment")					FVector NewFloor;									//var FVector NewFloor;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ClientAdjustment")					FVector NewFloor = FVector(0, 0, 0);									//var FVector NewFloor;
 };
 */
 USTRUCT(BlueprintType)
@@ -2855,8 +2905,8 @@ struct FNPCPSAttachObject
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCPSAttachObject")				AActor* Attachment;				//var class<Actor>  Attachment;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCPSAttachObject")				FName Bone;						//var name Bone;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCPSAttachObject")				FVector LocationOffset;			//var var FVector LocationOffset;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCPSAttachObject")				FRotator RotationOffset;		//var Object.Rotator RotationOffset;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCPSAttachObject")				FVector LocationOffset = FVector(0, 0, 0);			//var var FVector LocationOffset;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCPSAttachObject")				FRotator RotationOffset = FRotator(0, 0, 0);		//var Object.Rotator RotationOffset;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCPSAttachObject")				bool bUseParentScale;			//var bool bUseParentScale;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPCPSAttachObject")				float Scale;					//var float Scale;
 };
@@ -2877,16 +2927,16 @@ struct FTournamentPlayerStats
 {
 	GENERATED_BODY()
 
-	UPROPERTY(BlueprintReadWrite, Category = "TournamentPlayerStats")				FString sTeamName;							//var string sTeamName;
-	UPROPERTY(BlueprintReadWrite, Category = "TournamentPlayerStats")				FString sPlayerName;						//var string sPlayerName;
-	UPROPERTY(BlueprintReadWrite, Category = "TournamentPlayerStats")				int32 iTeamIndex;							//var int iTeamIndex;
-	UPROPERTY(BlueprintReadWrite, Category = "TournamentPlayerStats")				int32 iKills;								//var int iKills;
-	UPROPERTY(BlueprintReadWrite, Category = "TournamentPlayerStats")				int32 iDeaths;								//var int iDeaths;
-	UPROPERTY(BlueprintReadWrite, Category = "TournamentPlayerStats")				int32 iGoalPoints;							//var int iGoalPoints;
-	UPROPERTY(BlueprintReadWrite, Category = "TournamentPlayerStats")				int32 iLeaderPoints;						//var int iLeaderPoints;
-	UPROPERTY(BlueprintReadWrite, Category = "TournamentPlayerStats")				int32 iTotalScore;							//var int iTotalScore;
-	UPROPERTY(BlueprintReadWrite, Category = "TournamentPlayerStats")				int32 iROE;									//var int iROE;
-	UPROPERTY(BlueprintReadWrite, Category = "TournamentPlayerStats")				int32 iRoundsPlayed;						//var int iRoundsPlayed;
+	UPROPERTY(BlueprintReadWrite, Category = "TournamentPlayerStats")				FString	sTeamName		= "";			//var string sTeamName;
+	UPROPERTY(BlueprintReadWrite, Category = "TournamentPlayerStats")				FString sPlayerName		= "";			//var string sPlayerName;
+	UPROPERTY(BlueprintReadWrite, Category = "TournamentPlayerStats")				int32	iTeamIndex		= 0;			//var int iTeamIndex;
+	UPROPERTY(BlueprintReadWrite, Category = "TournamentPlayerStats")				int32	iKills			= 0;			//var int iKills;
+	UPROPERTY(BlueprintReadWrite, Category = "TournamentPlayerStats")				int32	iDeaths			= 0;			//var int iDeaths;
+	UPROPERTY(BlueprintReadWrite, Category = "TournamentPlayerStats")				int32	iGoalPoints		= 0;			//var int iGoalPoints;
+	UPROPERTY(BlueprintReadWrite, Category = "TournamentPlayerStats")				int32	iLeaderPoints	= 0;			//var int iLeaderPoints;
+	UPROPERTY(BlueprintReadWrite, Category = "TournamentPlayerStats")				int32	iTotalScore		= 0;			//var int iTotalScore;
+	UPROPERTY(BlueprintReadWrite, Category = "TournamentPlayerStats")				int32	iROE			= 0;			//var int iROE;
+	UPROPERTY(BlueprintReadWrite, Category = "TournamentPlayerStats")				int32	iRoundsPlayed	= 0;			//var int iRoundsPlayed;
 };
 
 USTRUCT(BlueprintType)
@@ -2894,37 +2944,34 @@ struct FTournamentTeamResults
 {
 	GENERATED_BODY()
 
-	UPROPERTY(BlueprintReadWrite, Category = "TournamentTeamResults")				FString sTeamName;							//var string sTeamName;
-	UPROPERTY(BlueprintReadWrite, Category = "TournamentTeamResults")				int32 iTotalScore;							//var int iTotalScore;
-	UPROPERTY(BlueprintReadWrite, Category = "TournamentTeamResults")				int32 iTotalWins;							//var int iTotalWins;
-	UPROPERTY(BlueprintReadWrite, Category = "TournamentTeamResults")				int32 iTotalLosses;							//var int iTotalLosses;
+	UPROPERTY(BlueprintReadWrite, Category = "TournamentTeamResults")			FString		sTeamName		= "";		//var string sTeamName;
+	UPROPERTY(BlueprintReadWrite, Category = "TournamentTeamResults")			int32		iTotalScore		= 0;		//var int iTotalScore;
+	UPROPERTY(BlueprintReadWrite, Category = "TournamentTeamResults")			int32		iTotalWins		= 0;		//var int iTotalWins;
+	UPROPERTY(BlueprintReadWrite, Category = "TournamentTeamResults")			int32		iTotalLosses	= 0;		//var int iTotalLosses;
 };
-
 
 USTRUCT(BlueprintType)
 struct FESSObjectiveSet
 {
 	GENERATED_BODY()
 
-	UPROPERTY(BlueprintReadWrite, Category = "ESSObjectiveSet")						TArray<AAGP_Objective*> aagpobjs;			//var array<AGP_Objective> aagpobjs;
+	UPROPERTY(BlueprintReadWrite, Category = "ESSObjectiveSet")					TArray<AAGP_Objective*> aagpobjs = {};			//var array<AGP_Objective> aagpobjs;
 };
-
-
 
 USTRUCT(BlueprintType)
 struct FMissionStruct
 {
 	GENERATED_BODY()
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FMissionStruct")						FString Title;						//var string Title;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FMissionStruct")						FString MBSTitle;					//var string MBSTitle;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FMissionStruct")						FString Image;						//var string Image;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FMissionStruct")						FString Disabled;					//var string Disabled;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FMissionStruct")						FString ImageDisabled;				//var string ImageDisabled;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FMissionStruct")						FString MapFilename;				//var string MapFilename;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FMissionStruct")						bool bFileExists;					//var bool bFileExists;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FMissionStruct")						int32 Status;						//var int Status;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FMissionStruct")						FString NMLFilename;				//var int NMLFilename;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FMissionStruct")		FString		Title			= "";			//var string Title;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FMissionStruct")		FString		MBSTitle		= "";			//var string MBSTitle;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FMissionStruct")		FString		Image			= "";			//var string Image;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FMissionStruct")		FString		Disabled		= "";			//var string Disabled;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FMissionStruct")		FString		ImageDisabled	= "";			//var string ImageDisabled;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FMissionStruct")		FString		MapFilename		= "";			//var string MapFilename;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FMissionStruct")		bool		bFileExists		= false;		//var bool bFileExists;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FMissionStruct")		int32		Status			= 0;			//var int Status;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FMissionStruct")		FString		NMLFilename		= "";			//var int NMLFilename;
 };
 
 USTRUCT(BlueprintType)
@@ -2932,100 +2979,99 @@ struct FTourStruct
 {
 	GENERATED_BODY()
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FTourStruct")							FString Tour;						//var string Tour;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FTourStruct")							int32 Dependency;					//var int Dependency;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FTourStruct")							FString Image;						//var string Image;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FTourStruct")							FString TourText;					//var string TourText;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FTourStruct")							FString TourTextTitle;				//var string TourTextTitle;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FTourStruct")							FString TourRolloverText;			//var string TourRolloverText;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FTourStruct")							FString HistoryText;				//var string HistoryText;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FTourStruct")							FString HistoryTextTitle;			//var string HistoryTextTitle;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FTourStruct")							bool IsSequential;					//var bool IsSequential;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FTourStruct")							bool IsTraining;					//var bool IsTraining;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FTourStruct")							int32 iNumMissions;					//var int iNumMissions;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FTourStruct")							int32 Status;						//var int Status;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FTourStruct")							TArray<FMissionStruct> Mission;	//var array<MissionStruct> Mission;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FTourStruct")		FString					Tour = "";					//var string Tour;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FTourStruct")		int32					Dependency = 0;				//var int Dependency;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FTourStruct")		FString					Image = "";					//var string Image;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FTourStruct")		FString					TourText = "";				//var string TourText;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FTourStruct")		FString					TourTextTitle = "";			//var string TourTextTitle;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FTourStruct")		FString					TourRolloverText = "";		//var string TourRolloverText;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FTourStruct")		FString					HistoryText = "";			//var string HistoryText;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FTourStruct")		FString					HistoryTextTitle = "";		//var string HistoryTextTitle;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FTourStruct")		bool					IsSequential = false;		//var bool IsSequential;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FTourStruct")		bool					IsTraining = false;			//var bool IsTraining;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FTourStruct")		int32					iNumMissions = 0;			//var int iNumMissions;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FTourStruct")		int32					Status = 0;					//var int Status;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FTourStruct")		TArray<FMissionStruct>	Mission= {};				//var array<MissionStruct> Mission;
 };
 
 USTRUCT(BlueprintType)
 struct FRotationRandomizer
 {
 	GENERATED_BODY()
-	UPROPERTY(BlueprintReadWrite, Category = "RotationRandomizer")		FVector MeanDirection;				//var FVector MeanDirection;
-	UPROPERTY(BlueprintReadWrite, Category = "RotationRandomizer")		uint8  bPitch;						//var byte bPitch;
-	UPROPERTY(BlueprintReadWrite, Category = "RotationRandomizer")		float PitchMean;					//var float PitchMean;
-	UPROPERTY(BlueprintReadWrite, Category = "RotationRandomizer")		float PitchMaxDeviation;			//var float PitchMaxDeviation;
-	UPROPERTY(BlueprintReadWrite, Category = "RotationRandomizer")		float PitchFalloff;					//var float PitchFalloff;
-	UPROPERTY(BlueprintReadWrite, Category = "RotationRandomizer")		uint8 bYaw;							//var byte bYaw;
-	UPROPERTY(BlueprintReadWrite, Category = "RotationRandomizer")		float YawMean;						//var float YawMean;
-	UPROPERTY(BlueprintReadWrite, Category = "RotationRandomizer")		float YawMaxDeviation;				//var float YawMaxDeviation;
-	UPROPERTY(BlueprintReadWrite, Category = "RotationRandomizer")		float YawFalloff;					//var float YawFalloff;
-	UPROPERTY(BlueprintReadWrite, Category = "RotationRandomizer")		uint8 bRoll;						//var byte bRoll;
-	UPROPERTY(BlueprintReadWrite, Category = "RotationRandomizer")		float RollMean;						//var float RollMean;
-	UPROPERTY(BlueprintReadWrite, Category = "RotationRandomizer")		float RollMaxDeviation;				//var float RollMaxDeviation;
-	UPROPERTY(BlueprintReadWrite, Category = "RotationRandomizer")		float RollFalloff;					//var float RollFalloff;
-	UPROPERTY(BlueprintReadWrite, Category = "RotationRandomizer")		float SpeedMean;					//var float SpeedMean;
-	UPROPERTY(BlueprintReadWrite, Category = "RotationRandomizer")		float SpeedMaxDeviation;			//var float SpeedMaxDeviation;
-	UPROPERTY(BlueprintReadWrite, Category = "RotationRandomizer")		float SpeedFalloff;					//var float SpeedFalloff;
-	UPROPERTY(BlueprintReadWrite, Category = "RotationRandomizer")		FRotator Base;						//var Rotator Base;
+	UPROPERTY(BlueprintReadWrite, Category = "RotationRandomizer")		FVector MeanDirection = FVector(0, 0, 0);				//var FVector MeanDirection;
+	UPROPERTY(BlueprintReadWrite, Category = "RotationRandomizer")		uint8  bPitch = 0;						//var byte bPitch;
+	UPROPERTY(BlueprintReadWrite, Category = "RotationRandomizer")		float PitchMean = 0;					//var float PitchMean;
+	UPROPERTY(BlueprintReadWrite, Category = "RotationRandomizer")		float PitchMaxDeviation = 0;			//var float PitchMaxDeviation;
+	UPROPERTY(BlueprintReadWrite, Category = "RotationRandomizer")		float PitchFalloff = 0;					//var float PitchFalloff;
+	UPROPERTY(BlueprintReadWrite, Category = "RotationRandomizer")		uint8 bYaw = 0;							//var byte bYaw;
+	UPROPERTY(BlueprintReadWrite, Category = "RotationRandomizer")		float YawMean = 0;						//var float YawMean;
+	UPROPERTY(BlueprintReadWrite, Category = "RotationRandomizer")		float YawMaxDeviation = 0;				//var float YawMaxDeviation;
+	UPROPERTY(BlueprintReadWrite, Category = "RotationRandomizer")		float YawFalloff = 0;					//var float YawFalloff;
+	UPROPERTY(BlueprintReadWrite, Category = "RotationRandomizer")		uint8 bRoll = 0;						//var byte bRoll;
+	UPROPERTY(BlueprintReadWrite, Category = "RotationRandomizer")		float RollMean = 0;						//var float RollMean;
+	UPROPERTY(BlueprintReadWrite, Category = "RotationRandomizer")		float RollMaxDeviation = 0;				//var float RollMaxDeviation;
+	UPROPERTY(BlueprintReadWrite, Category = "RotationRandomizer")		float RollFalloff = 0;					//var float RollFalloff;
+	UPROPERTY(BlueprintReadWrite, Category = "RotationRandomizer")		float SpeedMean = 0;					//var float SpeedMean;
+	UPROPERTY(BlueprintReadWrite, Category = "RotationRandomizer")		float SpeedMaxDeviation = 0;			//var float SpeedMaxDeviation;
+	UPROPERTY(BlueprintReadWrite, Category = "RotationRandomizer")		float SpeedFalloff = 0;					//var float SpeedFalloff;
+	UPROPERTY(BlueprintReadWrite, Category = "RotationRandomizer")		FRotator Base= FRotator(0,0,0);						//var Rotator Base;
 };
 
 USTRUCT(BlueprintType)
 struct FLaserDotInfo
 {
 	GENERATED_BODY()
-	UPROPERTY(BlueprintReadWrite, Category = "LaserDotInfo")			float  LaserDotIntensity;			//var float LaserDotIntensity;
-	UPROPERTY(BlueprintReadWrite, Category = "LaserDotInfo")			float  LaserDotTimeStarted;			//var float LaserDotTimeStarted;
-	UPROPERTY(BlueprintReadWrite, Category = "LaserDotInfo")			uint8  LaserDot;					//var LaserProjector LaserDot;
+	UPROPERTY(BlueprintReadWrite, Category = "LaserDotInfo")			float  LaserDotIntensity = 0;			//var float LaserDotIntensity;
+	UPROPERTY(BlueprintReadWrite, Category = "LaserDotInfo")			float  LaserDotTimeStarted = 0;			//var float LaserDotTimeStarted;
+	UPROPERTY(BlueprintReadWrite, Category = "LaserDotInfo")			uint8  LaserDot = 0;					//var LaserProjector LaserDot;
 };
 
 USTRUCT(BlueprintType)
 struct FEnemySpottedData
 {
 	GENERATED_BODY()
-	UPROPERTY(BlueprintReadWrite, Category = "EnemySpottedData")		FVector  SpottedLocation;			//var FVector SpottedLocation;
-	UPROPERTY(BlueprintReadWrite, Category = "EnemySpottedData")		float  TimeSpottedSeconds;			//var float TimeSpottedSeconds;
-	UPROPERTY(BlueprintReadWrite, Category = "EnemySpottedData")		float  LifeSpan;					//var float LifeSpan;
-	UPROPERTY(BlueprintReadWrite, Category = "EnemySpottedData")		float  BlinkStartTime;				//var float BlinkStartTime;
-	UPROPERTY(BlueprintReadWrite, Category = "EnemySpottedData")		float  BlinkEndTime;				//var float BlinkEndTime;
+	UPROPERTY(BlueprintReadWrite, Category = "EnemySpottedData")		FVector  SpottedLocation = FVector(0, 0, 0);	//var FVector SpottedLocation;
+	UPROPERTY(BlueprintReadWrite, Category = "EnemySpottedData")		float  TimeSpottedSeconds = 0;					//var float TimeSpottedSeconds;
+	UPROPERTY(BlueprintReadWrite, Category = "EnemySpottedData")		float  LifeSpan = 0;							//var float LifeSpan;
+	UPROPERTY(BlueprintReadWrite, Category = "EnemySpottedData")		float  BlinkStartTime = 0;						//var float BlinkStartTime;
+	UPROPERTY(BlueprintReadWrite, Category = "EnemySpottedData")		float  BlinkEndTime = 0;						//var float BlinkEndTime;
 };
 USTRUCT(BlueprintType)
 struct FESSObjectData
 {
 	GENERATED_BODY()
-	UPROPERTY(BlueprintReadWrite, Category = "ESSObjectData")		FVector  SpottedLocation;				//var FVector SpottedLocation;
-	UPROPERTY(BlueprintReadWrite, Category = "ESSObjectData")		float  TimeSpottedSeconds;				//var float TimeSpottedSeconds;
-	UPROPERTY(BlueprintReadWrite, Category = "ESSObjectData")		float  LifeSpan;						//var float LifeSpan;
-	UPROPERTY(BlueprintReadWrite, Category = "ESSObjectData")		float  BlinkStartTime;					//var float BlinkStartTime;
-	UPROPERTY(BlueprintReadWrite, Category = "ESSObjectData")		float  BlinkEndTime;					//var float BlinkEndTime;
-	UPROPERTY(BlueprintReadWrite, Category = "ESSObjectData")		bool  bLethal;							//var bool bLethal;
+	UPROPERTY(BlueprintReadWrite, Category = "ESSObjectData")		FVector  SpottedLocation = FVector(0,0,0);	//var FVector SpottedLocation;
+	UPROPERTY(BlueprintReadWrite, Category = "ESSObjectData")		float  TimeSpottedSeconds = 0;				//var float TimeSpottedSeconds;
+	UPROPERTY(BlueprintReadWrite, Category = "ESSObjectData")		float  LifeSpan = 0;						//var float LifeSpan;
+	UPROPERTY(BlueprintReadWrite, Category = "ESSObjectData")		float  BlinkStartTime = 0;					//var float BlinkStartTime;
+	UPROPERTY(BlueprintReadWrite, Category = "ESSObjectData")		float  BlinkEndTime = 0;					//var float BlinkEndTime;
+	UPROPERTY(BlueprintReadWrite, Category = "ESSObjectData")		bool  bLethal = 0;							//var bool bLethal;
 };
 
 USTRUCT(BlueprintType)
 struct FBoneInfo
 {
 	GENERATED_BODY()
-	UPROPERTY(BlueprintReadWrite, Category = "BoneInfo")		int32 HitBone;								//var int HitBone;
-	UPROPERTY(BlueprintReadWrite, Category = "BoneInfo")		FString Name;								//var string Name;
-	UPROPERTY(BlueprintReadWrite, Category = "BoneInfo")		float DamageModifier;						//var float DamageModifier;
-	UPROPERTY(BlueprintReadWrite, Category = "BoneInfo")		float PenetrationDepth;						//var float PenetrationDepth;
-	UPROPERTY(BlueprintReadWrite, Category = "BoneInfo")		EBoneRegion BoneRegion;						//var Object.EBoneRegion BoneRegion;
+	UPROPERTY(BlueprintReadWrite, Category = "BoneInfo")		int32 HitBone = 0;									//var int HitBone;
+	UPROPERTY(BlueprintReadWrite, Category = "BoneInfo")		FString Name = "";									//var string Name;
+	UPROPERTY(BlueprintReadWrite, Category = "BoneInfo")		float DamageModifier = 0;							//var float DamageModifier;
+	UPROPERTY(BlueprintReadWrite, Category = "BoneInfo")		float PenetrationDepth = 0;							//var float PenetrationDepth;
+	UPROPERTY(BlueprintReadWrite, Category = "BoneInfo")		EBoneRegion BoneRegion = EBoneRegion::BR_NONE;		//var Object.EBoneRegion BoneRegion;
 };
-
 
 USTRUCT(BlueprintType)
 struct FBoneOffset
 {
 	GENERATED_BODY()
-	UPROPERTY(BlueprintReadWrite, Category = "BoneOffset")		FVector VOffset;							//var FVector VOffset;
-	UPROPERTY(BlueprintReadWrite, Category = "BoneOffset")		FRotator ROffset;							//var Rotator ROffset;
-	UPROPERTY(BlueprintReadWrite, Category = "BoneOffset")		FName nBone;								//var name nBone;
+	UPROPERTY(BlueprintReadWrite, Category = "BoneOffset")		FVector VOffset = FVector(0,0,0);				//var FVector VOffset;
+	UPROPERTY(BlueprintReadWrite, Category = "BoneOffset")		FRotator ROffset = FRotator(0, 0, 0);			//var Rotator ROffset;
+	UPROPERTY(BlueprintReadWrite, Category = "BoneOffset")		FName nBone = "";								//var name nBone;
 };
 
 USTRUCT(BlueprintType)
 struct FObjectRange
 {
 	GENERATED_BODY()
-	UPROPERTY()		float Min;
-	UPROPERTY()		float Max;
+	UPROPERTY()		float Min = 0;
+	UPROPERTY()		float Max = 0;
 };

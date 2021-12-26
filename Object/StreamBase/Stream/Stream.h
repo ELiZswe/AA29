@@ -17,7 +17,7 @@ public:
 
 	UPROPERTY(EditAnywhere)									bool bReadOnly;									//var() const editconst bool bReadOnly;
 	UPROPERTY(EditAnywhere)									EFileType Type;									//var() const editconst StreamBase.EFileType Type;
-	UPROPERTY(EditAnywhere)									FFilePath PathName;								//var() const editconst StreamBase.FilePath PathName;
+	UPROPERTY(EditAnywhere)									FaFilePath PathName;								//var() const editconst StreamBase.FilePath PathName;
 	UPROPERTY(EditAnywhere)									UStreamTag* IDTag;								//var() const editconst StreamTag IDTag;
 	UPROPERTY(EditAnywhere)									FString DefaultExtension;						//var() const editconst string DefaultExtension;
 	UPROPERTY(EditAnywhere)									int32 Handle;									//var() editconst int Handle;
@@ -26,14 +26,14 @@ public:
 	void LoadID3Tag();
 	bool IsReadOnly();
 	int32 GetHandle();
-	void GetTag();
-	void GetType();
-	void GetDirectory();
-	void GetFileName();
-	void GetExtension();
-	void GetPath();
-	void GetFullName();
-	void GetSongTitle();
+	UStreamTag* GetTag();
+	EFileType GetType();
+	FString GetDirectory();
+	FString GetFileName();
+	FString GetExtension();
+	FString GetPath();
+	FString GetFullName();
+	FString GetSongTitle();
 	bool SetHandle(int32 NewHandle);
 	void DumpScriptTag();
 	void DumpTags();

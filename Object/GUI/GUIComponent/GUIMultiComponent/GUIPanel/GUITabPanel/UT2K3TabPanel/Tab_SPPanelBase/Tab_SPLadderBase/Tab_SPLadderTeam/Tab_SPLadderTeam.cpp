@@ -347,7 +347,7 @@ bool UTab_SPLadderTeam::ChampMatch(UGUIComponent* Sender)
 		if (LButton != None)
 		{
 			LButton.SetState(GP.ladderrung[LButton.LadderIndex]);
-			LButton = None;
+			LButton = nullptr;
 		}
 		ShowMatchInfo(GP.GetMatchInfo(GP.CurrentLadder, GP.CurrentMenuRung));
 		MatchUpdated(GP.CurrentLadder, GP.CurrentMenuRung);

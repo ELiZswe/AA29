@@ -353,7 +353,7 @@ void UUT2DraftTeam::AutoFillTeam()
 	int32 i = 0;
 	int32 listoffset = 0;
 	GP = PlayerOwner().Level.Game.CurrentGameProfile;
-	if (GP == None)
+	if (GP == nullptr)
 	{
 		return;
 	}

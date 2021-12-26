@@ -235,7 +235,7 @@ void UTab_PlayerSettings::InitComponent(UGUIController* MyController, UGUICompon
 	moEditBox(Controls[1]).MyEditBox.MaxWidth = 16;
 	moNumericEdit(Controls[12]).MyNumericEdit.Step = 5;
 	moCheckBox(Controls[13]).Checked(PlayerOwner().bSmallWeapons);
-	if (ExtendedConsole(PlayerOwner().Player.Console).MusicManager == None)
+	if (ExtendedConsole(PlayerOwner().Player.Console).MusicManager == nullptr)
 	{
 		Controls[14].bVisible = false;
 	}
@@ -317,7 +317,7 @@ void UTab_PlayerSettings::InternalOnLoadINI(UGUIComponent* Sender, FString S)
 	{
 		if (Sender == Controls[2])
 		{
-			if ((PlayerOwner().PlayerReplicationInfo == None) || (PlayerOwner().PlayerReplicationInfo.Team == None))
+			if ((PlayerOwner().PlayerReplicationInfo == nullptr) || (PlayerOwner().PlayerReplicationInfo.Team == nullptr))
 			{
 				TeamName = PlayerOwner().GetUrlOption("Team");
 			}

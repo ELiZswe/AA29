@@ -26,7 +26,7 @@ void UAATraining_Overview::InitComponent(UGUIController* MyController, UGUICompo
 	MyNML = new (None) class'AGP_Interface.NMLContent';
 	if (MyNML != None)
 	{
-		if (MyNML.Controller == None)
+		if (MyNML.Controller == nullptr)
 		{
 			MyNML.InitComponent(MyController, MyOwner);
 		}
@@ -94,7 +94,7 @@ void UAATraining_Overview::TrainingNMLPreParser(FString& TrainingNML)
 	int32 iAdvMarksmanQualification = 0;
 	int32 iSFQualification = 0;
 	int32 iAdvInfQualification = 0;
-	if (PlayerOwner() == None)
+	if (PlayerOwner() == nullptr)
 	{
 		return;
 	}

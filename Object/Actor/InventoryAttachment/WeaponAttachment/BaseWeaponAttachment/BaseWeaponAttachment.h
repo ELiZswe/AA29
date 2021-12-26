@@ -13,14 +13,18 @@ class ABase3pAmmoRound;
 class AHumanController;
 class AAGP_Weapon;
 class ABaseMuzzleFlashEmitter;
+class ALaserProjector;
+class AAttachmentHandler;
+class ABaseModAttachment;
+class ABaseShellEmitter;
+class ABaseMuzzleFlashEmitter;
 
 UCLASS()
-class AA29_API ABaseWeaponAttachment : public AWeaponAttachment
+class ABaseWeaponAttachment : public AWeaponAttachment
 {
 	GENERATED_BODY()
 public:
 	ABaseWeaponAttachment();
-
 	
 	UPROPERTY()		FName PrnFullReloadAnim;											//var name PrnFullReloadAnim;
 	UPROPERTY()		FName PrnEmptyReloadAnim;											//var name PrnEmptyReloadAnim;
@@ -42,8 +46,8 @@ public:
 	UPROPERTY()		UStaticMesh* NormalStaticMesh;										//var StaticMesh NormalStaticMesh;
 	UPROPERTY()		UStaticMesh* SupportedStaticMesh;									//var StaticMesh SupportedStaticMesh;
 	UPROPERTY()		ABase3pAmmoRound* AmmoRound3P;										//var Base3pAmmoRound AmmoRound3P;
-	//UPROPERTY()	ALaserProjector* LaserSight;										//var LaserProjector LaserSight;
-	//UPROPERTY()	AAttachmentHandler* AttachHandler;									//var AttachmentHandler AttachHandler;
+	UPROPERTY()		ALaserProjector* LaserSight;										//var LaserProjector LaserSight;
+	UPROPERTY()		AAttachmentHandler* AttachHandler;									//var AttachmentHandler AttachHandler;
 	UPROPERTY()		AInventoryAttachment* BlankPlug;									//var InventoryAttachment BlankPlug;
 	UPROPERTY()		AInventoryAttachment* MILESBox;										//var InventoryAttachment MILESBox;
 	UPROPERTY()		FBoneOffset _AuxMuzzleOffset;										//var Object.BoneOffset _AuxMuzzleOffset;
@@ -63,49 +67,47 @@ public:
 	UPROPERTY()		TSubclassOf<class ABaseShellEmitter> _cAuxShellEmitterClass;		//var class<AGP_Effects.BaseShellEmitter> _cAuxShellEmitterClass;
 	UPROPERTY()		TSubclassOf<class ABaseShellEmitter> _cShellEmitterClass;			//var class<AGP_Effects.BaseShellEmitter> _cShellEmitterClass;
 
-
-
 	bool GetbIsDetaching();
 	void SetbIsDetaching(bool Detach);
 	void PreBeginPlay();
 	void InitializeShellEmitter();
 	UStaticMesh* GetStaticMesh(bool bFriendly);
-	void GetMesh(bool bFriendly);
+	USkeletalMesh* GetMesh(bool bFriendly);
 	void NotifyNewMesh(bool bFriendly);
 	void SetupForClass(ABaseWeaponAttachment* NewClass);
-	void GetPawnReloadAnimation();
+	FName GetPawnReloadAnimation();
 	void PlayAttachmentReload(int32 SpecialReload);
-	void GetSource();
+	AActor* GetSource();
 	bool CanHaveMILES();
 	void SetLaser();
 	void NotifyWeaponAnimation(FName Sequence, float Rate, float TweenTime, bool bLoop);
 	void NotifyBaseChange();
 	void AdjustAttachmentFor(AInventory* Inv);
 	uint8 AdjustForThirdPersonRounds(uint8 NewAnimState, AInventory* Inv);
-	void IsAnimState(uint8 test_byte);
-	void IsNotUS(APawn* p);
+	bool IsAnimState(uint8 test_byte);
+	bool IsNotUS(APawn* p);
 	void AttachmentAnimation();
-	void GetSuppressor();
+	ABaseModAttachment* GetSuppressor();
 	void SpawnModAttachments(AAGP_Weapon* W);
 	void SpawnMILESAttachments();
 	void AttachToMe(AInventoryAttachment* att);
 	void Destroyed();
 	void CleanUp();
 	void InitFor(AInventory* i);
-	void GetShellEmitter();
-	void GetDelayShellEject();
+	ABaseShellEmitter* GetShellEmitter();
+	bool GetDelayShellEject();
 	void SpawnShellEmitters();
 	void SpawnMuzzleFlashEmitters();
-	void GetMuzzleFlashEmitter();
-	void DoDelayedShell();
+	ABaseMuzzleFlashEmitter* GetMuzzleFlashEmitter();
+	bool DoDelayedShell();
 	void ThirdPersonEffects();
 	void ThirdPersonEffectsEject(AHumanController* HC);
 	void ThirdPersonEffectsMuzzleFlash(AHumanController* HC);
-	void ShouldDoTraceEffects();
+	bool ShouldDoTraceEffects();
 	void ThirdPersonTrace();
-	void DoEffectTrace(AActor* TraceFrom, FVector StartTrace, int32 end_trace, bool bDoExit);
+	bool DoEffectTrace(AActor* TraceFrom, FVector StartTrace, int32 end_trace, bool bDoExit);
 	void BulletExitTrace(AActor* TraceFrom, FVector StartTrace, FVector EndTrace);
-	void GetBulletImpactType(int32 trace_index);
+	EBulletImpactType GetBulletImpactType(int32 trace_index);
 	void SetBulletImpactType(int32 trace_index, EBulletImpactType new_type);
 	void DoBulletEffect(AActor* HitActor, UTexture2D* HitMaterial, FVector HitLocation, FVector HitNormal, EBulletImpactType BType);
 

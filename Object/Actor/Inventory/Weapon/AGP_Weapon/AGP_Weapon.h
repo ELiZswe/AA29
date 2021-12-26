@@ -319,7 +319,7 @@ public:
 	FString getROFString();
 	float GetBreatheMultiplier();
 	float AmmoStatus();
-	void HasAmmo();
+	bool HasAmmo();
 	void NotifyOutOfAmmo();
 	UScriptObject* GetAmmoMonitor();
 	void SetAmmoMonitor(UScriptObject* sobj);
@@ -385,7 +385,7 @@ public:
 	void SetCurrentAmmoName(AAmmunition* newAmmoName);
 	TSubclassOf<AAmmunition> GetAuxAmmoName();
 	AAmmunition* GetAuxAmmoType();
-	virtual int32 GetClipCount(uint8 clip, bool bAuxAmmo) override;
+	int32 GetClipCount(uint8 clip, bool bAuxAmmo);
 	void SetClipCount(uint8 clip, int32 Count, bool bAuxAmmo);
 	uint8 GetBestClip();
 	virtual bool CheckForNoReload() override;

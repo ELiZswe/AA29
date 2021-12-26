@@ -278,7 +278,7 @@ void UAAParental_ParentalControls::SaveSettings()
 	bool bSave = false;
 	PC = PlayerOwner();
 	HC = HumanController(PC);
-	if (HC == None)
+	if (HC == nullptr)
 	{
 		return;
 	}

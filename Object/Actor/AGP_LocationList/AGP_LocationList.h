@@ -17,12 +17,17 @@ public:
 	// Sets default values for this actor's properties
 	AAGP_LocationList();
 
-	UPROPERTY()				TArray<AAGP_Location*> LocationList;				//var array<AGP_Location> LocationList;
-	UPROPERTY()				TArray<FName> Locations;							//var() array<name> Locations;
+	UPROPERTY()					TArray<AAGP_Location*> LocationList;				//var array<AGP_Location> LocationList;
+	UPROPERTY(EditAnywhere)		TArray<FName> Locations;							//var() array<name> Locations;
 
 	UPROPERTY()				USceneComponent* Root;
 	UPROPERTY()				UTexture2D* Texture;
 	UPROPERTY()				UBillboardComponent* SpriteComponent;
+
+	void PreBeginPlay();
+	AAGP_Location* GetRandomLocation();
+	AAGP_Location* GetLocationByTag(FName Tag);
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

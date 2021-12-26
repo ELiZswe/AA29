@@ -42,7 +42,7 @@ public:
 	*/
 
 	
-	//void DisplayDebug(UCanvas* Canvas, float& YL, float& YPos);
+	void DisplayDebug(UCanvas* Canvas, const class FDebugDisplayInfo& DebugDisplay, float& YL, float& YPos);
 	void Tick(float DeltaTime);
 	void PostBeginPlay();
 	void UAVTakeOff();

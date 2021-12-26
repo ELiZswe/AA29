@@ -75,7 +75,7 @@ bool UGUIQuestionPage::InternalOnPreDraw(UCanvas* C)
 	{
 		Buttons[i].WinTop = ((WinTop + float(40)) + YL);
 	}
-	__OnPreDraw__Delegate = None;
+	__OnPreDraw__Delegate = nullptr;
 	*/
 	return false;
 }
@@ -125,7 +125,7 @@ UGUIButton* UGUIQuestionPage::AddButton(uint8 idesc)
 		return None;
 	}
 	Btn = GUIButton(AddComponent("XInterface.GUIButton"));
-	if (Btn == None)
+	if (Btn == nullptr)
 	{
 		return None;
 	}

@@ -95,7 +95,7 @@ void UAANPCPNB_OpenPNBFile::OnClose(bool bCanceled)
 	local AGP_HUD HUD;
 	local PlayerController PC;
 	PC = PlayerOwner();
-	HumanController(PlayerOwner()).guipCommandPost = None;
+	HumanController(PlayerOwner()).guipCommandPost = nullptr;
 	Super::OnClose(bCanceled);
 	HUD = AGP_HUD(PlayerOwner().myHUD);
 	HUD.bShowVersion = false;

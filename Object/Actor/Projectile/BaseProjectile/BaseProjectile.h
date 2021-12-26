@@ -14,14 +14,24 @@ public:
 	ABaseProjectile(const FObjectInitializer& ObjectInitializer);
 
 		
-		UPROPERTY(EditAnywhere, BlueprintReadWrite)		uint8 idTeamOwner;											//var byte idTeamOwner;
-		UPROPERTY(EditAnywhere, BlueprintReadWrite)		TSubclassOf<class ABaseProjectile> EnemyProjectileClass;	//var class<BaseProjectile> EnemyProjectileClass;
-		UPROPERTY(EditAnywhere, BlueprintReadWrite)		USoundBase* ExplosionSound;									//var Sound ExplosionSound;
-		//UPROPERTY(EditAnywhere, BlueprintReadWrite)		AEmitter* TrailEmitter;									//var Emitter TrailEmitter;
-		//UPROPERTY(EditAnywhere, BlueprintReadWrite)		AEmitter* cTrailEmitterClass;							//var class<Emitter> cTrailEmitterClass;
-		UPROPERTY(EditAnywhere, BlueprintReadWrite)		float fAtmoFactor;											//var float fAtmoFactor;
-		UPROPERTY(EditAnywhere, BlueprintReadWrite)		float fWindFactor;											//var float fWindFactor;
-		UPROPERTY(EditAnywhere, BlueprintReadWrite)		float fKillRadius;											//var float fKillRadius;
-		UPROPERTY(EditAnywhere, BlueprintReadWrite)		TArray<AActor*> DamageClasses;								//var array<class<Actor> > DamageClasses;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)		uint8 idTeamOwner;											//var byte idTeamOwner;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)		TSubclassOf<class ABaseProjectile> EnemyProjectileClass;	//var class<BaseProjectile> EnemyProjectileClass;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)		USoundBase* ExplosionSound;									//var Sound ExplosionSound;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)		AEmitter* TrailEmitter;										//var Emitter TrailEmitter;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)		AEmitter* cTrailEmitterClass;								//var class<Emitter> cTrailEmitterClass;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)		float fAtmoFactor;											//var float fAtmoFactor;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)		float fWindFactor;											//var float fWindFactor;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)		float fKillRadius;											//var float fKillRadius;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)		TArray<AActor*> DamageClasses;								//var array<class<Actor> > DamageClasses;
 
+	void PreBeginPlay();
+	bool IsEnemyProjectile();
+	void MaybeSetStaticMesh();
+	void BeginPlay();
+	void PostBeginPlay();
+	void PostNetBeginPlay();
+	void SetupProjectile();
+	void Destroyed();
+	void StopTrail();
+	void Collision(AActor* Other, FVector HitLocation, FVector HitNormal, UMaterialInstance* HitMaterial, ECollisionType Type);
 };

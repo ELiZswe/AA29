@@ -20,8 +20,8 @@ ARavenUAV::ARavenUAV()
 	KParams0->bKAllowRotate = true;
 	KParams0->bDoSafetime = true;
 	KParams0->KFriction = 0.5;
-	sndCruising = LoadObject<USoundBase>(NULL, TEXT("SoundCue'/Game/AmericasArmy/Sounds/S_AA2_Helicopter/blackhawk/BHRotorCruise_Que.BHRotorCruise_Que'"), NULL, LOAD_None, NULL);
-	sndHover = LoadObject<USoundBase>(NULL, TEXT("SoundCue'/Game/AmericasArmy/Sounds/S_AA2_Helicopter/blackhawk/BHRotorHover_Que.BHRotorHover_Que'"), NULL, LOAD_None, NULL);
+	sndCruising = LoadObject<USoundBase>(NULL, TEXT("SoundCue'/Game/AmericasArmy/Sounds/S_AA2_Helicopter/blackhawk/BHRotorCruise_Que.BHRotorCruise_Cue'"), NULL, LOAD_None, NULL);
+	sndHover = LoadObject<USoundBase>(NULL, TEXT("SoundCue'/Game/AmericasArmy/Sounds/S_AA2_Helicopter/blackhawk/BHRotorHover_Que.BHRotorHover_Cue'"), NULL, LOAD_None, NULL);
 	KillHealth = 1000;
 	fpOriginalMaxRotorSpeed = 250;
 	SmokeGeneratorAttachmentBone = "MainRotor";
@@ -73,15 +73,16 @@ ARavenUAV::ARavenUAV()
 	//bBlockProjectiles = true;
 	KParams = KParams0;
 }
-/*
-void ARavenUAV::DisplayDebug(UCanvas* Canvas, float& YL, float& YPos)
+
+void ARavenUAV::DisplayDebug(UCanvas* Canvas, const class FDebugDisplayInfo& DebugDisplay, float& YL, float& YPos)
 {
+	/*
 	YL = 10;
 	(YPos += YL);
 	(YPos += YL);
 	Canvas.SetPos(4, YPos);
+	*/
 }
-*/
 
 void ARavenUAV::Tick(float DeltaTime)
 {
@@ -171,14 +172,14 @@ void ARavenUAV::Destroyed()
 	{
 		SmokeGenerator.Destroy();
 	}
-	if ((Controller == None) || (NPCBaseHelicopterController(Controller) == None))
+	if ((Controller == nullptr) || (NPCBaseHelicopterController(Controller) == nullptr))
 	{
 		Super::Destroyed();
 		return;
 	}
 	NPCBaseHelicopterController(Controller).CleanupCrew();
 	Controller.Destroy();
-	Controller = None;
+	Controller = nullptr;
 	Super::Destroyed();
 	*/
 }
@@ -269,7 +270,7 @@ void ARavenUAV::TakeDamage(int32 Damage, Pawn instigatedBy, Vector HitLocation, 
 			{
 				DamageObjective.NotifyLinkKill(instigatedBy);
 			}
-			AmbientSound = None;
+			AmbientSound = nullptr;
 			Log("UAV shot down");
 			if ((Controller != None) && Controller.IsA('AIController'))
 			{
@@ -310,10 +311,10 @@ void ARavenUAV::CheckSmokeGenerator()
 	if ((SmokeGenerator != None) && (!bSmokeGeneratorOn))
 	{
 		SmokeGenerator.Kill();
-		SmokeGenerator = None;
+		SmokeGenerator = nullptr;
 		return;
 	}
-	if (bSmokeGeneratorOn && (SmokeGenerator == None))
+	if (bSmokeGeneratorOn && (SmokeGenerator == nullptr))
 	{
 		Log(string(Self) $ "CheckSmokeGenerator() Turning smoke on with  bSmokeGeneratorOn: " $ string(bSmokeGeneratorOn) $ "  SmokeGenerator: " $ string(SmokeGenerator));
 		SpawnSmokeGenerator(60);
@@ -325,7 +326,7 @@ void ARavenUAV::SpawnSmokeGenerator(float fpSmokeLengthSeconds)
 {
 	/*
 	SmokeGenerator = Spawn(Class'AGP_Effects.M83SmokeEmitter', Self, , Location, rot(16384, 0, 0));
-	if (SmokeGenerator == None)
+	if (SmokeGenerator == nullptr)
 	{
 		bSmokeGeneratorOn = false;
 		return;

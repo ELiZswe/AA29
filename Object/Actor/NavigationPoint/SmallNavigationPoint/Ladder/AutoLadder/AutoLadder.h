@@ -7,10 +7,9 @@
 #include "AutoLadder.generated.h"
 
 UCLASS()
-class AA29_API AAutoLadder : public ALadder
+class AAutoLadder : public ALadder
 {
 	GENERATED_BODY()
 public:
 	AAutoLadder();
-
 };

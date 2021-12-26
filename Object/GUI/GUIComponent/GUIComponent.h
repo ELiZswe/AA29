@@ -185,7 +185,7 @@ public:
 	void PadRight(FString &Src, int32 StrLen, FString PadStr);
 	void DebugFocus(UGUIComponent* Who, bool bLose);
 	void DebugFocusPosition(UGUIComponent* Who, bool Last);
-	//UGUIPage* OwnerPage();
+	UGUIPage* OwnerPage();
 	void BeginAnimation(UGUIComponent* Animating);
 	void EndAnimation(UGUIComponent* Animating, EAnimationType Type);
 	void Animate(float NewLeft, float NewTop, float Time);

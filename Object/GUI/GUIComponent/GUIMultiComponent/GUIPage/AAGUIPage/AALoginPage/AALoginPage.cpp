@@ -116,7 +116,7 @@ void UAALoginPage::Opened(UGUIComponent* Sender)
 		Log(string(Name) $ ".Opened()   Sender:" $ string(Sender), 'Debug');
 	}
 	Super::Opened(Sender);
-	selected = None;
+	selected = nullptr;
 	*/
 }
 
@@ -168,7 +168,7 @@ bool UAALoginPage::ButtonClick(UGUIComponent* Sender)
 	{
 		selected = Sender;
 	}
-	if (selected == None)
+	if (selected == nullptr)
 	{
 		return false;
 	}

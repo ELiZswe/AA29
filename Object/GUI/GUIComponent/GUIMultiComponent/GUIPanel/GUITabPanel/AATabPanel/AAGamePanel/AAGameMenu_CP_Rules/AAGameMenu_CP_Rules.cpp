@@ -446,7 +446,7 @@ void UAAGameMenu_CP_Rules::InitComponent(UGUIController* MyController, UGUICompo
 void UAAGameMenu_CP_Rules::InitializeDataFields()
 {
 	/*
-	if (aagpCommandPost == None)
+	if (aagpCommandPost == nullptr)
 	{
 		Log("Warning: The CP Rules page does not have a valid Command Post page.");
 		Return;

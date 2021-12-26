@@ -4,24 +4,22 @@
 
 #include "CoreMinimal.h"
 #include "AA29/Object/StreamBase/StreamBase.h"
+#include "AA29/AA29.h"
 #include "StreamPlaylistManager.generated.h"
 
 class UStreamPlaylist;
 class UStreamInterface;
-//class UPlaylistParserBase;
-//class UPlaylistParser;
+class UPlaylistParserBase;
 
 UCLASS(Config = Game)
-class AA29_API UStreamPlaylistManager : public UStreamBase
+class UStreamPlaylistManager : public UStreamBase
 {
 	GENERATED_BODY()
 public:
 	UStreamPlaylistManager();
 
-
-
-	//UPROPERTY()									TArray<UPlaylistParserBase*> Parsers;						//var() editconstarray editconst array<PlaylistParserBase> Parsers;
-	//UPROPERTY()									TArray<UPlaylistParser*> ParserType;						//var() config array<PlaylistParser> ParserType;
+	UPROPERTY()									TArray<UPlaylistParserBase*> Parsers;						//var() editconstarray editconst array<PlaylistParserBase> Parsers;
+	UPROPERTY()									TArray<FPlaylistParser> ParserType;							//var() config array<PlaylistParser> ParserType;
 	UPROPERTY()									FString DefaultPlaylistName;								//var() localized string DefaultPlaylistName;
 	UPROPERTY()									bool bRepeatAll;											//var() config bool bRepeatAll;
 	UPROPERTY()									bool bRepeat;												//var() config bool bRepeat;
@@ -33,34 +31,33 @@ public:
 	UPROPERTY()									UStreamInterface* FileManager;								//var() editconst StreamInterface FileManager;
 	UPROPERTY()									int32 CurrentPlaylist;										//var() config editconst int CurrentPlaylist;
 
-
 	void ChangedActivePlaylist(UStreamPlaylist* NewPlaylist);
 	void Initialize(UStreamInterface* InFileManager);
 	void InitializePlaylists();
 	void InitializeParsers();
 	void CreateDefaultPlaylist();
 	bool ActivatePlaylist(int32 ListIndex, bool bNoFail);
-	void AddPlaylist(FString& NewPlaylistName);
+	int32 AddPlaylist(FString& NewPlaylistName);
 	int32 AppendPlaylist(UStreamPlaylist* Playlist);
 	bool RemovePlaylist(FString PlaylistName);
 	bool RemovePlaylistAt(int32 Index);
 	bool RenamePlaylist(int32 Index, FString& NewName);
-	void AddToPlaylist(int32 PlaylistIndex, FString Path, bool bSkipNotification);
-	void InsertInPlaylist(int32 PlaylistIndex, int32 InsertPosition, FString Path, bool bSkipNotification);
+	bool AddToPlaylist(int32 PlaylistIndex, FString Path, bool bSkipNotification);
+	bool InsertInPlaylist(int32 PlaylistIndex, int32 InsertPosition, FString Path, bool bSkipNotification);
 	bool RemoveFromCurrentPlaylist(FString Path, bool bSkipNotification);
-	void ClearCurrentPlaylist();
-	void GetPlaylistType(FString Path);
+	bool ClearCurrentPlaylist();
+	uint8 GetPlaylistType(FString Path);
 	bool AddDirectory(int32 PlaylistIndex, int32 InsertPosition, FString Path, bool bRecurseDirectories);
 	bool ImportPlaylist(int32 PlaylistIndex, int32 InsertPosition, FString Path);
 	FString NextSong(bool bForce);
 	FString PrevSong(bool bForce);
 	FString GetRandomSong();
 	int32 GetCurrentIndex();
-	void GetCurrentPlaylist();
-	void GetRandomPlaylist();
-	void GetPlaylistAt(int32 idx);
-	void GetPlaylistCount();
-	void ValidIndex(int32 Index);
+	UStreamPlaylist* GetCurrentPlaylist();
+	UStreamPlaylist* GetRandomPlaylist();
+	UStreamPlaylist* GetPlaylistAt(int32 idx);
+	int32 GetPlaylistCount();
+	bool ValidIndex(int32 Index);
 	int32 FindNameIndex(FString PlaylistName);
 	int32 FindPlaylistIndex(UStreamPlaylist* Playlist);
 	bool ValidName(FString Test);
@@ -73,8 +70,7 @@ public:
 	void SetRepeat(bool bEnable);
 	void SetRepeatAll(bool bEnable);
 	UStreamPlaylist* CreatePlaylist(FString PlaylistName);
-	void HandleDebugExec(FString Command, FString Param);
+	bool HandleDebugExec(FString Command, FString Param);
 	void Save();
-	void GetCurrentTitle();
-
+	FString GetCurrentTitle();
 };

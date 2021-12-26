@@ -75,7 +75,7 @@ void UAABrowser_IRC::TabChange(UGUIComponent* Sender)
 	local int32 i;
 	local XInterface.GUITabButton TabButton;
 	TabButton = GUITabButton(Sender);
-	if ((TabButton == None) || (!Controller.bCurMenuInitialized))
+	if ((TabButton == nullptr) || (!Controller.bCurMenuInitialized))
 	{
 		return;
 	}

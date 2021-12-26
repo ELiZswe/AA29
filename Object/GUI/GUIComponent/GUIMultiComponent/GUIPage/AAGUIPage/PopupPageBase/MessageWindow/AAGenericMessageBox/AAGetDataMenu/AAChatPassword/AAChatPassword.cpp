@@ -100,7 +100,7 @@ void UAAChatPassword::RetryPassword()
 	local PlayerController PC;
 	Password = GetDataString();
 	PC = PlayerOwner();
-	if ((Password == "") || (PC == None))
+	if ((Password == "") || (PC == nullptr))
 	{
 		return;
 	}

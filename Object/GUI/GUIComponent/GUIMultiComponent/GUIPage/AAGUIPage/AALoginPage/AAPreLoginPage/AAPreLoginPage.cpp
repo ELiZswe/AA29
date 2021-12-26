@@ -268,7 +268,7 @@ bool UAAPreLoginPage::ButtonClick(UGUIComponent* Sender)
 	{
 		selected = Sender;
 	}
-	if (selected == None)
+	if (selected == nullptr)
 	{
 		return false;
 	}
@@ -390,7 +390,7 @@ void UAAPreLoginPage::InternalSetLoginStatus(int32 iStatus, FString asStatus, FS
 	/*
 	HumanController HC = nullptr;
 	HC = HumanController(PlayerOwner());
-	if (HC == None)
+	if (HC == nullptr)
 	{
 		l_Status.Caption = "";
 		EnableComponent(b_LogIn);
@@ -457,7 +457,7 @@ bool UAAPreLoginPage::Login(UGUIComponent* Sender)
 	/*
 	HumanController HC = nullptr;
 	HC = HumanController(PlayerOwner());
-	if (HC == None)
+	if (HC == nullptr)
 	{
 		return false;
 	}

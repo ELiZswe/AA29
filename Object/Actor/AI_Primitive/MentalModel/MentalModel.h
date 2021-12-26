@@ -12,17 +12,16 @@ class AAGP_Pawn;
 class APickup;
 
 UCLASS()
-class AA29_API AMentalModel : public AAI_Primitive
+class AMentalModel : public AAI_Primitive
 {
 	GENERATED_BODY()
 public:
 	AMentalModel();
 
-
-	UPROPERTY()														bool StartUp;								//var bool StartUp;
-	UPROPERTY()														float Tension;								//var float Tension;
-	UPROPERTY()														int32 numContacts;							//var int numContacts;
-	UPROPERTY()														AContact* allContacts;						//var Contact allContacts;
+	UPROPERTY()			bool StartUp;					//var bool StartUp;
+	UPROPERTY()			float Tension;					//var float Tension;
+	UPROPERTY()			int32 numContacts;				//var int numContacts;
+	UPROPERTY()			AContact* allContacts;			//var Contact allContacts;
 
 	void PostBeginPlay();
 	void Timer();
@@ -31,14 +30,14 @@ public:
 	int32 getNumEnemies(AAGP_Pawn* this_pawn);
 	void logDump();
 	int32 findActorIdx(AActor* findThis);
-	void findContact(AActor* findThis);
-	void getBestPickup(APawn* me, APickup* &out_pickup);
-	void getBiggestThreat(APawn* me, FString situation, FVector altLoc);
-	void totalThreatAssessment(APawn* me, FString situation, FVector altLoc, float& cover);
-	void attackAssessment(APawn* me, FString situation, FVector altLoc);
-	void getMostVulnerable(APawn* me, float& vuln, FString situation, FVector altLoc);
-	void addContact(AAI_Stats* contactInfo, float staticInfo, float dynInfo);
-	void removeContact(AActor* Contact);
+	AContact* findContact(AActor* findThis);
+	float getBestPickup(APawn* me, APickup* &out_pickup);
+	AContact* getBiggestThreat(APawn* me, FString situation, FVector altLoc);
+	float totalThreatAssessment(APawn* me, FString situation, FVector altLoc, float& cover);
+	float attackAssessment(APawn* me, FString situation, FVector altLoc);
+	AContact* getMostVulnerable(APawn* me, float& vuln, FString situation, FVector altLoc);
+	AContact* addContact(AAI_Stats* contactInfo, float staticInfo, float dynInfo);
+	AContact* removeContact(AActor* Contact);
 	void receiveInfo(AActor* Source, FString recptType, APawn* Receiver, float Intensity);
 	float getTension();
 	void membersForceReweight();

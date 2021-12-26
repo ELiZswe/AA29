@@ -151,7 +151,7 @@ bool UVoiceChatKeyBindPage::KeyClick(UGUIComponent* Sender)
 void UVoiceChatKeyBindPage::UpdateLabel(UGUILabel* Label, bool bWaitingForRawInput)
 {
 	/*
-	if (Label == None)
+	if (Label == nullptr)
 	{
 		return;
 	}
@@ -173,7 +173,7 @@ bool UVoiceChatKeyBindPage::RawKeyPress(uint8 NewKey)
 	/*
 	FString NewKeyName = "";
 	FString LocalizedKeyName = "";
-	Controller.__OnNeedRawKeyPress__Delegate = None;
+	Controller.__OnNeedRawKeyPress__Delegate = nullptr;
 	Controller.Master.bRequireRawJoystick = false;
 	PlayerOwner().ConsoleCommand("toggleime 1");
 	if (NewKey == 27)

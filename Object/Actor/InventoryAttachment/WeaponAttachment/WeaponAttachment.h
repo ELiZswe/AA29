@@ -30,7 +30,7 @@ public:
 	UPROPERTY()		uint8 SpawnHitCount;				//var byte SpawnHitCount;
 	UPROPERTY()		uint8 FlashCount;					//var byte FlashCount;
 	UPROPERTY()		APawn* TurretController;			//var Pawn TurretController;
-	UPROPERTY()		EBulletImpactType BulletImpact;		//var Object.EBulletImpactType BulletImpact;
+	UPROPERTY()		TArray<EBulletImpactType> BulletImpact;		//var Object.EBulletImpactType BulletImpact;
 	UPROPERTY()		FColor BeaconColor;					//var Object.Color BeaconColor;
 	UPROPERTY()		FVector mHitLocation;				//var FVector mHitLocation;
 	UPROPERTY()		float FiringSpeed;					//var float FiringSpeed;

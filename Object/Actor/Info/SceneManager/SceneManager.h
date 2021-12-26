@@ -48,4 +48,14 @@ public:
 	UPROPERTY(EditAnywhere)							AActor*							AffectedActor;			//var() Actor AffectedActor;
 	UPROPERTY(EditAnywhere, Config)					EAffect							Affect;					//var() config EAffect Affect;
 	UPROPERTY(EditAnywhere)							TArray<TSubclassOf<UMatAction>>	Actions;				//var() array<MatAction> Actions;
+
+	float GetTotalSceneTime();
+	void AbortScene();
+	void BeginPlay();
+	void Trigger(AActor* Other, APawn* EventInstigator);
+	void SceneStarted();
+	void SceneEnded();
+	void PointReached(AInterpolationPoint* Point);
+	void EndScene();
+	void StartScene();
 };

@@ -104,12 +104,12 @@ bool UServerBrowser::HaveBonusPack()
 	/*
 	local Object Test;
 	Test = DynamicLoadObject("BonusPack.xMutantGame", Class'Class');
-	if (Test == None)
+	if (Test == nullptr)
 	{
 		return false;
 	}
 	Test = DynamicLoadObject("SkaarjPack.Invasion", Class'Class');
-	if (Test == None)
+	if (Test == nullptr)
 	{
 		return false;
 	}

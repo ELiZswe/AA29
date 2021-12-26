@@ -205,7 +205,7 @@ public:
 	void SetReservation(AController* C);
 	void OpenPositionFor(APawn* p);
 	void DisplayVehicleDebug(UCanvas* Canvas, float &YL, float &YPos);
-	//void DisplayDebug(UCanvas* Canvas, out float YL, out float YPos);
+	void DisplayDebug(UCanvas* Canvas, const class FDebugDisplayInfo& DebugDisplay, float& YL, float& YPos);
 	void PostNetBeginPlay();
 	void GetPosition(int32 iPosition);
 	void GetWeaponAim();

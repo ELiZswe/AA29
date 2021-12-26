@@ -53,7 +53,7 @@ public:
 	UPROPERTY()																int32 visitedWeight;								//var int visitedWeight;
 	UPROPERTY(EditAnywhere)													TArray<FName> ForcedPaths;							//var() array<name> ForcedPaths;
 	UPROPERTY(EditAnywhere)													TArray<FName> ProscribedPaths;						//var() array<name> ProscribedPaths;
-	//UPROPERTY()															TArray<AReachSpec> PathList;						//var const array<ReachSpec> PathList;
+	//UPROPERTY()															TArray<UReachSpec> PathList;						//var const array<ReachSpec> PathList;
 	UPROPERTY()																bool bForcedOnly;									//var bool bForcedOnly;
 	UPROPERTY(EditAnywhere)													bool bNoSuperSize;									//var() bool bNoSuperSize;
 	UPROPERTY(EditAnywhere)													bool bMakeSourceOnly;								//var() bool bMakeSourceOnly;
@@ -90,7 +90,7 @@ public:
 
 
 	void PostBeginPlay();
-	//int32 SpecialCost(APawn* Seeker, AReachSpec* Path);
+	//int32 SpecialCost(APawn* Seeker, UReachSpec* Path);
 	void SetBaseDistance(int32 BaseNum);
 	void SetBaseVisibility(int32 BaseNum);
 	bool Accept(AActor* Incoming, AActor* Source);

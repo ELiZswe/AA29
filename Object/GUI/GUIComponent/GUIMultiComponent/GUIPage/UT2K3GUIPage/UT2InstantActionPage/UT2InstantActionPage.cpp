@@ -151,7 +151,7 @@ bool UUT2InstantActionPage::SpecButtonClick(UGUIComponent* Sender)
 void UUT2InstantActionPage::TabChange(UGUIComponent* Sender)
 {
 	/*
-	if (GUITabButton(Sender) == None)
+	if (GUITabButton(Sender) == nullptr)
 	{
 		return;
 	}

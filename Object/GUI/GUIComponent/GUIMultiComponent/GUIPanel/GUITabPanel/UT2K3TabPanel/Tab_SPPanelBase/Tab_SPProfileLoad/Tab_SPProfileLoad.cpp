@@ -332,7 +332,7 @@ void UTab_SPProfileLoad::DeleteConfirm(uint8 bButton)
 		ProfileName = lbProfiles.List.Get();
 		if ((GetProfile() != None) && (GetProfile().PackageName == ProfileName))
 		{
-			PlayerOwner().Level.Game.CurrentGameProfile = None;
+			PlayerOwner().Level.Game.CurrentGameProfile = nullptr;
 		}
 		if (!PlayerOwner().Level.Game.DeletePackage(ProfileName))
 		{

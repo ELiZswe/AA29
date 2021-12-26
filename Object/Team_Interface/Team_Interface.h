@@ -9,22 +9,18 @@
 
 class AAGP_Pawn;
 	
-	
 UCLASS()
-class AA29_API UTeam_Interface : public UObject
+class UTeam_Interface : public UObject
 {
 	GENERATED_BODY()
 public:
 	UTeam_Interface();
 
+	UPROPERTY()			UTeam_Interface*	nextTeam;				//var Team_Interface nextTeam;
+	UPROPERTY()			int32				nSubordinates;			//var int nSubordinates;
+	UPROPERTY()			TArray<AAGP_Pawn*>	Subordinate;			//var AGP_Pawn Subordinate;
+	UPROPERTY()			ETeam				team_id;				//var Pawn.ETeam team_id;
 
-	UPROPERTY()									UTeam_Interface* nextTeam;									//var Team_Interface nextTeam;
-	UPROPERTY()									int32 nSubordinates;										//var int nSubordinates;
-	UPROPERTY()									AAGP_Pawn* Subordinate;										//var AGP_Pawn Subordinate;
-	UPROPERTY()									ETeam team_id;												//var Pawn.ETeam team_id;
-
-	virtual void replaceSubordinate(AAGP_Pawn* old_sub, AAGP_Pawn* new_sub);
-	virtual void printTeam();
-
-
+	bool replaceSubordinate(AAGP_Pawn* old_sub, AAGP_Pawn* new_sub);
+	void printTeam();
 };

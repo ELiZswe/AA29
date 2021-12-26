@@ -38,7 +38,7 @@ void UAARealHeroesSubPanel::InitComponent(UGUIController* MyController, UGUIComp
 	MyNML = new (None) class'AGP_Interface.NMLContent';
 	if (MyNML != None)
 	{
-		if (MyNML.Controller == None)
+		if (MyNML.Controller == nullptr)
 		{
 			MyNML.InitComponent(MyController, MyOwner);
 		}

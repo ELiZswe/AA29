@@ -16,12 +16,12 @@ class AA29_API AAIScript : public AKeypoint
 public:
 	AAIScript(const FObjectInitializer& objectInitializer);
 
-	UPROPERTY()										AAIMarker* myMarker;					//var AIMarker myMarker;
-	UPROPERTY()										bool bLoggingEnabled;					//var bool bLoggingEnabled;
-	UPROPERTY()										bool bNavigate;							//var bool bNavigate;
-	UPROPERTY(EditAnywhere)							AaAIController* ControllerClass;		//var() class<AIController> ControllerClass;
+	UPROPERTY()						AAIMarker*			myMarker;				//var AIMarker myMarker;
+	UPROPERTY()						bool				bLoggingEnabled;		//var bool bLoggingEnabled;
+	UPROPERTY()						bool				bNavigate;				//var bool bNavigate;
+	UPROPERTY(EditAnywhere)			AaAIController*		ControllerClass;		//var() class<AIController> ControllerClass;
 
 	void SpawnControllerFor(APawn* p);
-	void GetMoveTarget();
+	AActor* GetMoveTarget();
 	void TakeOver(APawn* p);
 };

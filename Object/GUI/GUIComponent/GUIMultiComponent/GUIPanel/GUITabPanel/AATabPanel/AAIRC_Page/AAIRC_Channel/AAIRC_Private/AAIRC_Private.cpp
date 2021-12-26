@@ -25,8 +25,8 @@ void UAAIRC_Private::InitComponent(UGUIController* MyController, UGUIComponent* 
 	/*
 	Super:InitComponent(MyController, MyOwner);
 	sp_Main.SplitPosition = 1;
-	sp_Main.__OnReleaseSplitter__Delegate = None;
-	sp_Main.__OnLoadINI__Delegate = None;
+	sp_Main.__OnReleaseSplitter__Delegate = nullptr;
+	sp_Main.__OnLoadINI__Delegate = nullptr;
 	sp_Main.bFixedSplitter = true;
 	sp_Main.bDrawSplitter = false;
 	*/

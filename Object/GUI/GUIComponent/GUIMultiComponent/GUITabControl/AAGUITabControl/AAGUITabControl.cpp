@@ -22,7 +22,7 @@ UGUITabPanel* UAAGUITabControl::AddTab(FString InCaption, FString PanelClass, UG
 			return None;
 		}
 	}
-	if (ExistingPanel == None)
+	if (ExistingPanel == nullptr)
 	{
 		NewPanelClass = class<GUITabPanel>(Controller.AddComponentClass(PanelClass));
 	}
@@ -39,7 +39,7 @@ UGUITabPanel* UAAGUITabControl::AddTab(FString InCaption, FString PanelClass, UG
 				NewTabPanel = GUITabPanel(AddComponent(PanelClass, true));
 			}
 		}
-		if (NewTabPanel == None)
+		if (NewTabPanel == nullptr)
 		{
 			Log("Could not create panel for" @ string(NewPanelClass));
 			return None;
@@ -51,7 +51,7 @@ UGUITabPanel* UAAGUITabControl::AddTab(FString InCaption, FString PanelClass, UG
 		else
 		{
 			NewTabButton = new () classClass'XInterface.GUITabButton';
-			if (NewTabButton == None)
+			if (NewTabButton == nullptr)
 			{
 				Log("Could not create tab for" @ string(NewPanelClass));
 				return None;

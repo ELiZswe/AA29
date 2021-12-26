@@ -54,7 +54,7 @@ APackbot::APackbot()
 	LRearWheel->BoneName = "LRearWheel";
 	LRearWheel->WheelBoneOffset = FVector(0, 0.25, 0);
 	LRearWheel->WheelRadius = 6;
-	sndTreadSound = LoadObject<USoundBase>(NULL, TEXT("SoundCue'/Game/AmericasArmy/Sounds/S_AAO_Vehicles/TankSounds/Tread_Loop2_Que.Tread_Loop2_Que'"), NULL, LOAD_None, NULL);
+	sndTreadSound = LoadObject<USoundBase>(NULL, TEXT("SoundCue'/Game/AmericasArmy/Sounds/S_AAO_Vehicles/TankSounds/Tread_Loop2_Que.Tread_Loop2_Cue'"), NULL, LOAD_None, NULL);
 	SteerThrottleScale = 3;
 	//ZeroSizeSize;
 	TreadVelocityScale = 150;
@@ -159,18 +159,16 @@ APackbot::APackbot()
 	KParams = KParams0;
 }
 
-/*
-void APackbot::DisplayDebug(UCanvas* Canvas, float &YL, float &YPos)
+void APackbot::DisplayDebug(UCanvas* Canvas, const class FDebugDisplayInfo& DebugDisplay, float& YL, float& YPos)
 {
-	
+	/*
 	DisplayDebug(Canvas, YL, YPos);
 	YPos += YL;
 	Canvas.SetPos(4, YPos);
 	Canvas.DrawText("TurnDamping: " $ TurnDamping $ " On Ground: " $ bVehicleOnGround);
 	YPos += YL;
-	
+	*/
 }
-*/
 
 /*
 void APackbot::StaticPrecache(LevelInfo L)
@@ -230,7 +228,7 @@ void APackbot::Timer()
 {
 	/*
 	Timer();
-	if (Driver == None || Health_Front_Right <= 0 || Health_Front_Left <= 0 || Health_Back_Left <= 0 || Health_Back_Right <= 0)
+	if (Driver == nullptr || Health_Front_Right <= 0 || Health_Front_Left <= 0 || Health_Back_Left <= 0 || Health_Back_Right <= 0)
 	{
 		Return;
 	}
@@ -251,7 +249,7 @@ void APackbot::Timer()
 		{
 			Driver.AmbientSoundScaling = 0;
 			Driver.SoundVolume = 0;
-			Driver.AmbientSound = None;
+			Driver.AmbientSound = nullptr;
 		}
 	}
 	*/

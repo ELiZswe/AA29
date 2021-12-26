@@ -217,7 +217,7 @@ void UAARecordBrief_Badges::Opened(UGUIComponent* Sender)
 	local LevelInfo PL;
 	PRI = PlayerOwner().PlayerReplicationInfo;
 	PL = PlayerOwner().Level;
-	if (PRI == None)
+	if (PRI == nullptr)
 	{
 		return;
 	}
@@ -496,7 +496,7 @@ void UAARecordBrief_Badges::CreateBadges()
 	FString sCaption = "";
 	local PlayerReplicationInfo PRI;
 	PRI = PlayerOwner().PlayerReplicationInfo;
-	if (PRI == None)
+	if (PRI == nullptr)
 	{
 		return;
 	}

@@ -493,7 +493,7 @@ void UIRC_System::JoinChannel(FString ChannelName)
 	/*
 	local IRC_Channel p;
 	p = FindChannelWindow(ChannelName);
-	if (p == None)
+	if (p == nullptr)
 	{
 		link.JoinChannel(ChannelName);
 	}
@@ -545,7 +545,7 @@ void UIRC_System::Disconnect()
 		link.DisconnectReason = "Disconnected";
 		link.DestroyLink();
 	}
-	link = None;
+	link = nullptr;
 	for (i = 0; i < Channels.Length; i++)
 	{
 		IRCPage.ChannelTabs.RemoveTab(Channels[i].MyButton.Caption);

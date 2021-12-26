@@ -32,7 +32,7 @@ void UAAIntroMoviePage::InternalOnOpen()
 	local AAGUIController AAGC;
 	OnOpen();
 	AAGC = AAGUIController(Controller);
-	if (AAGC == None)
+	if (AAGC == nullptr)
 	{
 		InternalOnClose(true);
 	}

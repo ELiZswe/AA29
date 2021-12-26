@@ -487,7 +487,7 @@ void UAAGameMenu_TournamentRoster::InternalOnLoadTeam(UGUIComponent* Sender, FSt
 		{
 			if (S ~= "clear")
 			{
-				co_Team.__OnChange__Delegate = None;
+				co_Team.__OnChange__Delegate = nullptr;
 				co_Team.RemoveItem(0, co_Team.ItemCount());
 			}
 			for (i = 0; i < 2; i++)

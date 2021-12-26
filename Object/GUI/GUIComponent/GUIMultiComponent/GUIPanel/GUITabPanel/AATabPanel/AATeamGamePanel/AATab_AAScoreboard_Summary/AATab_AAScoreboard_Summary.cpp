@@ -145,7 +145,7 @@ bool UAATab_AAScoreboard_Summary::InternalOnPreDraw(UCanvas* C)
 	{
 		GRI = PlayerOwner().GameReplicationInfo;
 	}
-	if (GRI == None)
+	if (GRI == nullptr)
 	{
 		return false;
 	}

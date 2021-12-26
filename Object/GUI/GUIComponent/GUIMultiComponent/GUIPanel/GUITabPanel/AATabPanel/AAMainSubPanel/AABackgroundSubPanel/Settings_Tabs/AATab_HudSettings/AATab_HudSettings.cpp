@@ -632,7 +632,7 @@ FColor UAATab_HudSettings::GetDefaultColor()
 	/*
 	local PlayerController PC;
 	PC = PlayerOwner();
-	if ((PC.PlayerReplicationInfo == None) || (PC.PlayerReplicationInfo.Team == None))
+	if ((PC.PlayerReplicationInfo == nullptr) || (PC.PlayerReplicationInfo.Team == nullptr))
 	{
 		i = int(PC.GetUrlOption("Team"));
 	}

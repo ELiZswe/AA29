@@ -179,7 +179,7 @@ void ATriggerMultiple::DestroyMT()
 		Log("TriggerMultiple::DestroyMT()");
 	}
 	mT.Destroy();
-	mT = None;
+	mT = nullptr;
 	*/
 }
 void ATriggerMultiple::Destroyed()

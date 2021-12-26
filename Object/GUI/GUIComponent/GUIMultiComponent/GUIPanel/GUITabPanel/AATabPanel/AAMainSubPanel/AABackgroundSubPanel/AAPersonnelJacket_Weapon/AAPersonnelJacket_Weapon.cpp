@@ -442,7 +442,7 @@ void UAAPersonnelJacket_Weapon::LoadSet()
 {
 	/*
 	int32 i = 0;
-	if (HumanController(PlayerOwner()) == None)
+	if (HumanController(PlayerOwner()) == nullptr)
 	{
 		return;
 	}
@@ -458,7 +458,7 @@ void UAAPersonnelJacket_Weapon::LoadSet()
 void UAAPersonnelJacket_Weapon::SetChanged()
 {
 	/*
-	if (HumanController(PlayerOwner()) == None)
+	if (HumanController(PlayerOwner()) == nullptr)
 	{
 		return;
 	}
@@ -484,7 +484,7 @@ void UAAPersonnelJacket_Weapon::LoadMod(UGUIComponent* Sender, FString S)
 	local class<BaseWeaponMod>  BWM;
 	local HumanController HC;
 	Box = moComboBox(Sender);
-	if (Box == None)
+	if (Box == nullptr)
 	{
 		return;
 	}
@@ -496,7 +496,7 @@ void UAAPersonnelJacket_Weapon::LoadMod(UGUIComponent* Sender, FString S)
 	{
 		BWM = class<BaseWeaponMod>(DynamicLoadObject(CurrentWeapon.Default.WM_Default[Slot], Class'Class', true));
 	}
-	if (BWM == None)
+	if (BWM == nullptr)
 	{
 		default_mod = "None";
 	}
@@ -536,7 +536,7 @@ void UAAPersonnelJacket_Weapon::ModChanged(UGUIComponent* Sender, FString S)
 	local XInterface.moComboBox OtherBox;
 	local class<BaseWeaponMod>  BWM;
 	Box = moComboBox(Sender);
-	if (Box == None)
+	if (Box == nullptr)
 	{
 		return;
 	}
@@ -558,7 +558,7 @@ void UAAPersonnelJacket_Weapon::ModChanged(UGUIComponent* Sender, FString S)
 		for (j = 0; j < Controls.Length; j++)
 		{
 			OtherBox = moComboBox(Controls[j]);
-			if (OtherBox == None)
+			if (OtherBox == nullptr)
 			{
 			}
 			if (BWM.Default.ExclusiveModsList[i].GetModName() == OtherBox.GetText())
@@ -608,7 +608,7 @@ bool UAAPersonnelJacket_Weapon::InfoClicked(UGUIComponent* Sender)
 		break;
 	case b_WeaponModInfo:
 		UpdateCurrentWeaponMod();
-		if (CurrentWeaponMod == None)
+		if (CurrentWeaponMod == nullptr)
 		{
 			return false;
 		}
@@ -673,7 +673,7 @@ void UAAPersonnelJacket_Weapon::AttachModsToWeapon()
 	local class<BaseWeaponMod>  BWM;
 	local class<BaseModAttachment>  BMA;
 	local HumanController HC;
-	if (PlayerOwner() == None)
+	if (PlayerOwner() == nullptr)
 	{
 		return;
 	}
@@ -735,7 +735,7 @@ ABaseWeaponMod* UAAPersonnelJacket_Weapon::GetWeaponModClass(int32 slot_index)
 	AHumanController* HC = nullptr;
 	HC = HumanController(PlayerOwner());
 	BWM = class<BaseWeaponMod>(DynamicLoadObject(HC.WM_Slot[slot_index], Class'Class', true));
-	if (BWM == None)
+	if (BWM == nullptr)
 	{
 		BWM = class<BaseWeaponMod>(DynamicLoadObject(CurrentWeapon.Default.WM_Default[slot_index], Class'Class'));
 	}

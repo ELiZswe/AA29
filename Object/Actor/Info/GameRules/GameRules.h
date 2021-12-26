@@ -3,26 +3,29 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
+#include "AA29/Object/Actor/Info/AA2_Info.h"
+#include "AA29/AA29.h"
 #include "GameRules.generated.h"
 
 class AAGP_PlayerStart;
 class AAA2_PlayerState;
 class APickup;
 class UaDamageType;
+class ANavigationPoint;
 
 UCLASS()
-class AA29_API UGameRules : public UObject
+class AGameRules : public AAA2_Info
 {
 	GENERATED_BODY()
 public:
-	UGameRules();
-	UPROPERTY()											UGameRules* NextGameRules;									//var GameRules NextGameRules;
+	AGameRules();
 
-	void AddGameRules(UGameRules* GR);
-	AAGP_PlayerStart* FindPlayerStart(AController* Player, uint8 InTeam, FString incomingName);
+	UPROPERTY()											AGameRules* NextGameRules;									//var GameRules NextGameRules;
+
+	void AddGameRules(AGameRules* GR);
+	ANavigationPoint* FindPlayerStart(AController* Player, uint8 InTeam, FString incomingName);
 	FString GetRules();
-	//void GetServerDetails(FServerResponseLine &ServerState);
+	void GetServerDetails(FServerResponseLine& ServerState);
 	bool HandleRestartGame();
 	bool CheckEndGame(AAA2_PlayerState* Winner, FString Reason);
 	bool CheckScore(AAA2_PlayerState* Scorer);

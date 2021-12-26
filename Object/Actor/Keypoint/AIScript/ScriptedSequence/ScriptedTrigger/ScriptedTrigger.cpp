@@ -74,7 +74,7 @@ void AScriptedTrigger::Reset()
 {
 	/*
 	Super::Reset();
-	if (TriggerController == None)
+	if (TriggerController == nullptr)
 	{
 		TriggerController = Spawn('ScriptedTriggerController');
 	}
