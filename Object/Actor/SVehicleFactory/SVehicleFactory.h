@@ -20,12 +20,13 @@ public:
 	// Sets default values for this actor's properties
 	ASVehicleFactory();
 
-	UPROPERTY()								ANavigationPoint*	myMarker;				//var NavigationPoint myMarker;
-	UPROPERTY()								int32				VehicleCount;			//var int VehicleCount;
-	UPROPERTY(EditAnywhere)					int32				MaxVehicleCount;		//var() int MaxVehicleCount;
-	UPROPERTY(EditAnywhere)					AVehicle*			VehicleClass;			//var() class<Vehicle> VehicleClass;
+	UPROPERTY()								ANavigationPoint*			myMarker;				//var NavigationPoint myMarker;
+	UPROPERTY()								int32						VehicleCount;			//var int VehicleCount;
+	UPROPERTY(EditAnywhere)					int32						MaxVehicleCount;		//var() int MaxVehicleCount;
+	UPROPERTY(EditAnywhere)					TSubclassOf<AVehicle>		VehicleClass;			//var() class<Vehicle> VehicleClass;
 	
 	UPROPERTY(EditAnywhere)					USceneComponent* Root;
+	UPROPERTY(EditAnywhere)					USkeletalMesh* Mesh;
 	UPROPERTY()								UTexture2D* Texture;
 	UPROPERTY()								UBillboardComponent* SpriteComponent;
 

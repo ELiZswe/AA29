@@ -15,7 +15,7 @@ class AAGP_Objective;
 class APSSet;
 
 UCLASS()
-class AA29_API AAGP_TeamInfo : public ATeamInfo
+class AAGP_TeamInfo : public ATeamInfo
 {
 	GENERATED_BODY()
 	
@@ -212,14 +212,11 @@ public:
 		void ScoreAGPObjective(AAGP_Objective* obj, AAA2_PlayerState*  Scorer, bool bScorerOnly);
 		void ScoreDefendObjective(AAGP_Objective* obj, AAA2_PlayerState*  Scorer);
 		void PrintRequestList();
-		void TournamentSubmitPlayerRequest(AAA2_PlayerState*  PRI, int32 UnitID, int32 Index);
+		bool TournamentSubmitPlayerRequest(AAA2_PlayerState*  PRI, int32 UnitID, int32 Index);
 		void SubmitSwapRequest();
 		void SubmitPauseRequest();
 		void SubmitResumeRequest();
 		void Tick(float DeltaTime);
 		void LinkTick(float DeltaTime);
 		void AlertTeamToEnemyLocations(float alertTime);
-
-
-
 };

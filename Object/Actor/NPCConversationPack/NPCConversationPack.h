@@ -15,6 +15,10 @@ class AA29_API ANPCConversationPack : public AActor
 {
 	GENERATED_BODY()
 	
+public:
+
+	ANPCConversationPack();
+
 	UPROPERTY(EditAnywhere)			FString					sConversationName;					//var() FString sConversationName;
 	UPROPERTY(EditAnywhere)			TArray<FConvSpeech>		acsSpeechEntries;					//var() TArray<ConvSpeech> acsSpeechEntries;
 	UPROPERTY(EditAnywhere)			bool					bUseLipSynch;						//var() bool bUseLipSynch;
@@ -41,11 +45,6 @@ class AA29_API ANPCConversationPack : public AActor
 	void AddPawnToMemberList(FString sTagNameOfPawnToAdd);
 	APawn* FindCachedPawnByTagName(FString sTagName);
 	void EndConversation();
-
-
-public:	
-	// Sets default values for this actor's properties
-	ANPCConversationPack();
 
 protected:
 	// Called when the game starts or when spawned

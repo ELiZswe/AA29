@@ -9,6 +9,7 @@
 
 class AAGP_Weapon;
 class ABaseModAttachment;
+class ABaseScope;
 
 UCLASS()
 class ABaseWeaponMod : public AActor
@@ -19,33 +20,35 @@ public:
 	// Sets default values for this actor's properties
 	ABaseWeaponMod();
 	
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)	    USkeletalMesh* Mesh;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)		bool bCanSwapLense;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)		bool bUseModZoomOffset;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)		bool bSupportMod;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)		bool bSuppressorMod;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)		bool bOnlyDrawIfAttached;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		float mFov;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		uint8 ValidSlot;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		int32 ModScopeTexSize;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		int32 FillExtraSlot;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		int32 ModSlot;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		FString modname;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		TArray<TSubclassOf<ABaseWeaponMod>> ExclusiveModsList;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		TSubclassOf<class ABaseWeaponMod>  EnemyModClass;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		TSubclassOf<class ABaseWeaponMod>  NextWeaponMod;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		FName WeaponBone;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		UTexture2D* ModImageOverlay;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		UTexture2D* ModImage;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		UTexture2D* ScriptedLensTexture;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		UTexture2D* StandardLensTexture;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		FVector mZoomAnimOffset;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)     TSubclassOf<class ABaseScope> ScopeClass;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		AAGP_Weapon* weap;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		ESuppressorState SuppressorState;
-	
+	UPROPERTY()					ABaseWeaponMod*							NextWeaponMod;				//var ABaseWeaponMod* NextWeaponMod;
+	UPROPERTY()					AAGP_Weapon*							weap;						//var AAGP_Weapon* weap;
+	UPROPERTY()					FName									WeaponBone;					//var FName WeaponBone;
+	UPROPERTY()					int32									ModSlot;					//var int32 ModSlot;
+	UPROPERTY()					int32									FillExtraSlot;				//var int32 FillExtraSlot;
+	UPROPERTY()					TSubclassOf<ABaseScope>						ScopeClass;					//var class<BaseScope> ScopeClass;
+	UPROPERTY()					bool									bSupportMod;				//var bool bSupportMod;
+	UPROPERTY()					UMaterialInstance*						ModImage;					//var UMaterial* ModImage;
+	UPROPERTY()					UMaterialInstance*						ModImageOverlay;			//var UMaterial* ModImageOverlay;
+	UPROPERTY()					bool									bSuppressorMod;				//var bool bSuppressorMod;
+	UPROPERTY()					TArray<TSubclassOf<ABaseWeaponMod>>		ExclusiveModsList;			//var TArray<class<BaseWeaponMod> > ExclusiveModsList;
+	UPROPERTY()					TArray<uint8>							ValidSlot;					//var uint8 ValidSlot[6];
+	UPROPERTY()					TSubclassOf<ABaseWeaponMod>				EnemyModClass;				//var class<BaseWeaponMod> EnemyModClass;
+	UPROPERTY()					FString									modname;					//var FString modname;
+	UPROPERTY(EditAnywhere)	    UMaterialInstance*						ModScopeScriptedTexture;	//var() UScriptedTexture* ModScopeScriptedTexture;
+	UPROPERTY(EditAnywhere)	    float									mFov;						//var() float mFov;
+	UPROPERTY(EditAnywhere)	    TArray<int32>							ModScopeTexSize;			//var() int32 ModScopeTexSize[4];
+	UPROPERTY(EditAnywhere)	    FVector									mZoomAnimOffset;			//var() Vector mZoomAnimOffset;
+	UPROPERTY(EditAnywhere)	    bool									bUseModZoomOffset;			//var() bool bUseModZoomOffset;
+	UPROPERTY(EditAnywhere)	    bool									bCanSwapLense;				//var() bool bCanSwapLense;
+	UPROPERTY(EditAnywhere)	    UMaterialInstance*						StandardLensTexture;		//var() UMaterial* StandardLensTexture;
+	UPROPERTY(EditAnywhere)	    UMaterialInstance*						ScriptedLensTexture;		//var() UMaterial* ScriptedLensTexture;
+
 	//From Actor
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		EDrawType DrawType;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)		ESuppressorState	SuppressorState;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)		EDrawType			DrawType;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)		bool				bOnlyDrawIfAttached;
+	UPROPERTY()										USkeletalMesh*		Mesh;
+	UPROPERTY()										FName				AttachmentBone;						//var const FName AttachmentBone;
 
 	//remaining:
 	//	var() ScriptedTexture ModScopeScriptedTexture;

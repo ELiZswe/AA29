@@ -27,6 +27,8 @@ public:
 	void PostInit();
 	void PostPostInit();
 	void SetMasterScript();
+	bool IsMasterScript();
+	int32 GetLevelScriptsListIndex();
 	void InitLevelScripts();
 	void ResetScript(AEL_MultiScript* ScriptToReset, bool bReenterScriptAfterReset);
 	AEL_MultiScript* GetActiveScript();

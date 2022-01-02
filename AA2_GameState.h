@@ -12,6 +12,7 @@
 class ATeamInfo;
 class APlayInfo;
 class AAA2_PlayerState;
+class AVehicleReplicationInfo;
 
 UCLASS()
 class AA29_API AAA2_GameState : public AGameStateBase
@@ -85,62 +86,61 @@ public:
 	UPROPERTY()											int32 BotDifficulty;								//var int BotDifficulty;								// for bPlayersVsBots
 	
 	// server side HUD element hiding - server will override clients
-	UPROPERTY(Config)									bool bHUDHideAmmoCount;								//var globalconfig bool bHUDHideAmmoCount;				// hide how many rounds are in current clip
-	UPROPERTY(Config)									bool bHUDHideWeaponStatus;							//var globalconfig bool bHUDHideWeaponStatus;			// hide reloading, fix jam messages
-	UPROPERTY(Config)									bool bHUDHideWeapon;								//var globalconfig bool bHUDHideWeapon;
-	UPROPERTY(Config)									bool bHUDHideGrenades;								//var globalconfig bool bHUDHideGrenades;
-	UPROPERTY(Config)									bool bHUDHideHealth;								//var globalconfig bool bHUDHideHealth;
-	UPROPERTY(Config)									bool bHUDHideMedical;								//var globalconfig bool bHUDHideMedical;
-	UPROPERTY(Config)									bool bHUDHideCombatEffect;							//var globalconfig bool bHUDHideCombatEffect;
-	UPROPERTY(Config)									bool bHUDHideOptics;								//var globalconfig bool bHUDHideOptics;
-	UPROPERTY(Config)									bool bHUDHideCompass;								//var globalconfig bool bHUDHideCompass;
-	UPROPERTY(Config)									bool bHUDHideTimer;									//var globalconfig bool bHUDHideTimer;
-	UPROPERTY(Config)									bool bHUDHideObjectives;							//var globalconfig bool bHUDHideObjectives;
-	UPROPERTY(Config)									bool bHUDHideRadar;									//var globalconfig bool bHUDHideRadar;
-	UPROPERTY(Config)									bool bHUDHideSupport;								//var globalconfig bool bHUDHideSupport;
+	UPROPERTY(globalconfig)								bool								bHUDHideAmmoCount;							//var globalconfig bool bHUDHideAmmoCount;				// hide how many rounds are in current clip
+	UPROPERTY(globalconfig)								bool								bHUDHideWeaponStatus;						//var globalconfig bool bHUDHideWeaponStatus;			// hide reloading, fix jam messages
+	UPROPERTY(globalconfig)								bool								bHUDHideWeapon;								//var globalconfig bool bHUDHideWeapon;
+	UPROPERTY(globalconfig)								bool								bHUDHideGrenades;							//var globalconfig bool bHUDHideGrenades;
+	UPROPERTY(globalconfig)								bool 								bHUDHideHealth;								//var globalconfig bool bHUDHideHealth;
+	UPROPERTY(globalconfig)								bool 								bHUDHideMedical;							//var globalconfig bool bHUDHideMedical;
+	UPROPERTY(globalconfig)								bool 								bHUDHideCombatEffect;						//var globalconfig bool bHUDHideCombatEffect;
+	UPROPERTY(globalconfig)								bool 								bHUDHideOptics;								//var globalconfig bool bHUDHideOptics;
+	UPROPERTY(globalconfig)								bool 								bHUDHideCompass;							//var globalconfig bool bHUDHideCompass;
+	UPROPERTY(globalconfig)								bool 								bHUDHideTimer;								//var globalconfig bool bHUDHideTimer;
+	UPROPERTY(globalconfig)								bool 								bHUDHideObjectives;							//var globalconfig bool bHUDHideObjectives;
+	UPROPERTY(globalconfig)								bool 								bHUDHideRadar;								//var globalconfig bool bHUDHideRadar;
+	UPROPERTY(globalconfig)								bool 								bHUDHideSupport;							//var globalconfig bool bHUDHideSupport;
 
 	// For admin command "roundsuspend"
 	//
-	UPROPERTY()											bool bRoundIsSuspended;								//var bool bRoundIsSuspended;
-	UPROPERTY()											int32 SecsTillRoundResume;							//var int SecsTillRoundResume;
-	UPROPERTY()											FString sTournamentState;							//var string sTournamentState;
-	UPROPERTY()											bool bTournamentInProgress;							//var bool bTournamentInProgress;
-	UPROPERTY()											bool bTournamentWarmupJustEnded;					//var bool bTournamentWarmupJustEnded;
-	UPROPERTY()											bool bTournamentInWarmup;							//var bool bTournamentInWarmup;
-	UPROPERTY()											int32 TournamentCountDownTime;						//var int TournamentCountDownTime;
-	UPROPERTY()											FString sTournamentName;							//var string sTournamentName;
-	UPROPERTY()											FString sLeagueName;								//var string sLeagueName;
-	UPROPERTY()											FString sTournamentResultsFileName;					//var string sTournamentResultsFileName;
-	UPROPERTY()											TArray<FString> asTournamentTeamName;				//var string asTournamentTeamName;
-	UPROPERTY()											int32 iTournamentRoundDelayTime;					//var int iTournamentRoundDelayTime;
-	UPROPERTY()											int32 iTournamentRequestDelayTime;					//var int iTournamentRequestDelayTime;
-	UPROPERTY()											int32 iTournamentWarmupDuration;					//var int iTournamentWarmupDuration;
-	UPROPERTY()											int32 iTournamentSwapTime;							//var int iTournamentSwapTime;
-	UPROPERTY()											int32 iTournamentSwapLimit;							//var int iTournamentSwapLimit;
-	UPROPERTY()											int32 iTournamentPauseLimit;						//var int iTournamentPauseLimit;
-	UPROPERTY()											bool bTournamentMercyRule;							//var bool bTournamentMercyRule;
-	UPROPERTY()											bool bTournamentOpenAllWeaponClassSlots;			//var bool bTournamentOpenAllWeaponClassSlots;
-	UPROPERTY()											bool bTournamentTeamCaptainsAllowed;				//var bool bTournamentTeamCaptainsAllowed;
-	UPROPERTY()											bool bTournamentTeamPasswordsRequired;				//var bool bTournamentTeamPasswordsRequired;
-	UPROPERTY()											bool bTournamentTieSuddenDeath;						//var bool bTournamentTieSuddenDeath;
-	UPROPERTY()											bool bTournamentTieScore;							//var bool bTournamentTieScore;
-	UPROPERTY()											bool bTournamentEnableRandomTeamAssignments;		//var bool bTournamentEnableRandomTeamAssignments;
-	UPROPERTY(Config)									bool bForceShadowsOff;								//var globalconfig bool bForceShadowsOff;
-	UPROPERTY(Config)									bool bAllowForceclassing;							//var globalconfig bool bAllowForceclassing;
-	UPROPERTY()											bool bForceClassUsedInRound;						//var bool bForceClassUsedInRound;
-	UPROPERTY(Config)									bool bDisableFragGrenades;							//var globalconfig bool bDisableFragGrenades;
-	UPROPERTY(Config)									bool bDisableFlashbangs;							//var globalconfig bool bDisableFlashbangs;
-	UPROPERTY(Config)									bool bDisableSmokeGrenades;							//var globalconfig bool bDisableSmokeGrenades;
-	UPROPERTY(Config)									bool bDisableThermiteGrenades;						//var globalconfig bool bDisableThermiteGrenades;
-	UPROPERTY(Config)									bool bDisable203Grenades;							//var globalconfig bool bDisable203Grenades;
-	UPROPERTY(Config)									bool bDGO;											//var globalconfig bool bDGO;
-	UPROPERTY()											int32 iSpotterBaseGridX;							//var int iSpotterBaseGridX;
-	UPROPERTY()											int32 iSpotterBaseGridY;							//var int iSpotterBaseGridY;
-	UPROPERTY()											int32 iDelayedStartTimeRemaining;					//var int iDelayedStartTimeRemaining;
-	UPROPERTY()											bool bTempDisableRoundScoring;						//var bool bTempDisableRoundScoring;
-	//UPROPERTY()										VehicleReplicationInfo* VRIArray;					//var array<VehicleReplicationInfo> VRIArray;
+	UPROPERTY()											bool								bRoundIsSuspended;							//var bool bRoundIsSuspended;
+	UPROPERTY()											int32								SecsTillRoundResume;						//var int SecsTillRoundResume;
+	UPROPERTY()											FString								sTournamentState;							//var string sTournamentState;
+	UPROPERTY()											bool								bTournamentInProgress;						//var bool bTournamentInProgress;
+	UPROPERTY()											bool								bTournamentWarmupJustEnded;					//var bool bTournamentWarmupJustEnded;
+	UPROPERTY()											bool								bTournamentInWarmup;						//var bool bTournamentInWarmup;
+	UPROPERTY()											int32								TournamentCountDownTime;					//var int TournamentCountDownTime;
+	UPROPERTY()											FString								sTournamentName;							//var string sTournamentName;
+	UPROPERTY()											FString								sLeagueName;								//var string sLeagueName;
+	UPROPERTY()											FString								sTournamentResultsFileName;					//var string sTournamentResultsFileName;
+	UPROPERTY()											TArray<FString>						asTournamentTeamName;						//var string asTournamentTeamName;
+	UPROPERTY()											int32								iTournamentRoundDelayTime;					//var int iTournamentRoundDelayTime;
+	UPROPERTY()											int32								iTournamentRequestDelayTime;				//var int iTournamentRequestDelayTime;
+	UPROPERTY()											int32								iTournamentWarmupDuration;					//var int iTournamentWarmupDuration;
+	UPROPERTY()											int32								iTournamentSwapTime;						//var int iTournamentSwapTime;
+	UPROPERTY()											int32								iTournamentSwapLimit;						//var int iTournamentSwapLimit;
+	UPROPERTY()											int32								iTournamentPauseLimit;						//var int iTournamentPauseLimit;
+	UPROPERTY()											bool								bTournamentMercyRule;						//var bool bTournamentMercyRule;
+	UPROPERTY()											bool								bTournamentOpenAllWeaponClassSlots;			//var bool bTournamentOpenAllWeaponClassSlots;
+	UPROPERTY()											bool								bTournamentTeamCaptainsAllowed;				//var bool bTournamentTeamCaptainsAllowed;
+	UPROPERTY()											bool								bTournamentTeamPasswordsRequired;			//var bool bTournamentTeamPasswordsRequired;
+	UPROPERTY()											bool								bTournamentTieSuddenDeath;					//var bool bTournamentTieSuddenDeath;
+	UPROPERTY()											bool								bTournamentTieScore;						//var bool bTournamentTieScore;
+	UPROPERTY()											bool								bTournamentEnableRandomTeamAssignments;		//var bool bTournamentEnableRandomTeamAssignments;
+	UPROPERTY(globalconfig)								bool								bForceShadowsOff;							//var globalconfig bool bForceShadowsOff;
+	UPROPERTY(globalconfig)								bool								bAllowForceclassing;						//var globalconfig bool bAllowForceclassing;
+	UPROPERTY()											bool								bForceClassUsedInRound;						//var bool bForceClassUsedInRound;
+	UPROPERTY(globalconfig)								bool								bDisableFragGrenades;						//var globalconfig bool bDisableFragGrenades;
+	UPROPERTY(globalconfig)								bool								bDisableFlashbangs;							//var globalconfig bool bDisableFlashbangs;
+	UPROPERTY(globalconfig)								bool								bDisableSmokeGrenades;						//var globalconfig bool bDisableSmokeGrenades;
+	UPROPERTY(globalconfig)								bool								bDisableThermiteGrenades;					//var globalconfig bool bDisableThermiteGrenades;
+	UPROPERTY(globalconfig)								bool								bDisable203Grenades;						//var globalconfig bool bDisable203Grenades;
+	UPROPERTY(globalconfig)								bool								bDGO;										//var globalconfig bool bDGO;
+	UPROPERTY()											int32								iSpotterBaseGridX;							//var int iSpotterBaseGridX;
+	UPROPERTY()											int32								iSpotterBaseGridY;							//var int iSpotterBaseGridY;
+	UPROPERTY()											int32								iDelayedStartTimeRemaining;					//var int iDelayedStartTimeRemaining;
+	UPROPERTY()											bool								bTempDisableRoundScoring;					//var bool bTempDisableRoundScoring;
+	UPROPERTY()											TArray<AVehicleReplicationInfo*>	VRIArray;									//var array<VehicleReplicationInfo> VRIArray;
 
-	
 
 
 	virtual void BeginPlay();
@@ -151,7 +151,7 @@ public:
 	void PostBeginPlay();
 	void Reset();
 	void Timer();
-	void FindPlayerByID(int32 PlayerID);
+	AAA2_PlayerState* FindPlayerByID(int32 PlayerID);
 	void AddPRI(AAA2_PlayerState* PRI);
 	//void AddVRI(VehicleReplicationInfo VRI);
 	void RemovePRI(AAA2_PlayerState* PRI);

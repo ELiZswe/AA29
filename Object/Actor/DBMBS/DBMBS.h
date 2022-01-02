@@ -10,40 +10,32 @@
 
 class AMBSUpdateServerStateRequestAdapt;
 
-UCLASS()
-class AA29_API ADBMBS : public AActor
+UCLASS(Config = Game)
+class ADBMBS : public AActor
 {
 	GENERATED_BODY()
 	
-	UPROPERTY()						bool bLoggedIn;										//var transient bool bLoggedIn;
-	UPROPERTY()						int32 PingTimeToMBSServer;							//var int PingTimeToMBSServer;
-	UPROPERTY()						bool InitialPingComplete;							//var bool InitialPingComplete;
-	UPROPERTY()						int32 TimesTimerOccured;							//var int TimesTimerOccured;
-	UPROPERTY()						Fpointer ServerDescription;							//var const transient pointer ServerDescription;
-	UPROPERTY()						Fpointer MBSSDK;									//var const transient pointer MBSSDK;
-	UPROPERTY()						FString ServerIP;									//var string ServerIP;
-	UPROPERTY(Config)				int32 QueryPort;									//var config int QueryPort;
-
 public:	
 	// Sets default values for this actor's properties
 	ADBMBS();
 
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
+	UPROPERTY()						bool		bLoggedIn;						//var transient bool bLoggedIn;
+	UPROPERTY()						int32		PingTimeToMBSServer;			//var int PingTimeToMBSServer;
+	UPROPERTY()						bool		InitialPingComplete;			//var bool InitialPingComplete;
+	UPROPERTY()						int32		TimesTimerOccured;				//var int TimesTimerOccured;
+	UPROPERTY()						Fpointer	ServerDescription;				//var const transient pointer ServerDescription;
+	UPROPERTY()						Fpointer	MBSSDK;							//var const transient pointer MBSSDK;
+	UPROPERTY()						FString		ServerIP;						//var string ServerIP;
+	UPROPERTY(Config)				int32		QueryPort;						//var config int QueryPort;
 
-public:	
-	// Called every frame
-	//virtual void Tick(float DeltaTime) override;
-
-	void InitMBS();
+	bool InitMBS();
 	void DeinitMBS();
 	void UpdateServerDescription();
 	void UpdateMBSGameLoopTickCalculator();
-	void GetOperatingSystem();
-	void GetServerPort();
-	void GetMaxPlayers();
-	void GetNumPlayers();
+	FString GetOperatingSystem();
+	int32 GetServerPort();
+	int32 GetMaxPlayers();
+	int32 GetNumPlayers();
 	void Tick(float DeltaTime);
 	void HandleLegacyQueryPort();
 	void PostBeginPlay();
@@ -63,4 +55,9 @@ public:
 	int32 GetPingTimeToReport();
 	void SetPingTime(int32 Ping);
 
+
+
+protected:
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
 };

@@ -66,7 +66,7 @@ public:
 	void InitializeObjectives();
 	void DrawCompass(UCanvas* Canvas);
 	void DrawLocation(UCanvas* Canvas);
-	void DrawObjectives(UCanvas* Canvas);
+	bool DrawObjectives(UCanvas* Canvas);
 	void ScaleControl(UCanvas* Canvas);
 	void DrawObjectiveList(UCanvas* Canvas);
 	void DrawCompassPoint(UUIHUDCompassPoint* currentpoint, UCanvas* Canvas);

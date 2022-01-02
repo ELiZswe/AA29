@@ -3,7 +3,9 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Controller.h"
+
+//#include "GameFramework/Controller.h"
+#include "AA29/Object/Actor/Controller/AA2_Controller.h"
 #include "AA29/Object/Actor/Pickup/Pickup.h"
 #include "AA29/AA29.h"
 
@@ -16,24 +18,21 @@ class AMover;
 class UReachSpec;
 
 UCLASS()
-class AA29_API AaAIController : public AController
+class AaAIController : public AAA2_Controller
 {
 	GENERATED_BODY()
 public:
 
 	AaAIController();
 
-	UPROPERTY()										float Skill;						//var float Skill;
-	UPROPERTY()										AAIScript* MyScript;				//var AIScript MyScript;
-	UPROPERTY()										bool bPlannedJump;					//var bool bPlannedJump;
-	UPROPERTY()										bool bAdjustFromWalls;				//var bool bAdjustFromWalls;
-	UPROPERTY()										bool bHunting;						//var bool bHunting;
+	UPROPERTY()										float		Skill;					//var float Skill;
+	UPROPERTY()										AAIScript*	MyScript;				//var AIScript MyScript;
+	UPROPERTY()										bool		bPlannedJump;			//var bool bPlannedJump;
+	UPROPERTY()										bool		bAdjustFromWalls;		//var bool bAdjustFromWalls;
+	UPROPERTY()										bool		bHunting;				//var bool bHunting;
 
 	//from Controller
-	UPROPERTY()										bool	bAdvancedTactics;				//var bool bAdvancedTactics;
-	UPROPERTY()										bool	bSlowerZAcquire;				//var bool bSlowerZAcquire;
 	UPROPERTY()										bool	bProp;							//var bool bProp;
-	UPROPERTY()										AActor*	Focus;							//var Actor Focus;
 
 	void WaitToSeeEnemy();
 	void NotifyFlashBanged(float Duration, float VisIntensity, float AudIntensity);
@@ -41,15 +40,15 @@ public:
 	void Reset();
 	float RateWeapon(AWeapon* W);
 	void Trigger(AActor* Other, APawn* EventInstigator);
-	void WeaponFireAgain(float RefireRate, bool bFinishedFire);
+	bool WeaponFireAgain(float RefireRate, bool bFinishedFire);
 	bool TriggerScript(AActor* Other, APawn* EventInstigator);
 	void DisplayDebug(UCanvas* Canvas, const class FDebugDisplayInfo& DebugDisplay, float& YL, float& YPos);
 	int32 AdjustDesireFor(APickup* p);
 	void GetFacingDirection();
 	void AdjustView(float DeltaTime);
 	void SetOrders(FName NewOrders, AController* OrderGiver);
-	void GetOrderObject();
-	void GetOrders();
+	AActor* GetOrderObject();
+	FName GetOrders();
 	void PrepareForMove(ANavigationPoint* Goal, UReachSpec* Path);
 	void WaitForMover(AMover* M);
 	void MoverFinished();

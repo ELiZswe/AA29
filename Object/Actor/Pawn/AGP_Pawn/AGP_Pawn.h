@@ -8,8 +8,6 @@
 #include "GameFramework/Character.h"
 #include "Components/InputComponent.h"
 #include "AA29/Object/Actor/AI_Primitive/SoldierClass/SoldierClass.h"
-//#include "Camera/CameraComponent.h"
-//#include "GameFramework/Pawn.h"
 #include "AGP_Pawn.generated.h"
 
 #define printvector(variable)               if (GEngine) GEngine->AddOnScreenDebugMessage(-1, 1.5f, FColor::Green, FString::Printf(TEXT(#variable ": %s"), *variable.ToCompactString()), false)

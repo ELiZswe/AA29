@@ -8,6 +8,7 @@
 
 class USoundBase;
 class APathNode;
+class ANPCSpeechManager;
 
 UCLASS()
 class AA29_API ANPCBaseCivilianController : public ANPCBaseController
@@ -86,7 +87,7 @@ public:
 	UPROPERTY()					APathNode* pnLastFollowingPathNode;													//var PathNode pnLastFollowingPathNode;
 	UPROPERTY()					APathNode* pnFollowingPathNode;														//var PathNode pnFollowingPathNode;
 	UPROPERTY()					bool bShouldFollowUser;																//var bool bShouldFollowUser;
-	//UPROPERTY()					ANPCSpeechManager* npcsmgrVoice;												//var NPCSpeechManager npcsmgrVoice;
+	UPROPERTY()					ANPCSpeechManager* npcsmgrVoice;													//var NPCSpeechManager npcsmgrVoice;
 	UPROPERTY()					bool bBusyPlayConversationPack;														//var bool bBusyPlayConversationPack;
 	UPROPERTY()					TArray<USoundBase*> asCivilianFemaleInjured;										//var array<Sound> asCivilianFemaleInjured;
 	UPROPERTY()					TArray<USoundBase*> asCivilianMaleInjured;											//var array<Sound> asCivilianMaleInjured;
@@ -99,6 +100,30 @@ public:
 	UPROPERTY()					float fpEndTimeForViewingItemOfInterest;											//var float fpEndTimeForViewingItemOfInterest;
 	UPROPERTY()					FString sDebugStatus;																//var string sDebugStatus;
 
-
-
+	void DisplayDebugNoSpam(AAGP_HUD* AGPHUD, UCanvas* Canvas, float& YL, float& YPos, FColor NewColor);
+	void DisplayDebug(UCanvas* Canvas, const class FDebugDisplayInfo& DebugDisplay, float& YL, float& YPos);
+	void NPCChangeState(FName nmState, FName nmLabel);
+	void BeginPlay();
+	void InitializePawn();
+	//void Possess(APawn* aPawn);
+	void Start();
+	bool DetermineConversationPackAvailable(APawn* pawnSeen);
+	void NotifyHeardWeaponNoise(float fpLoudness, AAGP_Weapon* agpwWeaponHeard, FVector vSoundLocation);
+	void NPCTriggerEvent(FName nmEvent, APawn* pawnInstigator);
+	void NotifyBuzzedByBullet(AActor* aShooter);
+	void NotifyPlayerPawnInSight(APawn* pawnSeen);
+	void NotifyPlayerPawnWatchingMe(APawn* pawnSeen);
+	void NotifyItemOfInterestFound(ANPCItemOfInterest* npcioi);
+	void NotifyTakeDamage(int32 Damage, APawn* instigatedBy, FVector HitLocation, UaDamageType* DamageType, FBoneInfo Bone);
+	void Reset();
+	float CivilianSay(int32 iSoundIndex);
+	float CivilianWarning(int32 iSoundIndex);
+	float CivilianGroan(int32 iSoundIndex);
+	void NotifyAnotherPawnDied(ANPCBaseController* npcpc);
+	void NotifyAnotherPawnTookDamage(APawn* pInstigator, ANPCBaseController* anpcbcDamaged);
+	FString CommandCivilian(AHumanController* hcPlayer, FString sCmd);
+	void AcknowledgeOrder();
+	void NotifyPlayerHealedNPC(AAGP_Pawn* agpHealer);
+	void PlayRandomLipSynch(TArray<FName> anameLipSynchs, bool bCutDelayTime);
+	int32 getReportNPCDistance();
 };

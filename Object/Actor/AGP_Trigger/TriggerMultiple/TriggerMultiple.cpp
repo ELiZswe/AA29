@@ -135,7 +135,7 @@ void ATriggerMultiple::StartEvent(int32 Index)
 	/*
 	if (EventList[Index].bDelay)
 	{
-		mT.StartTimer(EventList[Index].Name, FRand() * EventList[Index].DelayMax - EventList[Index].DelayMin + EventList[Index].DelayMin);
+		mT.StartTimer(EventList[Index].Name, FMath::FRand() * EventList[Index].DelayMax - EventList[Index].DelayMin + EventList[Index].DelayMin);
 	}
 	else
 	{

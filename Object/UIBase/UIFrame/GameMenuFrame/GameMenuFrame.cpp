@@ -1858,32 +1858,30 @@ void UGameMenuFrame::SetLandNavScoreScreen(FString text1, FString text2, FString
 }
 void UGameMenuFrame::ScaleControls(UCanvas* Canvas)
 {
-	/*
 	UUIScreen* screen = nullptr;
-	if (_iOldSizeX == Canvas.SizeX && _iOldSizeY == Canvas.SizeY)
+	/*
+	if ((_iOldSizeX == Canvas.SizeX) && (_iOldSizeY == Canvas.SizeY))
 	{
 		return;
 	}
-	fScaleX = Canvas.SizeX / 640;
-	fScaleY = Canvas.SizeY / 480;
+	fScaleX = float((Canvas.SizeX / 640));
+	fScaleY = float((Canvas.SizeY / 480));
 	if (_bAllowScaling)
 	{
-		offset.X = _Pos.X * fScaleX;
-		offset.Y = _Pos.Y * fScaleY;
+		offset.X = int((float(_Pos.X) * fScaleX));
+		offset.Y = int((float(_Pos.Y) * fScaleY));
 	}
 	else
 	{
-		if (Canvas.SizeX >= 640 && Canvas.SizeY >= 480)
+		if ((Canvas.SizeX >= 640) && (Canvas.SizeY >= 480))
 		{
-			offset.X = Canvas.SizeX - 640 / 2;
-			offset.Y = Canvas.SizeY - 480 / 2;
+			offset.X = ((Canvas.SizeX - 640) / 2);
+			offset.Y = ((Canvas.SizeY - 480) / 2);
 		}
 	}
-	screen = cScreenList;
-	if (screen != nullptr)
+	for (screen = cScreenList; screen != nullptr; screen = screen.cNextScreen)
 	{
-		screen->ScaleControls(Canvas);
-		screen = screen->cNextScreen;
+		screen.ScaleControls(Canvas);
 	}
 	if (cMouse != nullptr)
 	{
@@ -1891,18 +1889,19 @@ void UGameMenuFrame::ScaleControls(UCanvas* Canvas)
 	}
 	if (_bAllowScaling)
 	{
-		_ScaledToolTipLoc.X = _ToolTipLoc.X * fScaleX + offset.X;
-		_ScaledToolTipLoc.Y = _ToolTipLoc.Y * fScaleY + offset.Y;
+		_ScaledToolTipLoc.X = int(((float(_ToolTipLoc.X) * fScaleX) + float(offset.X)));
+		_ScaledToolTipLoc.Y = int(((float(_ToolTipLoc.Y) * fScaleY) + float(offset.Y)));
 	}
 	else
 	{
-		_ScaledToolTipLoc.X = _ToolTipLoc.X + offset.X;
-		_ScaledToolTipLoc.Y = _ToolTipLoc.Y + offset.Y;
+		_ScaledToolTipLoc.X = (_ToolTipLoc.X + offset.X);
+		_ScaledToolTipLoc.Y = (_ToolTipLoc.Y + offset.Y);
 	}
 	_iOldSizeX = Canvas.SizeX;
 	_iOldSizeY = Canvas.SizeY;
 	*/
 }
+
 void UGameMenuFrame::PlayMenuSoundSpecific(USoundBase* Sound)
 {
 	/*

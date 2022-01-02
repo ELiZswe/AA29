@@ -237,8 +237,8 @@ AM1117_ASV::AM1117_ASV()
 	//PositionTypes(0) = ({ class'AGP_Vehicles.PassengerPosition',"None","Seat_Passenger_1_Bone",FVector(95, 20, 32),FVector(3, 0, -10),FRotator(3000,0,0) })
 	//PositionTypes(1) = ({ class'AGP_Vehicles.M1117_ASV_Gunner',"Weapon_1_Bone","player_attach_bone",FVector(0, 0, 0),FVector(0, 0, 0),FRotator(0,0,0) });
 	EntryPoints = { DriverSideEntry,PassengerSideEntry,RearEntry };
-	IdleSound = LoadObject<USoundBase>(NULL, TEXT("SoundCue'/Game/AmericasArmy/Sounds/S_AA2_Vehicles/stryker/STRYKER_Idle_Lp_3_Que.STRYKER_Idle_Lp_3_Cue'"), NULL, LOAD_None, NULL);
-	StartUpSound = LoadObject<USoundBase>(NULL, TEXT("SoundCue'/Game/AmericasArmy/Sounds/S_AA2_Vehicles/stryker/STRYKER_Start_3_Que.STRYKER_Start_3_Cue'"), NULL, LOAD_None, NULL);
+	IdleSound = LoadObject<USoundBase>(NULL, TEXT("SoundCue'/Game/AmericasArmy/Sounds/S_AA2_Vehicles/stryker/STRYKER_Idle_Lp_3_Cue.STRYKER_Idle_Lp_3_Cue'"), NULL, LOAD_None, NULL);
+	StartUpSound = LoadObject<USoundBase>(NULL, TEXT("SoundCue'/Game/AmericasArmy/Sounds/S_AA2_Vehicles/stryker/STRYKER_Start_3_Cue.STRYKER_Start_3_Cue'"), NULL, LOAD_None, NULL);
 	StartUpForce = "PRVStartUp";
 	ShutDownForce = "PRVShutDown";
 	DestroyedVehicleMesh = LoadObject<UStaticMesh>(NULL, TEXT("StaticMesh'/Game/AmericasArmy/Meshes/M_AA2_Vehicles/ASV/M1117_ASV_static.M1117_ASV_static'"), NULL, LOAD_None, NULL);

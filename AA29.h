@@ -2383,9 +2383,9 @@ struct FPlayerNameInfo
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PlayerNameInfo")					float mXPos;										//var float mXPos;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PlayerNameInfo")					float mYPos;										//var float mYPos;
 };
-/*
+
 USTRUCT(BlueprintType)
-struct FClientAdjustment
+struct FAA2_ClientAdjustment
 {
 	GENERATED_BODY()
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ClientAdjustment")					float TimeStamp;									//var float TimeStamp;
@@ -2396,18 +2396,18 @@ struct FClientAdjustment
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ClientAdjustment")					AActor* NewBase;									//var AActor* NewBase;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ClientAdjustment")					FVector NewFloor = FVector(0, 0, 0);									//var FVector NewFloor;
 };
-*/
+
 USTRUCT(BlueprintType)
 struct FAuthJacket
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AuthJacket")						int32 ToursCompleted;								//var int ToursCompleted;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AuthJacket")						int32 MissionsCompleted;							//var int MissionsCompleted;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AuthJacket")						int32 MarksmanshipScore;							//var int MarksmanshipScore;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AuthJacket")						int32 Honor;										//var int Honor;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AuthJacket")						int32 Experience;									//var int Experience;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AuthJacket")						int32 Group;										//var int Group;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AuthJacket")						int32 UID;											//var int UID;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AuthJacket")						int32			ToursCompleted			= 0;	//var int ToursCompleted;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AuthJacket")						TArray<int32>	MissionsCompleted		= {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ,0,0,0,0,0,0,0,0 };	//var int MissionsCompleted;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AuthJacket")						int32			MarksmanshipScore		= 0;	//var int MarksmanshipScore;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AuthJacket")						int32			Honor					= 0;	//var int Honor;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AuthJacket")						int32			Experience				= 0;	//var int Experience;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AuthJacket")						int32			Group					= 0;	//var int Group;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AuthJacket")						int32			UID						= 0;	//var int UID;
 };
 
 

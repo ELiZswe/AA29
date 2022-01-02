@@ -54,7 +54,7 @@ APackbot::APackbot()
 	LRearWheel->BoneName = "LRearWheel";
 	LRearWheel->WheelBoneOffset = FVector(0, 0.25, 0);
 	LRearWheel->WheelRadius = 6;
-	sndTreadSound = LoadObject<USoundBase>(NULL, TEXT("SoundCue'/Game/AmericasArmy/Sounds/S_AAO_Vehicles/TankSounds/Tread_Loop2_Que.Tread_Loop2_Cue'"), NULL, LOAD_None, NULL);
+	sndTreadSound = LoadObject<USoundBase>(NULL, TEXT("SoundCue'/Game/AmericasArmy/Sounds/S_AAO_Vehicles/TankSounds/Tread_Loop2_Cue.Tread_Loop2_Cue'"), NULL, LOAD_None, NULL);
 	SteerThrottleScale = 3;
 	//ZeroSizeSize;
 	TreadVelocityScale = 150;
@@ -170,24 +170,22 @@ void APackbot::DisplayDebug(UCanvas* Canvas, const class FDebugDisplayInfo& Debu
 	*/
 }
 
-/*
-void APackbot::StaticPrecache(LevelInfo L)
+void APackbot::StaticPrecache(ALevelInfo* L)
 {
 	Super::StaticPrecache(L);
-	L.AddPrecacheMaterial(Texture'fx_smk_ball01_dk');
-	L.AddPrecacheMaterial(Texture'fx_part_explosion01');
-	L.AddPrecacheMaterial(Texture'FX2_misc_explosionA');
+	//L.AddPrecacheMaterial(Texture'fx_smk_ball01_dk');
+	//L.AddPrecacheMaterial(Texture'fx_part_explosion01');
+	//L.AddPrecacheMaterial(Texture'FX2_misc_explosionA');
 }
-*/
 
 void APackbot::UpdatePrecacheStaticMeshes()
 {
 	Super::UpdatePrecacheStaticMeshes();
 }
 
-void APackbot::FindEntryVehicle(APawn* p)
+AVehicle* APackbot::FindEntryVehicle(APawn* p)
 {
-	//Return None;
+	return nullptr;
 }
 
 void APackbot::IdleSoundTimer()
@@ -216,12 +214,10 @@ void APackbot::KDriverEnter(APawn* p)
 	*/
 }
 
-void APackbot::KDriverLeave(bool bForceLeave)
+bool APackbot::KDriverLeave(bool bForceLeave)
 {
-	/*
-	SetTimer(0, False);
-	return KDriverLeave(bForceLeave);
-	*/
+	//SetTimer(0, False);
+	return Super::KDriverLeave(bForceLeave);
 }
 
 void APackbot::Timer()

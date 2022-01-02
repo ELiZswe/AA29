@@ -55,8 +55,6 @@ public:
 
 
 	void Logout(AController* Exiting);
-
-
 	void FindPSSets();
 	void LogPlayerStart(APlayerController* PC);
 	void LogPlayerFinish(APlayerController* PC);
@@ -72,7 +70,7 @@ public:
 	void RecordStartMatch();
 	void CheckClassWithPlayerStart(AController* PC);
 	AAGP_PlayerStart* FindPlayerStart(AController* Player, uint8 InTeam, FString incomingName);
-	int32 RatePlayerStart(ANavigationPoint* N, uint8 Team, AController* Player);
+	float RatePlayerStart(ANavigationPoint* N, uint8 Team, AController* Player);
 	uint8 PickTeam(uint8 Num, AController* C);
 	void CompleteEndGame();
 	AAGP_Viewpoint* GetWinningViewpoint(AAA2_PlayerState* Winner);
@@ -99,8 +97,8 @@ public:
 	bool IsSpectateFirstPersonOnly();
 	bool IsSpectateBodies();
 	bool IsTeamGame();
-	AAGP_TeamInfo* GetTeam(uint8 Index);
-	AAGP_TeamInfo* GetOtherTeam(uint8 Index);
+	ATeamInfo* GetTeam(uint8 Index);
+	ATeamInfo* GetOtherTeam(uint8 Index);
 	uint8 GetPlayerTeamIndex(AController* C);
 	virtual float GetROELimit();
 	void SetROEKickTimer(bool bEnabled);

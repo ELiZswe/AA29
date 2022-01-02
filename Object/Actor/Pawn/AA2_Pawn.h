@@ -7,6 +7,7 @@
 #include "AA2_Pawn.generated.h"
 
 class UKarmaParamsCollision;
+class AEventlab;
 
 
 UCLASS(Config = Game)
@@ -59,10 +60,16 @@ public:
 	UPROPERTY()												bool					bUpdateEyeheight;				//var bool bUpdateEyeheight;
 	UPROPERTY()												bool					bIgnoreForces;						//var bool bIgnoreForces;
 
-
 	//From Actor
-
-	UPROPERTY(EditAnywhere, Category = "Karma")				UKarmaParamsCollision*	KParams;					//var(Karma) KarmaParamsCollision KParams;
+	UPROPERTY()												USceneComponent*			Root;
+	UPROPERTY()												TArray<UMaterialInstance*>	Skins;
+	UPROPERTY()												AEventlab*					EventLab;					//var Actor EventLab;
+	UPROPERTY(EditAnywhere, Category = "Movement")			FVector						Velocity;					//var(Movement) FVector Velocity;
+	UPROPERTY(EditAnywhere, Category = "Karma")				UKarmaParamsCollision*		KParams;					//var(Karma) KarmaParamsCollision KParams;
+	UPROPERTY(EditAnywhere)									USkeletalMeshComponent*		Mesh_3P;
+	UPROPERTY(EditAnywhere)									UAnimationAsset*			Anim_1P;
+	UPROPERTY(EditAnywhere)									UAnimationAsset*			Anim_3P;
+	UPROPERTY(EditAnywhere)									FVector						PrePivot;
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -74,4 +81,5 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	void LoadMesh();
 };

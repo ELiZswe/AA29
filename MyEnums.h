@@ -5,6 +5,55 @@
 #include "CoreMinimal.h"
 #include "UObject/ObjectMacros.h"
 
+
+UENUM(BlueprintType)
+enum class EAmmoState : uint8
+{
+	/* 0 */ AMMSTATE_None														UMETA(DisplayName = "AMMSTATE_None "),
+	/* 1 */ AMMSTATE_On															UMETA(DisplayName = "AMMSTATE_On"),
+	/* 2 */ AMMSTATE_Off														UMETA(DisplayName = "AMMSTATE_Off")
+};
+
+UENUM(BlueprintType)
+enum class ESequenceStep : uint8
+{
+	/* 0 */ SEQUENCE_Start														UMETA(DisplayName = "SEQUENCE_Start"),
+	/* 1 */ SEQUENCE_Finish														UMETA(DisplayName = "SEQUENCE_Finish"),
+	/* 2 */ SEQUENCE_OutOfOrder													UMETA(DisplayName = "SEQUENCE_OutOfOrder"),
+	/* 3 */ SEQUENCE_InOrder													UMETA(DisplayName = "SEQUENCE_InOrder")
+};
+
+
+
+UENUM(BlueprintType)
+enum class EExtendLength : uint8
+{
+	/* 0 */ ELEN_Long															UMETA(DisplayName = "ELEN_Long"),
+	/* 1 */ ELEN_Medium															UMETA(DisplayName = "ELEN_Medium"),
+	/* 2 */ ELEN_Short															UMETA(DisplayName = "ELEN_Short"),
+};
+
+UENUM(BlueprintType)
+enum class EReserveCommand : uint8
+{
+	/* 0 */ NPCRC_FollowOrders													UMETA(DisplayName = "NPCRC_FollowOrders"),
+	/* 1 */ NPCRC_GOTOTRIGGER													UMETA(DisplayName = "NPCRC_GOTOTRIGGER"),
+	/* 2 */ NPCRC_GOTOOBJECTIVE													UMETA(DisplayName = "NPCRC_GOTOOBJECTIVE"),
+};
+
+UENUM(BlueprintType)
+enum class EPatrolCommand : uint8
+{
+	/* 0 */ NPCPC_Resume														UMETA(DisplayName = "NPCPC_Resume"),
+	/* 1 */ NPCPC_Start															UMETA(DisplayName = "NPCPC_Start"),
+	/* 2 */ NPCPC_Fallback														UMETA(DisplayName = "NPCPC_Fallback"),
+	/* 3 */ NPCPC_DefendArea													UMETA(DisplayName = "NPCPC_DefendArea"),
+	/* 4 */ NPCPC_WatchInstigator												UMETA(DisplayName = "NPCPC_WatchInstigator"),
+	/* 5 */ NPCPC_SpawnReserves													UMETA(DisplayName = "NPCPC_SpawnReserves"),
+};
+
+
+
 UENUM(BlueprintType)
 enum class EFluidGridType : uint8
 {

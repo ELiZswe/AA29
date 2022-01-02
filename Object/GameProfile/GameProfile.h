@@ -59,23 +59,20 @@ public:
 	void CheatJumpMatch(AGameModeBase* currentGame, int32 Param);
 	UMatchInfo* GetMatchInfo(int32 Ladder, int32 rung);
 	void RegisterGame(AGameModeBase* currentGame, APlayerState* PRI);
-
 	void StartNewMatch(int32 PickedLadder, AAA2_WorldSettings* CurrentLevel);
-
-	void FindFirstUnfinishedLadder();
+	int32 FindFirstUnfinishedLadder();
 	void ContinueSinglePlayerGame(AAA2_WorldSettings* Level, bool bReplace);
 	FString GetMatchDescription();
 	int32 GetNumPositions();
-	void GetNumTeammatesForMatch();
-	void TextPositionDescription(int32 posnval);
-	void EnumPositionDescription(FString posnval);
-	void GetPositionDescription(int32 PlayerNum);
+	int32 GetNumTeammatesForMatch();
+	FString TextPositionDescription(int32 posnval);
+	EPlayerPos EnumPositionDescription(FString posnval);
+	FString GetPositionDescription(int32 PlayerNum);
 	void SetPosition(int32 lineupnum, FString posn);
 	void SetLineup(int32 lineuppos, int32 teampos);
-	void AddTeammate(FString botname);
-	void ReleaseTeammate(FString botname);
+	bool AddTeammate(FString botname);
+	bool ReleaseTeammate(FString botname);
 	void ClearTeammates();
 	void ReportCheat(APlayerController* Cheater, FString cheat);
 	bool CanChangeTeam(AController* Other, int NewTeam);
-
 };

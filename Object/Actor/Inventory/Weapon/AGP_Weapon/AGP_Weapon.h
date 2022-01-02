@@ -143,12 +143,12 @@ public:
 	UPROPERTY()										float _fHitNoise;															//var float _fHitNoise;
 	UPROPERTY()										float _fShotNoise;															//var float _fShotNoise;
 	UPROPERTY()										float BaseRecoilModifier;													//var float BaseRecoilModifier;
-	UPROPERTY()										float BaseAccuracyModifier;													//var float BaseAccuracyModifier;
-	UPROPERTY()										EStatWeaponType StatWeaponType;												//var Actor.EStatWeaponType StatWeaponType;
-	//UPROPERTY(EditAnywhere, BlueprintReadWrite)	AScriptedTexture* ScopeScriptedTexture;									//var() ScriptedTexture ScopeScriptedTexture;
-	UPROPERTY()										AAGP_Weapon* EnemyWeaponClass;												//var class<AGP_Weapon> EnemyWeaponClass;
-	UPROPERTY()										ABaseWeaponMod* LegalModList;												//var array<class<BaseWeaponMod> > LegalModList;
-	UPROPERTY()										ABaseWeaponMod* WeaponModList;												//var BaseWeaponMod WeaponModList;
+	UPROPERTY()										float					BaseAccuracyModifier;								//var float BaseAccuracyModifier;
+	UPROPERTY()										EStatWeaponType			StatWeaponType;										//var Actor.EStatWeaponType StatWeaponType;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)		UMaterialInstance*		ScopeScriptedTexture;								//var() ScriptedTexture ScopeScriptedTexture;
+	UPROPERTY()										AAGP_Weapon*			EnemyWeaponClass;									//var class<AGP_Weapon> EnemyWeaponClass;
+	UPROPERTY()										ABaseWeaponMod*			LegalModList;										//var array<class<BaseWeaponMod> > LegalModList;
+	UPROPERTY()										ABaseWeaponMod*			WeaponModList;										//var BaseWeaponMod WeaponModList;
 	UPROPERTY()										TSubclassOf<class ABaseMuzzleFlashEmitter> SavedMuzzleFlashEmitter;			//var AGP_Effects.BaseMuzzleFlashEmitter SavedMuzzleFlashEmitter;
 	UPROPERTY()										UStaticMesh* NrmFireMesh;													//var Mesh NrmFireMesh;
 	UPROPERTY()										USkeletalMesh* AuxFireMesh;													//var Mesh AuxFireMesh;

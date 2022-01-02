@@ -20,8 +20,8 @@ ARavenUAV::ARavenUAV()
 	KParams0->bKAllowRotate = true;
 	KParams0->bDoSafetime = true;
 	KParams0->KFriction = 0.5;
-	sndCruising = LoadObject<USoundBase>(NULL, TEXT("SoundCue'/Game/AmericasArmy/Sounds/S_AA2_Helicopter/blackhawk/BHRotorCruise_Que.BHRotorCruise_Cue'"), NULL, LOAD_None, NULL);
-	sndHover = LoadObject<USoundBase>(NULL, TEXT("SoundCue'/Game/AmericasArmy/Sounds/S_AA2_Helicopter/blackhawk/BHRotorHover_Que.BHRotorHover_Cue'"), NULL, LOAD_None, NULL);
+	sndCruising = LoadObject<USoundBase>(NULL, TEXT("SoundCue'/Game/AmericasArmy/Sounds/S_AA2_Helicopter/blackhawk/BHRotorCruise_Cue.BHRotorCruise_Cue'"), NULL, LOAD_None, NULL);
+	sndHover = LoadObject<USoundBase>(NULL, TEXT("SoundCue'/Game/AmericasArmy/Sounds/S_AA2_Helicopter/blackhawk/BHRotorHover_Cue.BHRotorHover_Cue'"), NULL, LOAD_None, NULL);
 	KillHealth = 1000;
 	fpOriginalMaxRotorSpeed = 250;
 	SmokeGeneratorAttachmentBone = "MainRotor";

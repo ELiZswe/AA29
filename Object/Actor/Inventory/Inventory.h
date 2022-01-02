@@ -5,17 +5,17 @@
 #include "CoreMinimal.h"
 #include "AA29/MyEnums.h"
 #include "AA29/AA29.h"
-#include "AA29/Object/DamageType/aDamageType.h"
-//#include "AA29/Object/Actor/Inventory/InvContainer/InvContainer.h"
-
 #include "GameFramework/Actor.h"
-#include "AA29/Object/Actor/Pickup/Pickup.h"
-//#include "AA29/Object/Actor/Inventory/Weapon/Weapon.h"
 #include "Inventory.generated.h"
 
 
 class UStaticMesh;
 class AInvContainer;
+class AWeapon;
+class APickup;
+class UaDamageType;
+class AArmor;
+class APowerups;
 
 UCLASS()
 class AA29_API AInventory : public AActor
@@ -26,31 +26,31 @@ public:
 	// Sets default values for this actor's properties
 	AInventory();
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)								FString				ItemName;										//var() localized string ItemName;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)								FIntBox				IconCoords;										//var() Object.IntBox IconCoords;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)								UMaterialInstance*	IconMaterial;									//var() Material IconMaterial;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)								FString					ItemName;									//var() localized string ItemName;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)								FIntBox					IconCoords;									//var() Object.IntBox IconCoords;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)								UMaterialInstance*		IconMaterial;								//var() Material IconMaterial;
 	UPROPERTY()																TArray<TSubclassOf<class AInventoryAttachment>> AttachmentClass;	//var class<InventoryAttachment> AttachmentClass;
-	UPROPERTY()																AActor*				ThirdPersonActor;								//var Actor ThirdPersonActor;
-	UPROPERTY()																bool				bUseAttachment;									//var bool bUseAttachment;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)								float				BobDamping;										//var() float BobDamping;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)								bool bDrawingFirstPerson;											//var() bool bDrawingFirstPerson;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="FirstPerson")		FRotator PlayerViewPivot;											//var(FirstPerson) Object.Rotator PlayerViewPivot;
-	UPROPERTY()																FVector PlayerViewOffset;											//var FVector PlayerViewOffset;
-	UPROPERTY()																bool bDrawOnHUD;													//var bool bDrawOnHUD;
-	UPROPERTY()																bool bUseInstigatorRotation;										//var bool bUseInstigatorRotation;
-	UPROPERTY()																bool bVirtualInventory;												//var bool bVirtualInventory;
-	UPROPERTY()																uint8 idTeamOwner;													//var byte idTeamOwner;
-	UPROPERTY()																float fWeight;														//var float fWeight;
-	UPROPERTY()																bool _bHandsOnly;													//var bool _bHandsOnly;
-	UPROPERTY()																bool _bLarge;														//var bool _bLarge;
+	UPROPERTY()																AActor*					ThirdPersonActor;							//var Actor ThirdPersonActor;
+	UPROPERTY()																bool					bUseAttachment;								//var bool bUseAttachment;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)								float					BobDamping;									//var() float BobDamping;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)								bool					bDrawingFirstPerson;						//var() bool bDrawingFirstPerson;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="FirstPerson")		FRotator				PlayerViewPivot;							//var(FirstPerson) Object.Rotator PlayerViewPivot;
+	UPROPERTY()																FVector					PlayerViewOffset;							//var FVector PlayerViewOffset;
+	UPROPERTY()																bool					bDrawOnHUD;									//var bool bDrawOnHUD;
+	UPROPERTY()																bool					bUseInstigatorRotation;						//var bool bUseInstigatorRotation;
+	UPROPERTY()																bool					bVirtualInventory;							//var bool bVirtualInventory;
+	UPROPERTY()																uint8					idTeamOwner;								//var byte idTeamOwner;
+	UPROPERTY()																float					fWeight;									//var float fWeight;
+	UPROPERTY()																bool					_bHandsOnly;								//var bool _bHandsOnly;
+	UPROPERTY()																bool					_bLarge;									//var bool _bLarge;
 	UPROPERTY()																TSubclassOf<AInventory> Next;										//var Inventory Next;
 	UPROPERTY()																TSubclassOf<AInventory> Prev;										//var Inventory Prev;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)								int32 Charge;														//var() travel int Charge;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)								int32					Charge;										//var() travel int Charge;
 	UPROPERTY()																TSubclassOf<class APickup> PickupClass;								//var class<Pickup> PickupClass;
-	UPROPERTY()																bool bTossedOut;													//var bool bTossedOut;
-	UPROPERTY()																bool bDisplayableInv;												//var bool bDisplayableInv;
-	UPROPERTY()																uint8 GroupOffset;													//var byte GroupOffset;
-	UPROPERTY()																uint8 InventoryGroup;												//var byte InventoryGroup;
+	UPROPERTY()																bool					bTossedOut;									//var bool bTossedOut;
+	UPROPERTY()																bool					bDisplayableInv;							//var bool bDisplayableInv;
+	UPROPERTY()																uint8					GroupOffset;								//var byte GroupOffset;
+	UPROPERTY()																uint8					InventoryGroup;								//var byte InventoryGroup;
 	
 	//From Actor:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)								UStaticMesh* StaticMesh;
@@ -61,7 +61,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)								TSubclassOf<AInventory> Inventory;													//var inventory inventory
 	//void StaticPrecache(LevelInfo L)
 	
-	
 	bool IsSniperRifle();
 	bool IsJavelin();
 	void AttachToPawn(APawn* p);
@@ -70,30 +69,30 @@ public:
 	void RenderOverlays(UCanvas* Canvas, bool bWeaponAndAttachmentsOnly);
 	UFUNCTION(BlueprintCallable)		virtual FString GetHumanReadableName() const;
 	void PickupFunction(APawn* Other);
-	void RecommendWeapon(float rating);
+	AWeapon* RecommendWeapon(float rating);
 	void TravelPreAccept();
 	void TravelPostAccept();
 	void Destroyed();
 	void GiveTo(APawn* Other, APickup* Pickup);
 	void SetTeamOwner();
 	bool HandlePickupQuery(APickup* Item);
-	AInventory* SelectNext();
-	void DropFrom(FVector StartLocation, bool bAttach);
+	APowerups* SelectNext();
+	APickup* DropFrom(FVector StartLocation, bool bAttach);
 	void Use(float Value);
-	void WeaponChange(uint8 F, bool bSilent);
-	void PrioritizeArmor(int32 Damage, UaDamageType* DamageType, FVector HitLocation);
+	AWeapon* WeaponChange(uint8 F, bool bSilent);
+	AWeapon* PrevWeapon(AWeapon* CurrentChoice, AWeapon* CurrentWeapon);
+	AWeapon* NextWeapon(AWeapon* CurrentChoice, AWeapon* CurrentWeapon);
+	AArmor* PrioritizeArmor(int32 Damage, UaDamageType* DamageType, FVector HitLocation);
 	void OwnerEvent(FName EventName);
 	void SetOwnerDisplay();
-	void StaticItemName();
+	FString StaticItemName();
 	bool isLarge();
 	bool isHandsOnly();
 	bool VirtualWeapon();
 	AInvContainer* GetSwapContainer();
 	void InitFor(AInventory* Inv);
 	void NotifyNewParachuteState(int32 NewState);
-	void DisplayDebugMessage();
-	//void PrevWeapon(AWeapon* CurrentChoice, AWeapon* CurrentWeapon);
-	//void NextWeapon(AWeapon* CurrentChoice, AWeapon* CurrentWeapon);
+	FString DisplayDebugMessage();
 
 protected:
 	// Called when the game starts or when spawned

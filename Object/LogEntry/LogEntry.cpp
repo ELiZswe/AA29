@@ -10,8 +10,7 @@ ULogEntry::ULogEntry()
 
 void ULogEntry::Insert(ULogEntry* newLE)
 {
-	/*
-	local LogEntry cur;
+	ULogEntry* cur = nullptr;
 	if (Next == nullptr)
 	{
 		Next = newLE;
@@ -19,13 +18,12 @@ void ULogEntry::Insert(ULogEntry* newLE)
 	else
 	{
 		cur = Next;
-		if (cur.Next != None)
+		if (cur->Next != nullptr)
 		{
-			cur = cur.Next;
+			cur = cur->Next;
 		}
-		cur.Next = newLE;
+		cur->Next = newLE;
 	}
-	*/
 }
 
 ULogEntry* ULogEntry::Delete(ULogEntry* delLE)
@@ -34,38 +32,32 @@ ULogEntry* ULogEntry::Delete(ULogEntry* delLE)
 	ULogEntry* Prev = nullptr;
 	ULogEntry* cur = nullptr;
 	head = this;
-	/*
-	if (Self == delLE)
+	if (this == delLE)
 	{
 		head = Next;
 	}
 	else
 	{
-		Prev = Self;
-		cur = Next;
-		if (cur != delLE)
+		Prev = this;
+		for (cur = Next; cur != delLE; cur = cur->Next)
 		{
 			Prev = cur;
-			cur = cur.Next;
 		}
-		Prev.Next = cur.Next;
+		Prev->Next = cur->Next;
 	}
-	*/
 	return head;
 }
 
 int32 ULogEntry::Count()
 {
 	int32 Num = 0;
-	/*
-	local LogEntry le;
-	le = Self;
+	ULogEntry* le = nullptr;
+	le = this;
 	Num = 0;
-	if (le != None)
+	if (le != nullptr)
 	{
 		Num++;
-		le = le.Next;
+		le = le->Next;
 	}
-	*/
 	return Num;
 }

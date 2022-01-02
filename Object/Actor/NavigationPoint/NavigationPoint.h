@@ -7,6 +7,10 @@
 #include "AA29/Object/Actor/Pickup/Pickup.h"
 #include "NavigationPoint.generated.h"
 
+class ADebugNavigation;
+class UReachSpec;
+class ANavigationPoint;
+
 UCLASS()
 class AA29_API ANavigationPoint : public AActor
 {
@@ -24,36 +28,36 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	//UPROPERTY()															ADebugNavigation* dnpcnDebugNavigationMarker;		//var DebugNavigation dnpcnDebugNavigationMarker;
-	UPROPERTY()																TArray<ANavigationPoint*>	IgnoredList;			//var array<NavigationPoint> IgnoredList;
-	UPROPERTY(EditAnywhere)													bool bVehiclesCanUse;								//var() bool bVehiclesCanUse;
-	UPROPERTY()																bool bQuerySpecialCost;								//var bool bQuerySpecialCost;
-	UPROPERTY(EditAnywhere, Category = "PostureCost")						float CrawlCost;									//var(PostureCost) float CrawlCost;
-	UPROPERTY(EditAnywhere, Category = "PostureCost")						bool bCrawlOnly;									//var(PostureCost) bool bCrawlOnly;
-	UPROPERTY(EditAnywhere, Category = "PostureCost")						float CrouchCost;									//var(PostureCost) float CrouchCost;
-	UPROPERTY(EditAnywhere, Category = "PostureCost")						bool bCrouchOnly;									//var(PostureCost) bool bCrouchOnly;
-	UPROPERTY(EditAnywhere)													float ScoutExtentMultiplier;						//var() float ScoutExtentMultiplier;
-	UPROPERTY(EditAnywhere)													bool bScoutExtentTrace;								//var() bool bScoutExtentTrace;
-	UPROPERTY()																FVector vFloor;										//var FVector vFloor;
-	UPROPERTY()																FVector MaxPathSize;								//var FVector MaxPathSize;
-	UPROPERTY()																TArray<float> BaseDist;								//var float BaseDist;
-	UPROPERTY()																TArray<uint8> BaseVisible;							//var byte BaseVisible;
-	UPROPERTY()																float LastDetourWeight;								//var const float LastDetourWeight;
-	UPROPERTY()																float InventoryDist;								//var float InventoryDist;
-	UPROPERTY()																APickup* InventoryCache;							//var Pickup InventoryCache;
-	UPROPERTY()																int32 FearCost;										//var transient int FearCost;
-	UPROPERTY()																int32 TransientCost;								//var transient int TransientCost;
-	UPROPERTY(EditAnywhere)													int32 ExtraCost;									//var() int ExtraCost;
-	UPROPERTY()																int32 cost;											//var int cost;
-	UPROPERTY()																ANavigationPoint* previousPath;						//var const NavigationPoint previousPath;
-	UPROPERTY()																ANavigationPoint* prevOrdered;						//var const NavigationPoint prevOrdered;
-	UPROPERTY()																ANavigationPoint* nextOrdered;						//var const NavigationPoint nextOrdered;
-	UPROPERTY()																ANavigationPoint* nextNavigationPoint;				//var const NavigationPoint nextNavigationPoint;
-	UPROPERTY()																int32 bestPathWeight;								//var const int bestPathWeight;
-	UPROPERTY()																int32 visitedWeight;								//var int visitedWeight;
-	UPROPERTY(EditAnywhere)													TArray<FName> ForcedPaths;							//var() array<name> ForcedPaths;
-	UPROPERTY(EditAnywhere)													TArray<FName> ProscribedPaths;						//var() array<name> ProscribedPaths;
-	//UPROPERTY()															TArray<UReachSpec> PathList;						//var const array<ReachSpec> PathList;
+	UPROPERTY()																ADebugNavigation*			dnpcnDebugNavigationMarker;		//var DebugNavigation dnpcnDebugNavigationMarker;
+	UPROPERTY()																TArray<ANavigationPoint*>	IgnoredList;					//var array<NavigationPoint> IgnoredList;
+	UPROPERTY(EditAnywhere)													bool						bVehiclesCanUse;				//var() bool bVehiclesCanUse;
+	UPROPERTY()																bool						bQuerySpecialCost;				//var bool bQuerySpecialCost;
+	UPROPERTY(EditAnywhere, Category = "PostureCost")						float						CrawlCost;						//var(PostureCost) float CrawlCost;
+	UPROPERTY(EditAnywhere, Category = "PostureCost")						bool						bCrawlOnly;						//var(PostureCost) bool bCrawlOnly;
+	UPROPERTY(EditAnywhere, Category = "PostureCost")						float						CrouchCost;						//var(PostureCost) float CrouchCost;
+	UPROPERTY(EditAnywhere, Category = "PostureCost")						bool						bCrouchOnly;					//var(PostureCost) bool bCrouchOnly;
+	UPROPERTY(EditAnywhere)													float						ScoutExtentMultiplier;			//var() float ScoutExtentMultiplier;
+	UPROPERTY(EditAnywhere)													bool						bScoutExtentTrace;				//var() bool bScoutExtentTrace;
+	UPROPERTY()																FVector						vFloor;							//var FVector vFloor;
+	UPROPERTY()																FVector						MaxPathSize;					//var FVector MaxPathSize;
+	UPROPERTY()																TArray<float>				BaseDist;						//var float BaseDist;
+	UPROPERTY()																TArray<uint8>				BaseVisible;					//var byte BaseVisible;
+	UPROPERTY()																float						LastDetourWeight;				//var const float LastDetourWeight;
+	UPROPERTY()																float						InventoryDist;					//var float InventoryDist;
+	UPROPERTY()																APickup*					InventoryCache;					//var Pickup InventoryCache;
+	UPROPERTY()																int32						FearCost;						//var transient int FearCost;
+	UPROPERTY()																int32						TransientCost;					//var transient int TransientCost;
+	UPROPERTY(EditAnywhere)													int32						ExtraCost;						//var() int ExtraCost;
+	UPROPERTY()																int32						cost;							//var int cost;
+	UPROPERTY()																ANavigationPoint*			previousPath;					//var const NavigationPoint previousPath;
+	UPROPERTY()																ANavigationPoint*			prevOrdered;					//var const NavigationPoint prevOrdered;
+	UPROPERTY()																ANavigationPoint*			nextOrdered;					//var const NavigationPoint nextOrdered;
+	UPROPERTY()																ANavigationPoint*			nextNavigationPoint;			//var const NavigationPoint nextNavigationPoint;
+	UPROPERTY()																int32						bestPathWeight;					//var const int bestPathWeight;
+	UPROPERTY()																int32						visitedWeight;					//var int visitedWeight;
+	UPROPERTY(EditAnywhere)													TArray<FName>				ForcedPaths;					//var() array<name> ForcedPaths;
+	UPROPERTY(EditAnywhere)													TArray<FName>				ProscribedPaths;				//var() array<name> ProscribedPaths;
+	UPROPERTY()																TArray<UReachSpec*>			PathList;						//var const array<ReachSpec> PathList;
 	UPROPERTY()																bool bForcedOnly;									//var bool bForcedOnly;
 	UPROPERTY(EditAnywhere)													bool bNoSuperSize;									//var() bool bNoSuperSize;
 	UPROPERTY(EditAnywhere)													bool bMakeSourceOnly;								//var() bool bMakeSourceOnly;

@@ -58,7 +58,7 @@ UAABrowser_PlayerServerSearchPane::UAABrowser_PlayerServerSearchPane()
 	PlayerSearchTypeOption->bStandardized = false;
 	//PlayerSearchTypeOption->OnChange=AABrowser_PlayerServerSearchPanel.InternalOnChange;
 	UGUIImage* PanelBackground = NewObject<UGUIImage>(UGUIImage::StaticClass());
-	PanelBackground->Image = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/backgroundfil_Mat.backgroundfil_Mat'"), NULL, LOAD_None, NULL);
+	PanelBackground->Image = LoadObject<UMaterialInstance>(NULL, TEXT("MaterialInstanceConstant'/Game/AmericasArmy/Textures/T_AA2_UI/Menu/backgroundfill_Mat.backgroundfill_Mat'"), NULL, LOAD_None, NULL);
 	PanelBackground->ImageStyle = EImgStyle::ISTY_Stretched;
 	PanelBackground->ImageRenderStyle = EMenuRenderStyle::MSTY_Normal;
 	PanelBackground->WinHeight = 1;

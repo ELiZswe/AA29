@@ -11,9 +11,12 @@
 class AProjectile;
 class UaDamageType;
 class AGameReplicationInfo;
+class ALevelInfo;
+class ABaseShellEmitter;
+class AAGP_DestroyedVehicleModels;
 
 UCLASS()
-class AA29_API AVehicleWeapon : public AActor
+class AVehicleWeapon : public AActor
 {
 	GENERATED_BODY()
 	
@@ -23,8 +26,8 @@ public:
 
 	UPROPERTY()							bool							WeaponBoneHack;									//var bool WeaponBoneHack;
 	UPROPERTY()							FString							DebugInfo;										//var string DebugInfo;
-	//UPROPERTY()							AFireProperties*				SavedFireProperties;							//var Actor.FireProperties SavedFireProperties;
-	//UPROPERTY()							AVehicleWeaponAIInfo*			AIInfo;											//var VehicleWeapon.VehicleWeaponAIInfo AIInfo;
+	UPROPERTY()							FFireProperties					SavedFireProperties;							//var Actor.FireProperties SavedFireProperties;
+	UPROPERTY()							TArray<FVehicleWeaponAIInfo>	AIInfo;											//var VehicleWeapon.VehicleWeaponAIInfo AIInfo;
 	UPROPERTY()							bool							bUseAimErrorTime;								//var bool bUseAimErrorTime;
 	UPROPERTY()							bool							bAdjustAfterFire;								//var bool bAdjustAfterFire;
 	UPROPERTY()							float							AimErrorTime;									//var float AimErrorTime;
@@ -65,17 +68,17 @@ public:
 	UPROPERTY()							uint8							TracerCounter;									//var byte TracerCounter;
 	UPROPERTY(EditAnywhere)				uint8							ShotsPerTracer;									//var() byte ShotsPerTracer;
 	UPROPERTY()							AProjectile*					TracerClass;									//var class<Projectile> TracerClass;
-	//UPROPERTY()							FBoneOffset						shell3p;										//var Object.BoneOffset shell3p;
-	//UPROPERTY()							FBoneOffset						Shell1p;										//var Object.BoneOffset Shell1p;
-	//UPROPERTY()							FRotationRandomizer				ShellEjectionRandomizer;						//var Object.RotationRandomizer ShellEjectionRandomizer;
-	//UPROPERTY()							ABaseShellEmitter*				ShellEjectionEmitter;							//var AGP_Effects.BaseShellEmitter ShellEjectionEmitter;
-	//UPROPERTY(EditAnywhere)				ABaseShellEmitter*				ShellEjectionEmitterClass;						//var() class<AGP_Effects.BaseShellEmitter> ShellEjectionEmitterClass;
-	//UPROPERTY()							AEmitter*						EffectEmitter;									//var Emitter EffectEmitter;
-	//UPROPERTY(EditAnywhere)				AEmitter*						EffectEmitterClass;								//var() class<Emitter> EffectEmitterClass;
-	//UPROPERTY()							AEmitter*						FlashEmitter;									//var Emitter FlashEmitter;
-	//UPROPERTY(EditAnywhere)				AEmitter*						FlashEmitterClass;								//var() class<Emitter> FlashEmitterClass;
+	UPROPERTY()							FBoneOffset						shell3p;										//var Object.BoneOffset shell3p;
+	UPROPERTY()							FBoneOffset						Shell1p;										//var Object.BoneOffset Shell1p;
+	UPROPERTY()							FRotationRandomizer				ShellEjectionRandomizer;						//var Object.RotationRandomizer ShellEjectionRandomizer;
+	UPROPERTY()							ABaseShellEmitter*				ShellEjectionEmitter;							//var AGP_Effects.BaseShellEmitter ShellEjectionEmitter;
+	UPROPERTY(EditAnywhere)				ABaseShellEmitter*				ShellEjectionEmitterClass;						//var() class<AGP_Effects.BaseShellEmitter> ShellEjectionEmitterClass;
+	UPROPERTY()							AEmitter*						EffectEmitter;									//var Emitter EffectEmitter;
+	UPROPERTY(EditAnywhere)				AEmitter*						EffectEmitterClass;								//var() class<Emitter> EffectEmitterClass;
+	UPROPERTY()							AEmitter*						FlashEmitter;									//var Emitter FlashEmitter;
+	UPROPERTY(EditAnywhere)				AEmitter*						FlashEmitterClass;								//var() class<Emitter> FlashEmitterClass;
 	UPROPERTY(EditAnywhere)				UStaticMesh*					DestroyedWeaponStaticMesh;						//var() StaticMesh DestroyedWeaponStaticMesh;
-	//UPROPERTY(EditAnywhere)				AAGP_DestroyedVehicleModels*	DestroyedModelClass;							//var() class<AGP_DestroyedVehicleModels> DestroyedModelClass;
+	UPROPERTY(EditAnywhere)				AAGP_DestroyedVehicleModels*	DestroyedModelClass;							//var() class<AGP_DestroyedVehicleModels> DestroyedModelClass;
 	UPROPERTY()							float							FireCountdown;									//var float FireCountdown;
 	UPROPERTY(EditAnywhere)				float							AltFireInterval;								//var() float AltFireInterval;
 	UPROPERTY(EditAnywhere)				float							FireInterval;									//var() float FireInterval;
@@ -126,12 +129,12 @@ public:
 	UPROPERTY(EditAnywhere)				float							YawStartConstraint;								//var() float YawStartConstraint;
 	UPROPERTY(EditAnywhere)				FName							YawBone;										//var() name YawBone;
 
-	void LimitPitch(int32 Pitch, FRotator ForwardRotation, int32 WeaponYaw);
+	int32 LimitPitch(int32 Pitch, FRotator ForwardRotation, int32 WeaponYaw);
 	void DisplayDebug(UCanvas* Canvas, const class FDebugDisplayInfo& DebugDisplay, float& YL, float& YPos);
 	void SetInstantFire(bool bInstant);
 	void SetInstantFireMode(bool bSetInstantFire);
 	void ClientToggleFireMode();
-	void VerifyVehicleSystemBones(bool bFoundBadBones);
+	bool VerifyVehicleSystemBones(bool bFoundBadBones);
 	void PostBeginPlay();
 	void PostNetBeginPlay();
 	void MatchEnding();
@@ -149,17 +152,17 @@ public:
 	void TakeProjectileImpactDamage(int32 Damage, APawn* instigatedBy, FVector HitLocation, FVector Momentum, UaDamageType* InDamageType, FBoneInfo Bone, AController* KillerController, AActor* ResponsibleActor, UMaterialInstance* HitMaterial);
 	void OwnerEffects();
 	bool AttemptFire(AController* C, bool bAltFire);
-	void AdjustAim(bool bAltFire);
-	void BestMode();
+	FRotator AdjustAim(bool bAltFire);
+	uint8 BestMode();
 	void Fire(AController* C);
 	void AltFire(AController* C);
 	bool CanAttack(AActor* Other);
-	void MaxRange();
+	float MaxRange();
 	bool ShouldSpawnTracer();
 	void SpawnTracer(FVector Start, FRotator Dir);
-	void GetSource();
+	AActor* GetSource();
 	void DoBulletEffect(AActor* HitActor, UMaterialInstance* HitMaterial, FVector HitLocation, FVector HitNormal, EBulletImpactType BType);
-	void SpawnProjectile(AProjectile* ProjClass, bool bAltFire);
+	AProjectile* SpawnProjectile(AProjectile* ProjClass, bool bAltFire);
 	void CeaseFire(AController* C);
 	void FlashMuzzleFlash();
 	void MuzzleFlash();
@@ -172,7 +175,7 @@ public:
 	void SpawnBeamEffect(FVector Start, FRotator Dir, FVector HitLocation, FVector HitNormal, int32 ReflectNum);
 	void CalcWeaponFire();
 	void PostNetReceive();
-	//void StaticPrecache(LevelInfo L);
+	void StaticPrecache(ALevelInfo* L);
 	void UpdatePrecacheStaticMeshes();
 	void UpdatePrecacheMaterials();
 

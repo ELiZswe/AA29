@@ -27,15 +27,15 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	UPROPERTY()								bool bSpinnyActive;									//var bool bSpinnyActive;
-	UPROPERTY()								USkeletalMesh* SpinnyMesh;							//var StaticMesh SpinnyMesh;
-	UPROPERTY()								USkeletalMesh* WeaponMesh;							//var Mesh WeaponMesh;
-	UPROPERTY()								USkeletalMesh* SpinnyWeaponMesh;					//var Mesh SpinnyWeaponMesh;
-	UPROPERTY()								ABaseMuzzleFlashEmitter* SuppressorMuzzleFlash;		//var AGP_Effects.BaseMuzzleFlashEmitter SuppressorMuzzleFlash;
-	UPROPERTY()								ABaseMuzzleFlashEmitter* cSuppressorMuzzleFlash;	//var class<AGP_Effects.BaseMuzzleFlashEmitter> cSuppressorMuzzleFlash;
-	UPROPERTY()								int32 ModSlot;										//var int ModSlot;
-	UPROPERTY()								ABaseWeaponMod* WeaponMod;							//var class<BaseWeaponMod> WeaponMod;
-	UPROPERTY()								ABaseModAttachment* NextModAttachment;				//var BaseModAttachment NextModAttachment;
+	UPROPERTY()			bool						bSpinnyActive;				//var bool bSpinnyActive;
+	UPROPERTY()			USkeletalMesh*				SpinnyMesh;					//var StaticMesh SpinnyMesh;
+	UPROPERTY()			USkeletalMesh*				WeaponMesh;					//var Mesh WeaponMesh;
+	UPROPERTY()			USkeletalMesh*				SpinnyWeaponMesh;			//var Mesh SpinnyWeaponMesh;
+	UPROPERTY()			ABaseMuzzleFlashEmitter*	SuppressorMuzzleFlash;		//var AGP_Effects.BaseMuzzleFlashEmitter SuppressorMuzzleFlash;
+	UPROPERTY()			ABaseMuzzleFlashEmitter*	cSuppressorMuzzleFlash;		//var class<AGP_Effects.BaseMuzzleFlashEmitter> cSuppressorMuzzleFlash;
+	UPROPERTY()			int32						ModSlot;					//var int ModSlot;
+	UPROPERTY()			ABaseWeaponMod*				WeaponMod;					//var class<BaseWeaponMod> WeaponMod;
+	UPROPERTY()			ABaseModAttachment*			NextModAttachment;			//var BaseModAttachment NextModAttachment;
 
 	void PostNetBeginPlay();
 	void GetWeaponMod();

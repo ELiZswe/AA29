@@ -74,7 +74,7 @@ public:
 		UPROPERTY()										uint8					bAltFire;							//var input uint8 bAltFire;
 		UPROPERTY()										uint8					bVoiceTalk;							//var input uint8 bVoiceTalk;
 		UPROPERTY()										FVector					AdjustLoc;							//var Vector AdjustLoc;
-		UPROPERTY()										AController*			nextController;						//var const Controller nextController;
+		UPROPERTY()										AAA2_Controller*		nextController;						//var const Controller nextController;
 		UPROPERTY()										float					Stimulus;							//var float Stimulus;
 		UPROPERTY()										float					MoveTimer;							//var float MoveTimer;
 		UPROPERTY()										AActor*					MoveTarget;							//var Actor MoveTarget;
@@ -138,24 +138,6 @@ public:
 
 		//Already In UE4 Controller
 		//UPROPERTY()										APawn* Pawn;								//var Pawn Pawn;
-
-		/*
-		replication
-		{
-			reliable if ((bNetDirty && (Role == ROLE_Authority)))
-				Pawn, PlayerReplicationInfo;
-			reliable if (((bNetDirty && (Role == ROLE_Authority)) && bNetOwner))
-				bAdrenalineEnabled, PawnClass, Adrenaline;
-			reliable if ((RemoteRole == ROLE_AutonomousProxy))
-				ClientSetWeapon, ClientSwitchToBestWeapon, ClientRoundEnded, ClientGameEnded, ClientDying, ClientSetRotation, ClientSetLocation;
-			reliable if ((((!bDemoRecording) || (bClientDemoRecording && bClientDemoNetFunc)) && (Role == ROLE_Authority)))
-				ClientVoiceMessage;
-			reliable if ((Role < ROLE_Authority))
-				SetPawnClass, SendVoiceMessage;
-			reliable if ((Role < ROLE_Authority))
-				ServerReStartPlayer;
-		}
-		*/
 
 		void LIPSincAnimEnd();
 		void DestinationOccupied();

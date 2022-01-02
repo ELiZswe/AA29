@@ -9,18 +9,18 @@
 class ANPCRealHeroController;
 
 UCLASS()
-class AA29_API ARealHeroAwarenessCylinder : public AActor
+class ARealHeroAwarenessCylinder : public AActor
 {
 	GENERATED_BODY()
-
-	UPROPERTY()			ANPCRealHeroController*		RHController;		//var NPCRealHeroController RHController;
-
-	void Touch(AActor* Other);
-	void UnTouch(AActor* Other);
 
 public:	
 	// Sets default values for this actor's properties
 	ARealHeroAwarenessCylinder();
+
+	UPROPERTY()			ANPCRealHeroController* RHController;		//var NPCRealHeroController RHController;
+
+	void Touch(AActor* Other);
+	void UnTouch(AActor* Other);
 
 protected:
 	// Called when the game starts or when spawned

@@ -67,7 +67,7 @@ public:
 	void PendingEndGame(AAA2_PlayerState* Winner, FString Reason, int32 EndTime);
 	bool CheckDontEndGame(FString Reason);
 	void ResetVariables();
-	void CheckEndGame(AAA2_PlayerState* Winner, FString Reason);
+	bool CheckEndGame(AAA2_PlayerState* Winner, FString Reason);
 	AAGP_Viewpoint* GetWinningViewpoint(AAA2_PlayerState* Winner);
 	bool ShouldShowScores();
 	void UpdateScoreboardVisibility();
