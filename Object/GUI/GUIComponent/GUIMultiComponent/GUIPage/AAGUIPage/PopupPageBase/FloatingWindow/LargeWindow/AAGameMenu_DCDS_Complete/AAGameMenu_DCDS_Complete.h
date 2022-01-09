@@ -11,7 +11,7 @@ class UGUIButton;
 class UGUIComponent;
 
 UCLASS()
-class AA29_API UAAGameMenu_DCDS_Complete : public ULargeWindow
+class UAAGameMenu_DCDS_Complete : public ULargeWindow
 {
 	GENERATED_BODY()
 public:

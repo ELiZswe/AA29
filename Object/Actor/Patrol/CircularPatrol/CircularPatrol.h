@@ -10,7 +10,7 @@ class ANavigationPoint;
 class APawn;
 
 UCLASS()
-class AA29_API ACircularPatrol : public APatrol
+class ACircularPatrol : public APatrol
 {
 	GENERATED_BODY()
 public:

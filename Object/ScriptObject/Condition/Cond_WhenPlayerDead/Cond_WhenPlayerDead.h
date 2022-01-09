@@ -9,7 +9,7 @@
 class AHumanController;
 
 UCLASS()
-class AA29_API UCond_WhenPlayerDead : public UCondition
+class UCond_WhenPlayerDead : public UCondition
 {
 	GENERATED_BODY()
 public:

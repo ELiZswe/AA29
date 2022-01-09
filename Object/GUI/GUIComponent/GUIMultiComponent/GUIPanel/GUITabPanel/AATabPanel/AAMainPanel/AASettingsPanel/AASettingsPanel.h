@@ -10,7 +10,7 @@ class UGUIButton;
 class USettings_Tabs;
 
 UCLASS(Config = Game)
-class AA29_API UAASettingsPanel : public UAAMainPanel
+class UAASettingsPanel : public UAAMainPanel
 {
 	GENERATED_BODY()
 public:

@@ -10,7 +10,7 @@ class AFSTS_WeaponPickup;
 class AVolume;
 
 UCLASS()
-class AA29_API AGC_EL_MortarThrow : public AGC_EL_MasterScript
+class AGC_EL_MortarThrow : public AGC_EL_MasterScript
 {
 	GENERATED_BODY()
 public:

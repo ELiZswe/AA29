@@ -18,23 +18,23 @@ class AArmor;
 class APowerups;
 
 UCLASS()
-class AA29_API AInventory : public AActor
+class AInventory : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	AInventory();
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)								FString					ItemName;									//var() localized string ItemName;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)								FIntBox					IconCoords;									//var() Object.IntBox IconCoords;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)								UMaterialInstance*		IconMaterial;								//var() Material IconMaterial;
+	UPROPERTY(EditAnywhere)								FString					ItemName;									//var() localized string ItemName;
+	UPROPERTY(EditAnywhere)								FIntBox					IconCoords;									//var() Object.IntBox IconCoords;
+	UPROPERTY(EditAnywhere)								UMaterialInstance*		IconMaterial;								//var() Material IconMaterial;
 	UPROPERTY()																TArray<TSubclassOf<class AInventoryAttachment>> AttachmentClass;	//var class<InventoryAttachment> AttachmentClass;
 	UPROPERTY()																AActor*					ThirdPersonActor;							//var Actor ThirdPersonActor;
 	UPROPERTY()																bool					bUseAttachment;								//var bool bUseAttachment;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)								float					BobDamping;									//var() float BobDamping;
+	UPROPERTY(EditAnywhere)								float					BobDamping;									//var() float BobDamping;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)								bool					bDrawingFirstPerson;						//var() bool bDrawingFirstPerson;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="FirstPerson")		FRotator				PlayerViewPivot;							//var(FirstPerson) Object.Rotator PlayerViewPivot;
+	UPROPERTY(EditAnywhere, Category="FirstPerson")		FRotator				PlayerViewPivot;							//var(FirstPerson) Object.Rotator PlayerViewPivot;
 	UPROPERTY()																FVector					PlayerViewOffset;							//var FVector PlayerViewOffset;
 	UPROPERTY()																bool					bDrawOnHUD;									//var bool bDrawOnHUD;
 	UPROPERTY()																bool					bUseInstigatorRotation;						//var bool bUseInstigatorRotation;
@@ -45,7 +45,7 @@ public:
 	UPROPERTY()																bool					_bLarge;									//var bool _bLarge;
 	UPROPERTY()																TSubclassOf<AInventory> Next;										//var Inventory Next;
 	UPROPERTY()																TSubclassOf<AInventory> Prev;										//var Inventory Prev;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)								int32					Charge;										//var() travel int Charge;
+	UPROPERTY(EditAnywhere)								int32					Charge;										//var() travel int Charge;
 	UPROPERTY()																TSubclassOf<class APickup> PickupClass;								//var class<Pickup> PickupClass;
 	UPROPERTY()																bool					bTossedOut;									//var bool bTossedOut;
 	UPROPERTY()																bool					bDisplayableInv;							//var bool bDisplayableInv;
@@ -53,12 +53,12 @@ public:
 	UPROPERTY()																uint8					InventoryGroup;								//var byte InventoryGroup;
 	
 	//From Actor:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)								UStaticMesh* StaticMesh;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)								USkeletalMesh* Mesh;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)								float DrawScale;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)								EDrawType DrawType;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)								FName InitialState;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)								TSubclassOf<AInventory> Inventory;													//var inventory inventory
+	UPROPERTY(EditAnywhere)								UStaticMesh* StaticMesh;
+	UPROPERTY(EditAnywhere)								USkeletalMesh* Mesh;
+	UPROPERTY(EditAnywhere)								float DrawScale;
+	UPROPERTY(EditAnywhere)								EDrawType DrawType;
+	UPROPERTY(EditAnywhere)								FName InitialState;
+	UPROPERTY(EditAnywhere)								TSubclassOf<AInventory> Inventory;													//var inventory inventory
 	//void StaticPrecache(LevelInfo L)
 	
 	bool IsSniperRifle();
@@ -69,7 +69,7 @@ public:
 	void RenderOverlays(UCanvas* Canvas, bool bWeaponAndAttachmentsOnly);
 	UFUNCTION(BlueprintCallable)		virtual FString GetHumanReadableName() const;
 	void PickupFunction(APawn* Other);
-	AWeapon* RecommendWeapon(float rating);
+	AWeapon* RecommendWeapon(float& rating);
 	void TravelPreAccept();
 	void TravelPostAccept();
 	void Destroyed();
@@ -95,10 +95,10 @@ public:
 	FString DisplayDebugMessage();
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 };

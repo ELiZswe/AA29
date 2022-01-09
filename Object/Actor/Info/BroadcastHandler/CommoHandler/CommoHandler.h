@@ -11,7 +11,7 @@ class ALocalMessage;
 class AAA2_playerState;
 
 UCLASS()
-class AA29_API ACommoHandler : public ABroadcastHandler
+class ACommoHandler : public ABroadcastHandler
 {
 	GENERATED_BODY()
 public:

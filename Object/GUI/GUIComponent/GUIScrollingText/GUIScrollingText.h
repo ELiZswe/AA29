@@ -7,7 +7,7 @@
 #include "GUIScrollingText.generated.h"
 
 UCLASS()
-class AA29_API UGUIScrollingText : public UGUIComponent
+class UGUIScrollingText : public UGUIComponent
 {
 	GENERATED_BODY()
 public:

@@ -9,7 +9,7 @@
 class AAGP_Sound;
 
 UCLASS()
-class AA29_API UDir_StartSound : public UDirection
+class UDir_StartSound : public UDirection
 {
 	GENERATED_BODY()
 public:

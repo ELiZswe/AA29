@@ -52,12 +52,12 @@ class UScriptEvent;
 class UScriptScene;
 
 UCLASS()
-class AA29_API AScreenplay : public AActor
+class AScreenplay : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	AScreenplay();
 
 	UPROPERTY(EditAnywhere)							TArray<UScriptEvent*> GlobalEvents;				//var() array<ScriptEvent> GlobalEvents;			// may not need this
@@ -131,11 +131,11 @@ public:
 
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 

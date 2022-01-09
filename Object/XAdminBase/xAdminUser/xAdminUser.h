@@ -11,7 +11,7 @@ class UxAdminGroup;
 class UxAdminUserList;
 
 UCLASS()
-class AA29_API UxAdminUser : public UXAdminBase
+class UxAdminUser : public UXAdminBase
 {
 	GENERATED_BODY()
 public:

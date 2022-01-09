@@ -51,7 +51,7 @@ void AAALevelLoading::AddBackground()
 	/*
 	local Material Bg;
 	Bg = MapScreenshot;
-	if (Bg != None)
+	if (Bg != nullptr)
 	{
 		AddImage(Bg, 0, 0, 1, 1).DrawColor = Class'Canvas'.MakeColor(196, 196, 0);
 	}
@@ -66,14 +66,14 @@ void AAALevelLoading::SetImage()
 	FString str = "";
 	local Material mat;
 	DrawOpImage(Operations[0]).Image = mat;
-	if (Backgrounds.Length == 0)
+	if (Backgrounds.Num() == 0)
 	{
 		Warn("No background images configured for" @ string(Name));
 		return;
 		do
 		{
 		}
-		i = Rand(Backgrounds.Length);
+		i = Rand(Backgrounds.Num());
 		str = Backgrounds[i];
 		if (str == "")
 		{
@@ -84,7 +84,7 @@ void AAALevelLoading::SetImage()
 			mat = DLOTexture(str);
 		}
 	}
-	until(((mat != None) || ((++cnt) >= 10)));
+	until(((mat != nullptr) || ((++cnt) >= 10)));
 	if (mat == nullptr)
 	{
 		Warn("Unable to find any valid images for vignette class" @ string(Name) $ "!");

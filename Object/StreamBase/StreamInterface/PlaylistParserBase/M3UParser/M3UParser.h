@@ -8,7 +8,7 @@
 
 
 UCLASS()
-class AA29_API UM3UParser : public UPlaylistParserBase
+class UM3UParser : public UPlaylistParserBase
 {
 	GENERATED_BODY()
 public:

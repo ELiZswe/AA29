@@ -8,7 +8,7 @@
 #include "SoundParameters.generated.h"
 
 UCLASS()
-class AA29_API USoundParameters : public UObject
+class USoundParameters : public UObject
 {
 	GENERATED_BODY()
 public:

@@ -9,7 +9,7 @@
 class AServerBrowserBase;
 
 UCLASS()
-class AA29_API UUIServerListDisplay : public UUINavControl
+class UUIServerListDisplay : public UUINavControl
 {
 	GENERATED_BODY()
 public:

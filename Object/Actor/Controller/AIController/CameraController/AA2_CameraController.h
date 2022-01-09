@@ -9,7 +9,7 @@
 class UScriptObject;
 
 UCLASS()
-class AA29_API AAA2_CameraController : public AaAIController
+class AAA2_CameraController : public AaAIController
 {
 	GENERATED_BODY()
 public:

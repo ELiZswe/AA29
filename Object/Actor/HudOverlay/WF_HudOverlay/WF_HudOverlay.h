@@ -9,7 +9,7 @@
 class ATargetManager;
 
 UCLASS()
-class AA29_API AWF_HudOverlay : public AHudOverlay
+class AWF_HudOverlay : public AHudOverlay
 {
 	GENERATED_BODY()
 public:

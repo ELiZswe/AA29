@@ -9,7 +9,7 @@
 class AEventLab;
 
 UCLASS()
-class AA29_API UFSTS_PlayerHint : public UObject
+class UFSTS_PlayerHint : public UObject
 {
 	GENERATED_BODY()
 public:

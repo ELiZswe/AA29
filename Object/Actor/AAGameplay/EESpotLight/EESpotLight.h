@@ -6,6 +6,7 @@
 #include "AA29/Object/Actor/AAGameplay/AAGameplay.h"
 #include "EESpotLight.generated.h"
 
+class ASpotHaze;
 class AEESpotLightPart;
 class AAGP_Pawn;
 class ALookTarget;
@@ -15,7 +16,7 @@ class ADynLight;
 class AMultiTimer;
 class ADebugSphere;
 UCLASS()
-class AA29_API AEESpotLight : public AAAGameplay
+class AEESpotLight : public AAAGameplay
 {
 	GENERATED_BODY()
 public:
@@ -36,7 +37,7 @@ public:
 	UPROPERTY()								ANPC_EEGuard* MyGuard;								//var AGP_Characters.NPC_EEGuard MyGuard;
 	UPROPERTY()								AMultiTimer* mT;									//var MultiTimer mT;
 	UPROPERTY()								TArray<ALookTarget*> LookTargets;					//var array<LookTarget> LookTargets;
-	//UPROPERTY()							ASpotHaze* SpotHaze;								//var SpotHaze SpotHaze;
+	UPROPERTY()								ASpotHaze* SpotHaze;								//var SpotHaze SpotHaze;
 	UPROPERTY()								ADynLight* DLight;									//var DynLight DLight;
 	UPROPERTY()								AEESpotLightPart* Light;							//var EESpotLightPart Light;
 	UPROPERTY(EditAnywhere)					bool bDebug;										//var() bool bDebug;
@@ -52,9 +53,6 @@ public:
 	UPROPERTY(EditAnywhere)					bool bSequenceLookTargets;							//var() bool bSequenceLookTargets;
 	UPROPERTY(EditAnywhere)					bool bLookAround;									//var() bool bLookAround;
 	UPROPERTY(EditAnywhere)					FName LookTargetTag;								//var() name LookTargetTag;
-
-
-
 
 	void BeginPlay();
 	void Init();
@@ -78,7 +76,4 @@ public:
 	void UpdateVolumeLight();
 	void PlayerSpotted();
 	void ResetPlayerDetected();
-	
-
-
 };

@@ -7,7 +7,7 @@
 #include "Scout.generated.h"
 
 UCLASS()
-class AA29_API AScout : public AAA2_Pawn
+class AScout : public AAA2_Pawn
 {
 	GENERATED_BODY()
 
@@ -21,11 +21,11 @@ public:
 	void PreBeginPlay();
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 	// Called to bind functionality to input

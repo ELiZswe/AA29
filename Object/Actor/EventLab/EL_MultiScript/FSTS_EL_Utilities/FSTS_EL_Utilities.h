@@ -17,7 +17,7 @@ class ATriggeredPlayerBlockingVolume;
 class AWeapon;
 
 UCLASS()
-class AA29_API AFSTS_EL_Utilities : public AEL_MultiScript
+class AFSTS_EL_Utilities : public AEL_MultiScript
 {
 	GENERATED_BODY()
 public:

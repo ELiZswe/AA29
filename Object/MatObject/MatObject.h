@@ -9,7 +9,7 @@
 class AInterpolationPoint;
 
 UCLASS()
-class AA29_API UMatObject : public UObject
+class UMatObject : public UObject
 {
 	GENERATED_BODY()
 public:

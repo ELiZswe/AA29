@@ -7,7 +7,7 @@
 #include "AGP_Security_PBVerification.generated.h"
 
 UCLASS()
-class AA29_API UAGP_Security_PBVerification : public UObject
+class UAGP_Security_PBVerification : public UObject
 {
 	GENERATED_BODY()
 public:

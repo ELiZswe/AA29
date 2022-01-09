@@ -7,8 +7,10 @@
 #include "AA29/AA29.h"
 #include "TriggerMultiple.generated.h"
 
+class AMultiTimer;
+
 UCLASS()
-class AA29_API ATriggerMultiple : public AAGP_Trigger
+class ATriggerMultiple : public AAGP_Trigger
 {
 	GENERATED_BODY()
 public:
@@ -18,7 +20,7 @@ public:
 	UPROPERTY()									int32 SequenceCounter;					//var int SequenceCounter;
 	UPROPERTY()									bool bHasBeenTriggered;					//var bool bHasBeenTriggered;
 	UPROPERTY()									APawn* GlobalInstigator;				//var Pawn GlobalInstigator;
-	//UPROPERTY()								FName mT;								//var MultiTimer mT;
+	UPROPERTY()									AMultiTimer* mT;						//var MultiTimer mT;
 	UPROPERTY(EditAnywhere)						bool bInterruptible;					//var() bool bInterruptible;
 	UPROPERTY(EditAnywhere)						bool bResetEachRound;					//var() bool bResetEachRound;
 	UPROPERTY(EditAnywhere)						int32 StartIndex;						//var() int StartIndex;

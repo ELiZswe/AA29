@@ -9,7 +9,7 @@
 class ADecorationList;
 
 UCLASS()
-class AA29_API AAA2_Volume : public AVolume
+class AAA2_Volume : public AVolume
 {
 	GENERATED_BODY()
 public:

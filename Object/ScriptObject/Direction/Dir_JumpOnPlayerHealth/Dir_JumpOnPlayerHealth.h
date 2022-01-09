@@ -9,7 +9,7 @@
 class AHumanController;
 
 UCLASS()
-class AA29_API UDir_JumpOnPlayerHealth : public UDirection
+class UDir_JumpOnPlayerHealth : public UDirection
 {
 	GENERATED_BODY()
 public:

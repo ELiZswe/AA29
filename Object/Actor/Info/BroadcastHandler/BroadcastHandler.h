@@ -12,7 +12,7 @@ class AInternetInfo;
 class ALocalMessage;
 
 UCLASS()
-class AA29_API ABroadcastHandler : public AAA2_Info
+class ABroadcastHandler : public AAA2_Info
 {
 	GENERATED_BODY()
 public:
@@ -50,6 +50,4 @@ public:
 	bool AcceptBroadcastVoice(APlayerController* Receiver, AAA2_PlayerState* SenderPRI);
 	void Destroyed();
 	void SetLogTarget(AInternetInfo* iinfo);
-
-
 };

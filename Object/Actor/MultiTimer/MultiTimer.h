@@ -8,23 +8,23 @@
 #include "MultiTimer.generated.h"
 
 UCLASS()
-class AA29_API AMultiTimer : public AActor
+class AMultiTimer : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	AMultiTimer();
 
 	UPROPERTY()										TArray<AActor*> Hosts;							//var array<Actor> Hosts;
 	UPROPERTY()										TArray<FTimerEvent> TimerEvents;				//var array<TimerEvent> TimerEvents;
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 

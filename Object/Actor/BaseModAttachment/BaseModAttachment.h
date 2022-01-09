@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "AA29/MyEnums.h"
 #include "BaseModAttachment.generated.h"
 
 class USkeletalMesh;
@@ -11,24 +12,24 @@ class ABaseWeaponMod;
 class ABaseMuzzleFlashEmitter;
 
 UCLASS()
-class AA29_API ABaseModAttachment : public AActor
+class ABaseModAttachment : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	ABaseModAttachment();
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 	UPROPERTY()			bool						bSpinnyActive;				//var bool bSpinnyActive;
-	UPROPERTY()			USkeletalMesh*				SpinnyMesh;					//var StaticMesh SpinnyMesh;
+	UPROPERTY()			UStaticMesh*				SpinnyMesh;					//var StaticMesh SpinnyMesh;
 	UPROPERTY()			USkeletalMesh*				WeaponMesh;					//var Mesh WeaponMesh;
 	UPROPERTY()			USkeletalMesh*				SpinnyWeaponMesh;			//var Mesh SpinnyWeaponMesh;
 	UPROPERTY()			ABaseMuzzleFlashEmitter*	SuppressorMuzzleFlash;		//var AGP_Effects.BaseMuzzleFlashEmitter SuppressorMuzzleFlash;
@@ -36,6 +37,10 @@ public:
 	UPROPERTY()			int32						ModSlot;					//var int ModSlot;
 	UPROPERTY()			ABaseWeaponMod*				WeaponMod;					//var class<BaseWeaponMod> WeaponMod;
 	UPROPERTY()			ABaseModAttachment*			NextModAttachment;			//var BaseModAttachment NextModAttachment;
+
+	//My Custom
+	UPROPERTY()			USkeletalMesh*				Mesh;
+	UPROPERTY()			EDrawType					DrawType;
 
 	void PostNetBeginPlay();
 	void GetWeaponMod();

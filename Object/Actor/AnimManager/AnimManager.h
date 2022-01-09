@@ -7,12 +7,12 @@
 #include "AnimManager.generated.h"
 
 UCLASS()
-class AA29_API AAnimManager : public AActor
+class AAnimManager : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	AAnimManager();
 
 	UPROPERTY()										bool bDelayStateChange;						//var bool bDelayStateChange;
@@ -28,11 +28,11 @@ public:
 	void PlayDeathAnim();
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 };

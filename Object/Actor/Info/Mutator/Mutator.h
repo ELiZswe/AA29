@@ -14,7 +14,7 @@ class AInventory;
 class UPlayInfo;
 
 UCLASS()
-class AA29_API AMutator : public AAA2_Info
+class AMutator : public AAA2_Info
 {
 	GENERATED_BODY()
 public:

@@ -16,7 +16,7 @@ class AAIMarker;
 class ALevelInfo;
 
 UCLASS(Config = Game)
-class AA29_API AVehicle : public AAA2_Pawn
+class AVehicle : public AAA2_Pawn
 {
 	GENERATED_BODY()
 
@@ -86,7 +86,7 @@ public:
 	UPROPERTY()						float						MomentumMult;										//var float MomentumMult;
 	UPROPERTY()						float						ShadowCullDistance;									//var float ShadowCullDistance;
 	UPROPERTY()						float						ShadowMaxTraceDist;									//var float ShadowMaxTraceDist;
-	//UPROPERTY()						AShadowProjector*			VehicleShadow;										//var ShadowProjector VehicleShadow;
+	// UPROPERTY()						AShadowProjector*			VehicleShadow;										//var ShadowProjector VehicleShadow;
 	UPROPERTY()						FString						TransEffects;										//var string TransEffects;
 	UPROPERTY()						ASVehicleFactory*			ParentFactory;										//var SVehicleFactory ParentFactory;
 	UPROPERTY()						APawn*						Driver;												//var Pawn Driver;
@@ -353,11 +353,11 @@ public:
 
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 	// Called to bind functionality to input

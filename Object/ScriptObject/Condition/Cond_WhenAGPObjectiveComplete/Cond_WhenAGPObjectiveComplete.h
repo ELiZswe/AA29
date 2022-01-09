@@ -9,7 +9,7 @@
 class AAGP_Objective;
 
 UCLASS()
-class AA29_API UCond_WhenAGPObjectiveComplete : public UCondition
+class UCond_WhenAGPObjectiveComplete : public UCondition
 {
 	GENERATED_BODY()
 public:

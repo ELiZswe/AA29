@@ -9,7 +9,7 @@
 class AGameInfo;
 
 UCLASS()
-class AA29_API ALevelGameRules : public AAA2_Info
+class ALevelGameRules : public AAA2_Info
 {
 	GENERATED_BODY()
 public:

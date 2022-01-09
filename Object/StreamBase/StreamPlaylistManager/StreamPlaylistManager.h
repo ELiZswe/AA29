@@ -35,7 +35,7 @@ public:
 	void Initialize(UStreamInterface* InFileManager);
 	void InitializePlaylists();
 	void InitializeParsers();
-	void CreateDefaultPlaylist();
+	UStreamPlaylist* CreateDefaultPlaylist();
 	bool ActivatePlaylist(int32 ListIndex, bool bNoFail);
 	int32 AddPlaylist(FString& NewPlaylistName);
 	int32 AppendPlaylist(UStreamPlaylist* Playlist);

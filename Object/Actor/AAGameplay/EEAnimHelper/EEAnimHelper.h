@@ -9,7 +9,7 @@
 class ANPC_EEGuard;
 
 UCLASS()
-class AA29_API AEEAnimHelper : public AAAGameplay
+class AEEAnimHelper : public AAAGameplay
 {
 	GENERATED_BODY()
 public:

@@ -9,7 +9,7 @@
 class AHumanController;
 
 UCLASS()
-class AA29_API UDir_UpdateParachute : public UDirection
+class UDir_UpdateParachute : public UDirection
 {
 	GENERATED_BODY()
 public:

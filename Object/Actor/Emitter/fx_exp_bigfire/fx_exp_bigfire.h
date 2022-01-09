@@ -7,7 +7,7 @@
 #include "fx_exp_bigfire.generated.h"
 
 UCLASS()
-class AA29_API Afx_exp_bigfire : public AAA2_Emitter
+class Afx_exp_bigfire : public AAA2_Emitter
 {
 	GENERATED_BODY()
 public:

@@ -12,7 +12,7 @@ class UDirection;
 class AScreenplay;
 
 UCLASS()
-class AA29_API UScriptEvent : public UObject
+class UScriptEvent : public UObject
 {
 	GENERATED_BODY()
 public:

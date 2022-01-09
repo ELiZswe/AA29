@@ -9,7 +9,7 @@
 class AHumanController;
 
 UCLASS()
-class AA29_API UDir_SetNoCheats : public UDirection
+class UDir_SetNoCheats : public UDirection
 {
 	GENERATED_BODY()
 public:

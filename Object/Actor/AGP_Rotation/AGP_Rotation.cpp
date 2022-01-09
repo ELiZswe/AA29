@@ -11,14 +11,14 @@ AAGP_Rotation::AAGP_Rotation()
 	//bDirectional = true;
 }
 
-// Called when the game starts or when spawned
+
 void AAGP_Rotation::BeginPlay()
 {
 	Super::BeginPlay();
 	
 }
 
-// Called every frame
+
 void AAGP_Rotation::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);

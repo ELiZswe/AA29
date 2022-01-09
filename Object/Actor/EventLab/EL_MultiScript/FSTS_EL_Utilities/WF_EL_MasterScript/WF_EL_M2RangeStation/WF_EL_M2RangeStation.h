@@ -10,7 +10,7 @@ class AFSTS_WeaponPickup;
 class ACounter;
 
 UCLASS()
-class AA29_API AWF_EL_M2RangeStation : public AWF_EL_MasterScript
+class AWF_EL_M2RangeStation : public AWF_EL_MasterScript
 {
 	GENERATED_BODY()
 public:

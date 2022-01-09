@@ -9,7 +9,7 @@
 
 
 UCLASS()
-class AA29_API ASceneSubtitles : public AAA2_Info
+class ASceneSubtitles : public AAA2_Info
 {
 	GENERATED_BODY()
 public:

@@ -8,12 +8,12 @@
 #include "AGP_Sound.generated.h"
 
 UCLASS()
-class AA29_API AAGP_Sound : public AActor
+class AAGP_Sound : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	AAGP_Sound();
 
 
@@ -36,11 +36,11 @@ public:
 	UPROPERTY(EditAnywhere)							ESoundOcclusion SoundOcclusion;
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 	void LoadEditorIcon();
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 	void Start();

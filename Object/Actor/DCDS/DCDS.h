@@ -8,12 +8,12 @@
 #include "DCDS.generated.h"
 
 UCLASS(Config = Game)
-class AA29_API ADCDS : public AActor
+class ADCDS : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	ADCDS();
 
 	UPROPERTY()							Fpointer						DCDSSDK;							//var const native transient Fpointer DCDSSDK;
@@ -77,11 +77,11 @@ public:
 	void testonly_SetDestinationPath(FString Path);
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 };

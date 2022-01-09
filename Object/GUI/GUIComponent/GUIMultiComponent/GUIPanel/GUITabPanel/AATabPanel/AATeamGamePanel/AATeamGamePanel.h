@@ -10,7 +10,7 @@ class ATeamInfo;
 class AAGP_TeamInfo;
 
 UCLASS()
-class AA29_API UAATeamGamePanel : public UAATabPanel
+class UAATeamGamePanel : public UAATabPanel
 {
 	GENERATED_BODY()
 public:

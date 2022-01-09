@@ -7,14 +7,14 @@
 #include "RadarDish.generated.h"
 
 UCLASS()
-class AA29_API ARadarDish : public ADecoMesh
+class ARadarDish : public ADecoMesh
 {
 	GENERATED_BODY()
 public:
 	ARadarDish();
 
 	UPROPERTY()											USoundBase* SoundSpinning;								//var Sound SoundSpinning;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)			FRotator RDRotationRate;								//var() Object.Rotator RDRotationRate
+	UPROPERTY(EditAnywhere)			FRotator RDRotationRate;								//var() Object.Rotator RDRotationRate
 
 	void Reset();
 	void PreBeginPlay();

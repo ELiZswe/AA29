@@ -18,13 +18,13 @@ AAGP_Sun::AAGP_Sun()
 	//RemoteRole = ROLE_None;
 }
 
-// Called when the game starts or when spawned
+
 void AAGP_Sun::BeginPlay()
 {
 	Super::BeginPlay();
 }
 
-// Called every frame
+
 void AAGP_Sun::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);

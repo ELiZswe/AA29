@@ -34,7 +34,7 @@ void UInfoPageBase::HandleParameters(FString Param1, FString Param2)
 	Param2 = ReplaceSpaces(Param2);
 	Directory = GetBaseDir() $ "Descriptions\\";
 	File = "Mod_" $ Param2 $ ".txt";
-	if (AAGUIController(Controller) != None)
+	if (AAGUIController(Controller) != nullptr)
 	{
 		lb_Info.SetContent(AAGUIController(Controller).LoadTextFromFile(Directory $ File));
 	}

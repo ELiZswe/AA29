@@ -10,7 +10,7 @@
 class AAA2_PlayerState;
 
 UCLASS()
-class AA29_API AaLocalMessage : public AAA2_Info
+class AaLocalMessage : public AAA2_Info
 {
 	GENERATED_BODY()
 public:

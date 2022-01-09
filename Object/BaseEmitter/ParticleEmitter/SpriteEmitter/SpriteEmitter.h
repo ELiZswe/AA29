@@ -7,7 +7,7 @@
 #include "SpriteEmitter.generated.h"
 
 UCLASS()
-class AA29_API USpriteEmitter : public UAA2_ParticleEmitter
+class USpriteEmitter : public UAA2_ParticleEmitter
 {
 	GENERATED_BODY()
 public:

@@ -7,7 +7,7 @@
 #include "KarmaParamsRBFull.generated.h"
 
 UCLASS()
-class AA29_API UKarmaParamsRBFull : public UKarmaParams
+class UKarmaParamsRBFull : public UKarmaParams
 {
 	GENERATED_BODY()
 public:

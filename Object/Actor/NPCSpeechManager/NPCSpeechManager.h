@@ -10,12 +10,12 @@ class UBillboardComponent;
 class USceneComponent;
 
 UCLASS()
-class AA29_API ANPCSpeechManager : public AActor
+class ANPCSpeechManager : public AActor
 {
 	GENERATED_BODY()
 
 public:	
-	// Sets default values for this actor's properties
+	
 	ANPCSpeechManager();
 
 	UPROPERTY(EditAnywhere)												USoundBase* asndLastSoundsPlayed;							//var Sound asndLastSoundsPlayed;
@@ -60,11 +60,11 @@ public:
 	UPROPERTY()								UBillboardComponent* SpriteComponent;
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 	void LoadEditorIcon();
 	void PostBeginPlay();

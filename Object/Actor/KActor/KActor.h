@@ -13,7 +13,7 @@ class AKActor : public AActor
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	AKActor();
 
 	UPROPERTY()											float LastImpactTime;										//var transient float LastImpactTime;
@@ -35,11 +35,11 @@ public:
 	UPROPERTY()											bool bDisturbFluidSurface;										//var bool bDisturbFluidSurface;
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 	//void TakeDamage(int32 Damage, APawn* instigatedBy, FVector HitLocation, FVector Momentum, UaDamageType  DamageType, FBoneInfo Bone, AController* KillerController, AActor* ResponsibleActor, UMaterialInstance* HitMaterial)

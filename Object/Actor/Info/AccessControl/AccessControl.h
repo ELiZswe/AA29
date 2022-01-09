@@ -47,12 +47,12 @@ public:
 	UPROPERTY(globalconfig)		FString							GamePassword;						//var globalconfig string GamePassword;
 	UPROPERTY(globalconfig)		FString							AdminPassword;						//var globalconfig string AdminPassword;
 		
-	void GetFutureTimestamp(int32 weeks_into_the_future, int32 days_into_the_future, int32 hours_into_the_future, int32 minutes_into_the_future, int32 low_word_result, int32 hi_word_result);
-	bool CheckTimestampExpired(int32 low_word_part, int32 high_word_part, int32 secs_until);
+	void GetFutureTimestamp(int32 weeks_into_the_future, int32 days_into_the_future, int32 hours_into_the_future, int32 minutes_into_the_future, int32& low_word_result, int32& hi_word_result);
+	bool CheckTimestampExpired(int32 low_word_part, int32 high_word_part, int32& secs_until);
 	void LoadOldBanList();
 	void SaveOldBanList();
 	void UpdateOldBanList();
-	void VerifyUserOldBanList(FString sPlayerName, FString sIP, FString sIPNoPort, FString sMAC, FString sError, FString sFailCode);
+	void VerifyUserOldBanList(FString sPlayerName, FString sIP, FString sIPNoPort, FString sMAC, FString& sError, FString& sFailCode);
 	void BanListInitialize();
 	void BanListRetrieveUpdate();
 	void BanListSubmitUpdates();
@@ -68,7 +68,7 @@ public:
 	FString GetGamePassword();
 	bool RequiresPassword();
 	bool AdminLogin(APlayerController* p, FString Password);
-	void PreLogin(FString Options, FString Address, FString Error, FString FailCode, bool bSpectator, bool bAdmin);
+	void PreLogin(FString Options, FString Address, FString& Error, FString& FailCode, bool bSpectator, bool bAdmin);
 	bool CheckIPPolicy(FString Address);
 	bool Kick(FString S, FString Reason, bool bMaybeFail);
 	void SetupKick(APlayerController* PKick, FString Reason);
@@ -81,7 +81,7 @@ public:
 	void UpdateBanPolicies();
 	bool AddPBGUIDBan(FString sPBGUID, int32 weeks, int32 days, int32 hours, int32 minutes, FString sPlayerName, APlayerController* PCAdmin);
 	bool AddBanee(FString banee_descriptor, FString banee_type_name, int32 weeks_to_ban, int32 days_to_ban, int32 hours_to_ban, int32 minutes_to_ban_for, FString banee_owner);
-	void CheckBanPolicy(FString PlayerName, FString PlayerIP, FString PlayerMAC, FString Error, FString FailCode);
+	void CheckBanPolicy(FString PlayerName, FString PlayerIP, FString PlayerMAC, FString& Error, FString& FailCode);
 	void DisplayBanList(APlayerController* PC, int32 iBanStartIndex);
 	FString GetBanLength(int32 iBanItem);
 	void Unban(APlayerController* PCAdmin, int32 Index);
@@ -89,6 +89,6 @@ public:
 	bool BanListParseLine(FString S);
 	EBanType BanTypeNameToBanType(FString banTypeName);
 	FString BanTypeToBanTypeName(EBanType BanType);
-	void GetDurationOfRemainingBan(int32 remainingBanInSeconds, int32 weeksToBan, int32 daysToBan, int32 hoursToBan, int32 minutesToBan);
+	void GetDurationOfRemainingBan(int32 remainingBanInSeconds, int32& weeksToBan, int32& daysToBan, int32& hoursToBan, int32& minutesToBan);
 	bool BanListSave();
 };

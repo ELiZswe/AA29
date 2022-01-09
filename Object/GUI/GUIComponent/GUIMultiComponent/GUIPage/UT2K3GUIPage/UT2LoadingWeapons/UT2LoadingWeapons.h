@@ -9,7 +9,7 @@
 class UTab_WeaponPref;
 
 UCLASS()
-class AA29_API UUT2LoadingWeapons : public UUT2K3GUIPage
+class UUT2LoadingWeapons : public UUT2K3GUIPage
 {
 	GENERATED_BODY()
 public:

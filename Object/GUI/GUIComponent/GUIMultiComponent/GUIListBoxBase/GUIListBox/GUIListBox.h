@@ -13,7 +13,7 @@ class UGUIComponent;
 class UGUIContextMenu;
 
 UCLASS()
-class AA29_API UGUIListBox : public UGUIListBoxBase
+class UGUIListBox : public UGUIListBoxBase
 {
 	GENERATED_BODY()
 public:

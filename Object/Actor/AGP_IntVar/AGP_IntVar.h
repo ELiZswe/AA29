@@ -11,29 +11,33 @@ class USceneComponent;
 class UBillboardComponent;
 
 UCLASS()
-class AA29_API AAGP_IntVar : public AActor
+class AAGP_IntVar : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	AAGP_IntVar();
 
-
-	UPROPERTY()								int32 _iPosition;										//var int _CurrentTargetIndex;
-	UPROPERTY()								UScriptObject* _CurrentTargetIndex;						//var ScriptObject _TargetList;
-	UPROPERTY()								int32 _value;											//var int _value;
+	UPROPERTY()			int32					_value;					//var int32 _value;
+	UPROPERTY()			TArray<UScriptObject*>	_TargetList;			//var UScriptObject* _TargetList[10];
+	UPROPERTY()			int32					_CurrentTargetIndex;	//var int32 _CurrentTargetIndex;
 
 	UPROPERTY()								USceneComponent* Root;
 	UPROPERTY()								UTexture2D* Texture;
 	UPROPERTY()								UBillboardComponent* SpriteComponent;
 
+	int32 GetValue();
+	void SetValue(int32 Value);
+	void SetTarget(UScriptObject* Target);
+	void Trigger(AActor* Other, APawn* EventInstigator);
+
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 	void LoadEditorIcon();
 };

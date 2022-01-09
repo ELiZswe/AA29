@@ -175,7 +175,7 @@ void Aem_bt_door_breach_explosion::SpawnLight()
 void Aem_bt_door_breach_explosion::BeginPlay()
 {
 	/*
-	if ((Emitters[4] != None) && (MeshEmitter(Emitters[4]) != None))
+	if ((Emitters[4] != nullptr) && (MeshEmitter(Emitters[4]) != nullptr))
 	{
 		MeshEmitter(Emitters[4]).StaticMesh = StaticMesh(DynamicLoadObject("T_AA2_FX.Particles.fx_part_con_chunk2", Class'StaticMesh'));
 	}

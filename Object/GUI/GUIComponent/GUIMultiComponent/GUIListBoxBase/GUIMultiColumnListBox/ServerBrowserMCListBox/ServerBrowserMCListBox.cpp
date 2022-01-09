@@ -2,6 +2,8 @@
 
 #include "AA29/Object/GUI/GUIComponent/GUIMultiComponent/GUIListBoxBase/GUIMultiColumnListBox/ServerBrowserMCListBox/ServerBrowserMCListBox.h"
 #include "AA29/Object/GUI/GUIComponent/GUIMultiColumnListHeader/GUIMultiColumnListHeader.h"
+#include "AA29/Object/GUI/GUIComponent/GUIContextMenu/GUIContextMenu.h"
+#include "AA29/Object/GUI/GUIComponent/GUIListBase/GUIVertList/GUIMultiColumnList/GUIMultiColumnList.h"
 
 UServerBrowserMCListBox::UServerBrowserMCListBox()
 {
@@ -14,12 +16,12 @@ UServerBrowserMCListBox::UServerBrowserMCListBox()
 	StyleName = "ServerBrowserGrid";
 }
 
-void UServerBrowserMCListBox::InternalOnOpen(UGUIContextMenu* Menu)
+bool UServerBrowserMCListBox::InternalOnOpen(UGUIContextMenu* Menu)
 {
-	//Return HandleContextMenuOpen(List, Menu, Menu.MenuOwner);
+	return HandleContextMenuOpen(List, Menu, Menu->MenuOwner);
 }
 
-void UServerBrowserMCListBox::InternalOnClose(UGUIContextMenu* Sender)
+bool UServerBrowserMCListBox::InternalOnClose(UGUIContextMenu* Sender)
 {
-	//Return HandleContextMenuClose(Sender);
+	return HandleContextMenuClose(Sender);
 }

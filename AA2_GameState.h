@@ -13,9 +13,10 @@ class ATeamInfo;
 class APlayInfo;
 class AAA2_PlayerState;
 class AVehicleReplicationInfo;
+class AVoiceChatReplicationInfo;
 
 UCLASS()
-class AA29_API AAA2_GameState : public AGameStateBase
+class AAA2_GameState : public AGameStateBase
 {
 	GENERATED_BODY()
 public:
@@ -56,22 +57,22 @@ public:
 	UPROPERTY()											int32 RemainingRounds;								//var int RemainingRounds;
 	UPROPERTY()											int32 MatchesBeforeCycle;							//var int MatchesBeforeCycle;
 	UPROPERTY()											TArray<ATeamInfo*> Teams;									//var TeamInfo Teams;
-	UPROPERTY()											ATeamInfo* SpecTeam;								//var TeamInfo SpecTeam;
-	UPROPERTY(EditAnywhere, BluePrintReadOnly, Config)	FString ServerName;									//var() globalconfig string ServerName;					// Name of the server, i.e.: Bob's Server.
-	UPROPERTY(EditAnywhere, BluePrintReadOnly, Config)	FString ShortName;									//var() globalconfig string ShortName;					// Abbreviated name of server, i.e.: B's Serv (stupid example)
-	UPROPERTY(EditAnywhere, BluePrintReadOnly, Config)	FString AdminName;									//var() globalconfig string AdminName;					// Name of the server admin.
-	UPROPERTY(EditAnywhere, BluePrintReadOnly, Config)	FString AdminEmail;									//var() globalconfig string AdminEmail;					// Email address of the server admin.
-	UPROPERTY(EditAnywhere, BluePrintReadOnly, Config)	int32 ServerRegion;									//var() globalconfig int ServerRegion;					// Region of the game server.
-	UPROPERTY(EditAnywhere, BluePrintReadOnly, Config)	FString MessageOfTheDay;							//var() globalconfig string MessageOfTheDay;
-	UPROPERTY(EditAnywhere, BluePrintReadOnly, Config)	FString MOTDLine1;									//var() globalconfig string MOTDLine1;
-	UPROPERTY(EditAnywhere, BluePrintReadOnly, Config)	FString MOTDLine2;									//var() globalconfig string MOTDLine2;
-	UPROPERTY(EditAnywhere, BluePrintReadOnly, Config)	FString MOTDLine3;									//var() globalconfig string MOTDLine3;
-	UPROPERTY(EditAnywhere, BluePrintReadOnly, Config)	FString MOTDLine4;									//var() globalconfig string MOTDLine4;
-	UPROPERTY(EditAnywhere, BluePrintReadOnly, Config)	int32 MOTDDisplaySeconds;							//var() globalconfig int MOTDDisplaySeconds;
-	UPROPERTY()											AActor* Winner;										//var Actor Winner;										// set by gameinfo when game ends
-	//UPROPERTY()										VoiceChatReplicationInfo* VoiceReplicationInfo;		//var VoiceChatReplicationInfo VoiceReplicationInfo;
-	UPROPERTY(EditAnywhere, BluePrintReadOnly)			UTexture2D* TeamSymbols;							//var() Texture TeamSymbols;
-	UPROPERTY(EditAnywhere, BluePrintReadOnly)			TArray<AAA2_PlayerState*> PRIArray;					//var() array<PlayerReplicationInfo> PRIArray;
+	UPROPERTY()											ATeamInfo*					SpecTeam;								//var TeamInfo SpecTeam;
+	UPROPERTY(EditAnywhere, BluePrintReadOnly, Config)	FString						ServerName;									//var() globalconfig string ServerName;					// Name of the server, i.e.: Bob's Server.
+	UPROPERTY(EditAnywhere, BluePrintReadOnly, Config)	FString						ShortName;									//var() globalconfig string ShortName;					// Abbreviated name of server, i.e.: B's Serv (stupid example)
+	UPROPERTY(EditAnywhere, BluePrintReadOnly, Config)	FString						AdminName;									//var() globalconfig string AdminName;					// Name of the server admin.
+	UPROPERTY(EditAnywhere, BluePrintReadOnly, Config)	FString						AdminEmail;									//var() globalconfig string AdminEmail;					// Email address of the server admin.
+	UPROPERTY(EditAnywhere, BluePrintReadOnly, Config)	int32						ServerRegion;									//var() globalconfig int ServerRegion;					// Region of the game server.
+	UPROPERTY(EditAnywhere, BluePrintReadOnly, Config)	FString						MessageOfTheDay;							//var() globalconfig string MessageOfTheDay;
+	UPROPERTY(EditAnywhere, BluePrintReadOnly, Config)	FString						MOTDLine1;									//var() globalconfig string MOTDLine1;
+	UPROPERTY(EditAnywhere, BluePrintReadOnly, Config)	FString						MOTDLine2;									//var() globalconfig string MOTDLine2;
+	UPROPERTY(EditAnywhere, BluePrintReadOnly, Config)	FString						MOTDLine3;									//var() globalconfig string MOTDLine3;
+	UPROPERTY(EditAnywhere, BluePrintReadOnly, Config)	FString						MOTDLine4;									//var() globalconfig string MOTDLine4;
+	UPROPERTY(EditAnywhere, BluePrintReadOnly, Config)	int32						MOTDDisplaySeconds;							//var() globalconfig int MOTDDisplaySeconds;
+	UPROPERTY()											AActor*						Winner;										//var Actor Winner;										// set by gameinfo when game ends
+	UPROPERTY()											AVoiceChatReplicationInfo*	VoiceReplicationInfo;		//var VoiceChatReplicationInfo VoiceReplicationInfo;
+	UPROPERTY(EditAnywhere, BluePrintReadOnly)			TArray<UMaterialInstance*>	TeamSymbols;							//var() Texture TeamSymbols;
+	UPROPERTY(EditAnywhere, BluePrintReadOnly)			TArray<AAA2_PlayerState*>	PRIArray;					//var() array<PlayerReplicationInfo> PRIArray;
 
 	// mc - localized PlayInfo descriptions & extra info
 	UPROPERTY()											TArray<FString> GRIPropsDisplayText;				//var localized string GRIPropsDisplayText;
@@ -141,10 +142,7 @@ public:
 	UPROPERTY()											bool								bTempDisableRoundScoring;					//var bool bTempDisableRoundScoring;
 	UPROPERTY()											TArray<AVehicleReplicationInfo*>	VRIArray;									//var array<VehicleReplicationInfo> VRIArray;
 
-
-
 	virtual void BeginPlay();
-
 	void PostNetBeginPlay();
 	void TeamSymbolNotify();
 	void UpdatePrecacheMaterials();
@@ -153,9 +151,9 @@ public:
 	void Timer();
 	AAA2_PlayerState* FindPlayerByID(int32 PlayerID);
 	void AddPRI(AAA2_PlayerState* PRI);
-	//void AddVRI(VehicleReplicationInfo VRI);
+	void AddVRI(AVehicleReplicationInfo* VRI);
 	void RemovePRI(AAA2_PlayerState* PRI);
-	//void RemoveVRI(VehicleReplicationInfo VRI);
+	void RemoveVRI(AVehicleReplicationInfo* VRI);
 	void GetPRIArray(TArray<AAA2_PlayerState*> pris);
 	void FillPlayInfo(APlayInfo* PlayInfo);
 	FString GetDescriptionText(FString PropName);
@@ -168,9 +166,6 @@ public:
 	bool DisableSmokeGrenades();
 	bool DisableThermiteGrenades();
 	bool Disable203Grenades();
-
-
 	//virtual void PostInitializeComponents();
 	//virtual void AddPlayerState(APlayerState* PlayerState);
-
 };

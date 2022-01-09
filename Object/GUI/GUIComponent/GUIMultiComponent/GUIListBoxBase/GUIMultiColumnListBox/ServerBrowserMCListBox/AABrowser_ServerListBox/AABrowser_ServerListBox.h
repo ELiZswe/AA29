@@ -12,7 +12,7 @@ class UGUIComponent;
 class UGUIContextMenu;
 
 UCLASS()
-class AA29_API UAABrowser_ServerListBox : public UServerBrowserMCListBox
+class UAABrowser_ServerListBox : public UServerBrowserMCListBox
 {
 	GENERATED_BODY()
 public:

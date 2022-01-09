@@ -7,7 +7,7 @@
 #include "GUIMultiColumnList.generated.h"
 
 UCLASS()
-class AA29_API UGUIMultiColumnList : public UGUIVertList
+class UGUIMultiColumnList : public UGUIVertList
 {
 	GENERATED_BODY()
 public:

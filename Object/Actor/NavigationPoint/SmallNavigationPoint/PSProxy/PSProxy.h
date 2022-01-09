@@ -18,8 +18,8 @@ class APSProxy : public ASmallNavigationPoint
 public:
 	APSProxy();
 	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Proxy")					FName SetTag;				//var(Proxy) name SetTag;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Proxy")					FName ProxyTag;				//var(Proxy) name ProxyTag;
+	UPROPERTY(EditAnywhere, Category = "Proxy")					FName SetTag;				//var(Proxy) name SetTag;
+	UPROPERTY(EditAnywhere, Category = "Proxy")					FName ProxyTag;				//var(Proxy) name ProxyTag;
 	UPROPERTY()																		APlayerStart* PS;			//var const PlayerStart PS;
 
 	void FindPlayerStart();

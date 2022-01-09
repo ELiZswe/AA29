@@ -9,7 +9,7 @@
 class ATargetManager;
 
 UCLASS()
-class AA29_API UDir_SetTargetManagerPracticeMode : public UDirection
+class UDir_SetTargetManagerPracticeMode : public UDirection
 {
 	GENERATED_BODY()
 public:

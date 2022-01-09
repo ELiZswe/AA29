@@ -37,5 +37,5 @@ public:
 	void Dump(FString Group);
 	bool Init(TArray<AAA2_Info*> Classes, bool bStrict);
 	AGameInfo* GetGameInfo();
-	void SplitStringToArray(TArray<FString> Parts, FString Source, FString Delim);
+	void SplitStringToArray(TArray<FString>& Parts, FString Source, FString Delim);
 };

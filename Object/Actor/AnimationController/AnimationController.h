@@ -13,11 +13,11 @@ class AAnimationController : public AActor
 	GENERATED_BODY()
 
 public:	
-	// Sets default values for this actor's properties
+	
 	AAnimationController();
 
 	UPROPERTY()										bool bDebug;								//var bool bDebug;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		FName AnimatedActorTag;						//var() name AnimatedActorTag;
+	UPROPERTY(EditAnywhere)		FName AnimatedActorTag;						//var() name AnimatedActorTag;
 	UPROPERTY()										int32 LoopCount;							//var int LoopCount;
 	UPROPERTY()										int32 QueueBack;							//var int QueueBack;
 	UPROPERTY()										int32 QueueFront;							//var int QueueFront;
@@ -38,6 +38,6 @@ public:
 	FString GetDebugString(FAnimInstruction Inst);
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 };

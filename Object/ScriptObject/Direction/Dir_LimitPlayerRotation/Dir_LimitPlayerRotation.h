@@ -9,7 +9,7 @@
 class AHumanController;
 
 UCLASS()
-class AA29_API UDir_LimitPlayerRotation : public UDirection
+class UDir_LimitPlayerRotation : public UDirection
 {
 	GENERATED_BODY()
 public:

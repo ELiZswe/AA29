@@ -10,7 +10,7 @@ class ATcpLinkSCI;
 class AUdpLinkSCI;
 
 UCLASS()
-class AA29_API AServerBrowserSCI : public AServerBrowserBase
+class AServerBrowserSCI : public AServerBrowserBase
 {
 	GENERATED_BODY()
 public:

@@ -9,7 +9,7 @@
 class ALight;
 
 UCLASS()
-class AA29_API ABaseMuzzleFlashEmitter : public AAA2_Emitter
+class ABaseMuzzleFlashEmitter : public AAA2_Emitter
 {
 	GENERATED_BODY()
 public:

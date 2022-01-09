@@ -9,7 +9,7 @@
 class AHumanController;
 
 UCLASS()
-class AA29_API UCond_WhenMissionResultsClosed : public UCondition
+class UCond_WhenMissionResultsClosed : public UCondition
 {
 	GENERATED_BODY()
 public:

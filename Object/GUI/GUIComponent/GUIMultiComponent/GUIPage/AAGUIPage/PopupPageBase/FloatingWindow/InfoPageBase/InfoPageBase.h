@@ -9,7 +9,7 @@
 class UGUIScrollTextBox;
 
 UCLASS()
-class AA29_API UInfoPageBase : public UFloatingWindow
+class UInfoPageBase : public UFloatingWindow
 {
 	GENERATED_BODY()
 public:

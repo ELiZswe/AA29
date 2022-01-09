@@ -9,7 +9,7 @@
 class AAA2_PlayerState;
 
 UCLASS()
-class AA29_API AAGP_ChatHandler : public ABroadcastHandler
+class AAGP_ChatHandler : public ABroadcastHandler
 {
 	GENERATED_BODY()
 public:

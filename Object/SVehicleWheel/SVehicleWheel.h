@@ -9,7 +9,7 @@
 #include "SVehicleWheel.generated.h"
 
 UCLASS()
-class AA29_API USVehicleWheel : public UObject
+class USVehicleWheel : public UObject
 {
 	GENERATED_BODY()
 public:
@@ -28,8 +28,8 @@ public:
 	UPROPERTY()									bool bWheelOnGround;						//var bool bWheelOnGround;
 	UPROPERTY()									float SupportPivotDistance;					//var float SupportPivotDistance;
 	UPROPERTY()									FVector WheelPosition;						//var Object.Vector WheelPosition;
-	//UPROPERTY()									FInterpCurve LatSlipFunc;					//var() Object.InterpCurve LatSlipFunc;
-	//UPROPERTY(EditAnywhere)						FInterpCurve LongFrictionFunc;				//var() Object.InterpCurve LongFrictionFunc;
+	UPROPERTY()									FAA2_InterpCurve LatSlipFunc;					//var() Object.InterpCurve LatSlipFunc;
+	UPROPERTY(EditAnywhere)						FAA2_InterpCurve LongFrictionFunc;				//var() Object.InterpCurve LongFrictionFunc;
 	UPROPERTY(EditAnywhere)						EAA2_Axis SupportBoneAxis;						//var() Object.EAxis SupportBoneAxis;
 	UPROPERTY(EditAnywhere)						FName SupportBoneName;						//var() name SupportBoneName;
 	UPROPERTY(EditAnywhere)						float SuspensionMaxRenderTravel;			//var() float SuspensionMaxRenderTravel;

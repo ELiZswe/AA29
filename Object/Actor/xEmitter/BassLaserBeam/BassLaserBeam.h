@@ -9,7 +9,7 @@
 class ABass;
 
 UCLASS()
-class AA29_API ABassLaserBeam : public AxEmitter
+class ABassLaserBeam : public AxEmitter
 {
 	GENERATED_BODY()
 public:

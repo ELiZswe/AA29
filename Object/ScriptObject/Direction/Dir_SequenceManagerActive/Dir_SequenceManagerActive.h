@@ -9,7 +9,7 @@
 class ASequenceManager;
 
 UCLASS()
-class AA29_API UDir_SequenceManagerActive : public UDirection
+class UDir_SequenceManagerActive : public UDirection
 {
 	GENERATED_BODY()
 public:

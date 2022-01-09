@@ -7,20 +7,20 @@
 #include "BipodViewActor.generated.h"
 
 UCLASS()
-class AA29_API ABipodViewActor : public AActor
+class ABipodViewActor : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	ABipodViewActor();
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 };

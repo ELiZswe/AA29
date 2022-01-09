@@ -8,7 +8,7 @@
 #include "KarmaParamsCollision.generated.h"
 
 UCLASS()
-class AA29_API UKarmaParamsCollision : public UObject
+class UKarmaParamsCollision : public UObject
 {
 	GENERATED_BODY()
 public:

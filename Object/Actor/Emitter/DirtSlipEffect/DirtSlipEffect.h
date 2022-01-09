@@ -9,7 +9,7 @@
 class ASVehicleWheel;
 
 UCLASS()
-class AA29_API ADirtSlipEffect : public AAA2_Emitter
+class ADirtSlipEffect : public AAA2_Emitter
 {
 	GENERATED_BODY()
 public:

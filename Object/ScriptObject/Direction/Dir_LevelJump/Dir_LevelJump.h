@@ -9,7 +9,7 @@
 class AHumanController;
 
 UCLASS()
-class AA29_API UDir_LevelJump : public UDirection
+class UDir_LevelJump : public UDirection
 {
 	GENERATED_BODY()
 public:

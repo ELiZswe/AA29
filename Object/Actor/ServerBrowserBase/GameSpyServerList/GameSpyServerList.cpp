@@ -116,7 +116,7 @@ void AGameSpyServerList::GameSpyStatusDone()
 	bWorking = false;
 	bAutoSort = false;
 	SetTimer(0, false);
-	if (HUD(Owner) != None)
+	if (HUD(Owner) != nullptr)
 	{
 		bAutoSort = HUD(Owner).GetAutoSort();
 	}

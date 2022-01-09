@@ -9,7 +9,7 @@
 class AAGP_IntVar;
 
 UCLASS()
-class AA29_API UDir_JumpOnIntVar : public UDirection
+class UDir_JumpOnIntVar : public UDirection
 {
 	GENERATED_BODY()
 public:

@@ -7,20 +7,20 @@
 #include "Effects.generated.h"
 
 UCLASS()
-class AA29_API AEffects : public AActor
+class AEffects : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	AEffects();
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 };

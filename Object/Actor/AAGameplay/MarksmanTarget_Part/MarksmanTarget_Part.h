@@ -9,7 +9,7 @@
 class AMarksmanTarget;
 
 UCLASS()
-class AA29_API AMarksmanTarget_Part : public AAAGameplay
+class AMarksmanTarget_Part : public AAAGameplay
 {
 	GENERATED_BODY()
 public:
@@ -20,6 +20,6 @@ public:
 
 	void SetMarksmanTarget(AMarksmanTarget* t);
 	void SetZoneID(FString Id);
-	//void TakeDamage(int Damage, Pawn EventInstigator, FVector HitLocation, FVector Momentum, class<DamageType>  DamageType, optional Actor.BoneInfo Bone, optional Controller KillerController, optional Actor ResponsibleActor, optional Material HitMaterial);
+	//void TakeDamage(int32 Damage, Pawn EventInstigator, FVector HitLocation, FVector Momentum, class<DamageType>  DamageType, optional FBoneInfo Bone, optional Controller KillerController, optional Actor ResponsibleActor, optional Material HitMaterial);
 
 };

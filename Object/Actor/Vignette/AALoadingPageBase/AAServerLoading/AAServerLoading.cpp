@@ -40,7 +40,7 @@ void AAAServerLoading::DrawVignette(UCanvas* C, float Progress)
 	/*
 	int32 i = 0;
 	C.Reset();
-	for (i = 0; i < Operations.Length; i++)
+	for (i = 0; i < Operations.Num(); i++)
 	{
 		Operations[i].Draw(C);
 	}

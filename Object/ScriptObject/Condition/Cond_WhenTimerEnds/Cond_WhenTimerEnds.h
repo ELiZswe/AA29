@@ -9,7 +9,7 @@
 class AAGP_Timer;
 
 UCLASS()
-class AA29_API UCond_WhenTimerEnds : public UCondition
+class UCond_WhenTimerEnds : public UCondition
 {
 	GENERATED_BODY()
 public:

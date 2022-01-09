@@ -9,7 +9,7 @@
 class AAA2_Playerstate;
 
 UCLASS()
-class AA29_API AVoicePack : public AAA2_Info
+class AVoicePack : public AAA2_Info
 {
 	GENERATED_BODY()
 public:

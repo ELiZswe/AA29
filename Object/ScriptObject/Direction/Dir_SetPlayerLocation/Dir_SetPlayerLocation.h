@@ -10,7 +10,7 @@ class AAGP_Location;
 class AHumanController;
 
 UCLASS()
-class AA29_API UDir_SetPlayerLocation : public UDirection
+class UDir_SetPlayerLocation : public UDirection
 {
 	GENERATED_BODY()
 public:

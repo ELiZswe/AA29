@@ -9,11 +9,14 @@
 class UAARealHeroStats;
 
 UCLASS()
-class AA29_API UAARealHeroBriefSubPanel : public UAABackgroundSubPanel
+class UAARealHeroBriefSubPanel : public UAABackgroundSubPanel
 {
 	GENERATED_BODY()
 public:
 	UAARealHeroBriefSubPanel();
 
 	UPROPERTY(EditAnywhere)			UAARealHeroStats* l_Rails;			//var class<AARealHeroStats> MyRealHeroStatsClass;
+
+	void ShowSubPanel();
+	void SetRealHeroStatsClass(UAARealHeroStats* NewRealHeroStatsClass);
 };

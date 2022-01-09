@@ -9,7 +9,7 @@
 class AAGP_Vehicle;
 
 UCLASS()
-class AA29_API UVPE_EngineDamage : public UVehiclePhysicalEffect
+class UVPE_EngineDamage : public UVehiclePhysicalEffect
 {
 	GENERATED_BODY()
 public:

@@ -17,7 +17,7 @@ class ABaseWeaponMod : public AActor
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	ABaseWeaponMod();
 	
 	UPROPERTY()					ABaseWeaponMod*							NextWeaponMod;				//var ABaseWeaponMod* NextWeaponMod;
@@ -44,8 +44,8 @@ public:
 	UPROPERTY(EditAnywhere)	    UMaterialInstance*						ScriptedLensTexture;		//var() UMaterial* ScriptedLensTexture;
 
 	//From Actor
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		ESuppressorState	SuppressorState;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		EDrawType			DrawType;
+	UPROPERTY(EditAnywhere)		ESuppressorState	SuppressorState;
+	UPROPERTY(EditAnywhere)		EDrawType			DrawType;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)		bool				bOnlyDrawIfAttached;
 	UPROPERTY()										USkeletalMesh*		Mesh;
 	UPROPERTY()										FName				AttachmentBone;						//var const FName AttachmentBone;
@@ -54,11 +54,11 @@ public:
 	//	var() ScriptedTexture ModScopeScriptedTexture;
 	   	  
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 	void PostNetBeginPlay();

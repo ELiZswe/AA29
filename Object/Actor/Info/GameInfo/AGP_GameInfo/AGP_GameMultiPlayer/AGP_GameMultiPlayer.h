@@ -9,12 +9,10 @@
 #include "GameFramework/PlayerController.h"
 #include "AGP_GameMultiPlayer.generated.h"
 
-//class Controller;
-//class PlayerController;
-
+class AAA2_PlayerState;
 
 UCLASS()
-class AA29_API AAGP_GameMultiPlayer : public AAGP_GameInfo
+class AAGP_GameMultiPlayer : public AAGP_GameInfo
 {
 	GENERATED_BODY()
 public:
@@ -38,15 +36,10 @@ public:
 	virtual void BeginPlay() override;
 	void RestartPlayer(AController* aPlayer);
 	void Timer();
-
 	void Logout(AController* Exiting);
-
-	//APlayerController Login(FString Portal, FString Options, FString Error);
-
+	//APlayerController Login(FString Portal, FString Options, FString& Error);
 	virtual void PostLogin(APlayerController* NewPlayer) override;
 	void FinishPostLogin(APlayerController* NewPlayer);
-
-
 	void UpdateClientsOfCheatAndForceclassStatus();
 	void AuthorizeServer();
 	void SetStartupStage(EStartupStage Stage);
@@ -56,22 +49,21 @@ public:
 	void DisableQualification();
 	bool ShouldIgnoreStats();
 	bool AllowGameSpeedChange();
-	void GetDefaultTeamClass();
+	AActor* GetDefaultTeamClass();
 	bool CheatsDisabled();
 	int32 GetMinHonor();
 	int32 GetMaxHonor();
 	void VerifyHonorRange();
-	void CheckHonor(AController* C);
+	int32 CheckHonor(AController* C);
 	void VerifyLegalGroups();
-	void CheckGroup(AController* C);
+	bool CheckGroup(AController* C);
 	FString GetLegalGroupsString();
 	bool IsTournamentMode();
 	void EvaluatePlayerStatus(APlayerController* PC);
-	
 	void CheckDevKick(AController* Kicker, FString PlayerName);
-	void ActiveVote();
+	bool ActiveVote();
 	bool CanInitiate(AAA2_PlayerState* PRI);
-	void CanInitiateFor(AAA2_PlayerState* PRI_ini, AAA2_PlayerState* PRI_for, FString Reason);
+	bool CanInitiateFor(AAA2_PlayerState* PRI_ini, AAA2_PlayerState* PRI_for, FString Reason);
 	void InitiateVoteRequest(AAA2_PlayerState* PRI, FString PlayerName, FString Reason);
 	void VoteKickPlayerLeft();
 	void EndVote();
@@ -79,6 +71,4 @@ public:
 	void CastVote(AAA2_PlayerState* PRI);
 	void CheckPendingVote(FString new_voter, bool bEndVote);
 	int32 GetVotesRequired(int32 players);
-
-
 };

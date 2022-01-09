@@ -9,7 +9,7 @@
 class APickupW_FSTS_Trainer_M249_SAW;
 
 UCLASS()
-class AA29_API AWF_EL_M249RangeStation : public AWF_EL_MasterScript
+class AWF_EL_M249RangeStation : public AWF_EL_MasterScript
 {
 	GENERATED_BODY()
 public:

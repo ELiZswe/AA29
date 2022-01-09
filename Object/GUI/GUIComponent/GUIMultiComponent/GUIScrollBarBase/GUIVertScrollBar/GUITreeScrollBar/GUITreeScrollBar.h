@@ -10,7 +10,7 @@ class UGUITreeList;
 class UGUIListBase;
 
 UCLASS()
-class AA29_API UGUITreeScrollBar : public UGUIVertScrollBar
+class UGUITreeScrollBar : public UGUIVertScrollBar
 {
 	GENERATED_BODY()
 public:

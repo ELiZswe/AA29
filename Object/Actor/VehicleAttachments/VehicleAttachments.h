@@ -7,20 +7,20 @@
 #include "VehicleAttachments.generated.h"
 
 UCLASS()
-class AA29_API AVehicleAttachments : public AActor
+class AVehicleAttachments : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	AVehicleAttachments();
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 };

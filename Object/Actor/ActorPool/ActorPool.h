@@ -8,12 +8,12 @@
 #include "ActorPool.generated.h"
 
 UCLASS()
-class AA29_API AActorPool : public AActor
+class AActorPool : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	AActorPool();
 
 	UPROPERTY()																			FPoolItem Pool;						//var PoolItem Pool;
@@ -24,11 +24,11 @@ public:
 	void ResetActor(int32 Index);
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 };

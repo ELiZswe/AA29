@@ -9,7 +9,7 @@
 class AAGP_UseTrigger;
 
 UCLASS()
-class AA29_API UCond_WhenUseTriggerOn : public UCondition
+class UCond_WhenUseTriggerOn : public UCondition
 {
 	GENERATED_BODY()
 public:

@@ -7,20 +7,20 @@
 #include "MatDemoActor.generated.h"
 
 UCLASS()
-class AA29_API AMatDemoActor : public AActor
+class AMatDemoActor : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	AMatDemoActor();
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 };

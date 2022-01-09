@@ -9,20 +9,20 @@
 #include "PSSet.generated.h"
 
 UCLASS()
-class AA29_API APSSet : public AActor
+class APSSet : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	APSSet();
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 
@@ -37,7 +37,7 @@ public:
 	class UBillboardComponent* SpriteComponent;
 
 	// Icon sprite
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		UTexture2D* Texture;
+	UPROPERTY(EditAnywhere)		UTexture2D* Texture;
 
 	virtual void LoadEditorIcon();
 };

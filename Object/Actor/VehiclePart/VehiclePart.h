@@ -7,12 +7,12 @@
 #include "VehiclePart.generated.h"
 
 UCLASS()
-class AA29_API AVehiclePart : public AActor
+class AVehiclePart : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	AVehiclePart();
 
 	UPROPERTY()				bool bUpdating;				//var bool bUpdating;
@@ -21,11 +21,11 @@ public:
 	void Activate(bool bActive);
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 };

@@ -9,7 +9,7 @@
 class ANavigationPoint;
 
 UCLASS(Config = Game)
-class AA29_API UReachSpec : public UObject
+class UReachSpec : public UObject
 {
 	GENERATED_BODY()
 public:

@@ -9,7 +9,7 @@
 class ANPC_MedStudent;
 
 UCLASS()
-class AA29_API ANPC_MedInstructor : public AAGP_NPC
+class ANPC_MedInstructor : public AAGP_NPC
 {
 	GENERATED_BODY()
 public:

@@ -12,12 +12,12 @@ class USkeletalMesh;
 class UMaterialInstance;
 
 UCLASS()
-class AA29_API AInventoryAttachment : public AActor
+class AInventoryAttachment : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	AInventoryAttachment();
 
 	UPROPERTY()					bool bDontSwapMeshes;													//var bool bDontSwapMeshes;
@@ -42,11 +42,11 @@ public:
 	UPROPERTY()					TArray<UMaterialInstance*> Skins;
 	UPROPERTY()					AActor* Base;							//var const Actor Base;
 protected:
-	// Called when the game starts or when spawned
+	
 
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 

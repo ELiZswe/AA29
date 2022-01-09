@@ -13,26 +13,24 @@ class USceneComponent;
 class UBillboardComponent;
 
 UCLASS()
-class AA29_API AKeypoint : public AActor
+class AKeypoint : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	AKeypoint(const FObjectInitializer& objectInitializer);
 
-
-	//UPROPERTY(EditAnywhere, BlueprintReadWrite)		UStaticMeshComponent* StaticMesh;
 	UPROPERTY()										USceneComponent* KeyPointRoot;
 	UPROPERTY()										UBillboardComponent* SpriteComponent;
 	UPROPERTY()										UTexture2D* Texture;
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 	void LoadEditorIcon();
 

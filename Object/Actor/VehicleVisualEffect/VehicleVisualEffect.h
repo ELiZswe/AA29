@@ -9,12 +9,12 @@
 class AEmitter;
 
 UCLASS()
-class AA29_API AVehicleVisualEffect : public AActor
+class AVehicleVisualEffect : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	AVehicleVisualEffect();
 
 	UPROPERTY()				AEmitter* EffectEmitter;									//var Emitter EffectEmitter;
@@ -23,11 +23,11 @@ public:
 	void StopEmitter();
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 };

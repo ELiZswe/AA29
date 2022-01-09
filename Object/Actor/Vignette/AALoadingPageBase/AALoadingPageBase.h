@@ -11,7 +11,7 @@ class UDrawOpText;
 class UDrawOpBase;
 
 UCLASS()
-class AA29_API AAALoadingPageBase : public AVignette
+class AAALoadingPageBase : public AVignette
 {
 	GENERATED_BODY()
 public:

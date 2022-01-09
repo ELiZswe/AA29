@@ -9,7 +9,7 @@
 class AMedExam;
 
 UCLASS()
-class AA29_API UDir_SceneJumpExamResult : public UDirection
+class UDir_SceneJumpExamResult : public UDirection
 {
 	GENERATED_BODY()
 public:

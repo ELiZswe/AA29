@@ -9,7 +9,7 @@
 class AAGP_Sound;
 
 UCLASS()
-class AA29_API UCond_WhenSoundEnds : public UCondition
+class UCond_WhenSoundEnds : public UCondition
 {
 	GENERATED_BODY()
 public:

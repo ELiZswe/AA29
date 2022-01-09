@@ -10,7 +10,7 @@ class AHumanController;
 class AAGP_IntVar;
 
 UCLASS()
-class AA29_API UDir_CheckParachute : public UDirection
+class UDir_CheckParachute : public UDirection
 {
 	GENERATED_BODY()
 public:

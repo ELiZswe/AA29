@@ -9,7 +9,7 @@
 class AHumanController;
 
 UCLASS()
-class AA29_API UCond_WhenWeaponJams : public UCondition
+class UCond_WhenWeaponJams : public UCondition
 {
 	GENERATED_BODY()
 public:

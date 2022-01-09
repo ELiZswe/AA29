@@ -9,7 +9,7 @@
 //class UReachSpec;
 
 UCLASS()
-class AA29_API AKarmaBoostDest : public ANavigationPoint
+class AKarmaBoostDest : public ANavigationPoint
 {
 	GENERATED_BODY()
 public:

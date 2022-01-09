@@ -10,7 +10,7 @@ class UGameProfile;
 class UGUITabControl;
 
 UCLASS()
-class AA29_API UTab_SPPanelBase : public UUT2K3TabPanel
+class UTab_SPPanelBase : public UUT2K3TabPanel
 {
 	GENERATED_BODY()
 public:

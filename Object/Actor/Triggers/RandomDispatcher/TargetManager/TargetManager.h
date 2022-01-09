@@ -10,13 +10,11 @@ class AScoreKeeper;
 
 
 UCLASS()
-class AA29_API ATargetManager : public ARandomDispatcher
+class ATargetManager : public ARandomDispatcher
 {
 	GENERATED_BODY()
 public:
 	ATargetManager();
-
-
 
 	UPROPERTY()										bool bActive;										//var bool bActive;
 	UPROPERTY()										AScoreKeeper* _ScoreKeeper;							//var AGP.ScoreKeeper _ScoreKeeper;
@@ -24,8 +22,6 @@ public:
 	UPROPERTY()										bool bTargetPractice;								//var bool bTargetPractice;
 	UPROPERTY(EditAnywhere)							TArray<FString> TargetGroupLabel;					//var() string TargetGroupLabel;
 	UPROPERTY(EditAnywhere)							FString TargetScoreLabel;							//var() string TargetScoreLabel;
-
-
 
 	bool isActivelyTesting();
 	void BeginPlay();
@@ -43,6 +39,4 @@ public:
 	void ReportTargetUp(int32 group_number);
 	void ReportTargetDown(int32 group_number, bool bShot);
 	void ReportTargetSkipped(int32 group_number);
-
-
 };

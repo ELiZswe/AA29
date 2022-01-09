@@ -10,7 +10,7 @@
  * 
  */
 UCLASS()
-class AA29_API ADebugNPCNavigation : public ADebugNavigation
+class ADebugNPCNavigation : public ADebugNavigation
 {
 	GENERATED_BODY()
 public:

@@ -9,12 +9,12 @@
 #include "AGP_Trigger.generated.h"
 
 UCLASS()
-class AA29_API AAGP_Trigger : public AActor
+class AAGP_Trigger : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	AAGP_Trigger();
 
 
@@ -28,11 +28,11 @@ public:
 	UPROPERTY()							int32 _TouchCounter;					//var int _TouchCounter;
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 	UFUNCTION()							void LoadEditorIcon();

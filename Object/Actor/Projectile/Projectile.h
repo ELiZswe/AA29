@@ -15,12 +15,12 @@ class AProjector;
 class UaDamageType;
 
 UCLASS()
-class AA29_API AProjectile : public AActor
+class AProjectile : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	AProjectile(const FObjectInitializer& ObjectInitializer);
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Movement", Replicated)		UProjectileMovementComponent* ProjectileMovement;
@@ -90,12 +90,12 @@ public:
 	void MatchEnding();
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 	
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 	/** inits velocity of the projectile in the shoot direction */

@@ -10,7 +10,7 @@
 class UGUIFont;
 
 UCLASS()
-class AA29_API UGUIStyles : public UGUI
+class UGUIStyles : public UGUI
 {
 	GENERATED_BODY()
 public:

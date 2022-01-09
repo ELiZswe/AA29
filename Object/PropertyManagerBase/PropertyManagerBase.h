@@ -6,14 +6,14 @@
 #include "UObject/NoExportTypes.h"
 #include "PropertyManagerBase.generated.h"
 
-class AGUIController;
+class UGUIController;
 
 UCLASS()
-class AA29_API UPropertyManagerBase : public UObject
+class UPropertyManagerBase : public UObject
 {
 	GENERATED_BODY()
 public:
 	UPropertyManagerBase();
 
-	//UPROPERTY()										AGUIController* Parent;							//var GUIController Parent;
+	UPROPERTY()			UGUIController* Parent;							//var GUIController Parent;
 };

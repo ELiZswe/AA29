@@ -6,8 +6,10 @@
 #include "AA29/Object/KarmaParamsCollision/KarmaParamsCollision.h"
 #include "KarmaParams.generated.h"
 
+class AKRepulsor;
+
 UCLASS()
-class AA29_API UKarmaParams : public UKarmaParamsCollision
+class UKarmaParams : public UKarmaParamsCollision
 {
 	GENERATED_BODY()
 public:
@@ -38,5 +40,5 @@ public:
 	UPROPERTY(EditAnywhere)					bool bDoSafetime;								//var() bool bDoSafetime;
 	UPROPERTY(EditAnywhere)					float StayUprightStiffness;						//var() float StayUprightStiffness;
 	UPROPERTY(EditAnywhere)					float StayUprightDamping;						//var() float StayUprightDamping;
-	//UPROPERTY(EditAnywhere)					TArray<AKRepulsor*> Repulsors;					//var() TArray<KRepulsor> Repulsors;
+	UPROPERTY(EditAnywhere)					TArray<AKRepulsor*> Repulsors;					//var() TArray<KRepulsor> Repulsors;
 };

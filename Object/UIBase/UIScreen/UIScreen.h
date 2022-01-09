@@ -13,16 +13,14 @@ class UUIMouse;
 class UUIControl;
 class UUIInvSlotBase;
 class UUIFrame;
+class UUIListItems;
 
 UCLASS()
-class AA29_API UUIScreen : public UUIBase
+class UUIScreen : public UUIBase
 {
 	GENERATED_BODY()
 public:
 	UUIScreen();
-
-	//const kResX = 800.0;
-	//const kResY = 600.0;
 
 	UPROPERTY()										FString _sTitle;					//var string _sTitle;
 	UPROPERTY()										FPoint offset;						//var UIBase.Point offset;
@@ -42,9 +40,9 @@ public:
 	bool ProcessKeyEvent(int32 Key, int32 Action, float Delta);
 	void DrawScreen(UCanvas* Canvas, bool bMouse);
 	void Notify(int32 pUIEvent);
-	void CreateUIListItems(FString ListItemsName);
-	void CreateUIControl(FString ControlName);
-	void CreateUIMouse(FString MouseName);
+	UUIListItems* CreateUIListItems(FString ListItemsName);
+	UUIControl* CreateUIControl(FString ControlName);
+	UUIMouse* CreateUIMouse(FString MouseName);
 	void AddControl(FString szControl, int32 pUIEvent);
 	void AddRolloverButton(FString sControl, int32 pID, int32 pUIEvent, FPosition pPos, FString tString, int32 pParams, FString sToolTip);
 	void AddRolloverBitmapButton(int32 pID, int32 pUIEvent, FPosition pPos, FString Tex, FPosition dim, int32 pParams, FString sToolTip);

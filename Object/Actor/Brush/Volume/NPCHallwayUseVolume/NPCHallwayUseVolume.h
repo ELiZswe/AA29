@@ -9,7 +9,7 @@
 class ANPCPathNode;
 
 UCLASS()
-class AA29_API ANPCHallwayUseVolume : public AAA2_Volume
+class ANPCHallwayUseVolume : public AAA2_Volume
 {
 	GENERATED_BODY()
 public:

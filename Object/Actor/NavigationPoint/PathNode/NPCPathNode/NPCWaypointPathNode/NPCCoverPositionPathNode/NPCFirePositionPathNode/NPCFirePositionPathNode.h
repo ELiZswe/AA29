@@ -9,7 +9,7 @@
 class ANPCDuckAndCoverPathNode;
 
 UCLASS()
-class AA29_API ANPCFirePositionPathNode : public ANPCCoverPositionPathNode
+class ANPCFirePositionPathNode : public ANPCCoverPositionPathNode
 {
 	GENERATED_BODY()
 public:

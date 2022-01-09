@@ -9,7 +9,7 @@
 class AHumanController;
 
 UCLASS()
-class AA29_API UCond_WhenFire : public UCondition
+class UCond_WhenFire : public UCondition
 {
 	GENERATED_BODY()
 public:

@@ -9,7 +9,7 @@
 class AHumanController;
 
 UCLASS()
-class AA29_API UDir_PlayStatusSound : public UDirection
+class UDir_PlayStatusSound : public UDirection
 {
 	GENERATED_BODY()
 public:

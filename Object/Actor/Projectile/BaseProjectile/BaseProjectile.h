@@ -6,23 +6,26 @@
 #include "AA29/Object/Actor/Projectile/Projectile.h"
 #include "BaseProjectile.generated.h"
 
+class AEmitter;
+class ABaseProjectile;
+
 UCLASS()
-class AA29_API ABaseProjectile : public AProjectile
+class ABaseProjectile : public AProjectile
 {
 	GENERATED_BODY()
 public:
 	ABaseProjectile(const FObjectInitializer& ObjectInitializer);
 
 		
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		uint8 idTeamOwner;											//var byte idTeamOwner;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		TSubclassOf<class ABaseProjectile> EnemyProjectileClass;	//var class<BaseProjectile> EnemyProjectileClass;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		USoundBase* ExplosionSound;									//var Sound ExplosionSound;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		AEmitter* TrailEmitter;										//var Emitter TrailEmitter;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		AEmitter* cTrailEmitterClass;								//var class<Emitter> cTrailEmitterClass;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		float fAtmoFactor;											//var float fAtmoFactor;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		float fWindFactor;											//var float fWindFactor;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		float fKillRadius;											//var float fKillRadius;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		TArray<AActor*> DamageClasses;								//var array<class<Actor> > DamageClasses;
+	UPROPERTY(EditAnywhere)		uint8							idTeamOwner;				//var byte idTeamOwner;
+	UPROPERTY(EditAnywhere)		TSubclassOf<ABaseProjectile>	EnemyProjectileClass;		//var class<BaseProjectile> EnemyProjectileClass;
+	UPROPERTY(EditAnywhere)		USoundBase*						ExplosionSound;				//var Sound ExplosionSound;
+	UPROPERTY(EditAnywhere)		AEmitter*						TrailEmitter;				//var Emitter TrailEmitter;
+	UPROPERTY(EditAnywhere)		AEmitter*						cTrailEmitterClass;			//var class<Emitter> cTrailEmitterClass;
+	UPROPERTY(EditAnywhere)		float							fAtmoFactor;				//var float fAtmoFactor;
+	UPROPERTY(EditAnywhere)		float							fWindFactor;				//var float fWindFactor;
+	UPROPERTY(EditAnywhere)		float							fKillRadius;				//var float fKillRadius;
+	UPROPERTY(EditAnywhere)		TArray<AActor*>					DamageClasses;				//var array<class<Actor> > DamageClasses;
 
 	void PreBeginPlay();
 	bool IsEnemyProjectile();

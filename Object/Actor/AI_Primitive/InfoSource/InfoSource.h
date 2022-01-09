@@ -9,7 +9,7 @@
 class AMentalModel;
 
 UCLASS()
-class AA29_API AInfoSource : public AAI_Primitive
+class AInfoSource : public AAI_Primitive
 {
 	GENERATED_BODY()
 public:

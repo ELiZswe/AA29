@@ -10,7 +10,7 @@
 class UFont;
 
 UCLASS()
-class AA29_API ATestVignette : public AVignette
+class ATestVignette : public AVignette
 {
 	GENERATED_BODY()
 public:

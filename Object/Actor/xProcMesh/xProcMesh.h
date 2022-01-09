@@ -11,12 +11,12 @@ class AEffects;
 class UBillboardComponent;
 
 UCLASS()
-class AA29_API AxProcMesh : public AActor
+class AxProcMesh : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	AxProcMesh();
 
 	UPROPERTY()																USceneComponent* Root;
@@ -53,15 +53,15 @@ public:
 
 
 	void ProcPling(FVector Position, float Strength, float Radius, FVector& EffectLocation, FVector& EffectNormal);
-	//void TakeDamage(int32 Damage, Pawn instigatedBy, Vector HitLocation, Vector Momentum, class<DamageType>  DamageType, Actor.BoneInfo Bone, Controller KillerController, Actor ResponsibleActor, Material HitMaterial);
+	//void TakeDamage(int32 Damage, Pawn instigatedBy, Vector HitLocation, Vector Momentum, class<DamageType>  DamageType, FBoneInfo Bone, Controller KillerController, Actor ResponsibleActor, Material HitMaterial);
 	void Touch(AActor* Other);
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 	void LoadEditorIcon();
 	void LoadMesh();

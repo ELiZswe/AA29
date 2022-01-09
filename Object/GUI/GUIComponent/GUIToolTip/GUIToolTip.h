@@ -7,7 +7,7 @@
 #include "GUIToolTip.generated.h"
 
 UCLASS(Config = Game)
-class AA29_API UGUIToolTip : public UGUIComponent
+class UGUIToolTip : public UGUIComponent
 {
 	GENERATED_BODY()
 public:

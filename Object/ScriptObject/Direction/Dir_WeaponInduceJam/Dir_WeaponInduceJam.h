@@ -9,7 +9,7 @@
 class AHumanController;
 
 UCLASS()
-class AA29_API UDir_WeaponInduceJam : public UDirection
+class UDir_WeaponInduceJam : public UDirection
 {
 	GENERATED_BODY()
 public:

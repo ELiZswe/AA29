@@ -11,7 +11,7 @@ class AGoal;
 class AContact;
 
 UCLASS()
-class AA29_API AGoalDecider : public AGoal_Interface
+class AGoalDecider : public AGoal_Interface
 {
 	GENERATED_BODY()
 public:

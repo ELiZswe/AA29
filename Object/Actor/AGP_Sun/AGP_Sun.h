@@ -13,7 +13,7 @@ class AAGP_Sun : public AActor
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	AAGP_Sun();
 
 	UPROPERTY(EditAnywhere, Category = "Force")		TArray<FLensFlareDescriptor>	LensFlares;							//var(Sun) TArray<LensFlareDescriptor> LensFlares;
@@ -40,11 +40,11 @@ public:
 	void PostBeginPlay();
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 };

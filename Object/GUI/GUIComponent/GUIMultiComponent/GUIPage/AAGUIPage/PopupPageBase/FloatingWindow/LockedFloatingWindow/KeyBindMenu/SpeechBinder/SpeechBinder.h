@@ -9,7 +9,7 @@
 class UAATab_PlayerSettings;
 
 UCLASS()
-class AA29_API USpeechBinder : public UKeyBindMenu
+class USpeechBinder : public UKeyBindMenu
 {
 	GENERATED_BODY()
 public:

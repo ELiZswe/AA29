@@ -9,7 +9,7 @@
 class AAGP_Timer;
 
 UCLASS()
-class AA29_API UDir_StartSimpleTimer : public UDirection
+class UDir_StartSimpleTimer : public UDirection
 {
 	GENERATED_BODY()
 public:

@@ -13,7 +13,7 @@ class AET_EL_RopeBridges;
 class AET_EL_ObstacleArea;
 
 UCLASS()
-class AA29_API AET_EL_MasterScript : public AFSTS_EL_Utilities
+class AET_EL_MasterScript : public AFSTS_EL_Utilities
 {
 	GENERATED_BODY()
 public:

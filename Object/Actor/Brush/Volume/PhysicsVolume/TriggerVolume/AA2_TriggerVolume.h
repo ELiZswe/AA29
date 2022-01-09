@@ -10,7 +10,7 @@
 class AVolumeTimer;
 
 UCLASS()
-class AA29_API AAA2_TriggerVolume : public ATriggerVolume
+class AAA2_TriggerVolume : public ATriggerVolume
 {
 	GENERATED_BODY()
 public:

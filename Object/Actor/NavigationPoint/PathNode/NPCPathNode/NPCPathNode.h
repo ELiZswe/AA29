@@ -10,7 +10,7 @@ class ANPCBaseController;
 class ANPCPathNode;
 
 UCLASS()
-class AA29_API ANPCPathNode : public APathNode
+class ANPCPathNode : public APathNode
 {
 	GENERATED_BODY()
 public:

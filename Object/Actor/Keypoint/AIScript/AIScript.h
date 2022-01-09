@@ -10,7 +10,7 @@ class AAIMarker;
 class AaAIController;
 
 UCLASS()
-class AA29_API AAIScript : public AKeypoint
+class AAIScript : public AKeypoint
 {
 	GENERATED_BODY()
 public:

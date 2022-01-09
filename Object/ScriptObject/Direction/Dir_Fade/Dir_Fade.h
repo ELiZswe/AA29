@@ -9,7 +9,7 @@
 class AHumanController;
 
 UCLASS()
-class AA29_API UDir_Fade : public UDirection
+class UDir_Fade : public UDirection
 {
 	GENERATED_BODY()
 public:

@@ -8,10 +8,10 @@
 
 class UKarmaParamsCollision;
 class AEventlab;
-
+class AAnimManager;
 
 UCLASS(Config = Game)
-class AA29_API AAA2_Pawn : public APawn
+class AAA2_Pawn : public APawn
 {
 	GENERATED_BODY()
 
@@ -58,8 +58,8 @@ public:
 	UPROPERTY()												bool					bCountJumps;					//var bool bCountJumps;
 	UPROPERTY()												bool					bSimulateGravity;				//var const bool bSimulateGravity;
 	UPROPERTY()												bool					bUpdateEyeheight;				//var bool bUpdateEyeheight;
-	UPROPERTY()												bool					bIgnoreForces;						//var bool bIgnoreForces;
-
+	UPROPERTY()												bool					bIgnoreForces;					//var bool bIgnoreForces;
+	UPROPERTY()												AAnimManager*			AnimManager;					//var AAnimManager* AnimManager;
 	//From Actor
 	UPROPERTY()												USceneComponent*			Root;
 	UPROPERTY()												TArray<UMaterialInstance*>	Skins;
@@ -71,11 +71,11 @@ public:
 	UPROPERTY(EditAnywhere)									UAnimationAsset*			Anim_3P;
 	UPROPERTY(EditAnywhere)									FVector						PrePivot;
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 	// Called to bind functionality to input

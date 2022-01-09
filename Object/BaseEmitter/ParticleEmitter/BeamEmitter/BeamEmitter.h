@@ -8,7 +8,7 @@
 #include "BeamEmitter.generated.h"
 
 UCLASS()
-class AA29_API UBeamEmitter : public UAA2_ParticleEmitter
+class UBeamEmitter : public UAA2_ParticleEmitter
 {
 	GENERATED_BODY()
 public:

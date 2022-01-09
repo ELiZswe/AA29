@@ -9,12 +9,12 @@
 #include "xWeatherEffect.generated.h"
 
 UCLASS()
-class AA29_API AxWeatherEffect : public AActor
+class AxWeatherEffect : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	AxWeatherEffect();
 
 	UPROPERTY()										TArray<AVolume*> pclBlockers;					//var transient array<Volume> pclBlockers;
@@ -51,11 +51,11 @@ public:
 	UPROPERTY()										UBillboardComponent* SpriteComponent;
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 	void LoadEditorIcon();
 };

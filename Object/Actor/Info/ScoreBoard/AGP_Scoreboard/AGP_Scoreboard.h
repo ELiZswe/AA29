@@ -10,7 +10,7 @@ class AAA2_Playerstate;
 class UFont;
 
 UCLASS()
-class AA29_API AAGP_Scoreboard : public AScoreBoard
+class AAGP_Scoreboard : public AScoreBoard
 {
 	GENERATED_BODY()
 public:

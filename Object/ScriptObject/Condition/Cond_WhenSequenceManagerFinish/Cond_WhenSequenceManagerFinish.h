@@ -9,7 +9,7 @@
 class ASequenceManager;
 
 UCLASS()
-class AA29_API UCond_WhenSequenceManagerFinish : public UCondition
+class UCond_WhenSequenceManagerFinish : public UCondition
 {
 	GENERATED_BODY()
 public:

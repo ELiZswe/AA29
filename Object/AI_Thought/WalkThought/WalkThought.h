@@ -10,7 +10,7 @@ class ANavigationPoint;
 class AAGP_Bot;
 
 UCLASS()
-class AA29_API UWalkThought : public UAI_Thought
+class UWalkThought : public UAI_Thought
 {
 	GENERATED_BODY()
 public:

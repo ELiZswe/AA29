@@ -132,7 +132,7 @@ void ADustCloudEffect::UpdateDust(ASVehicleWheel* vw, FCoords WheelCoords, float
 		End = Start;
 		(End.Z -= (vw.WheelRadius + float(20)));
 		Trace(HitLoc, HitNorm, End, Start, false, , HitMat);
-		if (HitMat != None)
+		if (HitMat != nullptr)
 		{
 			EMP = GetEffectProps(HitMat);
 			if (!EMP.bNoEffect)

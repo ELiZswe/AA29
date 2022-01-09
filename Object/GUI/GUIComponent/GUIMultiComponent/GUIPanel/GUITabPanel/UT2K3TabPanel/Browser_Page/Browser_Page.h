@@ -9,7 +9,7 @@
 class UServerBrowser;
 
 UCLASS()
-class AA29_API UBrowser_Page : public UUT2K3TabPanel
+class UBrowser_Page : public UUT2K3TabPanel
 {
 	GENERATED_BODY()
 public:

@@ -7,7 +7,7 @@
 #include "MeshEmitter.generated.h"
 
 UCLASS()
-class AA29_API UMeshEmitter : public UAA2_ParticleEmitter
+class UMeshEmitter : public UAA2_ParticleEmitter
 {
 	GENERATED_BODY()
 public:

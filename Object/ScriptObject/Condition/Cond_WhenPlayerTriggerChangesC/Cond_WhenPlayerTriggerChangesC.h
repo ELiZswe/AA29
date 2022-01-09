@@ -9,7 +9,7 @@
 class AHumanController;
 
 UCLASS()
-class AA29_API UCond_WhenPlayerTriggerChangesC : public UCondition
+class UCond_WhenPlayerTriggerChangesC : public UCondition
 {
 	GENERATED_BODY()
 public:

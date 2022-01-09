@@ -11,7 +11,7 @@ class AAGP_Objective;
 class ABaseSmokeEmitter;
 
 UCLASS()
-class AA29_API ARavenUAV : public ASUAVPlane
+class ARavenUAV : public ASUAVPlane
 {
 	GENERATED_BODY()
 public:
@@ -66,7 +66,7 @@ public:
 	bool TryToDrive(APawn* p);
 	void KDriverEnter(APawn* p);
 	bool KDriverLeave(bool bForceLeave);
-	//void TakeDamage(int32 Damage, Pawn instigatedBy, Vector HitLocation, Vector Momentum, class<DamageType>  dtDamageType, Actor.BoneInfo Bone, Controller KillerController, Actor ResponsibleActor, Material HitMaterial);
+	//void TakeDamage(int32 Damage, Pawn instigatedBy, Vector HitLocation, Vector Momentum, class<DamageType>  dtDamageType, FBoneInfo Bone, Controller KillerController, Actor ResponsibleActor, Material HitMaterial);
 	void HelicopterEngineSmoke(bool bEnable);
 	void HelicopterRotorSmoke(bool bEnable);
 	void HelicopterCockpitSmoke(bool bEnable);

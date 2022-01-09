@@ -45,7 +45,7 @@ public:
 	bool IsInitialized();
 	FString GetTitle();
 	int32 GetCurrent();
-	void GetSongs(TArray<UStream*> SongArray);
+	void GetSongs(TArray<UStream*>& SongArray);
 	UStream* GetCurrentStream();
 	UStream* GetStream(FString StreamName);
 	UStream* GetStreamAt(int32 Index);

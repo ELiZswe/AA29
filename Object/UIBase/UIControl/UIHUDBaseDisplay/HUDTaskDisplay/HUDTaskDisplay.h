@@ -11,7 +11,7 @@ class ACallForSupport;
 class UFont;
 
 UCLASS()
-class AA29_API UHUDTaskDisplay : public UUIHUDBaseDisplay
+class UHUDTaskDisplay : public UUIHUDBaseDisplay
 {
 	GENERATED_BODY()
 public:

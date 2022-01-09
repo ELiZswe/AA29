@@ -18,7 +18,7 @@ class ABHLandingLight;
 class Aaux_light_signal;
 
 UCLASS()
-class AA29_API AEEBlackHawk : public AAAGameplay
+class AEEBlackHawk : public AAAGameplay
 {
 	GENERATED_BODY()
 public:

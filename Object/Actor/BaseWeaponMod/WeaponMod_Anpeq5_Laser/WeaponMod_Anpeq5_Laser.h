@@ -9,16 +9,16 @@
 class USkeletalMesh;
 
 UCLASS()
-class AA29_API AWeaponMod_Anpeq5_Laser : public ABaseWeaponMod
+class AWeaponMod_Anpeq5_Laser : public ABaseWeaponMod
 {
 	GENERATED_BODY()
 public:
 	AWeaponMod_Anpeq5_Laser();
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)			USkeletalMesh* NonLaserMesh;				//var Mesh NonLaserMesh;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)			USkeletalMesh* WithLaserMesh;				//var Mesh WithLaserMesh;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)			bool bLaserOn;								//var bool bLaserOn;
-	//UPROPERTY(EditAnywhere, BlueprintReadWrite)		ALaserProjector* laser;						//var AGP.LaserProjector laser;
+	UPROPERTY(EditAnywhere)			USkeletalMesh* NonLaserMesh;				//var Mesh NonLaserMesh;
+	UPROPERTY(EditAnywhere)			USkeletalMesh* WithLaserMesh;				//var Mesh WithLaserMesh;
+	UPROPERTY(EditAnywhere)			bool bLaserOn;								//var bool bLaserOn;
+	//UPROPERTY(EditAnywhere)		ALaserProjector* laser;						//var AGP.LaserProjector laser;
 
 
 	virtual void Destroyed() override;

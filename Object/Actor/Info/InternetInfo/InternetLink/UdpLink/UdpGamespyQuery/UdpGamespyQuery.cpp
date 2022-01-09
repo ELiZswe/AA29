@@ -12,15 +12,15 @@ AUdpGamespyQuery::AUdpGamespyQuery()
 void AUdpGamespyQuery::PreBeginPlay()
 {
 	/*
-	local int boundport;
-	local int requestport;
+	int32 boundport;
+	int32 requestport;
 	Tag = QueryName;
 	requestport = Level.Game.GetServerPort() + 10;
 	boundport = BindPort(requestport, true);
 	if (boundport == 0)
 	{
 		Log("UdpServerQuery: Port failed to bind.");
-		Return;
+		return;
 	}
 	Log("UdpServerQuery(crt): Port " $ boundport $ " successfully bound.");
 	if (bRestartServerOnPortSwap)
@@ -48,9 +48,9 @@ void AUdpGamespyQuery::DebugPortSwap(AActor* Ref)
 	local array<UdpGamespyQuery> Queries;
 	local array<Object> Referencers;
 	local UdpGamespyQuery Q;
-	local int i;
-	local int j;
-	local string str;
+	int32 i;
+	int32 j;
+	FString str;
 	Log("***************");
 	Log(" Complete OBJ LIST:");
 	Ref.ConsoleCommand("obj list", true);
@@ -59,24 +59,24 @@ void AUdpGamespyQuery::DebugPortSwap(AActor* Ref)
 	Log("Current UdpGameSpyQuery objects:");
 	ForEach Ref.('UdpGamespyQuery', Q)
 	{
-		Queries[Queries.Length] = Q;
+		Queries[Queries.Num()] = Q;
 	}
-	if (Queries.Length == 0)
+	if (Queries.Num() == 0)
 	{
 		Log("No UdpGamespyQuery objects found!");
-		Return;
+		return;
 	}
 	Ref.ConsoleCommand("obj list class=udpgamespyquery", true);
 	Log("***************");
 	Log("Tracing UdpGamespyQuery objects");
-	for (i = 0; i < Queries.Length; i++)
+	for (i = 0; i < Queries.Num(); i++)
 	{
 		str = GetFullName(Queries[i]);
 		Log("===================================================================");
 		Log(" Referencers of '" $ str $ "'");
 		Ref.ConsoleCommand("obj refs class=udpgamespyquery name=" $ str, true);
 		Ref.GetReferencers(Queries[i], Referencers);
-		for (j = 0; j < Referencers.Length; j++)
+		for (j = 0; j < Referencers.Num(); j++)
 		{
 			if (Level(Referencers[j]) == nullptr && GameEngine(Referencers[j]) == nullptr)
 			{
@@ -103,18 +103,18 @@ FString AUdpGamespyQuery::GetFullName(UObject* obj)
 	FString FullName = "";
 	/*
 	local array<Object> Outers;
-	local int i;
+	int32 i;
 	if (obj == nullptr)
 	{
 		return "";
 	}
 	Outers[0] = obj;
-	if (Outers[0].Outer != None)
+	if (Outers[0].Outer != nullptr)
 	{
 		Outers.insert(0, 1);
 		Outers[0] = Outers[1].Outer;
 	}
-	for (i = 0; i < Outers.Length; i++)
+	for (i = 0; i < Outers.Num(); i++)
 	{
 		if (FullName != "")
 		{
@@ -129,10 +129,10 @@ FString AUdpGamespyQuery::GetFullName(UObject* obj)
 void AUdpGamespyQuery::ReceivedText(FIpAddr Addr, FString Text)
 {
 	/*
-	local string Query;
+	FString Query;
 	local bool QueryRemaining;
-	local int QueryNum;
-	local int PacketNum;
+	int32 QueryNum;
+	int32 PacketNum;
 	CurrentQueryNum++;
 	if (CurrentQueryNum > 100)
 	{
@@ -142,7 +142,7 @@ void AUdpGamespyQuery::ReceivedText(FIpAddr Addr, FString Text)
 	Query = Text;
 	if (Query == "")
 	{
-		QueryRemaining = False;
+		QueryRemaining = false;
 	}
 	else
 	{
@@ -155,7 +155,7 @@ void AUdpGamespyQuery::ReceivedText(FIpAddr Addr, FString Text)
 		Query = ParseQuery(Addr, Query, QueryNum, PacketNum);
 		if (Query == "")
 		{
-			QueryRemaining = False;
+			QueryRemaining = false;
 		}
 		else
 		{
@@ -168,8 +168,8 @@ void AUdpGamespyQuery::ReceivedText(FIpAddr Addr, FString Text)
 bool AUdpGamespyQuery::ParseNextQuery(FString Query, FString &QueryType, FString &QueryValue, FString &QueryRest, int32 &bFinalPacket)
 {
 	/*
-	local string TempQuery;
-	local int ClosingSlash;
+	FString TempQuery;
+	int32 ClosingSlash;
 	if (Query == "")
 	{
 		return false;
@@ -364,7 +364,7 @@ bool AUdpGamespyQuery::SendQueryPacket(FIpAddr Addr, FString SendString, int32 Q
 FString AUdpGamespyQuery::GetBasic()
 {
 	/*
-	local string ResultSet;
+	FString ResultSet;
 	ResultSet = "\gamename\" $ GameSpyGameName();
 		ResultSet = ResultSet $ "\gamever\" $ Level.EngineVersion;
 		if (MinNetVer >= Level.MinNetVersion && MinNetVer <= Level.EngineVersion)
@@ -427,7 +427,7 @@ FString AUdpGamespyQuery::GetRules()
 	{
 		ResultSet = ResultSet $ "\AdminEMail\" $ Level.Game.GameReplicationInfo.AdminEmail;
 	}
-	if (Level.Game.AccessControl != None && Level.Game.AccessControl.RequiresPassword())
+	if (Level.Game.AccessControl != nullptr && Level.Game.AccessControl.RequiresPassword())
 	{
 		ResultSet = ResultSet $ "\password\1";
 	}
@@ -449,7 +449,7 @@ FString AUdpGamespyQuery::GetPlayer(APlayerController* p, int32 PlayerNum)
 	ResultSet = "\player_" $ PlayerNum $ "\" $ PlayerName;
 	ResultSet = ResultSet $ "\frags_" $ PlayerNum $ "\" $ p.PlayerReplicationInfo.Score_Kills;
 	ResultSet = ResultSet $ "\ping_" $ PlayerNum $ "\" $ p.ConsoleCommand("GETPING");
-	if (p.PlayerReplicationInfo.Team != None)
+	if (p.PlayerReplicationInfo.Team != nullptr)
 	{
 		ResultSet = ResultSet $ "\team_" $ PlayerNum $ "\" $ p.PlayerReplicationInfo.Team.TeamIndex;
 	}
@@ -484,7 +484,7 @@ bool AUdpGamespyQuery::SendPlayers(FIpAddr Addr, int32 QueryNum, int32 &PacketNu
 		{
 			else
 			{
-				if ((C.IsA("PlayerController") && (C.PlayerReplicationInfo != None)) && (! C.PlayerReplicationInfo.bOnlySpectator))
+				if ((C.IsA("PlayerController") && (C.PlayerReplicationInfo != nullptr)) && (! C.PlayerReplicationInfo.bOnlySpectator))
 				{
 					if ((i == (Level.Game.NumPlayers - 1)) && (bFinalPacket == 1))
 					{
@@ -527,7 +527,7 @@ FString AUdpGamespyQuery::GetPlayerProperty(FString Prop)
 	/*
 	ForEach AllActors(Class'Controller', C)
 	{
-		if (C.PlayerReplicationInfo != None && !C.PlayerReplicationInfo.bBot)
+		if (C.PlayerReplicationInfo != nullptr && !C.PlayerReplicationInfo.bBot)
 		{
 			i++;
 			ResultSet = ResultSet $ "\" $ Prop $ "_" $ i $ "\" $ C.GetPropertyText(Prop);

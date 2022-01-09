@@ -9,7 +9,7 @@
 class UGUITabPanel;
 
 UCLASS()
-class AA29_API UAAGUITabControl : public UGUITabControl
+class UAAGUITabControl : public UGUITabControl
 {
 	GENERATED_BODY()
 public:

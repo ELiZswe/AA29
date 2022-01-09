@@ -10,7 +10,7 @@ class ATrigger;
 class AAGP_Trigger;
 
 UCLASS()
-class AA29_API UDir_TriggerActive : public UDirection
+class UDir_TriggerActive : public UDirection
 {
 	GENERATED_BODY()
 public:

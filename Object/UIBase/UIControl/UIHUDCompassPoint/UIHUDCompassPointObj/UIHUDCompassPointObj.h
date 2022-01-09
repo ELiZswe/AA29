@@ -10,25 +10,22 @@ class ABaseObjective;
 
 
 UCLASS()
-class AA29_API UUIHUDCompassPointObj : public UUIHUDCompassPoint
+class UUIHUDCompassPointObj : public UUIHUDCompassPoint
 {
 	GENERATED_BODY()
 public:
 	UUIHUDCompassPointObj();
 
-
-	UPROPERTY()										FString _sSymbol;							//var string _sSymbol;
-	UPROPERTY()										ABaseObjective* _Objective;					//var BaseObjective _Objective;
-
+	UPROPERTY()			FString				_sSymbol;		//var string _sSymbol;
+	UPROPERTY()			ABaseObjective*		_Objective;		//var BaseObjective _Objective;
 
 	void Destroyed();
 	void setObjective(ABaseObjective* obj);
-	void GetLocation();
-	void IsOnCompass(AController* ctrlRequesting);
-	void IsEnabled();
-	void IsSquadTarget(int32 iTeamIndex);
+	FVector GetLocation();
+	bool IsOnCompass(AController* ctrlRequesting);
+	bool IsEnabled();
+	bool IsSquadTarget(int32 iTeamIndex);
 	FString GetString();
-	void isPriority();
+	bool isPriority();
 	void SetText(FString txt);
-
 };

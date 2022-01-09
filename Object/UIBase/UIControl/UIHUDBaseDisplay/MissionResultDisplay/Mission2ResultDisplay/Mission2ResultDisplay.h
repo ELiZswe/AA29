@@ -10,7 +10,7 @@
  * 
  */
 UCLASS()
-class AA29_API UMission2ResultDisplay : public UMissionResultDisplay
+class UMission2ResultDisplay : public UMissionResultDisplay
 {
 	GENERATED_BODY()
 public:

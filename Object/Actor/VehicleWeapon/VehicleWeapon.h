@@ -21,13 +21,13 @@ class AVehicleWeapon : public AActor
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	AVehicleWeapon();
 
 	UPROPERTY()							bool							WeaponBoneHack;									//var bool WeaponBoneHack;
 	UPROPERTY()							FString							DebugInfo;										//var string DebugInfo;
-	UPROPERTY()							FFireProperties					SavedFireProperties;							//var Actor.FireProperties SavedFireProperties;
-	UPROPERTY()							TArray<FVehicleWeaponAIInfo>	AIInfo;											//var VehicleWeapon.VehicleWeaponAIInfo AIInfo;
+	UPROPERTY()							TArray<FFireProperties>			SavedFireProperties;							//var Actor.FireProperties SavedFireProperties[2];
+	UPROPERTY()							TArray<FVehicleWeaponAIInfo>	AIInfo;											//var VehicleWeaponAIInfo AIInfo[2];
 	UPROPERTY()							bool							bUseAimErrorTime;								//var bool bUseAimErrorTime;
 	UPROPERTY()							bool							bAdjustAfterFire;								//var bool bAdjustAfterFire;
 	UPROPERTY()							float							AimErrorTime;									//var float AimErrorTime;
@@ -39,7 +39,7 @@ public:
 	UPROPERTY()							int32							PitchAnimScale;									//var int PitchAnimScale;
 	UPROPERTY()							int32							PitchAnimOffset;								//var int PitchAnimOffset;
 	UPROPERTY()							int32							numWeaponAimAnims;								//var int numWeaponAimAnims;
-	UPROPERTY()							FName							WeaponAimAnims;									//var name WeaponAimAnims;
+	UPROPERTY()							TArray<FName>					WeaponAimAnims;									//var FName WeaponAimAnims[5];
 	UPROPERTY(EditAnywhere)				float							ShakeOffsetTime;								//var() float ShakeOffsetTime;
 	UPROPERTY(EditAnywhere)				FVector							ShakeOffsetRate;								//var() Object.Vector ShakeOffsetRate;
 	UPROPERTY(EditAnywhere)				FVector							ShakeOffsetMag;									//var() Object.Vector ShakeOffsetMag;
@@ -180,11 +180,11 @@ public:
 	void UpdatePrecacheMaterials();
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 };

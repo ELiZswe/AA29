@@ -9,7 +9,7 @@
 class AAGP_Location;
 
 UCLASS()
-class AA29_API UDir_SetLocation : public UDirection
+class UDir_SetLocation : public UDirection
 {
 	GENERATED_BODY()
 public:

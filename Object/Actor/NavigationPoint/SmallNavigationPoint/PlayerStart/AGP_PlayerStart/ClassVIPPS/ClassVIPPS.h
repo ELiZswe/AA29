@@ -7,7 +7,7 @@
 #include "ClassVIPPS.generated.h"
 
 UCLASS()
-class AA29_API AClassVIPPS : public AAGP_PlayerStart
+class AClassVIPPS : public AAGP_PlayerStart
 {
 	GENERATED_BODY()
 public:

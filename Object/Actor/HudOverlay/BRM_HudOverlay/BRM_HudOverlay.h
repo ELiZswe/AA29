@@ -9,7 +9,7 @@
 class AEL_BRM;
 
 UCLASS()
-class AA29_API ABRM_HudOverlay : public AHudOverlay
+class ABRM_HudOverlay : public AHudOverlay
 {
 	GENERATED_BODY()
 public:

@@ -11,12 +11,12 @@ class UBillboardComponent;
 class USceneComponent;
 
 UCLASS()
-class AA29_API AAGP_DeployChute : public AActor
+class AAGP_DeployChute : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	AAGP_DeployChute();
 
 	UPROPERTY()									USceneComponent* Root;
@@ -25,11 +25,11 @@ public:
 	UPROPERTY()									UBillboardComponent* SpriteComponent;
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 	void LoadEditorIcon();
 

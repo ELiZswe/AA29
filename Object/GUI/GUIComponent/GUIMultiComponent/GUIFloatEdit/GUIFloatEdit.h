@@ -13,7 +13,7 @@ class UGUIController;
 class UGUIComponent;
 
 UCLASS()
-class AA29_API UGUIFloatEdit : public UGUIMultiComponent
+class UGUIFloatEdit : public UGUIMultiComponent
 {
 	GENERATED_BODY()
 public:

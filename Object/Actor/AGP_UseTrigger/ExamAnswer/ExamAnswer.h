@@ -9,7 +9,7 @@
 class AMedExam;
 
 UCLASS()
-class AA29_API AExamAnswer : public AAGP_UseTrigger
+class AExamAnswer : public AAGP_UseTrigger
 {
 	GENERATED_BODY()
 public:

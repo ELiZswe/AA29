@@ -9,7 +9,7 @@
 class ADoorTrigger;
 
 UCLASS()
-class AA29_API UCond_WhenDoorIsOpen : public UCondition
+class UCond_WhenDoorIsOpen : public UCondition
 {
 	GENERATED_BODY()
 public:

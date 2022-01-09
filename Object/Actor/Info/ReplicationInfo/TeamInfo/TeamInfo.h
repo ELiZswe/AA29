@@ -17,16 +17,16 @@ class ATeamInfo : public AReplicationInfo
 public:
 	ATeamInfo();
 
-	UPROPERTY()										FString TeamName;								//var localized string TeamName;
-	UPROPERTY()										int32 Size;										//var int Size;								//number of players on this team in the level	
-	UPROPERTY()										int32 MaxSize;									//var int MaxSize;
-	UPROPERTY()										float Score;									//var float Score;
-	UPROPERTY()										int32 TeamIndex;								//var int TeamIndex;
-	UPROPERTY()										FColor TeamColor;								//var Object.Color TeamColor;
-	UPROPERTY()										FColor AltTeamColor;							//var Object.Color AltTeamColor;
-	UPROPERTY()										AActor* HomeBase;								//var Actor HomeBase;						// key objective associated with this team
-	UPROPERTY(EditAnywhere, BluePrintReadOnly)		APawn* DefaultPlayerClass;						//var() class<Pawn> DefaultPlayerClass;
-	UPROPERTY()										TArray<FString> ColorNames;						//var localized string ColorNames;
+	UPROPERTY()					FString			TeamName;				//var localized string TeamName;
+	UPROPERTY()					int32			Size;					//var int Size;								//number of players on this team in the level	
+	UPROPERTY()					int32			MaxSize;				//var int MaxSize;
+	UPROPERTY()					float			Score;					//var float Score;
+	UPROPERTY()					int32			TeamIndex;				//var int TeamIndex;
+	UPROPERTY()					FColor			TeamColor;				//var Object.Color TeamColor;
+	UPROPERTY()					FColor			AltTeamColor;			//var Object.Color AltTeamColor;
+	UPROPERTY()					AActor*			HomeBase;				//var Actor HomeBase;						// key objective associated with this team
+	UPROPERTY(EditAnywhere)		APawn*			DefaultPlayerClass;		//var() class<Pawn> DefaultPlayerClass;
+	UPROPERTY()					TArray<FString>	ColorNames;				//var localized string ColorNames;
 
 
 	/************************/
@@ -95,5 +95,5 @@ public:
 	bool AddToTeam(AController* Other);
 	void RemoveFromTeam(AController* Other);
 	void SetCharacters(TArray<FString> Chars);
-	void GetAllCharacters(TArray<FString> Chars);
+	void GetAllCharacters(TArray<FString>& Chars);
 };

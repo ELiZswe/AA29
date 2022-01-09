@@ -6,17 +6,17 @@
 #include "AA29/Object/ScriptObject/Condition/Condition.h"
 #include "Cond_WhenMedStudentSitting.generated.h"
 
-//class AStudentController;
+class AStudentController;
 
 UCLASS()
-class AA29_API UCond_WhenMedStudentSitting : public UCondition
+class UCond_WhenMedStudentSitting : public UCondition
 {
 	GENERATED_BODY()
 public:
 	UCond_WhenMedStudentSitting();
 
 	UPROPERTY()										bool bSitting;							//var bool bSitting;
-	//UPROPERTY()										AStudentController* Controller;			//var AGP.StudentController Controller;
+	UPROPERTY()										AStudentController* Controller;			//var AGP.StudentController Controller;
 
 	void Destroyed();
 	void ConditionStart();

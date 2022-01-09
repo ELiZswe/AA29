@@ -7,7 +7,7 @@
 #include "Fragment.generated.h"
 
 UCLASS()
-class AA29_API AFragment : public AEffects
+class AFragment : public AEffects
 {
 	GENERATED_BODY()
 public:

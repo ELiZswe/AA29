@@ -7,12 +7,12 @@
 #include "SpinnyWeap.generated.h"
 
 UCLASS()
-class AA29_API ASpinnyWeap : public AActor
+class ASpinnyWeap : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	ASpinnyWeap();
 
 	UPROPERTY()			int32				spinRate;					//var() int32 spinRate;
@@ -28,11 +28,11 @@ public:
 	void PlayNextAnim();
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 };

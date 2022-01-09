@@ -10,26 +10,26 @@
 class UParticleEmitter;
 
 UCLASS()
-class AA29_API ABaseShellEmitter : public AAA2_Emitter
+class ABaseShellEmitter : public AAA2_Emitter
 {
 	GENERATED_BODY()
 public:
 	ABaseShellEmitter();
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		bool bUseAnimNotifyEject;				//var bool bUseAnimNotifyEject;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		AActor* AttachTo3P;						//var Actor AttachTo3P;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		FBoneOffset Offset3P;					//var Object.BoneOffset Offset3P;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		FBoneOffset Offset1P;					//var Object.BoneOffset Offset1P;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		float fPitchModifier;					//var float fPitchModifier;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		UStaticMesh* ShellStaticMesh;			//var StaticMesh ShellStaticMesh;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		FVector ShellDrawScale;					//var FVector ShellDrawScale;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		FRotationRandomizer ShellDirInfo;		//var Object.RotationRandomizer ShellDirInfo;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		TArray<USoundBase*> sDirt;				//var array<Sound> sDirt;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		TArray<USoundBase*> sWater;				//var array<Sound> sWater;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		TArray<USoundBase*> sMetal;				//var array<Sound> sMetal;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		TArray<USoundBase*> sConcrete;			//var array<Sound> sConcrete;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		TArray<USoundBase*> sWood;				//var array<Sound> sWood;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		bool bInFirstPerson;					//var bool bInFirstPerson;
+	UPROPERTY(EditAnywhere)		bool bUseAnimNotifyEject;				//var bool bUseAnimNotifyEject;
+	UPROPERTY(EditAnywhere)		AActor* AttachTo3P;						//var Actor AttachTo3P;
+	UPROPERTY(EditAnywhere)		FBoneOffset Offset3P;					//var Object.BoneOffset Offset3P;
+	UPROPERTY(EditAnywhere)		FBoneOffset Offset1P;					//var Object.BoneOffset Offset1P;
+	UPROPERTY(EditAnywhere)		float fPitchModifier;					//var float fPitchModifier;
+	UPROPERTY(EditAnywhere)		UStaticMesh* ShellStaticMesh;			//var StaticMesh ShellStaticMesh;
+	UPROPERTY(EditAnywhere)		FVector ShellDrawScale;					//var FVector ShellDrawScale;
+	UPROPERTY(EditAnywhere)		FRotationRandomizer ShellDirInfo;		//var Object.RotationRandomizer ShellDirInfo;
+	UPROPERTY(EditAnywhere)		TArray<USoundBase*> sDirt;				//var array<Sound> sDirt;
+	UPROPERTY(EditAnywhere)		TArray<USoundBase*> sWater;				//var array<Sound> sWater;
+	UPROPERTY(EditAnywhere)		TArray<USoundBase*> sMetal;				//var array<Sound> sMetal;
+	UPROPERTY(EditAnywhere)		TArray<USoundBase*> sConcrete;			//var array<Sound> sConcrete;
+	UPROPERTY(EditAnywhere)		TArray<USoundBase*> sWood;				//var array<Sound> sWood;
+	UPROPERTY(EditAnywhere)		bool bInFirstPerson;					//var bool bInFirstPerson;
 
 
 	void PostBeginPlay();

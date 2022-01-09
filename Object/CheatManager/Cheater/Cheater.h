@@ -10,7 +10,7 @@ class ASoldierClass;
 class ASoldierRole;
 
 UCLASS()
-class AA29_API UCheater : public UAA2_CheatManager
+class UCheater : public UAA2_CheatManager
 {
 	GENERATED_BODY()
 public:

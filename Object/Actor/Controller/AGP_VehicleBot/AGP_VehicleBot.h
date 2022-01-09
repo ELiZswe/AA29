@@ -9,7 +9,7 @@
 class AAGP_VehicleNode;
 
 UCLASS()
-class AA29_API AAGP_VehicleBot : public AController
+class AAGP_VehicleBot : public AController
 {
 	GENERATED_BODY()
 public:

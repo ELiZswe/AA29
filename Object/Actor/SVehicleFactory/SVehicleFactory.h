@@ -12,12 +12,12 @@ class UBillboardComponent;
 class AVehicle;
 
 UCLASS()
-class AA29_API ASVehicleFactory : public AActor
+class ASVehicleFactory : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	ASVehicleFactory();
 
 	UPROPERTY()								ANavigationPoint*			myMarker;				//var NavigationPoint myMarker;
@@ -37,12 +37,12 @@ public:
 	void Trigger(AActor* Other, APawn* EventInstigator);
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 	void LoadEditorIcon();
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 };

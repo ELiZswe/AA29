@@ -17,13 +17,13 @@ AdebugTracer::AdebugTracer()
 	//bBlockCoronaTraces = false;
 }
 
-// Called when the game starts or when spawned
+
 void AdebugTracer::BeginPlay()
 {
 	Super::BeginPlay();
 }
 
-// Called every frame
+
 void AdebugTracer::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);

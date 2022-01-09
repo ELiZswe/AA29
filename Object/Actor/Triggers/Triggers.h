@@ -10,12 +10,12 @@
 
 
 UCLASS()
-class AA29_API ATriggers : public AActor
+class ATriggers : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	ATriggers();
 
 
@@ -24,26 +24,26 @@ public:
 
 
 	//From Actor
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		bool bIsLocal;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		bool bUseCylinderCollision;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		bool bCollideActors;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		bool bBlockBulletTraces;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		bool bBlockCoronaTraces;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		int32 CollisionRadius;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		FVector	ColLocation;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		int32 CollisionHeight;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		FName Event;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		FString Group;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		FString InitialState;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		FString Tag;
+	UPROPERTY(EditAnywhere)		bool bIsLocal;
+	UPROPERTY(EditAnywhere)		bool bUseCylinderCollision;
+	UPROPERTY(EditAnywhere)		bool bCollideActors;
+	UPROPERTY(EditAnywhere)		bool bBlockBulletTraces;
+	UPROPERTY(EditAnywhere)		bool bBlockCoronaTraces;
+	UPROPERTY(EditAnywhere)		int32 CollisionRadius;
+	UPROPERTY(EditAnywhere)		FVector	ColLocation;
+	UPROPERTY(EditAnywhere)		int32 CollisionHeight;
+	UPROPERTY(EditAnywhere)		FName Event;
+	UPROPERTY(EditAnywhere)		FString Group;
+	UPROPERTY(EditAnywhere)		FString InitialState;
+	UPROPERTY(EditAnywhere)		FString Tag;
 
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 };

@@ -9,7 +9,7 @@
 class UMatSubAction;
 
 UCLASS()
-class AA29_API UAnimNotify_MatSubAction : public UAA2_AnimNotify
+class UAnimNotify_MatSubAction : public UAA2_AnimNotify
 {
 	GENERATED_BODY()
 public:

@@ -9,7 +9,7 @@
 class AAnimationController;
 
 UCLASS()
-class AA29_API UDir_ControlAnimation : public UDirection
+class UDir_ControlAnimation : public UDirection
 {
 	GENERATED_BODY()
 public:

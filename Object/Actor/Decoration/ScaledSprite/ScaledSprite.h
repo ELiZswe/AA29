@@ -10,7 +10,7 @@
  * 
  */
 UCLASS()
-class AA29_API AScaledSprite : public ADecoration
+class AScaledSprite : public ADecoration
 {
 	GENERATED_BODY()
 public:

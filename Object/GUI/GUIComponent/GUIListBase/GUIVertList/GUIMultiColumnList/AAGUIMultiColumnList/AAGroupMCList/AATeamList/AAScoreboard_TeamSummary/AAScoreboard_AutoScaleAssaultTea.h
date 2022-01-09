@@ -10,7 +10,7 @@
  * 
  */
 UCLASS()
-class AA29_API UAAScoreboard_AutoScaleAssaultTea : public UAAScoreboard_TeamSummary
+class UAAScoreboard_AutoScaleAssaultTea : public UAAScoreboard_TeamSummary
 {
 	GENERATED_BODY()
 public:

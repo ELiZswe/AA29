@@ -9,12 +9,12 @@
 #include "AGP_UseTrigger.generated.h"
 
 UCLASS()
-class AA29_API AAGP_UseTrigger : public AActor
+class AAGP_UseTrigger : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	AAGP_UseTrigger();
 
 
@@ -45,12 +45,12 @@ public:
 	void Timer();
 
 protected:
-	// Called when the game starts or when spawned
+	
 
 	UFUNCTION()							void LoadEditorIcon();
 	UFUNCTION()							void LoadMesh();
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 };

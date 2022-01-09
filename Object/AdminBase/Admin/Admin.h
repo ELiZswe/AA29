@@ -7,7 +7,7 @@
 #include "Admin.generated.h"
 
 UCLASS()
-class AA29_API UAdmin : public UAdminBase
+class UAdmin : public UAdminBase
 {
 	GENERATED_BODY()
 public:

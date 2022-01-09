@@ -10,28 +10,28 @@
 class USkeletalMesh;
 
 UCLASS()
-class AA29_API ABase3pAmmoRound : public AActor
+class ABase3pAmmoRound : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	ABase3pAmmoRound();
 
 	//From Actor:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		UStaticMesh* StaticMesh;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		float DrawScale;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		UTexture2D* Texture;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		USkeletalMesh* Mesh;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		EDrawType DrawType;
+	UPROPERTY(EditAnywhere)		UStaticMesh* StaticMesh;
+	UPROPERTY(EditAnywhere)		float DrawScale;
+	UPROPERTY(EditAnywhere)		UTexture2D* Texture;
+	UPROPERTY(EditAnywhere)		USkeletalMesh* Mesh;
+	UPROPERTY(EditAnywhere)		EDrawType DrawType;
 
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 	//virtual void IsRoundVisible() ;

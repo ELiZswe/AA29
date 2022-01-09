@@ -9,7 +9,7 @@
 class AAA2_PlayerState;
 
 UCLASS()
-class AA29_API AScoreBoardDeathMatch : public AScoreBoard
+class AScoreBoardDeathMatch : public AScoreBoard
 {
 	GENERATED_BODY()
 public:

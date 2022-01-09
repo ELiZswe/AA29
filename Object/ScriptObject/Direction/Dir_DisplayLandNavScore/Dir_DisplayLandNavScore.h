@@ -10,7 +10,7 @@ class AHumanController;
 class ALandNavScoreManager;
 
 UCLASS()
-class AA29_API UDir_DisplayLandNavScore : public UDirection
+class UDir_DisplayLandNavScore : public UDirection
 {
 	GENERATED_BODY()
 public:

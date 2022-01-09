@@ -12,7 +12,7 @@ class AVoiceChatRoom;
 class UUT2MusicManager;
 
 UCLASS(Config = Game)
-class AA29_API UExtendedConsole : public UConsole
+class UExtendedConsole : public UConsole
 {
 	GENERATED_BODY()
 public:

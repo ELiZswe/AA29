@@ -7,12 +7,12 @@
 #include "RandCivilianManager.generated.h"
 
 UCLASS()
-class AA29_API ARandCivilianManager : public AActor
+class ARandCivilianManager : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	ARandCivilianManager();
 
 	UPROPERTY()													AController* C;						//var Controller C;
@@ -28,11 +28,11 @@ public:
 	int32 FindRand(int32 Minimum, int32 Maximum);
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 };

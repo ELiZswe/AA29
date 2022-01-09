@@ -12,12 +12,12 @@ class UBillboardComponent;
 class USceneComponent;
 
 UCLASS()
-class AA29_API AMedExam : public AActor
+class AMedExam : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	AMedExam();
 
 	UPROPERTY()										UTexture2D* Texture;
@@ -34,12 +34,12 @@ public:
 	UPROPERTY(EditAnywhere)							TArray<FTestPage> TestPages;						//var() array<TestPage> TestPages
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 	void LoadMesh();
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 	void LoadEditorIcon();
 

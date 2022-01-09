@@ -10,7 +10,7 @@ class ATargetManager;
 class AHumanController;
 
 UCLASS()
-class AA29_API UDir_SetRifleRangeRating : public UDirection
+class UDir_SetRifleRangeRating : public UDirection
 {
 	GENERATED_BODY()
 public:

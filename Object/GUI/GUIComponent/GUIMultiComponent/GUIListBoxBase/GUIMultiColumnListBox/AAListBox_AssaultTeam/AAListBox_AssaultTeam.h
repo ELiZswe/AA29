@@ -10,13 +10,12 @@ class UGUIController;
 class UGUIComponent;
 
 UCLASS()
-class AA29_API UAAListBox_AssaultTeam : public UGUIMultiColumnListBox
+class UAAListBox_AssaultTeam : public UGUIMultiColumnListBox
 {
 	GENERATED_BODY()
 public:
 	UAAListBox_AssaultTeam();
 
-
 	void InitComponent(UGUIController* MyController, UGUIComponent* MyOwner);
-	void InternalOnDraw(UCanvas* C);
+	bool InternalOnDraw(UCanvas* C);
 };

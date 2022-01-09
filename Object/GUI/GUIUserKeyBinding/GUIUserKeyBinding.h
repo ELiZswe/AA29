@@ -8,7 +8,7 @@
 #include "GUIUserKeyBinding.generated.h"
 
 UCLASS()
-class AA29_API UGUIUserKeyBinding : public UGUI
+class UGUIUserKeyBinding : public UGUI
 {
 	GENERATED_BODY()
 public:

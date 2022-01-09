@@ -9,7 +9,7 @@
 class AHumanController;
 
 UCLASS()
-class AA29_API UDir_SetSmoothedView : public UDirection
+class UDir_SetSmoothedView : public UDirection
 {
 	GENERATED_BODY()
 public:

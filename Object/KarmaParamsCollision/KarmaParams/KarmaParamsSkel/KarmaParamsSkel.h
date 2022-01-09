@@ -7,7 +7,7 @@
 #include "KarmaParamsSkel.generated.h"
 
 UCLASS()
-class AA29_API UKarmaParamsSkel : public UKarmaParams
+class UKarmaParamsSkel : public UKarmaParams
 {
 	GENERATED_BODY()
 public:

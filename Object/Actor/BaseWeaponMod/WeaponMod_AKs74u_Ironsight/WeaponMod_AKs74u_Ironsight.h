@@ -9,7 +9,7 @@
 class USkeletalMesh;
 
 UCLASS()
-class AA29_API AWeaponMod_AKs74u_Ironsight : public ABaseWeaponMod
+class AWeaponMod_AKs74u_Ironsight : public ABaseWeaponMod
 {
 	GENERATED_BODY()
 public:

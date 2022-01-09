@@ -12,7 +12,7 @@ class ULadderInfo;
 class UMatchInfo;
 
 UCLASS()
-class AA29_API UGameProfile : public UObject
+class UGameProfile : public UObject
 {
 	GENERATED_BODY()
 public:

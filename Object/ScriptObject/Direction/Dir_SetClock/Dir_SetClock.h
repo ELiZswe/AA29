@@ -7,7 +7,7 @@
 #include "Dir_SetClock.generated.h"
 
 UCLASS()
-class AA29_API UDir_SetClock : public UDirection
+class UDir_SetClock : public UDirection
 {
 	GENERATED_BODY()
 public:

@@ -8,7 +8,7 @@
 #include "AGP_PlaneCraft.generated.h"
 
 UCLASS()
-class AA29_API AAGP_PlaneCraft : public AAGP_Vehicle
+class AAGP_PlaneCraft : public AAGP_Vehicle
 {
 	GENERATED_BODY()
 public:
@@ -33,14 +33,14 @@ public:
 	UPROPERTY()									TArray<FVector> ThrusterOffsets;				//var array<Vector> ThrusterOffsets;
 	UPROPERTY(EditAnywhere)						float CameraDistance;							//var() float CameraDistance;
 	UPROPERTY(EditAnywhere)						float CameraSwingRatio;							//var() float CameraSwingRatio;
-	//UPROPERTY(EditAnywhere)						FInterpCurve HoverForceCurve;					//var() Object.InterpCurve HoverForceCurve;
+	UPROPERTY(EditAnywhere)						FAA2_InterpCurve HoverForceCurve;					//var() Object.InterpCurve HoverForceCurve;
 	UPROPERTY(EditAnywhere)						float COMHeight;								//var() float COMHeight;
 	UPROPERTY(EditAnywhere)						bool bHoverOnGround;							//var() bool bHoverOnGround;
 	UPROPERTY(EditAnywhere)						float ThrustAcceleration;						//var() float ThrustAcceleration;
 	UPROPERTY(EditAnywhere)						float MaxThrust;								//var() float MaxThrust;
 	UPROPERTY(EditAnywhere)						float AirFactor;								//var() float AirFactor;
-	//UPROPERTY(EditAnywhere)						FInterpCurve DragCoefficientCurve;				//var() Object.InterpCurve DragCoefficientCurve;
-	//UPROPERTY(EditAnywhere)						FInterpCurve LiftCoefficientCurve;				//var() Object.InterpCurve LiftCoefficientCurve;
+	UPROPERTY(EditAnywhere)						FAA2_InterpCurve DragCoefficientCurve;				//var() Object.InterpCurve DragCoefficientCurve;
+	UPROPERTY(EditAnywhere)						FAA2_InterpCurve LiftCoefficientCurve;				//var() Object.InterpCurve LiftCoefficientCurve;
 
 	void PostNetBeginPlay();
 	void Destroyed();

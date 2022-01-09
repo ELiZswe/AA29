@@ -13,7 +13,7 @@ class UAABrowser_UpdateJoinAndPBPanel;
 class UGUILabel;
 
 UCLASS()
-class AA29_API UAADeploy_Internet : public UAABackgroundSubPanel
+class UAADeploy_Internet : public UAABackgroundSubPanel
 {
 	GENERATED_BODY()
 public:

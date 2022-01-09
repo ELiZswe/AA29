@@ -9,7 +9,7 @@
 class UUIMenu;
 
 UCLASS()
-class AA29_API UUIMenuItem : public UUIControl
+class UUIMenuItem : public UUIControl
 {
 	GENERATED_BODY()
 public:

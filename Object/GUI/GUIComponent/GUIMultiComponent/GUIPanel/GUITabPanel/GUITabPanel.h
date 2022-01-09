@@ -9,7 +9,7 @@
 class UGUITabButton;
 
 UCLASS()
-class AA29_API UGUITabPanel : public UGUIPanel
+class UGUITabPanel : public UGUIPanel
 {
 	GENERATED_BODY()
 public:

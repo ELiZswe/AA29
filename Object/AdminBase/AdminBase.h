@@ -9,7 +9,7 @@
 class AAccessControl;
 
 UCLASS()
-class AA29_API UAdminBase : public UObject
+class UAdminBase : public UObject
 {
 	GENERATED_BODY()
 public:

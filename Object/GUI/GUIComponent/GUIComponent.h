@@ -129,7 +129,7 @@ public:
 	void OnDragEnter(UGUIComponent* Sender);
 	void OnDragLeave(UGUIComponent* Sender);
 	void OnDragOver(UGUIComponent* Sender);
-	void PlayerOwner();
+	APlayerController* PlayerOwner();
 	void SetTimer(float Interval, bool bRepeat);
 	void KillTimer();
 	void AutoPosition(TArray<UGUIComponent*> Components, float LeftBound, float UpperBound, float RightBound, float LowerBound, float LeftPad, float UpperPad, float RightPad, float LowerPad, int32 NumberOfColumns, float ColumnPadding);
@@ -137,12 +137,12 @@ public:
 	void UpdateOffset(float PosX, float PosY, float PosW, float PosH);
 	float ActualWidth(float Val, bool bForce);
 	float ActualHeight(float Val, bool bForce);
-	void ActualLeft(float Val, bool bForce);
-	void ActualTop(float Val, bool bForce);
-	void RelativeLeft(float RealLeft, bool bForce);
-	void RelativeTop(float RealTop, bool bForce);
-	void RelativeWidth(float RealWidth, bool bForce);
-	void RelativeHeight(float RealHeight, bool bForce);
+	float ActualLeft(float Val, bool bForce);
+	float ActualTop(float Val, bool bForce);
+	float RelativeLeft(float RealLeft, bool bForce);
+	float RelativeTop(float RealTop, bool bForce);
+	float RelativeWidth(float RealWidth, bool bForce);
+	float RelativeHeight(float RealHeight, bool bForce);
 	void GetMenuPath();
 	void SpecialHit(bool bForce);
 	void ResolutionChanged(int32 ResX, int32 ResY);

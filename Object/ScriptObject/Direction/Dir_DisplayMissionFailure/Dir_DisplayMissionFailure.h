@@ -9,7 +9,7 @@
 class AHumanController;
 
 UCLASS()
-class AA29_API UDir_DisplayMissionFailure : public UDirection
+class UDir_DisplayMissionFailure : public UDirection
 {
 	GENERATED_BODY()
 public:

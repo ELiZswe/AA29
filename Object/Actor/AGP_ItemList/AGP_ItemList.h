@@ -9,12 +9,12 @@
 class AInventory;
 
 UCLASS()
-class AA29_API AAGP_ItemList : public AActor
+class AAGP_ItemList : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	AAGP_ItemList();
 
 	UPROPERTY()								TArray<int32> ItemArray;									//var array<int> ItemArray;
@@ -39,11 +39,11 @@ public:
 	AInventory* MakeItem(FString ClassName);
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 	void LoadEditorIcon();
 };

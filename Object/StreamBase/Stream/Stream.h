@@ -9,7 +9,7 @@
 class UStreamTag;
 
 UCLASS()
-class AA29_API UStream : public UStreamBase
+class UStream : public UStreamBase
 {
 	GENERATED_BODY()
 public:

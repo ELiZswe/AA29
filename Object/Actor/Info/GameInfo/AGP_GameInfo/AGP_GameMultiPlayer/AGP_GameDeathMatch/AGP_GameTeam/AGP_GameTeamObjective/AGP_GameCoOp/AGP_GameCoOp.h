@@ -9,7 +9,7 @@
 class AAA2_PlayerState;
 
 UCLASS()
-class AA29_API AAGP_GameCoOp : public AAGP_GameTeamObjective
+class AAGP_GameCoOp : public AAGP_GameTeamObjective
 {
 	GENERATED_BODY()
 public:

@@ -9,7 +9,7 @@
 class ALandNavScoreManager;
 
 UCLASS()
-class AA29_API UDir_SetLandNavScore : public UDirection
+class UDir_SetLandNavScore : public UDirection
 {
 	GENERATED_BODY()
 public:

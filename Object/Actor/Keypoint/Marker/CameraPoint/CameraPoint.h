@@ -9,7 +9,7 @@
 class AAGP_Pawn;
 
 UCLASS()
-class AA29_API ACameraPoint : public AMarker
+class ACameraPoint : public AMarker
 {
 	GENERATED_BODY()
 public:

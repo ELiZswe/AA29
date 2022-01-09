@@ -7,7 +7,7 @@
 #include "Counter.generated.h"
 
 UCLASS()
-class AA29_API ACounter : public ATriggers
+class ACounter : public ATriggers
 {
 	GENERATED_BODY()
 public:

@@ -9,7 +9,7 @@
 class UReachSpec;
 
 UCLASS()
-class AA29_API AHoverPathNode : public ARoadPathNode
+class AHoverPathNode : public ARoadPathNode
 {
 	GENERATED_BODY()
 public:

@@ -13,7 +13,7 @@ class ADieselSmoke;
 class ADustCloudEffect;
 
 UCLASS()
-class AA29_API AAGP_WheeledCraft : public AAGP_Vehicle
+class AAGP_WheeledCraft : public AAGP_Vehicle
 {
 	GENERATED_BODY()
 public:
@@ -82,8 +82,8 @@ public:
 	UPROPERTY(EditAnywhere)						float TransRatio;								//var() float TransRatio;
 	UPROPERTY(EditAnywhere)						int32 NumForwardGears;							//var() int NumForwardGears;
 	UPROPERTY(EditAnywhere)						TArray<float> GearRatios;						//var() float GearRatios;
-	//UPROPERTY(EditAnywhere)						FInterpCurve FInterpCurve;					//var() Object.InterpCurve TorqueCurve;
-	//UPROPERTY(EditAnywhere)						FInterpCurve MaxSteerAngleCurve;			//var() Object.InterpCurve MaxSteerAngleCurve;
+	UPROPERTY(EditAnywhere)						FAA2_InterpCurve TorqueCurve;					//var() Object.InterpCurve TorqueCurve;
+	UPROPERTY(EditAnywhere)						FAA2_InterpCurve MaxSteerAngleCurve;			//var() Object.InterpCurve MaxSteerAngleCurve;
 	UPROPERTY(EditAnywhere)						float MinBrakeFriction;							//var() float MinBrakeFriction;
 	UPROPERTY(EditAnywhere)						float ChassisTorqueScale;						//var() float ChassisTorqueScale;
 	UPROPERTY(EditAnywhere)						float FTScale;									//var() float FTScale;
@@ -100,9 +100,9 @@ public:
 	UPROPERTY(EditAnywhere)						float WheelHandbrakeSlip;						//var() float WheelHandbrakeSlip;
 	UPROPERTY(EditAnywhere)						float WheelLatFrictionScale;					//var() float WheelLatFrictionScale;
 	UPROPERTY(EditAnywhere)						float WheelLongFrictionScale;					//var() float WheelLongFrictionScale;
-	//UPROPERTY(EditAnywhere)						FInterpCurve WheelLatSlipFunc;				//var() Object.InterpCurve WheelLatSlipFunc;
+	UPROPERTY(EditAnywhere)						FAA2_InterpCurve WheelLatSlipFunc;				//var() Object.InterpCurve WheelLatSlipFunc;
 	UPROPERTY(EditAnywhere)						float WheelLongSlip;							//var() float WheelLongSlip;
-	//UPROPERTY(EditAnywhere)						FInterpCurve WheelLongFrictionFunc;			//var() Object.InterpCurve WheelLongFrictionFunc;
+	UPROPERTY(EditAnywhere)						FAA2_InterpCurve WheelLongFrictionFunc;			//var() Object.InterpCurve WheelLongFrictionFunc;
 	UPROPERTY(EditAnywhere)						float WheelInertia;								//var() float WheelInertia;
 	UPROPERTY(EditAnywhere)						float WheelAdhesion;							//var() float WheelAdhesion;
 	UPROPERTY(EditAnywhere)						float WheelRestitution;							//var() float WheelRestitution;
@@ -122,7 +122,6 @@ public:
 	void SVehicleUpdateParams();
 	void DrivingStatusChanged();
 	void Tick(float dt);
-	void ImpactDamageModifier();
-	void LimitPitch(int32 Pitch);
-
+	float ImpactDamageModifier();
+	int32 LimitPitch(int32 Pitch);
 };

@@ -16,7 +16,7 @@ class AGC_EL_StagingArea;
 class AGC_EL_LiveThrowArea;
 
 UCLASS()
-class AA29_API AGC_EL_MasterScript : public AFSTS_EL_Utilities
+class AGC_EL_MasterScript : public AFSTS_EL_Utilities
 {
 	GENERATED_BODY()
 public:

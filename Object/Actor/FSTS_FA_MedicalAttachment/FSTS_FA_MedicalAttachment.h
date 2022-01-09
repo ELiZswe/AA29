@@ -12,7 +12,7 @@ class AFSTS_FA_MedicalAttachment : public AActor
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	AFSTS_FA_MedicalAttachment();
 
 	UPROPERTY()			UStaticMesh*	AltStaticMesh;		//var StaticMesh AltStaticMesh;
@@ -22,11 +22,11 @@ public:
 	void SwitchToAltStaticMesh2();
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 };

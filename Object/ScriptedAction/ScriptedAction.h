@@ -10,7 +10,7 @@ class AScriptedSequence;
 class AScriptedController;
 
 UCLASS()
-class AA29_API UScriptedAction : public UObject
+class UScriptedAction : public UObject
 {
 	GENERATED_BODY()
 public:

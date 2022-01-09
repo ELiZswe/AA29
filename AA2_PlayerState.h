@@ -20,25 +20,26 @@ class ALinkedReplicationInfo;
 class AVoicePack;
 class AVoiceChatReplicationInfo;
 class AVehicle;
+class AAGP_Objective;
 
 UCLASS()
-class AA29_API AAA2_PlayerState : public APlayerState
+class AAA2_PlayerState : public APlayerState
 {
 	GENERATED_BODY()
 public:
 	AAA2_PlayerState();
 
 	//myOwn
-	UPROPERTY(Replicated)				TArray<TSubclassOf<AInventory>>		My_Pawn_Inventory;
-	UPROPERTY(Replicated)				FString								MyState;
-	UPROPERTY(Replicated)				int32								TeamID;											//var int TeamID;
-	UPROPERTY(Replicated)				TSubclassOf <class ASoldierClass>	SpawnClass;
-	UPROPERTY(Replicated)				TSubclassOf <class AAGP_Weapon>		CurrentWeapon;
-	UPROPERTY()				float fLastConnectionResponseTimeLimit;					//var const float fLastConnectionResponseTimeLimit;
-	UPROPERTY()				float fLastConnectionResponseTime;						//var const float fLastConnectionResponseTime;
-	UPROPERTY()				bool bPlayerAdmin;										//var bool bPlayerAdmin;
-	UPROPERTY()				FString sCurrentWeaponClass;							//var string sCurrentWeaponClass;
-	UPROPERTY()				FString LastLocationString;								//var string LastLocationString;
+	UPROPERTY(Replicated)	TArray<TSubclassOf<AInventory>>		My_Pawn_Inventory;
+	UPROPERTY(Replicated)	FString								MyState;
+	UPROPERTY(Replicated)	int32								TeamID;									//var int TeamID;
+	UPROPERTY(Replicated)	TSubclassOf <class ASoldierClass>	SpawnClass;
+	UPROPERTY(Replicated)	TSubclassOf <class AAGP_Weapon>		CurrentWeapon;
+	UPROPERTY()				float								fLastConnectionResponseTimeLimit;		//var const float fLastConnectionResponseTimeLimit;
+	UPROPERTY()				float								fLastConnectionResponseTime;			//var const float fLastConnectionResponseTime;
+	UPROPERTY()				bool								bPlayerAdmin;							//var bool bPlayerAdmin;
+	UPROPERTY()				FString								sCurrentWeaponClass;					//var string sCurrentWeaponClass;
+	UPROPERTY()				FString								LastLocationString;						//var string LastLocationString;
 	UPROPERTY()				AVolume* LastCommVol;									//var Volume LastCommVol;
 	UPROPERTY()				AVolume* CommVol;										//var Volume CommVol;
 	UPROPERTY()				bool bTournamentRestartTournamentRequest;				//var bool bTournamentRestartTournamentRequest;
@@ -133,62 +134,54 @@ public:
 	UPROPERTY()				int32 Score_Wins;										//var int Score_Wins;
 	UPROPERTY()				int32 Score_Leadership;									//var int Score_Leadership;
 	UPROPERTY()				int32 Score_Total;										//var int Score_Total;
-	UPROPERTY()				uint8 DesiredTeam;										//var byte DesiredTeam;
-	UPROPERTY()				float RadarBlinkEndTime;								//var float RadarBlinkEndTime;
-	UPROPERTY()				float RadarBlinkStartTime;								//var float RadarBlinkStartTime;
-	UPROPERTY()				float BlinkLatency;										//var float BlinkLatency;
-	UPROPERTY()				float LastRadarBlinkEndTime;							//var float LastRadarBlinkEndTime;
-	UPROPERTY()				float LastRadarBlinkStartTime;							//var float LastRadarBlinkStartTime;
-	UPROPERTY()				int32 RadarDrawOpacity;									//var int RadarDrawOpacity;
-	UPROPERTY()				bool bVisibleLastTick;									//var bool bVisibleLastTick;
-	UPROPERTY()				uint8 VoiceID;											//var byte VoiceID;
-	UPROPERTY()				int32 VoiceMemberMask;									//var int VoiceMemberMask;
-	UPROPERTY()				int32 ActiveChannel;									//var int ActiveChannel;
-	UPROPERTY()				AVoiceChatRoom* PrivateChatRoom;						//var VoiceChatRoom PrivateChatRoom;
-	UPROPERTY()				bool bRegisteredChatRoom;								//var bool bRegisteredChatRoom;
-	UPROPERTY()				AVoiceChatReplicationInfo* VoiceInfo;					//var VoiceChatReplicationInfo VoiceInfo;
-	UPROPERTY()				ALinkedReplicationInfo* CustomReplicationInfo;			//var LinkedReplicationInfo CustomReplicationInfo;
-	UPROPERTY()				AVehicle* CurrentVehicle;								//var Vehicle CurrentVehicle;
-	UPROPERTY()				int32 Kills;											//var int Kills;
-	UPROPERTY()				int32 GoalsScored;										//var int GoalsScored;
-	UPROPERTY()				FString StringUnknown;									//var localized string StringUnknown;
-	UPROPERTY()				FString StringSpectating;								//var localized string StringSpectating;
-	UPROPERTY()				FString StringDead;										//var localized string StringDead;
-	UPROPERTY()				uint8 PacketLoss;										//var byte PacketLoss;
-	UPROPERTY()				bool bTeamNotified;										//var bool bTeamNotified;
-	UPROPERTY()				bool bNoTeam;											//var bool bNoTeam;
-	UPROPERTY()				bool bReceivedPing;										//var bool bReceivedPing;
-	UPROPERTY()				bool bWelcomed;											//var bool bWelcomed;
-	UPROPERTY()				bool bBot;												//var bool bBot;
-	UPROPERTY()				bool bOutOfLives;										//var bool bOutOfLives;
-	UPROPERTY()				bool bReadyToPlay;										//var bool bReadyToPlay;
-	UPROPERTY()				bool bWaitingPlayer;									//var bool bWaitingPlayer;
-	UPROPERTY()				bool bIsFemale;											//var bool bIsFemale;
-	UPROPERTY()				bool bAdmin;											//var bool bAdmin;
-	UPROPERTY()				FString VoiceTypeName;									//var string VoiceTypeName;
-	UPROPERTY()				AVoicePack* VoiceType;									//var class<VoicePack> VoiceType;
-	UPROPERTY()				ATeamInfo* Team;										//var TeamInfo Team;
-	UPROPERTY()				FString PlayerMAC;										//var string PlayerMAC;
-	UPROPERTY()				FString PreviousName;									//var string PreviousName;
-	UPROPERTY()				FString OldName;										//var string OldName;
-	UPROPERTY()				FString OldCharacterName;								//var string OldCharacterName;
-	UPROPERTY()				FString				CharacterName;									//var string CharacterName;
-	UPROPERTY()				FString				AuthUserName;									//var string AuthUserName;
-	UPROPERTY()				FString				PlayerName;										//var string PlayerName;
-	UPROPERTY()				int32				NumLives;											//var int NumLives;
-	UPROPERTY()				int32				LastPlayerZone;									//var ZoneInfo LastPlayerZone;
-	UPROPERTY()				AZoneInfo*			PlayerZone;									//var ZoneInfo PlayerZone;
-	UPROPERTY()				AVolume*			LastPlayerVolume;								//var Volume LastPlayerVolume;
-	UPROPERTY()				AVolume*			PlayerVolume;									//var Volume PlayerVolume;
-	UPROPERTY()				ADecoration*		HasFlag;									//var Decoration HasFlag;
-
-	//Already in PlayerState:
-	//UPROPERTY()				int32 StartTime;										//var int StartTime;
-	//UPROPERTY()				bool bOnlySpectator;									//var bool bOnlySpectator;
-	//UPROPERTY()				bool bIsSpectator;										//var bool bIsSpectator;
-	//UPROPERTY()				int32 PlayerID;											//var int PlayerID;
-	//UPROPERTY()				uint8 Ping;												//var byte Ping;
-
+	UPROPERTY()				uint8						DesiredTeam;					//var byte DesiredTeam;
+	UPROPERTY()				float						RadarBlinkEndTime;				//var float RadarBlinkEndTime;
+	UPROPERTY()				float						RadarBlinkStartTime;			//var float RadarBlinkStartTime;
+	UPROPERTY()				float						BlinkLatency;					//var float BlinkLatency;
+	UPROPERTY()				float						LastRadarBlinkEndTime;			//var float LastRadarBlinkEndTime;
+	UPROPERTY()				float						LastRadarBlinkStartTime;		//var float LastRadarBlinkStartTime;
+	UPROPERTY()				int32						RadarDrawOpacity;				//var int RadarDrawOpacity;
+	UPROPERTY()				bool						bVisibleLastTick;				//var bool bVisibleLastTick;
+	UPROPERTY()				uint8						VoiceID;						//var byte VoiceID;
+	UPROPERTY()				int32						VoiceMemberMask;				//var int VoiceMemberMask;
+	UPROPERTY()				int32						ActiveChannel;					//var int ActiveChannel;
+	UPROPERTY()				AVoiceChatRoom*				PrivateChatRoom;				//var VoiceChatRoom PrivateChatRoom;
+	UPROPERTY()				bool						bRegisteredChatRoom;			//var bool bRegisteredChatRoom;
+	UPROPERTY()				AVoiceChatReplicationInfo*	VoiceInfo;						//var VoiceChatReplicationInfo VoiceInfo;
+	UPROPERTY()				ALinkedReplicationInfo*		CustomReplicationInfo;			//var LinkedReplicationInfo CustomReplicationInfo;
+	UPROPERTY()				AVehicle*					CurrentVehicle;					//var Vehicle CurrentVehicle;
+	UPROPERTY()				int32						Kills;							//var int Kills;
+	UPROPERTY()				int32						GoalsScored;					//var int GoalsScored;
+	UPROPERTY()				FString						StringUnknown;					//var localized string StringUnknown;
+	UPROPERTY()				FString						StringSpectating;				//var localized string StringSpectating;
+	UPROPERTY()				FString						StringDead;						//var localized string StringDead;
+	UPROPERTY()				uint8						PacketLoss;						//var byte PacketLoss;
+	UPROPERTY()				bool						bTeamNotified;					//var bool bTeamNotified;
+	UPROPERTY()				bool						bNoTeam;						//var bool bNoTeam;
+	UPROPERTY()				bool						bReceivedPing;					//var bool bReceivedPing;
+	UPROPERTY()				bool						bWelcomed;						//var bool bWelcomed;
+	UPROPERTY()				bool						bBot;							//var bool bBot;
+	UPROPERTY()				bool						bOutOfLives;					//var bool bOutOfLives;
+	UPROPERTY()				bool						bReadyToPlay;					//var bool bReadyToPlay;
+	UPROPERTY()				bool						bWaitingPlayer;					//var bool bWaitingPlayer;
+	UPROPERTY()				bool						bIsFemale;						//var bool bIsFemale;
+	UPROPERTY()				bool						bAdmin;							//var bool bAdmin;
+	UPROPERTY()				FString						VoiceTypeName;					//var string VoiceTypeName;
+	UPROPERTY()				AVoicePack*					VoiceType;						//var class<VoicePack> VoiceType;
+	UPROPERTY()				ATeamInfo*					Team;							//var TeamInfo Team;
+	UPROPERTY()				FString						PlayerMAC;						//var string PlayerMAC;
+	UPROPERTY()				FString						PreviousName;					//var string PreviousName;
+	UPROPERTY()				FString						OldName;						//var string OldName;
+	UPROPERTY()				FString						OldCharacterName;				//var string OldCharacterName;
+	UPROPERTY()				FString						CharacterName;					//var string CharacterName;
+	UPROPERTY()				FString						AuthUserName;					//var string AuthUserName;
+	UPROPERTY()				FString						PlayerName;						//var string PlayerName;
+	UPROPERTY()				int32						NumLives;						//var int NumLives;
+	UPROPERTY()				int32						LastPlayerZone;					//var ZoneInfo LastPlayerZone;
+	UPROPERTY()				AZoneInfo*					PlayerZone;						//var ZoneInfo PlayerZone;
+	UPROPERTY()				AVolume*					LastPlayerVolume;				//var Volume LastPlayerVolume;
+	UPROPERTY()				AVolume*					PlayerVolume;					//var Volume PlayerVolume;
+	UPROPERTY()				ADecoration*				HasFlag;						//var Decoration HasFlag;
 
 	UFUNCTION(BlueprintCallable)		void Set_My_Pawn_Inventory(TArray<TSubclassOf<AInventory>> this_inventory);
 	UFUNCTION(BlueprintCallable)		TArray<TSubclassOf<AInventory>> Get_My_Pawn_Inventory();
@@ -218,7 +211,7 @@ public:
 	void SetVoiceMemberMask(int32 NewMask);
 	virtual FString GetCallSign();
 	virtual FString GetNameCallSign();
-	//virtual void ContainedInBox(ABox* BBox);
+	bool ContainedInBox(FBox BBox);
 	virtual void UpdateCommVolume();
 	virtual AVolume* GetCommVolume();
 	virtual AAGP_Objective* GetNearbyObjective(AVolume* C, bool bDefender);
@@ -235,7 +228,7 @@ public:
 	uint8 GetGroup();
 	virtual void SetGroup(uint8 newgroup);
 	void SUToggle();
-	virtual bool SuperUser(bool bCheckEnabled);
+	bool SuperUser(bool bCheckEnabled);
 	bool Administrator();
 	virtual bool IsPlayerAdmin();
 	int32 GetExperience();
@@ -264,7 +257,7 @@ public:
 	float GetMultiplier();
 	int32 GetSLBonus();
 	int32 GetFTLBonus();
-	void CalculateLeaderScore();
+	int32 CalculateLeaderScore();
 	void CalculateLeaderPenalty();
 	void IncrementCumulativeScores();
 	int32 CalculateExperience();
@@ -291,7 +284,5 @@ public:
 	AAA2_PlayerState* GetFTLeader();
 	void SubmitPlayerRequest(int32 UnitID, int32 Index);
 	void RemovePlayerRequest(AAA2_PlayerState* PRI);
-	void CanScore();
-
-
+	bool CanScore();
 };

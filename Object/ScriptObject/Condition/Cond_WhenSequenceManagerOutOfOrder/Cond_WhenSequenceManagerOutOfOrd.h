@@ -9,7 +9,7 @@
 class ASequenceManager;
 
 UCLASS()
-class AA29_API UCond_WhenSequenceManagerOutOfOrd : public UCondition
+class UCond_WhenSequenceManagerOutOfOrd : public UCondition
 {
 	GENERATED_BODY()
 public:

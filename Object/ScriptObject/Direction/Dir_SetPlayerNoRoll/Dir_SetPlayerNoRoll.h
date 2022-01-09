@@ -9,7 +9,7 @@
 class AHumanController;
 
 UCLASS()
-class AA29_API UDir_SetPlayerNoRoll : public UDirection
+class UDir_SetPlayerNoRoll : public UDirection
 {
 	GENERATED_BODY()
 public:

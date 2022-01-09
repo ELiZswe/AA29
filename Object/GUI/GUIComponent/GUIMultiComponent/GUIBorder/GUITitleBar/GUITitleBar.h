@@ -9,7 +9,7 @@
 class UGUITabControl;
 
 UCLASS()
-class AA29_API UGUITitleBar : public UGUIBorder
+class UGUITitleBar : public UGUIBorder
 {
 	GENERATED_BODY()
 public:

@@ -9,7 +9,7 @@
 class AAGP_Objective;
 
 UCLASS()
-class AA29_API UDir_EnableObjective : public UDirection
+class UDir_EnableObjective : public UDirection
 {
 	GENERATED_BODY()
 public:

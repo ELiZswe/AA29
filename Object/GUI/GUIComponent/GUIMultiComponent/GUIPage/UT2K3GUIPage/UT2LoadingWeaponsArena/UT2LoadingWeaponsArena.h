@@ -9,7 +9,7 @@
 class UUT2ArenaConfig;
 
 UCLASS()
-class AA29_API UUT2LoadingWeaponsArena : public UUT2K3GUIPage
+class UUT2LoadingWeaponsArena : public UUT2K3GUIPage
 {
 	GENERATED_BODY()
 public:

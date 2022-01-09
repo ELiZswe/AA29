@@ -9,7 +9,7 @@
 class AAGP_Pawn;
 
 UCLASS()
-class AA29_API URopeBeamEmitter : public UBeamEmitter
+class URopeBeamEmitter : public UBeamEmitter
 {
 	GENERATED_BODY()
 public:

@@ -8,14 +8,15 @@
 #include "AGP_USMortarTeamFDC.generated.h"
 
 class AAGP_USMortarTeam;
+class ABaseProjectile;
 
 UCLASS()
-class AA29_API AAGP_USMortarTeamFDC : public AActor
+class AAGP_USMortarTeamFDC : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	AAGP_USMortarTeamFDC();
 
 	UPROPERTY()																	int32 iTotalRoundsFired;							//var int iTotalRoundsFired;
@@ -82,8 +83,8 @@ public:
 	UPROPERTY()																	TArray<USoundBase*> asndFONumbers;					//var array<Sound> asndFONumbers;
 	UPROPERTY()																	TArray<USoundBase*> asndFDCNumbers;					//var array<Sound> asndFDCNumbers;
 	UPROPERTY()																	TArray<USoundBase*> asndQueue;						//var array<Sound> asndQueue;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "USMortarTeamFDC")	float fpBusyRating;									//var(USMortarTeamFDC) float fpBusyRating;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "USMortarTeamFDC")	int32 iTeamID;										//var(USMortarTeamFDC) int iTeamID;
+	UPROPERTY(EditAnywhere, Category = "USMortarTeamFDC")	float fpBusyRating;									//var(USMortarTeamFDC) float fpBusyRating;
+	UPROPERTY(EditAnywhere, Category = "USMortarTeamFDC")	int32 iTeamID;										//var(USMortarTeamFDC) int iTeamID;
 
 	UFUNCTION()	void Reset();
 	UFUNCTION()	void StartPolarFireMission(FString sMissionTypeRequest, FString sTargetType_);
@@ -118,10 +119,10 @@ public:
 	UFUNCTION()	void TransmitAudioRadioNumber(int32 iNumber, bool bFDCNumber);
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 };

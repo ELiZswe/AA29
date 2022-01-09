@@ -9,7 +9,7 @@
 
 
 UCLASS()
-class AA29_API UPlaylistParserBase : public UStreamInterface
+class UPlaylistParserBase : public UStreamInterface
 {
 	GENERATED_BODY()
 public:

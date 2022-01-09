@@ -10,7 +10,7 @@ class AScoreKeeper;
 class UMissionResultDisplay;
 
 UCLASS()
-class AA29_API UMissionResultsFrame : public UUIFrame
+class UMissionResultsFrame : public UUIFrame
 {
 	GENERATED_BODY()
 public:

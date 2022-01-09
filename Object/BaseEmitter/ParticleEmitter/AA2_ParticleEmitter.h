@@ -9,7 +9,7 @@
 #include "AA2_ParticleEmitter.generated.h"
 
 UCLASS()
-class AA29_API UAA2_ParticleEmitter : public UBaseEmitter
+class UAA2_ParticleEmitter : public UBaseEmitter
 {
 	GENERATED_BODY()
 public:
@@ -91,13 +91,8 @@ public:
 	UPROPERTY(EditAnywhere, Category = "General")			int32 MaxParticles;										//var(General) const int32 MaxParticles;
 	UPROPERTY(EditAnywhere, Category = "Local")				FRange AutoResetTimeRange;								//var(Local) Range AutoResetTimeRange;
 	UPROPERTY(EditAnywhere, Category = "Local")				FString Name;											//var(Local) FString Name;
-
-
 	UPROPERTY(EditAnywhere, Category = "Local")				TEnumAsByte<EDetailMode>	DetailMode;				//var(Local) Object.EDetailMode DetailMode;
-	
-																													
-	//UPROPERTY(EditAnywhere, Category = "Local")				EDetailMode DetailMode;									//var(Local) Object.EDetailMode DetailMode;
-	
+	// UPROPERTY(EditAnywhere, Category = "Local")				EDetailMode DetailMode;									//var(Local) Object.EDetailMode DetailMode;
 	UPROPERTY(EditAnywhere, Category = "Location")			FVector StartLocationOffset;							//var(Location) Vector StartLocationOffset;
 	UPROPERTY(EditAnywhere, Category = "Location")			FRangeVector StartLocationRange;						//var(Location) RangeVector StartLocationRange;
 	UPROPERTY(EditAnywhere, Category = "Location")			int32 AddLocationFromOtherEmitter;						//var(Location) int32 AddLocationFromOtherEmitter;
@@ -200,10 +195,7 @@ public:
 	UPROPERTY(EditAnywhere, Category = "AGP")				bool bWeirdSpinOnCollide;								//var(AGP) bool bWeirdSpinOnCollide;
 	UPROPERTY(EditAnywhere, Category = "AGP")				float WeirdBounce;										//var(AGP) float WeirdBounce;
 
-	
-
 	void SpawnParticle(int32 Amount);
 	void Trigger();
 	void Reset();
-
 };

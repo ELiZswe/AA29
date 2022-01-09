@@ -7,11 +7,11 @@
 #include "AA29/AA29.h"
 #include "F18AirStrike.generated.h"
 
-//class ASupportEffect;
+class ASupportEffect;
 class UaDamageType;
 
 UCLASS()
-class AA29_API AF18AirStrike : public AAirStrike
+class AF18AirStrike : public AAirStrike
 {
 	GENERATED_BODY()
 public:
@@ -20,7 +20,7 @@ public:
 	UPROPERTY()						USoundBase*			GlobalSound;				//var Sound GlobalSound;
 	UPROPERTY()						USoundBase*			FireSound;					//var() Sound FireSound;
 	UPROPERTY()						FVector				MarkLocation;				//var() Vector MarkLocation;
-	//UPROPERTY()						ASupportEffect*		SupportEffectClass;			//var() class<SupportEffect> SupportEffectClass;
+	UPROPERTY()						ASupportEffect*		SupportEffectClass;			//var() class<SupportEffect> SupportEffectClass;
 	UPROPERTY()						int32				Damage;						//var() int32 Damage;
 	UPROPERTY()						float				MomentumTransfer;			//var() float MomentumTransfer;
 	UPROPERTY()						float				DamageRadius;				//var() float DamageRadius;
@@ -29,7 +29,7 @@ public:
 	UPROPERTY()						UaDamageType*		DamageType;					//var() class<DamageType> DamageType;
 	UPROPERTY()						FVector				StrikeDirection;			//var Vector StrikeDirection;
 	UPROPERTY()						FVector				DamageLocation;				//var Vector DamageLocation;
-	UPROPERTY()						FBoneInfo			DamageBone;					//var Actor.BoneInfo DamageBone;
+	UPROPERTY()						FBoneInfo			DamageBone;					//var FBoneInfo DamageBone;
 	UPROPERTY()						UMaterialInstance*	DamageMaterial;				//var Material DamageMaterial;
 	UPROPERTY()						FVector				ShakeRotMag;				//var() Vector ShakeRotMag;
 	UPROPERTY()						FVector				ShakeRotRate;				//var() Vector ShakeRotRate;

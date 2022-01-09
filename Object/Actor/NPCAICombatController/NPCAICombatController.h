@@ -20,7 +20,7 @@ class ANPCAICombatController : public AActor
 	GENERATED_BODY()
 
 public:	
-	// Sets default values for this actor's properties
+	
 	ANPCAICombatController();
 
 	UPROPERTY(EditAnywhere, Category = "OrderDebugging")	bool								bDisableCombatController;				//var(OrderDebugging) bool bDisableCombatController;
@@ -145,7 +145,7 @@ public:
 protected:
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 };

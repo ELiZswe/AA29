@@ -7,7 +7,7 @@
 #include "Cond_WhenLSAnimEnds.generated.h"
 
 UCLASS()
-class AA29_API UCond_WhenLSAnimEnds : public UCondition
+class UCond_WhenLSAnimEnds : public UCondition
 {
 	GENERATED_BODY()
 public:

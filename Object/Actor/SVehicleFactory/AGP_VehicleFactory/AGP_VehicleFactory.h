@@ -37,4 +37,5 @@ public:
 	bool ValidateSpawnLocation(float Radius);
 	void SpawnBuildEffect();
 	void Timer();
+	void Trigger(AActor* Other, APawn* EventInstigator);
 };

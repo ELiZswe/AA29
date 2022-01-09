@@ -9,7 +9,7 @@
 class UMatchInfo;
 
 UCLASS()
-class AA29_API AUT2SP_LadderLoading : public AUT2LoadingPageBase
+class AUT2SP_LadderLoading : public AUT2LoadingPageBase
 {
 	GENERATED_BODY()
 public:

@@ -11,7 +11,7 @@ class UGUIComponent;
 class UGUIController;
 
 UCLASS()
-class AA29_API UServerBrowserMCList : public UGUIMultiColumnList
+class UServerBrowserMCList : public UGUIMultiColumnList
 {
 	GENERATED_BODY()
 public:

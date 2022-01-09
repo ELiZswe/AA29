@@ -9,7 +9,7 @@
 class AMBSGetServerListRequestAdapter;
 
 UCLASS()
-class AA29_API AServerBrowserDBMBS : public AServerBrowserBase
+class AServerBrowserDBMBS : public AServerBrowserBase
 {
 	GENERATED_BODY()
 public:

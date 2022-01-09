@@ -9,7 +9,7 @@
 class ATargetManager;
 
 UCLASS()
-class AA29_API UCond_WhenTargetManagerComplete : public UCondition
+class UCond_WhenTargetManagerComplete : public UCondition
 {
 	GENERATED_BODY()
 public:

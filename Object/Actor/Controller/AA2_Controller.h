@@ -22,7 +22,7 @@ class AAmmunition;
 class AInventory;
 
 UCLASS(Config = Game)
-class AA29_API AAA2_Controller : public AController
+class AAA2_Controller : public AController
 {
 	GENERATED_BODY()
 public:
@@ -137,7 +137,7 @@ public:
 		UPROPERTY()										float					fpTimeOfLastWeaponCollisionTest;	//var float fpTimeOfLastWeaponCollisionTest;
 
 		//Already In UE4 Controller
-		//UPROPERTY()										APawn* Pawn;								//var Pawn Pawn;
+		// UPROPERTY()										APawn* Pawn;								//var Pawn Pawn;
 
 		void LIPSincAnimEnd();
 		void DestinationOccupied();

@@ -9,7 +9,7 @@
 class UaDamageType;
 
 UCLASS()
-class AA29_API UBaseEmitter : public UObject
+class UBaseEmitter : public UObject
 {
 	GENERATED_BODY()
 public:

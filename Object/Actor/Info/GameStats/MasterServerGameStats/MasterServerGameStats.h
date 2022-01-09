@@ -9,7 +9,7 @@
 class AMasterServerUplink;
 
 UCLASS()
-class AA29_API AMasterServerGameStats : public AGameStats
+class AMasterServerGameStats : public AGameStats
 {
 	GENERATED_BODY()
 public:

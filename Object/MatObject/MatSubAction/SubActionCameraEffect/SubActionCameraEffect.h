@@ -6,10 +6,10 @@
 #include "AA29/Object/MatObject/MatSubAction/MatSubAction.h"
 #include "SubActionCameraEffect.generated.h"
 
-//class ACameraEffect;
+class UCameraEffect;
 
 UCLASS()
-class AA29_API USubActionCameraEffect : public UMatSubAction
+class USubActionCameraEffect : public UMatSubAction
 {
 	GENERATED_BODY()
 public:
@@ -18,5 +18,5 @@ public:
 	UPROPERTY(EditAnywhere)										bool DisableAfterDuration;									//var() bool DisableAfterDuration;
 	UPROPERTY(EditAnywhere)										float EndAlpha;								//var() float EndAlpha;
 	UPROPERTY(EditAnywhere)										float StartAlpha;								//var() float StartAlpha;
-	//UPROPERTY(EditAnywhere)										ACameraEffect* CameraEffect;						//var() CameraEffect CameraEffect;
+	UPROPERTY(EditAnywhere)										UCameraEffect* CameraEffect;						//var() CameraEffect CameraEffect;
 };

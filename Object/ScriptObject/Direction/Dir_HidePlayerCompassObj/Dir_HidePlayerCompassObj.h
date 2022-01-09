@@ -9,7 +9,7 @@
 class AHumanController;
 
 UCLASS()
-class AA29_API UDir_HidePlayerCompassObj : public UDirection
+class UDir_HidePlayerCompassObj : public UDirection
 {
 	GENERATED_BODY()
 public:

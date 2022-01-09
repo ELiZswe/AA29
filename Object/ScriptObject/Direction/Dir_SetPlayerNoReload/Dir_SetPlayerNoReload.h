@@ -9,7 +9,7 @@
 class AHumanController;
 
 UCLASS()
-class AA29_API UDir_SetPlayerNoReload : public UDirection
+class UDir_SetPlayerNoReload : public UDirection
 {
 	GENERATED_BODY()
 public:

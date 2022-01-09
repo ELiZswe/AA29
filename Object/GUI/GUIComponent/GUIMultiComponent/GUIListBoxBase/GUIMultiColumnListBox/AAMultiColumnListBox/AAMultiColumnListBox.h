@@ -10,13 +10,13 @@ class UGUIListBase;
 class UGUIComponent;
 
 UCLASS()
-class AA29_API UAAMultiColumnListBox : public UGUIMultiColumnListBox
+class UAAMultiColumnListBox : public UGUIMultiColumnListBox
 {
 	GENERATED_BODY()
 public:
 	UAAMultiColumnListBox();
 
-	void OnGetSortString(UGUIComponent* Sender, int32 Item, int32 Column);
+	FString OnGetSortString(UGUIComponent* Sender, int32 Item, int32 Column);
 	void InitBaseList(UGUIListBase* LocalList);
-	void InternalOnGetSortString(UGUIComponent* Sender, int32 Item, int32 Column);
+	FString InternalOnGetSortString(UGUIComponent* Sender, int32 Item, int32 Column);
 };

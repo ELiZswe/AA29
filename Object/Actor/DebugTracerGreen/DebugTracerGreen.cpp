@@ -18,14 +18,14 @@ ADebugTracerGreen::ADebugTracerGreen()
 
 }
 
-// Called when the game starts or when spawned
+
 void ADebugTracerGreen::BeginPlay()
 {
 	Super::BeginPlay();
 	
 }
 
-// Called every frame
+
 void ADebugTracerGreen::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);

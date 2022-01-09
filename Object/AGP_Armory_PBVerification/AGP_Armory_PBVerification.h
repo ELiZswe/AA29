@@ -7,7 +7,7 @@
 #include "AGP_Armory_PBVerification.generated.h"
 
 UCLASS()
-class AA29_API UAGP_Armory_PBVerification : public UObject
+class UAGP_Armory_PBVerification : public UObject
 {
 	GENERATED_BODY()
 public:

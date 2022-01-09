@@ -7,12 +7,11 @@
 #include "AA2_Info.generated.h"
 
 UCLASS()
-class AA29_API AAA2_Info : public AActor
+class AAA2_Info : public AActor
 {
 	GENERATED_BODY()
-	
+
 public:	
-	// Sets default values for this actor's properties
 	AAA2_Info();
 
 	// Standard PlayInfo groups
@@ -24,8 +23,6 @@ public:
 	UPROPERTY()			FString GameGroup;							//var const localized string GameGroup;
 	UPROPERTY()			FString RulesGroup;							//var const localized string RulesGroup;
 
-
-
 	//void FillPlayInfo(APlayInfo* PlayInfo);
 	bool AcceptPlayInfoProperty(FString PropertyName);
 	bool AllowClassRemoval();
@@ -33,11 +30,11 @@ public:
 	FString GetDescriptionText(FString PropName);
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 };

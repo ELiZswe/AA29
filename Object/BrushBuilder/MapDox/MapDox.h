@@ -8,9 +8,10 @@
 #include "MapDox.generated.h"
 
 class AAGP_PlayerStart;
+class ALevelInfo;
 
 UCLASS()
-class AA29_API UMapDox : public UObject
+class UMapDox : public UObject
 {
 	GENERATED_BODY()
 public:
@@ -33,7 +34,7 @@ public:
 	UPROPERTY(EditAnywhere)		FString					FileNameNoExtension;	//var() FString FileNameNoExtension;
 	UPROPERTY(EditAnywhere)		FString					ImageName;				//var() FString ImageName;
 	UPROPERTY()					FString					FileExtension;			//var FString FileExtension;
-	//UPROPERTY()				ALevelInfo*				myLevel;				//var LevelInfo myLevel;
+	UPROPERTY()					ALevelInfo*				myLevel;				//var LevelInfo myLevel;
 	UPROPERTY()					int32					ListItemCount;			//var int32 ListItemCount;
 	UPROPERTY()					int32					iMyTour;				//var int32 iMyTour;
 	UPROPERTY()					int32					iMyMission;				//var int32 iMyMission;

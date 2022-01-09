@@ -9,7 +9,7 @@
 class UaDamageType;
 
 UCLASS()
-class AA29_API AEmitterSpawner : public AAA2_Emitter
+class AEmitterSpawner : public AAA2_Emitter
 {
 	GENERATED_BODY()
 public:

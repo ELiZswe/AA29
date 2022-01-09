@@ -10,7 +10,7 @@
 class AAGP_IntVar;
 
 UCLASS()
-class AA29_API UCond_WhenIntVar : public UCondition
+class UCond_WhenIntVar : public UCondition
 {
 	GENERATED_BODY()
 public:

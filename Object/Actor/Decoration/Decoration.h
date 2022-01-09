@@ -11,11 +11,11 @@ class AFragment;
 class ANavigationPoint;
 
 UCLASS()
-class AA29_API ADecoration : public AActor
+class ADecoration : public AActor
 {
 	GENERATED_BODY()
 public:	
-	// Sets default values for this actor's properties
+	
 	ADecoration();
 
 
@@ -42,7 +42,7 @@ public:
 	void Drop(FVector NewVel);
 	void Landed(FVector HitNormal);
 	void HitWall(FVector HitNormal, AActor* Wall);
-	//void TakeDamage(int32 NDamage, Pawn instigatedBy, Vector HitLocation, Vector Momentum, class<DamageType>  DamageType, Actor.BoneInfo Bone, Controller KillerController, Actor ResponsibleActor, Material HitMaterial);
+	//void TakeDamage(int32 NDamage, Pawn instigatedBy, Vector HitLocation, Vector Momentum, class<DamageType>  DamageType, FBoneInfo Bone, Controller KillerController, Actor ResponsibleActor, Material HitMaterial);
 	void PhysicsVolumeChange(APhysicsVolume* NewVolume);
 	void Trigger(AActor* Other, APawn* EventInstigator);
 	void BaseChange();
@@ -51,11 +51,11 @@ public:
 	void Bump(AActor* Other);
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 };

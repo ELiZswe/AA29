@@ -97,7 +97,7 @@ void ADamagedEffect::PostBeginPlay()
 	local AGP_Vehicle V;
 	Super::PostBeginPlay();
 	V = AGP_Vehicle(Owner);
-	if (V != None)
+	if (V != nullptr)
 	{
 		SetEffectScale(V.DamagedEffectScale);
 		UpdateDamagedEffect(false, 0);

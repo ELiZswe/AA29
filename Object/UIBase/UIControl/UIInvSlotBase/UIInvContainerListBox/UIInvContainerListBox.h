@@ -10,15 +10,11 @@ class UUIScrollbar;
 
 
 UCLASS()
-class AA29_API UUIInvContainerListBox : public UUIInvSlotBase
+class UUIInvContainerListBox : public UUIInvSlotBase
 {
 	GENERATED_BODY()
 public:
 	UUIInvContainerListBox();
-
-
-	//const kBorderSize = 1;
-
 
 	UPROPERTY()										FPosition _BorderBottom;				//var UIBase.Position _BorderBottom;
 	UPROPERTY()										FPosition _BorderTop;					//var UIBase.Position _BorderTop;
@@ -34,17 +30,15 @@ public:
 	UPROPERTY()										int32 _iTopLine;						//var int _iTopLine;
 	UPROPERTY()										bool bButtonDown;						//var bool bButtonDown;
 
-
 	void Destroyed();
 	void MouseMove(int32 mX, int32 mY);
-	void ProcessKeyEvent(int32 Key, int32 Action, float Delta);
+	bool ProcessKeyEvent(int32 Key, int32 Action, float Delta);
 	void Draw(UCanvas* Canvas);
 	void AttachScrollbar(UUIScrollbar* cScrollbar, int32 Type);
 	void ScaleScrollbars(UCanvas* Canvas);
 	void ChildMessage(float Value);
-	void GetSelectedIndex();
+	int32 GetSelectedIndex();
 	void SetBorderTexture(UMaterialInstance* Tex);
 	void SetTextureDimensions(FPosition dim);
 	void ScaleControl(UCanvas* Canvas);
-
 };

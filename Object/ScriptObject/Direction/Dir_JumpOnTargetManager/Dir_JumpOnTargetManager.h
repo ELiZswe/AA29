@@ -9,7 +9,7 @@
 class ATargetManager;
 
 UCLASS()
-class AA29_API UDir_JumpOnTargetManager : public UDirection
+class UDir_JumpOnTargetManager : public UDirection
 {
 	GENERATED_BODY()
 public:

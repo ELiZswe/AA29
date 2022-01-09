@@ -10,7 +10,7 @@
  * 
  */
 UCLASS()
-class AA29_API AGameObject : public ADecoration
+class AGameObject : public ADecoration
 {
 	GENERATED_BODY()
 public:

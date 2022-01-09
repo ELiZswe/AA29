@@ -10,7 +10,7 @@ class UaDamageType;
 class AThrowWeaponPickup;
 
 UCLASS()
-class AA29_API ADamageTrigger : public ATriggers
+class ADamageTrigger : public ATriggers
 {
 	GENERATED_BODY()
 public:

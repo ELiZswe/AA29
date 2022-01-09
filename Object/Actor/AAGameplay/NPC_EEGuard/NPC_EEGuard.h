@@ -14,7 +14,7 @@ class AMultiTimer;
 class ADebugSphere;
 
 UCLASS()
-class AA29_API ANPC_EEGuard : public AAAGameplay
+class ANPC_EEGuard : public AAAGameplay
 {
 	GENERATED_BODY()
 public:
@@ -68,15 +68,13 @@ public:
 	UPROPERTY(EditAnywhere)					float DetectDistanceAudioMin;						//var() float DetectDistanceAudioMin;
 	UPROPERTY(EditAnywhere)					float DetectDistanceVisual;							//var() float DetectDistanceVisual;
 
-
-
 	void PostBeginPlay();
 	void Destroyed();
-	void GetEyePosition();
-	void GetEyeRotation();
+	FVector GetEyePosition();
+	FRotator GetEyeRotation();
 	void GetFriends();
 	void GetLookTargets();
-	void CreateDebugSphere(UMaterialInstance* aTexture, float YawRate);
+	ADebugSphere* CreateDebugSphere(UMaterialInstance* aTexture, float YawRate);
 	void SetNewLookTarget();
 	void StopLookTargets();
 	void TurnToActor(AActor* Actor, float Rate);
@@ -90,20 +88,20 @@ public:
 	void DoAlertFriends();
 	void ExtAlertedByFriend(AActor* Instigator);
 	void ExtAlertedByDevice(AActor* Device, AActor* Instigator, bool bPlayerSpotted);
-	void GetVisualDetectDistance();
-	void GetAudioDetectDistance();
-	void GetPlayerDistance();
-	void PlayerIsVisible();
-	void PlayerIsReallyVisible();
+	float GetVisualDetectDistance();
+	float GetAudioDetectDistance();
+	float GetPlayerDistance();
+	bool PlayerIsVisible();
+	bool PlayerIsReallyVisible();
 	int32 GetReqVisBones();
-	void PlayerIsAudible();
-	void GetPlayerNoise();
-	void GetAlertLevelValue();
+	bool PlayerIsAudible();
+	float GetPlayerNoise();
+	float GetAlertLevelValue();
 	void ExtMakeNoise(AActor* Instigator, float Loudness);
 	void ExtNoiseHeard();
-	void infront(FVector vec);
-	void FRandS();
-	void RandS(int32 Num);
+	float infront(FVector vec);
+	float FRandS();
+	int32 RandS(int32 Num);
 	void ResetMe();
 	void DisableMe();
 	void EVENT_HeardSomething();

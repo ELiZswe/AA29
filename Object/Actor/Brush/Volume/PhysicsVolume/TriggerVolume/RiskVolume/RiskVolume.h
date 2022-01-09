@@ -10,7 +10,7 @@
 class AVolumeTimer;
 
 UCLASS()
-class AA29_API ARiskVolume : public AAA2_PhysicsVolume
+class ARiskVolume : public AAA2_PhysicsVolume
 {
 	GENERATED_BODY()
 public:
@@ -24,7 +24,7 @@ public:
 	UPROPERTY(EditAnywhere)									bool EActorType;						//var() bool EActorType;
 	UPROPERTY(EditAnywhere)									TArray<AActor*> SpecificActors;			//var() array<class<Actor> > SpecificActors;
 	UPROPERTY(EditAnywhere)									bool bDoUnTrigger;						//var() bool bDoUnTrigger;
-	//UPROPERTY(EditAnywhere)									EActorType ActorType;					//var() EActorType ActorType;
+	// UPROPERTY(EditAnywhere)									EActorType ActorType;					//var() EActorType ActorType;
 
 	void PawnEnteredVolume(APawn* Other);
 	void PawnLeavingVolume(APawn* Other);

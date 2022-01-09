@@ -13,7 +13,7 @@ class ASideEffect : public AActor
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	ASideEffect();
 	
 	UPROPERTY()		bool	bReplaceExtantEffects;		//var bool bReplaceExtantEffects;
@@ -28,12 +28,12 @@ public:
 	void End();
 
 	//From Actor
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		EDrawType DrawType;
+	UPROPERTY(EditAnywhere)		EDrawType DrawType;
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 };

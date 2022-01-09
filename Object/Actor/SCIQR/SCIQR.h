@@ -11,16 +11,16 @@ class ATcpLinkSCI;
 
 
 UCLASS()
-class AA29_API ASCIQR : public AActor
+class ASCIQR : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	ASCIQR();
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
@@ -33,7 +33,7 @@ public:
 
 
 
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 	void PreBeginPlay();

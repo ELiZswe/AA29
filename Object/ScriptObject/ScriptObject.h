@@ -8,7 +8,7 @@
 #include "ScriptObject.generated.h"
 
 UCLASS()
-class AA29_API UScriptObject : public UObject
+class UScriptObject : public UObject
 {
 	GENERATED_BODY()
 public:

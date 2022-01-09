@@ -15,14 +15,14 @@ ASpriteSlave::ASpriteSlave()
 	//bBlockCoronaTraces = false;
 }
 
-// Called when the game starts or when spawned
+
 void ASpriteSlave::BeginPlay()
 {
 	Super::BeginPlay();
 	
 }
 
-// Called every frame
+
 void ASpriteSlave::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);

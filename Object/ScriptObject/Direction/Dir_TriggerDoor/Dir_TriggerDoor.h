@@ -9,7 +9,7 @@
 class ADoorTrigger;
 
 UCLASS()
-class AA29_API UDir_TriggerDoor : public UDirection
+class UDir_TriggerDoor : public UDirection
 {
 	GENERATED_BODY()
 public:

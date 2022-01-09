@@ -16,7 +16,7 @@ class ADBMBS : public AActor
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	ADBMBS();
 
 	UPROPERTY()						bool		bLoggedIn;						//var transient bool bLoggedIn;
@@ -58,6 +58,6 @@ public:
 
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 };

@@ -11,7 +11,7 @@ class APawn;
 class ANPCBaseController;
 
 UCLASS()
-class AA29_API ANPCConversationPack : public AActor
+class ANPCConversationPack : public AActor
 {
 	GENERATED_BODY()
 	
@@ -47,11 +47,11 @@ public:
 	void EndConversation();
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 };

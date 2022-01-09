@@ -9,7 +9,7 @@
 class AAGP_Objective;
 
 UCLASS()
-class AA29_API AROEVolume : public AAA2_Volume
+class AROEVolume : public AAA2_Volume
 {
 	GENERATED_BODY()
 public:
@@ -33,6 +33,6 @@ public:
 
 	void PostBeginPlay();
 	void ConfigureLinkDamage();
-	//void TakeDamage(int32 Damage, Pawn instigatedBy, Vector HitLocation, Vector Momentum, class<DamageType>  DamageType, Actor.BoneInfo Bone, Controller KillerController, Actor ResponsibleActor, Material HitMaterial);
+	//void TakeDamage(int32 Damage, Pawn instigatedBy, Vector HitLocation, Vector Momentum, class<DamageType>  DamageType, FBoneInfo Bone, Controller KillerController, Actor ResponsibleActor, Material HitMaterial);
 
 };

@@ -9,12 +9,12 @@
 class AProjectile;
 
 UCLASS()
-class AA29_API ASupportEffect : public AActor
+class ASupportEffect : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	ASupportEffect();
 
 	UPROPERTY()							FVector			HitLocation;					//var Vector HitLocation;
@@ -36,11 +36,11 @@ public:
 	void SpawnEffects();
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 };

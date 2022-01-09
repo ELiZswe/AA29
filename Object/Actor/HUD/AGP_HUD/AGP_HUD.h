@@ -7,6 +7,7 @@
 #include "AA29/MyEnums.h"
 #include "Engine/Canvas.h"
 #include "AA29/Object/Actor/Controller/PlayerController/HumanController/HumanController.h"
+#include "AA29/Object/Actor/ServerBrowserBase/ServerBrowserBase.h"
 #include "AGP_HUD.generated.h"
 
 class ULocalMessage;
@@ -23,7 +24,7 @@ class AServerBrowserSCI;
 class AServerBrowserDBMBS;
 
 UCLASS()
-class AA29_API AAGP_HUD : public AAA2_HUD
+class AAGP_HUD : public AAA2_HUD
 {
 	GENERATED_BODY()
 
@@ -44,7 +45,6 @@ public:
 	UPROPERTY()													bool bShowMainMenu;							//var bool bShowMainMenu;
 	UPROPERTY()													bool bShowMissionResults;					//var bool bShowMissionResults;
 //Already in HUD	
-	//UPROPERTY()												bool bShowHUD;								//var bool bShowHUD;									// display any HUD elements
 	UPROPERTY()													bool bShowVersion;							//var bool bShowVersion;								// display the version number
 	UPROPERTY()													bool bShowLogo;								//var bool bShowLogo;									// display the developer logo
 	UPROPERTY()													bool bShowTimer;							//var bool bShowTimer;
@@ -85,7 +85,7 @@ public:
 	UPROPERTY()													FString LongMessage;						//var string LongMessage;								// long message to display
 	UPROPERTY()													float _fCMessageTimeout;					//var float _fCMessageTimeout;							// time to stop drawing the message
 	UPROPERTY()													float LongMessageTimeout;					//var float LongMessageTimeout;							// time to stop drawing long message
-	//UPROPERTY()												AFont* LongMessageFont;						//var Font LongMessageFont;							// Font to use when drawing long message (optional)
+	UPROPERTY()													UFont* LongMessageFont;						//var Font LongMessageFont;							// Font to use when drawing long message (optional)
 	UPROPERTY()													UTexture2D* tArmyBox;						//var Texture tArmyBox;
 	UPROPERTY()													int32 PMessage;								//var int PMessage;
 	UPROPERTY()													int32 iPrevHUDAlpha;						//var int iPrevHUDAlpha;
@@ -99,7 +99,7 @@ public:
 	UPROPERTY()													FString sServerMode;						//var string sServerMode;
 	UPROPERTY(Config)											int32 RadarMaskIndex;						//var config int RadarMaskIndex;
 	UPROPERTY(Config)											bool bRotateRadarAroundPlayer;				//var config bool bRotateRadarAroundPlayer;
-	//UPROPERTY()												AMovieTexture* mtMovieToPlay;				//var MovieTexture mtMovieToPlay;
+	UPROPERTY()													UMaterialInstance* mtMovieToPlay;				//var MovieTexture mtMovieToPlay;
 	UPROPERTY()													USoundBase* sndMovieSoundToPlay;			//var Sound sndMovieSoundToPlay;
 	UPROPERTY()													int32 iMovieFrameRate;						//var int iMovieFrameRate;
 	UPROPERTY()													FString sMovieTitle;						//var string sMovieTitle;
@@ -139,7 +139,7 @@ public:
 	void TournamentNotifyMyTeamReady();																					//Function TournamentNotifyMyTeamReady();
 	void SetHUDActor();																									//Function SetHUDActor();
 	void FreeHUDActor();																								//Function FreeHUDActor();
-	UUIControl* GetHUDControl(int32 Id);																						//Function GetHUDControl(int Id);
+	UUIControl* GetHUDControl(int32 Id);																						//Function GetHUDControl(int32 Id);
 	UObject* CreateUIObject(FString ObjectName);																			//static Function CreateUIObject(string ObjectName);
 	void Destroyed();																									//Function Destroyed();
 
@@ -171,8 +171,8 @@ public:
 	void CloseMissionResults();																							//Function CloseMissionResults();
 	void OpenMap(FString sMap);																							//Function OpenMap(string sMap);
 	void SpawnItem(FString Item);																						//Function SpawnItem(string Item);
-	bool KeyType(int32 Key);																							//Function KeyType(int Key);
-	bool ProcessKeyEvent(int32 Key, int32 Action, float Delta);															//Function ProcessKeyEvent(int Key, int Action, float Delta);
+	bool KeyType(int32 Key);																							//Function KeyType(int32 Key);
+	bool ProcessKeyEvent(int32 Key, int32 Action, float Delta);															//Function ProcessKeyEvent(int32 Key, int Action, float Delta);
 	void ConsoleOpened();																								//Function ConsoleOpened();
 
 	void PostBeginPlay();																										//simulated Function PostBeginPlay();

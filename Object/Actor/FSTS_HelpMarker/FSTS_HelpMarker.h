@@ -8,12 +8,12 @@
 #include "FSTS_HelpMarker.generated.h"
 
 UCLASS()
-class AA29_API AFSTS_HelpMarker : public AActor
+class AFSTS_HelpMarker : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	AFSTS_HelpMarker();
 
 	UPROPERTY()			EBounceAxis		BounceAxis;				//var Enum EBounceAxis  BounceAxis;
@@ -41,7 +41,7 @@ public:
 	void SetDisplayMesh(bool bUsePrimaryMesh);
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	

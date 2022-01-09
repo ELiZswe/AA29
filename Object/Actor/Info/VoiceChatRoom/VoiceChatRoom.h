@@ -11,7 +11,7 @@ class AVoiceChatReplicationInfo;
 class AGameReplicationInfo;
 
 UCLASS()
-class AA29_API AVoiceChatRoom : public AAA2_Info
+class AVoiceChatRoom : public AAA2_Info
 {
 	GENERATED_BODY()
 public:

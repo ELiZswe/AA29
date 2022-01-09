@@ -7,7 +7,7 @@
 #include "AGP_Effects_PBVerification.generated.h"
 
 UCLASS()
-class AA29_API UAGP_Effects_PBVerification : public UObject
+class UAGP_Effects_PBVerification : public UObject
 {
 	GENERATED_BODY()
 public:

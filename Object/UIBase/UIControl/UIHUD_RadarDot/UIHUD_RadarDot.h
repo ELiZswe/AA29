@@ -9,7 +9,7 @@
 class UUIHUD_Radar;
 
 UCLASS()
-class AA29_API UUIHUD_RadarDot : public UUIControl
+class UUIHUD_RadarDot : public UUIControl
 {
 	GENERATED_BODY()
 public:

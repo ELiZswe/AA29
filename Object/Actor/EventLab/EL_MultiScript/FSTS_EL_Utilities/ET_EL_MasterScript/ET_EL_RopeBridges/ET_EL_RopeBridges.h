@@ -10,7 +10,7 @@ class AAGP_UseTrigger;
 class ATriggeredPlayerBlockingVolume;
 
 UCLASS()
-class AA29_API AET_EL_RopeBridges : public AET_EL_MasterScript
+class AET_EL_RopeBridges : public AET_EL_MasterScript
 {
 	GENERATED_BODY()
 public:

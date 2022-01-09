@@ -9,7 +9,7 @@
 class ASceneManager;
 
 UCLASS()
-class AA29_API AInterpolationPoint : public AKeypoint
+class AInterpolationPoint : public AKeypoint
 {
 	GENERATED_BODY()
 public:

@@ -12,15 +12,15 @@ class ACallForSupport : public AActor
 	GENERATED_BODY()
 
 public:
-	// Sets default values for this actor's properties
+	
 	ACallForSupport();
 
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
 
 	UPROPERTY()										int32				InitialStrikesAvailable;			//var int InitialStrikesAvailable;
@@ -28,32 +28,32 @@ public:
 	UPROPERTY()										bool				bFiring;							//var bool bFiring;
 	UPROPERTY()										bool				bReady;								//var bool bReady;
 	UPROPERTY()										bool				bAvailable;							//var bool bAvailable;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		USoundBase*			SquadLeaderEnemyEliminatedSound;	//var() Sound SquadLeaderEnemyEliminatedSound;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		USoundBase*			SquadLeaderEnemyDownSound;			//var() Sound SquadLeaderEnemyDownSound;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		USoundBase*			SquadLeaderEnemySpottedSound;		//var() Sound SquadLeaderEnemySpottedSound;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		USoundBase*			SquadLeaderTakeCoverSound;			//var() Sound SquadLeaderTakeCoverSound;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		USoundBase*			SquadLeaderCoverMeSound;			//var() Sound SquadLeaderCoverMeSound;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		USoundBase*			SquadLeaderAreaSecureSound;			//var() Sound SquadLeaderAreaSecureSound;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		USoundBase*			SquadLeaderRogerSound;				//var() Sound SquadLeaderRogerSound;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		USoundBase*			SquadLeaderHooahSound;				//var() Sound SquadLeaderHooahSound;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		USoundBase*			EnemyDownSound;						//var() Sound EnemyDownSound;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		USoundBase*			EnemySpottedSound;					//var() Sound EnemySpottedSound;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		USoundBase*			TakeCoverSound;						//var() Sound TakeCoverSound;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		USoundBase*			CoverMeSound;						//var() Sound CoverMeSound;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		USoundBase*			AreaSecureSound;					//var() Sound AreaSecureSound;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		USoundBase*			RogerSound;							//var() Sound RogerSound;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		USoundBase*			HooahSound;							//var() Sound HooahSound;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		USoundBase*			ReadySound;							//var() Sound ReadySound;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		USoundBase*			StrikeSound;						//var() Sound StrikeSound;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		USoundBase*			RespondSound;						//var() Sound RespondSound;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		USoundBase*			AcknowledgeSound;					//var() Sound AcknowledgeSound;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		USoundBase*			AvailableSound;						//var() Sound AvailableSound;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		USoundBase*			ConfirmSound;						//var() Sound ConfirmSound;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		USoundBase*			RequestSound;						//var() Sound RequestSound;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		USoundBase*			RadioSound;							//var() Sound RadioSound;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		int32				StrikesAvailable;					//var() int StrikesAvailable;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		float				ArrivalTime;						//var() float ArrivalTime;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)		uint8				TeamNumber;							//var() byte TeamNumber;
+	UPROPERTY(EditAnywhere)		USoundBase*			SquadLeaderEnemyEliminatedSound;	//var() Sound SquadLeaderEnemyEliminatedSound;
+	UPROPERTY(EditAnywhere)		USoundBase*			SquadLeaderEnemyDownSound;			//var() Sound SquadLeaderEnemyDownSound;
+	UPROPERTY(EditAnywhere)		USoundBase*			SquadLeaderEnemySpottedSound;		//var() Sound SquadLeaderEnemySpottedSound;
+	UPROPERTY(EditAnywhere)		USoundBase*			SquadLeaderTakeCoverSound;			//var() Sound SquadLeaderTakeCoverSound;
+	UPROPERTY(EditAnywhere)		USoundBase*			SquadLeaderCoverMeSound;			//var() Sound SquadLeaderCoverMeSound;
+	UPROPERTY(EditAnywhere)		USoundBase*			SquadLeaderAreaSecureSound;			//var() Sound SquadLeaderAreaSecureSound;
+	UPROPERTY(EditAnywhere)		USoundBase*			SquadLeaderRogerSound;				//var() Sound SquadLeaderRogerSound;
+	UPROPERTY(EditAnywhere)		USoundBase*			SquadLeaderHooahSound;				//var() Sound SquadLeaderHooahSound;
+	UPROPERTY(EditAnywhere)		USoundBase*			EnemyDownSound;						//var() Sound EnemyDownSound;
+	UPROPERTY(EditAnywhere)		USoundBase*			EnemySpottedSound;					//var() Sound EnemySpottedSound;
+	UPROPERTY(EditAnywhere)		USoundBase*			TakeCoverSound;						//var() Sound TakeCoverSound;
+	UPROPERTY(EditAnywhere)		USoundBase*			CoverMeSound;						//var() Sound CoverMeSound;
+	UPROPERTY(EditAnywhere)		USoundBase*			AreaSecureSound;					//var() Sound AreaSecureSound;
+	UPROPERTY(EditAnywhere)		USoundBase*			RogerSound;							//var() Sound RogerSound;
+	UPROPERTY(EditAnywhere)		USoundBase*			HooahSound;							//var() Sound HooahSound;
+	UPROPERTY(EditAnywhere)		USoundBase*			ReadySound;							//var() Sound ReadySound;
+	UPROPERTY(EditAnywhere)		USoundBase*			StrikeSound;						//var() Sound StrikeSound;
+	UPROPERTY(EditAnywhere)		USoundBase*			RespondSound;						//var() Sound RespondSound;
+	UPROPERTY(EditAnywhere)		USoundBase*			AcknowledgeSound;					//var() Sound AcknowledgeSound;
+	UPROPERTY(EditAnywhere)		USoundBase*			AvailableSound;						//var() Sound AvailableSound;
+	UPROPERTY(EditAnywhere)		USoundBase*			ConfirmSound;						//var() Sound ConfirmSound;
+	UPROPERTY(EditAnywhere)		USoundBase*			RequestSound;						//var() Sound RequestSound;
+	UPROPERTY(EditAnywhere)		USoundBase*			RadioSound;							//var() Sound RadioSound;
+	UPROPERTY(EditAnywhere)		int32				StrikesAvailable;					//var() int StrikesAvailable;
+	UPROPERTY(EditAnywhere)		float				ArrivalTime;						//var() float ArrivalTime;
+	UPROPERTY(EditAnywhere)		uint8				TeamNumber;							//var() byte TeamNumber;
 
 	void PostBeginPlay();
 	void Reset();

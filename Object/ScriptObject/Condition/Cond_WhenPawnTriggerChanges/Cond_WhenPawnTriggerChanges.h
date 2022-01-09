@@ -9,7 +9,7 @@
 class AAGP_Pawn;
 
 UCLASS()
-class AA29_API UCond_WhenPawnTriggerChanges : public UCondition
+class UCond_WhenPawnTriggerChanges : public UCondition
 {
 	GENERATED_BODY()
 public:

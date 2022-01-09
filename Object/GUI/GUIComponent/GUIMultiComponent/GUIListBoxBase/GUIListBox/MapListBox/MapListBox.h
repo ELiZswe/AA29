@@ -11,7 +11,7 @@ class UGUIComponent;
 class UGUIController;
 
 UCLASS()
-class AA29_API UMapListBox : public UGUIListBox
+class UMapListBox : public UGUIListBox
 {
 	GENERATED_BODY()
 public:
@@ -20,6 +20,6 @@ public:
 	void InitComponent(UGUIController* MyController, UGUIComponent* MyOwner);
 	void ContextClick(UGUIContextMenu* Sender, int32 Index);
 	bool MyRealOpen(UGUIComponent* MenuOwner);
-	void MyOpen(UGUIContextMenu* Menu);
-	void MyClose(UGUIContextMenu* Sender);
+	bool MyOpen(UGUIContextMenu* Menu);
+	bool MyClose(UGUIContextMenu* Sender);
 };

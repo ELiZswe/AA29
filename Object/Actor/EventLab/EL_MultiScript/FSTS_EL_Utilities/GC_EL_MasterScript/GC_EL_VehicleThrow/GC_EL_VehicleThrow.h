@@ -10,7 +10,7 @@
 class AFSTS_WeaponPickup;
 
 UCLASS()
-class AA29_API AGC_EL_VehicleThrow : public AGC_EL_MasterScript
+class AGC_EL_VehicleThrow : public AGC_EL_MasterScript
 {
 	GENERATED_BODY()
 public:

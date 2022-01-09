@@ -16,12 +16,12 @@ class UxAdminGroup : public UXAdminBase
 public:
 	UxAdminGroup();
 
-	UPROPERTY()				bool				bMasterAdmin;		//var bool bMasterAdmin;
-	UPROPERTY()				UxAdminUserList*	Managers;			//var xAdminUserList Managers;
-	UPROPERTY()				UxAdminUserList*	Users;				//var xAdminUserList Users;
-	UPROPERTY()				uint8				GameSecLevel;		//var byte GameSecLevel;
-	UPROPERTY()				FString				Privileges;			//var string Privileges;
-	UPROPERTY()				FString				GroupName;			//var string GroupName;
+	UPROPERTY()				bool						bMasterAdmin;		//var bool bMasterAdmin;
+	UPROPERTY()				TArray<UxAdminUserList*>	Managers;			//var xAdminUserList Managers;
+	UPROPERTY()				TArray<UxAdminUserList*>	Users;				//var xAdminUserList Users;
+	UPROPERTY()				uint8						GameSecLevel;		//var byte GameSecLevel;
+	UPROPERTY()				FString						Privileges;			//var string Privileges;
+	UPROPERTY()				FString						GroupName;			//var string GroupName;
 
 	void Created();
 	void Init(FString sGroupName, FString sPrivileges, uint8 nGameSecLevel);

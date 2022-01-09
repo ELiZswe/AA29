@@ -9,7 +9,7 @@
 class AHumanController;
 
 UCLASS()
-class AA29_API UDir_SetPlayerGod : public UDirection
+class UDir_SetPlayerGod : public UDirection
 {
 	GENERATED_BODY()
 public:

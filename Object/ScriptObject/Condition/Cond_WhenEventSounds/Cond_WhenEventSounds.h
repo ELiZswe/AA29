@@ -9,7 +9,7 @@
 class AEventSound;
 
 UCLASS()
-class AA29_API UCond_WhenEventSounds : public UCondition
+class UCond_WhenEventSounds : public UCondition
 {
 	GENERATED_BODY()
 public:
