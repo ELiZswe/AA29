@@ -86,7 +86,7 @@ public:
 	UPROPERTY()						float						MomentumMult;										//var float MomentumMult;
 	UPROPERTY()						float						ShadowCullDistance;									//var float ShadowCullDistance;
 	UPROPERTY()						float						ShadowMaxTraceDist;									//var float ShadowMaxTraceDist;
-	// UPROPERTY()						AShadowProjector*			VehicleShadow;										//var ShadowProjector VehicleShadow;
+	UPROPERTY()						UMaterialInstance*			VehicleShadow;										//var ShadowProjector VehicleShadow;
 	UPROPERTY()						FString						TransEffects;										//var string TransEffects;
 	UPROPERTY()						ASVehicleFactory*			ParentFactory;										//var SVehicleFactory ParentFactory;
 	UPROPERTY()						APawn*						Driver;												//var Pawn Driver;

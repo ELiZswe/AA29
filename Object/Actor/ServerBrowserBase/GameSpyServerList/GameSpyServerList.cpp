@@ -116,9 +116,9 @@ void AGameSpyServerList::GameSpyStatusDone()
 	bWorking = false;
 	bAutoSort = false;
 	SetTimer(0, false);
-	if (HUD(Owner) != nullptr)
+	if (HUD(GetOwner()) != nullptr)
 	{
-		bAutoSort = HUD(Owner).GetAutoSort();
+		bAutoSort = HUD(GetOwner())->GetAutoSort();
 	}
 	if (bAutoSort && bSortSaved)
 	{
@@ -161,8 +161,8 @@ void AGameSpyServerList::Timer()
 
 void AGameSpyServerList::DisplayServerList()
 {
+	FGameSpyServerItem Item = FGameSpyServerItem({});
 	/*
-	local FGameSpyServerItem Item;
 	ForEach AllServers(Item)
 	{
 		if (Item.bValid != 0)
@@ -184,13 +184,11 @@ int32 AGameSpyServerList::GetNumServers()
 
 void AGameSpyServerList::SortServers(FString sField, bool bAscending, EGameSpyCompareMode eType)
 {
-	/*
 	bSortSaved = true;
 	sSortField = sField;
 	bSortAscending = bAscending;
-	eSortType = eType;
+	//eSortType = eType;
 	CallServerListSort(sField, bAscending, eType);
-	*/
 }
 
 void AGameSpyServerList::SetFilter(FString sFilter)

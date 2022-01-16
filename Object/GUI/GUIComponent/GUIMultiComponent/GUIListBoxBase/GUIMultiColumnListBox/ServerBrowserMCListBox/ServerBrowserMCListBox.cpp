@@ -8,7 +8,7 @@
 UServerBrowserMCListBox::UServerBrowserMCListBox()
 {
 	UGUIMultiColumnListHeader* MyHeader = NewObject<UGUIMultiColumnListHeader>(UGUIMultiColumnListHeader::StaticClass());
-	MyHeader->FontScale = EFontScale::FNS_Small;
+	MyHeader->FontScale = EeFontScale::FNS_Small;
 	MyHeader->StyleName = "ServerBrowserGridHeader";
 	Header = MyHeader;
 	bVisibleWhenEmpty = true;

@@ -15,7 +15,7 @@ public:
 	UScriptObject();
 
 	UPROPERTY()										int32 _nNumParamsDefined;					//var int _nNumParamsDefined;
-	UPROPERTY()										TArray<FString> _sParameters;				//var array<String> _sParameters;
+	UPROPERTY()										TArray<FString> _sParameters;				//var TArray<FString> _sParameters;
 	UPROPERTY()										bool bSupportsMP;							//var bool bSupportsMP;
 	UPROPERTY()										bool _bDebug;								//var bool _bDebug;
 

@@ -10,14 +10,11 @@ UCLASS()
 class ASpinnyActor : public AActor
 {
 	GENERATED_BODY()
-	
 public:	
-	
 	ASpinnyActor();
 
-	UPROPERTY(EditAnywhere)								int32 spinRate;						//var() int32 spinRate;
-	UPROPERTY()											float CurrentTime;					//var float CurrentTime;
-
+	UPROPERTY(EditAnywhere)			int32	spinRate;						//var() int32 spinRate;
+	UPROPERTY()						float	CurrentTime;					//var float CurrentTime;
 
 protected:
 	

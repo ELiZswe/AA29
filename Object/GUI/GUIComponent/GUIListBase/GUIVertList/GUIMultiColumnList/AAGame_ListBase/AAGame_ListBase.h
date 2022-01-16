@@ -16,17 +16,17 @@ public:
 	UAAGame_ListBase();
 
 	UPROPERTY()			UMaterialInstance*			Invalid;						//var Material Invalid;
-	UPROPERTY()			TArray<FString>				GroupDescriptions;				//var array<String> GroupDescriptions;
+	UPROPERTY()			TArray<FString>				GroupDescriptions;				//var TArray<FString> GroupDescriptions;
 	UPROPERTY()			TArray<UMaterialInstance*>	Group;							//var array<Material> Group;
-	UPROPERTY()			TArray<FString>				GuerrillaDescriptions;			//var array<String> GuerrillaDescriptions;
+	UPROPERTY()			TArray<FString>				GuerrillaDescriptions;			//var TArray<FString> GuerrillaDescriptions;
 	UPROPERTY()			TArray<UMaterialInstance*>	Guerrilla;						//var array<Material> Guerrilla;
-	UPROPERTY()			TArray<FString>				SpecialForcesDescriptions;		//var array<String> SpecialForcesDescriptions;
+	UPROPERTY()			TArray<FString>				SpecialForcesDescriptions;		//var TArray<FString> SpecialForcesDescriptions;
 	UPROPERTY()			TArray<UMaterialInstance*>	SpecialForces;					//var array<Material> SpecialForces;
-	UPROPERTY()			TArray<FString>				SubClassDescriptions;			//var array<String> SubClassDescriptions;
+	UPROPERTY()			TArray<FString>				SubClassDescriptions;			//var TArray<FString> SubClassDescriptions;
 	UPROPERTY()			TArray<UMaterialInstance*>	SubClass;						//var array<Material> SubClass;
-	UPROPERTY()			TArray<FString>				ClassDescriptions;				//var array<String> ClassDescriptions;
+	UPROPERTY()			TArray<FString>				ClassDescriptions;				//var TArray<FString> ClassDescriptions;
 	UPROPERTY()			TArray<UMaterialInstance*>	Class;							//var array<Material> Class;
-	UPROPERTY()			TArray<FString>				RankDescriptions;				//var array<String> RankDescriptions;
+	UPROPERTY()			TArray<FString>				RankDescriptions;				//var TArray<FString> RankDescriptions;
 	UPROPERTY()			TArray<UMaterialInstance*>	rank;							//var array<Material> rank;
 
 	bool IsEnabled();

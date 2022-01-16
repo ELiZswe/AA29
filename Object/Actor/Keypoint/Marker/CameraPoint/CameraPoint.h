@@ -25,9 +25,6 @@ public:
 	UPROPERTY(EditAnywhere)			FName TrackActorTag;				//var() name TrackActorTag;
 	UPROPERTY(EditAnywhere)			ETrackType TrackType;				//var() ETrackType TrackType;
 
-
-
-
 	void BeginPlay();
 	void SetActive(bool B);
 	void Tick(float DeltaTime);

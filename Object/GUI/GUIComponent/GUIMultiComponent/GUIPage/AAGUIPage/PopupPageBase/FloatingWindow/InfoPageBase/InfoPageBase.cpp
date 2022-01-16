@@ -10,7 +10,7 @@ UInfoPageBase::UInfoPageBase()
 	infobox->EOLDelay = 0.25;
 	infobox->bVisibleWhenEmpty = true;
 	//infobox->OnCreateComponent=infobox.InternalOnCreateComponent;
-	infobox->FontScale = EFontScale::FNS_Small;
+	infobox->FontScale = EeFontScale::FNS_Small;
 	infobox->StyleName = "SmallText";
 	infobox->WinTop = 0.2;
 	infobox->WinLeft = 0.1;

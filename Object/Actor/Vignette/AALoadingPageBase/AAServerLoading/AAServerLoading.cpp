@@ -49,8 +49,8 @@ void AAAServerLoading::DrawVignette(UCanvas* C, float Progress)
 
 void AAAServerLoading::SetImage()
 {
+	UMaterialInstance* mat = nullptr;
 	/*
-	local Material mat;
 	switch (Rand(4))
 	{
 	case 0:
@@ -78,9 +78,9 @@ void AAAServerLoading::SetImage()
 
 FString AAAServerLoading::StripMap(FString S)
 {
-	/*
 	int32 p = 0;
-	p = Len(S);
+	p = S.Len();
+	/*
 	if (p > 0)
 	{
 		if (Mid(S, p, 1) == ".")
@@ -114,8 +114,7 @@ FString AAAServerLoading::StripMap(FString S)
 
 void AAAServerLoading::SetText()
 {
-	/*
-	local XInterface.DrawOpText HintOp;
+	UDrawOpText* HintOp = nullptr;
 	FString Hint = "";
 	FString sCleanedMapName = "";
 	int32 iNumTours = 0;
@@ -124,6 +123,7 @@ void AAAServerLoading::SetText()
 	int32 iMission = 0;
 	bool fFoundMission = false;
 	sCleanedMapName = StripMap(MapName);
+	/*
 	DrawOpText(Operations[1]).Text = "Loading Mission \"" $ sCleanedMapName $ "\", please wait...";
 	iNumTours = GetPrivateProfileInt(GetBaseDir() $ "Tours.ini", "Tours", "NumTours");
 	fFoundMission = false;

@@ -84,8 +84,8 @@ public:
 	UPROPERTY(EditAnywhere, Category = "State")						FString StyleName;									//var(Style) string StyleName;
 	UPROPERTY(EditAnywhere)											FString IniDefault;									//var() string IniDefault;
 	UPROPERTY(EditAnywhere)											FString IniOption;									//var() string IniOption;
-	UPROPERTY(EditAnywhere, Category = "State")						EFontScale FontScale;								//var(Style) GUI.eFontScale FontScale;
-	UPROPERTY(EditAnywhere, Category = "State")						EFontScale DropState;								//var(State) GUI.eDropState DropState;
+	UPROPERTY(EditAnywhere, Category = "State")						EeFontScale FontScale;								//var(Style) GUI.eFontScale FontScale;
+	UPROPERTY(EditAnywhere, Category = "State")						EeFontScale DropState;								//var(State) GUI.eDropState DropState;
 	UPROPERTY(EditAnywhere, Category = "State")						EMenuState LastMenuState;							//var(State) editconst GUI.eMenuState LastMenuState;
 	UPROPERTY(EditAnywhere, Category = "State")						EMenuState MenuState;								//var(State) GUI.eMenuState MenuState;
 	UPROPERTY(EditAnywhere, Category = "State")						UGUIComponent* FocusInstead;						//var(State) GUIComponent FocusInstead;

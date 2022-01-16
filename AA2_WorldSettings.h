@@ -141,11 +141,11 @@ public:
 	UPROPERTY(EditAnywhere)								bool				bKNoInit;									//var() bool bKNoInit;										// Start _NO_ Karma for this level. Only really for the Entry level.
 	UPROPERTY()																int32				LastTaunt;									//var int LastTaunt;										// 'Global' last taunts used.
 	UPROPERTY(config)														float				DecalStayScale;								//var config float DecalStayScale;							// affects decal stay time
-	UPROPERTY(EditAnywhere)								FString				LevelEnterText;								//var() localized string LevelEnterText;					// Message to tell players when they enter.
-	UPROPERTY(EditAnywhere)								FString				LocalizedPkg;								//var() string LocalizedPkg;								// Package to look in for localizations.
-	// UPROPERTY(EditAnywhere)							AAA2_PlayerState*	Pauser;										//var PlayerReplicationInfo Pauser;							// If paused, name of person pausing the game.
-	UPROPERTY(EditAnywhere)								ULevelSummary*		Summary;									//var LevelSummary Summary;
-	UPROPERTY(EditAnywhere)								FString				VisibleGroups;								//var string VisibleGroups;									// List of the group names which were checked when the level was last saved
+	UPROPERTY(EditAnywhere)													FString				LevelEnterText;								//var() localized string LevelEnterText;					// Message to tell players when they enter.
+	UPROPERTY(EditAnywhere)													FString				LocalizedPkg;								//var() string LocalizedPkg;								// Package to look in for localizations.
+	// UPROPERTY(EditAnywhere)												AAA2_PlayerState*	Pauser;										//var PlayerReplicationInfo Pauser;							// If paused, name of person pausing the game.
+	UPROPERTY(EditAnywhere)													ULevelSummary*		Summary;									//var LevelSummary Summary;
+	UPROPERTY(EditAnywhere)													FString				VisibleGroups;								//var string VisibleGroups;									// List of the group names which were checked when the level was last saved
 
 
 //-----------------------------------------------------------------------------
@@ -300,8 +300,8 @@ public:
 	UPROPERTY(globalconfig)														EShadowDetail ShadowDetail;						//var globalconfig EShadowDetail ShadowDetail;
 
 	UPROPERTY()																	AActor* BoneTracer;								//var Actor BoneTracer;
-	UPROPERTY()																	TArray<FString> asETASurNames;					//var array<String> asETASurNames;
-	UPROPERTY()																	TArray<FString> asETANickNames;					//var array<String> asETANickNames;
+	UPROPERTY()																	TArray<FString> asETASurNames;					//var TArray<FString> asETASurNames;
+	UPROPERTY()																	TArray<FString> asETANickNames;					//var TArray<FString> asETANickNames;
 	UPROPERTY()																	TArray<FString> asETAFirstNames;				//var string asETAFirstNames;
 	UPROPERTY()																	AController* actrlETAUsedFirstNamePrefixes;		//var Controller actrlETAUsedFirstNamePrefixes;
 	UPROPERTY(EditAnywhere, Category="NPCPlayBalancing")	float fpMaxNPCToPlayerRatio;					//var(NPCPlayBalancing) float fpMaxNPCToPlayerRatio;

@@ -19,7 +19,7 @@ public:
 	UPlayInfo();
 
 	UPROPERTY()				FString					LastError;			//var const string LastError;
-	UPROPERTY()				TArray<FString>			Groups;				//var const array<String> Groups;
+	UPROPERTY()				TArray<FString>			Groups;				//var const TArray<FString> Groups;
 	UPROPERTY()				TArray<int32>			ClassStack;			//var const array<int> ClassStack;
 	UPROPERTY()				TArray<AAA2_Info*>		InfoClasses;		//var const array<class<Info> > InfoClasses;
 	UPROPERTY()				TArray<FPlayInfoData>	Settings;			//var const array<PlayInfoData> Settings;

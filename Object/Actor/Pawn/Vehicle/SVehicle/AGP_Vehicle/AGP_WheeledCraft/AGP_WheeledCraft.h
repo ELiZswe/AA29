@@ -42,7 +42,7 @@ public:
 	UPROPERTY()									FSCarState OldCarState;							//var AGP_WheeledCraft.SCarState OldCarState;
 	UPROPERTY()									FSCarState CarState;							//var AGP_WheeledCraft.SCarState CarState;
 	UPROPERTY(EditAnywhere)						UMaterialInstance* BrakeLightMaterial;			//var() Material BrakeLightMaterial;
-	UPROPERTY()									ABrakelightCorona* BrakeLight;					//var BrakelightCorona BrakeLight;
+	UPROPERTY()									TArray<ABrakelightCorona*> BrakeLight;			//var BrakelightCorona BrakeLight;
 	UPROPERTY(EditAnywhere)						TArray<FVector> BrakeLightOffset;				//var() Object.Vector BrakeLightOffset;
 	UPROPERTY(EditAnywhere)						bool bMakeBrakeLights;							//var() bool bMakeBrakeLights;
 	UPROPERTY(EditAnywhere)						float RevMeterSizeY;							//var() float RevMeterSizeY;

@@ -51,7 +51,7 @@ public:
 	FString SettingString();
 	FString TimeString();
 	FString WeatherString();
-	//ALevelInfo* GetLevel();
+	ALevelInfo* GetLevel();
 	void FlushBuffer(FString& Buffer);
 	FString LineBreak();
 	FString WikiEndLine();

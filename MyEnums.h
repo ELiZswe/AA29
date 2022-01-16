@@ -1545,8 +1545,6 @@ enum class EInputAction : uint8
 	/* 4 */ IST_Axis													UMETA(DisplayName = "IST_Axis")
 };
 
-
-
 UENUM(BlueprintType)
 enum class EMenuState : uint8
 {
@@ -1555,14 +1553,6 @@ enum class EMenuState : uint8
 	/* 2 */ MSAT_Focused												UMETA(DisplayName = "MSAT_Focused"),
 	/* 3 */ MSAT_Pressed												UMETA(DisplayName = "MSAT_Pressed"),
 	/* 4 */ MSAT_Disabled												UMETA(DisplayName = "MSAT_Disabled")
-};
-
-UENUM(BlueprintType)
-enum class EFontScale : uint8
-{
-	/* 0 */ FNS_Small													UMETA(DisplayName = "FNS_Small"),
-	/* 1 */ FNS_Medium													UMETA(DisplayName = "FNS_Medium"),
-	/* 2 */ FNS_Large													UMETA(DisplayName = "FNS_Large")
 };
 
 UENUM(BlueprintType)

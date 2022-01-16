@@ -40,7 +40,7 @@ public:
 	UPROPERTY()					FVector DrawScale3D;
 	UPROPERTY()					bool bOrientOnSlope;
 	UPROPERTY()					TArray<UMaterialInstance*> Skins;
-	UPROPERTY()					AActor* Base;							//var const Actor Base;
+	UPROPERTY()					AActor* Base;											//var const Actor Base;
 protected:
 	
 

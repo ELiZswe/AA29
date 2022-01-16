@@ -27,12 +27,12 @@ public:
 	UPROPERTY(globalconfig)		FString							asTeamPasswords;					//var globalconfig string asTeamPasswords;
 	UPROPERTY(globalconfig)		bool							bAllowMaybeFail;					//var globalconfig bool bAllowMaybeFail;
 	UPROPERTY(globalconfig)		bool							bDontKickLastPlayer;				//var globalconfig bool bDontKickLastPlayer;
-	UPROPERTY()					TArray<FString>					KickReason;							//var array<String> KickReason;
+	UPROPERTY()					TArray<FString>					KickReason;							//var TArray<FString> KickReason;
 	UPROPERTY()					TArray<APlayerController*>		KickMe;								//var array<PlayerController> KickMe;
 	UPROPERTY()					bool							bKickPending;						//var bool bKickPending;
 	UPROPERTY()					bool							bDontAddDefaultAdmin;				//var bool bDontAddDefaultAdmin;
 	UPROPERTY()					TArray<FPlayerAdminAccounts>	apaaPlayerAdmins;					//var array<PlayerAdminAccounts> apaaPlayerAdmins;
-	UPROPERTY(globalconfig)		TArray<FString>					PlayerAdmin;						//var globalconfig array<String> PlayerAdmin;
+	UPROPERTY(globalconfig)		TArray<FString>					PlayerAdmin;						//var globalconfig TArray<FString> PlayerAdmin;
 	UPROPERTY()					TArray<APlayerController*>		AdminClass;							//var class<PlayerController> AdminClass;
 	UPROPERTY()					FString							AdminClassName;						//var string AdminClassName;
 	UPROPERTY()					TArray<FBanDescription>			BanList;							//var array<BanDescription> BanList;

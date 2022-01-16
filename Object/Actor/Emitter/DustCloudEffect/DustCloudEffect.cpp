@@ -96,7 +96,6 @@ FEffectMatProps ADustCloudEffect::GetEffectProps(UMaterialInstance* M)
 
 void ADustCloudEffect::SetDirtColor(FColor DirtColor)
 {
-	/*
 	FColor DirtColorZeroAlpha = FColor(0, 0, 0, 0);
 	FColor DirtColorHalfAlpha = FColor(0, 0, 0, 0);
 	if (((DirtColor.R == 0) && (DirtColor.G == 0)) && (DirtColor.B == 0))
@@ -108,24 +107,23 @@ void ADustCloudEffect::SetDirtColor(FColor DirtColor)
 	DirtColorZeroAlpha.A = 0;
 	DirtColorHalfAlpha = DirtColor;
 	DirtColorHalfAlpha.A = 128;
-	Emitters[0].ColorScale[0].Color = DirtColorZeroAlpha;
-	Emitters[0].ColorScale[1].Color = DirtColorHalfAlpha;
-	Emitters[0].ColorScale[2].Color = DirtColorHalfAlpha;
-	Emitters[0].ColorScale[3].Color = DirtColorZeroAlpha;
-	*/
+	Emitters[0]->ColorScale[0].Color = DirtColorZeroAlpha;
+	Emitters[0]->ColorScale[1].Color = DirtColorHalfAlpha;
+	Emitters[0]->ColorScale[2].Color = DirtColorHalfAlpha;
+	Emitters[0]->ColorScale[3].Color = DirtColorZeroAlpha;
 }
 
 void ADustCloudEffect::UpdateDust(ASVehicleWheel* vw, FCoords WheelCoords, float VehicleVel)
 {
-	/*
 	float SpritePPS = 0;
 	float EmitterScale = 0;
 	FVector Start = FVector(0, 0, 0);
 	FVector End = FVector(0, 0, 0);
 	FVector HitLoc = FVector(0, 0, 0);
 	FVector HitNorm = FVector(0, 0, 0);
-	local Material HitMat;
-	local EffectMatProps EMP;
+	UMaterialInstance* HitMat = nullptr;
+	FEffectMatProps EMP = FEffectMatProps({});
+	/*
 	if (vw.bWheelOnGround && (VehicleVel > DustVelThresh))
 	{
 		Start = WheelCoords.Origin;

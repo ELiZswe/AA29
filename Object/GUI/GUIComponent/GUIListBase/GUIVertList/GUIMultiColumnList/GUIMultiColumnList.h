@@ -21,9 +21,9 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Style")						TArray<float> ColumnWidths;									//var() const editconst array<float> ColumnWidths;
 	UPROPERTY(EditAnywhere)											TArray<int32> InvSortData;									//var const array<int> InvSortData;
 	UPROPERTY(EditAnywhere)											TArray<FMultiColumnSortData> SortData;						//var const array<MultiColumnSortData> SortData;
-	UPROPERTY(EditAnywhere, Category = "Style")						TArray<FString> ColumnHeadingHints;							//var() localized array<String> ColumnHeadingHints;
+	UPROPERTY(EditAnywhere, Category = "Style")						TArray<FString> ColumnHeadingHints;							//var() localized TArray<FString> ColumnHeadingHints;
 	UPROPERTY(EditAnywhere, Category = "Style")						TArray<float> InitColumnPerc;								//var() array<float> InitColumnPerc;
-	UPROPERTY(EditAnywhere, Category = "Style")						TArray<FString> ColumnHeadings;								//var() localized array<String> ColumnHeadings;
+	UPROPERTY(EditAnywhere, Category = "Style")						TArray<FString> ColumnHeadings;								//var() localized TArray<FString> ColumnHeadings;
 
 	void OnColumnSized(int32 Column);
 	void GetListIndex(int32 YourArrayIndex);

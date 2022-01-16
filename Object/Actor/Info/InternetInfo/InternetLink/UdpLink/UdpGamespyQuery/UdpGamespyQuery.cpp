@@ -42,15 +42,16 @@ void AUdpGamespyQuery::PreBeginPlay()
 	}
 	*/
 }
+
 void AUdpGamespyQuery::DebugPortSwap(AActor* Ref)
 {
-	/*
-	local array<UdpGamespyQuery> Queries;
-	local array<Object> Referencers;
-	local UdpGamespyQuery Q;
-	int32 i;
-	int32 j;
+	TArray<AUdpGamespyQuery*> Queries = {};
+	TArray<UObject*> Referencers = {};
+	AUdpGamespyQuery* Q = nullptr;
+	int32 i = 0;
+	int32 j = 0;
 	FString str;
+	/*
 	Log("***************");
 	Log(" Complete OBJ LIST:");
 	Ref.ConsoleCommand("obj list", true);
@@ -98,12 +99,13 @@ void AUdpGamespyQuery::DebugPortSwap(AActor* Ref)
 	Log("***************");
 	*/
 }
+
 FString AUdpGamespyQuery::GetFullName(UObject* obj)
 {
 	FString FullName = "";
+	TArray<UObject*> Outers = {};
 	/*
-	local array<Object> Outers;
-	int32 i;
+	int32 i = 0;
 	if (obj == nullptr)
 	{
 		return "";
@@ -128,12 +130,12 @@ FString AUdpGamespyQuery::GetFullName(UObject* obj)
 
 void AUdpGamespyQuery::ReceivedText(FIpAddr Addr, FString Text)
 {
-	/*
-	FString Query;
-	local bool QueryRemaining;
-	int32 QueryNum;
-	int32 PacketNum;
+	FString Query = "";
+	bool QueryRemaining = false;
+	int32 QueryNum = 0;
+	int32 PacketNum = 0;
 	CurrentQueryNum++;
+	/*
 	if (CurrentQueryNum > 100)
 	{
 		CurrentQueryNum = 1;
@@ -397,7 +399,7 @@ FString AUdpGamespyQuery::GetInfo()
 		NumPlayers = Level.Game.GetNumPlayers();
 	if (NumPlayers == 0)
 	{
-		NumPlayers = Min(Level.Game.MultiMinPlayers(), Level.Game.MaxPlayers - 1);
+		NumPlayers = FMath::Min(Level.Game.MultiMinPlayers(), Level.Game.MaxPlayers - 1);
 	}
 	ResultSet = ResultSet $ "\numplayers\" $ NumPlayers;
 		ResultSet = ResultSet $ "\maxplayers\" $ Level.Game.MaxPlayers;

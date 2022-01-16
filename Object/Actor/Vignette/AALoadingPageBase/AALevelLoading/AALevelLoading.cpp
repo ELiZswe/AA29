@@ -38,33 +38,29 @@ AAALevelLoading::AAALevelLoading()
 
 void AAALevelLoading::Init()
 {
-	/*
 	Super::Init();
 	AddBackground();
 	SetImage();
 	SetText();
-	*/
 }
 
 void AAALevelLoading::AddBackground()
 {
-	/*
-	local Material Bg;
+	UMaterialInstance* Bg = nullptr;
 	Bg = MapScreenshot;
 	if (Bg != nullptr)
 	{
-		AddImage(Bg, 0, 0, 1, 1).DrawColor = Class'Canvas'.MakeColor(196, 196, 0);
+		//AddImage(Bg, 0, 0, 1, 1).DrawColor = Class'Canvas'.MakeColor(196, 196, 0);
 	}
-	*/
 }
 
 void AAALevelLoading::SetImage()
 {
-	/*
 	int32 i = 0;
 	int32 cnt = 0;
 	FString str = "";
-	local Material mat;
+	UMaterialInstance* mat = nullptr;
+	/*
 	DrawOpImage(Operations[0]).Image = mat;
 	if (Backgrounds.Num() == 0)
 	{
@@ -95,9 +91,9 @@ void AAALevelLoading::SetImage()
 
 FString AAALevelLoading::StripMap(FString S)
 {
-	/*
 	int32 p = 0;
-	p = Len(S);
+	p = S.Len();
+	/*
 	if (p > 0)
 	{
 		if (Mid(S, p, 1) == ".")
@@ -130,9 +126,9 @@ FString AAALevelLoading::StripMap(FString S)
 
 void AAALevelLoading::SetText()
 {
-	/*
-	local XInterface.DrawOpText HintOp;
+	UDrawOpText* HintOp = nullptr;
 	FString Hint = "";
+	/*
 	DrawOpText(Operations[2]).Text = StripMap(MapName);
 	if (Level.IsSoftwareRendering())
 	{

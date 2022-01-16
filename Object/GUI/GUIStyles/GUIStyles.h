@@ -32,9 +32,9 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Style")											FString KeyName;								//var(Style) const string KeyName;
 
 	void OnDraw(UCanvas* Canvas, EMenuState MenuState, float Left, float Top, float Width, float Height);
-	void OnDrawText(UCanvas* Canvas, EMenuState MenuState, float Left, float Top, float Width, float Height, ETextAlign Align, FString Text, EFontScale FontScale);
+	void OnDrawText(UCanvas* Canvas, EMenuState MenuState, float Left, float Top, float Width, float Height, ETextAlign Align, FString Text, EeFontScale FontScale);
 	void Draw(UCanvas* Canvas, EMenuState MenuState, float Left, float Top, float Width, float Height);
-	void DrawText(UCanvas* Canvas, EMenuState MenuState, float Left, float Top, float Width, float Height, ETextAlign Align, FString Text, EFontScale FontScale);
-	void TextSize(UCanvas* Canvas, EMenuState MenuState, FString Text, float& XL, float& YL, EFontScale FontScale);
+	void DrawText(UCanvas* Canvas, EMenuState MenuState, float Left, float Top, float Width, float Height, ETextAlign Align, FString Text, EeFontScale FontScale);
+	void TextSize(UCanvas* Canvas, EMenuState MenuState, FString Text, float& XL, float& YL, EeFontScale FontScale);
 	void Initialize();
 };

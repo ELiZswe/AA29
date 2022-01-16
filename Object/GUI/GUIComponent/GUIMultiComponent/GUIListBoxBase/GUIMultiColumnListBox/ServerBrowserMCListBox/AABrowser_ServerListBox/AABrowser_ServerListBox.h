@@ -30,7 +30,7 @@ public:
 	UPROPERTY()								int32						JOINASPLAYERADMIN;				//var int JOINASPLAYERADMIN;
 	UPROPERTY()								int32						SPECIDX;						//var int SPECIDX;
 	UPROPERTY()								int32						JOINIDX;						//var int JOINIDX;
-	UPROPERTY()								TArray<FString>				ContextItems;					//var array<String> ContextItems;
+	UPROPERTY()								TArray<FString>				ContextItems;					//var TArray<FString> ContextItems;
 	UPROPERTY(EditAnywhere)					FString						OpenIPPage;						//var() config string OpenIPPage;
 
 	void OnUpdateServerList();

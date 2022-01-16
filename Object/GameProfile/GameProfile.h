@@ -22,7 +22,7 @@ public:
 	UPROPERTY(EditAnywhere)								int32 ManifestIndex;								//var() int ManifestIndex;
 	UPROPERTY()											TArray<FString> PositionName;						//var localized string PositionName;			// text names of these positions
 	UPROPERTY()											TArray<EPlayerPos> PlayerPositions;					//var EPlayerPos PlayerPositions;				// only need positions for AI team, so 7 max
-	UPROPERTY(EditAnywhere)								TArray<FString> PlayerTeam;							//var() array<String> PlayerTeam;				// Player team members
+	UPROPERTY(EditAnywhere)								TArray<FString> PlayerTeam;							//var() TArray<FString> PlayerTeam;				// Player team members
 	UPROPERTY()											TArray<int32> PlayerLineup;							//var int PlayerLineup;							// Lineup for current match.  Stores index into PlayerTeam array.
 	UPROPERTY()											FString EnemyTeam;									//var string EnemyTeam;							// Opponent team name for pending/current match
 	UPROPERTY()											FString TeamName;									//var string TeamName;							// Player team name

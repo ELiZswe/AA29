@@ -21,7 +21,7 @@ public:
 	UPROPERTY(EditAnywhere)									TArray<int32>		RandomPool;		//var() editconstarray transient editconst array<int> RandomPool;
 	UPROPERTY(EditAnywhere, Config)							bool				bNeedSave;		//var() config bool bNeedSave;
 	UPROPERTY(EditAnywhere)									FString				Title;			//var() string Title;
-	UPROPERTY(EditAnywhere, Config)							TArray<FString>		Playlist;		//var() config array<String> Playlist;
+	UPROPERTY(EditAnywhere, Config)							TArray<FString>		Playlist;		//var() config TArray<FString> Playlist;
 	UPROPERTY(EditAnywhere, Config)							int32				Current;		//var() config int Current;
 
 	void OnPlaylistChanged();

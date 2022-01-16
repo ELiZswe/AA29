@@ -18,15 +18,15 @@ public:
 	
 	AAttachmentHandler();
 
-	UPROPERTY()										bool bSpinnyEnemy;							//var bool bSpinnyEnemy;
-	UPROPERTY()										bool bSpinny;								//var bool bSpinny;
-	UPROPERTY()										UStaticMesh* DefaultWeaponMesh;				//var Mesh DefaultWeaponMesh;
-	UPROPERTY()										FString special_skin_tag;					//var string special_skin_tag;
-	UPROPERTY()										uint8 AnimState;							//var byte AnimState;
-	UPROPERTY()										AActor* AttachProxy;						//var Actor AttachProxy;
-	UPROPERTY()										ABaseModAttachment* ModAttachmentList;		//var BaseModAttachment ModAttachmentList;
-	UPROPERTY()										ABaseModAttachment* WM_Attachment;			//var class<BaseModAttachment> WM_Attachment;
-	UPROPERTY()										int32 num_mods;								//var int num_mods;
+	UPROPERTY()		bool						bSpinnyEnemy;			//var bool bSpinnyEnemy;
+	UPROPERTY()		bool						bSpinny;				//var bool bSpinny;
+	UPROPERTY()		UStaticMesh*				DefaultWeaponMesh;		//var Mesh DefaultWeaponMesh;
+	UPROPERTY()		FString						special_skin_tag;		//var string special_skin_tag;
+	UPROPERTY()		uint8						AnimState;				//var byte AnimState;
+	UPROPERTY()		AActor*						AttachProxy;			//var Actor AttachProxy;
+	UPROPERTY()		ABaseModAttachment*			ModAttachmentList;		//var BaseModAttachment ModAttachmentList;
+	UPROPERTY()		TArray<ABaseModAttachment*> WM_Attachment;			//var class<BaseModAttachment> WM_Attachment;
+	UPROPERTY()		int32						num_mods;				//var int num_mods;
 
 	void NotifyReplicationComplete();
 	bool IsReplicationComplete();

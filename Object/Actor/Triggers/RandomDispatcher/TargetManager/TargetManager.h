@@ -8,7 +8,6 @@
 
 class AScoreKeeper;
 
-
 UCLASS()
 class ATargetManager : public ARandomDispatcher
 {
@@ -16,12 +15,12 @@ class ATargetManager : public ARandomDispatcher
 public:
 	ATargetManager();
 
-	UPROPERTY()										bool bActive;										//var bool bActive;
-	UPROPERTY()										AScoreKeeper* _ScoreKeeper;							//var AGP.ScoreKeeper _ScoreKeeper;
-	UPROPERTY()										bool bSkipTargets;									//var bool bSkipTargets;
-	UPROPERTY()										bool bTargetPractice;								//var bool bTargetPractice;
-	UPROPERTY(EditAnywhere)							TArray<FString> TargetGroupLabel;					//var() string TargetGroupLabel;
-	UPROPERTY(EditAnywhere)							FString TargetScoreLabel;							//var() string TargetScoreLabel;
+	UPROPERTY()					bool				bActive;				//var bool bActive;
+	UPROPERTY()					AScoreKeeper*		_ScoreKeeper;			//var AGP.ScoreKeeper _ScoreKeeper;
+	UPROPERTY()					bool				bSkipTargets;			//var bool bSkipTargets;
+	UPROPERTY()					bool				bTargetPractice;		//var bool bTargetPractice;
+	UPROPERTY(EditAnywhere)		TArray<FString>		TargetGroupLabel;		//var() string TargetGroupLabel;
+	UPROPERTY(EditAnywhere)		FString				TargetScoreLabel;		//var() string TargetScoreLabel;
 
 	bool isActivelyTesting();
 	void BeginPlay();

@@ -7,6 +7,7 @@
 #include "WeaponMod_Anpeq5_Laser.generated.h"
 
 class USkeletalMesh;
+class ALaserProjector;
 
 UCLASS()
 class AWeaponMod_Anpeq5_Laser : public ABaseWeaponMod
@@ -18,7 +19,7 @@ public:
 	UPROPERTY(EditAnywhere)			USkeletalMesh* NonLaserMesh;				//var Mesh NonLaserMesh;
 	UPROPERTY(EditAnywhere)			USkeletalMesh* WithLaserMesh;				//var Mesh WithLaserMesh;
 	UPROPERTY(EditAnywhere)			bool bLaserOn;								//var bool bLaserOn;
-	//UPROPERTY(EditAnywhere)		ALaserProjector* laser;						//var AGP.LaserProjector laser;
+	UPROPERTY(EditAnywhere)			ALaserProjector* laser;						//var AGP.LaserProjector laser;
 
 
 	virtual void Destroyed() override;

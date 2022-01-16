@@ -22,7 +22,7 @@
 
 /*
 //	The Screenplay is started by AGP_GameInfo in its s PostBeginPlay function.  It searches the level for any
-//	objects that are screenplays and calls the Trigger() function.  It only calls the first one; subsequent
+//	objects that are screenplays and calls the Cast<ATrigger>() function.  It only calls the first one; subsequent
 //  screenplays are ignored.  The Trigger function calls the Init()
 //	function which creates the screen play and then jumps to the RunScreenplay state.  This state is there
 //	to give a break since there was a glitch with sounds not being triggered in the first scene.  The state

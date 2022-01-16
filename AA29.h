@@ -462,7 +462,7 @@ struct FParticleAnchor
 	UPROPERTY(EditAnywhere, Category = "ParticleAnchor")						FName Tag;							//var FName Tag;
 	UPROPERTY(EditAnywhere, Category = "ParticleAnchor")						float Position;						//var float Position;
 	UPROPERTY(EditAnywhere, Category = "ParticleAnchor")						AActor* Actor;						//var AActor* Actor;
-	UPROPERTY(EditAnywhere, Category = "ParticleAnchor")						int32 Index;						//var int32 Index;
+	UPROPERTY(EditAnywhere, Category = "ParticleAnchor")						int32 Index = 0;						//var int32 Index;
 };
 
 USTRUCT(BlueprintType)
@@ -1043,8 +1043,8 @@ USTRUCT(BlueprintType)
 struct FsDamageInfo
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, Category = "sDamageInfo")				UaDamageType*			AcceptsDamage		= nullptr;				//var class<DamageType>  AcceptsDamage;
-	UPROPERTY(EditAnywhere, Category = "sDamageInfo")				AAGP_VehicleParticles*	DamageEffect		= nullptr;				//var class<AGP_Effects.AGP_VehicleParticles>  DamageEffect;
+	UPROPERTY(EditAnywhere, Category = "sDamageInfo")				TSubclassOf < UaDamageType>			AcceptsDamage		= nullptr;				//var class<DamageType>  AcceptsDamage;
+	UPROPERTY(EditAnywhere, Category = "sDamageInfo")				TSubclassOf < AAGP_VehicleParticles>	DamageEffect		= nullptr;				//var class<AGP_Effects.AGP_VehicleParticles>  DamageEffect;
 	UPROPERTY(EditAnywhere, Category = "sDamageInfo")				float					AM_Front_Left		= 0;					//var float AM_Front_Left;
 	UPROPERTY(EditAnywhere, Category = "sDamageInfo")				float					AM_Front_Right		= 0;					//var float AM_Front_Right;
 	UPROPERTY(EditAnywhere, Category = "sDamageInfo")				float					AM_Back_Left		= 0;					//var float AM_Back_Left;
@@ -1291,7 +1291,7 @@ struct FaFilePath
 	UPROPERTY(EditAnywhere, Category = "FilePath")					FString Directory = "";									//var string Directory;
 	UPROPERTY(EditAnywhere, Category = "FilePath")					FString Filename = "";									//var string Filename;
 	UPROPERTY(EditAnywhere, Category = "FilePath")					FString Extension = "";									//var string Extension;
-	UPROPERTY(EditAnywhere, Category = "FilePath")					TArray<FString> DirectoryParts={};						//var array<String> DirectoryParts;
+	UPROPERTY(EditAnywhere, Category = "FilePath")					TArray<FString> DirectoryParts={};						//var TArray<FString> DirectoryParts;
 };
 
 USTRUCT(BlueprintType)
@@ -1309,7 +1309,7 @@ USTRUCT(BlueprintType)
 struct FSpeechReplacement
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, Category = "SpeechReplacement")					TArray< FString> MatchWords;							//var array<String> MatchWords;
+	UPROPERTY(EditAnywhere, Category = "SpeechReplacement")					TArray< FString> MatchWords;							//var TArray<FString> MatchWords;
 	UPROPERTY(EditAnywhere, Category = "SpeechReplacement")					FString ReplaceWord;									//var string ReplaceWord;
 };
 
@@ -2325,7 +2325,7 @@ struct FsPendingRequest
 	GENERATED_BODY()
 	UPROPERTY(BlueprintReadWrite, Category = "sPendingRequest")									AAA2_PlayerState* PRI;								//var PlayerReplicationInfo PRI;
 	UPROPERTY(BlueprintReadWrite, Category = "sPendingRequest")									int32 UnitID;										//var int UnitId;
-	UPROPERTY(BlueprintReadWrite, Category = "sPendingRequest")									int32 Index;										//var int index;
+	UPROPERTY(BlueprintReadWrite, Category = "sPendingRequest")									int32 Index = 0;										//var int index;
 };
 
 USTRUCT(BlueprintType)
@@ -2575,7 +2575,7 @@ struct FGameSpyServerItem
 	UPROPERTY(EditAnywhere, Category = "GameSpyServerItem")					int32 Port;									//var int Port;
 	UPROPERTY(EditAnywhere, Category = "GameSpyServerItem")					int32 QueryPort;							//var int QueryPort;
 	UPROPERTY(EditAnywhere, Category = "GameSpyServerItem")					int32 Ping;									//var int Ping;
-	UPROPERTY(EditAnywhere, Category = "GameSpyServerItem")					int32 Index;								//var int Index;
+	UPROPERTY(EditAnywhere, Category = "GameSpyServerItem")					int32 Index = 0;							//var int Index;
 	UPROPERTY(EditAnywhere, Category = "GameSpyServerItem")					int32 Tour;									//var int Tour;
 	UPROPERTY(EditAnywhere, Category = "GameSpyServerItem")					int32 NumPlayers;							//var int NumPlayers;
 	UPROPERTY(EditAnywhere, Category = "GameSpyServerItem")					int32 MaxPlayers;							//var int MaxPlayers;
@@ -2645,7 +2645,7 @@ struct FAuthSurveyQuestion
 	UPROPERTY(EditAnywhere, Category = "AuthSurveyQuestion")		int32 UIComponentType;					//var int UIComponentType;
 	UPROPERTY(EditAnywhere, Category = "AuthSurveyQuestion")		bool bIsOptional;						//var bool bIsOptional;
 	UPROPERTY(EditAnywhere, Category = "AuthSurveyQuestion")		int32 NumAnswers;						//var int NumAnswers;
-	UPROPERTY(EditAnywhere, Category = "AuthSurveyQuestion")		TArray<FString> AnswerText;				//var array<String> AnswerText;
+	UPROPERTY(EditAnywhere, Category = "AuthSurveyQuestion")		TArray<FString> AnswerText;				//var TArray<FString> AnswerText;
 };
 
 USTRUCT(BlueprintType)
@@ -2851,8 +2851,8 @@ struct FStandard
 {
 	GENERATED_BODY()
 
-	UPROPERTY(EditAnywhere, Category = "Standard")					TArray<FString> Classes;					//	var array<String> Classes;
-	UPROPERTY(EditAnywhere, Category = "Standard")					TArray<FString> Maps;						//var array<String> Maps;
+	UPROPERTY(EditAnywhere, Category = "Standard")					TArray<FString> Classes;					//	var TArray<FString> Classes;
+	UPROPERTY(EditAnywhere, Category = "Standard")					TArray<FString> Maps;						//var TArray<FString> Maps;
 };
 
 

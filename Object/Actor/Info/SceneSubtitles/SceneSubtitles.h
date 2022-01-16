@@ -17,7 +17,7 @@ public:
 
 
 	UPROPERTY()						int32 CurrentIndex;									//var int CurrentIndex;
-	UPROPERTY(EditAnywhere)			TArray<FString> SubTitles;							//var() localized array<String> SubTitles;
+	UPROPERTY(EditAnywhere)			TArray<FString> SubTitles;							//var() localized TArray<FString> SubTitles;
 
 	//virtual void ProcessEvent(ESST_Mode Mode) override;
 

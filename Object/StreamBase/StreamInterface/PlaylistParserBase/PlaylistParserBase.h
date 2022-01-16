@@ -16,8 +16,8 @@ public:
 	UPlaylistParserBase();
 
 	UPROPERTY()									TArray<FHtmlChar>	SpecialChars;				//var array<HtmlChar> SpecialChars;
-	UPROPERTY()									TArray<FString>		Lines;						//var array<String> Lines;
-	UPROPERTY()									TArray<FString>		Paths;						//var array<String> Paths;
+	UPROPERTY()									TArray<FString>		Lines;						//var TArray<FString> Lines;
+	UPROPERTY()									TArray<FString>		Paths;						//var TArray<FString> Paths;
 	UPROPERTY()									FString				PlaylistName;				//var string PlaylistName;
 	UPROPERTY()									EStreamPlaylistType Type;						//var StreamBase.EStreamPlaylistType Type;
 
