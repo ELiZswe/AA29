@@ -22,6 +22,7 @@ class AGameSpyServerList;
 class UI3DL2Listener;
 class AServerBrowserSCI;
 class AServerBrowserDBMBS;
+class UMainMenuFrame;
 
 UCLASS()
 class AAGP_HUD : public AAA2_HUD
@@ -34,9 +35,9 @@ public:
 public:
 
 /** Primary draw call for the HUD */
-	UPROPERTY()													UTexture2D* tFill;							//var Texture tFill;						// texture for the objective display
-	UPROPERTY()													int32 oldclipx;								//var int oldclipx;
-	UPROPERTY()													int32 LastMOTDDisplaySeconds;				//var int LastMOTDDisplaySeconds;
+	UPROPERTY()													UMaterialInstance*	tFill;						//var Texture tFill;						// texture for the objective display
+	UPROPERTY()													int32				oldclipx;					//var int oldclipx;
+	UPROPERTY()													int32				LastMOTDDisplaySeconds;		//var int LastMOTDDisplaySeconds;
 
 // configuration options
 	UPROPERTY()													bool bDrawHUD;								//var bool bDrawHUD;
@@ -54,7 +55,7 @@ public:
 	UPROPERTY()													bool bShowDebugCE;							//var bool bShowDebugCE;
 	UPROPERTY()													bool bShowSpectatorInfo;					//var bool bShowSpectatorInfo;
 	UPROPERTY()													UGameMenuFrame* gmFrame;					//var GameMenuFrame gmFrame;
-	UPROPERTY()													UGameMenuFrame* mmFrame;					//var MainMenuFrame mmFrame;
+	UPROPERTY()													UMainMenuFrame* mmFrame;					//var MainMenuFrame mmFrame;
 	UPROPERTY()													UMissionResultsFrame* mrFrame;				//var MissionResultsFrame mrFrame;		
 	UPROPERTY()													UHUDFrame* _cHUDFrame;						//var HUDFrame _cHUDFrame;
 	UPROPERTY()													bool bShowCoords;							//var bool bShowCoords;
@@ -86,7 +87,7 @@ public:
 	UPROPERTY()													float _fCMessageTimeout;					//var float _fCMessageTimeout;							// time to stop drawing the message
 	UPROPERTY()													float LongMessageTimeout;					//var float LongMessageTimeout;							// time to stop drawing long message
 	UPROPERTY()													UFont* LongMessageFont;						//var Font LongMessageFont;							// Font to use when drawing long message (optional)
-	UPROPERTY()													UTexture2D* tArmyBox;						//var Texture tArmyBox;
+	UPROPERTY()													UTexture2D*	tArmyBox;						//var Texture tArmyBox;
 	UPROPERTY()													int32 PMessage;								//var int PMessage;
 	UPROPERTY()													int32 iPrevHUDAlpha;						//var int iPrevHUDAlpha;
 	UPROPERTY()													int32 iPrevHUDColor;						//var int iPrevHUDColor;
@@ -121,14 +122,9 @@ public:
 	UPROPERTY()													UFont* UE4Font;
 	UPROPERTY()													float DefaultFontScale;
 
-	void DetermineVersionLabel(bool bCheat, bool bDev, bool bBeta, bool bLeased, bool bOfficial, bool bNATO, bool bTournament, bool bUltimateArena, bool bIsAuthorized, bool bExploreTheArmyServer, bool bAllowForceclassing);
-	int32 GetVersionAGPMajor();
-	int32 GetVersionAGPMinor();
-	int32 GetVersionAGPTiny();
-	int32 GetVersionAGPSubTiny();
-	bool AllowFade();
-	void GetMouseX();
-	void GetMouseY();
+
+	int32 GetMouseX();
+	int32 GetMouseY();
 	void UpdatePrecacheMaterials();
 	void PrecacheFonts(UCanvas* C);
 	void UseSmallFont(UCanvas* C);
@@ -137,20 +133,22 @@ public:
 	void TournamentNotifyNewTeamName();																					//Function TournamentNotifyNewTeamName();
 	void TournamentNotifyNewWeaponClassLockState();																		//Function TournamentNotifyNewWeaponClassLockState();
 	void TournamentNotifyMyTeamReady();																					//Function TournamentNotifyMyTeamReady();
+	void DetermineVersionLabel(bool bCheat, bool bDev, bool bBeta, bool bLeased, bool bOfficial, bool bNATO, bool bTournament, bool bUltimateArena, bool bIsAuthorized, bool bExploreTheArmyServer, bool bAllowForceclassing);
+	bool AllowFade();
 	void SetHUDActor();																									//Function SetHUDActor();
 	void FreeHUDActor();																								//Function FreeHUDActor();
 	UUIControl* GetHUDControl(int32 Id);																						//Function GetHUDControl(int32 Id);
 	UObject* CreateUIObject(FString ObjectName);																			//static Function CreateUIObject(string ObjectName);
 	void Destroyed();																									//Function Destroyed();
-
-	void PostRender_Stage2(UCanvas* C);																					//Event PostRender_Stage2(Canvas Canvas);
-	void DrawConsole(UCanvas* C);																						//Function DrawConsole(Canvas Canvas);
-	void PostRender_Stage1(UCanvas* C);																					//Event PostRender_Stage1(Canvas Canvas);
-	void PostRender_Stage2_DrawConsole(UCanvas* C);																		//simulated Function PostRender_Stage2_DrawConsole(Canvas Canvas);
+	void PostRender_Stage1(UCanvas* Canvas);																					//Event PostRender_Stage1(Canvas Canvas);
+	void PostRender_Stage2(UCanvas* Canvas);																					//Event PostRender_Stage2(Canvas Canvas);
+	void DrawConsole(UCanvas* Canvas);																						//Function DrawConsole(Canvas Canvas);
+	void PostRender_Stage2_DrawConsole(UCanvas* Canvas);																		//simulated Function PostRender_Stage2_DrawConsole(Canvas Canvas);
+	void WorldSpaceOverlays();																							//simulated Event WorldSpaceOverlays();
 	void DrawMenu(UCanvas* C);																							//simulated Function DrawMenu(Canvas Canvas);
 	void DrawAngleEditor(UCanvas* C);																					//Function DrawAngleEditor(Canvas Canvas);
-
-	void WorldSpaceOverlays();																							//simulated Event WorldSpaceOverlays();
+	void ShowHud();
+	void HideHUD();
 	void SetMissionResultTarget(UScriptObject* so);																	//Function SetMissionResultTarget(ScriptObject so);
 	void CreateFrame();																									//Function CreateFrame();
 	void FillListBox();																									//Function FillListBox();
@@ -165,7 +163,7 @@ public:
 	void ToggleAGPGameMenu();																							//Function ToggleAGPGameMenu();
 	void ToggleAGPMainMenu();																							//Function ToggleAGPMainMenu();
 	void CloseAllMenus();																								//Function CloseAllMenus();
-	void  OpenMainMenu();																								//Function OpenMainMenu();
+	void OpenMainMenu();																								//Function OpenMainMenu();
 	void CloseMainMenu();																								//Function CloseMainMenu();
 	void OpenMissionResults();																							//Function OpenMissionResults();
 	void CloseMissionResults();																							//Function CloseMissionResults();
@@ -174,7 +172,6 @@ public:
 	bool KeyType(int32 Key);																							//Function KeyType(int32 Key);
 	bool ProcessKeyEvent(int32 Key, int32 Action, float Delta);															//Function ProcessKeyEvent(int32 Key, int Action, float Delta);
 	void ConsoleOpened();																								//Function ConsoleOpened();
-
 	void PostBeginPlay();																										//simulated Function PostBeginPlay();
 	void HUDSetup(UCanvas* C);																									//simulated Function HUDSetup(Canvas Canvas);
 	void PlayStartupMessage(uint8 Stage);																						//simulated Function PlayStartupMessage(byte Stage);
@@ -188,7 +185,7 @@ public:
 	float GetTextHeight(UCanvas* C);
 	float GetTextWidth(UCanvas* C);
 	void ReWrapMessages(UConsole* MyConsole, UCanvas* MyCanvas);
-	void DisplayMessages(UCanvas* C);
+	void DisplayMessages(UCanvas* Ca);
 	void SetCrosshair(int32 C);
 	void NextCrosshair();
 	void SetHue(uint8 H);
@@ -197,7 +194,7 @@ public:
 	void DrawCenteredMessages(UCanvas* C);
 	void DrawCenteredLongMessage(UCanvas* C);
 	void DisplayCenteredMessage(float Time, FString Message, FString message2);
-	void DisplayCenteredMessageLong(float Time, FString in_message);
+	void DisplayCenteredMessageLong(float Time, FString in_message, UFont* F);
 	void DrawArmyBox(UCanvas* C, float StartX, float StartY, float boxw, float boxh);
 	void DrawArmyLine(UCanvas* C, float StartX, float StartY, float boxw);
 	void ToggleClassSelect();
@@ -229,17 +226,13 @@ public:
 	void ShowCoords();
 	void ToggleBRoll();
 	void DisplayVoiceGain(UCanvas* C);
-
-
-	//From AA2 HUD
 	void BuildMOTD();
-
-//Exists in HUD																																	
-
-//	void ShowHud();
-//	void HideHUD();
-	
 	void ShowDebug(FName DebugType = NAME_None);
+	int32 GetVersionAGPMajor();
+	int32 GetVersionAGPMinor();
+	int32 GetVersionAGPTiny();
+	int32 GetVersionAGPSubTiny();
+
 
 private:
 	/** Crosshair asset pointer */

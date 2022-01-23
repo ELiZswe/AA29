@@ -16,5 +16,5 @@ public:
 	UAnimNotify_MatSubAction();
 
 
-	UPROPERTY()													UMatSubAction* SubAction;								//var() MatSubAction SubAction;
+	UPROPERTY(EditAnywhere)			UMatSubAction*	SubAction;			//var() MatSubAction SubAction;
 };

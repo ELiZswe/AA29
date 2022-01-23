@@ -16,6 +16,7 @@ class APickup;
 class UaDamageType;
 class AArmor;
 class APowerups;
+class ALevelInfo;
 
 UCLASS()
 class AInventory : public AActor
@@ -29,28 +30,28 @@ public:
 	UPROPERTY(EditAnywhere)								FString					ItemName;									//var() localized string ItemName;
 	UPROPERTY(EditAnywhere)								FIntBox					IconCoords;									//var() Object.IntBox IconCoords;
 	UPROPERTY(EditAnywhere)								UMaterialInstance*		IconMaterial;								//var() Material IconMaterial;
-	UPROPERTY()																TArray<TSubclassOf<class AInventoryAttachment>> AttachmentClass;	//var class<InventoryAttachment> AttachmentClass;
-	UPROPERTY()																AActor*					ThirdPersonActor;							//var Actor ThirdPersonActor;
-	UPROPERTY()																bool					bUseAttachment;								//var bool bUseAttachment;
+	UPROPERTY()											TArray<TSubclassOf<class AInventoryAttachment>> AttachmentClass;	//var class<InventoryAttachment> AttachmentClass;
+	UPROPERTY()											AActor*					ThirdPersonActor;							//var Actor ThirdPersonActor;
+	UPROPERTY()											bool					bUseAttachment;								//var bool bUseAttachment;
 	UPROPERTY(EditAnywhere)								float					BobDamping;									//var() float BobDamping;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)								bool					bDrawingFirstPerson;						//var() bool bDrawingFirstPerson;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)			bool					bDrawingFirstPerson;						//var() bool bDrawingFirstPerson;
 	UPROPERTY(EditAnywhere, Category="FirstPerson")		FRotator				PlayerViewPivot;							//var(FirstPerson) Object.Rotator PlayerViewPivot;
-	UPROPERTY()																FVector					PlayerViewOffset;							//var FVector PlayerViewOffset;
-	UPROPERTY()																bool					bDrawOnHUD;									//var bool bDrawOnHUD;
-	UPROPERTY()																bool					bUseInstigatorRotation;						//var bool bUseInstigatorRotation;
-	UPROPERTY()																bool					bVirtualInventory;							//var bool bVirtualInventory;
-	UPROPERTY()																uint8					idTeamOwner;								//var byte idTeamOwner;
-	UPROPERTY()																float					fWeight;									//var float fWeight;
-	UPROPERTY()																bool					_bHandsOnly;								//var bool _bHandsOnly;
-	UPROPERTY()																bool					_bLarge;									//var bool _bLarge;
-	UPROPERTY()																TSubclassOf<AInventory> Next;										//var Inventory Next;
-	UPROPERTY()																TSubclassOf<AInventory> Prev;										//var Inventory Prev;
+	UPROPERTY()											FVector					PlayerViewOffset;							//var FVector PlayerViewOffset;
+	UPROPERTY()											bool					bDrawOnHUD;									//var bool bDrawOnHUD;
+	UPROPERTY()											bool					bUseInstigatorRotation;						//var bool bUseInstigatorRotation;
+	UPROPERTY()											bool					bVirtualInventory;							//var bool bVirtualInventory;
+	UPROPERTY()											uint8					idTeamOwner;								//var byte idTeamOwner;
+	UPROPERTY()											float					fWeight;									//var float fWeight;
+	UPROPERTY()											bool					_bHandsOnly;								//var bool _bHandsOnly;
+	UPROPERTY()											bool					_bLarge;									//var bool _bLarge;
+	UPROPERTY()											TSubclassOf<AInventory> Next;										//var Inventory Next;
+	UPROPERTY()											TSubclassOf<AInventory> Prev;										//var Inventory Prev;
 	UPROPERTY(EditAnywhere)								int32					Charge;										//var() travel int Charge;
-	UPROPERTY()																TSubclassOf<class APickup> PickupClass;								//var class<Pickup> PickupClass;
-	UPROPERTY()																bool					bTossedOut;									//var bool bTossedOut;
-	UPROPERTY()																bool					bDisplayableInv;							//var bool bDisplayableInv;
-	UPROPERTY()																uint8					GroupOffset;								//var byte GroupOffset;
-	UPROPERTY()																uint8					InventoryGroup;								//var byte InventoryGroup;
+	UPROPERTY()											TSubclassOf<class APickup> PickupClass;								//var class<Pickup> PickupClass;
+	UPROPERTY()											bool					bTossedOut;									//var bool bTossedOut;
+	UPROPERTY()											bool					bDisplayableInv;							//var bool bDisplayableInv;
+	UPROPERTY()											uint8					GroupOffset;								//var byte GroupOffset;
+	UPROPERTY()											uint8					InventoryGroup;								//var byte InventoryGroup;
 	
 	//From Actor:
 	UPROPERTY(EditAnywhere)								UStaticMesh* StaticMesh;
@@ -59,8 +60,8 @@ public:
 	UPROPERTY(EditAnywhere)								EDrawType DrawType;
 	UPROPERTY(EditAnywhere)								FName InitialState;
 	UPROPERTY(EditAnywhere)								TSubclassOf<AInventory> Inventory;													//var inventory inventory
-	//void StaticPrecache(LevelInfo L)
-	
+
+	void StaticPrecache(ALevelInfo* L);
 	bool IsSniperRifle();
 	bool IsJavelin();
 	void AttachToPawn(APawn* p);
