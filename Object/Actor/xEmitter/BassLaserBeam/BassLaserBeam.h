@@ -16,6 +16,9 @@ public:
 	ABassLaserBeam();
 	UPROPERTY()								ABass* IlltemperedSeaBass;								//var Bass IlltemperedSeaBass;
 
+	//Mine
+	//UPROPERTY()					USceneComponent* Root;
+
 	void SetBeamLocation();
 	FVector SetBeamRotation();
 	void Tick(float dt);

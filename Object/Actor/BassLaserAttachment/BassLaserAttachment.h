@@ -12,17 +12,17 @@ class ABassLaserAttachment : public AActor
 	GENERATED_BODY()
 	
 public:	
-	
 	ABassLaserAttachment();
 
+	//Mine
+	UPROPERTY()					USkeletalMeshComponent* VisibleSkeletalMesh;
+	UPROPERTY()					USceneComponent* Root;
+	UPROPERTY(EditAnywhere)		USkeletalMesh* Mesh;
+
 	FVector GetTipLocation();
+	virtual void Tick(float DeltaTime) override;
 
 protected:
-	
 	virtual void BeginPlay() override;
-
-public:	
-	
-	virtual void Tick(float DeltaTime) override;
 
 };

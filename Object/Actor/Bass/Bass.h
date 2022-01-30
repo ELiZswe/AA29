@@ -15,16 +15,7 @@ class ABass : public AActor
 	GENERATED_BODY()
 	
 public:	
-	
 	ABass();
-
-protected:
-	
-	virtual void BeginPlay() override;
-
-public:	
-	
-	virtual void Tick(float DeltaTime) override;
 
 	UPROPERTY()					bool WestquotesLeavenworth;					//var bool WestquotesLeavenworth;
 	UPROPERTY()					bool IllTemperedWithLaserBeams;				//var bool IllTemperedWithLaserBeams;
@@ -34,6 +25,15 @@ public:
 	UPROPERTY()					ABassLaserBeam* MyBeam;						//var BassLaserBeam MyBeam;
 	UPROPERTY()					ABassLaserAttachment* LaserAttachment;		//var BassLaserAttachment LaserAttachment;
 
+	//Mine
+	UPROPERTY()					USkeletalMeshComponent* VisibleSkeletalMesh;
+	UPROPERTY()					USceneComponent* Root;
+	UPROPERTY(EditAnywhere)		USkeletalMesh* Mesh;
+
+	virtual void Tick(float DeltaTime) override;
 	void PostBeginPlay();
 	void Destroyed();
+protected:
+
+	virtual void BeginPlay() override;
 };
