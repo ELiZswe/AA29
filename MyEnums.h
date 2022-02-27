@@ -5,6 +5,92 @@
 #include "CoreMinimal.h"
 #include "UObject/ObjectMacros.h"
 
+UENUM(BlueprintType)
+enum class EMaterialType : uint8
+{
+	/* 0 */ MT_NONE																UMETA(DisplayName = "MT_NONE"),
+	/* 1 */ MT_WOOD																UMETA(DisplayName = "MT_WOOD"),
+	/* 2 */ MT_GRAVEL															UMETA(DisplayName = "MT_GRAVEL"),
+	/* 3 */ MT_DIRT																UMETA(DisplayName = "MT_DIRT"),
+	/* 4 */ MT_METAL															UMETA(DisplayName = "MT_METAL"),
+	/* 5 */ MT_GLASS															UMETA(DisplayName = "MT_GLASS"),
+	/* 6 */ MT_CONCRETE															UMETA(DisplayName = "MT_CONCRETE"),
+	/* 7 */ MT_CLOTH															UMETA(DisplayName = "MT_CLOTH"),
+	/* 8 */ MT_LIQUID															UMETA(DisplayName = "MT_LIQUID"),
+	/* 9 */ MT_FLESH															UMETA(DisplayName = "MT_FLESH"),
+	/* 10*/ MT_ELECTRONICS														UMETA(DisplayName = "MT_ELECTRONICS"),
+	/* 11*/ MT_PLASTER															UMETA(DisplayName = "MT_PLASTER"),
+	/* 12*/ MT_FOLIAGE															UMETA(DisplayName = "MT_FOLIAGE"),
+	/* 13*/ MT_SNOW																UMETA(DisplayName = "MT_SNOW"),
+	/* 14*/ MT_GRASS															UMETA(DisplayName = "MT_GRASS"),
+	/* 15*/ MT_MUD																UMETA(DisplayName = "MT_MUD"),
+	/* 16*/ MT_SAND																UMETA(DisplayName = "MT_SAND"),
+	/* 17*/ MT_TILE																UMETA(DisplayName = "MT_TILE"),
+	/* 18*/ MT_WOOD_LT															UMETA(DisplayName = "MT_WOOD_LT"),
+	/* 19*/ MT_WOOD_MD															UMETA(DisplayName = "MT_WOOD_MD"),
+	/* 20*/ MT_WOOD_HV															UMETA(DisplayName = "MT_WOOD_HV"),
+	/* 21*/ MT_METAL_LT															UMETA(DisplayName = "MT_METAL_LT"),
+	/* 22*/ MT_METAL_MD															UMETA(DisplayName = "MT_METAL_MD"),
+	/* 23*/ MT_METAL_HV															UMETA(DisplayName = "MT_METAL_HV"),
+	/* 24*/ MT_METAL_ARMR														UMETA(DisplayName = "MT_METAL_ARMR"),
+};
+
+UENUM(BlueprintType)
+enum class ESurfaceTypes : uint8
+{
+	/* 0 */ EST_Default															UMETA(DisplayName = "EST_Default"),
+	/* 1 */ EST_Rock															UMETA(DisplayName = "EST_Rock"),
+	/* 2 */ EST_Dirt															UMETA(DisplayName = "EST_Dirt"),
+	/* 3 */ EST_Metal															UMETA(DisplayName = "EST_Metal"),
+	/* 4 */ EST_Wood															UMETA(DisplayName = "EST_Wood"),
+	/* 5 */ EST_Plant															UMETA(DisplayName = "EST_Plant"),
+	/* 6 */ EST_Flesh															UMETA(DisplayName = "EST_Flesh"),
+	/* 7 */ EST_Ice																UMETA(DisplayName = "EST_Ice"),
+	/* 8 */ EST_Snow															UMETA(DisplayName = "EST_Snow"),
+	/* 9 */ EST_Water															UMETA(DisplayName = "EST_Water"),
+	/* 10 */ EST_Glass															UMETA(DisplayName = "EST_Glass"),
+	/* 11 */ EST_Custom00														UMETA(DisplayName = "EST_Custom00"),
+	/* 12 */ EST_Custom01														UMETA(DisplayName = "EST_Custom01"),
+	/* 13 */ EST_Custom02														UMETA(DisplayName = "EST_Custom02"),
+	/* 14 */ EST_Custom03														UMETA(DisplayName = "EST_Custom03"),
+	/* 15 */ EST_Custom04														UMETA(DisplayName = "EST_Custom04"),
+	/* 16 */ EST_Custom05														UMETA(DisplayName = "EST_Custom05"),
+	/* 17 */ EST_Custom06														UMETA(DisplayName = "EST_Custom06"),
+	/* 18 */ EST_Custom07														UMETA(DisplayName = "EST_Custom07"),
+	/* 19 */ EST_Custom08														UMETA(DisplayName = "EST_Custom08"),
+	/* 20 */ EST_Custom09														UMETA(DisplayName = "EST_Custom09"),
+	/* 21 */ EST_Custom10														UMETA(DisplayName = "EST_Custom10"),
+	/* 22 */ EST_Custom11														UMETA(DisplayName = "EST_Custom11"),
+	/* 23 */ EST_Custom12														UMETA(DisplayName = "EST_Custom12"),
+	/* 24 */ EST_Custom13														UMETA(DisplayName = "EST_Custom13"),
+	/* 25 */ EST_Custom14														UMETA(DisplayName = "EST_Custom14"),
+	/* 26 */ EST_Custom15														UMETA(DisplayName = "EST_Custom15"),
+	/* 27 */ EST_Custom16														UMETA(DisplayName = "EST_Custom16"),
+	/* 28 */ EST_Custom17														UMETA(DisplayName = "EST_Custom17"),
+	/* 29 */ EST_Custom18														UMETA(DisplayName = "EST_Custom18"),
+	/* 30 */ EST_Custom19														UMETA(DisplayName = "EST_Custom19"),
+	/* 31 */ EST_Custom20														UMETA(DisplayName = "EST_Custom20"),
+	/* 32 */ EST_Custom21														UMETA(DisplayName = "EST_Custom21"),
+	/* 33 */ EST_Custom22														UMETA(DisplayName = "EST_Custom22"),
+	/* 34 */ EST_Custom23														UMETA(DisplayName = "EST_Custom23"),
+	/* 35 */ EST_Custom24														UMETA(DisplayName = "EST_Custom24"),
+	/* 36 */ EST_Custom25														UMETA(DisplayName = "EST_Custom25"),
+	/* 37 */ EST_Custom26														UMETA(DisplayName = "EST_Custom26"),
+	/* 38 */ EST_Custom27														UMETA(DisplayName = "EST_Custom27"),
+	/* 39 */ EST_Custom28														UMETA(DisplayName = "EST_Custom28"),
+	/* 40 */ EST_Custom29														UMETA(DisplayName = "EST_Custom29"),
+	/* 41 */ EST_Custom30														UMETA(DisplayName = "EST_Custom30"),
+	/* 42 */ EST_Custom31														UMETA(DisplayName = "EST_Custom31")
+};
+
+UENUM(BlueprintType)
+enum class EMaterialContactType : uint8
+{
+	/* 0 */ CT_Footstep														UMETA(DisplayName = "CT_Footstep"),
+	/* 1 */ CT_Crawl														UMETA(DisplayName = "CT_Crawl"),
+	/* 2 */ CT_Bullet														UMETA(DisplayName = "CT_Bullet")
+};
+
 
 UENUM(BlueprintType)
 enum class ENPCOrders2 : uint8

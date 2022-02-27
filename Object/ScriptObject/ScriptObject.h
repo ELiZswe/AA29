@@ -14,10 +14,10 @@ class UScriptObject : public UObject
 public:
 	UScriptObject();
 
-	UPROPERTY()										int32 _nNumParamsDefined;					//var int _nNumParamsDefined;
-	UPROPERTY()										TArray<FString> _sParameters;				//var TArray<FString> _sParameters;
-	UPROPERTY()										bool bSupportsMP;							//var bool bSupportsMP;
-	UPROPERTY()										bool _bDebug;								//var bool _bDebug;
+	UPROPERTY()			int32			_nNumParamsDefined;			//var int _nNumParamsDefined;
+	UPROPERTY()			TArray<FString> _sParameters;				//var TArray<FString> _sParameters;
+	UPROPERTY()			bool			bSupportsMP;				//var bool bSupportsMP;
+	UPROPERTY()			bool			_bDebug;					//var bool _bDebug;
 
 	void Destroyed();
 	void Notify();
@@ -27,5 +27,4 @@ public:
 	int32 GetNumParamsDefined();
 	FString GetParam(int32 Index);
 	void SetParamString(FString szParams);
-
 };

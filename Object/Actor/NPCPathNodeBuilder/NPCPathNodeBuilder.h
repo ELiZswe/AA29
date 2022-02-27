@@ -17,9 +17,7 @@ class ANPCPathNodeBuilder : public AActor
 	GENERATED_BODY()
 	
 public:	
-	
 	ANPCPathNodeBuilder();
-
 
 	UPROPERTY()						TArray<ANavigationPoint*>		anpcpnPathNodes;							//var TArray<NavigationPoint> anpcpnPathNodes;
 	UPROPERTY()						TArray<ANPCRoadPathNode*>		anpcpnRoadPathNodes;						//var TArray<NPCRoadPathNode> anpcpnRoadPathNodes;

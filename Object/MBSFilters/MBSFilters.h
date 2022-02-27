@@ -9,7 +9,7 @@
 
 class UMBSFiltersActiveFiltersets;
 
-UCLASS()
+UCLASS(Config = Game)
 class UMBSFilters : public UObject
 {
 	GENERATED_BODY()
@@ -18,7 +18,7 @@ public:
 
 	UPROPERTY()							int32							CurrentFilterSet;						//var int CurrentFilterSet;
 	UPROPERTY()							UMBSFiltersActiveFiltersets*	ActiveFiltersets;						//var MBSFiltersActiveFiltersets ActiveFiltersets;
-	UPROPERTY()							TArray<FFilterDesc>				Filters;								//var config array<FilterDesc> Filters;
+	UPROPERTY(config)					TArray<FFilterDesc>				Filters;								//var config array<FilterDesc> Filters;
 
 	void OnGenerateChoices(FString CategoryName, FString FilterName);
 	void CreateActiveFilterSets();

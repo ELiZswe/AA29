@@ -17,8 +17,8 @@ public:
 	UxAdminGroup();
 
 	UPROPERTY()				bool						bMasterAdmin;		//var bool bMasterAdmin;
-	UPROPERTY()				TArray<UxAdminUserList*>	Managers;			//var xAdminUserList Managers;
-	UPROPERTY()				TArray<UxAdminUserList*>	Users;				//var xAdminUserList Users;
+	UPROPERTY()				UxAdminUserList*	Managers;			//var xAdminUserList Managers;
+	UPROPERTY()				UxAdminUserList*	Users;				//var xAdminUserList Users;
 	UPROPERTY()				uint8						GameSecLevel;		//var byte GameSecLevel;
 	UPROPERTY()				FString						Privileges;			//var string Privileges;
 	UPROPERTY()				FString						GroupName;			//var string GroupName;

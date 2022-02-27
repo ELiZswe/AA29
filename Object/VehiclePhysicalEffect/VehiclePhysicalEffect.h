@@ -17,5 +17,4 @@ public:
 
 	void Activate(AAGP_Vehicle* V, int32 ZoneNum, int32 StateNum);
 	void Deactivate(AAGP_Vehicle* V);
-
 };

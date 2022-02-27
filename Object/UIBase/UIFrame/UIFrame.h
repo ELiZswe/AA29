@@ -18,6 +18,7 @@ class UUIInvList;
 class AClientBeaconReceiver;
 class AServerBrowserBase;
 class UUIListItems;
+class AAA2_HUD;
 
 UCLASS()
 class UUIFrame : public UUIBase
@@ -47,7 +48,7 @@ public:
 	UPROPERTY()		UUIScreen*		cMessageBox;			//var UIScreen cMessageBox;
 	UPROPERTY()		AActor*			cActor;					//var Actor cActor;
 	UPROPERTY()		UUIInvDef*		cInvDef;				//var UIInvDef cInvDef;
-	UPROPERTY()		AHUD*			cHUD;					//var HUD cHUD;
+	UPROPERTY()		AAA2_HUD*		cHUD;					//var HUD cHUD;
 	UPROPERTY()		UUIMouse*		cMouse;					//var UIMouse cMouse;
 	UPROPERTY()		UUIControl*		cFocus;					//var UIControl cFocus;
 	UPROPERTY()		UUIScreen*		cSubScreen;				//var UIScreen cSubScreen;
@@ -59,7 +60,7 @@ public:
 	void Destroyed();
 	void SetMouse(int32 mX, int32 mY);
 	void ScaleControls(UCanvas* Canvas);
-	void Create(AHUD* pHUD);
+	void Create(AAA2_HUD* pHUD);
 	bool KeyType(int32 Key);
 	bool ProcessKeyEvent(int32 Key, int32 Action, float Delta);
 	void Draw(UCanvas* Canvas);

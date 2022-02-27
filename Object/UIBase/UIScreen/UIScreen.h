@@ -22,16 +22,16 @@ class UUIScreen : public UUIBase
 public:
 	UUIScreen();
 
-	UPROPERTY()										FString _sTitle;					//var string _sTitle;
-	UPROPERTY()										FPoint offset;						//var UIBase.Point offset;
-	UPROPERTY()										float fScaleY;						//var float fScaleY;
-	UPROPERTY()										float fScaleX;						//var float fScaleX;
-	UPROPERTY()										int32 _iOldSizeY;					//var int _iOldSizeY;
-	UPROPERTY()										int32 _iOldSizeX;					//var int _iOldSizeX;
-	UPROPERTY()										UUIFrame* cFrame;					//var UIFrame cFrame;
-	UPROPERTY()										UUIControl* cFocus;					//var UIControl cFocus;
-	UPROPERTY()										UUIControl* cControlList;			//var UIControl cControlList;
-	UPROPERTY()										UUIScreen* cNextScreen;				//var UIScreen cNextScreen;
+	UPROPERTY()			FString		_sTitle;
+	UPROPERTY()			FPoint		offset;
+	UPROPERTY()			float		fScaleY;
+	UPROPERTY()			float		fScaleX;
+	UPROPERTY()			int32		_iOldSizeY;
+	UPROPERTY()			int32		_iOldSizeX;
+	UPROPERTY()			UUIFrame*	cFrame;
+	UPROPERTY()			UUIControl* cFocus;
+	UPROPERTY()			UUIControl* cControlList;
+	UPROPERTY()			UUIScreen*	cNextScreen;
 
 	void Create(UUIFrame* frame, int32 pID, FString sTitle);
 	void Destroyed();
@@ -104,5 +104,4 @@ public:
 	UUIControl* GetControl(int32 Id);
 	bool EnableControl(int32 Id, bool State);
 	void SetCheckBoxGroup(int32 GroupID, int32 controlid);
-
 };

@@ -16,13 +16,13 @@ class UMissionResultsFrame : public UUIFrame
 public:
 	UMissionResultsFrame();
 
-	UPROPERTY()										bool _bPass;						//var bool _bPass;
-	UPROPERTY()										bool _bRestartScene;				//var bool _bRestartScene;
-	UPROPERTY()										int32 temp_id;						//var int temp_id;
+	UPROPERTY()			bool	_bPass;				//var bool _bPass;
+	UPROPERTY()			bool	_bRestartScene;		//var bool _bRestartScene;
+	UPROPERTY()			int32	temp_id;			//var int temp_id;
 
 	void Notify(int32 pUIEvent);
 	void Draw(UCanvas* Canvas);
-	void Create(AHUD* pHUD);
+	void Create(AAA2_HUD* pHUD);
 	void SetMissionResultDisplay(FString mrd);
 	UMissionResultDisplay* GetMissionResultDisplay();
 	bool GetPlayerStatus();

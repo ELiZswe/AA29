@@ -8,6 +8,7 @@
 #include "aLocalMessage.generated.h"
 
 class AAA2_PlayerState;
+class AAA2_HUD;
 
 UCLASS()
 class AaLocalMessage : public AAA2_Info
@@ -32,11 +33,10 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Message")			bool bIsSpecial;					//var(Message) bool bIsSpecial;
 	UPROPERTY(EditAnywhere, Category = "Message")			bool bComplexString;				//var(Message) bool bComplexString
 
-
 	void RenderComplexMessage(UCanvas* Canvas, float& XL, float& YL, FString MessageString, int32 Switch, AAA2_PlayerState* RelatedPRI_1, AAA2_PlayerState* RelatedPRI_2, UObject* OptionalObject);
 	void GetRelatedString(int32 Switch, AAA2_PlayerState* RelatedPRI_1, AAA2_PlayerState* RelatedPRI_2, UObject* OptionalObject);
 	void GetString(int32 Switch, AAA2_PlayerState* RelatedPRI_1, AAA2_PlayerState* RelatedPRI_2, UObject* OptionalObject, FString ExtraText);
-	FString AssembleString(AHUD* MyHUD, int32 Switch, AAA2_PlayerState* RelatedPRI_1, FString MessageString);
+	FString AssembleString(AAA2_HUD* MyHUD, int32 Switch, AAA2_PlayerState* RelatedPRI_1, FString MessageString);
 	void ClientReceive(APlayerController* p, int32 Switch, AAA2_PlayerState* RelatedPRI_1, AAA2_PlayerState* RelatedPRI_2, UObject* OptionalObject, FString ExtraText);
 	void GetConsoleColor(AAA2_PlayerState* RelatedPRI_1);
 	void GetColor(int32 Switch, AAA2_PlayerState* RelatedPRI_1, AAA2_PlayerState* RelatedPRI_2);
@@ -46,6 +46,4 @@ public:
 	bool IsConsoleMessage(int32 Switch);
 	void GetOffset(int32 Switch, float YL, float ClipY);
 	void ReportLocation(int32 Switch);
-
-
 };
